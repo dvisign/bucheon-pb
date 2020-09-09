@@ -1,0 +1,24 @@
+@charset "utf-8";
+.clear {clear: both;}
+.clear::after {display:block;content:"";clear:both;}
+
+/* header */
+#headers {background:#fff;border-bottom:1px solid #d6dade;position: fixed;width:100%;top:0;left:0;z-index:10000}
+#navs > div {float:left;}
+#navs > #logos,
+#navs > #login-info {width: 320px;}
+#navs > #logos {padding:30px 0 0 25px;}
+
+#navs > #nav-wrapper {width: calc(100% - (320px * 2)); text-align:center;padding:54px 0 44px 0;}
+#navs > #nav-wrapper > #nav-lists {display:inline-block;} 
+#navs > #nav-wrapper > #nav-lists > .nav-items {float:left;margin:0 30px;} 
+#navs > #nav-wrapper > #nav-lists > .nav-items > a{font-size:19px;font-weight: bold;} 
+
+#navs > #login-info {padding-top:57px;}
+#navs > #login-info > #login-msg {display:inline-block;color:#696d75;font-weight: 600;transform: skew(-0.03deg);}
+#navs > #login-info > #login-msg > span {color:#2c64cf;}
+#navs > #login-info > #logout-btn {margin-left:15px;border:1px solid #d1d5da;color:#63666b;padding: 10px 16px;border-radius:20px;}
+
+/* footer */
+#footers {height:240px;background-color:#191d25;}
+
