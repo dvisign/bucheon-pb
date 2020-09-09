@@ -41,6 +41,10 @@
 #service-state .service-page-header > .service-installation .service-installation-items > a {display:block;outline:none;cursor:pointer;color:#696d75;font-size:15px;transform:skew(-0.03deg);font-weight: 600;padding:10px 0;border-radius: 20px;width:calc(100% - 3px);}
 #service-state .service-page-header > .service-installation .service-installation-items > a.active {color:#fff;background:#2c64cf;}
 #service-state .service-page-conts {margin-top:50px;}
+#service-state #school-road-status > .school-road-status-list {float:left;width:calc((100% - (20px * 2)) / 3);margin-right:20px;}
+#service-state #school-road-status > .school-road-status-list:last-child {margin-right:0;}
+#service-state #school-road-status > .school-road-status-list > .status-response {padding:25px 0;border-radius: 10px;}
+#service-state #school-road-status > .school-road-status-list > .status-response.operation-true {background-color:#dff7de;}
 
 /* 데이터수집/처리현황 */
 #data-state {background:#f4f8fb;}

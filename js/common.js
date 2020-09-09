@@ -33,6 +33,7 @@ var tabEvent = function(obj) {
           if (callbackAfter) {
             callbackAfter();
           }
+          eventSuccess == false;
         }
       }
     });
