@@ -22,6 +22,7 @@ $(document).ready(function () {
     // 탭 이동 후
     callback : function(index) {
       console.log(index + ' asdf tab active');
+      // 슬라이더 메뉴 재정렬
       $('.service-installation').get(index).slick.setPosition();
     },
     // 콜백 이후 실행
@@ -30,34 +31,17 @@ $(document).ready(function () {
     // }
   });
   
-  // 방문자 현황/시민 미세먼지 측정현황 탭 이벤트
-  new tabEvent({
-    tabBtn : $('.visitor-nav-items > a'),
-    parentSelector : '.visitor-nav-items',
-    firstIndex : 0,
-    tabEl : $('.tab-cont-items'),
-    // 로드 후 최초실행 함수(생략가능)
-    start : function() {
-      var html = '';
-      html = '<div style="position:relative;width:100%;height:100%;border:20px solid #ffcccc;">';
-      html += '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%, -50%)">차트영역</div>';
-      html += '</div>';
-      document.getElementById('visitor-charts').innerHTML = html;
-    },
-    // 탭 이동 후
-    callback : function(index) {
-      console.log(index + ' tab active');
-      if (index == 0) {
-        
-      }
-    },
-    // 콜백 이후 실행
-    // callbackAfter : function() {
-    //   console.log('callback after');
-    // }
+  // 방문자현황/미세먼지 측정현황 그래프 이벤트
+  $('.visitor-nav-items > a').on('click', function() {
+    var $this = $(this);
+    var btnEl = $('.visitor-nav-items > a');
+    if (!$this.hasClass('active')) {
+      btnEl.removeClass('active');
+      $this.addClass('active');
+      // 방문자/미세먼지측정 데이터 차트 실행
+    }
   });
-  
-  // 방문자 현황 정렬 방식 이벤트
+  // 방문자 현황 / 미세먼지 측정 현황 정렬 방식 이벤트
   $('.visitor-sort-items > a').on('click', function() {
     var $this = $(this);
     var btnEl = $('.visitor-sort-items > a');
@@ -65,7 +49,7 @@ $(document).ready(function () {
       btnEl.removeClass('active');
       $this.addClass('active');
       // 일별 주별 월별 정렬 실행
-    }
+    };
   });
 
   // 최다 방문 동 best 3 정렬방식 이벤트
@@ -76,7 +60,7 @@ $(document).ready(function () {
       btnEl.removeClass('active');
       $this.addClass('active');
       // 일별 주별 월별 정렬 실행
-    }
+    };
   });
 
   // 설치목록 데이터
@@ -86,6 +70,26 @@ $(document).ready(function () {
     if (!$this.hasClass('active')) {
       $('.service-page-items').eq(tabIndex).find('.service-installation-items > a').removeClass('active');
       $this.addClass('active');
-    }
+    };
   });
+
+  // 통학로 운영정보 / 휀스 연계형 팝업 열기
+  $('.device-info-link').on('click', function() {
+    var popEl = $('#device-pop');
+    if (!popEl.hasClass('active')) {
+      // 데이터 출력
+  
+      // 팝업열기
+      popEl.addClass('active');
+      popEl.stop().fadeIn();
+    };
+  });
+  // 통학로 운영정보 / 휀스 연계형 팝업 닫기
+  $('#device-pop-close').on('click', function() {
+    var popEl = $('#device-pop');
+    if (popEl.hasClass('active')) {
+      popEl.removeClass('active');
+      popEl.stop().fadeOut();
+    };
+  }); 
 });

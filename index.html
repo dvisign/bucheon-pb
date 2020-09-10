@@ -218,7 +218,7 @@
           <div id='map-wrap'>
             <div id='map'></div>
           </div>
-          <div id='service-state'>
+          <div id='service-state' class='text-center'>
             <div id='service-conts'>
               <div class='section-title'>
                 <h2 class='title-text'>서비스 운영 상태</h2>
@@ -278,43 +278,43 @@
                     </div>
                     <div id='school-road-service' class='service-page-conts'>
                       <ul id='school-road-status' class='clear'>
-                        <li class='school-road-status-list'>
+                        <li class='category-status-list'>
                           <div class='status-response operation-response' data='true'>
                             <div class='status-icons'></div>
-                            <div id='operation-status-text' class='status-response-text'>
+                            <div class='operation-status-text status-response-text'>
                               <p>운영상태</p>
-                              <p><span id='operation-status'>정상작동</span></p>
+                              <p><span id='school-road-operation-status'>정상작동</span></p>
                             </div>
                           </div>
                         </li>
-                        <li class='school-road-status-list'>
+                        <li class='category-status-list'>
                           <div class='status-response purifier-response'>
                             <div class='status-icons'></div>
-                            <div id='purifier-status-text' class='status-response-text'>
+                            <div class='purifier-status-text status-response-text'>
                               <p>공기청정기</p>
-                              <p><span id='purifier-status'>1단</span> 가동</p>
+                              <p><span id='school-road-purifier-status'>1단</span> 가동</p>
                             </div>
                           </div>
                         </li>
-                        <li class='school-road-status-list'>
+                        <li class='category-status-list'>
                           <div class='status-response fog-response'>
                             <div class='status-icons'></div>
-                            <div id='fog-status-text' class='status-response-text'>
+                            <div class='fog-status-text status-response-text'>
                               <p>쿨링포그</p>
-                              <p><span id='fog-status'>3단</span> 가동</p>
+                              <p><span id='school-road-fog-status'>3단</span> 가동</p>
                             </div>
                           </div>
                         </li>
                       </ul>
-                      <ul id='school-road-device' class='clear'>
-                        <li class='school-road-device-list'>
-                          <a href='#' id='school-road-device-link' class='device-info-link'>
+                      <ul id='school-road-device' class='clear service-tab-info'>
+                        <li class='school-road-device-list service-tab-info-list'>
+                          <a id='school-road-device-link' class='device-info-link text-left'>
                             <p>통학로 운영정보<br>안내기</p>
                             <span class='link-icons'></span>
                           </a>
                         </li>
-                        <li class='school-road-device-list'>
-                          <a href='#' id='purifier-device-link' class='device-info-link'>
+                        <li class='school-road-device-list service-tab-info-list'>
+                          <a id='purifier-device-link' class='device-info-link text-left'>
                             <p>휀스연계형<br>공기정화장치</p>
                             <span class='link-icons'></span>
                           </a>
@@ -348,32 +348,46 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class='service-page-items'>
-                    <div class='service-page-header'>
-                      <div class='service-installation clear'>
-                        <div class='service-installation-items'>
-                          <a>춘의테크노파크</a>
-                        </div>
-                        <div class='service-installation-items'>
-                          <a>도당어울마당</a>
-                        </div>
-                        <div class='service-installation-items'>
-                          <a>이마트</a>
-                        </div>
-                        <div class='service-installation-items'>
-                          <a>상동 홈플러스</a>
-                        </div>
-                        <div class='service-installation-items'>
-                          <a>롯대백화점</a>
-                        </div>
-                        <div class='service-installation-items'>
-                          <a>부천시청</a>
-                        </div>
-                        <div class='service-installation-items'>
-                          <a>영광사거리</a>
-                        </div>
-                      </div>
+                    <div id='dust-service' class='service-page-conts'>
+                      <ul id='dust-status' class='clear'>
+                        <li class='category-status-list'>
+                          <div class='status-response operation-response' data='true'>
+                            <div class='status-icons'></div>
+                            <div class='operation-status-text status-response-text'>
+                              <p>운영상태</p>
+                              <p><span id='dust-operation-status'>정상작동</span></p>
+                            </div>
+                          </div>
+                        </li>
+                        <li class='category-status-list'>
+                          <div class='status-response fix-device-response'>
+                            <div class='status-icons'>
+                              <div id='water-pressures'>
+                                <p>수압</p>
+                                <p id='water-pressure-percentage'>70</p>
+                              </div>
+                            </div>
+                            <div id='fix-device-status-text' class='status-response-text'>
+                              <p>고정형저감장치</p>
+                              <p><span id='fix-device-status'>가동중</span></p>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                      <ul id='dust-device' class='clear service-tab-info'>
+                        <li class='dust-device-list service-tab-info-list'>
+                          <a id='dust-measure-device' class='device-info-link text-left'>
+                            <p>비산먼지<br>측정장치</p>
+                            <span class='link-icons'></span>
+                          </a>
+                        </li>
+                        <li class='dust-device-list service-tab-info-list'>
+                          <a id='dust-control-device' class='device-info-link text-left'>
+                            <p>비산먼지<br>제어기</p>
+                            <span class='link-icons'></span>
+                          </a>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                   <div class='service-page-items'>
@@ -401,6 +415,371 @@
                           <a>영광사거리</a>
                         </div>
                       </div>
+                    </div>
+                    <div id='subway-air-service' class='service-page-conts'>
+                      <ul id='subway-air-status' class='clear'>
+                        <li class='category-status-list'>
+                          <div class='status-response operation-response' data='true'>
+                            <div class='status-icons'></div>
+                            <div class='operation-status-text status-response-text'>
+                              <p>운영상태</p>
+                              <p><span id='subway-operation-status'>정상작동</span></p>
+                            </div>
+                          </div>
+                        </li>
+                        <li class='category-status-list'>
+                          <div class='status-response purifier-response'>
+                            <div class='status-icons'></div>
+                            <div class='purifier-status-text status-response-text'>
+                              <p>공기청정기</p>
+                              <p><span id='subway-purifier-status'>1단</span> 가동</p>
+                            </div>
+                          </div>
+                        </li>
+                        <li class='category-status-list'>
+                          <div class='status-response conditioner-response'>
+                            <div class='status-icons'></div>
+                            <div class='conditioner-status-text status-response-text'>
+                              <p>공조기</p>
+                              <p><span id='subway-conditioner-status'>가동중</span></p>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                      <ul id='subway-air-device' class='clear service-tab-info'>
+                        <li class='subway-device-list service-tab-info-list'>
+                          <a id='waiting-room-device-link' class='device-info-link text-left'>
+                            <p>대합실 <br>장비 상태</p>
+                            <span class='link-icons'></span>
+                          </a>
+                        </li>
+                        <li class='subway-device-list service-tab-info-list'>
+                          <a id='lift-device-link' class='device-info-link text-left'>
+                            <p>승강기<br>장비 상태</p>
+                            <span class='link-icons'></span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class='service-page-items'>
+                    <div class='service-page-header'>
+                      <div class='service-installation clear'>
+                        <div class='service-installation-items'>
+                          <a>춘의테크노파크</a>
+                        </div>
+                        <div class='service-installation-items'>
+                          <a>도당어울마당</a>
+                        </div>
+                        <div class='service-installation-items'>
+                          <a>이마트</a>
+                        </div>
+                        <div class='service-installation-items'>
+                          <a>상동 홈플러스</a>
+                        </div>
+                        <div class='service-installation-items'>
+                          <a>롯대백화점</a>
+                        </div>
+                        <div class='service-installation-items'>
+                          <a>부천시청</a>
+                        </div>
+                        <div class='service-installation-items'>
+                          <a>영광사거리</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div id='town-alram-service' class='service-page-conts'>
+                      <ul id='town-alram-status' class='clear'>
+                        <li class='category-status-list'>
+                          <div class='status-response operation-response' data='true'>
+                            <div class='status-icons'></div>
+                            <div class='operation-status-text status-response-text'>
+                              <p>운영상태</p>
+                              <p><span id='town-alram-operation-status'>정상작동</span></p>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                      <ul id='town-alram-device' class='clear service-tab-info'>
+                        <li class='town-alram-device-list service-tab-info-list'>
+                          <a id='dust-alram-device-link' class='device-info-link text-left'>
+                            <p>미세먼지 알림이 상태</p>
+                            <span class='link-icons'></span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id='device-pop'>
+              <div id='device-pop-layer'>
+                <a id='device-pop-close'><span class='sound-only'>통학로 운영정보, 공기정화장치 팝업 닫기</span></a>
+                <div id='device-pop-conts'>
+                  <div id='school-device-pop-datas'>
+                    <div class='device-pop-titles text-left'>
+                      <h3>통학로 운영정보 안내기 상태</h3>
+                    </div>
+                    <div id='school-device-data-table'>
+                      <table class='device-data-table'>
+                        <colgroup>
+                          <col width='210px'>
+                          <col width='155px'>
+                          <col width='155px'>
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th class='data-table-category' rowspan='2'>
+                              <div>
+                                <p>세부장비</p>
+                              </div>
+                            </th>
+                            <th class='data-table-category' colspan='2'>
+                              <div>
+                                <p>안내기 상태</p>
+                              </div>
+                            </th>
+                          </tr>
+                          <tr>
+                            <th>
+                              <div>
+                                <p>Zone#1</p>
+                              </div>
+                            </th>
+                            <th>
+                              <div>
+                                <p>Zone#2</p>
+                              </div>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th class='text-left'>
+                              <div>
+                                <p>미세먼지 측정기</p>
+                              </div>
+                            </th>
+                            <td>
+                              <div>
+                                <span class='status-true data-status'></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>
+                                <span class='status-true data-status'></span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th class='text-left'>
+                              <div>
+                                <p>온습도 측정기</p>
+                              </div>
+                            </th>
+                            <td>
+                              <div>
+                                <span class='status-true data-status'></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>
+                                <span class='status-true data-status'></span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th class='text-left'>
+                              <div>
+                                <p>내부 온도 측정기</p>
+                              </div>
+                            </th>
+                            <td>
+                              <div>
+                                <span class='status-true data-status'></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>
+                                <span class='status-true data-status'></span>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div id='purifier-pop-datas'>
+                    <div class='device-pop-titles text-left'>
+                      <h3>통학로 휀스 연계형 공기 정화장치 상태</h3>
+                    </div>
+                    <div id='purifier-device-data-table'>
+                      <table class='device-data-table'>
+                        <colgroup>
+                          <col width='120px'>
+                          <col width='50px'>
+                          <col width='50px'>
+                          <col width='50px'>
+                          <col width='50px'>
+                          <col width='50px'>
+                          <col width='50px'>
+                          <col width='50px'>
+                          <col width='50px'>
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th class='data-table-category' rowspan='2'>
+                              <div>
+                                <p>세부장비</p>
+                              </div>
+                            </th>
+                            <th class='data-table-category' colspan='8'>
+                              <div>
+                                <p>안내기상태</p>
+                              </div>
+                            </th>
+                          </tr>
+                          <tr>
+                            <th>
+                              <div>
+                                <p>#1</p>
+                              </div>
+                            </th>
+                            <th>
+                              <div>
+                                <p>#2</p>
+                              </div>
+                            </th>
+                            <th>
+                              <div>
+                                <p>#3</p>
+                              </div>
+                            </th>
+                            <th>
+                              <div>
+                                <p>#4</p>
+                              </div>
+                            </th>
+                            <th>
+                              <div>
+                                <p>#5</p>
+                              </div>
+                            </th>
+                            <th>
+                              <div>
+                                <p>#6</p>
+                              </div>
+                            </th>
+                            <th>
+                              <div>
+                                <p>#7</p>
+                              </div>
+                            </th>
+                            <th>
+                              <div>
+                                <p>#8</p>
+                              </div>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th class='text-left'>
+                              <div>
+                                <p>쿨링포그</p>
+                              </div>
+                            </th>
+                            <td>
+                              <div>
+                                <span class='status-true data-status'></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>
+                                <span class='status-true data-status'></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>
+                                <span class='status-true data-status'></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>
+                                <span class='status-true data-status'></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>
+                                <span class='status-true data-status'></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>
+                                <span class='status-true data-status'></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>
+                                <span class='status-true data-status'></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>
+                                <span class='status-true data-status'></span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th class='text-left'>
+                              <div>
+                                <p>공기청정기</p>
+                              </div>
+                            </th>
+                            <td>
+                              <div>
+                                <span class='status-true data-status'></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>
+                                <span class='status-true data-status'></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>
+                                <span class='status-true data-status'></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>
+                                <span class='status-true data-status'></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>
+                                <span class='status-true data-status'></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>
+                                <span class='status-true data-status'></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>
+                                <span class='status-true data-status'></span>
+                              </div>
+                            </td>
+                            <td>
+                              <div>
+                                <span class='status-true data-status'></span>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                 </div>
@@ -420,7 +799,7 @@
           </div>
           <ul id='data-collection-lists' class='data-category-lists clear'>
             <li class='data-category-items'>
-              <div class='data-conts'>
+              <div class='data-conts text-center'>
                 <div>
                   <div class='data-graph'>
                     <div>
@@ -438,7 +817,7 @@
               </div>
             </li>
             <li class='data-category-items'>
-              <div class='data-conts'>
+              <div class='data-conts text-center'>
                 <div>
                   <div class='data-graph'>
                     <div>
@@ -456,7 +835,7 @@
               </div>
             </li>
             <li class='data-category-items'>
-              <div class='data-conts'>
+              <div class='data-conts text-center'>
                 <div>
                   <div class='data-graph'>
                     <div>
@@ -474,7 +853,7 @@
               </div>
             </li>
             <li class='data-category-items'>
-              <div class='data-conts'>
+              <div class='data-conts text-center'>
                 <div>
                   <div class='data-graph'>
                     <div>
@@ -505,7 +884,7 @@
           </div>
           <ul id='user-data-collection' class='data-category-lists clear'>
             <li class='data-category-items'>
-              <div class='data-conts'>
+              <div class='data-conts text-center'>
                 <div>
                   <div class='potal-data-icons'>
                     <img src='/img/pbb/data-potal-icon-1.png' alt='potal-data-icon' />
@@ -529,7 +908,7 @@
               </div>
             </li>
             <li class='data-category-items'>
-              <div class='data-conts'>
+              <div class='data-conts text-center'>
                 <div>
                   <div class='potal-data-icons'>
                     <img src='/img/pbb/data-potal-icon-2.png' alt='potal-data-icon' />
@@ -553,7 +932,7 @@
               </div>
             </li>
             <li class='data-category-items'>
-              <div class='data-conts'>
+              <div class='data-conts text-center'>
                 <div>
                   <div class='potal-data-icons'>
                     <img src='/img/pbb/data-potal-icon-3.png' alt='potal-data-icon' />
@@ -577,7 +956,7 @@
               </div>
             </li>
             <li class='data-category-items'>
-              <div class='data-conts'>
+              <div class='data-conts text-center'>
                 <div>
                   <div class='potal-data-icons'>
                     <img src='/img/pbb/data-potal-icon-4.png' alt='potal-data-icon' />
@@ -616,7 +995,7 @@
             <div id='visitor-tab-nav'>
               <ul id='visitor-nav-list' class='clear'>
                 <li class='visitor-nav-items'>
-                  <a>방문자 현황</a>
+                  <a class='active'>방문자 현황</a>
                 </li>
                 <li class='visitor-nav-items'>
                   <a>시민 미세먼지 측정 현황</a>
@@ -624,121 +1003,124 @@
               </ul>
             </div>
           </div>
-          <div id='tab-contents'>
-            <div class='tab-cont-items'>
-              <div id='visitor-chart-header' class='clear'>
-                <ul id='visitor-sort-list'>
-                  <!-- Data -->
-                  <!-- 방문자 정렬 방식 이벤트 -->
-                  <li class='visitor-sort-items'>
-                    <a class='active'>일별</a>
-                  </li>
-                  <li class='visitor-sort-items'>
-                    <a>주별</a>
-                  </li>
-                  <li class='visitor-sort-items'>
-                    <a>월별</a>
-                  </li>
-                </ul>
-                <ul id='visitor-icon-list'>
-                  <li class='visitor-icon-items'>
-                    <span id='visitor' class='chart-color'></span>
-                    <span>방문자 수</span>
-                  </li>
-                  <li class='visitor-icon-items'>
-                    <span id='re-visitor' class='chart-color'></span>
-                    <span>재 방문자 수</span>
-                  </li>
-                  <li class='visitor-icon-items'>
-                    <span id='new-visitor' class='chart-color'></span>
-                    <span>신규 방문자 수</span>
-                  </li>
-                </ul>
-              </div>
+          <div id='visitor-chart-header' class='clear'>
+            <ul id='visitor-sort-list'>
               <!-- Data -->
-              <!-- 차트영역 main.js tabEvent함수 참조 -->
-              <div id='visitor-charts'></div>
-              <ul id='visitor-data-lists' class='data-category-lists clear'>
-                <li class='data-category-items'>
-                  <div class='data-conts'>
-                    <div>
-                      <div id='best-visitor-sort'>
-                        <ul id='best-visitor-list' class='clear'>
-                          <li class='best-visitor-items'>
-                            <a class='active'>일별</a>
-                          </li>
-                          <li class='best-visitor-items'>
-                            <a>주별</a>
-                          </li>
-                          <li class='best-visitor-items'>
-                            <a>월별</a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class='data-graph'>
-                        <div>
-                          <!-- Data -->
-                          <!-- 최다 방문 동 BEST 3 데이터(다이어그램 차트) -->
-                          <!-- 다이어그램 background : #2683e0, #3ccc7c, #ffbc60 -->
-                          <img src='/img/pbb/diagram-chart-1.jpg' alt='' />
-                        </div>
-                      </div>
-                      <div class='data-link'>
-                        <h3>최다 방문 동 BEST 3</h3>
-                        <a href='#'>상세보기</a>
-                        <!-- Data -->
-                        <!-- 금일 날짜 표기 -->
-                        <p class='title-date'><span class='today-date'>7월 8일 23:20</span> 기준</p>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class='data-category-items'>
-                  <div class='data-conts'>
-                    <div>
-                      <div class='data-graph'>
-                        <div>
-                          <!-- Data -->
-                          <!-- 전체 컨텐츠 만족도 현황 데이터(다이어그램 차트) -->
-                          <!-- 다이어그램 background : #2683e0, #3ccc7c, #ffbc60 -->
-                          <img src='/img/pbb/diagram-chart-1.jpg' alt=''>
-                        </div>
-                      </div>
-                      <div class='data-link'>
-                        <h3>전체 컨텐츠 만족도 현황</h3>
-                        <a href='#'>상세보기</a>
-                        <!-- Data -->
-                        <!-- 금일 날짜 표기 -->
-                        <p class='title-date'><span class='today-date'>7월 8일 23:20</span> 기준</p>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class='data-category-items'>
-                  <div class='data-conts'>
-                    <div>
-                      <div class='data-graph'>
-                        <div>
-                          <!-- Data -->
-                          <!-- 페이지별 뷰 통계 현황(차트) -->
-                          <img src='/img/pbb/diagram-chart-1.jpg' alt='' />
-                        </div>
-                      </div>
-                      <div class='data-link'>
-                        <h3>페이지별 뷰 통계 현황</h3>
-                        <a href='#'>상세보기</a>
-                        <!-- Data -->
-                        <!-- 금일 날짜 표기 -->
-                        <p class='title-date'><span class='today-date'>7월 8일 23:20</span> 기준</p>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
+              <!-- 방문자 정렬 방식 이벤트 -->
+              <li class='visitor-sort-items'>
+                <a class='active'>일별</a>
+              </li>
+              <li class='visitor-sort-items'>
+                <a>주별</a>
+              </li>
+              <li class='visitor-sort-items'>
+                <a>월별</a>
+              </li>
+            </ul>
+            <ul id='visitor-icon-list'>
+              <li class='visitor-icon-items'>
+                <span id='visitor' class='chart-color'></span>
+                <span>방문자 수</span>
+              </li>
+              <li class='visitor-icon-items'>
+                <span id='re-visitor' class='chart-color'></span>
+                <span>재 방문자 수</span>
+              </li>
+              <li class='visitor-icon-items'>
+                <span id='new-visitor' class='chart-color'></span>
+                <span>신규 방문자 수</span>
+              </li>
+            </ul>
+          </div>
+          <div id='tab-contents'>
+            <div class='tab-cont-items active'>
+              <!-- Data -->
+              <!-- 차트영역 -->
+              <div id='visitor-charts'>
+                <div style="position:relative;width:100%;height:100%;border:20px solid #ffcccc;">
+                  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%, -50%)">방문자 현황 차트영역</div>
+                </div>
+              </div>
             </div>
-            <div class='tab-cont-items'>
-
-            </div>
+          </div>
+          <div id='visitor-datas'>
+            <ul id='visitor-data-lists' class='data-category-lists clear'>
+              <li class='data-category-items'>
+                <div class='data-conts text-center'>
+                  <div>
+                    <div id='best-visitor-sort'>
+                      <ul id='best-visitor-list' class='clear'>
+                        <li class='best-visitor-items'>
+                          <a class='active'>일별</a>
+                        </li>
+                        <li class='best-visitor-items'>
+                          <a>주별</a>
+                        </li>
+                        <li class='best-visitor-items'>
+                          <a>월별</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class='data-graph'>
+                      <div>
+                        <!-- Data -->
+                        <!-- 최다 방문 동 BEST 3 데이터(다이어그램 차트) -->
+                        <!-- 다이어그램 background : #2683e0, #3ccc7c, #ffbc60 -->
+                        <img src='/img/pbb/diagram-chart-1.jpg' alt='' />
+                      </div>
+                    </div>
+                    <div class='data-link'>
+                      <h3>최다 방문 동 BEST 3</h3>
+                      <a href='#'>상세보기</a>
+                      <!-- Data -->
+                      <!-- 금일 날짜 표기 -->
+                      <p class='title-date'><span class='today-date'>7월 8일 23:20</span> 기준</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class='data-category-items'>
+                <div class='data-conts text-center'>
+                  <div>
+                    <div class='data-graph'>
+                      <div>
+                        <!-- Data -->
+                        <!-- 전체 컨텐츠 만족도 현황 데이터(다이어그램 차트) -->
+                        <!-- 다이어그램 background : #2683e0, #3ccc7c, #ffbc60 -->
+                        <img src='/img/pbb/diagram-chart-1.jpg' alt=''>
+                      </div>
+                    </div>
+                    <div class='data-link'>
+                      <h3>전체 컨텐츠 만족도 현황</h3>
+                      <a href='#'>상세보기</a>
+                      <!-- Data -->
+                      <!-- 금일 날짜 표기 -->
+                      <p class='title-date'><span class='today-date'>7월 8일 23:20</span> 기준</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class='data-category-items'>
+                <div class='data-conts text-center'>
+                  <div>
+                    <div class='data-graph'>
+                      <div>
+                        <!-- Data -->
+                        <!-- 페이지별 뷰 통계 현황(차트) -->
+                        <img src='/img/pbb/diagram-chart-1.jpg' alt='' />
+                      </div>
+                    </div>
+                    <div class='data-link'>
+                      <h3>페이지별 뷰 통계 현황</h3>
+                      <a href='#'>상세보기</a>
+                      <!-- Data -->
+                      <!-- 금일 날짜 표기 -->
+                      <p class='title-date'><span class='today-date'>7월 8일 23:20</span> 기준</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

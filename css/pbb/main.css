@@ -5,7 +5,7 @@
 .section-title > .title-date {font-size:17px;color:#393d45;}
 .data-category-lists > .data-category-items {float:left;width:calc((100% - (10px * 3)) / 4);margin-right:10px;}
 .data-category-lists > .data-category-items:last-child {margin-right:0;}
-.data-category-lists > .data-category-items > .data-conts {text-align: center;}
+.data-category-lists > .data-category-items > .data-conts {}
 .data-category-lists > .data-category-items > .data-conts > div{position:relative;}
 .data-category-lists > .data-category-items > .data-conts .data-graph {margin-bottom:30px;}
 .data-category-lists > .data-category-items > .data-conts .data-link > h3 {color:#191d25;font-weight: 600;font-size:24px;letter-spacing: -2px;}
@@ -19,7 +19,7 @@
 #main-visual-conts > #map-wrap {width:calc(100% - 655px)}
 #main-visual-conts > #map-wrap > #map{width:100%;height:100%;}
 
-#service-state {width:655px;background:#fff;box-shadow: 0px 5px 23px 3px rgba(0,0,0,0.5);position:relative;z-index:1;border-bottom:1px solid #d6dade;text-align:center;padding:20px 25px;}
+#service-state {width:655px;background:#fff;box-shadow: 0px 5px 23px 3px rgba(0,0,0,0.5);position:relative;z-index:1;border-bottom:1px solid #d6dade;padding:20px 25px;}
 #service-state > #service-conts {position: relative;padding-top:50px;}
 
 #service-state > #service-conts > #state-info {position: absolute;top:0;right:0;}
@@ -39,42 +39,90 @@
 #service-state > #service-conts #service-tab-pages > .service-page-items:not(.active) {display:none;}
 
 #service-state .service-page-header > .service-installation .service-installation-items {outline:none;}
+#service-state .slick-prev {left:-30px;}
+#service-state .slick-next {right:-30px;}
+#service-state .slick-prev, 
+#service-state .slick-next {width:30px; height:30px;border-radius: 50%;transition:0.3s;}
+#service-state .slick-prev {background:url('/img/pbb/common/gray-prev-arrow.png') no-repeat center / auto}
+#service-state .slick-next {background:url('/img/pbb/common/gray-next-arrow.png') no-repeat center / auto}
+#service-state .service-page-header:hover .slick-prev {background:#393d45 url('/img/pbb/common/white-prev-arrow.png') no-repeat center / auto}
+#service-state .service-page-header:hover .slick-next {background:#393d45 url('/img/pbb/common/white-next-arrow.png') no-repeat center / auto}
+#service-state .slick-prev:before,
+#service-state .slick-next:before {content:'';}
 #service-state .service-page-header > .service-installation .service-installation-items > a {display:block;outline:none;cursor:pointer;color:#696d75;font-size:15px;transform:skew(-0.03deg);font-weight: 600;padding:10px 0;border-radius: 20px;width:calc(100% - 3px);}
 #service-state .service-page-header > .service-installation .service-installation-items > a.active {color:#fff;background:#2c64cf;}
 
 #service-state .service-page-conts {margin-top:50px;}
-#service-state #school-road-status > .school-road-status-list {float:left;width:calc((100% - (20px * 2)) / 3);margin-right:20px;}
-#service-state #school-road-status > .school-road-status-list:last-child {margin-right:0;}
-#service-state #school-road-status > .school-road-status-list > .status-response {padding:25px 0;border-radius: 10px;}
+.category-status-list {float:left;width:calc((100% - (20px * 2)) / 3);margin-right:20px;}
+.category-status-list:last-child {margin-right:0;}
+.category-status-list > .status-response {padding:25px 0;border-radius: 10px;}
 
-#service-state #school-road-status > .school-road-status-list > .status-response > .status-icons {width:84px;height:84px;background:#fff;margin:0 auto;border-radius:50%;background-position:center;background-repeat: no-repeat;background-size:auto;}
-#service-state #school-road-status > .school-road-status-list > .status-response > .status-response-text {margin-top:19px;font-weight:600;transform:skew(-0.03deg)}
-#service-state #school-road-status > .school-road-status-list > .status-response > .status-response-text > p:nth-child(1) {font-size:16px;}
-#service-state #school-road-status > .school-road-status-list > .status-response > .status-response-text > p:nth-child(2) {font-size:22px;margin-top:9px;}
+.category-status-list > .status-response > .status-icons {width:84px;height:84px;background:#fff;margin:0 auto;border-radius:50%;background-position:center;background-repeat: no-repeat;background-size:auto;position:relative;}
+.category-status-list > .status-response > .status-response-text {margin-top:19px;font-weight:600;transform:skew(-0.03deg)}
+.category-status-list > .status-response > .status-response-text > p:nth-child(1) {font-size:16px;}
+.category-status-list > .status-response > .status-response-text > p:nth-child(2) {font-size:22px;margin-top:9px;}
 
-#service-state #school-road-status > .school-road-status-list > .status-response.operation-response[data='true'] {background-color:#dff7de;}
-#service-state #school-road-status > .school-road-status-list > .status-response.operation-response[data='true'] > .status-icons {background-image:url('/img/pbb/service-icon/operation-icon.png');background-position: 47% 47%;}
-#service-state #school-road-status > .school-road-status-list > .status-response.operation-response[data='true'] > #operation-status-text {color:#266c22;}
+.category-status-list > .status-response.operation-response[data='true'] {background-color:#dff7de;}
+.category-status-list > .status-response.operation-response[data='true'] > .status-icons {background-image:url('/img/pbb/service-icon/operation-icon.png');background-position: 47% 47%;}
+.category-status-list > .status-response.operation-response[data='true'] > .operation-status-text {color:#266c22;}
 
-#service-state #school-road-status > .school-road-status-list > .status-response.purifier-response {background-color:#d9f6ff;}
-#service-state #school-road-status > .school-road-status-list > .status-response.purifier-response > .status-icons {background-image:url('/img/pbb/service-icon/purifier-icon.png');}
-#service-state #school-road-status > .school-road-status-list > .status-response.purifier-response > #purifier-status-text {color:#2b5d96;}
+.category-status-list > .status-response.purifier-response {background-color:#d9f6ff;}
+.category-status-list > .status-response.purifier-response > .status-icons {background-image:url('/img/pbb/service-icon/purifier-icon.png');}
+.category-status-list > .status-response.purifier-response > .purifier-status-text {color:#2b5d96;}
 
-#service-state #school-road-status > .school-road-status-list > .status-response.fog-response {background-color:#d9f6ff;}
-#service-state #school-road-status > .school-road-status-list > .status-response.fog-response > .status-icons {background-image:url('/img/pbb/service-icon/fog-icon.png');}
-#service-state #school-road-status > .school-road-status-list > .status-response.fog-response > #fog-status-text {color:#2b5d96;}
+.category-status-list > .status-response.fog-response {background-color:#d9f6ff;}
+.category-status-list > .status-response.fog-response > .status-icons {background-image:url('/img/pbb/service-icon/fog-icon.png');}
+.category-status-list > .status-response.fog-response > .fog-status-text {color:#2b5d96;}
 
-#service-state #school-road-device {margin-top:40px;}
-#service-state #school-road-device > .school-road-device-list {float:left; width: calc((100% - 20px) / 2); margin-right: 20px;}
-#service-state #school-road-device > .school-road-device-list:last-child {margin-right:0;}
-#service-state #school-road-device > .school-road-device-list > .device-info-link {border-radius: 10px;padding:30px;height:240px;overflow:hidden;background-position:center;background-repeat: no-repeat;background-size: auto;text-align:left;display:block;box-sizing: border-box;}
-#service-state #school-road-device > .school-road-device-list > .device-info-link > p {color:#fff;font-size:20px;line-height:1.4}
-#service-state #school-road-device > .school-road-device-list > .device-info-link > .link-icons {display:inline-block;width:28px;height:28px;background-color:#717178;border-radius: 50%;margin-top:20px;}
+.category-status-list > .status-response.conditioner-response {background-color:#d9e7ff;}
+.category-status-list > .status-response.conditioner-response > .status-icons {background-image:url('/img/pbb/service-icon/air-conditioner-icon.png');}
+.category-status-list > .status-response.conditioner-response > .conditioner-status-text {color:#2b4d96;}
 
-#service-state #school-road-device > .school-road-device-list > .device-info-link#school-road-device-link {background-image:url('/img/pbb/service-icon/device-icon-01.png')}
+.category-status-list > .status-response.fix-device-response {background-color:#fce5dc;}
+.category-status-list > .status-response.fix-device-response > .status-icons {}
+.category-status-list > .status-response.fix-device-response > .status-icons > #water-pressures {position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);color:#2c64cf;font-size:15px;font-weight: 600;}
+.category-status-list > .status-response.fix-device-response > .status-icons #water-pressure-percentage {font-size:30px;font-weight: 900;margin-top:7px;}
+.category-status-list > .status-response.fix-device-response > #fix-device-status-text {color:#7a4f3e;}
 
-#service-state #school-road-device > .school-road-device-list > .device-info-link#purifier-device-link {background-image:url('/img/pbb/service-icon/device-icon-02.png')}
+#service-state .service-tab-info {margin-top:40px;}
+#service-state .service-tab-info > .service-tab-info-list {float:left; width: calc((100% - 20px) / 2); margin-right: 20px;}
+#service-state .service-tab-info > .service-tab-info-list:last-child {margin-right:0;}
+#service-state .service-tab-info > .service-tab-info-list > .device-info-link {border-radius: 10px;padding:30px;height:240px;overflow:hidden;background-position:center;background-repeat: no-repeat;background-size: auto;display:block;box-sizing: border-box;cursor:pointer;}
+#service-state .service-tab-info > .service-tab-info-list > .device-info-link > p {color:#fff;font-size:20px;line-height:1.4}
+#service-state .service-tab-info > .service-tab-info-list > .device-info-link > .link-icons {display:inline-block;width:28px;height:28px;border-radius: 50%;margin-top:20px;background:#717178 url('/img/pbb/common/dark-right-arrow.png') no-repeat center / auto;}
 
+#service-state .service-tab-info#school-road-device > .school-road-device-list > .device-info-link#school-road-device-link {background-image:url('/img/pbb/service-icon/device-link-bg-01.png')}
+#service-state .service-tab-info#school-road-device > .school-road-device-list > .device-info-link#purifier-device-link {background-image:url('/img/pbb/service-icon/device-link-bg-02.png')}
+
+#service-state .service-tab-info#dust-device > .dust-device-list > .device-info-link#dust-measure-device {background-image:url('/img/pbb/service-icon/device-link-bg-01.png')}
+#service-state .service-tab-info#dust-device > .dust-device-list > .device-info-link#dust-control-device {background-image:url('/img/pbb/service-icon/device-link-bg-02.png')}
+
+#service-state .service-tab-info#subway-air-device > .subway-device-list > .device-info-link#waiting-room-device-link {background-image:url('/img/pbb/service-icon/device-link-bg-01.png')}
+#service-state .service-tab-info#subway-air-device > .subway-device-list > .device-info-link#lift-device-link {background-image:url('/img/pbb/service-icon/device-link-bg-02.png')}
+
+#service-state .service-tab-info#town-alram-device > .town-alram-device-list > .device-info-link#dust-alram-device-link {background-image:url('/img/pbb/service-icon/device-link-bg-01.png')}
+
+
+#service-state #device-pop {background-color:#191d25;width:calc(100% - 7px);height:100%;position:absolute;right:0;top:0;padding:28px;color:#f4f8fb;display:none;}
+#service-state #device-pop > #device-pop-layer {position: relative;padding:52px 35px;}
+#service-state #device-pop > #device-pop-layer > #device-pop-close {display:inline-block;width:20px;height:20px;position:absolute;right:0;top:0;background:url('/img/pbb/common/bright-close.png') no-repeat center / auto;cursor:pointer;z-index:1;}
+
+#service-state #device-pop > #device-pop-layer > #device-pop-conts .device-pop-titles > h3 {font-size:24px;line-height:52px;padding-left:75px;margin-bottom:20px;}
+#service-state #device-pop > #device-pop-layer > #device-pop-conts .device-data-table {width:100%;}
+#service-state #device-pop > #device-pop-layer > #device-pop-conts .device-data-table td, 
+#service-state #device-pop > #device-pop-layer > #device-pop-conts .device-data-table th {border:1px solid #393d45;height:42px;}
+#service-state #device-pop > #device-pop-layer > #device-pop-conts .device-data-table th p {transform:rotate(-0.03deg);}
+#service-state #device-pop > #device-pop-layer > #device-pop-conts .device-data-table th.text-left {padding-left:20px;}
+#service-state #device-pop > #device-pop-layer > #device-pop-conts .device-data-table th.data-table-category {background-color:#15181f; color:#99b4e2;}
+#service-state #device-pop > #device-pop-layer > #device-pop-conts .device-data-table .data-status {display:inline-block;width:12px;height:12px;border-radius: 50%;}
+#service-state #device-pop > #device-pop-layer > #device-pop-conts .device-data-table .status-true {background-color:#04ba6f;}
+#service-state #device-pop > #device-pop-layer > #device-pop-conts .device-data-table .status-false {}
+
+#service-state #device-pop > #device-pop-layer > #device-pop-conts > #school-device-pop-datas > .device-pop-titles > h3 {background:url('/img/pbb/service-icon/device-pop-icon-01.png') no-repeat center left / auto;}
+
+
+#service-state #device-pop > #device-pop-layer > #device-pop-conts > #purifier-pop-datas {margin-top:80px;}
+#service-state #device-pop > #device-pop-layer > #device-pop-conts > #purifier-pop-datas > .device-pop-titles > h3 {background:url('/img/pbb/service-icon/device-pop-icon-02.png') no-repeat center left / auto;}
 
 /* 데이터수집/처리현황 */
 #data-state {background:#f4f8fb;}
@@ -106,7 +154,8 @@
 #visitor-state #visitor-nav-list .visitor-nav-items > a.active {color:#2c64cf;}
 #visitor-state #visitor-nav-list .visitor-nav-items > a.active::after {width:100%;height:4px;display:block;content:"";background-color:#2c64cf;position:absolute;bottom:0;}
 
-#visitor-state #tab-contents {margin-top:40px;}
+#visitor-state #visitor-chart-header {margin-top:40px;}
+#visitor-state #tab-contents {}
 #visitor-state #tab-contents .tab-cont-items:not(.active) {display:none;}
 
 #visitor-state #visitor-chart-header > #visitor-sort-list {float:left;}
