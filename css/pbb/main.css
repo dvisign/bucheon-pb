@@ -10,8 +10,6 @@
 .data-category-lists > .data-category-items > .data-conts .data-graph {margin-bottom:30px;}
 .data-category-lists > .data-category-items > .data-conts .data-link > h3 {color:#191d25;font-weight: 600;font-size:24px;letter-spacing: -2px;}
 
-#contents {padding-top:120px;}
-
 /* 메인 비주얼 */
 #main-visual.sections {padding:0;}
 #main-visual-conts {height:880px;overflow-y: hidden;}

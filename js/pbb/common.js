@@ -40,3 +40,22 @@ var tabEvent = function(obj) {
   };
   return init();
 };
+
+
+$(document).ready(function() {
+  // 네비게이션 마우스 오버
+  var subNavEl = $('.sub-nav-list');
+  var subNavBg = $('#sub-nav-bg');
+  $('.nav-items').mouseover(function() {
+    subNavBg.stop().slideDown();
+    subNavEl.stop().slideDown();
+  });
+  $('#headers, .nav-items').mouseleave(function() {
+    subNavEl.stop().slideUp();
+    subNavBg.stop().slideUp();
+  });
+  $('.nav-items > a').on('focus', function() {
+    subNavBg.stop().slideDown();
+    subNavEl.stop().slideDown();
+  });
+});

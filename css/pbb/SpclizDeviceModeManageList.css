@@ -1,0 +1,13 @@
+/* class */
+.conts-section {margin-bottom:75px;}
+.submit-btns {display:inline-block;cursor: pointer;background-color:#e6eaee;color:#63666b;padding:9px 29px;border-radius: 20px;font-size:15px;font-weight:600;transform: skew(-0.03deg);margin-left:20px;border:0;}
+/* 조회 폼 */
+#service-reference {background:#f5f7f9;padding:35px 60px 35px 70px;border:1px solid #e5e7e9;}
+#service-forms > div {float:left;}
+#service-forms > #service-mode-form {margin:0 75px 0 38px;}
+#service-forms > #service-reference-btn {padding-left:55px;border-left:1px solid #d6dade;}
+/* 예외정책 */
+#exception-policy {padding:40px 0;border-top:1px solid #999da5; border-bottom:1px solid #999da5;}
+.exception-policy-items {float:left;margin:0 10px 10px 0;}
+.exception-policy-items:nth-child(6) {margin-right:0;}
+.exception-policy-label {min-width:200px}

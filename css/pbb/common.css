@@ -3,21 +3,58 @@
 .clear::after {display:block;content:"";clear:both;}
 
 /* header */
-#headers {background:#fff;border-bottom:1px solid #d6dade;position: fixed;width:100%;top:0;left:0;z-index:10000}
+#headers {background:#fff;border-bottom:1px solid #d6dade;position: fixed;width:100%;top:0;left:0;z-index:10000;}
+
+/* nav */
 #navs > div {float:left;}
 #navs > #logos,
 #navs > #login-info {width: 320px;}
 #navs > #logos {padding:30px 0 0 25px;}
 
-#navs > #nav-wrapper {width: calc(100% - (320px * 2)); text-align:center;padding:54px 0 44px 0;}
+#navs > #nav-wrapper {width: calc(100% - (320px * 2)); text-align:center;}
 #navs > #nav-wrapper > #nav-lists {display:inline-block;} 
-#navs > #nav-wrapper > #nav-lists > .nav-items {float:left;margin:0 30px;} 
-#navs > #nav-wrapper > #nav-lists > .nav-items > a{font-size:19px;font-weight: bold;} 
+#navs > #nav-wrapper > #nav-lists > .nav-items {float:left;position: relative;padding:54px 13px 44px 13px;} 
+#navs > #nav-wrapper > #nav-lists > .nav-items > a {font-size:19px;font-weight: bold;}
+#navs > #nav-wrapper > #nav-lists > .nav-items > .sub-nav-list {position: absolute;z-index:1;left:0; right:0; margin:0 auto;top: 100%;display:none;}
 
 #navs > #login-info {padding-top:57px;}
 #navs > #login-info > #login-msg {display:inline-block;color:#696d75;font-weight: 600;transform: skew(-0.03deg);}
 #navs > #login-info > #login-msg > span {color:#2c64cf;}
 #navs > #login-info > #logout-btn {margin-left:15px;border:1px solid #d1d5da;color:#63666b;padding: 10px 16px;border-radius:20px;}
+
+#sub-nav-bg {width:100%;height:300px;position:absolute;top:100%;left:0;background:#fff;border-top:1px solid #d6dade;border-bottom:1px solid #d6dade;display:none;}
+
+/* pages */
+#contents {padding-top:120px;}
+#subpage-navs {background-color:#f5f7f9;border-bottom:1px solid #e7e9ec;}
+#subpage-nav-links > .subpage-nav-items {float:left;border-right:1px solid #e7e9ec;position:relative;}
+#subpage-nav-links > .subpage-nav-items#sub-nav-home-link {border-left:1px solid #e7e9ec;} 
+#subpage-nav-links > .subpage-nav-items:not(#sub-nav-home-link) > a {line-height:49px;height:49px;font-size:15px;display:block; cursor:pointer;background:url('/img/pbb/common/selector-down-arrow.png') no-repeat 190px center / auto;width:210px;padding-left:15px;}
+#sub-nav-home-link > a {background:url('/img/pbb/common/home-icon.png') no-repeat center / auto;display:block;width:49px;height:49px;}
+#subpage-navs .sub-nav-selector {display:none;position:absolute;background-color:#f5f7f9;width:100%;left:0;top:100%;border:1px solid #e7e9ec;}
+#subpage-navs .sub-nav-selector .select-links {display:block;height:49px;line-height:49px;padding-left:20px;}
+
+.subpage-title {margin:80px auto 39px auto;}
+.subpage-title > h3 {font-size:32px;font-weight: 600;color:#0c1e42;}
+.subpage-cate-title {margin-bottom:15px;}
+.subpage-cate-title > h4 {color:#0c1e42;font-weight: 600;font-size:22px;display:inline-block;}
+
+/* form components */
+.select-form {display:inline-block;width:300px;height:50px;line-height:50px;font-size:15px;border-radius: 0;padding-left:15px;border:1px solid #d6dade;background:#fff url('/img/pbb/common/selector-down-arrow.png') no-repeat 275px center / auto;font-weight: 600;color:#696d75;
+-moz-appearance: none;
+-webkit-appearance: none;
+appearance: none;
+}
+.select-label {color:#696d75; font-size:15px;font-weight:bold;transform: skew(-0.03deg);display:inline-block;margin-right:15px;}
+
+.checkbox-form {width:0;height:0;overflow: hidden;}
+.checkbox-form + .checkbox-img {display:inline-block;width:22px; height:22px;border:1px solid #d6dade;border-radius: 3px;overflow:hidden;}
+.checkbox-form:checked + .checkbox-img {background:url('/img/pbb/common/checked_img.png') no-repeat center / auto;}
+.checkbox-label-text {display:inline-block;color:#696d75;font-size:15px;position: relative;top:-6px;font-weight: 600;transform: skew(-0.03deg);}
+.checkbox-label {display:inline-block;padding:20px;border:1px solid #e6eaee;}
+
+.btn {display:inline-block;font-size:16px;border:0;padding:17px 75px;background-color:#596d93;color:#fff;cursor: pointer;}
+.btn.btn-round {border-radius:30px;}
 
 /* footer */
 #footers {height:240px;background-color:#191d25;}

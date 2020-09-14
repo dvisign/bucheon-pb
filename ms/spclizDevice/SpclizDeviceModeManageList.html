@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>장치 운영 모드 관리</title>
+  <link href='/css/pbb/reset.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/common.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/SpclizDeviceModeManageList.css' type='text/css' rel='stylesheet'>
+  <!-- jquery -->
+  <script type='text/javascript' src='/resources/jquery/jquery-3.5.1.min.js'></script>
+  <!-- common JS -->
+  <script type='text/javascript' src='/js/pbb/common.js'></script>
+</head>
+<body>
+  <div id='wrap'>
+    <!-- header -->
+    <div id='headers'>
+      <div class='container-fluid'>
+        <div id='navs' class='clear'>
+          <div id='logos'>
+            <h1><img src='/img/pbb/logo.png' alt='타이틀' /></h1>
+          </div>
+          <div id='nav-wrapper'>
+            <ul id='nav-lists'>
+              <li class='nav-items'>
+                <a href='/ms/inventory/ArpltnExhstBplcList.html'>인벤토리</a>
+                <ul class='sub-nav-list'>
+                  <li class='sub-nav-items'>
+                    <a href='#'>산업 부문</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>수송 부문</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>생활 부문</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>기타 부문</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>개요 관리</a>
+                  </li>
+                </ul>
+              </li>
+              <li class='nav-items'>
+                <a href='#'>수집연계</a>
+                <ul class='sub-nav-list'>
+                  <li class='sub-nav-items'>
+                    <a href='#'>수집장비 데이터용 현황표</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>수집연계 현황</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>수집연계 이력</a>
+                  </li>
+                </ul>
+              </li>
+              <li class='nav-items'>
+                <a href='#'>분석정보</a>
+                <ul class='sub-nav-list'>
+                  <li class='sub-nav-items'>
+                    <a href='#'>우리동네 미세먼지</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>공업단지 미세먼지</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>통학로 미세먼지</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>지하철 미세먼지</a>
+                  </li>
+                </ul>
+              </li>
+              <li class='nav-items'>
+                <a href='#'>특화단지 장치</a>
+                <ul class='sub-nav-list'>
+                  <li class='sub-nav-items'>
+                    <a href='#'>특화단지 장치상태 현황</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>특화단지 장치상태 이력</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>특화단지 장치 관리</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>측정소 관리</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>사이니지 관리</a>
+                  </li>
+                </ul>
+              </li>
+              <li class='nav-items'>
+                <a href='#'>미세먼지 저감활동</a>
+                <ul class='sub-nav-list'>
+                  <li class='sub-nav-items'>
+                    <a href='#'>미세먼지 저감 사업</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>미세먼지 저감활동</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>미세먼지 대응 정책</a>
+                  </li>
+                </ul>
+              </li>
+              <li class='nav-items'>
+                <a href='#'>전문가 지식나눔</a>
+                <ul class='sub-nav-list'>
+                  <li class='sub-nav-items'>
+                    <a href='#'>전문가 제공 자료</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>미세먼지 코디네이터</a>
+                  </li>
+                </ul>
+              </li>
+              <li class='nav-items'>
+                <a href='#'>공통</a>
+                <ul class='sub-nav-list'>
+                  <li class='sub-nav-items'>
+                    <a href='#'>시스템</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>커뮤니티</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>설문조사</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>포털 접속 현황</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>행사관리</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>저감활동 효과 보고</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>비상저감조치 SMS 관리</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>사이트 관리</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>미세먼지 맵 서비스</a>
+                  </li>
+                </ul>
+              </li>
+              <li class='nav-items'>
+                <a href='#'>수기데이터 관리</a>
+                <ul class='sub-nav-list'>
+                  <li class='sub-nav-items'>
+                    <a href='#'>산업 부문</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>수송 부문</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>생활 부문</a>
+                  </li>
+                </ul>
+              </li>
+              <li class='nav-items'>
+                <a href='#'>시스템 자원 모니터링</a>
+                <ul class='sub-nav-list'>
+                  <li class='sub-nav-items'>
+                    <a href='#'>포털 시스템 모니터링</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>빅데이터 시스템 모니터링</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div id='login-info'>
+            <p id='login-msg'><span>홍길동</span>관리자님, 안녕하세요</p>
+            <a id='logout-btn' href='#'>로그아웃</a>
+          </div>
+        </div>
+        <div id='sub-nav-bg'></div>
+      </div>
+    </div>
+    <!-- //header -->
+    <!-- section -->
+    <div id='contents'>
+      <div id='subpage-navs'>
+        <div class='container'>
+          <div id='subpage-nav-links' class='clear'>
+            <div id='sub-nav-home-link' class='subpage-nav-items'>
+              <a href='/ms/main/main.html'><span class='sound-only'>메인</span></a>
+            </div>
+            <div class='subpage-nav-items'>
+              <a href='javascript:void(0);' class='sub-nav-depths'>특화단지 장치 관리</a>
+              <ul class='sub-nav-selector'>
+                <li class='select-items'>
+                  <a class='select-links' href='#'>특화단지 장치상태 현황</a>
+                </li>
+                <li class='select-items'>
+                  <a class='select-links' href='#'>특화단지 장치상태 이력</a>
+                </li>
+                <li class='select-items'>
+                  <a class='select-links' href='#'>특화단지 장치 관리</a>
+                </li>
+                <li class='select-items'>
+                  <a class='select-links' href='#'>측정소 관리</a>
+                </li>
+                <li class='select-items'>
+                  <a class='select-links' href='#'>사이니지관리</a>
+                </li>
+              </ul>
+            </div>
+            <div class='subpage-nav-items'>
+              <a href='javascript:void(0);' class='sub-nav-depths'>장치 운영모드 관리</a>
+              <ul class='sub-nav-selector'>
+                <li class='select-items'>
+                  <a class='select-links' href='#'>장치 운영모드 관리</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='subpage-contents'>
+        <div class='container'>
+          <div class='subpage-title'>
+            <h3>장치 운영 모드 관리</h3>
+          </div>
+          <div id='service-reference' class='conts-section'>
+            <form>
+              <div id='service-forms' class='clear'>
+                <div id='service-case-form'>
+                  <label class='select-label' for='service-case'>서비스 유형</label>
+                  <select class='select-form' id='service-case' name='service-case'>
+                    <option>선택</option>
+                  </select>
+                </div>
+                <div id='service-mode-form'>
+                  <label class='select-label' for='service-mode'>운영모드</label>
+                  <select class='select-form' id='service-mode' name='service-mode'>
+                    <option>선택</option>
+                  </select>
+                </div>
+                <div id='service-reference-btn'>
+                  <button class='btn btn-round'>조회</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div id='policy-conts' class='conts-section'>
+            <form>
+              <div class='subpage-cate-title'>
+                <h4>예외 정책</h4>
+                <button class='submit-btns'>등록</button>
+              </div>
+              <div id='exception-policy' class='clear'>
+                <div class='exception-policy-items'>
+                  <label class='checkbox-label exception-policy-label' for='weeks-behavior'>
+                    <input id='weeks-behavior' class='checkbox-form' name='weeks-behavior' type='checkbox' />
+                    <span class='checkbox-img'></span>
+                    <span class='checkbox-label-text'>주말 가동</span>
+                  </label>
+                </div>
+                <div class='exception-policy-items'>
+                  <label class='checkbox-label exception-policy-label' for='holiday-behavior'>
+                    <input id='holiday-behavior' class='checkbox-form' name='holiday-behavior' type='checkbox' />
+                    <span class='checkbox-img'></span>
+                    <span class='checkbox-label-text'>공휴일 가동</span>
+                  </label>
+                </div>
+                <div class='exception-policy-items'>
+                  <label class='checkbox-label exception-policy-label' for='rain-behavior'>
+                    <input id='rain-behavior' class='checkbox-form' name='rain-behavior' type='checkbox' />
+                    <span class='checkbox-img'></span>
+                    <span class='checkbox-label-text'>우천시 가동</span>
+                  </label>
+                </div>
+                <div class='exception-policy-items'>
+                  <label class='checkbox-label exception-policy-label' for='vacation-behavior'>
+                    <input id='vacation-behavior' class='checkbox-form' name='vacation-behavior' type='checkbox' />
+                    <span class='checkbox-img'></span>
+                    <span class='checkbox-label-text'>방학기간 가동</span>
+                  </label>
+                </div>
+                <div class='exception-policy-items'>
+                  <label class='checkbox-label exception-policy-label' for='wind-behavior'>
+                    <input id='wind-behavior' class='checkbox-form' name='wind-behavior' type='checkbox' />
+                    <span class='checkbox-img'></span>
+                    <span class='checkbox-label-text'>풍속 3m/s 가동</span>
+                  </label>
+                </div>
+                <div class='exception-policy-items'>
+                  <label class='checkbox-label exception-policy-label' for='temp-behavior'>
+                    <input id='temp-behavior' class='checkbox-form' name='temp-behavior' type='checkbox' />
+                    <span class='checkbox-img'></span>
+                    <span class='checkbox-label-text'>기온 5도 이상 가동</span>
+                  </label>
+                </div>
+                <div class='exception-policy-items'>
+                  <label class='checkbox-label exception-policy-label' for='air-behavior'>
+                    <input id='air-behavior' class='checkbox-form' name='air-behavior' type='checkbox' />
+                    <span class='checkbox-img'></span>
+                    <span class='checkbox-label-text'>PM2.5 75(매우 나쁨) 이상 가동</span>
+                  </label>
+                </div>
+                <div class='exception-policy-items'>
+                  <label class='checkbox-label exception-policy-label' for='fog-behavior'>
+                    <input id='fog-behavior' class='checkbox-form' name='fog-behavior' type='checkbox' />
+                    <span class='checkbox-img'></span>
+                    <span class='checkbox-label-text'>쿨링포그 기온 30도 이상 가동 (6월~9월)</span>
+                  </label>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div> 
+      </div>
+    </div>
+    <!-- //section -->
+    <!-- footer -->
+    <div id='footers'>
+
+    </div>
+    <!-- //footer -->
+  </div>
+</body>
+
+</html>

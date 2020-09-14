@@ -6,9 +6,10 @@ $(document).ready(function () {
     slidesToShow: 4,
     slidesToScroll: 4,
     arrows: true,
-    prevArrow: '<button class="slick-prev">prev</button>',
-    nextArrow: '<button class="slick-next">next</button>'
+    prevArrow: '<button class="slick-prev"><span class="sound-only">prev</span></button>',
+    nextArrow: '<button class="slick-next"><span class="sound-only">next</span></button>'
   });
+  
   // 서비스 운영상태 탭
   new tabEvent({
     tabBtn : $('.service-tab-items > a'),
