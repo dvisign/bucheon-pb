@@ -40,7 +40,7 @@
 .subpage-cate-title > h4 {color:#0c1e42;font-weight: 600;font-size:22px;display:inline-block;}
 
 /* form components */
-.select-form {display:inline-block;width:300px;height:50px;line-height:50px;font-size:15px;border-radius: 0;padding-left:15px;border:1px solid #d6dade;background:#fff url('/img/pbb/common/selector-down-arrow.png') no-repeat 275px center / auto;font-weight: 600;color:#696d75;
+.select-form {display:inline-block;width:180px; height:42px; line-height: 42px;font-size:15px;border-radius: 4px;padding-left:15px;border:1px solid #d6dade;background:#fff url('/img/pbb/common/selector-down-arrow.png') no-repeat calc(100% - 10px) center / auto;font-weight: 600;color:#696d75;
 -moz-appearance: none;
 -webkit-appearance: none;
 appearance: none;
@@ -48,13 +48,15 @@ appearance: none;
 .select-label {color:#696d75; font-size:15px;font-weight:bold;transform: skew(-0.03deg);display:inline-block;margin-right:15px;}
 
 .checkbox-form {width:0;height:0;overflow: hidden;}
-.checkbox-form + .checkbox-img {display:inline-block;width:22px; height:22px;border:1px solid #d6dade;border-radius: 3px;overflow:hidden;}
+.checkbox-form + .checkbox-img {display:inline-block;width:22px; height:22px;border:1px solid #d6dade;border-radius: 3px;overflow:hidden;background-color:#fff;}
 .checkbox-form:checked + .checkbox-img {background:url('/img/pbb/common/checked_img.png') no-repeat center / auto;}
-.checkbox-label-text {display:inline-block;color:#696d75;font-size:15px;position: relative;top:-6px;font-weight: 600;transform: skew(-0.03deg);}
-.checkbox-label {display:inline-block;padding:20px;border:1px solid #e6eaee;}
+.checkbox-label-text {display:inline-block;color:#696d75;font-size:15px;position: relative;top:-6px;font-weight: 600;transform: skew(-0.03deg);margin-left:10px;}
+.checkbox-label {display:inline-block;padding:20px;border:1px solid #e6eaee;cursor:pointer;background-color:#f5f7f9;}
 
 .btn {display:inline-block;font-size:16px;border:0;padding:17px 75px;background-color:#596d93;color:#fff;cursor: pointer;}
 .btn.btn-round {border-radius:30px;}
+
+.text-form {display:inline-block;width:180px; height:42px; line-height: 42px;font-size:15px;border-radius: 4px;padding-left:15px;border:1px solid #d6dade;}
 
 /* footer */
 #footers {height:240px;background-color:#191d25;}
