@@ -5,7 +5,7 @@
   <title>장치 운영 모드 관리</title>
   <link href='/css/pbb/reset.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/common.css' type='text/css' rel='stylesheet'>
-  <link href='/css/pbb/SpclizDeviceModeManageList.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/style.css' type='text/css' rel='stylesheet'>
   <!-- jquery -->
   <script type='text/javascript' src='/resources/jquery/jquery-3.5.1.min.js'></script>
   <!-- common JS -->
@@ -187,7 +187,7 @@
     </div>
     <!-- //header -->
     <!-- section -->
-    <div id='contents'>
+    <div id='spclizDeviceModeManageList' class='contents'>
       <div id='subpage-navs'>
         <div class='container'>
           <div id='subpage-nav-links' class='clear'>
@@ -225,27 +225,27 @@
           </div>
         </div>
       </div>
-      <div id='subpage-contents'>
+      <div class='subpage-contents'>
         <div class='container'>
           <div class='subpage-title'>
             <h3>장치 운영 모드 관리</h3>
           </div>
-          <div id='service-reference' class='conts-section'>
+          <div id='service-reference' class='lookup-wrapper conts-section'>
             <form>
-              <div id='service-forms' class='clear'>
-                <div id='service-case-form'>
+              <div id='service-forms' class='lookup-forms clear'>
+                <div id='service-case-form' class='form-select-1'>
                   <label class='select-label' for='service-case'>서비스 유형</label>
                   <select class='select-form' id='service-case' name='service-case'>
                     <option>선택</option>
                   </select>
                 </div>
-                <div id='service-mode-form'>
+                <div id='service-mode-form' class='form-select-2'>
                   <label class='select-label' for='service-mode'>운영모드</label>
                   <select class='select-form' id='service-mode' name='service-mode'>
                     <option>선택</option>
                   </select>
                 </div>
-                <div id='service-reference-btn'>
+                <div id='service-reference-btn' class='form-reference-btn'>
                   <button class='btn btn-round'>조회</button>
                 </div>
               </div>

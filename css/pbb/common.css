@@ -25,7 +25,11 @@
 #sub-nav-bg {width:100%;height:300px;position:absolute;top:100%;left:0;background:#fff;border-top:1px solid #d6dade;border-bottom:1px solid #d6dade;display:none;}
 
 /* pages */
-#contents {padding-top:120px;}
+.contents {padding-top:120px;position: relative;}
+.subpage-contents {margin-top:80px;}
+.conts-section {margin-bottom:75px;}
+
+/* sub nav */
 #subpage-navs {background-color:#f5f7f9;border-bottom:1px solid #e7e9ec;}
 #subpage-nav-links > .subpage-nav-items {float:left;border-right:1px solid #e7e9ec;position:relative;}
 #subpage-nav-links > .subpage-nav-items#sub-nav-home-link {border-left:1px solid #e7e9ec;} 
@@ -34,17 +38,30 @@
 #subpage-navs .sub-nav-selector {display:none;position:absolute;background-color:#f5f7f9;width:100%;left:0;top:100%;border:1px solid #e7e9ec;}
 #subpage-navs .sub-nav-selector .select-links {display:block;height:49px;line-height:49px;padding-left:20px;}
 
-.subpage-title {margin:80px auto 39px auto;}
+/* sub nav dark skin */
+#subpage-navs.sub-nav-dark {background-color:rgba(25,29,37,0.8);border-bottom:0;}
+#subpage-navs.sub-nav-dark #subpage-nav-links > .subpage-nav-items#sub-nav-home-link {border-left:1px solid #6b6f75;}
+#subpage-navs.sub-nav-dark #subpage-nav-links > .subpage-nav-items {border-right:1px solid #6b6f75;}
+#subpage-navs.sub-nav-dark #sub-nav-home-link > a {background-image:url('/img/pbb/common/home-icon-w.png')}
+#subpage-navs.sub-nav-dark #subpage-nav-links > .subpage-nav-items:not(#sub-nav-home-link) > a {color:#fff;}
+#subpage-navs.sub-nav-dark #subpage-nav-links > .subpage-nav-items:not(#sub-nav-home-link) > a {background-image:url('/img/pbb/common/selector-down-arrow-w.png')}
+
+
+.subpage-title {margin-bottom:39px;}
 .subpage-title > h3 {font-size:32px;font-weight: 600;color:#0c1e42;}
 .subpage-cate-title {margin-bottom:15px;}
 .subpage-cate-title > h4 {color:#0c1e42;font-weight: 600;font-size:22px;display:inline-block;}
 
 /* form components */
+.date-form {display:inline-block;width:180px; height:42px; line-height: 42px;font-size:15px;border-radius: 4px;padding-left:15px;border:1px solid #d6dade;background:#fff url('/img/pbb/common/selector-down-arrow.png') no-repeat calc(100% - 10px) center / auto;font-weight: 600;color:#696d75;}
+.date-label {color:#696d75; font-size:15px;font-weight:bold;transform: skew(-0.03deg);display:inline-block;margin-right:15px;}
+
 .select-form {display:inline-block;width:180px; height:42px; line-height: 42px;font-size:15px;border-radius: 4px;padding-left:15px;border:1px solid #d6dade;background:#fff url('/img/pbb/common/selector-down-arrow.png') no-repeat calc(100% - 10px) center / auto;font-weight: 600;color:#696d75;
 -moz-appearance: none;
 -webkit-appearance: none;
 appearance: none;
 }
+.select-form > option {color:#696d75;font-weight: 600;font-size:15px;}
 .select-label {color:#696d75; font-size:15px;font-weight:bold;transform: skew(-0.03deg);display:inline-block;margin-right:15px;}
 
 .checkbox-form {width:0;height:0;overflow: hidden;}
@@ -53,10 +70,24 @@ appearance: none;
 .checkbox-label-text {display:inline-block;color:#696d75;font-size:15px;position: relative;top:-6px;font-weight: 600;transform: skew(-0.03deg);margin-left:10px;}
 .checkbox-label {display:inline-block;padding:20px;border:1px solid #e6eaee;cursor:pointer;background-color:#f5f7f9;}
 
-.btn {display:inline-block;font-size:16px;border:0;padding:17px 75px;background-color:#596d93;color:#fff;cursor: pointer;}
+.btn {display:inline-block;font-size:16px;border:0;padding:0 75px;background-color:#596d93;color:#fff;cursor: pointer;height:45px;line-height: 45px;font-weight: 600;}
 .btn.btn-round {border-radius:30px;}
 
 .text-form {display:inline-block;width:180px; height:42px; line-height: 42px;font-size:15px;border-radius: 4px;padding-left:15px;border:1px solid #d6dade;}
+
+/* 조회 폼 */
+.lookup-wrapper {background:#f5f7f9;padding:35px 60px 35px 70px;border:1px solid #e5e7e9;}
+.lookup-forms > div {float:left;}
+
+/* 카운터 테이블 */
+.problem-count-table {width:100%;margin-top:34px;}
+.problem-count-table > thead {background-color: #f5f7f9;}
+.problem-count-table th,
+.problem-count-table td {border:1px solid #e6eaee;}
+.problem-count-table th > div,
+.problem-count-table td > div{padding: 18px 0;}
+.problem-count-table th > div > p,
+.problem-count-table td > div > p {transform: skew(-0.03deg); color: #696d75; font-size: 15px; font-weight: 600;}
 
 /* footer */
 #footers {height:240px;background-color:#191d25;}

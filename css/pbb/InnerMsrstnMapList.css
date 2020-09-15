@@ -1,0 +1,67 @@
+#innerMsrstnMapList #subpage-navs {position: absolute;top:120px;left:0;width:100%;z-index: 2;}
+.maps-wrapper {position: relative;}
+.maps-wrapper > #maps {width:100%;height:880px;}
+#maps-date {position:absolute;padding:20px 60px; background-color:#fff;border:1px solid #d6dade;z-index:2;top:80px;left:30px;color:#0c1e42;}
+#maps-date > .map-title {font-size:21px;font-weight: 600;margin-bottom:15px;}
+
+/* 상태팝업 */
+#map-area-data {position:absolute;z-index:2;padding:30px 30px 40px 30px;background-color:#fff;right:40px;bottom:160px;width:360px;border:1px solid #d6dade;border-radius: 5px;box-shadow: 8px 4px 16px rgba(0,0,0,0.3);}
+#area-data-wrap {position: relative;}
+
+#area-state-close {position:absolute;right:0;top:0;}
+#area-state-close > a {display: inline-block;width: 20px;height: 20px; background: url('/img/pbb/common/gray-close.png') no-repeat center / auto;cursor: pointer;}
+
+#area-state-icon {margin-bottom:33px;}
+#area-state-icon > span {display:block;width:65px;height:65px;border-radius: 50%;overflow: hidden;background-position:center;background-repeat: no-repeat;background-size: cover;}
+
+#area-state-text {padding:0 10px;}
+#area-state-location {margin-bottom:10px;color:#393d45;}
+#area-state-location,
+#area-status-text {font-size:32px;font-weight: 600;letter-spacing: -3px;font-family:'PT Sans', sans-serif;}
+
+#area-state-values {margin-top:25px;position:relative;}
+#density-value {font-family:'PT Sans', sans-serif;font-size:90px;font-weight: 600;}
+#density-unit {font-size:20px;font-weight: 600;}
+#state-value-temps {margin-top: 20px;color:#323436;font-size:17px;font-weight: 900;}
+
+#state-value-measure {font-size:15px; color:#696d75;margin-top:30px;}
+#measure-value {margin-bottom:9px;}
+
+#state-info-source {margin-top:20px;}
+#state-info-source > p > span {position: relative;top:5px;}
+
+#map-area-data.code-danger #area-state-icon > span {background-image:url('/img/pbb/map-state-icon/map-state-icon-danger.png')}
+#map-area-data.code-danger #area-status-,
+#map-area-data.code-danger #area-status-text,
+#map-area-data.code-danger #state-value-density {color:#ff4040;}
+
+#map-area-data.code-warning #area-state-icon > span {background-image:url('/img/pbb/map-state-icon/map-state-icon-warning.png')}
+#map-area-data.code-warning #area-status-,
+#map-area-data.code-warning #area-status-text,
+#map-area-data.code-warning #state-value-density {color:#ff9140;}
+
+#map-area-data.code-blue #area-state-icon > span {background-image:url('/img/pbb/map-state-icon/map-state-icon-blue.png')}
+#map-area-data.code-blue #area-status-,
+#map-area-data.code-blue #area-status-text,
+#map-area-data.code-blue #state-value-density {color:#0096ff;}
+
+#map-area-data.code-green #area-state-icon > span {background-image:url('/img/pbb/map-state-icon/map-state-icon-green.png')}
+#map-area-data.code-green #area-status-,
+#map-area-data.code-green #area-status-text,
+#map-area-data.code-green #state-value-density {color:#3ec730;}
+
+/* api 위치 상태 생성 */
+.location-areas {position:absolute;width:90px;height:90px;z-index:2;color:#fff;border-radius: 50%;overflow: hidden;box-shadow: 8px 4px 16px rgba(0,0,0,0.3);}
+.location-area-btn {display:block;position: relative;width:100%;height:100%;color:#fff;}
+.location-area-count {position:absolute;top:50%;left:50%;transform: translate(-50%, -50%);font-size:32px;font-weight: 900;}
+.location-areas.code-danger {background-color:#ff0000;}
+.location-areas.code-warning {background-color:#ff9600;}
+.location-areas.code-blue {background-color:#40b0ff;}
+.location-areas.code-green {background-color:#2fb227;}
+
+
+/* api로 생성시 제거 css */
+.location-areas.code-danger {top:48%;left:55%;}
+.location-areas.code-warning {top:43%;left:45%;}
+.location-areas.code-blue {top:60%;left:50%;}
+.location-areas.code-green {top:62%;left:40%;}

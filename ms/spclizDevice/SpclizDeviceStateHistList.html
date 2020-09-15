@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>특화단지 장치상태 이력</title>
+  <link href='/css/pbb/reset.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/common.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/style.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/jquery-ui.min.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>
+  <!-- jquery -->
+  <script type='text/javascript' src='/resources/jquery/jquery-3.5.1.min.js'></script>
+  <script type='text/javascript' src='/resources/jquery/jquery-ui.min.js'></script>
+  <!-- common JS -->
+  <script type='text/javascript' src='/js/pbb/common.js'></script>
+</head>
+
+<body>
+  <div id='wrap'>
+    <!-- header -->
+    <div id='headers'>
+      <div class='container-fluid'>
+        <div id='navs' class='clear'>
+          <div id='logos'>
+            <h1><img src='/img/pbb/logo.png' alt='타이틀' /></h1>
+          </div>
+          <div id='nav-wrapper'>
+            <ul id='nav-lists'>
+              <li class='nav-items'>
+                <a href='/ms/inventory/ArpltnExhstBplcList.html'>인벤토리</a>
+                <ul class='sub-nav-list'>
+                  <li class='sub-nav-items'>
+                    <a href='#'>산업 부문</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>수송 부문</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>생활 부문</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>기타 부문</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>개요 관리</a>
+                  </li>
+                </ul>
+              </li>
+              <li class='nav-items'>
+                <a href='#'>수집연계</a>
+                <ul class='sub-nav-list'>
+                  <li class='sub-nav-items'>
+                    <a href='#'>수집장비 데이터용 현황표</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>수집연계 현황</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>수집연계 이력</a>
+                  </li>
+                </ul>
+              </li>
+              <li class='nav-items'>
+                <a href='#'>분석정보</a>
+                <ul class='sub-nav-list'>
+                  <li class='sub-nav-items'>
+                    <a href='#'>우리동네 미세먼지</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>공업단지 미세먼지</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>통학로 미세먼지</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>지하철 미세먼지</a>
+                  </li>
+                </ul>
+              </li>
+              <li class='nav-items'>
+                <a href='#'>특화단지 장치</a>
+                <ul class='sub-nav-list'>
+                  <li class='sub-nav-items'>
+                    <a href='#'>특화단지 장치상태 현황</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>특화단지 장치상태 이력</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>특화단지 장치 관리</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>측정소 관리</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>사이니지 관리</a>
+                  </li>
+                </ul>
+              </li>
+              <li class='nav-items'>
+                <a href='#'>미세먼지 저감활동</a>
+                <ul class='sub-nav-list'>
+                  <li class='sub-nav-items'>
+                    <a href='#'>미세먼지 저감 사업</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>미세먼지 저감활동</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>미세먼지 대응 정책</a>
+                  </li>
+                </ul>
+              </li>
+              <li class='nav-items'>
+                <a href='#'>전문가 지식나눔</a>
+                <ul class='sub-nav-list'>
+                  <li class='sub-nav-items'>
+                    <a href='#'>전문가 제공 자료</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>미세먼지 코디네이터</a>
+                  </li>
+                </ul>
+              </li>
+              <li class='nav-items'>
+                <a href='#'>공통</a>
+                <ul class='sub-nav-list'>
+                  <li class='sub-nav-items'>
+                    <a href='#'>시스템</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>커뮤니티</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>설문조사</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>포털 접속 현황</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>행사관리</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>저감활동 효과 보고</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>비상저감조치 SMS 관리</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>사이트 관리</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>미세먼지 맵 서비스</a>
+                  </li>
+                </ul>
+              </li>
+              <li class='nav-items'>
+                <a href='#'>수기데이터 관리</a>
+                <ul class='sub-nav-list'>
+                  <li class='sub-nav-items'>
+                    <a href='#'>산업 부문</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>수송 부문</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>생활 부문</a>
+                  </li>
+                </ul>
+              </li>
+              <li class='nav-items'>
+                <a href='#'>시스템 자원 모니터링</a>
+                <ul class='sub-nav-list'>
+                  <li class='sub-nav-items'>
+                    <a href='#'>포털 시스템 모니터링</a>
+                  </li>
+                  <li class='sub-nav-items'>
+                    <a href='#'>빅데이터 시스템 모니터링</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div id='login-info'>
+            <p id='login-msg'><span>홍길동</span>관리자님, 안녕하세요</p>
+            <a id='logout-btn' href='#'>로그아웃</a>
+          </div>
+        </div>
+        <div id='sub-nav-bg'></div>
+      </div>
+    </div>
+    <!-- //header -->
+    <!-- section -->
+    <div id='list-conts' class='contents'>
+      <div id='subpage-navs'>
+        <div class='container'>
+          <div id='subpage-nav-links' class='clear'>
+            <div id='sub-nav-home-link' class='subpage-nav-items'>
+              <a href='/ms/main/main.html'><span class='sound-only'>메인</span></a>
+            </div>
+            <div class='subpage-nav-items'>
+              <a href='javascript:void(0);' class='sub-nav-depths'>특화단지 장치 관리</a>
+              <ul class='sub-nav-selector'>
+                <li class='select-items'>
+                  <a class='select-links' href='#'>특화단지 장치상태 현황</a>
+                </li>
+                <li class='select-items'>
+                  <a class='select-links' href='#'>특화단지 장치상태 이력</a>
+                </li>
+                <li class='select-items'>
+                  <a class='select-links' href='#'>특화단지 장치 관리</a>
+                </li>
+                <li class='select-items'>
+                  <a class='select-links' href='#'>측정소 관리</a>
+                </li>
+                <li class='select-items'>
+                  <a class='select-links' href='#'>사이니지관리</a>
+                </li>
+              </ul>
+            </div>
+            <div class='subpage-nav-items'>
+              <a href='javascript:void(0);' class='sub-nav-depths'>장치 운영모드 관리</a>
+              <ul class='sub-nav-selector'>
+                <li class='select-items'>
+                  <a class='select-links' href='#'>장치 운영모드 관리</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='device-state-list' class='subpage-contents'>
+        <div class='container'>
+          <div class="subpage-title">
+            <h3>특화단지 장치상태 이력</h3>
+          </div>
+          <div class='lookup-wrapper conts-section'>
+            <form>
+              <div id='list-lookup-forms' class='lookup-forms clear'>
+                <div id='start-date-selector' class='form-select-1'>
+                  <label class='date-label' for='start-date'>시작일자</label>
+                  <input type="text" class='date-form date-picker' id='start-date'>
+                </div>
+                <div id='end-date-selector' class='form-select-2'>
+                  <label class='date-label' for='end-date'>종료일자</label>
+                  <input type="text" class='date-form date-picker' id='end-date'>
+                </div>
+                <div id='point-selector' class='form-select-3'>
+                  <label class='select-label' for=''>법정동</label>
+                  <select class='select-form' id='' name=''>
+                    <option>법정동1</option>
+                    <option>법정동2</option>
+                    <option>법정동3</option>
+                    <option>법정동4</option>
+                  </select>
+                </div>
+                <div id='service-selector' class='form-select-4'>
+                  <label class='select-label' for=''>서비스 유형</label>
+                  <select class='select-form' id='' name=''>
+                    <option>서비스 유형</option>
+                  </select>
+                </div>
+                <div class='form-reference-btn'>
+                  <button class='btn btn-round'>조회</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class='conts-section'>
+            <div class="subpage-cate-title">
+              <h4>장치 통신 상태 이상 횟수</h4>
+            </div>
+            <div id='device-problem-count' class='problem-counts'>
+              <table class='problem-count-table'>
+                <colgroup>
+                  <col width='*' />
+                  <col width='*' />
+                  <col width='*' />
+                  <col width='*' />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>
+                      <div>
+                        <p>우리동네 알림이</p>
+                      </div>
+                    </th>
+                    <th>
+                      <div>
+                        <p>공업단지 비산먼지</p>
+                      </div>
+                    </th>
+                    <th>
+                      <div>
+                        <p>통학로 청정 안심 공기</p>
+                      </div>
+                    </th>
+                    <th>
+                      <div>
+                        <p>지하철 미세먼지 차감</p>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>
+                      <div>
+                        <p id='problem-count-alram'>99</p>
+                      </div>
+                    </th>
+                    <th>
+                      <div>
+                        <p id='problem-count-industry'>99</p>
+                      </div>
+                    </th>
+                    <th>
+                      <div>
+                        <p id='problem-count-school'>99</p>
+                      </div>
+                    </th>
+                    <th>
+                      <div>
+                        <p id='problem-count-subway'>99</p>
+                      </div>
+                    </th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class='board-lists conts-section'>
+            <div class="subpage-cate-title">
+              <h4>장치 상태 이력</h4>
+            </div>
+            <div class='board-list-set clear'>
+              <div class='list-count'>
+                <p>조회결과 : <span id='count-result'>9,999</span>건</p>
+              </div>
+              <div class='list-view-selector'>
+                <select class='select-form' id='' name=''>
+                  <option>50개 출력</option>
+                  <option>100개 출력</option>
+                  <option>150개 출력</option>
+                  <option>200개 출력</option>
+                </select>
+              </div>
+            </div>
+            <div class='board-list-table-wrapper text-center'>
+              <table>
+                <thead class='board-list-header'>
+                  <tr>
+                    <th class='list-nums'>
+                      <div>
+                        <p>순번</p>
+                      </div>
+                    </th>
+                    <th class='list-actives'>
+                      <div>
+                        <p>저감활동 내역</p>
+                      </div>
+                    </th>
+                    <th class='list-areas'>
+                      <div>
+                        <p>법정동</p>
+                      </div>
+                    </th>
+                    <th class='list-start-date'>
+                      <div>
+                        <p>가동시작일자</p>
+                      </div>
+                    </th>
+                    <th class='list-start-time'>
+                      <div>
+                        <p>가동시작시각</p>
+                      </div>
+                    </th>
+                    <th class='list-end-date'>
+                      <div>
+                        <p>가동종료일자</p>
+                      </div>
+                    </th>
+                    <th class='list-end-time'>
+                      <div>
+                        <p>가동종료시각</p>
+                      </div>
+                    </th>
+                    <th class='list-etc'>
+                      <div>
+                        <p>비고</p>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class='board-list-body'>
+                  <tr>
+                    <td class='list-nums'>
+                      <div>
+                        <p class='list-num-data'>1</p>
+                      </div>
+                    </td>
+                    <td class='list-actives'>
+                      <div>
+                        <p class='list-active-data'>청소차 가동</p>
+                      </div>
+                    </td>
+                    <td class='list-areas'>
+                      <div>
+                        <p class='list-area-data'></p>
+                      </div>
+                    </td>
+                    <td class='list-start-date'>
+                      <div>
+                        <p class='list-start-date-data'>2020-05-13</p>
+                      </div>
+                    </td>
+                    <td class='list-start-time'>
+                      <div>
+                        <p class='list-start-time-data'></p>
+                      </div>
+                    </td>
+                    <td class='list-end-date'>
+                      <div>
+                        <p class='list-end-date-data'></p>
+                      </div>
+                    </td>
+                    <td class='list-end-time'>
+                      <div>
+                        <p class='list-end-time-data'></p>
+                      </div>
+                    </td>
+                    <td class='list-etc'>
+                      <div>
+                        <p class='list-etc-data'>연계</p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class='list-nums'>
+                      <div>
+                        <p class='list-num-data'>2</p>
+                      </div>
+                    </td>
+                    <td class='list-actives'>
+                      <div>
+                        <p class='list-active-data'>청소차 가동</p>
+                      </div>
+                    </td>
+                    <td class='list-areas'>
+                      <div>
+                        <p class='list-area-data'></p>
+                      </div>
+                    </td>
+                    <td class='list-start-date'>
+                      <div>
+                        <p class='list-start-date-data'>2020-05-13</p>
+                      </div>
+                    </td>
+                    <td class='list-start-time'>
+                      <div>
+                        <p class='list-start-time-data'></p>
+                      </div>
+                    </td>
+                    <td class='list-end-date'>
+                      <div>
+                        <p class='list-end-date-data'></p>
+                      </div>
+                    </td>
+                    <td class='list-end-time'>
+                      <div>
+                        <p class='list-end-time-data'></p>
+                      </div>
+                    </td>
+                    <td class='list-etc'>
+                      <div>
+                        <p class='list-etc-data'>연계</p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class='list-nums'>
+                      <div>
+                        <p class='list-num-data'>3</p>
+                      </div>
+                    </td>
+                    <td class='list-actives'>
+                      <div>
+                        <p class='list-active-data'>청소차 가동</p>
+                      </div>
+                    </td>
+                    <td class='list-areas'>
+                      <div>
+                        <p class='list-area-data'></p>
+                      </div>
+                    </td>
+                    <td class='list-start-date'>
+                      <div>
+                        <p class='list-start-date-data'>2020-05-13</p>
+                      </div>
+                    </td>
+                    <td class='list-start-time'>
+                      <div>
+                        <p class='list-start-time-data'></p>
+                      </div>
+                    </td>
+                    <td class='list-end-date'>
+                      <div>
+                        <p class='list-end-date-data'></p>
+                      </div>
+                    </td>
+                    <td class='list-end-time'>
+                      <div>
+                        <p class='list-end-time-data'></p>
+                      </div>
+                    </td>
+                    <td class='list-etc'>
+                      <div>
+                        <p class='list-etc-data'>연계</p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class='list-nums'>
+                      <div>
+                        <p class='list-num-data'>4</p>
+                      </div>
+                    </td>
+                    <td class='list-actives'>
+                      <div>
+                        <p class='list-active-data'>청소차 가동</p>
+                      </div>
+                    </td>
+                    <td class='list-areas'>
+                      <div>
+                        <p class='list-area-data'></p>
+                      </div>
+                    </td>
+                    <td class='list-start-date'>
+                      <div>
+                        <p class='list-start-date-data'>2020-05-13</p>
+                      </div>
+                    </td>
+                    <td class='list-start-time'>
+                      <div>
+                        <p class='list-start-time-data'></p>
+                      </div>
+                    </td>
+                    <td class='list-end-date'>
+                      <div>
+                        <p class='list-end-date-data'></p>
+                      </div>
+                    </td>
+                    <td class='list-end-time'>
+                      <div>
+                        <p class='list-end-time-data'></p>
+                      </div>
+                    </td>
+                    <td class='list-etc'>
+                      <div>
+                        <p class='list-etc-data'>연계</p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class='list-nums'>
+                      <div>
+                        <p class='list-num-data'>5</p>
+                      </div>
+                    </td>
+                    <td class='list-actives'>
+                      <div>
+                        <p class='list-active-data'>청소차 가동</p>
+                      </div>
+                    </td>
+                    <td class='list-areas'>
+                      <div>
+                        <p class='list-area-data'></p>
+                      </div>
+                    </td>
+                    <td class='list-start-date'>
+                      <div>
+                        <p class='list-start-date-data'>2020-05-13</p>
+                      </div>
+                    </td>
+                    <td class='list-start-time'>
+                      <div>
+                        <p class='list-start-time-data'></p>
+                      </div>
+                    </td>
+                    <td class='list-end-date'>
+                      <div>
+                        <p class='list-end-date-data'></p>
+                      </div>
+                    </td>
+                    <td class='list-end-time'>
+                      <div>
+                        <p class='list-end-time-data'></p>
+                      </div>
+                    </td>
+                    <td class='list-etc'>
+                      <div>
+                        <p class='list-etc-data'>연계</p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class='pagenation-wrapper'>
+                <a href='#' class='pagenation-arrow pagenation-prev'>
+                  <span class='sound-only'>이전페이지</span>
+                </a>
+                <ul class='pagenation-lists'>
+                  <li class='pagenation-items active'>
+                    <a href='#'>1</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>2</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>3</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>4</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>5</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>6</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>7</a>
+                  </li>
+                </ul>
+                <a href='#' class='pagenation-arrow pagenation-next'>
+                  <span class='sound-only'>다음페이지</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+    <!-- //section -->
+    <!-- footer -->
+    <div id='footers'>
+
+    </div>
+    <!-- //footer -->
+  </div>
+  <!-- jquery ui datepicker -->
+  <script>
+  $(document).ready(function() {
+    $('.date-picker').each(function(i) {
+      var $this = $(this);
+      $this.datepicker({
+        changeMonth: true,
+        changeYear: true, 
+        minDate: '-100y', 
+        nextText: '다음 달',
+        prevText: '이전 달',
+        numberOfMonths: [1,1],
+        stepMonths: 3,
+        yearRange: 'c-100:c+10',
+        showButtonPanel: true,  
+        currentText: '오늘 날짜',
+        closeText: '닫기', 
+        dateFormat: "yy-mm-dd",
+        showMonthAfterYear: true ,
+        dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'],
+        monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+      });
+    });
+  })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+/* 조회 폼 */
+#list-lookup-forms > div:not(:last-child) {margin-right: 40px;}
+#list-lookup-forms > #point-selector {margin-right:60px;}
+#list-lookup-forms .select-form {width:180px;height:50px;line-height:50px;}
+#list-lookup-forms > .form-reference-btn {padding-left: 55px; border-left: 1px solid #d6dade;}
+#list-lookup-forms .form-reference-btn > .btn {height:50px;line-height: 50px;}
+
+/* 리스트 */
+.board-lists {}
+.board-list-set {margin-bottom:34px;}
+.board-list-set > .list-count {float:left;}
+.board-list-set > .list-view-selector {float:right;}
+.board-list-set > .list-view-selector > .select-form,
+.board-list-set > .list-count > p {height:42px;line-height: 42px;}
+.board-list-set > .list-count > p > #count-result {font-weight:900;}
+
+.board-list-table-wrapper {}
+.board-list-table-wrapper > table {width:100%;}
+
+.board-list-header {background-color:#f5f7f9;}
+.board-list-body td,
+.board-list-body th,
+.board-list-header td,
+.board-list-header th {border:1px solid #e6eaee;}
+
+.board-list-body td > div,
+.board-list-body th > div,
+.board-list-header td > div,
+.board-list-header th > div {padding:18px 0;}
+
+.board-list-body td p,
+.board-list-body th p,
+.board-list-header td p,
+.board-list-header th p {transform: skew(-0.03deg);color:#696d75;font-size:15px;font-weight: 600;}
+
+.board-list-body {}
+
+.list-nums,
+.list-etc {width:60px;}
+.list-actives,
+.list-areas,
+.list-start-date,
+.list-start-time,
+.list-end-date,
+.list-end-time {width:calc((100% - 120px) / 6)}
