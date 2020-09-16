@@ -3,7 +3,7 @@
 
 <head>
   <meta charset='UTF-8'>
-  <title>특화단지 장치상태 이력</title>
+  <title>공업단지 비산먼지 수집 이력</title>
   <link href='/css/pbb/reset.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/common.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/style.css' type='text/css' rel='stylesheet'>
@@ -215,38 +215,57 @@
     <!-- //header -->
     <!-- section -->
     <div id='list-conts' class='contents'>
-      <div id='device-state-list' class='subpage-contents'>
+      <div id='indstrycmplxHistList' class='subpage-contents'>
         <div class='container'>
           <div class="subpage-title">
-            <h3>특화단지 장치상태 이력</h3>
+            <h3>공업단지 비산먼지 수집 이력</h3>
           </div>
           <div class='lookup-wrapper conts-section'>
             <form>
               <div id='list-lookup-forms'>
                 <div class='lookup-forms clear'>
-                  <div id='start-date-selector' class='form-select-1'>
+                  <div id='start-date-selector'>
                     <label class='date-label' for='start-date'>시작일자</label>
                     <input type="text" class='date-form date-picker' id='start-date'>
                   </div>
-                  <div id='end-date-selector' class='form-select-2'>
+                  <div id='end-date-selector'>
                     <label class='date-label' for='end-date'>종료일자</label>
                     <input type="text" class='date-form date-picker' id='end-date'>
                   </div>
-                  <div id='point-selector' class='form-select-3'>
+                </div>
+                <div class='lookup-forms clear'>
+                  <div id='networks-selector'>
+                    <label class='radio-label'>
+                      <input type="radio" value='city' class='radio-form' name='test' checked>
+                      <span class='radio-img'></span>
+                      <span class='radio-label-text'>부천시 망</span>
+                    </label>
+                    <label class='radio-label'>
+                      <input type="radio" value='nation' class='radio-form' name='test'>
+                      <span class='radio-img'></span>
+                      <span class='radio-label-text'>국가 망</span>
+                    </label>
+                  </div>
+                  <div id='point-selector'>
+                    <label class='select-label' for=''>측정소</label>
+                    <select class='select-form' id='point-select' name=''>
+                      <option>측정소1</option>
+                      <option>측정소2</option>
+                      <option>측정소3</option>
+                      <option>측정소4</option>
+                    </select>
+                  </div>
+                  <div id='area-selector'>
                     <label class='select-label' for=''>법정동</label>
-                    <select class='select-form' id='' name=''>
+                    <select class='select-form' id='area-select' name=''>
                       <option>법정동1</option>
                       <option>법정동2</option>
                       <option>법정동3</option>
                       <option>법정동4</option>
                     </select>
-                  </div>
-                  <div id='service-selector' class='form-select-4'>
-                    <label class='select-label' for=''>서비스 유형</label>
-                    <select class='select-form' id='' name=''>
-                      <option>서비스 유형</option>
-                    </select>
-                  </div>
+                  </div>                  
+                </div>
+                <div class='lookup-forms clear'>
                   <div class='form-reference-btn'>
                     <button class='btn btn-round'>조회</button>
                   </div>
@@ -254,73 +273,8 @@
               </div>
             </form>
           </div>
-          <div class='conts-section'>
-            <div class="subpage-cate-title">
-              <h4>장치 통신 상태 이상 횟수</h4>
-            </div>
-            <div id='device-problem-count' class='problem-counts'>
-              <table class='problem-count-table'>
-                <colgroup>
-                  <col width='*' />
-                  <col width='*' />
-                  <col width='*' />
-                  <col width='*' />
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th>
-                      <div>
-                        <p>우리동네 알림이</p>
-                      </div>
-                    </th>
-                    <th>
-                      <div>
-                        <p>공업단지 비산먼지</p>
-                      </div>
-                    </th>
-                    <th>
-                      <div>
-                        <p>통학로 청정 안심 공기</p>
-                      </div>
-                    </th>
-                    <th>
-                      <div>
-                        <p>지하철 미세먼지 차감</p>
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th>
-                      <div>
-                        <p id='problem-count-alram'>99</p>
-                      </div>
-                    </th>
-                    <th>
-                      <div>
-                        <p id='problem-count-industry'>99</p>
-                      </div>
-                    </th>
-                    <th>
-                      <div>
-                        <p id='problem-count-school'>99</p>
-                      </div>
-                    </th>
-                    <th>
-                      <div>
-                        <p id='problem-count-subway'>99</p>
-                      </div>
-                    </th>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class='board-lists conts-section'>
-            <div class="subpage-cate-title">
-              <h4>장치 상태 이력</h4>
-            </div>
+          <!-- 부천시 망 -->
+          <div id='city-reference-list' class='board-lists conts-section'>
             <div class='board-list-set clear'>
               <div class='list-count'>
                 <p>조회결과 : <span id='count-result'>9,999</span>건</p>
@@ -338,256 +292,267 @@
               <table>
                 <thead class='board-list-header'>
                   <tr>
-                    <th class='list-nums'>
+                    <th class=''>
                       <div>
-                        <p>순번</p>
+                        <p>측정일시</p>
                       </div>
                     </th>
-                    <th class='list-actives'>
-                      <div>
-                        <p>저감활동 내역</p>
-                      </div>
-                    </th>
-                    <th class='list-areas'>
+                    <th class=''>
                       <div>
                         <p>법정동</p>
                       </div>
                     </th>
-                    <th class='list-start-date'>
+                    <th class=''>
                       <div>
-                        <p>가동시작일자</p>
+                        <p>측정소</p>
                       </div>
                     </th>
-                    <th class='list-start-time'>
+                    <th class=''>
                       <div>
-                        <p>가동시작시각</p>
+                        <p>미세먼지<br>(PM-10)</p>
                       </div>
                     </th>
-                    <th class='list-end-date'>
+                    <th class=''>
                       <div>
-                        <p>가동종료일자</p>
+                        <p>미세먼지<br>(PM-2.5)</p>
                       </div>
                     </th>
-                    <th class='list-end-time'>
+                    <th class=''>
                       <div>
-                        <p>가동종료시각</p>
+                        <p>미세먼지<br>(PM-1.0)</p>
                       </div>
                     </th>
-                    <th class='list-etc'>
+                    <th class=''>
                       <div>
-                        <p>비고</p>
+                        <p>온도</p>
+                      </div>
+                    </th>
+                    <th class=''>
+                      <div>
+                        <p>습도</p>
+                      </div>
+                    </th>
+                    <th class=''>
+                      <div>
+                        <p>풍향</p>
+                      </div>
+                    </th>
+                    <th class=''>
+                      <div>
+                        <p>풍속</p>
+                      </div>
+                    </th>
+                    <th class=''>
+                      <div>
+                        <p>대기압</p>
                       </div>
                     </th>
                   </tr>
                 </thead>
                 <tbody class='board-list-body'>
                   <tr>
-                    <td class='list-nums'>
+                    <td class=''>
                       <div>
-                        <p class='list-num-data'>1</p>
+                        <p class=''>2020-03-10 10:10</p>
                       </div>
                     </td>
-                    <td class='list-actives'>
+                    <td class=''>
                       <div>
-                        <p class='list-active-data'>청소차 가동</p>
+                        <p class=''>상동</p>
                       </div>
                     </td>
-                    <td class='list-areas'>
+                    <td class=''>
                       <div>
-                        <p class='list-area-data'></p>
+                        <p class=''>상동 공업단지</p>
                       </div>
                     </td>
-                    <td class='list-start-date'>
+                    <td class=''>
                       <div>
-                        <p class='list-start-date-data'>2020-05-13</p>
+                        <p class=''>16㎍/㎥</p>
                       </div>
                     </td>
-                    <td class='list-start-time'>
+                    <td class=''>
                       <div>
-                        <p class='list-start-time-data'></p>
+                        <p class=''>45㎍/㎥</p>
                       </div>
                     </td>
-                    <td class='list-end-date'>
+                    <td class=''>
                       <div>
-                        <p class='list-end-date-data'></p>
+                        <p class=''>45㎍/㎥</p>
                       </div>
                     </td>
-                    <td class='list-end-time'>
+                    <td class=''>
                       <div>
-                        <p class='list-end-time-data'></p>
+                        <p class=''>27℃</p>
                       </div>
                     </td>
-                    <td class='list-etc'>
+                    <td class=''>
                       <div>
-                        <p class='list-etc-data'>연계</p>
+                        <p class=''>58%RH</p>
                       </div>
                     </td>
-                  </tr>
-                  <tr>
-                    <td class='list-nums'>
+                    <td class=''>
                       <div>
-                        <p class='list-num-data'>2</p>
+                        <p class=''>180°</p>
                       </div>
                     </td>
-                    <td class='list-actives'>
+                    <td class=''>
                       <div>
-                        <p class='list-active-data'>청소차 가동</p>
+                        <p class=''>14 m/s</p>
                       </div>
                     </td>
-                    <td class='list-areas'>
+                    <td class=''>
                       <div>
-                        <p class='list-area-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-start-date'>
-                      <div>
-                        <p class='list-start-date-data'>2020-05-13</p>
-                      </div>
-                    </td>
-                    <td class='list-start-time'>
-                      <div>
-                        <p class='list-start-time-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-end-date'>
-                      <div>
-                        <p class='list-end-date-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-end-time'>
-                      <div>
-                        <p class='list-end-time-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-etc'>
-                      <div>
-                        <p class='list-etc-data'>연계</p>
+                        <p class=''>800 mb</p>
                       </div>
                     </td>
                   </tr>
+                </tbody>
+              </table>
+              <div class='pagenation-wrapper'>
+                <a href='#' class='pagenation-arrow pagenation-prev'>
+                  <span class='sound-only'>이전페이지</span>
+                </a>
+                <ul class='pagenation-lists'>
+                  <li class='pagenation-items active'>
+                    <a href='#'>1</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>2</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>3</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>4</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>5</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>6</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>7</a>
+                  </li>
+                </ul>
+                <a href='#' class='pagenation-arrow pagenation-next'>
+                  <span class='sound-only'>다음페이지</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- 국가 망 -->
+          <div id='nation-reference-list' class='board-lists conts-section'>
+            <div class='board-list-set clear'>
+              <div class='list-count'>
+                <p>조회결과 : <span id='count-result'>9,999</span>건</p>
+              </div>
+              <div class='list-view-selector'>
+                <select class='select-form' id='' name=''>
+                  <option>50개 출력</option>
+                  <option>100개 출력</option>
+                  <option>150개 출력</option>
+                  <option>200개 출력</option>
+                </select>
+              </div>
+            </div>
+            <div class='board-list-table-wrapper text-center'>
+              <table>
+                <thead class='board-list-header'>
                   <tr>
-                    <td class='list-nums'>
+                    <th class=''>
                       <div>
-                        <p class='list-num-data'>3</p>
+                        <p>측정일시</p>
                       </div>
-                    </td>
-                    <td class='list-actives'>
+                    </th>
+                    <th class=''>
                       <div>
-                        <p class='list-active-data'>청소차 가동</p>
+                        <p>법정동</p>
                       </div>
-                    </td>
-                    <td class='list-areas'>
+                    </th>
+                    <th class=''>
                       <div>
-                        <p class='list-area-data'></p>
+                        <p>측정소</p>
                       </div>
-                    </td>
-                    <td class='list-start-date'>
+                    </th>
+                    <th class=''>
                       <div>
-                        <p class='list-start-date-data'>2020-05-13</p>
+                        <p>미세먼지<br>(PM-10)</p>
                       </div>
-                    </td>
-                    <td class='list-start-time'>
+                    </th>
+                    <th class=''>
                       <div>
-                        <p class='list-start-time-data'></p>
+                        <p>미세먼지<br>(PM-2.5)</p>
                       </div>
-                    </td>
-                    <td class='list-end-date'>
+                    </th>
+                    <th class=''>
                       <div>
-                        <p class='list-end-date-data'></p>
+                        <p>아황산가스</p>
                       </div>
-                    </td>
-                    <td class='list-end-time'>
+                    </th>
+                    <th class=''>
                       <div>
-                        <p class='list-end-time-data'></p>
+                        <p>일산화탄소</p>
                       </div>
-                    </td>
-                    <td class='list-etc'>
+                    </th>
+                    <th class=''>
                       <div>
-                        <p class='list-etc-data'>연계</p>
+                        <p>오존</p>
                       </div>
-                    </td>
+                    </th>
+                    <th class=''>
+                      <div>
+                        <p>이산화질소</p>
+                      </div>
+                    </th>
                   </tr>
+                </thead>
+                <tbody class='board-list-body'>
                   <tr>
-                    <td class='list-nums'>
+                    <td class=''>
                       <div>
-                        <p class='list-num-data'>4</p>
+                        <p class=''>2020-03-10 10:10</p>
                       </div>
                     </td>
-                    <td class='list-actives'>
+                    <td class=''>
                       <div>
-                        <p class='list-active-data'>청소차 가동</p>
+                        <p class=''>상동</p>
                       </div>
                     </td>
-                    <td class='list-areas'>
+                    <td class=''>
                       <div>
-                        <p class='list-area-data'></p>
+                        <p class=''>상동 국가망</p>
                       </div>
                     </td>
-                    <td class='list-start-date'>
+                    <td class=''>
                       <div>
-                        <p class='list-start-date-data'>2020-05-13</p>
+                        <p class=''>16㎍/㎥</p>
                       </div>
                     </td>
-                    <td class='list-start-time'>
+                    <td class=''>
                       <div>
-                        <p class='list-start-time-data'></p>
+                        <p class=''>45㎍/㎥</p>
                       </div>
                     </td>
-                    <td class='list-end-date'>
+                    <td class=''>
                       <div>
-                        <p class='list-end-date-data'></p>
+                        <p class=''>0.003 ppm</p>
                       </div>
                     </td>
-                    <td class='list-end-time'>
+                    <td class=''>
                       <div>
-                        <p class='list-end-time-data'></p>
+                        <p class=''>0.1 ppm</p>
                       </div>
                     </td>
-                    <td class='list-etc'>
+                    <td class=''>
                       <div>
-                        <p class='list-etc-data'>연계</p>
+                        <p class=''>0.017 ppm</p>
                       </div>
                     </td>
-                  </tr>
-                  <tr>
-                    <td class='list-nums'>
+                    <td class=''>
                       <div>
-                        <p class='list-num-data'>5</p>
-                      </div>
-                    </td>
-                    <td class='list-actives'>
-                      <div>
-                        <p class='list-active-data'>청소차 가동</p>
-                      </div>
-                    </td>
-                    <td class='list-areas'>
-                      <div>
-                        <p class='list-area-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-start-date'>
-                      <div>
-                        <p class='list-start-date-data'>2020-05-13</p>
-                      </div>
-                    </td>
-                    <td class='list-start-time'>
-                      <div>
-                        <p class='list-start-time-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-end-date'>
-                      <div>
-                        <p class='list-end-date-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-end-time'>
-                      <div>
-                        <p class='list-end-time-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-etc'>
-                      <div>
-                        <p class='list-etc-data'>연계</p>
+                        <p class=''>0.035 ppm</p>
                       </div>
                     </td>
                   </tr>
@@ -639,6 +604,25 @@
   <!-- jquery ui datepicker -->
   <script>
   $(document).ready(function() {
+    // 삭제할 스크립트
+    function testSelect(selector) {
+      if (selector == 'city') {
+        $('#nation-reference-list').css('display', 'none');
+        $('#city-reference-list').css('display', 'block');
+        $('#area-select').removeAttr("disabled");
+      } else {
+        $('#city-reference-list').css('display', 'none');
+        $('#nation-reference-list').css('display', 'block');
+        $('#area-select').attr("disabled","disabled");
+      }
+    };
+    $('input[name="test"]').on('change', function() {
+      var $this = $(this);
+      testSelect($this.val());
+    });
+    testSelect('city');
+    
+    // date picker
     $('.date-picker').each(function(i) {
       var $this = $(this);
       $this.datepicker({

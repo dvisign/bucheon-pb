@@ -58,4 +58,15 @@ $(document).ready(function() {
     subNavBg.stop().slideDown();
     subNavEl.stop().slideDown();
   });
+  // sub nav
+  $('.sub-nav-depths').on('click', function() {
+    var $this = $(this);
+    if (!$this.hasClass('active')) {
+      $this.addClass('active');
+      $this.next('.sub-nav-selector').stop().slideDown();
+    } else {
+      $this.removeClass('active');
+      $this.next('.sub-nav-selector').stop().slideUp();
+    }
+  });
 });
