@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>수집현황</title>
+  <link href='/css/pbb/reset.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/common.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/style.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/jquery-ui.min.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>
+  <!-- jquery -->
+  <script type='text/javascript' src='/resources/jquery/jquery-3.5.1.min.js'></script>
+  <script type='text/javascript' src='/resources/jquery/jquery-ui.min.js'></script>
+  <!-- common JS -->
+  <script type='text/javascript' src='/js/pbb/common.js'></script>
+</head>
+
+<body id='colctSttusList'>
+  <div id='wrap'>
+    <!-- header -->
+    <div id='header-wrapper'>
+      <div id='headers'>
+        <div class='container-fluid'>
+          <div id='navs' class='clear'>
+            <div id='logos'>
+              <h1><img src='/img/pbb/logo.png' alt='타이틀' /></h1>
+            </div>
+            <div id='nav-wrapper'>
+              <ul id='nav-lists'>
+                <li class='nav-items'>
+                  <a href='/ms/inventory/ArpltnExhstBplcList.html'>인벤토리</a>
+                  <ul class='sub-nav-list'>
+                    <li class='sub-nav-items'>
+                      <a href='#'>산업 부문</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>수송 부문</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>생활 부문</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>기타 부문</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>개요 관리</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class='nav-items'>
+                  <a href='#'>수집연계</a>
+                  <ul class='sub-nav-list'>
+                    <li class='sub-nav-items'>
+                      <a href='#'>수집장비 데이터용 현황표</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>수집연계 현황</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>수집연계 이력</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class='nav-items'>
+                  <a href='#'>분석정보</a>
+                  <ul class='sub-nav-list'>
+                    <li class='sub-nav-items'>
+                      <a href='#'>우리동네 미세먼지</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>공업단지 미세먼지</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>통학로 미세먼지</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>지하철 미세먼지</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class='nav-items'>
+                  <a href='#'>특화단지 장치</a>
+                  <ul class='sub-nav-list'>
+                    <li class='sub-nav-items'>
+                      <a href='#'>특화단지 장치상태 현황</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>특화단지 장치상태 이력</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>특화단지 장치 관리</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>측정소 관리</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>사이니지 관리</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class='nav-items'>
+                  <a href='#'>미세먼지 저감활동</a>
+                  <ul class='sub-nav-list'>
+                    <li class='sub-nav-items'>
+                      <a href='#'>미세먼지 저감 사업</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>미세먼지 저감활동</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>미세먼지 대응 정책</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class='nav-items'>
+                  <a href='#'>전문가 지식나눔</a>
+                  <ul class='sub-nav-list'>
+                    <li class='sub-nav-items'>
+                      <a href='#'>전문가 제공 자료</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>미세먼지 코디네이터</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class='nav-items'>
+                  <a href='#'>공통</a>
+                  <ul class='sub-nav-list'>
+                    <li class='sub-nav-items'>
+                      <a href='#'>시스템</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>커뮤니티</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>설문조사</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>포털 접속 현황</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>행사관리</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>저감활동 효과 보고</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>비상저감조치 SMS 관리</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>사이트 관리</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>미세먼지 맵 서비스</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class='nav-items'>
+                  <a href='#'>수기데이터 관리</a>
+                  <ul class='sub-nav-list'>
+                    <li class='sub-nav-items'>
+                      <a href='#'>산업 부문</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>수송 부문</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>생활 부문</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class='nav-items'>
+                  <a href='#'>시스템 자원 모니터링</a>
+                  <ul class='sub-nav-list'>
+                    <li class='sub-nav-items'>
+                      <a href='#'>포털 시스템 모니터링</a>
+                    </li>
+                    <li class='sub-nav-items'>
+                      <a href='#'>빅데이터 시스템 모니터링</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div id='login-info'>
+              <p id='login-msg'><span>홍길동</span>관리자님, 안녕하세요</p>
+              <a id='logout-btn' href='#'>로그아웃</a>
+            </div>
+          </div>
+          <div id='sub-nav-bg'></div>
+        </div>
+      </div>
+      <div id='subpage-navs'>
+        <div class='container'>
+          <div id='subpage-nav-links' class='clear'>
+            <div id='sub-nav-home-link' class='subpage-nav-items'>
+              <a href='/ms/main/main.html'><span class='sound-only'>메인</span></a>
+            </div>
+            <div class='subpage-nav-items'>
+              <a href='javascript:void(0);' class=''>특화단지 장치 관리</a>
+            </div>
+            <div class='subpage-nav-items'>
+              <a href='javascript:void(0);' class='sub-nav-depths'>장치 운영모드 관리</a>
+              <ul class='sub-nav-selector'>
+                <li class='select-items'>
+                  <a class='select-links' href='#'>장치 운영모드 관리</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //header -->
+    <!-- section -->
+    <div class='contents'>
+      <div class='subpage-contents'>
+        <div class='container'>
+          <div class="subpage-title">
+            <h3>수집현황</h3>
+          </div>
+          <div class='lookup-wrapper conts-section'>
+            <form>
+              <div id='list-lookup-forms'>
+                <div class='lookup-forms clear'>
+                  <div class='service-selector'>
+                    <label class='select-label' for=''>서비스 유형</label>
+                    <select class='select-form' id='' name=''>
+                      <option>서비스 유형1</option>
+                      <option>서비스 유형2</option>
+                      <option>서비스 유형3</option>
+                    </select>
+                  </div>
+                  <div class='device-selector'>
+                    <label class='select-label' for=''>디바이스 명</label>
+                    <select class='select-form' id='' name=''>
+                      <option>디바이스1</option>
+                      <option>디바이스2</option>
+                      <option>디바이스3</option>
+                    </select>
+                  </div>
+                  <div class='lookup-date'>
+                    <label class='date-label' for='start-date'>조회일자</label>
+                    <input type="text" class='date-form date-picker' id='start-date' autocomplete="off" >
+                  </div>
+                  <div class='form-reference-btn'>
+                    <button class='btn btn-round'>조회</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class='conts-section'>
+            <div class="subpage-cate-title">
+              <h4>서비스 유형 수집건수</h4>
+            </div>
+            <div id='colctSttusList-count' class='counts'>
+              <table class='count-table text-center'>
+                <colgroup>
+                  <col class='styleClass' />
+                  <col class='styleClass' />
+                  <col class='styleClass' />
+                  <col class='styleClass' />
+                  <col class='styleClass' />
+                  <col class='styleClass' />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>
+                      <div>
+                        <p>우리동네 알림이 서비스</p>
+                      </div>
+                    </th>
+                    <th>
+                      <div>
+                        <p>비산먼지</p>
+                      </div>
+                    </th>
+                    <th>
+                      <div>
+                        <p>지하철</p>
+                      </div>
+                    </th>
+                    <th>
+                      <div>
+                        <p>통학로</p>
+                      </div>
+                    </th>
+                    <th>
+                      <div>
+                        <p>전기집진기</p>
+                      </div>
+                    </th>
+                    <th>
+                      <div>
+                        <p>합계</p>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div>
+                        <p id='problem-count-alram'>0</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p id='problem-count-industry'>5</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p id='problem-count-school'>1</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p id='problem-count-subway'>0</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p id='problem-count-subway'>0</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p id='problem-count-subway'>6</p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class='board-lists conts-section'>
+            <div class='board-list-set clear'>
+              <div class='list-count'>
+                <p>조회결과 : <span id='count-result'>9,999</span>건</p>
+              </div>
+              <div class='list-view-selector'>
+                <select class='select-form' id='' name=''>
+                  <option>50개 출력</option>
+                  <option>100개 출력</option>
+                  <option>150개 출력</option>
+                  <option>200개 출력</option>
+                </select>
+              </div>
+            </div>
+            <div class='board-list-table-wrapper text-center'>
+              <table id='colctSttusList-table'>
+                <colgroup>
+                  <col class='numberStyle' />
+                  <col class='categoryStyle' />
+                  <col class='categoryStyle' />
+                  <col class='categoryStyle' />
+                  <col class='categoryStyle' />
+                  <col class='categoryStyle' />
+                  <col class='countStyle' />
+                  <col class='countStyle' />
+                  <col class='countStyle' />
+                </colgroup>
+                <thead class='board-list-header'>
+                  <tr>
+                    <th class='' rowspan="2">
+                      <div>
+                        <p>순번</p>
+                      </div>
+                    </th>
+                    <th class='' rowspan="2">
+                      <div>
+                        <p>서비스 유형</p>
+                      </div>
+                    </th>
+                    <th class='' rowspan="2">
+                      <div>
+                        <p>디바이스 명</p>
+                      </div>
+                    </th>
+                    <th class='' rowspan="2">
+                      <div>
+                        <p>측정소</p>
+                      </div>
+                    </th>
+                    <th class='' rowspan="2">
+                      <div>
+                        <p>법정동</p>
+                      </div>
+                    </th>
+                    <th class='' rowspan="2">
+                      <div>
+                        <p>수집주기</p>
+                      </div>
+                    </th>
+                    <th class='' colspan="3">
+                      <div>
+                        <p>수집건수</p>
+                      </div>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th class=''>
+                      <div>
+                        <p>성공</p>
+                      </div>
+                    </th>
+                    <th class=''>
+                      <div>
+                        <p>실패</p>
+                      </div>
+                    </th>
+                    <th class=''>
+                      <div>
+                        <p>합계</p>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class='board-list-body'>
+                  <tr>
+                    <td>
+                      <div>
+                        <p>1</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p>우리동네 알림이 서비스</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p>
+                          <a onclick='dataPopupInit(1)' href='javascript:void(0);'>디바이스명 #1</a>
+                        </p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p>영광사거리</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p>상동</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p>수집주기</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p>4</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p>1</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p>5</p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div>
+                        <p>1</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p>우리동네 알림이 서비스</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p>
+                          <a onclick='dataPopupInit(2)' href='javascript:void(0);'>디바이스명 #2</a>
+                        </p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p>영광사거리</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p>상동</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p>수집주기</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p>4</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p>1</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p>5</p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class='pagenation-wrapper'>
+                <a href='#' class='pagenation-arrow pagenation-prev'>
+                  <span class='sound-only'>이전페이지</span>
+                </a>
+                <ul class='pagenation-lists'>
+                  <li class='pagenation-items active'>
+                    <a href='#'>1</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>2</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>3</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>4</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>5</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>6</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>7</a>
+                  </li>
+                </ul>
+                <a href='#' class='pagenation-arrow pagenation-next'>
+                  <span class='sound-only'>다음페이지</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+    <!-- //section -->
+    <!-- footer -->
+    <div id='footers'>
+
+    </div>
+    <!-- //footer -->
+    <!-- modal -->
+    <div class='modals'>
+      <div class='modal-content position-abs'>
+        <div class='modal-header'>
+          <div class="modal-title">
+            <h4><span>디바이스명 #1</span> 수집건수 조회</h4>
+            <a href="javascript:void(0);" class="modal-close">
+              <span class="sound-only">팝업닫기</span>
+            </a>
+          </div>
+        </div>
+        <div class='modal-body'>
+          <div class='modal-section'>
+            <label class="radio-label">
+              <input type="radio" class="radio-form" value='all' name='lookup-filter' checked>
+              <span class="radio-img"></span>
+              <span class="radio-label-text">전체</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" class="radio-form" value='1' name='lookup-filter'>
+              <span class="radio-img"></span>
+              <span class="radio-label-text">성공</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" class="radio-form" value='0' name='lookup-filter'>
+              <span class="radio-img"></span>
+              <span class="radio-label-text">실패</span>
+            </label>
+          </div>
+          <div class='modal-section'>
+            <table class='modal-tables text-center'>
+              <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+              </colgroup>
+              <thead class='board-list-header'>
+                <tr>
+                  <th class=''>
+                    <div>
+                      <p>순번</p>
+                    </div>
+                  </th>
+                  <th class=''>
+                    <div>
+                      <p>수집시간</p>
+                    </div>
+                  </th>
+                  <th class=''>
+                    <div>
+                      <p>서비스유형</p>
+                    </div>
+                  </th>
+                  <th class=''>
+                    <div>
+                      <p>디바이스 명</p>
+                    </div>
+                  </th>
+                  <th class=''>
+                    <div>
+                      <p>측정소</p>
+                    </div>
+                  </th>
+                  <th class=''>
+                    <div>
+                      <p>법정동</p>
+                    </div>
+                  </th>
+                  <th class=''>
+                    <div>
+                      <p>수집처리건수</p>
+                    </div>
+                  </th>
+                  <th class=''>
+                    <div>
+                      <p>성공여부</p>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody id='modal-data-lists' class='board-list-body'>
+                <tr>
+                  <td>
+                    <div>
+                      <p>1</p>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <p>2020-09-17 11:03</p>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <p>우리동네 알림이 서비스</p>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <p>디바이스명 #1</p>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <p>영광사거리</p>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <p>상동</p>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <p></p>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <p>
+                        <span class='lookup-status lookup-false'></span>
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>
+                      <p>2</p>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <p>2020-09-17 12:03</p>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <p>우리동네 알림이 서비스</p>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <p>디바이스명 #1</p>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <p>영광사거리</p>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <p>상동</p>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <p></p>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <p>
+                        <span class='lookup-status lookup-success'></span>
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class='modal-pager text-center'>
+              <div class='pagenation-wrapper'>
+                <a href='#' class='pagenation-arrow pagenation-prev'>
+                  <span class='sound-only'>이전페이지</span>
+                </a>
+                <ul class='pagenation-lists'>
+                  <li class='pagenation-items active'>
+                    <a href='#'>1</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>2</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>3</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>4</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>5</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>6</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>7</a>
+                  </li>
+                </ul>
+                <a href='#' class='pagenation-arrow pagenation-next'>
+                  <span class='sound-only'>다음페이지</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='modal-bg'></div>
+    </div>
+    <!-- //modal -->
+  </div>
+  <!-- 모달 작동 예시 스크립트 -->
+  <script>
+    var dummyData = [
+      {
+        deviceId : 1,
+        data : [
+          {
+            id : '1',
+            datetime : '2020-09-17 11:03',
+            serviceType : '우리동네 알림이 서비스',
+            deviceName : '디바이스명 #1',
+            station : '영광사거리',
+            city : '상동',
+            count : '',
+            status : false
+          },
+          {
+            id : '2',
+            datetime : '2020-09-17 12:03',
+            serviceType : '우리동네 알림이 서비스',
+            deviceName : '디바이스명 #1',
+            station : '영광사거리',
+            city : '상동',
+            count : '',
+            status : true
+          },
+          {
+            id : '3',
+            datetime : '2020-09-17 13:03',
+            serviceType : '우리동네 알림이 서비스',
+            deviceName : '디바이스명 #1',
+            station : '영광사거리',
+            city : '상동',
+            count : '',
+            status : true
+          },
+          {
+            id : '4',
+            datetime : '2020-09-17 14:03',
+            serviceType : '우리동네 알림이 서비스',
+            deviceName : '디바이스명 #1',
+            station : '영광사거리',
+            city : '상동',
+            count : '',
+            status : false
+          }
+        ]
+      },
+      {
+        deviceId : 2,
+        data : [
+          {
+            id : '1',
+            datetime : '2020-09-18 11:03',
+            serviceType : '비산먼지',
+            deviceName : '디바이스명 #2',
+            station : '서해그랑블',
+            city : '약대동',
+            count : '',
+            status : false
+          },
+          {
+            id : '2',
+            datetime : '2020-09-18 12:03',
+            serviceType : '비산먼지',
+            deviceName : '디바이스명 #2',
+            station : '서해그랑블',
+            city : '약대동',
+            count : '',
+            status : true
+          },
+          {
+            id : '3',
+            datetime : '2020-09-18 13:03',
+            serviceType : '비산먼지',
+            deviceName : '디바이스명 #2',
+            station : '서해그랑블',
+            city : '약대동',
+            count : '',
+            status : true
+          },
+          {
+            id : '4',
+            datetime : '2020-09-18 14:03',
+            serviceType : '비산먼지',
+            deviceName : '디바이스명 #2',
+            station : '서해그랑블',
+            city : '약대동',
+            count : '',
+            status : true
+          }
+        ]
+      }
+    ];
+    var viewDummyData = [];
+    function dataPopupInit(id) {
+      for (var i = 0; i < dummyData.length; i++) {
+        if (dummyData[i].deviceId == id) {
+          viewDummyData = dummyData[i];
+          popOpen(dummyData[i]);
+          return viewDummyData;
+        }
+      }
+    };
+    function popOpen(data) {
+      var html = '';
+      for (var i = 0; i < data.data.length; i++) {
+        var insertData = data.data[i];
+        if (i == 0) {
+          html = '<tr>';
+        } else {
+          html += '<tr>';
+        }
+        html += '<td>';
+        html += '<div><p>'+insertData.id+'</p></div>';
+        html += '</td>';
+        html += '<td>';
+        html += '<div><p>'+insertData.datetime+'</p></div>';
+        html += '</td>';
+        html += '<td>';
+        html += '<div><p>'+insertData.serviceType+'</p></div>';
+        html += '</td>';
+        html += '<td>';
+        html += '<div><p>'+insertData.deviceName+'</p></div>';
+        html += '</td>';
+        html += '<td>';
+        html += '<div><p>'+insertData.station+'</p></div>';
+        html += '</td>';
+        html += '<td>';
+        html += '<div><p>'+insertData.city+'</p></div>';
+        html += '</td>';
+        html += '<td>';
+        html += '<div><p>'+insertData.count+'</p></div>';
+        html += '</td>';
+        html += '<td>';
+        html += '<div><p>';
+        if (insertData.status == true) {
+          html += '<span class="lookup-status lookup-success"></span>';
+        } else {
+          html += '<span class="lookup-status lookup-false"></span>';
+        }
+        html += '</p></div>';
+        html += '</td>';
+        html += '</tr>';
+      }
+      document.getElementById('modal-data-lists').innerHTML = html;
+      $('.modals').stop().fadeIn();
+    };
+    $(document).ready(function() {      
+      $('input[name="lookup-filter"]').on('change', function() {
+        console.log(viewDummyData)
+      });
+      $('.modal-close, .modal-bg').on('click', function() {
+        $('.modals').stop().fadeOut();
+      });
+      $('.date-picker').each(function(i) {
+        var $this = $(this);
+        $this.datepicker({
+          changeMonth: true,
+          changeYear: true, 
+          minDate: '-100y', 
+          nextText: '다음 달',
+          prevText: '이전 달',
+          numberOfMonths: [1,1],
+          stepMonths: 3,
+          yearRange: 'c-100:c+10',
+          showButtonPanel: true,  
+          currentText: '오늘 날짜',
+          closeText: '닫기', 
+          dateFormat: "yy-mm-dd",
+          showMonthAfterYear: true ,
+          dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'],
+          monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
