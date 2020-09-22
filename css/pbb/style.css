@@ -270,7 +270,9 @@
 #service-forms .form-reference-btn > .btn {height:50px;line-height: 50px;}
 
 /* 예외정책 */
-#exception-policy {padding:40px 0;border-top:1px solid #999da5; border-bottom:1px solid #999da5;}
+#exception-policy,
+#auto-forms,
+#tod-forms {padding:40px 0;border-top:1px solid #999da5; border-bottom:1px solid #999da5;}
 .exception-policy-items {float:left;margin:0 10px 10px 0;}
 .exception-policy-items:nth-child(6) {margin-right:0;}
 .exception-policy-label {min-width:200px}
@@ -326,7 +328,8 @@
 #colctSttusList-table .categoryStyle {width:198px;}
 
 /* page : SpclizDeviceStateSttusList.html */
-#device-status-forms .select-form {width:300px;}
+#device-status-forms .select-form,
+#device-status-forms .text-form {width:300px;}
 #device-status-forms .lookup-forms > .form-reference-btn {padding-left:64px;}
 /* 삭제할 코드 */
 .subway-imgs {height:300px;border:3px solid #000;}
@@ -354,5 +357,49 @@
 #SpclizDeviceList .insert-template .checkbox-label {border:0;background:none;padding:0;}
 #SpclizDeviceList .insert-template .select-form.time-selector {width:90px;}
 
-#SpclizDeviceList .view-template .operatingTimes:not(:last-child) {border-bottom:1px solid #e6eaee;}
-#SpclizDeviceList .view-template .operatingTimes > p{height:50px;line-height: 50px;}
+/* page : InnerMsrstnList.html */
+#InnerMsrstnListTables .checkbox-label {padding:0;background: none;border:0;}
+#InnerMsrstnListTables td .btn {height:32px;line-height: 32px;font-size:14px;padding: 0 15px;background-color:#e6eaee;color:#696d75;}
+#InnerMsrstnListTables td .btn:hover {background-color:#2c64cf;color:#fff;}
+
+.device-save-template .modal-tables .text-form,
+.device-save-template .modal-tables .select-form {height: 34px; line-height: 34px; width:50%; }
+
+.device-view-template #modal-map {height:340px;}
+
+/* page : SigngBcrnImageList.html */
+#SigngBcrnImageList label:not(.radio-label) {min-width:90px;}
+#SigngBcrnImageList .lookup-wrapper .select-form, 
+#SigngBcrnImageList .lookup-wrapper .text-form {width:420px;}
+#SigngBcrnImageList .lookup-forms #service-used-form > .text-label {position: relative;top: -6px;}
+#SigngBcrnImageList .lookup-forms > .form-reference-btn {border-left:0;padding-left: 0;}
+#SigngBcrnImageList .imgSave-template .select-form,
+#SigngBcrnImageList .imgSave-template .text-form {height:34px;line-height: 34px;width:50%;}
+.view-img {display:none; width: 950px; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1; background-color: #fff; padding: 50px; max-height: calc(100% - 50px); overflow-y: auto;cursor:pointer;}
+.view-img > img {width:100%;}
+
+/* page : SigngMntrngList.html */
+.SigngMntrngListConts {padding: 40px 0; border-top: 1px solid #999da5; border-bottom: 1px solid #999da5;}
+.signgMntrngItems {float:left;width:calc((100% - (10px * 1)) / 2);margin-right:10px;margin-top:10px;}
+.signgMntrngItems:nth-child(2n) {margin-right:0}
+#SigngMntrngList .lookup-forms .text-form {width:420px;}
+
+/* page : SigngCntntsList.html */
+#SigngCntntsList .lookup-forms #service-used-form > .text-label {position: relative; top: -6px;}
+#SigngCntntsList .lookup-forms > .form-reference-btn {border-left: 0; padding-left: 0;}
+#SigngCntntsList .select-form, 
+#SigngCntntsList .lookup-wrapper .text-form { width: 420px;}
+#SigngCntntsList .modals .checkbox-label {padding:0;background:none;border:0;}
+#SigngCntntsList .modals .useContents {padding-top:14px;padding-bottom:14px;}
+#SigngCntntsList .modals .useContents > div:not(:last-child) {margin-bottom:14px;}
+#SigngCntntsList .contentsSave-template .text-form {height: 34px; line-height: 34px;}
+
+/* page : SigngCompositionList.html */
+#SigngCompositionList .lookup-wrapper .select-form, 
+#SigngCompositionList .lookup-wrapper .text-form {width:420px;}
+#SigngCompositionList .lookup-wrapper label {min-width:100px;}
+#SigngCompositionList .lookup-forms > .form-reference-btn {border-left: 0; padding-left: 0; }
+
+/* page : list-popup.html */
+#list-popup .modal-content {position: static !important;transform: none !important;}
+

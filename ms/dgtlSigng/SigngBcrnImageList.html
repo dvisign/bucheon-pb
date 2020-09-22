@@ -3,15 +3,10 @@
 
 <head>
   <meta charset='UTF-8'>
-  <title>측정소 관리</title>
+  <title>디지털 사이니지 배경 이미지 관리</title>
   <link href='/css/pbb/reset.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/common.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/style.css' type='text/css' rel='stylesheet'>
-  <!-- kakao API -->
-  <script type='text/javascript'
-    src='//dapi.kakao.com/v2/maps/sdk.js?appkey=45e3c6ea96e8632f69735a69f4fa70b9&libraries=services'></script>
-  <script charset='UTF-8' src='http://t1.daumcdn.net/mapjsapi/js/main/4.2.0/kakao.js'></script>
-  <script charset='UTF-8' src='http://s1.daumcdn.net/svc/attach/U03/cssjs/mapapi/libs/1.0.1/1515130215283/services.js'></script>
   <!-- handlebars -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"
     integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw=="
@@ -22,7 +17,7 @@
   <script type='text/javascript' src='/js/pbb/common.js'></script>
 </head>
 
-<body id='InnerMsrstnList'>
+<body id='SigngBcrnImageList'>
   <div id='wrap'>
     <!-- header -->
     <div id='header-wrapper'>
@@ -224,23 +219,41 @@
       <div class='subpage-contents'>
         <div class='container'>
           <div class='subpage-title'>
-            <h3>특화단지 장치 관리</h3>
+            <h3>사이니지 배경이미지 관리</h3>
           </div>
           <div class='lookup-wrapper conts-section'>
             <form>
-              <div id='device-status-forms'>
+              <div>
                 <div class='lookup-forms clear'>
-                  <div id='service-case-form' class='form-select-1'>
-                    <label class='select-label' for='service-case'>법정동</label>
-                    <select class='select-form' id='service-case' name='service-case'>
-                      <option>선택</option>
-                    </select>
-                  </div>
-                  <div id='service-mode-form' class='form-select-2'>
+                  <div id='service-mode-form'>
                     <label class='select-label' for='service-mode'>서비스 유형</label>
                     <select class='select-form' id='service-mode' name='service-mode'>
                       <option>선택</option>
                     </select>
+                  </div>
+                  <div id='service-case-form' class='float-right'>
+                    <label class='text-label'>배경 이미지 명</label>
+                    <input type='text' class='text-form' />
+                  </div>
+                </div>
+                <div class='lookup-forms clear'>
+                  <div id='service-used-form'>
+                    <label class='text-label'>사용상태</label>
+                    <label class="radio-label">
+                      <input type="radio" class="radio-form" name="test" checked="">
+                      <span class="radio-img"></span>
+                      <span class="radio-label-text">전체</span>
+                    </label>
+                    <label class="radio-label">
+                      <input type="radio" class="radio-form" name="test">
+                      <span class="radio-img"></span>
+                      <span class="radio-label-text">사용</span>
+                    </label>
+                    <label class="radio-label">
+                      <input type="radio" class="radio-form" name="test">
+                      <span class="radio-img"></span>
+                      <span class="radio-label-text">미사용</span>
+                    </label>
                   </div>
                   <div id='service-reference-btn' class='form-reference-btn'>
                     <button class='btn btn-round'>조회</button>
@@ -251,7 +264,7 @@
           </div>
           <div class='board-lists conts-section'>
             <div class='view-used-btn board-write-btns text-right'>
-              <a href='javascript:void(0);' onclick='setDevice("#device-save-template");' class='btn btn-round'>등록</a>
+              <a href='javascript:void(0);' onclick='setDevice("#imgSave-template");' class='btn btn-round'>등록</a>
               <a href='#' class='btn btn-round'>삭제</a>
             </div>
             <div class='board-list-set clear'>
@@ -269,6 +282,9 @@
             </div>
             <div class='board-list-table-wrapper text-center'>
               <table id='InnerMsrstnListTables'>
+                <colgroup>
+                  <col width='60px'>
+                </colgroup>
                 <thead class='board-list-header'>
                   <tr>
                     <th>
@@ -282,37 +298,22 @@
                     </th>
                     <th>
                       <div>
-                        <p>법정동</p>
+                        <p>관리번호</p>
                       </div>
                     </th>
                     <th>
                       <div>
-                        <p>측정소 ID</p>
+                        <p>배경이미지명</p>
                       </div>
                     </th>
                     <th>
                       <div>
-                        <p>측정소 명</p>
+                        <p>서비스 유형</p>
                       </div>
                     </th>
                     <th>
                       <div>
-                        <p>측정소 주소</p>
-                      </div>
-                    </th>
-                    <th>
-                      <div>
-                        <p>국가 측정망</p>
-                      </div>
-                    </th>
-                    <th>
-                      <div>
-                        <p>위도</p>
-                      </div>
-                    </th>
-                    <th>
-                      <div>
-                        <p>경도</p>
+                        <p>사용상태</p>
                       </div>
                     </th>
                   </tr>
@@ -330,39 +331,22 @@
                     </td>
                     <td>
                       <div>
-                        <p>춘의동</p>
+                        <p><span>2020030510110</span></p>
                       </div>
                     </td>
                     <td>
                       <div>
-                        <p>xxxxq11</p>
+                        <p><span><a href='javascript:void(0);' onclick='setDevice("#imgView-template");'>춘의사거리</a></span></p>
                       </div>
                     </td>
                     <td>
                       <div>
-                        <p>
-                          <a href='javascript:void(0);' onclick='setDevice("#device-view-template");'>춘의사거리</a>
-                        </p>
+                        <p><span>미세먼지 알림이</span></p>
                       </div>
                     </td>
                     <td>
                       <div>
-                        <p>경기도 부천시</p>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p>xxxx</p>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p>123.1234</p>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p>123.1234</p>
+                        <p><span class='lookup-success lookup-status'></span></p>
                       </div>
                     </td>
                   </tr>
@@ -401,7 +385,7 @@
               </div>
             </div>
             <div class='view-used-btn text-center'>
-              <a href='javascript:void(0);' onclick='setDevice("#device-save-template");' class='btn btn-round'>등록</a>
+              <a href='javascript:void(0);' onclick='setDevice("#imgSave-template");' class='btn btn-round'>등록</a>
               <a href='#' class='btn btn-round'>삭제</a>
             </div>
           </div>
@@ -418,13 +402,13 @@
     <div class='modals'></div>
     <!-- //modal -->
   </div>
-  <!-- 측정소 등록 모달 -->
-  <script id='device-save-template' type="text/x-handlebars-template">
-    <div class='device-save-template modal-content position-abs'>
+  <!-- 배경이미지 상세보기 모달 html -->
+  <script id='imgView-template' type="text/x-handlebars-template">
+    <div class='modal-content position-abs'>
       <div>
         <div class='modal-header'>
           <div class="modal-title">
-            <h4>측정소 등록</h4>
+            <h4>배경이미지 상세보기</h4>
             <a href="javascript:void(0);" class="modal-close">
               <span class="sound-only">팝업닫기</span>
             </a>
@@ -432,11 +416,6 @@
         </div>
         <div class='modal-body templateEl'>
           <div class='device-chart-scroll'>
-            <div class='modal-section'>
-              <div class='modal-maps'>
-                <div id='modal-map'></div>
-              </div>
-            </div>
             <div class='modal-section'>
               <table class="modal-tables text-left">
                 <colgroup>
@@ -449,12 +428,122 @@
                   <tr>
                     <th>
                       <div>
-                        <p>법정동</p>
+                        <p>등록일시</p>
+                      </div>
+                    </th>
+                    <td>
+                      <div>
+                        <p><span>2020-06-23</span> <span>10:10</span></p>
+                      </div>
+                    </td>
+                    <th>
+                      <div>
+                        <p>관리번호</p>
+                      </div>
+                    </th>
+                    <td>
+                      <div>
+                        <p><span>2020030510110</span></p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div>
+                        <p>서비스 유형</p>
+                      </div>
+                    </th>
+                    <td>
+                      <div>
+                        <p><span>미세먼지 알림이</span></p>
+                      </div>
+                    </td>
+                    <th>
+                      <div>
+                        <p>사용상태</p>
+                      </div>
+                    </th>
+                    <td>
+                      <div>
+                        <p><span class='lookup-success lookup-status'></span></p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div>
+                        <p>배경 이미지 명</p>
                       </div>
                     </th>
                     <td colspan='3'>
                       <div>
-                        <select class="select-form">
+                        <p><span>통학로 청정 안심서비스</span></p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div>
+                        <p>배경 이미지</p>
+                      </div>
+                    </th>
+                    <td colspan='3'>
+                      <div>
+                        <p><span><a href='javascript:void(0);' onclick='viewImg();'>배경이미지.jpg</a></span></p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class='modal-section'>
+              <div class='view-used-btn text-center'>
+                <a href='javascript:void(0);' class='btn btn-round'>수정</a>
+                <a href='javascript:void(0);' class='btn btn-round' onclick='$(".modals").stop().fadeOut();'>닫기</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='view-img position-abs'>
+      <img src='http://dvisign.com/main_portfolio/img/background/main_bg.jpg' />
+    </div>
+    <div class='modal-bg'></div>
+  </script>
+  <!-- //배경이미지 상세보기 모달 html -->
+  <!-- 배경이미지 등록 모달 html -->
+  <script id='imgSave-template' type="text/x-handlebars-template">
+    <div class='imgSave-template modal-content position-abs'>
+      <div>
+        <div class='modal-header'>
+          <div class="modal-title">
+            <h4>배경이미지 등록</h4>
+            <a href="javascript:void(0);" class="modal-close">
+              <span class="sound-only">팝업닫기</span>
+            </a>
+          </div>
+        </div>
+        <div class='modal-body templateEl'>
+          <div class='device-chart-scroll'>
+            <div class='modal-section'>
+              <table class="modal-tables text-left">
+                <colgroup>
+                  <col width='14%'>
+                  <col width='36%'>
+                  <col width='14%'>
+                  <col width='36%'>
+                </colgroup>
+                <tbody class="board-list-body">
+                  <tr>
+                    <th>
+                      <div>
+                        <p>서비스 유형</p>
+                      </div>
+                    </th>
+                    <td>
+                      <div>
+                        <select class='select-form'>
                           <option>선택</option>
                         </select>
                       </div>
@@ -463,10 +552,10 @@
                   <tr>
                     <th>
                       <div>
-                        <p>측정소 명</p>
+                        <p>배경이미지 명</p>
                       </div>
                     </th>
-                    <td colspan='3'>
+                    <td>
                       <div>
                         <input type='text' class='text-form' />
                       </div>
@@ -475,35 +564,16 @@
                   <tr>
                     <th>
                       <div>
-                        <p>측정소 주소</p>
-                      </div>
-                    </th>
-                    <td colspan='3'>
-                      <div>
-                        <input type='text' class='text-form' />
-                        <a href='javascript:void(0);' class='btn btn-round modal-btn'>조회</a>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>
-                      <div>
-                        <p>위도</p>
+                        <p>배경이미지</p>
                       </div>
                     </th>
                     <td>
                       <div>
-                        <input type='text' class='text-form' />
-                      </div>
-                    </td>
-                    <th>
-                      <div>
-                        <p>경도</p>
-                      </div>
-                    </th>
-                    <td>
-                      <div>
-                        <input type='text' class='text-form' />
+                        <label class='file-label btn btn-round modal-btn' for='imgFile'>파일</label>
+                        <input type='file' id='imgFile' class='file-form' />
+                        <!-- 파일이름출력 디폴트값은 빈값 -->
+                        <span class='fileNames'>파일이름 출력.jpg</span>
+                        <span class='fileMsg'>* 이미지 파일(jpg, png, jpeg) 만 첨부 가능합니다. </span>
                       </div>
                     </td>
                   </tr>
@@ -522,137 +592,31 @@
     </div>
     <div class='modal-bg'></div>
   </script>
-  <!-- // 측정소 등록 모달 -->
-  <!-- 측정소 상세 조회 -->
-  <script id='device-view-template' type="text/x-handlebars-template">
-    <div class='device-view-template modal-content position-abs'>
-      <div class='modal-header'>
-        <div class="modal-title">
-          <h4>측정소 상세 조회</h4>
-          <a href="javascript:void(0);" class="modal-close">
-            <span class="sound-only">팝업닫기</span>
-          </a>
-        </div>
-      </div>
-      <div class='modal-section'>
-        <div class='device-details clear'>
-          <div class='modal-maps'>
-            <div id='modal-map'></div>
-          </div>
-          <div>
-            <div class="subpage-cate-title">
-              <h4>측정소 상세 정보</h4>
-            </div>
-            <table class='modal-tables text-center'>
-              <tbody id='modal-data-lists' class='board-list-body'>
-                <tr>
-                  <th>
-                    <div>
-                      <p>법정동</p>
-                    </div>
-                  </th>
-                  <td>
-                    <div>
-                      <p><span>법정동 #1</span></p>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <th>
-                    <div>
-                      <p>측정소 명</p>
-                    </div>
-                  </th>
-                  <td>
-                    <div>
-                      <p><span>측정소 #1</span></p>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <th>
-                    <div>
-                      <p>측정소 주소</p>
-                    </div>
-                  </th>
-                  <td>
-                    <div>
-                      <p><span>경기도 부천시</span></p>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <th>
-                    <div>
-                      <p>위도</p>
-                    </div>
-                  </th>
-                  <td>
-                    <div>
-                      <p><span>123.1234</span></p>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <th>
-                    <div>
-                      <p>경도</p>
-                    </div>
-                  </th>
-                  <td>
-                    <div>
-                      <p><span>123.1234</span></p>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <th>
-                    <div>
-                      <p>근접 국가 측정망</p>
-                    </div>
-                  </th>
-                  <td>
-                    <div>
-                      <p><span>국가 측정망 #1</span></p>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class='modal-bg'></div>
-  </script>
-  <!-- // 측정소 상세 조회 -->
+  <!-- // 배경이미지 등록 모달 html -->
 
   <!-- 상태 모달 예시 스크립트 -->
   <script>
-    function fn_ptl_mapCreate(lat, lon) {
-      var mapContainer = document.getElementById('modal-map'),
-      mapOption = {
-        center: new kakao.maps.LatLng(lat, lon),
-        level: 3
-      };
-      map = new kakao.maps.Map(mapContainer, mapOption);
-    };
     function compiling(serviceType) {
       var source = $(serviceType).html();
       var template = Handlebars.compile(source);
       var html = template();
       return html;
     };
-    function setDevice(serviceType) {
-      var html = compiling(serviceType);
+    function setDevice(service) {
+      var html = compiling(service);
       $('.modals')[0].innerHTML = html;
       $('.modals').stop().fadeIn();
-      fn_ptl_mapCreate(37.503648, 126.765966);
+    };
+    function viewImg() {
+      $('.view-img').stop().fadeIn();
     }
     $(document).ready(function() {
       $(document).on('click', '.modal-bg, .modal-close', function() {
         $('.modals').stop().fadeOut();
       });
+      $(document).on('click', '.view-img', function() {
+        $(this).stop().fadeOut();
+      })
     });
   </script>
 </body>
