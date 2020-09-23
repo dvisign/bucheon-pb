@@ -4,6 +4,8 @@
 <head>
   <meta charset='UTF-8'>
   <title>미세먼지 저감활동 내역 - 목록</title>
+  <link href='/css/pbb/slick.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/slick-theme.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/reset.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/common.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/style.css' type='text/css' rel='stylesheet'>
@@ -14,6 +16,9 @@
   <script type='text/javascript' src='/resources/jquery/jquery-ui.min.js'></script>
   <!-- common JS -->
   <script type='text/javascript' src='/js/pbb/common.js'></script>
+  <!-- slick plugin -->
+  <script type='text/javascript' src='/js/pbb/slick.min.js'></script>
+  <!-- slick css -->
 </head>
 
 <body>
@@ -217,6 +222,58 @@
     <div id='list-conts' class='contents'>
       <div class='subpage-contents'>
         <div class='container'>
+          <div class='board-category-wrapper text-center conts-section'>
+            <div class='board-category-lists'>
+              <div class='board-category-items'>
+                <a href='#' class='board-category-links'>
+                  <span class='board-category-icons' style='background-color:#596d93;'></span>
+                  <p class='board-category-names'>미세먼지</p>
+                </a>
+              </div>
+              <div class='board-category-items'>
+                <a href='#' class='board-category-links'>
+                  <span class='board-category-icons' style='background-color:#596d93;'></span>
+                  <p class='board-category-names'>정책</p>
+                </a>
+              </div>
+              <div class='board-category-items'>
+                <a href='#' class='board-category-links'>
+                  <span class='board-category-icons' style='background-color:#596d93;'></span>
+                  <p class='board-category-names'>특화단지</p>
+                </a>
+              </div>
+              <div class='board-category-items'>
+                <a href='#' class='board-category-links'>
+                  <span class='board-category-icons' style='background-color:#596d93;'></span>
+                  <p class='board-category-names'>시민행동요령</p>
+                </a>
+              </div>
+              <div class='board-category-items'>
+                <a href='#' class='board-category-links'>
+                  <span class='board-category-icons' style='background-color:#596d93;'></span>
+                  <p class='board-category-names'>미세먼지 알림이</p>
+                </a>
+              </div>
+              <div class='board-category-items'>
+                <a href='#' class='board-category-links'>
+                  <span class='board-category-icons' style='background-color:#596d93;'></span>
+                  <p class='board-category-names'>측정소</p>
+                </a>
+              </div>
+              <div class='board-category-items'>
+                <a href='#' class='board-category-links'>
+                  <span class='board-category-icons' style='background-color:#596d93;'></span>
+                  <p class='board-category-names'>계절 관리제</p>
+                </a>
+              </div>
+              <div class='board-category-items'>
+                <a href='#' class='board-category-links'>
+                  <span class='board-category-icons' style='background-color:#596d93;'></span>
+                  <p class='board-category-names'>차량2부제</p>
+                </a>
+              </div>
+            </div>
+          </div>
           <div class='lookup-wrapper conts-section'>
             <form>
               <div id='list-lookup-forms'>
@@ -247,21 +304,28 @@
               </div>
             </form>
           </div>
-          <div id='notice-search-form' class='lookup-wrapper conts-section' style='display:none;'>
+          <div class='board-search-form lookup-wrapper conts-section'>
             <form>
               <div id='list-lookup-forms'>
                 <div class='lookup-forms clear'>
-                  <div class='float-left'>
+                  <div class='float-left search-date'>
                     <label class='date-label'>조회조건</label>
                     <input type="text" class='date-form date-picker'>
                     <span>~</span>
                     <input type="text" class='date-form date-picker'>
                   </div>
-                  <div class='float-right'>
+                  <div class='float-left search-subject'>
                     <select class='select-form' id='' name=''>
                       <option>제목</option>
                     </select>
-                    <input type='text' class='text-form' id='search-text' />
+                    <input type='text' class='text-form search-text' />
+                  </div>
+                  <div class='float-right search-chb'>
+                    <label class="checkbox-label" for="test1">
+                      <input id="test1" class="checkbox-form" name="test1" type="checkbox">
+                      <span class="checkbox-img"></span>
+                      <span class='checkbox-label-text'>내가 쓴 글</span>
+                    </label>
                   </div>
                 </div>
                 <div class='lookup-forms clear'>
@@ -546,6 +610,13 @@
                       </div>
                     </td>
                   </tr>
+                  <tr class='list-empty'>
+                    <td colspan="8">
+                      <div>
+                        <p class='list-empty-text'>조회 결과가 없습니다.</p>
+                      </div>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
               <div class='pagenation-wrapper'>
@@ -597,6 +668,16 @@
   <!-- jquery ui datepicker -->
   <script>
   $(document).ready(function() {
+    // 설치위치 슬라이드
+    $('.board-category-lists').slick({
+      dots:false,
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      arrows: true,
+      prevArrow: '<button class="slick-prev"><span class="sound-only">prev</span></button>',
+      nextArrow: '<button class="slick-next"><span class="sound-only">next</span></button>'
+    });
     $('.date-picker').each(function(i) {
       var $this = $(this);
       $this.datepicker({

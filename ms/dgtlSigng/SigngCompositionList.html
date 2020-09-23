@@ -250,7 +250,7 @@
                   <div id='service-used-form'>
                     <label class='text-label'>배포상태</label>
                     <label class="radio-label">
-                      <input type="radio" class="radio-form" name="test" checked="">
+                      <input type="radio" class="radio-form" name="test" checked>
                       <span class="radio-img"></span>
                       <span class="radio-label-text">전체</span>
                     </label>
@@ -313,7 +313,7 @@
                     </th>
                     <th>
                       <div>
-                        <p>서비스 유형</p>
+                        <p>사이니지 명</p>
                       </div>
                     </th>
                     <th>
@@ -323,12 +323,22 @@
                     </th>
                     <th>
                       <div>
-                        <p>사용가능 컨텐츠</p>
+                        <p>배경 이미지 명</p>
                       </div>
                     </th>
                     <th>
                       <div>
-                        <p>사용상태</p>
+                        <p>컨텐츠 구성</p>
+                      </div>
+                    </th>
+                    <th>
+                      <div>
+                        <p>배포일자</p>
+                      </div>
+                    </th>
+                    <th>
+                      <div>
+                        <p>배포상태</p>
                       </div>
                     </th>
                   </tr>
@@ -346,22 +356,32 @@
                     </td>
                     <td>
                       <div>
-                        <p><span>미세먼지 알림이</span></p>
+                        <p><span><a href='javascript:void(0);' onclick='setDevice("#contents-view");'>미세먼지 알림이 1</a></span></p>
                       </div>
                     </td>
                     <td>
                       <div>
-                        <p><span><a href='javascript:void(0);' onclick='setDevice("#contents-view");'>컨텐츠 명</a></span></p>
+                        <p><span>심곡동</span></p>
                       </div>
                     </td>
                     <td>
                       <div>
-                        <p><span>미세먼지 알림이 서비스 위치</span></p>
+                        <p><span>배경이미지 명</span></p>
                       </div>
                     </td>
                     <td>
                       <div>
-                        <p><span class='lookup-success lookup-status'></span></p>
+                        <p><span>미지정</span></p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p><span>2020-09-23</span></p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p><span>배포 전</span></p>
                       </div>
                     </td>
                   </tr>
@@ -417,13 +437,13 @@
     <div class='modals'></div>
     <!-- //modal -->
   </div>
-  <!-- 컨텐츠 상세보기 모달 html -->
+  <!-- 사이니지 상세보기 모달 html -->
   <script id='contents-view' type="text/x-handlebars-template">
-    <div class='modal-content position-abs'>
+    <div class='contents-view modal-content position-abs'>
       <div>
         <div class='modal-header'>
           <div class="modal-title">
-            <h4>컨텐츠 상세보기</h4>
+            <h4>사이니지 구성 상세보기</h4>
             <a href="javascript:void(0);" class="modal-close">
               <span class="sound-only">팝업닫기</span>
             </a>
@@ -443,22 +463,22 @@
                   <tr>
                     <th>
                       <div>
-                        <p>관리번호</p>
+                        <p>사이니지 명</p>
                       </div>
                     </th>
                     <td>
                       <div>
-                        <p><span>202010101202</span></p>
+                        <p><span>사이니지 1</span></p>
                       </div>
                     </td>
                     <th>
                       <div>
-                        <p>사용상태</p>
+                        <p>서비스 유형</p>
                       </div>
                     </th>
                     <td>
                       <div>
-                        <p><span class='lookup-success lookup-status'></span></p>
+                        <p><span>미세먼지 알림이</span></p>
                       </div>
                     </td>
                   </tr>
@@ -475,83 +495,127 @@
                     </td>
                     <th>
                       <div>
-                        <p>서비스 유형</p>
+                        <p>URL</p>
                       </div>
                     </th>
                     <td>
                       <div>
-                        <p>미세먼지 알림이</p>
+                        <p><span><a href='#'>www.xxx.com</a></span></p>
                       </div>
                     </td>
                   </tr>
                   <tr>
-                    <th rowspan='2'>
+                    <th>
                       <div>
-                        <p>사용 컨텐츠</p>
+                        <p>배경이미지</p>
                       </div>
                     </th>
                     <td colspan='3'>
                       <div>
-                        <label class="checkbox-label" for="all" disabled='disabled'>
-                          <input id="all" class="checkbox-form" name="" type="checkbox" disabled='disabled'>
-                          <span class="checkbox-img"></span>
-                          <span class="checkbox-label-text">전체</span>
-                        </label>
+                        <p><span><a href='javascript:void(0);'>배경이미지.jpg</a></span></p>
                       </div>
                     </td>
                   </tr>
                   <tr>
-                    <td colspan="3">
-                      <div class='useContents'>
-                        <div>
-                          <label class="checkbox-label" for="date" disabled='disabled'>
-                            <input id="date" class="checkbox-form" name="" type="checkbox" disabled='disabled'>
-                            <span class="checkbox-img"></span>
-                            <span class="checkbox-label-text">제공일자</span>
-                          </label>
+                    <th rowspan='3'>
+                      <div>
+                        <p>컨텐츠 구성</p>
+                      </div>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th> 
+                      <div class='text-center'>
+                        <p>구성 레이아웃</p>
+                      </div>
+                    </th>
+                    <th></th>
+                    <th colspan='2'>
+                      <div class='text-center'>
+                        <p>구성컨텐츠</p>
+                      </div>
+                    </th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div>
+                        <div class='signComponents text-center'>
+                          <div class='signComponentsItems'>
+                            A
+                          </div>
+                          <div class='signComponentsItems'>
+                            B
+                          </div>
+                          <div class='clear'>
+                            <div class='signComponentsItems float-left'>
+                              C
+                            </div>
+                            <div class='signComponentsItems float-left'>
+                              D
+                            </div>
+                          </div>
+                          <div class='clear'>
+                            <div class='signComponentsItems float-left'>
+                              E
+                            </div>
+                            <div class='signComponentsItems float-left'>
+                              F
+                            </div>
+                          </div>
                         </div>
-                        <div>
-                          <label class="checkbox-label" for="time" disabled='disabled'>
-                            <input id="time" class="checkbox-form" name="" type="checkbox" disabled='disabled' checked>
-                            <span class="checkbox-img"></span>
-                            <span class="checkbox-label-text">제공시간</span>
-                          </label>
-                        </div>
-                        <div>
-                          <label class="checkbox-label" for="temp" disabled='disabled'>
-                            <input id="temp" class="checkbox-form" name="" type="checkbox" disabled='disabled' checked>
-                            <span class="checkbox-img"></span>
-                            <span class="checkbox-label-text">온도/날씨/습도/풍속</span>
-                          </label>
-                        </div>
-                        <div>
-                          <label class="checkbox-label" for="density" disabled='disabled'>
-                            <input id="density" class="checkbox-form" name="" type="checkbox" disabled='disabled' checked>
-                            <span class="checkbox-img"></span>
-                            <span class="checkbox-label-text">미세먼지 농도(PM 10)</span>
-                          </label>
-                        </div>
-                        <div>
-                          <label class="checkbox-label" for="indices" disabled='disabled'>
-                            <input id="indices" class="checkbox-form" name="" type="checkbox" disabled='disabled'>
-                            <span class="checkbox-img"></span>
-                            <span class="checkbox-label-text">미세먼지 지수(PM 2.5)</span>
-                          </label>
-                        </div>
-                        <div>
-                          <label class="checkbox-label" for="source" disabled='disabled'>
-                            <input id="source" class="checkbox-form" name="" type="checkbox" disabled='disabled' checked>
-                            <span class="checkbox-img"></span>
-                            <span class="checkbox-label-text">출처(부천시 / 국가측정망)</span>
-                          </label>
-                        </div>
-                        <div>
-                          <label class="checkbox-label" for="source-map" disabled='disabled'>
-                            <input id="source-map" class="checkbox-form" name="" type="checkbox" disabled='disabled'>
-                            <span class="checkbox-img"></span>
-                            <span class="checkbox-label-text">출처 측정소 지도(부천시 / 국가측정망)</span>
-                          </label>
-                        </div>
+                      </div>
+                    </td>
+                    <td class='verticalAlignBase'>
+                      <div class='tableLine'>
+                        <p><span>A. 사이니지 위치</span></p>
+                      </div>
+                      <div class='tableLine'>
+                        <p><span>B. 사이니지 위치</span></p>
+                      </div>
+                      <div class='tableLine'>
+                        <p><span>C. 사이니지 위치</span></p>
+                      </div>
+                      <div class='tableLine'>
+                        <p><span>D. 사이니지 위치</span></p>
+                      </div>
+                      <div class='tableLine'>
+                        <p><span>E. 사이니지 위치</span></p>
+                      </div>
+                      <div class='tableLine'>
+                        <p><span>F. 사이니지 위치</span></p>
+                      </div>
+                    </td>
+                    <td class='verticalAlignBase'>
+                      <div>
+                        <p>제공일자</p>
+                        <p>제공일자</p>
+                        <p>제공일자</p>
+                        <p>제공일자</p>
+                        <p>제공일자</p>
+                        <p>제공일자</p>
+                        <p>제공일자</p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div>
+                        <p>배포 상태</p>
+                      </div>
+                    </th>
+                    <td>
+                      <div>
+                        <p><span>배포</span></p>
+                      </div>
+                    </td>
+                    <th>
+                      <div>
+                        <p>배포일</p>
+                      </div>
+                    </th>
+                    <td>
+                      <div>
+                        <p><span>2020-06-23</span> <span>13:10</span></p>
                       </div>
                     </td>
                   </tr>
@@ -570,8 +634,8 @@
     </div>
     <div class='modal-bg'></div>
   </script>
-  <!-- //컨텐츠 상세보기 모달 html -->
-  <!-- 배경이미지 등록 모달 html -->
+  <!-- //사이니지 상세보기 모달 html -->
+  <!-- 사이니지 등록 모달 html -->
   <script id='contentsSave-template' type="text/x-handlebars-template">
     <div class='contentsSave-template modal-content position-abs'>
       <div>
@@ -702,7 +766,7 @@
     </div>
     <div class='modal-bg'></div>
   </script>
-  <!-- // 배경이미지 등록 모달 html -->
+  <!-- // 사이니지 등록 모달 html -->
 
   <!-- 상태 모달 예시 스크립트 -->
   <script>

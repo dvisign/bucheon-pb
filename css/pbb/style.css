@@ -368,10 +368,10 @@
 .device-view-template #modal-map {height:340px;}
 
 /* page : SigngBcrnImageList.html */
-#SigngBcrnImageList label:not(.radio-label) {min-width:90px;}
+#SigngBcrnImageList .lookup-wrapper label:not(.radio-label) {min-width:90px;}
 #SigngBcrnImageList .lookup-wrapper .select-form, 
 #SigngBcrnImageList .lookup-wrapper .text-form {width:420px;}
-#SigngBcrnImageList .lookup-forms #service-used-form > .text-label {position: relative;top: -6px;}
+.lookup-forms #service-used-form > .text-label {position: relative;top: -6px;}
 #SigngBcrnImageList .lookup-forms > .form-reference-btn {border-left:0;padding-left: 0;}
 #SigngBcrnImageList .imgSave-template .select-form,
 #SigngBcrnImageList .imgSave-template .text-form {height:34px;line-height: 34px;width:50%;}
@@ -399,6 +399,12 @@
 #SigngCompositionList .lookup-wrapper .text-form {width:420px;}
 #SigngCompositionList .lookup-wrapper label {min-width:100px;}
 #SigngCompositionList .lookup-forms > .form-reference-btn {border-left: 0; padding-left: 0; }
+#SigngCompositionList .contents-view .tableLine {border:0;}
+#SigngCompositionList .signComponents {margin:15px 0;}
+#SigngCompositionList .signComponentsItems {border:1px solid #ccc;padding:20% 0;}
+#SigngCompositionList .float-left.signComponentsItems {width:50%}
+
+
 
 /* page : list-popup.html */
 #list-popup .modal-content {position: static !important;transform: none !important;}
