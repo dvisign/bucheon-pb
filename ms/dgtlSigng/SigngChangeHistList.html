@@ -3,17 +3,26 @@
 
 <head>
   <meta charset='UTF-8'>
-  <title>미세먼지 바로알기</title>
+  <title>디지털 사이니지 이력</title>
+  <link href='/css/pbb/slick.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/slick-theme.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/reset.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/common.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/style.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/jquery-ui.min.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>
+  <!-- handlebars -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"
+    integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw=="
+    crossorigin="anonymous"></script>
   <!-- jquery -->
   <script type='text/javascript' src='/resources/jquery/jquery-3.5.1.min.js'></script>
+  <script type='text/javascript' src='/resources/jquery/jquery-ui.min.js'></script>
   <!-- common JS -->
   <script type='text/javascript' src='/js/pbb/common.js'></script>
 </head>
 
-<body>
+<body id='SigngChangeHistList'>
   <div id='wrap'>
     <!-- header -->
     <div id='header-wrapper'>
@@ -195,7 +204,7 @@
               <a href='/ms/main/main.html'><span class='sound-only'>메인</span></a>
             </div>
             <div class='subpage-nav-items'>
-              <a href='javascript:void(0);'>특화단지 장치 관리</a>
+              <a href='javascript:void(0);' class=''>특화단지 장치 관리</a>
             </div>
             <div class='subpage-nav-items'>
               <a href='javascript:void(0);' class='sub-nav-depths'>장치 운영모드 관리</a>
@@ -211,271 +220,216 @@
     </div>
     <!-- //header -->
     <!-- section -->
-    <div id='view-conts' class='contents'>
+    <div class='contents'>
       <div class='subpage-contents'>
         <div class='container'>
-          <div class="subpage-title">
-            <h3>미세먼지 바로알기</h3>
+          <div class='subpage-title'>
+            <h3>사이니지 이력</h3>
           </div>
-          <div class='board-views conts-section'>
-            <div class='board-view-tables text-left'>
-              <table>
-                <thead>
+          <div class='lookup-wrapper conts-section'>
+            <form>
+              <div>
+                <div class='lookup-forms clear'>
+                  <div>
+                    <label class='text-label'>조회일자</label>
+                    <span>
+                      <input type='text' class='text-form date-form date-picker' />
+                    </span>
+                    <span class='text-division'>~</span>
+                    <span>
+                      <input type='text' class='text-form date-form date-picker' />
+                    </span>
+                  </div>
+                  <div class='float-right'>
+                    <label class='text-label'>이력 구분</label>
+                    <select class='select-form'>
+                      <option>선택</option>
+                    </select>
+                  </div>
+                </div>
+                <div class='lookup-forms clear'>
+                  <div>
+                    <label class='text-label'>서비스 유형</label>
+                    <select class='select-form' id='service-mode' name='service-mode'>
+                      <option>선택</option>
+                    </select>
+                  </div>
+                  <div class='float-right'>
+                    <label class='text-label'>사이니지 명</label>
+                    <input type='text' class='text-form' />
+                  </div>
+                </div>
+                <div class='lookup-forms clear'>
+                  <div>
+                    <label class='text-label'>컨텐츠 명</label>
+                    <input type='text' class='text-form' />
+                  </div>
+                  <div class='float-right'>
+                    <label class='text-label'>배경이미지 명</label>
+                    <input type='text' class='text-form' />
+                  </div>
+                </div>
+                <div class='lookup-forms clear'>
+                  <div id='service-reference-btn' class='form-reference-btn'>
+                    <button class='btn btn-round'>조회</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class='board-lists conts-section'>
+            <div class='board-list-set clear'>
+              <div class='list-count'>
+                <p>조회결과 : <span id='count-result'>9,999</span>건</p>
+              </div>
+              <div class='list-view-selector'>
+                <select class='select-form' id='' name=''>
+                  <option>50개 출력</option>
+                  <option>100개 출력</option>
+                  <option>150개 출력</option>
+                  <option>200개 출력</option>
+                </select>
+              </div>
+            </div>
+            <div class='board-list-table-wrapper text-center'>
+              <table id='InnerMsrstnListTables'>
+                <colgroup>
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col />
+                  <col width='220px' />
+                  <col />
+                </colgroup>
+                <thead class='board-list-header'>
                   <tr>
-                    <th class='view-table-category'>
+                    <th class='text-center'>
                       <div>
-                        <p>작성자</p>
+                        <p>날짜</p>
                       </div>
                     </th>
-                    <td class='view-table-value'>
+                    <th class='text-center'>
                       <div>
-                        <p id='wr-name'>홍길동</p>
-                      </div>
-                    </td>
-                    <th class='view-table-category'>
-                      <div>
-                        <p>작성일</p>
+                        <p>구분</p>
                       </div>
                     </th>
-                    <td class='view-table-value'>
+                    <th class='text-center'>
                       <div>
-                        <p id='wr-date'>2020-03-20</p>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th class='view-table-category'>
-                      <div>
-                        <p>제목</p>
+                        <p>서비스 유형</p>
                       </div>
                     </th>
-                    <th class='view-table-value' colspan='3'>
+                    <th class='text-center'>
                       <div>
-                        <p id='wr-subject'>제목 내용</p>
+                        <p>사이니지 명</p>
                       </div>
                     </th>
-                  </tr>
-                  <tr>
-                    <th class='view-table-category'>
+                    <th class='text-center'>
                       <div>
-                        <p>출처</p>
+                        <p>컨텐츠 명</p>
                       </div>
                     </th>
-                    <td class='view-table-value'>
+                    <th class='text-center'>
                       <div>
-                        <p id='wr-source'>환경부 대기환경</p>
-                      </div>
-                    </td>
-                    <th class='view-table-category'>
-                      <div>
-                        <p>조회수</p>
+                        <p>배경이미지 명</p>
                       </div>
                     </th>
-                    <td class='view-table-value'>
+                    <th class='text-center'>
                       <div>
-                        <p id='wr-hit'>99</p>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th class='view-table-category'>
-                      <div>
-                        <p>첨부파일</p>
+                        <p>구성 컨텐츠</p>
                       </div>
                     </th>
-                    <td class='view-table-value' colspan='3'>
+                    <th class='text-center'>
                       <div>
-                        <a href='#'>첨부파일 이름.jpg</a>
+                        <p>사이니지 URL</p>
                       </div>
-                    </td>
+                    </th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody class='board-list-body'>
                   <tr>
-                    <th class='view-table-category'>
+                    <td class='text-center'>
                       <div>
-                        <p>내용</p>
+                        <p><span>2020-07-01</span></p>
                       </div>
-                    </th>
-                    <td class='view-table-value' colspan='3'>
-                      <div id='view-contents-wrapper'>
-                        <div id='view-contents'>
-                          <div id='wr-content'>
-                            <p>게시글</p>
-                          </div>
-                        </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>배포</span></p>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>삭제</span></p>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>미세먼지 알림이</span></p>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>미세먼지 알림이 #1</span></p>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>배경이미지 #1</span></p>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>Cxx01, Cxx02, Cxx03</span></p>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p><a href='#' target='_blank' rel="noopener noreferrer">www.xxx.com</a></p>
                       </div>
                     </td>
                   </tr>
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <th class='view-table-category'>
+                  <tr class='list-empty'>
+                    <td class='text-center' colspan='8'>
                       <div>
-                        <p>상단공지</p>
-                      </div>
-                    </th>
-                    <td class='view-table-value'>
-                      <div>
-                        <p><span>공지 안함</span></p>
-                      </div>
-                    </td>
-                    <th class='view-table-category'>
-                      <div>
-                        <p>메인화면 노출</p>
-                      </div>
-                    </th>
-                    <td class='view-table-value'>
-                      <div>
-                        <p><span>노출 안함</span></p>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th class='view-table-category'>
-                      <div>
-                        <p>게시여부</p>
-                      </div>
-                    </th>
-                    <td class='view-table-value' colspan='3'>
-                      <div>
-                        <p id='wr-secret'>비공개</p>
-                      </div>
-                    </td>
-                  </tr>
-                </tfoot>
-              </table>
-            </div>
-            <!-- 댓글 읽기 -->
-            <div class='board-view-comments text-left'>
-              <table>
-                <tbody>
-                  <tr>
-                    <th class='view-table-category'>
-                      <div>
-                        <p>답변</p>
-                      </div>
-                    </th>
-                    <td>
-                      <div class='clear'>
-                        <div class='float-left comment-view-area'>
-                          <div class='comment-view'>
-                            <p>답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                              답변2
-                            </p>
-                          </div>
-                        </div>
+                        <p class='list-empty-text'>조회 결과가 없습니다.</p>
                       </div>
                     </td>
                   </tr>
                 </tbody>
               </table>
-            </div>
-            <!-- 댓글 작성 폼 -->
-            <div class='board-view-comments text-left'>
-              <form class='board-comment-form'>
-                <table>
-                  <tbody>
-                    <tr>
-                      <th class='view-table-category'>
-                        <div>
-                          <p>답변</p>
-                        </div>
-                      </th>
-                      <td>
-                        <div class='clear'>
-                          <div class='float-left comment-area'>
-                            <textarea class='comment-form'></textarea>
-                          </div>
-                          <div class='float-right comment-submit'>
-                            <button class='btn comment-submit-btn'>저장</button>
-                            <button class='btn comment-submit-btn comment-cancle-btn'>취소</button>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </form>
-            </div>
-            <div class='board-next-prev-link text-left'>
-              <table>
-                <tbody>
-                  <tr>
-                    <th class='view-table-category'>
-                      <div>
-                        <a href='#' class='prev-link-category link-category'>이전글</a>
-                      </div>
-                    </th>
-                    <td>
-                      <div><a href='#'>이전글 링크</a></div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th class='view-table-category'>
-                      <div>
-                        <a href='#' class='next-link-category link-category'>다음글</a>
-                      </div>
-                    </th>
-                    <td>
-                      <div><a href='#'>다음글 링크</a></div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class='view-used-btn text-center'>
-              <a href='#' class='btn btn-round'>수정</a>
-              <a href='#' class='btn btn-round'>삭제</a>
-              <a href='#' class='btn btn-round'>목록</a>
+              <div class='pagenation-wrapper'>
+                <a href='#' class='pagenation-arrow pagenation-prev'>
+                  <span class='sound-only'>이전페이지</span>
+                </a>
+                <ul class='pagenation-lists'>
+                  <li class='pagenation-items active'>
+                    <a href='#'>1</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>2</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>3</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>4</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>5</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>6</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>7</a>
+                  </li>
+                </ul>
+                <a href='#' class='pagenation-arrow pagenation-next'>
+                  <span class='sound-only'>다음페이지</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -487,7 +441,34 @@
 
     </div>
     <!-- //footer -->
+    <!-- modal -->
+    <div class='modals'></div>
+    <!-- //modal -->
   </div>
+  <script>
+    $(document).ready(function() {
+      $('.date-picker').each(function(i) {
+        var $this = $(this);
+        $this.datepicker({
+          changeMonth: true,
+          changeYear: true, 
+          minDate: '-100y', 
+          nextText: '다음 달',
+          prevText: '이전 달',
+          numberOfMonths: [1,1],
+          stepMonths: 3,
+          yearRange: 'c-100:c+10',
+          showButtonPanel: true,  
+          currentText: '오늘 날짜',
+          closeText: '닫기', 
+          dateFormat: "yy-mm-dd",
+          showMonthAfterYear: true ,
+          dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'],
+          monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>

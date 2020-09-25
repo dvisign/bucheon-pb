@@ -304,7 +304,7 @@
               </div>
             </form>
           </div>
-          <div class='board-search-form lookup-wrapper conts-section'>
+          <div class='search-skin-1 board-search-form lookup-wrapper conts-section'>
             <form>
               <div id='list-lookup-forms'>
                 <div class='lookup-forms clear'>
@@ -329,6 +329,48 @@
                   </div>
                 </div>
                 <div class='lookup-forms clear'>
+                  <div class='form-reference-btn'>
+                    <button class='btn btn-round'>조회</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class='search-skin-2 board-search-form lookup-wrapper conts-section'>
+            <form>
+              <div id='list-lookup-forms'>
+                <div class='lookup-forms clear'>
+                  <div class='float-left search-date'>
+                    <label class='date-label'>조회조건</label>
+                    <input type="text" class='date-form date-picker'>
+                    <span>~</span>
+                    <input type="text" class='date-form date-picker'>
+                  </div>
+                  <div class='float-right search-subject'>
+                    <select class='select-form' id='' name=''>
+                      <option>제목</option>
+                    </select>
+                    <input type='text' class='text-form search-text' />
+                  </div>
+                </div>
+                <div class='lookup-forms clear'>
+                  <div class='form-reference-btn'>
+                    <button class='btn btn-round'>조회</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class='search-skin-3 board-search-form lookup-wrapper conts-section'>
+            <form>
+              <div id='list-lookup-forms'>
+                <div class='lookup-forms clear'>
+                  <div class='float-left search-subject'>
+                    <select class='select-form' id='' name=''>
+                      <option>제목</option>
+                    </select>
+                    <input type='text' class='text-form search-text' />
+                  </div>
                   <div class='form-reference-btn'>
                     <button class='btn btn-round'>조회</button>
                   </div>
@@ -655,6 +697,18 @@
               <a href='#' class='btn btn-round'>등록</a>
             </div>
           </div>
+          <div class='board-lists conts-section'>
+            <div class="accordion-board-lists">
+              <button class='accordion-link-items'>Q. 차량2부제는 무엇인가요?</button>
+              <div class='accordion-content-items'>
+                <p>차량2부제는 무엇인가요?</p>
+              </div>
+              <button class='accordion-link-items'>Q. 차량2부제는 무엇인가요?</button>
+              <div class='accordion-content-items'>
+                <p>차량2부제는 무엇인가요?</p>
+              </div>
+            </div>
+          </div>
         </div> 
       </div>
     </div>
@@ -669,6 +723,9 @@
   <script>
   $(document).ready(function() {
     // 설치위치 슬라이드
+    $( function() {
+      $( ".accordion-board-lists" ).accordion();
+    } );
     $('.board-category-lists').slick({
       dots:false,
       infinite: true,

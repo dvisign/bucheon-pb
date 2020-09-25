@@ -375,8 +375,8 @@
 #SigngBcrnImageList .lookup-forms > .form-reference-btn {border-left:0;padding-left: 0;}
 #SigngBcrnImageList .imgSave-template .select-form,
 #SigngBcrnImageList .imgSave-template .text-form {height:34px;line-height: 34px;width:50%;}
-.view-img {display:none; width: 950px; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1; background-color: #fff; padding: 50px; max-height: calc(100% - 50px); overflow-y: auto;cursor:pointer;}
-.view-img > img {width:100%;}
+.view-img {display:none; width: 950px; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; background-color: #fff; padding: 50px; max-height: calc(100% - 50px); overflow-y: auto;cursor:pointer;}
+.view-img img {width:100%;}
 
 /* page : SigngMntrngList.html */
 .SigngMntrngListConts {padding: 40px 0; border-top: 1px solid #999da5; border-bottom: 1px solid #999da5;}
@@ -399,13 +399,32 @@
 #SigngCompositionList .lookup-wrapper .text-form {width:420px;}
 #SigngCompositionList .lookup-wrapper label {min-width:100px;}
 #SigngCompositionList .lookup-forms > .form-reference-btn {border-left: 0; padding-left: 0; }
-#SigngCompositionList .contents-view .tableLine {border:0;}
+/* #SigngCompositionList .contents-view .tableLine {border:0;} */
 #SigngCompositionList .signComponents {margin:15px 0;}
 #SigngCompositionList .signComponentsItems {border:1px solid #ccc;padding:20% 0;}
 #SigngCompositionList .float-left.signComponentsItems {width:50%}
+#SigngCompositionList .contents-view .tableLine > .signgLocation {width:160px;}
+#SigngCompositionList .contents-view .tableLine > .signgLocationSelect {width:calc(100% - 170px);}
 
+#SigngCompositionList .contentsSave-template .select-form,
+#SigngCompositionList .contentsSave-template .text-form {height: 34px; line-height: 34px;}
+#SigngCompositionList .contentsSave-template .modal-btn {position: absolute;top:50%;transform: translateY(-50%);right:10px;}
+#SigngCompositionList .contentsSave-template .signgContentsData {font-weight: 600;display:inline-block;transform: skew(-0.03deg);max-width:calc(100% - 60px);color:#696d75;opacity:0.8;}
+#SigngCompositionList .contentsSave-template .signgLocation > span {display:inline-block; max-width: 245px;}
+#SigngCompositionList .contentsSave-template .signgLocationSelect {position: absolute;right:10px; top:50%;transform: translateY(-50%);}
+#SigngCompositionList .contentsSave-template .signgLocationSelect > .select-form {width:120px;}
 
+.bg-img-search-template,
+.content-search-template {display:none;z-index:2;}
+#SigngCompositionList .modal-content .name-search-form {width:400px}
+.choice-btn {transform: initial !important;position: static !important;}
 
+/* page : SigngChangeHistList.html */
+#SigngChangeHistList .lookup-wrapper label { min-width: 100px; }
+#SigngChangeHistList .lookup-wrapper .select-form, 
+#SigngChangeHistList .lookup-wrapper .text-form:not(.date-picker) {width: 420px;}
+#SigngChangeHistList .lookup-wrapper .text-form.date-picker {width:201px;}
+#SigngChangeHistList .lookup-forms > .form-reference-btn { border-left: 0; padding-left: 0; }
 /* page : list-popup.html */
 #list-popup .modal-content {position: static !important;transform: none !important;}
 

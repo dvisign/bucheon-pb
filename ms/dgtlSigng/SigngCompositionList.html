@@ -385,6 +385,13 @@
                       </div>
                     </td>
                   </tr>
+                  <tr class='list-empty'>
+                    <td class='text-center' colspan='7'>
+                      <div>
+                        <p class='list-empty-text'>조회 결과가 없습니다.</p>
+                      </div>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
               <div class='pagenation-wrapper'>
@@ -512,7 +519,7 @@
                     </th>
                     <td colspan='3'>
                       <div>
-                        <p><span><a href='javascript:void(0);'>배경이미지.jpg</a></span></p>
+                        <p><a href='javascript:void(0);' onclick='viewImg()'>배경이미지.jpg</a></p>
                       </div>
                     </td>
                   </tr>
@@ -529,7 +536,6 @@
                         <p>구성 레이아웃</p>
                       </div>
                     </th>
-                    <th></th>
                     <th colspan='2'>
                       <div class='text-center'>
                         <p>구성컨텐츠</p>
@@ -565,35 +571,42 @@
                         </div>
                       </div>
                     </td>
-                    <td class='verticalAlignBase'>
-                      <div class='tableLine'>
-                        <p><span>A. 사이니지 위치</span></p>
+                    <td class='verticalAlignBase' colspan='2'>
+                      <div class='tableLine clear'>
+                        <p class='float-left signgLocation text-left'><span>A. 사이니지 위치 사이니지 위치 사이니지 위치 사이니지 위치 사이니지 위치 사이니지 위치 사이니지 위치 사이니지 위치</span></p>
+                        <div class='float-right signgLocationSelect text-center'>
+                          <p><span>제공일자</span></p>
+                        </div>
                       </div>
-                      <div class='tableLine'>
-                        <p><span>B. 사이니지 위치</span></p>
+                      <div class='tableLine clear'>
+                        <p class='float-left signgLocation text-left'><span>B. 사이니지 위치</span></p>
+                        <div class='float-right signgLocationSelect text-center'>
+                          <p><span>제공일자</span></p>
+                        </div>
                       </div>
-                      <div class='tableLine'>
-                        <p><span>C. 사이니지 위치</span></p>
+                      <div class='tableLine clear'>
+                        <p class='float-left signgLocation text-left'><span>C. 사이니지 위치</span></p>
+                        <div class='float-right signgLocationSelect text-center'>
+                          <p><span>제공일자</span></p>
+                        </div>
                       </div>
-                      <div class='tableLine'>
-                        <p><span>D. 사이니지 위치</span></p>
+                      <div class='tableLine clear'>
+                        <p class='float-left signgLocation text-left'><span>D. 사이니지 위치</span></p>
+                        <div class='float-right signgLocationSelect text-center'>
+                          <p><span>제공일자</span></p>
+                        </div>
                       </div>
-                      <div class='tableLine'>
-                        <p><span>E. 사이니지 위치</span></p>
+                      <div class='tableLine clear'>
+                        <p class='float-left signgLocation text-left'><span>E. 사이니지 위치</span></p>
+                        <div class='float-right signgLocationSelect text-center'>
+                          <p><span>제공일자</span></p>
+                        </div>
                       </div>
-                      <div class='tableLine'>
-                        <p><span>F. 사이니지 위치</span></p>
-                      </div>
-                    </td>
-                    <td class='verticalAlignBase'>
-                      <div>
-                        <p>제공일자</p>
-                        <p>제공일자</p>
-                        <p>제공일자</p>
-                        <p>제공일자</p>
-                        <p>제공일자</p>
-                        <p>제공일자</p>
-                        <p>제공일자</p>
+                      <div class='tableLine clear'>
+                        <p class='float-left signgLocation text-left'><span>F. 사이니지 위치</span></p>
+                        <div class='float-right signgLocationSelect text-center'>
+                          <p><span>제공일자</span></p>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -632,16 +645,33 @@
         </div>
       </div>
     </div>
+    <!-- 이미지 보기 모달 -->
+    <div class='view-img position-abs'>
+      <div class='modal-header'>
+        <div class="modal-title">
+          <h4>배경이미지 조회</h4>
+          <a href="javascript:void(0);" class="modal-close">
+            <span class="sound-only">팝업닫기</span>
+          </a>
+        </div>
+      </div>
+      <div class='modal-body templateEl'>
+        <div class='modal-section'>
+          <img src='http://dvisign.com/main_portfolio/img/background/main_bg.jpg' />
+        </div>
+      </div>
+    </div>
     <div class='modal-bg'></div>
   </script>
   <!-- //사이니지 상세보기 모달 html -->
   <!-- 사이니지 등록 모달 html -->
   <script id='contentsSave-template' type="text/x-handlebars-template">
+    <!-- 등록모달 -->
     <div class='contentsSave-template modal-content position-abs'>
       <div>
         <div class='modal-header'>
           <div class="modal-title">
-            <h4>컨텐츠 등록</h4>
+            <h4>사이니지 구성 등록</h4>
             <a href="javascript:void(0);" class="modal-close">
               <span class="sound-only">팝업닫기</span>
             </a>
@@ -661,92 +691,148 @@
                   <tr>
                     <th>
                       <div>
-                        <p>컨텐츠 명</p>
-                      </div>
-                    </th>
-                    <td>
-                      <div>
-                        <input type='text' class='text-form' />
-                      </div>
-                    </td>
-                    <th>
-                      <div>
-                        <p>서비스 유형</p>
-                      </div>
-                    </th>
-                    <td>
-                      <div>
-                        <input type='text' class='text-form' />
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th rowspan='2'>
-                      <div>
-                        <p>사용 컨텐츠</p>
+                        <p>사이니지 명</p>
                       </div>
                     </th>
                     <td colspan='3'>
                       <div>
-                        <label class="checkbox-label" for="all">
-                          <input id="all" class="checkbox-form" name="" type="checkbox">
-                          <span class="checkbox-img"></span>
-                          <span class="checkbox-label-text">전체</span>
-                        </label>
+                        <input type='text' class='text-form' />
                       </div>
                     </td>
                   </tr>
                   <tr>
-                    <td colspan="3">
-                      <div class='useContents'>
-                        <div>
-                          <label class="checkbox-label" for="date">
-                            <input id="date" class="checkbox-form" name="" type="checkbox">
-                            <span class="checkbox-img"></span>
-                            <span class="checkbox-label-text">제공일자</span>
-                          </label>
+                    <th>
+                      <div>
+                        <p>서비스유형</p>
+                      </div>
+                    </th>
+                    <td colspan='3'>
+                      <div>
+                        <select class='select-form'>
+                          <option>선택</option>
+                        </select>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div>
+                        <p>배경이미지</p>
+                      </div>
+                    </th>
+                    <td>
+                      <div>
+                        <span class='signgContentsData'>배경 이미지 이름배경 이미지 이름배경 이미지 이름배경 이미지 이름배경 이미지 이름</span>
+                        <a href='javascript:void(0);' class='bg-img-search btn btn-round modal-btn'>조회</a>
+                      </div>
+                    </td>
+                    <th>
+                      <div>
+                        <p>컨텐츠 조회</p>
+                      </div>
+                    </th>
+                    <td>
+                      <div>
+                        <span class='signgContentsData'>컨텐츠 이름</span>
+                        <a href='javascript:void(0);' class='contents-search btn btn-round modal-btn'>조회</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th rowspan='3'>
+                      <div>
+                        <p>컨텐츠 구성</p>
+                      </div>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th> 
+                      <div class='text-center'>
+                        <p>구성 레이아웃</p>
+                      </div>
+                    </th>
+                    <th colspan='2'>
+                      <div class='text-center'>
+                        <p>구성컨텐츠</p>
+                      </div>
+                    </th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div>
+                        <div class='signComponents text-center'>
+                          <div class='signComponentsItems'>
+                            A
+                          </div>
+                          <div class='signComponentsItems'>
+                            B
+                          </div>
+                          <div class='clear'>
+                            <div class='signComponentsItems float-left'>
+                              C
+                            </div>
+                            <div class='signComponentsItems float-left'>
+                              D
+                            </div>
+                          </div>
+                          <div class='clear'>
+                            <div class='signComponentsItems float-left'>
+                              E
+                            </div>
+                            <div class='signComponentsItems float-left'>
+                              F
+                            </div>
+                          </div>
                         </div>
-                        <div>
-                          <label class="checkbox-label" for="time">
-                            <input id="time" class="checkbox-form" name="" type="checkbox">
-                            <span class="checkbox-img"></span>
-                            <span class="checkbox-label-text">제공시간</span>
-                          </label>
+                      </div>
+                    </td>
+                    <td class='verticalAlignBase' colspan='2'>
+                      <div class='tableLine clear'>
+                        <p class='float-left signgLocation'><span>A. 사이니지 위치 사이니지 위치 사이니지 위치 사이니지 위치 사이니지 위치 사이니지 위치 사이니지 위치 사이니지 위치</span></p>
+                        <div class='float-right signgLocationSelect'>
+                          <select class='select-form'>
+                            <option>선택</option>
+                          </select>
                         </div>
-                        <div>
-                          <label class="checkbox-label" for="temp">
-                            <input id="temp" class="checkbox-form" name="" type="checkbox">
-                            <span class="checkbox-img"></span>
-                            <span class="checkbox-label-text">온도/날씨/습도/풍속</span>
-                          </label>
+                      </div>
+                      <div class='tableLine clear'>
+                        <p class='float-left signgLocation'><span>B. 사이니지 위치</span></p>
+                        <div class='float-right signgLocationSelect'>
+                          <select class='select-form'>
+                            <option>선택</option>
+                          </select>
                         </div>
-                        <div>
-                          <label class="checkbox-label" for="density">
-                            <input id="density" class="checkbox-form" name="" type="checkbox">
-                            <span class="checkbox-img"></span>
-                            <span class="checkbox-label-text">미세먼지 농도(PM 10)</span>
-                          </label>
+                      </div>
+                      <div class='tableLine clear'>
+                        <p class='float-left signgLocation'><span>C. 사이니지 위치</span></p>
+                        <div class='float-right signgLocationSelect'>
+                          <select class='select-form'>
+                            <option>선택</option>
+                          </select>
                         </div>
-                        <div>
-                          <label class="checkbox-label" for="indices">
-                            <input id="indices" class="checkbox-form" name="" type="checkbox">
-                            <span class="checkbox-img"></span>
-                            <span class="checkbox-label-text">미세먼지 지수(PM 2.5)</span>
-                          </label>
+                      </div>
+                      <div class='tableLine clear'>
+                        <p class='float-left signgLocation'><span>D. 사이니지 위치</span></p>
+                        <div class='float-right signgLocationSelect'>
+                          <select class='select-form'>
+                            <option>선택</option>
+                          </select>
                         </div>
-                        <div>
-                          <label class="checkbox-label" for="source">
-                            <input id="source" class="checkbox-form" name="" type="checkbox">
-                            <span class="checkbox-img"></span>
-                            <span class="checkbox-label-text">출처(부천시 / 국가측정망)</span>
-                          </label>
+                      </div>
+                      <div class='tableLine clear'>
+                        <p class='float-left signgLocation'><span>E. 사이니지 위치</span></p>
+                        <div class='float-right signgLocationSelect'>
+                          <select class='select-form'>
+                            <option>선택</option>
+                          </select>
                         </div>
-                        <div>
-                          <label class="checkbox-label" for="source-map">
-                            <input id="source-map" class="checkbox-form" name="" type="checkbox">
-                            <span class="checkbox-img"></span>
-                            <span class="checkbox-label-text">출처 측정소 지도(부천시 / 국가측정망)</span>
-                          </label>
+                      </div>
+                      <div class='tableLine clear'>
+                        <p class='float-left signgLocation'><span>F. 사이니지 위치</span></p>
+                        <div class='float-right signgLocationSelect'>
+                          <select class='select-form'>
+                            <option>선택</option>
+                          </select>
                         </div>
                       </div>
                     </td>
@@ -764,12 +850,294 @@
         </div>
       </div>
     </div>
+    <!-- 배경이미지 검색모달 -->
+    <div class='bg-img-search-template modal-content contentsSave-template position-abs'>
+      <div>
+        <div class='modal-header'>
+          <div class="modal-title">
+            <h4>배경이미지 조회</h4>
+            <a href="javascript:void(0);" class="modal-close">
+              <span class="sound-only">팝업닫기</span>
+            </a>
+          </div>
+        </div>
+        <div class='modal-body templateEl'>
+          <div class='device-chart-scroll'>
+            <div class='modal-section'>
+              <table class="modal-tables text-left">
+                <colgroup>
+                  <col width='20%'>
+                  <col width='80%'>
+                </colgroup>
+                <thead class='board-list-header'>
+                  <tr>
+                    <th>
+                      <div>
+                        <p>서비스 유형</p>
+                      </div>
+                    </th>
+                    <td>
+                      <div>
+                        <select class='select-form'>
+                          <option>선택</option>
+                        </select>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div>
+                        <p>배경 이미지명</p>
+                      </div>
+                    </th>
+                    <td>
+                      <div>
+                        <input type="text" class='text-form name-search-form'>
+                        <a href='javascript:void(0);' class='btn btn-round modal-btn'>조회</a>
+                      </div>
+                    </td>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div class='modal-section'>
+              <table class="modal-tables text-left">
+                <colgroup>
+                  <col width='20%'>
+                  <col width='40%'>
+                  <col width='40%'>
+                </colgroup>
+                <thead class='board-list-header'>
+                  <tr>
+                    <th class='text-center'>
+                      <div>
+                        <p>관리번호</p>
+                      </div>
+                    </th>
+                    <th class='text-center'>
+                      <div>
+                        <p>배경이미지 명</p>
+                      </div>
+                    </th>
+                    <th class='text-center'>
+                      <div>
+                        <p>서비스 유형</p>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="board-list-body">
+                  <tr>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>2020030510110</span></p>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p><a href='javascript:void(0);' onclick='viewImg()'>미세먼지 알림이 배경</a></p>
+                      </div>
+                    </td>
+                    <td class='text-left'>
+                      <div>
+                        <p><span>미세먼지 알림이</span></p>
+                        <a href='javascript:void(0);' class='modal-btn btn btn-round'>선택</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class='list-empty'>
+                    <td class='text-center' colspan='3'>
+                      <div>
+                        <p class='list-empty-text'>조회 결과가 없습니다.</p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 콘텐츠 검색모달 -->
+    <div class='content-search-template modal-content contentsSave-template position-abs'>
+      <div>
+        <div class='modal-header'>
+          <div class="modal-title">
+            <h4>컨텐츠 조회</h4>
+            <a href="javascript:void(0);" class="modal-close">
+              <span class="sound-only">팝업닫기</span>
+            </a>
+          </div>
+        </div>
+        <div class='modal-body templateEl'>
+          <div class='device-chart-scroll'>
+            <div class='modal-section'>
+              <table class="modal-tables text-left">
+                <colgroup>
+                  <col width='20%'>
+                  <col width='80%'>
+                </colgroup>
+                <thead class='board-list-header'>
+                  <tr>
+                    <th class='text-left'>
+                      <div>
+                        <p>서비스 유형</p>
+                      </div>
+                    </th>
+                    <td class='text-left'>
+                      <div>
+                        <select class='select-form'>
+                          <option>선택</option>
+                        </select>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class='text-left'>
+                      <div>
+                        <p>컨텐츠 명</p>
+                      </div>
+                    </th>
+                    <td class='text-left'>
+                      <div>
+                        <input type="text" class='text-form name-search-form'>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class='text-left'>
+                      <div>
+                        <p>컨텐츠 사용여부</p>
+                      </div>
+                    </th>
+                    <td class='text-left'>
+                      <div>
+                        <p>
+                          <label class="radio-label">
+                            <input type="radio" class="radio-form" name="test" checked>
+                            <span class="radio-img"></span>
+                            <span class="radio-label-text">전체</span>
+                          </label>
+                          <label class="radio-label">
+                            <input type="radio" class="radio-form" name="test">
+                            <span class="radio-img"></span>
+                            <span class="radio-label-text">사용</span>
+                          </label>
+                          <label class="radio-label">
+                            <input type="radio" class="radio-form" name="test">
+                            <span class="radio-img"></span>
+                            <span class="radio-label-text">미사용</span>
+                          </label>
+                        </p>
+                        <a href='javascript:void(0);' class='btn btn-round modal-btn'>조회</a>
+                      </div>
+                    </td>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div class='modal-section'>
+              <table class="modal-tables text-left">
+                <colgroup>
+                  <col width='20%'>
+                  <col width='20%'>
+                  <col width='30%'>
+                  <col width='20%'>
+                  <col width='10%'>
+                </colgroup>
+                <thead class='board-list-header'>
+                  <tr>
+                    <th class='text-center'>
+                      <div>
+                        <p>서비스 유형</p>
+                      </div>
+                    </th>
+                    <th class='text-center'>
+                      <div>
+                        <p>컨텐츠 명</p>
+                      </div>
+                    </th>
+                    <th class='text-center'>
+                      <div>
+                        <p>사용가능 컨텐츠</p>
+                      </div>
+                    </th>
+                    <th class='text-center'>
+                      <div>
+                        <p>사용상태</p>
+                      </div>
+                    </th>
+                    <th class='text-center'></th>
+                  </tr>
+                </thead>
+                <tbody class="board-list-body">
+                  <tr>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>미세먼지 알림이</span></p>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>심곡동</span></p>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>미세먼지 알림이 서비스 위치</span></p>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>미사용</span></p>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p><a href='javascript:void(0);' class='modal-btn btn btn-round choice-btn'>선택</a></p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class='list-empty'>
+                    <td class='text-center' colspan='5'>
+                      <div>
+                        <p class='list-empty-text'>조회 결과가 없습니다.</p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 이미지 보기 모달 -->
+    <div class='view-img position-abs'>
+      <div class='modal-header'>
+        <div class="modal-title">
+          <h4>배경이미지 조회</h4>
+          <a href="javascript:void(0);" class="modal-close">
+            <span class="sound-only">팝업닫기</span>
+          </a>
+        </div>
+      </div>
+      <div class='modal-body templateEl'>
+        <div class='modal-section'>
+          <img src='http://dvisign.com/main_portfolio/img/background/main_bg.jpg' />
+        </div>
+      </div>
+    </div>
     <div class='modal-bg'></div>
   </script>
   <!-- // 사이니지 등록 모달 html -->
 
   <!-- 상태 모달 예시 스크립트 -->
   <script>
+    function viewImg() {
+      $('.view-img').stop().fadeIn();
+    }
     function compiling(serviceType) {
       var source = $(serviceType).html();
       var template = Handlebars.compile(source);
@@ -790,7 +1158,13 @@
       });
       $(document).on('click', '.view-img', function() {
         $(this).stop().fadeOut();
-      })
+      });
+      $(document).on('click', '.bg-img-search', function() {
+        $('.bg-img-search-template').stop().fadeIn();
+      });
+      $(document).on('click', '.contents-search', function() {
+        $('.content-search-template').stop().fadeIn();
+      });
     });
   </script>
 </body>
