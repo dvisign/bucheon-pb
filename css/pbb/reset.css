@@ -4,6 +4,9 @@
 html,
 body {width: 100%;height:100%;font-size: 15px;margin:0; padding:0; min-width:1870px;box-sizing: border-box;font-family: 'NanumSquare', sans-serif;font-weight: normal; line-height:1;}
 
+html.popups,
+body.popups {min-width: auto;}
+
 html, body, div, p, span, strong, b, em, iframe, pre, h1, h2, h3, h4, h5, h6, img, dl, dt, dd, fieldset, form, legend, label, table, caption, thead, tbody, tfoot, tr, th, td, ul, ol, li, a, input, select, textarea {margin: 0;padding: 0;box-sizing: border-box;line-height:1;font-family: 'NanumSquare', sans-serif;}
 
 table {border-collapse: collapse; border-spacing:0;}
@@ -34,3 +37,6 @@ a:visited {color:#000; text-decoration: none;}
 .verticalAlignBase {vertical-align: baseline;}
 .verticalAlignMiddle {vertical-align: middle;}
 .verticalAlignBottom {vertical-align: bottom;}
+.bolder-text {font-weight: 600;transform: skew(-0.03deg);display:inline-block}
+.bold-text {font-weight: 900;transform: skew(-0.03deg);display:inline-block}
+.w-50 {width:50%;}

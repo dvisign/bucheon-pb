@@ -425,6 +425,10 @@
 #SigngChangeHistList .lookup-wrapper .text-form:not(.date-picker) {width: 420px;}
 #SigngChangeHistList .lookup-wrapper .text-form.date-picker {width:201px;}
 #SigngChangeHistList .lookup-forms > .form-reference-btn { border-left: 0; padding-left: 0; }
+
+/* page : BsnsList.html */
+#BsnsList .lookup-wrapper .text-form:not(.date-form) {width:290px;}
+
 /* page : list-popup.html */
 #list-popup .modal-content {position: static !important;transform: none !important;}
 
