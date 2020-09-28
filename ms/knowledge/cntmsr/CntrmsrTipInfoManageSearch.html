@@ -3,7 +3,9 @@
 
 <head>
   <meta charset='UTF-8'>
-  <title>특화단지 장치상태 이력</title>
+  <title>미세먼지 줄이기 시민 실천 가이드 관리 - 목록</title>
+  <link href='/css/pbb/slick.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/slick-theme.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/reset.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/common.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/style.css' type='text/css' rel='stylesheet'>
@@ -14,9 +16,12 @@
   <script type='text/javascript' src='/resources/jquery/jquery-ui.min.js'></script>
   <!-- common JS -->
   <script type='text/javascript' src='/js/pbb/common.js'></script>
+  <!-- slick plugin -->
+  <script type='text/javascript' src='/js/pbb/slick.min.js'></script>
+  <!-- slick css -->
 </head>
 
-<body>
+<body id='CntrmsrTipInfoManageSearch'>
   <div id='wrap'>
     <!-- header -->
     <div id='header-wrapper'>
@@ -459,415 +464,22 @@
     <!-- //header -->
     <!-- section -->
     <div id='list-conts' class='contents'>
-      <div id='device-state-list' class='subpage-contents'>
+      <div class='subpage-contents'>
         <div class='container'>
-          <div class="subpage-title">
-            <h3>특화단지 장치상태 이력</h3>
-          </div>
-          <div class='lookup-wrapper conts-section'>
-            <form>
-              <div id='list-lookup-forms'>
-                <div class='lookup-forms clear'>
-                  <div id='start-date-selector' class='form-select-1'>
-                    <label class='date-label' for='start-date'>시작일자</label>
-                    <input type="text" class='date-form date-picker' id='start-date'>
-                  </div>
-                  <div id='end-date-selector' class='form-select-2'>
-                    <label class='date-label' for='end-date'>종료일자</label>
-                    <input type="text" class='date-form date-picker' id='end-date'>
-                  </div>
-                  <div id='point-selector' class='form-select-3'>
-                    <label class='select-label' for=''>법정동</label>
-                    <select class='select-form' id='' name=''>
-                      <option>법정동1</option>
-                      <option>법정동2</option>
-                      <option>법정동3</option>
-                      <option>법정동4</option>
-                    </select>
-                  </div>
-                  <div id='service-selector' class='form-select-4'>
-                    <label class='select-label' for=''>서비스 유형</label>
-                    <select class='select-form' id='' name=''>
-                      <option>서비스 유형</option>
-                    </select>
-                  </div>
-                  <div class='form-reference-btn'>
-                    <button class='btn btn-round'>조회</button>
-                  </div>
-                </div>
-              </div>
-            </form>
+          <div class='subpage-title'>
+            <h3>미세먼지 줄이기 시민 실천 가이드 관리</h3>
           </div>
           <div class='conts-section'>
-            <div class="subpage-cate-title">
-              <h4>장치 통신 상태 이상 횟수</h4>
+            <div class='view-used-btn board-write-btns text-right'>
+              <a href='javascript:void(0);' class='btn btn-round'>수정</a>
             </div>
-            <div id='device-problem-count' class='problem-counts text-center'>
-              <table class='count-table'>
-                <colgroup>
-                  <col class='styleClass' />
-                  <col class='styleClass' />
-                  <col class='styleClass' />
-                  <col class='styleClass' />
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th>
-                      <div>
-                        <p>우리동네 알림이</p>
-                      </div>
-                    </th>
-                    <th>
-                      <div>
-                        <p>공업단지 비산먼지</p>
-                      </div>
-                    </th>
-                    <th>
-                      <div>
-                        <p>통학로 청정 안심 공기</p>
-                      </div>
-                    </th>
-                    <th>
-                      <div>
-                        <p>지하철 미세먼지 차감</p>
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <div>
-                        <p id='problem-count-alram'>99</p>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p id='problem-count-industry'>99</p>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p id='problem-count-school'>99</p>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p id='problem-count-subway'>99</p>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class='board-lists conts-section'>
-            <div class="subpage-cate-title">
-              <h4>장치 상태 이력</h4>
-            </div>
-            <div class='board-list-set clear'>
-              <div class='list-count'>
-                <p>조회결과 : <span id='count-result'>9,999</span>건</p>
-              </div>
-              <div class='list-view-selector'>
-                <select class='select-form' id='' name=''>
-                  <option>50개 출력</option>
-                  <option>100개 출력</option>
-                  <option>150개 출력</option>
-                  <option>200개 출력</option>
-                </select>
+            <div class='CntrmsrTipInfoContents'>
+              <div style='height:400px;border:30px solid pink'>
+                미세먼지 줄이기 시민 실천 가이드 내용
               </div>
             </div>
-            <div class='board-list-table-wrapper text-center'>
-              <table>
-                <thead class='board-list-header'>
-                  <tr>
-                    <th class='list-nums'>
-                      <div>
-                        <p>순번</p>
-                      </div>
-                    </th>
-                    <th class='list-actives'>
-                      <div>
-                        <p>저감활동 내역</p>
-                      </div>
-                    </th>
-                    <th class='list-areas'>
-                      <div>
-                        <p>법정동</p>
-                      </div>
-                    </th>
-                    <th class='list-start-date'>
-                      <div>
-                        <p>가동시작일자</p>
-                      </div>
-                    </th>
-                    <th class='list-start-time'>
-                      <div>
-                        <p>가동시작시각</p>
-                      </div>
-                    </th>
-                    <th class='list-end-date'>
-                      <div>
-                        <p>가동종료일자</p>
-                      </div>
-                    </th>
-                    <th class='list-end-time'>
-                      <div>
-                        <p>가동종료시각</p>
-                      </div>
-                    </th>
-                    <th class='list-etc'>
-                      <div>
-                        <p>비고</p>
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody class='board-list-body'>
-                  <tr>
-                    <td class='list-nums'>
-                      <div>
-                        <p class='list-num-data'>1</p>
-                      </div>
-                    </td>
-                    <td class='list-actives'>
-                      <div>
-                        <p class='list-active-data'>청소차 가동</p>
-                      </div>
-                    </td>
-                    <td class='list-areas'>
-                      <div>
-                        <p class='list-area-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-start-date'>
-                      <div>
-                        <p class='list-start-date-data'>2020-05-13</p>
-                      </div>
-                    </td>
-                    <td class='list-start-time'>
-                      <div>
-                        <p class='list-start-time-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-end-date'>
-                      <div>
-                        <p class='list-end-date-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-end-time'>
-                      <div>
-                        <p class='list-end-time-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-etc'>
-                      <div>
-                        <p class='list-etc-data'>연계</p>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class='list-nums'>
-                      <div>
-                        <p class='list-num-data'>2</p>
-                      </div>
-                    </td>
-                    <td class='list-actives'>
-                      <div>
-                        <p class='list-active-data'>청소차 가동</p>
-                      </div>
-                    </td>
-                    <td class='list-areas'>
-                      <div>
-                        <p class='list-area-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-start-date'>
-                      <div>
-                        <p class='list-start-date-data'>2020-05-13</p>
-                      </div>
-                    </td>
-                    <td class='list-start-time'>
-                      <div>
-                        <p class='list-start-time-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-end-date'>
-                      <div>
-                        <p class='list-end-date-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-end-time'>
-                      <div>
-                        <p class='list-end-time-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-etc'>
-                      <div>
-                        <p class='list-etc-data'>연계</p>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class='list-nums'>
-                      <div>
-                        <p class='list-num-data'>3</p>
-                      </div>
-                    </td>
-                    <td class='list-actives'>
-                      <div>
-                        <p class='list-active-data'>청소차 가동</p>
-                      </div>
-                    </td>
-                    <td class='list-areas'>
-                      <div>
-                        <p class='list-area-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-start-date'>
-                      <div>
-                        <p class='list-start-date-data'>2020-05-13</p>
-                      </div>
-                    </td>
-                    <td class='list-start-time'>
-                      <div>
-                        <p class='list-start-time-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-end-date'>
-                      <div>
-                        <p class='list-end-date-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-end-time'>
-                      <div>
-                        <p class='list-end-time-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-etc'>
-                      <div>
-                        <p class='list-etc-data'>연계</p>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class='list-nums'>
-                      <div>
-                        <p class='list-num-data'>4</p>
-                      </div>
-                    </td>
-                    <td class='list-actives'>
-                      <div>
-                        <p class='list-active-data'>청소차 가동</p>
-                      </div>
-                    </td>
-                    <td class='list-areas'>
-                      <div>
-                        <p class='list-area-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-start-date'>
-                      <div>
-                        <p class='list-start-date-data'>2020-05-13</p>
-                      </div>
-                    </td>
-                    <td class='list-start-time'>
-                      <div>
-                        <p class='list-start-time-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-end-date'>
-                      <div>
-                        <p class='list-end-date-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-end-time'>
-                      <div>
-                        <p class='list-end-time-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-etc'>
-                      <div>
-                        <p class='list-etc-data'>연계</p>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class='list-nums'>
-                      <div>
-                        <p class='list-num-data'>5</p>
-                      </div>
-                    </td>
-                    <td class='list-actives'>
-                      <div>
-                        <p class='list-active-data'>청소차 가동</p>
-                      </div>
-                    </td>
-                    <td class='list-areas'>
-                      <div>
-                        <p class='list-area-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-start-date'>
-                      <div>
-                        <p class='list-start-date-data'>2020-05-13</p>
-                      </div>
-                    </td>
-                    <td class='list-start-time'>
-                      <div>
-                        <p class='list-start-time-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-end-date'>
-                      <div>
-                        <p class='list-end-date-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-end-time'>
-                      <div>
-                        <p class='list-end-time-data'></p>
-                      </div>
-                    </td>
-                    <td class='list-etc'>
-                      <div>
-                        <p class='list-etc-data'>연계</p>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <div class='pagenation-wrapper'>
-                <a href='#' class='pagenation-arrow pagenation-prev'>
-                  <span class='sound-only'>이전페이지</span>
-                </a>
-                <ul class='pagenation-lists'>
-                  <li class='pagenation-items active'>
-                    <a href='#'>1</a>
-                  </li>
-                  <li class='pagenation-items'>
-                    <a href='#'>2</a>
-                  </li>
-                  <li class='pagenation-items'>
-                    <a href='#'>3</a>
-                  </li>
-                  <li class='pagenation-items'>
-                    <a href='#'>4</a>
-                  </li>
-                  <li class='pagenation-items'>
-                    <a href='#'>5</a>
-                  </li>
-                  <li class='pagenation-items'>
-                    <a href='#'>6</a>
-                  </li>
-                  <li class='pagenation-items'>
-                    <a href='#'>7</a>
-                  </li>
-                </ul>
-                <a href='#' class='pagenation-arrow pagenation-next'>
-                  <span class='sound-only'>다음페이지</span>
-                </a>
-              </div>
+            <div class='view-used-btn text-center'>
+              <a href='javascript:void(0);' class='btn btn-round'>수정</a>
             </div>
           </div>
         </div> 
@@ -880,31 +492,6 @@
     </div>
     <!-- //footer -->
   </div>
-  <!-- jquery ui datepicker -->
-  <script>
-  $(document).ready(function() {
-    $('.date-picker').each(function(i) {
-      var $this = $(this);
-      $this.datepicker({
-        changeMonth: true,
-        changeYear: true, 
-        minDate: '-100y', 
-        nextText: '다음 달',
-        prevText: '이전 달',
-        numberOfMonths: [1,1],
-        stepMonths: 3,
-        yearRange: 'c-100:c+10',
-        showButtonPanel: true,  
-        currentText: '오늘 날짜',
-        closeText: '닫기', 
-        dateFormat: "yy-mm-dd",
-        showMonthAfterYear: true ,
-        dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'],
-        monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
-      });
-    });
-  })
-  </script>
 </body>
 
 </html>

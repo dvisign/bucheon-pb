@@ -429,6 +429,43 @@
 /* page : BsnsList.html */
 #BsnsList .lookup-wrapper .text-form:not(.date-form) {width:290px;}
 
+/* page : PolicySumryInfoSelect.html */
+#PolicySumryInfoSelect .tab-nav-items {width:calc(100% / 4);}
+#PolicySumryInfoSelect .search-skin-3 {margin-top:60px;}
+
+/* page : CntrmsrTipInfoContentsUpdt.html */
+.CntrmsrTipInfoContents .fileForms {margin-top:40px;} 
+
+/* page : CntrmsrTipInfoManageSearch2.html */
+#cntmsr .tab-nav-items {width:calc(100% / 5)}
+
 /* page : list-popup.html */
 #list-popup .modal-content {position: static !important;transform: none !important;}
 
+/* page : ArpltnExhstBplcList.html */
+#ArpltnExhstBplcList .ivt-datas {width:calc(calc((100% - 20px) / 2));}
+#ArpltnExhstBplcList .ivt-datas:not(:last-child) {margin-right:20px;}
+#ArpltnExhstBplcList #maps {height:467px;}
+#ArpltnExhstBplcList .workplaceMaps > .ivt-datas.float-left {width:30%;}
+#ArpltnExhstBplcList .workplaceMaps > .ivt-datas.float-right {width:calc(70% - 20px);}
+#ArpltnExhstBplcList .workplaces .search-skin-2 {margin-bottom:20px;}
+#ArpltnExhstBplcList .workplaces .board-list-table-wrapper {min-height: 300px;}
+
+/* page : ChmnyAtmcMesureBplcList.html */
+#ChmnyAtmcMesureBplcList #maps {height:300px;}
+#ChmnyAtmcMesureBplcList .chimneyEquipment .ivt-datas {width:calc(calc((100% - 20px) / 2));}
+#ChmnyAtmcMesureBplcList .chimneyEquipment .ivt-datas:not(:last-child) {margin-right:20px;}
+
+/* qna */
+.qna-intro {padding: 35px 60px 35px 70px; background-color: #f5f7f9; border: 1px solid #e5e7e9;}
+.qna-intro > div {background-image:url('/img/pbb/board/qna-icon.png');background-repeat: no-repeat;background-size: auto;background-position-x: 92%;}
+.qna-intro-text-items {line-height: 1.3;}
+
+.qna-intro-link-list {margin-top:15px;}
+.qna-intro-text-items > p {color: #696d75;font-size:16px;}
+.qna-intro-link-items > a {display:block;padding:13px 20px 13px 40px;text-align: center;transition: all 0.3s ease-in-out;border:1px solid #e5e7e9;font-size:14px;color:#494949;background-color:#ffffff;}
+.e-complaints-link {margin-right:10px;}
+.e-complaints-link > a {background-image: url('/img/pbb/board/laptop.png');background-repeat: no-repeat;background-size:auto;background-position-y: center;background-position-x: 20px;}
+.qna-intro-link-items.e-complaints-link > a:hover {background-color:#ee5a6b;background-image:url('/img/pbb/board/laptop-on.png');color:#fff;}
+.suggestion-link > a {background-image: url('/img/pbb/board/write.png');background-repeat: no-repeat;background-size:auto;background-position-y: center;background-position-x: 20px;}
+.qna-intro-link-items.suggestion-link > a:hover {background-color:#ee5a6b;background-image:url('/img/pbb/board/write-on.png');color:#fff;}

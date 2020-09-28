@@ -39,4 +39,5 @@ a:visited {color:#000; text-decoration: none;}
 .verticalAlignBottom {vertical-align: bottom;}
 .bolder-text {font-weight: 600;transform: skew(-0.03deg);display:inline-block}
 .bold-text {font-weight: 900;transform: skew(-0.03deg);display:inline-block}
+.w-30 {width:30%;}
 .w-50 {width:50%;}

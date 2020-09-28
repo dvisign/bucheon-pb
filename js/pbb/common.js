@@ -44,19 +44,19 @@ var tabEvent = function(obj) {
 
 $(document).ready(function() {
   // 네비게이션 마우스 오버
-  var subNavEl = $('.sub-nav-list');
-  var subNavBg = $('#sub-nav-bg');
-  $('.nav-items').mouseover(function() {
-    subNavBg.stop().slideDown();
-    subNavEl.stop().slideDown();
+  var navEl = $('.nav-items > a');
+  var subEl = $('.sub-nav-wrapper');
+  navEl.mouseover(function() {
+    var $this = $(this);
+    var thisSubEl = $this.next('.sub-nav-wrapper'); 
+    subEl.removeClass('active');
+    thisSubEl.addClass('active');
+    subEl.stop().slideUp();
+    thisSubEl.stop().slideDown();
   });
-  $('#headers, .nav-items').mouseleave(function() {
-    subNavEl.stop().slideUp();
-    subNavBg.stop().slideUp();
-  });
-  $('.nav-items > a').on('focus', function() {
-    subNavBg.stop().slideDown();
-    subNavEl.stop().slideDown();
+  $('#headers').mouseleave(function() {
+    subEl.removeClass('active');
+    subEl.stop().slideUp();
   });
   // sub nav
   $('.sub-nav-depths').on('click', function() {
