@@ -451,10 +451,45 @@
 #ArpltnExhstBplcList .workplaces .search-skin-2 {margin-bottom:20px;}
 #ArpltnExhstBplcList .workplaces .board-list-table-wrapper {min-height: 300px;}
 
-/* page : ChmnyAtmcMesureBplcList.html */
+/* page : ChmnyAtmcMesureBplcList.html, EodsDscamtList.html */
 #ChmnyAtmcMesureBplcList #maps {height:300px;}
-#ChmnyAtmcMesureBplcList .chimneyEquipment .ivt-datas {width:calc(calc((100% - 20px) / 2));}
-#ChmnyAtmcMesureBplcList .chimneyEquipment .ivt-datas:not(:last-child) {margin-right:20px;}
+.ivt-datas {width:calc(calc((100% - 20px) / 2));}
+.ivt-datas:not(:last-child) {margin-right:20px;}
+
+.EodsDscamtListTable:first-child {width:100px;}
+.EodsDscamtListTable:not(:first-child) {width:115px;}
+#EodsDscamtList .tab-nav-list {border-top:0;}
+#EodsDscamtList .tab-nav-items {width:calc(100% / 4);}
+#EodsDscamtList .tab-nav-items {border-top:1px solid #c5c9cd;}
+
+/* page : ReodsList.html */
+.reodsListSelector {margin-bottom:30px;}
+.reodsListChart {margin-bottom:30px;}
+.reodsListTable {width:calc(100% / 7)}
+
+/* page : RclmIncnrList.html */
+.rclmIncnrListTable {width:calc(100% / 6)}
+
+/* page : FrfireList.html */
+.fireReasonTable {margin-top:15px;}
+.fireReasonTable .board-list-body td > div, 
+.fireReasonTable .board-list-body th > div, 
+.fireReasonTable .board-list-header td > div, 
+.fireReasonTable .board-list-header th > div {padding:0;}
+.fireReasonTable .board-list-body td, 
+.fireReasonTable .board-list-body th, 
+.fireReasonTable .board-list-header td, 
+.fireReasonTable .board-list-header th {width:calc(100% / 17)}
+.fireReasonTable .board-list-body td p, 
+.fireReasonTable .board-list-body th p, 
+.fireReasonTable .board-list-header td p, 
+.fireReasonTable .board-list-header th p {word-break: break-all;}
+
+/* page : SumryIndustList.html */
+#SumryIndustList .edit-data {min-height:400px;}
+
+/* page : SumryIndustUpdt.html */
+
 
 /* qna */
 .qna-intro {padding: 35px 60px 35px 70px; background-color: #f5f7f9; border: 1px solid #e5e7e9;}

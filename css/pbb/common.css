@@ -17,7 +17,7 @@
 #nav-wrapper > #nav-lists > .nav-items > a {font-size:19px;font-weight: 900;position:relative;line-height:70px;display:block;}
 #nav-wrapper > #nav-lists > .nav-items > a::after {display:block;content:'';position:absolute;bottom:0;left:0;right:0;height: 4px;margin:0 auto;background-color:#2c64cf;transition: all 0.3s ease-in-out;width:0;}
 #nav-wrapper > #nav-lists > .nav-items > a:hover::after{width:100%;}
-.sub-nav-wrapper {position: absolute;z-index:1;left:0; right:0; margin:0 auto;top: 100%;width:100%;background-color:#fff;border-top:1px solid #d6dade;padding:60px 0;display:none;}
+.sub-nav-wrapper {position: absolute;z-index:1;left:0; right:0; margin:0 auto;top: 100%;width:100%;background-color:#fff;border-top:1px solid #d6dade;border-bottom:1px solid #d6dade;padding:60px 0;display:none;}
 .sub-nav-wrapper.active {z-index:2;}
 
 .sub-nav-list {display:flex;flex-wrap: wrap;}
@@ -71,6 +71,8 @@
 .subpage-title > p.bolder-text {font-size:16px;color:#0c1e42;margin-top:15px;}
 .subpage-cate-title {margin-bottom:15px;}
 .subpage-cate-title > h4 {color:#0c1e42;font-weight: 600;font-size:22px;display:inline-block;}
+.chart-title {margin:15px auto;}
+.chart-title > h4 {color:#0c1e42; font-weight: 600; font-size:18px;}
 
 /* tab */
 .tab-nav-list {border:1px solid #c5c9cd;}
@@ -132,12 +134,13 @@
 .date-form {display:inline-block;width:180px; height:42px; line-height: 42px;font-size:15px;border-radius: 4px;padding-left:15px;border:1px solid #d6dade;background:#fff url('/img/pbb/common/date-icon.png') no-repeat calc(100% - 10px) center / 15px;font-weight: 600;color:#696d75;}
 .date-label {color:#696d75; font-size:15px;font-weight:bold;transform: skew(-0.03deg);display:inline-block;margin-right:15px;}
 
-.select-form {display:inline-block;width:180px; height:42px; line-height: 42px;font-size:15px;border-radius: 4px;padding-left:15px;border:1px solid #d6dade;background:#fff url('/img/pbb/common/selector-down-arrow.png') no-repeat calc(100% - 10px) center / auto;font-weight: 600;color:#696d75;
+.select-form {display:inline-block;min-width:180px; height:42px; line-height: 42px;font-size:15px;border-radius: 4px;padding:0 35px 0 15px;border:1px solid #d6dade;background-image:url('/img/pbb/common/selector-down-arrow.png');background-color:#fff;background-repeat: no-repeat; background-position-x: calc(100% - 10px); background-position-y: center; background-size:auto;font-weight: 600;color:#696d75;
 -moz-appearance: none;
 -webkit-appearance: none;
 appearance: none;
 transform: skew(-0.03deg);
 }
+.select-form::-ms-expand {display:none;}
 .select-form > option {color:#696d75;font-weight: 600;font-size:15px;}
 .select-label {color:#696d75; font-size:15px;font-weight:bold;transform: skew(-0.03deg);display:inline-block;margin-right:15px;}
 
@@ -198,7 +201,7 @@ transform: skew(-0.03deg);
 /* .lookup-forms > #point-selector {margin-right:60px;} */
 .lookup-forms .date-form,
 .lookup-forms .select-form,
-.lookup-forms .text-form {width:180px;height:50px;line-height:50px;}
+.lookup-forms .text-form {min-width:180px;height:50px;line-height:50px;}
 .lookup-forms .radio-label {padding:14px 0;}
 .lookup-forms > .form-reference-btn {padding-left: 55px; border-left: 1px solid #d6dade;float:right;}
 .lookup-forms .form-reference-btn > .btn {height:50px;line-height: 50px;}
@@ -257,6 +260,7 @@ transform: skew(-0.03deg);
 .board-list-body th a:not(.btn),
 .board-list-header td a:not(.btn),
 .board-list-header th a:not(.btn) {transform: skew(-0.03deg);color:#696d75;font-size:15px;font-weight: 600;word-break: keep-all;text-decoration: underline;line-height:1.3;color:#2c64cf;}
+.list-empty {text-align: center;}
 .list-empty .list-empty-text {padding:70px 0;} 
 
 .board-list-body {}
@@ -444,6 +448,10 @@ transform: skew(-0.03deg);
 
 /* map popup */
 #pop-map {height:400px;}
+
+/* chart up&down */
+.chart-down {display: inline-block; border-top: 8px solid #ff0000; border-right: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 5px solid transparent;position: relative;top:5px;margin-right:5px;}
+.chart-up {display: inline-block; border-top: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 8px solid #5b9bd5; border-left: 5px solid transparent;position: relative;top:0;margin-right:5px;}
 
 /* footer */
 #footers {height:240px;background-color:#191d25;}
