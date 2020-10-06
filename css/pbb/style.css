@@ -258,6 +258,7 @@
 .location-areas.code-green {top:62%;left:40%;} */
 
 /* page : SpclizDeviceModeManageList.html */
+
 /* class */
 .submit-btns {display:inline-block;cursor: pointer;background-color:#e6eaee;color:#63666b;padding:9px 29px;border-radius: 20px;font-size:15px;font-weight:600;transform: skew(-0.03deg);margin-left:20px;border:0;transition:all 0.3s ease-in-out;}
 .submit-btns:hover,
@@ -289,9 +290,9 @@
 
 /* page : SpclizDeviceStateHistList.html */
 #device-state-list .lookup-forms > div:not(:last-child){margin-right:20px;}
-#device-state-list .lookup-forms .date-form, 
-#device-state-list .lookup-forms .select-form {width:125px;}
-#device-state-list .lookup-forms > .form-reference-btn {padding-left:30px;}
+#device-state-list .lookup-forms .date-form {width:160px;}
+#device-state-list .lookup-forms .select-form {min-width:190px;}
+#device-state-list .lookup-forms > .form-reference-btn {padding-left:0;border-left:0;}
 #device-state-list .lookup-forms > #service-selector {margin-right:40px;}
 #device-problem-count col.styleClass {width:calc(100% / 4)}
 
@@ -490,6 +491,87 @@
 
 /* page : SumryIndustUpdt.html */
 
+/* page : SigngInspectionList.html */
+.device-management-save-template {width:1300px;}
+.device-management-save-template .select-form,
+.device-management-save-template .text-form,
+.device-management-save-template .date-form {height:34px; line-height: 34px;width:150px;min-width:auto;}
+
+/* page : SigngInspectionDateList.html */
+#SigngInspectionDateList .board-search-form .select-label {min-width:90px;}
+#SigngInspectionDateList .board-search-form .select-form {width:235px;}
+.management-history-template .board-list-body td p {word-break: break-all;}
+
+/* page : CnctColctList.html */
+.collection-data-wrapper {}
+.collection-data-area {}
+.collection-data-area:not(:last-child) {margin-right:20px;}
+#CnctColctList #maps {height:620px;}
+.collection-cate-counts {height:305px;border:1px solid #e5e9ed;margin-right:10px;border:1px solid #e5e9ed;}
+.collection-cate-counts:nth-child(3),
+.collection-cate-counts:nth-child(4) {margin-top:10px;}
+.collection-cate-counts:nth-child(2n) {margin-right:0;}
+.collection-data-cate {background-color:#f5f7f9;border-bottom:1px solid #e5e9ed;color:#696d75;font-size:15px;}
+.collection-data-cate .collection-data-name {padding:15px 0;}
+.collection-data-cate .collection-data-count {padding:15px 0;}
+.collection-data-cate-items {height: calc(100% - 46px);}
+.collection-data-name {width:210px;border-right:1px solid #e5e9ed;}
+.collection-data-count {width:calc(100% - 210px);}
+.collection-data-lists > li:not(:last-child) {margin-bottom:13px;}
+
+/* page : ColctExecuteList.html */
+#ColctExecuteList .lookup-forms label {min-width:80px;}
+#ColctExecuteList .lookup-forms > .form-reference-btn {border:0;padding:0;}
+
+/* page : CntcExecuteList.html */
+#CntcExecuteList .lookup-forms label {min-width:80px;}
+#CntcExecuteList .lookup-forms .text-form {min-width:377px;}
+#CntcExecuteList .lookup-forms > .form-reference-btn {border:0;padding:0;}
+
+/* page : AlarmCmprList.html */
+#listCompare .lookup-forms .date-form {width:150px;}
+#listCompare .lookup-forms label.text-label {min-width:80px;}
+#listCompare .lookup-forms label.select-label,
+#listCompare .lookup-forms label.radio-label {margin-left:10px;}
+#listCompare .lookup-forms .comparePlace label.text-label {position: relative;top: -5px;}
+#listCompare .lookup-forms > .form-reference-btn {padding:0;border:0;}
+
+/* page : QustnrResultSearch.html */
+#QustnrResultSearch #view-contents-wrapper {padding:18px 20px;}
+#QustnrResultSearch #view-contents {min-height:200px;}
+.qus-items {margin-bottom:60px;}
+.qus-results {border:1px solid #e5e7e9;padding:50px;}
+.qus-ranks:not(:last-child) {margin-bottom:30px;}
+.qus-rank-title {margin-bottom:13px;}
+.qus-percentage-wrapper {position:relative;height:30px;width:100%;background-color:#f5f7f9;}
+.qus-percentage-count {color:#fff;font-size:15px;position:absolute;top:50%;transform: translateY(-50%);left:10px;z-index:1;}
+.qus-percentage {position: absolute;height:100%;left:0;border-top-right-radius: 20px;border-bottom-right-radius: 20px;}
+.qus-rank-1 .qus-percentage {background-color:#00abff;}
+.qus-rank-2 .qus-percentage {background-color:#04ba6f;}
+.qus-rank-3 .qus-percentage {background-color:#ff9140;}
+.etc-result {font-size:14px;color:#ff9140;text-decoration: underline;display:inline-block;margin-left:20px;}
+
+/* page : QustnrDetail.html */
+#QustnrDetail #view-contents-wrapper {padding:18px 20px;}
+#QustnrDetail #view-contents {min-height:200px;}
+#QustnrDetail .lookup-forms .text-form {min-width: 315px;}
+
+/* page : QustnrUpdt.html */
+#QustnrUpdt .board-write-tables {border-top:1px solid #999da5;border-bottom:1px solid #999da5;}
+#QustnrUpdt .board-write tr:not(:last-child) {border-bottom:1px solid #e6eaee;}
+#QustnrUpdt .board-write th {background-color:#f5f7f9;}
+#QustnrUpdt .board-write td, 
+#QustnrUpdt .board-write th {border:0;}
+#QustnrUpdt .board-write .text-form {width:100%;height:45px;line-height: 45px;}
+#QustnrUpdt .board-write .radio-label {margin-right:40px;}
+#QustnrUpdt .board-write .bolder-text {font-size:14px; color:#696d75;margin-left:20px;}
+#QustnrUpdt .board-write-tables .bolder-text,
+#QustnrUpdt .board-write-tables .select-form {position:relative;top:-5px;}
+#QustnrUpdt #write-contents-wrapper {padding:18px 20px;}
+#QustnrUpdt .subpage-cate-title.display-flex > h4 {margin-right:40px;}
+
+/* page : ConectStatsSearch.html */
+#ConectStatsSearch .date-selector > .btn {font-size:14px;transform: skew(-0.03deg);}
 
 /* qna */
 .qna-intro {padding: 35px 60px 35px 70px; background-color: #f5f7f9; border: 1px solid #e5e7e9;}

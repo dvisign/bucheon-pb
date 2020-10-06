@@ -3,21 +3,20 @@
 
 <head>
   <meta charset='UTF-8'>
-  <title>특화단지 장치점검</title>
+  <title>설문관리 등록</title>
+  <link href='/css/pbb/jquery-ui.min.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/reset.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/common.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/style.css' type='text/css' rel='stylesheet'>
-  <!-- handlebars -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"
-    integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw=="
-    crossorigin="anonymous"></script>
   <!-- jquery -->
   <script type='text/javascript' src='/resources/jquery/jquery-3.5.1.min.js'></script>
+  <script type='text/javascript' src='/resources/jquery/jquery-ui.min.js'></script>
   <!-- common JS -->
   <script type='text/javascript' src='/js/pbb/common.js'></script>
 </head>
 
-<body id='SigngInspectionList'>
+<body id='QustnrUpdt'>
   <div id='wrap'>
     <!-- header -->
     <div id='header-wrapper'>
@@ -443,7 +442,7 @@
               <a href='/ms/main/main.html'><span class='sound-only'>메인</span></a>
             </div>
             <div class='subpage-nav-items'>
-              <a href='javascript:void(0);' class=''>특화단지 장치 관리</a>
+              <a href='javascript:void(0);'>특화단지 장치 관리</a>
             </div>
             <div class='subpage-nav-items'>
               <a href='javascript:void(0);' class='sub-nav-depths'>장치 운영모드 관리</a>
@@ -459,177 +458,253 @@
     </div>
     <!-- //header -->
     <!-- section -->
-    <div class='contents'>
+    <div id='view-conts' class='contents'>
       <div class='subpage-contents'>
         <div class='container'>
           <div class='subpage-title'>
-            <h3>특화단지 장치점검</h3>
+            <h3>설문관리 등록</h3>
           </div>
-          <div class='search-skin-4 board-search-form lookup-wrapper conts-section'>
-            <form>
-              <div id='list-lookup-forms'>
-                <div class='lookup-forms clear'>
-                  <div class='float-left'>
-                    <label class='select-label'>서비스 유형</label>
-                    <select class='select-form' id='' name=''>
-                      <option>선택</option>
-                    </select>
-                  </div>
-                  <div class='float-left search-subject'>
-                    <label class='select-label'>측정소</label>
-                    <select class='select-form' id='' name=''>
-                      <option>선택</option>
-                    </select>
-                  </div>
-                  <div class='form-reference-btn'>
-                    <button class='btn btn-round'>조회</button>
-                  </div>
-                </div>
+          <form>
+            <div class='board-write conts-section'>
+              <div class='subpage-cate-title'>
+                <h4>설문정보 입력</h4>
               </div>
-            </form>
-          </div>
-          <div class='board-lists conts-section'>
-            <div class='view-used-btn board-write-btns text-right'>
-              <a href='javascript:void(0);' onclick='setDevice("#device-management-save-template");' class='btn btn-round'>등록</a>
-              <a href='#' class='btn btn-round'>삭제</a>
-            </div>
-            <div class='board-list-set clear'>
-              <div class='list-count'>
-                <p>조회결과 : <span id='count-result'>9,999</span>건</p>
-              </div>
-              <div class='list-view-selector'>
-                <select class='select-form' id='' name=''>
-                  <option>50개 출력</option>
-                  <option>100개 출력</option>
-                  <option>150개 출력</option>
-                  <option>200개 출력</option>
-                </select>
-              </div>
-            </div>
-            <div class='board-list-table-wrapper text-center'>
-              <table id='InnerMsrstnListTables'>
-                <colgroup>
-                  <col width='5%'>
-                  <col width='19%'>
-                  <col width='19%'>
-                  <col width='19%'>
-                  <col width='19%'>
-                  <col width='19%'>
-                </colgroup>
-                <thead class='board-list-header'>
-                  <tr>
-                    <th>
-                      <div>
-                        <p>
-                          <label class="checkbox-label">
-                            <input class="checkbox-form" type="checkbox"><span class="checkbox-img"></span>
+              <div class='board-write-tables'>
+                <table>
+                  <colgroup>
+                    <col width='160px' />
+                    <col width='465px' />
+                    <col width='160px' />
+                    <col width='465px' />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th class='text-left'>
+                        <div>
+                          <p>설문 제목</p>
+                        </div>
+                      </th>
+                      <td class='text-left' colspan='3'>
+                        <div>
+                          <input type='text' class='text-form'>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='text-left'>
+                        <div>
+                          <p>설문시작일</p>
+                        </div>
+                      </th>
+                      <td class='text-left'>
+                        <div>
+                          <input type='text' class='date-form date-picker'>
+                        </div>
+                      </td>
+                      <th class='text-left'>
+                        <div>
+                          <p>설문종료일</p>
+                        </div>
+                      </th>
+                      <td class='text-left'>
+                        <div>
+                          <input type='text' class='date-form date-picker'>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='text-left'>
+                        <div>
+                          <p>설문대상</p>
+                        </div>
+                      </th>
+                      <td class='text-left' colspan='3'>
+                        <div>
+                          <label class='radio-label'>
+                            <input type='radio' name='test' class='radio-form' checked>
+                            <span class='radio-img'></span>
+                            <span class='radio-label-text'>전체</span>
                           </label>
-                        </p>
-                      </div>
-                    </th>
-                    <th>
-                      <div>
-                        <p>서비스 유형</p>
-                      </div>
-                    </th>
-                    <th>
-                      <div>
-                        <p>측정소 명</p>
-                      </div>
-                    </th>
-                    <th>
-                      <div>
-                        <p>디바이스 명</p>
-                      </div>
-                    </th>
-                    <th>
-                      <div>
-                        <p>점검 세부 장비</p>
-                      </div>
-                    </th>
-                    <th>
-                      <div>
-                        <p>점검 유형</p>
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody class='board-list-body'>
-                  <tr>
-                    <td>
-                      <div>
-                        <p>
-                          <label class="checkbox-label" for="test1">
-                            <input id="test1" class="checkbox-form" name="test1" type="checkbox"><span class="checkbox-img"></span>
+                          <label class='radio-label'>
+                            <input type='radio' name='test' class='radio-form'>
+                            <span class='radio-img'></span>
+                            <span class='radio-label-text'>회원</span>
                           </label>
-                        </p>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p><span>우리동네 알리미 서비스</span></p>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p><span>현대 백화점</span></p>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p><span>알림이 #1</span></p>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p><span><a href='javascript:void(0);' onclick='setDevice("#device-management-save-template");'>B-ray</a></span></p>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p><span>점검, 교체, 청소, 검교정</span></p>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <div class='pagenation-wrapper'>
-                <a href='#' class='pagenation-arrow pagenation-prev'>
-                  <span class='sound-only'>이전페이지</span>
-                </a>
-                <ul class='pagenation-lists'>
-                  <li class='pagenation-items active'>
-                    <a href='#'>1</a>
-                  </li>
-                  <li class='pagenation-items'>
-                    <a href='#'>2</a>
-                  </li>
-                  <li class='pagenation-items'>
-                    <a href='#'>3</a>
-                  </li>
-                  <li class='pagenation-items'>
-                    <a href='#'>4</a>
-                  </li>
-                  <li class='pagenation-items'>
-                    <a href='#'>5</a>
-                  </li>
-                  <li class='pagenation-items'>
-                    <a href='#'>6</a>
-                  </li>
-                  <li class='pagenation-items'>
-                    <a href='#'>7</a>
-                  </li>
-                </ul>
-                <a href='#' class='pagenation-arrow pagenation-next'>
-                  <span class='sound-only'>다음페이지</span>
-                </a>
+                          <span class='bolder-text'>*설문대상이 전체일 경우 비회원도 설문 참여가 가능합니다.</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='text-left'>
+                        <div>
+                          <p>설문내용</p>
+                        </div>
+                      </th>
+                      <td class='text-left' colspan='3'>
+                        <div id='write-contents-wrapper'>
+                          <div id='write-contents'>
+                            <textarea class='wr-content' placeholder='설문내용을 입력해주세요'></textarea>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='text-left'>
+                        <div>
+                          <p>설문결과 공개여부</p>
+                        </div>
+                      </th>
+                      <td class='text-left' colspan='3'>
+                        <div>
+                          <label class='radio-label'>
+                            <input type='radio' name='test2' class='radio-form' checked>
+                            <span class='radio-img'></span>
+                            <span class='radio-label-text'>공개</span>
+                          </label>
+                          <label class='radio-label'>
+                            <input type='radio' name='test2' class='radio-form'>
+                            <span class='radio-img'></span>
+                            <span class='radio-label-text'>비공개</span>
+                          </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='text-left'>
+                        <div>
+                          <p>게시여부</p>
+                        </div>
+                      </th>
+                      <td class='text-left' colspan='3'>
+                        <div>
+                          <label class='radio-label'>
+                            <input type='radio' name='test3' class='radio-form' checked>
+                            <span class='radio-img'></span>
+                            <span class='radio-label-text'>게시</span>
+                          </label>
+                          <label class='radio-label'>
+                            <input type='radio' name='test3' class='radio-form'>
+                            <span class='radio-img'></span>
+                            <span class='radio-label-text'>숨김</span>
+                          </label>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
-            <div class='view-used-btn text-center'>
-              <a href='javascript:void(0);' onclick='setDevice("#device-management-save-template");' class='btn btn-round'>등록</a>
-              <a href='#' class='btn btn-round'>삭제</a>
+            <div class='board-write conts-section'>
+              <div class='subpage-cate-title display-flex flex-align-center'>
+                <h4>설문지 만들기</h4>
+                <a href='javascript:void(0);' class='subpage-cate-link btn btn-round modal-btn'>질문추가</a>
+                <a href='javascript:void(0);' class='subpage-cate-link btn btn-round modal-btn'>질문삭제</a>
+                <span class='bolder-text'>* 설문지 개당 질문은 최대 20개 가능</span>
+              </div>
+              <div class='board-write-tables'>
+                <table>
+                  <colgroup>
+                    <col width='160px' />
+                    <col width='465px' />
+                    <col width='160px' />
+                    <col width='465px' />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th class='text-left'>
+                        <div>
+                          <p><span>(질문1)</span> 설문유형</p>
+                        </div>
+                      </th>
+                      <td class='text-left'>
+                        <div>
+                          <label class='radio-label'>
+                            <input type='radio' class='radio-form' name='qustnrTyp1' value='C' checked>
+                            <span class='radio-img'></span>
+                            <span class='radio-label-text'>선택형</span>
+                          </label>
+                          <label class='radio-label'>
+                            <input type='radio' class='radio-form' name='qustnrTyp1' value='S'>
+                            <span class='radio-img'></span>
+                            <span class='radio-label-text'>문답식</span>
+                          </label>
+                        </div>
+                      </td>
+                      <th class='text-left'>
+                        <div>
+                          <p>기타항목 포함여부</p>
+                        </div>
+                      </th>
+                      <td class='text-left'>
+                        <div>
+                          <label class='wr-notice-label checkbox-label'>
+                            <input type='checkbox' class='checkbox-form' name='etcRspnsYn1' value='Y'>
+                            <span class='checkbox-img'></span>
+                          </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='text-left'>
+                        <div>
+                          <p>복수응답 여부</p>
+                        </div>
+                      </th>
+                      <td class='text-left' colspan='3'>
+                        <div>
+                          <label class='radio-label'>
+                            <input type='radio' name='test4' class='radio-form' checked>
+                            <span class='radio-img'></span>
+                            <span class='radio-label-text'>복수응답 불가</span>
+                          </label>
+                          <label class='radio-label'>
+                            <input type='radio' name='test4' class='radio-form'>
+                            <span class='radio-img'></span>
+                            <span class='radio-label-text'>복수응답 가능</span>
+                          </label>
+                          <select class='select-form'>
+                            <option>2개</option>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='text-left'>
+                        <div>
+                          <p>질문</p>
+                        </div>
+                      </th>
+                      <td class='text-left' colspan='3'>
+                        <div>
+                          <input type='text' class='text-form' placeholder='질문 내용을 입력해 주세요.'>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='text-left'>
+                        <div>
+                          <p>항목 추가/삭제</p>
+                        </div>
+                      </th>
+                      <td class='text-left' colspan='3'>
+                        <div>
+                          <a href='javascript:void(0);' class='subpage-cate-link btn btn-round modal-btn'>항목추가</a>
+                          <a href='javascript:void(0);' class='subpage-cate-link btn btn-round modal-btn'>항목삭제</a>
+                          <span class='bolder-text'>* 항목추가 버튼을 클릭 하시면 항목을 추가 할 수 있습니다 (최대 9개)</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
+            <div class='conts-section'>
+              <div class="view-used-btn board-write-btns text-center">
+                <a class="btn btn-round" href="#" onclick="fn_ptl_insertQustnr(); return false;">등록</a>
+                <a class="btn btn-round" href="#" onclick="fn_ptl_goBack(); return false;">취소</a>    
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -639,214 +714,32 @@
 
     </div>
     <!-- //footer -->
-    <!-- modal -->
-    <div class='modals'></div>
-    <!-- //modal -->
   </div>
-  <!-- 장치 점검 관리 등록 모달 html -->
-  <script id='device-management-save-template' type="text/x-handlebars-template">
-    <div class='device-management-save-template modal-content position-abs'>
-      <div>
-        <div class='modal-header'>
-          <div class="modal-title">
-            <h4>장치 점검 관리 등록</h4>
-            <a href="javascript:void(0);" class="modal-close">
-              <span class="sound-only">팝업닫기</span>
-            </a>
-          </div>
-        </div>
-        <div class='modal-body templateEl'>
-          <div class='device-chart-scroll'>
-            <div class='modal-section'>
-              <div class="subpage-cate-title">
-                <h4>장치 정보</h4>
-              </div>
-              <table class="modal-tables text-left">
-                <colgroup>
-                  <col width='160px' />
-                  <col width='*' />
-                  <col width='160px' />
-                  <col width='*' />
-                </colgroup>
-                <tbody class="board-list-body">
-                  <tr>
-                    <th class='text-center'>
-                      <div>
-                        <p>서비스 유형</p>
-                      </div>
-                    </th>
-                    <td class='text-center'>
-                      <div>
-                        <select class='select-form'>
-                          <option>선택</option>
-                        </select>
-                      </div>
-                    </td>
-                    <th class='text-center'>
-                      <div>
-                        <p>측정소 명</p>
-                      </div>
-                    </th>
-                    <td class='text-center'>
-                      <div>
-                        <select class='select-form'>
-                          <option>선택</option>
-                        </select>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th class='text-center'>
-                      <div>
-                        <p>디바이스 명</p>
-                      </div>
-                    </th>
-                    <td colspan='3' class='text-center'>
-                      <div>
-                        <input type='text' class='text-form'>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class='modal-section'>
-              <div class="subpage-cate-title">
-                <h4>점검 세부장비</h4>
-              </div>
-              <table class="modal-tables text-left">
-                <colgroup>
-                  <col width='15%'>
-                  <col width='15%'>
-                  <col width='15%'>
-                  <col width='15%'>
-                  <col width='15%'>
-                  <col width='15%'>
-                  <col width='10%'>
-                </colgroup>
-                <thead class='board-list-header'>
-                  <tr>
-                    <th class='text-center'>
-                      <div>
-                        <p>점검 세부 장비명</p>
-                      </div>
-                    </th>
-                    <th class='text-center'>
-                      <div>
-                        <p>점검 항목</p>
-                      </div>
-                    </th>
-                    <th class='text-center'>
-                      <div>
-                        <p>점검유형</p>
-                      </div>
-                    </th>
-                    <th class='text-center'>
-                      <div>
-                        <p>점검주기 (일)</p>
-                      </div>
-                    </th>
-                    <th class='text-center'>
-                      <div>
-                        <p>가동일자</p>
-                      </div>
-                    </th>
-                    <th class='text-center'>
-                      <div>
-                        <p>내용</p>
-                      </div>
-                    </th>
-                    <th class='text-center'>
-                      <div>
-                        <a href='javascript:void(0);' class='btn btn-round modal-btn'>추가</a>
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody class="board-list-body">
-                  <tr>
-                    <td class='text-center'>
-                      <div>
-                        <select class='select-form'>
-                          <option>선택</option>
-                        </select>
-                      </div>
-                    </td>
-                    <td class='text-center'>
-                      <div>
-                        <input type='text' class='text-form'>
-                      </div>
-                    </td>
-                    <td class='text-center'>
-                      <div>
-                        <select class='select-form'>
-                          <option>선택</option>
-                        </select>
-                      </div>
-                    </td>
-                    <td class='text-center'>
-                      <div>
-                        <input type='text' class='text-form'>
-                      </div>
-                    </td>
-                    <td class='text-center'>
-                      <div>
-                        <input type='text' class='date-form date-picker'>
-                      </div>
-                    </td>
-                    <td class='text-center'>
-                      <div>
-                        <input type='text' class='text-form'>
-                      </div>
-                    </td>
-                    <td class='text-center'>
-                      <div>
-                        <a href='javascript:void(0);' class='btn btn-round modal-btn'>삭제</a>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class='modal-section'>
-              <div class='view-used-btn text-center'>
-                <a href='javascript:void(0);' class='btn btn-round'>등록</a>
-                <a href='javascript:void(0);' class='btn btn-round' onclick='$(".modals").stop().fadeOut();'>닫기</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class='modal-bg'></div>
-  </script>
-  <!-- // 장치 점검 관리 등록 모달 html -->
-
-  <!-- 상태 모달 예시 스크립트 -->
   <script>
-    function compiling(serviceType) {
-      var source = $(serviceType).html();
-      var template = Handlebars.compile(source);
-      var html = template();
-      return html;
-    };
-    function setDevice(service) {
-      var html = compiling(service);
-      $('.modals')[0].innerHTML = html;
-      $('.modals').stop().fadeIn();
-    };
-    function viewImg() {
-      $('.view-img').stop().fadeIn();
-    }
     $(document).ready(function() {
-      $(document).on('click', '.modal-bg, .modal-close', function() {
-        $('.modals').stop().fadeOut();
+      // 설치위치 슬라이드
+      $('.date-picker').each(function(i) {
+        var $this = $(this);
+        $this.datepicker({
+          changeMonth: true,
+          changeYear: true, 
+          minDate: '-100y', 
+          nextText: '다음 달',
+          prevText: '이전 달',
+          numberOfMonths: [1,1],
+          stepMonths: 3,
+          yearRange: 'c-100:c+10',
+          showButtonPanel: true,  
+          currentText: '오늘 날짜',
+          closeText: '닫기', 
+          dateFormat: 'yy-mm-dd',
+          showMonthAfterYear: true ,
+          dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'],
+          monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+        });
       });
-      $(document).on('click', '.view-img', function() {
-        $(this).stop().fadeOut();
-      })
-    });
-  </script>
+    })
+    </script>
 </body>
 
 </html>

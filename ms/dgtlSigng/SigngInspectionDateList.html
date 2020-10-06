@@ -3,7 +3,9 @@
 
 <head>
   <meta charset='UTF-8'>
-  <title>특화단지 장치점검</title>
+  <title>특화단지 장치 점검 진행</title>
+  <link href='/css/pbb/jquery-ui.min.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/reset.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/common.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/style.css' type='text/css' rel='stylesheet'>
@@ -13,11 +15,12 @@
     crossorigin="anonymous"></script>
   <!-- jquery -->
   <script type='text/javascript' src='/resources/jquery/jquery-3.5.1.min.js'></script>
+  <script type='text/javascript' src='/resources/jquery/jquery-ui.min.js'></script>
   <!-- common JS -->
   <script type='text/javascript' src='/js/pbb/common.js'></script>
 </head>
 
-<body id='SigngInspectionList'>
+<body id='SigngInspectionDateList'>
   <div id='wrap'>
     <!-- header -->
     <div id='header-wrapper'>
@@ -463,9 +466,9 @@
       <div class='subpage-contents'>
         <div class='container'>
           <div class='subpage-title'>
-            <h3>특화단지 장치점검</h3>
+            <h3>특화단지 장치 점검 진행</h3>
           </div>
-          <div class='search-skin-4 board-search-form lookup-wrapper conts-section'>
+          <div class='board-search-form lookup-wrapper conts-section'>
             <form>
               <div id='list-lookup-forms'>
                 <div class='lookup-forms clear'>
@@ -475,8 +478,28 @@
                       <option>선택</option>
                     </select>
                   </div>
-                  <div class='float-left search-subject'>
-                    <label class='select-label'>측정소</label>
+                  <div class='float-left'>
+                    <label class='select-label'>측정소 명</label>
+                    <select class='select-form' id='' name=''>
+                      <option>선택</option>
+                    </select>
+                  </div>
+                  <div class='float-left'>
+                    <label class='select-label'>디바이스 명</label>
+                    <select class='select-form' id='' name=''>
+                      <option>선택</option>
+                    </select>
+                  </div>
+                </div>
+                <div class='lookup-forms clear'>
+                  <div class='float-left'>
+                    <label class='select-label'>점검 세부 장치</label>
+                    <select class='select-form' id='' name=''>
+                      <option>선택</option>
+                    </select>
+                  </div>
+                  <div class='float-left'>
+                    <label class='select-label'>점검 유형</label>
                     <select class='select-form' id='' name=''>
                       <option>선택</option>
                     </select>
@@ -490,8 +513,9 @@
           </div>
           <div class='board-lists conts-section'>
             <div class='view-used-btn board-write-btns text-right'>
-              <a href='javascript:void(0);' onclick='setDevice("#device-management-save-template");' class='btn btn-round'>등록</a>
-              <a href='#' class='btn btn-round'>삭제</a>
+              <a href='javascript:void(0);' onclick='setDevice("#management-request-template");' class='btn btn-round'>점검요청</a>
+              <a href='javascript:void(0);' onclick='setDevice("#management-result-template");' class='btn btn-round'>점검결과</a>
+              <a href='javascript:void(0);' onclick='setDevice("#management-history-template");' class='btn btn-round'>점검이력</a>
             </div>
             <div class='board-list-set clear'>
               <div class='list-count'>
@@ -509,32 +533,25 @@
             <div class='board-list-table-wrapper text-center'>
               <table id='InnerMsrstnListTables'>
                 <colgroup>
-                  <col width='5%'>
-                  <col width='19%'>
-                  <col width='19%'>
-                  <col width='19%'>
-                  <col width='19%'>
-                  <col width='19%'>
+                  <col width='3%'>
+                  <col width='14%'>
+                  <col width='10%'>
+                  <col width='10%'>
+                  <col width='10%'>
+                  <col width='10%'>
+                  <col width='10%'>
+                  <col width='10%'>
+                  <col width='10%'>
+                  <col width='10%'>
+                  <col width='3%'>
                 </colgroup>
                 <thead class='board-list-header'>
                   <tr>
                     <th>
-                      <div>
-                        <p>
-                          <label class="checkbox-label">
-                            <input class="checkbox-form" type="checkbox"><span class="checkbox-img"></span>
-                          </label>
-                        </p>
-                      </div>
                     </th>
                     <th>
                       <div>
                         <p>서비스 유형</p>
-                      </div>
-                    </th>
-                    <th>
-                      <div>
-                        <p>측정소 명</p>
                       </div>
                     </th>
                     <th>
@@ -549,7 +566,37 @@
                     </th>
                     <th>
                       <div>
-                        <p>점검 유형</p>
+                        <p>점검항목</p>
+                      </div>
+                    </th>
+                    <th>
+                      <div>
+                        <p>점검유형</p>
+                      </div>
+                    </th>
+                    <th>
+                      <div>
+                        <p>점검주기</p>
+                      </div>
+                    </th>
+                    <th>
+                      <div>
+                        <p>가동일자</p>
+                      </div>
+                    </th>
+                    <th>
+                      <div>
+                        <p>최종점검일자</p>
+                      </div>
+                    </th>
+                    <th>
+                      <div>
+                        <p>점검<br>D-Day</p>
+                      </div>
+                    </th>
+                    <th>
+                      <div>
+                        <p>점검진행 상태</p>
                       </div>
                     </th>
                   </tr>
@@ -558,11 +605,10 @@
                   <tr>
                     <td>
                       <div>
-                        <p>
-                          <label class="checkbox-label" for="test1">
-                            <input id="test1" class="checkbox-form" name="test1" type="checkbox"><span class="checkbox-img"></span>
-                          </label>
-                        </p>
+                        <label class="radio-label">
+                          <input type="radio" class="radio-form" name="test">
+                          <span class="radio-img"></span>
+                        </label>
                       </div>
                     </td>
                     <td>
@@ -572,22 +618,47 @@
                     </td>
                     <td>
                       <div>
-                        <p><span>현대 백화점</span></p>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
                         <p><span>알림이 #1</span></p>
                       </div>
                     </td>
                     <td>
                       <div>
-                        <p><span><a href='javascript:void(0);' onclick='setDevice("#device-management-save-template");'>B-ray</a></span></p>
+                        <p><span>B-ray</span></p>
                       </div>
                     </td>
                     <td>
                       <div>
-                        <p><span>점검, 교체, 청소, 검교정</span></p>
+                        <p><span>유량점검</span></p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p><span>점검</span></p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p><span>30</span></p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p><span>2020.09.15</span></p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p><span>2020.09.15</span></p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p><span>30</span></p>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <p><span>-</span></p>
                       </div>
                     </td>
                   </tr>
@@ -626,8 +697,9 @@
               </div>
             </div>
             <div class='view-used-btn text-center'>
-              <a href='javascript:void(0);' onclick='setDevice("#device-management-save-template");' class='btn btn-round'>등록</a>
-              <a href='#' class='btn btn-round'>삭제</a>
+              <a href='javascript:void(0);' onclick='setDevice("#management-request-template");' class='btn btn-round'>점검요청</a>
+              <a href='javascript:void(0);' onclick='setDevice("#management-result-template");' class='btn btn-round'>점검결과</a>
+              <a href='javascript:void(0);' onclick='setDevice("#management-history-template");' class='btn btn-round'>점검이력</a>
             </div>
           </div>
         </div>
@@ -643,13 +715,13 @@
     <div class='modals'></div>
     <!-- //modal -->
   </div>
-  <!-- 장치 점검 관리 등록 모달 html -->
-  <script id='device-management-save-template' type="text/x-handlebars-template">
-    <div class='device-management-save-template modal-content position-abs'>
+  <!-- 점검 요청 모달 html -->
+  <script id='management-request-template' type="text/x-handlebars-template">
+    <div class='management-request-template modal-content position-abs'>
       <div>
         <div class='modal-header'>
           <div class="modal-title">
-            <h4>장치 점검 관리 등록</h4>
+            <h4>장치 점검 요청</h4>
             <a href="javascript:void(0);" class="modal-close">
               <span class="sound-only">팝업닫기</span>
             </a>
@@ -670,40 +742,36 @@
                 </colgroup>
                 <tbody class="board-list-body">
                   <tr>
-                    <th class='text-center'>
+                    <th>
                       <div>
                         <p>서비스 유형</p>
                       </div>
                     </th>
-                    <td class='text-center'>
+                    <td colspan='3'>
                       <div>
-                        <select class='select-form'>
-                          <option>선택</option>
-                        </select>
+                        <p><span>우리동네 알림이 서비스</span></p>
                       </div>
                     </td>
-                    <th class='text-center'>
+                  </tr>
+                  <tr>                    
+                    <th>
                       <div>
                         <p>측정소 명</p>
                       </div>
                     </th>
-                    <td class='text-center'>
+                    <td>
                       <div>
-                        <select class='select-form'>
-                          <option>선택</option>
-                        </select>
+                        <p><span>현대 백화점</span></p>
                       </div>
                     </td>
-                  </tr>
-                  <tr>
-                    <th class='text-center'>
+                    <th>
                       <div>
                         <p>디바이스 명</p>
                       </div>
                     </th>
-                    <td colspan='3' class='text-center'>
+                    <td>
                       <div>
-                        <input type='text' class='text-form'>
+                        <p><span>알림이 #1</span></p>
                       </div>
                     </td>
                   </tr>
@@ -712,53 +780,29 @@
             </div>
             <div class='modal-section'>
               <div class="subpage-cate-title">
-                <h4>점검 세부장비</h4>
+                <h4>장치 대상 정보</h4>
               </div>
-              <table class="modal-tables text-left">
+              <table class="modal-tables">
                 <colgroup>
-                  <col width='15%'>
-                  <col width='15%'>
-                  <col width='15%'>
-                  <col width='15%'>
-                  <col width='15%'>
-                  <col width='15%'>
-                  <col width='10%'>
+                  <col width='33.3333%' />
+                  <col width='33.3333%' />
+                  <col width='33.3333%' />
                 </colgroup>
                 <thead class='board-list-header'>
                   <tr>
                     <th class='text-center'>
                       <div>
-                        <p>점검 세부 장비명</p>
+                        <p>점검세부 장비</p>
                       </div>
                     </th>
                     <th class='text-center'>
                       <div>
-                        <p>점검 항목</p>
+                        <p>점검항목</p>
                       </div>
                     </th>
                     <th class='text-center'>
                       <div>
                         <p>점검유형</p>
-                      </div>
-                    </th>
-                    <th class='text-center'>
-                      <div>
-                        <p>점검주기 (일)</p>
-                      </div>
-                    </th>
-                    <th class='text-center'>
-                      <div>
-                        <p>가동일자</p>
-                      </div>
-                    </th>
-                    <th class='text-center'>
-                      <div>
-                        <p>내용</p>
-                      </div>
-                    </th>
-                    <th class='text-center'>
-                      <div>
-                        <a href='javascript:void(0);' class='btn btn-round modal-btn'>추가</a>
                       </div>
                     </th>
                   </tr>
@@ -767,41 +811,54 @@
                   <tr>
                     <td class='text-center'>
                       <div>
-                        <select class='select-form'>
-                          <option>선택</option>
-                        </select>
+                        <p><span>B-ray</span></p>
                       </div>
                     </td>
                     <td class='text-center'>
                       <div>
-                        <input type='text' class='text-form'>
+                        <p><span>유량점검</span></p>
                       </div>
                     </td>
                     <td class='text-center'>
                       <div>
-                        <select class='select-form'>
-                          <option>선택</option>
-                        </select>
+                        <p><span>점검</span></p>
                       </div>
                     </td>
-                    <td class='text-center'>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class='modal-section'>
+              <div class="subpage-cate-title">
+                <h4>점검 요청 정보</h4>
+              </div>
+              <table class="modal-tables text-left">
+                <colgroup>
+                  <col width='160px'>
+                  <col width='*'>
+                </colgroup>
+                <tbody class="board-list-body">
+                  <tr>
+                    <th>
                       <div>
-                        <input type='text' class='text-form'>
+                        <p>점검 요청 일자</p>
                       </div>
-                    </td>
-                    <td class='text-center'>
+                    </th>
+                    <td>
                       <div>
                         <input type='text' class='date-form date-picker'>
                       </div>
                     </td>
-                    <td class='text-center'>
+                  </tr>
+                  <tr>
+                    <th>
                       <div>
-                        <input type='text' class='text-form'>
+                        <p>점검 요청 사항</p>
                       </div>
-                    </td>
-                    <td class='text-center'>
-                      <div>
-                        <a href='javascript:void(0);' class='btn btn-round modal-btn'>삭제</a>
+                    </th>
+                    <td>
+                      <div class='board-write'>
+                        <textarea class='wr-content'></textarea>
                       </div>
                     </td>
                   </tr>
@@ -820,7 +877,448 @@
     </div>
     <div class='modal-bg'></div>
   </script>
-  <!-- // 장치 점검 관리 등록 모달 html -->
+  <!-- // 점검 요청 모달 html -->
+  <!-- 점검 결과 모달 html -->
+  <script id='management-result-template' type="text/x-handlebars-template">
+    <div class='management-result-template modal-content position-abs'>
+      <div>
+        <div class='modal-header'>
+          <div class="modal-title">
+            <h4>장치 점검 결과</h4>
+            <a href="javascript:void(0);" class="modal-close">
+              <span class="sound-only">팝업닫기</span>
+            </a>
+          </div>
+        </div>
+        <div class='modal-body templateEl'>
+          <div class='device-chart-scroll'>
+            <div class='modal-section'>
+              <div class="subpage-cate-title">
+                <h4>장치 정보</h4>
+              </div>
+              <table class="modal-tables text-left">
+                <colgroup>
+                  <col width='160px' />
+                  <col width='*' />
+                  <col width='160px' />
+                  <col width='*' />
+                </colgroup>
+                <tbody class="board-list-body">
+                  <tr>
+                    <th>
+                      <div>
+                        <p>서비스 유형</p>
+                      </div>
+                    </th>
+                    <td colspan='3'>
+                      <div>
+                        <p><span>우리동네 알림이 서비스</span></p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>                    
+                    <th>
+                      <div>
+                        <p>측정소 명</p>
+                      </div>
+                    </th>
+                    <td>
+                      <div>
+                        <p><span>현대 백화점</span></p>
+                      </div>
+                    </td>
+                    <th>
+                      <div>
+                        <p>디바이스 명</p>
+                      </div>
+                    </th>
+                    <td>
+                      <div>
+                        <p><span>알림이 #1</span></p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class='modal-section'>
+              <div class="subpage-cate-title">
+                <h4>장치 대상 정보</h4>
+              </div>
+              <table class="modal-tables">
+                <colgroup>
+                  <col width='33.3333%' />
+                  <col width='33.3333%' />
+                  <col width='33.3333%' />
+                </colgroup>
+                <thead class='board-list-header'>
+                  <tr>
+                    <th class='text-center'>
+                      <div>
+                        <p>점검세부 장비</p>
+                      </div>
+                    </th>
+                    <th class='text-center'>
+                      <div>
+                        <p>점검항목</p>
+                      </div>
+                    </th>
+                    <th class='text-center'>
+                      <div>
+                        <p>점검유형</p>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="board-list-body">
+                  <tr>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>B-ray</span></p>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>유량점검</span></p>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>점검</span></p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class='modal-section'>
+              <div class="subpage-cate-title">
+                <h4>점검 결과 정보</h4>
+              </div>
+              <table class="modal-tables text-left">
+                <colgroup>
+                  <col width='160px'>
+                  <col width='*'>
+                </colgroup>
+                <tbody class="board-list-body">
+                  <tr>
+                    <th>
+                      <div>
+                        <p>점검 요청 일자</p>
+                      </div>
+                    </th>
+                    <td>
+                      <div>
+                        <p><span>2020.10.01</span></p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div>
+                        <p>점검 완료 일자</p>
+                      </div>
+                    </th>
+                    <td>
+                      <div>
+                        <input type='text' class='date-form date-picker'>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <div>
+                        <p>비고</p>
+                      </div>
+                    </th>
+                    <td>
+                      <div class='board-write'>
+                        <textarea class='wr-content'></textarea>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class='modal-section'>
+              <div class='view-used-btn text-center'>
+                <a href='javascript:void(0);' class='btn btn-round'>등록</a>
+                <a href='javascript:void(0);' class='btn btn-round' onclick='$(".modals").stop().fadeOut();'>닫기</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='modal-bg'></div>
+  </script>
+  <!-- // 점검 결과 모달 html -->
+  <!-- 점검 이력 모달 html -->
+  <script id='management-history-template' type="text/x-handlebars-template">
+    <div class='management-history-template modal-content position-abs'>
+      <div>
+        <div class='modal-header'>
+          <div class="modal-title">
+            <h4>장치 점검 이력</h4>
+            <a href="javascript:void(0);" class="modal-close">
+              <span class="sound-only">팝업닫기</span>
+            </a>
+          </div>
+        </div>
+        <div class='modal-body templateEl'>
+          <div class='device-chart-scroll'>
+            <div class='modal-section'>
+              <div class="subpage-cate-title">
+                <h4>장치 정보</h4>
+              </div>
+              <table class="modal-tables text-left">
+                <colgroup>
+                  <col width='160px' />
+                  <col width='*' />
+                  <col width='160px' />
+                  <col width='*' />
+                </colgroup>
+                <tbody class="board-list-body">
+                  <tr>
+                    <th>
+                      <div>
+                        <p>서비스 유형</p>
+                      </div>
+                    </th>
+                    <td colspan='3'>
+                      <div>
+                        <p><span>우리동네 알림이 서비스</span></p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>                    
+                    <th>
+                      <div>
+                        <p>측정소 명</p>
+                      </div>
+                    </th>
+                    <td>
+                      <div>
+                        <p><span>현대 백화점</span></p>
+                      </div>
+                    </td>
+                    <th>
+                      <div>
+                        <p>디바이스 명</p>
+                      </div>
+                    </th>
+                    <td>
+                      <div>
+                        <p><span>알림이 #1</span></p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class='modal-section'>
+              <div class="subpage-cate-title">
+                <h4>장치 대상 정보</h4>
+              </div>
+              <table class="modal-tables">
+                <colgroup>
+                  <col width='33.3333%' />
+                  <col width='33.3333%' />
+                  <col width='33.3333%' />
+                </colgroup>
+                <thead class='board-list-header'>
+                  <tr>
+                    <th class='text-center'>
+                      <div>
+                        <p>점검세부 장비</p>
+                      </div>
+                    </th>
+                    <th class='text-center'>
+                      <div>
+                        <p>점검항목</p>
+                      </div>
+                    </th>
+                    <th class='text-center'>
+                      <div>
+                        <p>점검유형</p>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="board-list-body">
+                  <tr>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>B-ray</span></p>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>유량점검</span></p>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>점검</span></p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class='modal-section'>
+              <div class="subpage-cate-title">
+                <h4>점검 이력 정보</h4>
+              </div>
+              <table class="modal-tables text-left">
+                <colgroup>
+                  <col width='160px' />
+                  <col width='*' />
+                </colgroup>
+                <tbody class="board-list-body">
+                  <tr>
+                    <th>
+                      <div>
+                        <p><span>점검 완료 일자</span></p>
+                      </div>
+                    </th>
+                    <td>
+                      <div>
+                        <div class='clear'>
+                          <div class='float-left'>
+                            <input type='text' class='date-form date-picker'>
+                            <span class='text-division'>~</span>
+                            <input type='text' class='date-form date-picker'>
+                          </div>
+                          <div class='float-right'>
+                            <a href='javascript:void(0);' class='btn btn-round modal-btn'>조회</a>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class='modal-section'>
+              <table class='modal-tables'>
+                <colgroup>
+                  <col width='60px'>
+                  <col width='180px'>
+                  <col width='200px'>
+                  <col width='180px'>
+                  <col width='200px'>
+                </colgroup>
+                <thead class='board-list-header'>
+                  <tr>
+                    <th class='text-center'>
+                      <div>
+                        <p>순번</p>
+                      </div>
+                    </th>
+                    <th class='text-center'>
+                      <div>
+                        <p>점검 요청 일자</p>
+                      </div>
+                    </th>
+                    <th class='text-center'>
+                      <div>
+                        <p>점검 요청사항</p>
+                      </div>
+                    </th>
+                    <th class='text-center'>
+                      <div>
+                        <p>점검 완료 일자</p>
+                      </div>
+                    </th>
+                    <th class='text-center'>
+                      <div>
+                        <p>비고</p>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class='board-list-body'>
+                  <tr>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>1</span></p>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>2020.10.25</span></p>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p>요청사항요청사항요청사항요청사항요청사항요청사항요청사항요청사항요청사항요청사항요청사항요청사항요청사항요청사항요청사항요청사항요청사항요청사항요청사항요청사항요청사항요청사항요청사항</p>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p>2020-10-26</p>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p>비고비고비고비고비고비고비고비고비고비고비고비고비고비고비고비고비고비고비고비고비고비고비고비고비고비고비고비고</p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class='list-empty'>
+                    <td colspan="8">
+                      <div>
+                        <p class='list-empty-text'>조회 결과가 없습니다.</p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class='pagenation-wrapper text-center'>
+                <a href='#' class='pagenation-arrow pagenation-prev'>
+                  <span class='sound-only'>이전페이지</span>
+                </a>
+                <ul class='pagenation-lists'>
+                  <li class='pagenation-items active'>
+                    <a href='#'>1</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>2</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>3</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>4</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>5</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>6</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>7</a>
+                  </li>
+                </ul>
+                <a href='#' class='pagenation-arrow pagenation-next'>
+                  <span class='sound-only'>다음페이지</span>
+                </a>
+              </div>
+            </div>
+            <div class='modal-section'>
+              <div class='view-used-btn text-center'>
+                <a href='javascript:void(0);' class='btn btn-round' onclick='$(".modals").stop().fadeOut();'>닫기</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='modal-bg'></div>
+  </script>
+  <!-- // 점검 이력 모달 html -->
 
   <!-- 상태 모달 예시 스크립트 -->
   <script>
@@ -833,6 +1331,26 @@
     function setDevice(service) {
       var html = compiling(service);
       $('.modals')[0].innerHTML = html;
+      $('.date-picker').each(function(i) {
+        var $this = $(this);
+        $this.datepicker({
+          changeMonth: true,
+          changeYear: true, 
+          minDate: '-100y', 
+          nextText: '다음 달',
+          prevText: '이전 달',
+          numberOfMonths: [1,1],
+          stepMonths: 3,
+          yearRange: 'c-100:c+10',
+          showButtonPanel: true,  
+          currentText: '오늘 날짜',
+          closeText: '닫기', 
+          dateFormat: "yy-mm-dd",
+          showMonthAfterYear: true ,
+          dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'],
+          monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+        });
+      });
       $('.modals').stop().fadeIn();
     };
     function viewImg() {
@@ -844,7 +1362,7 @@
       });
       $(document).on('click', '.view-img', function() {
         $(this).stop().fadeOut();
-      })
+      });
     });
   </script>
 </body>

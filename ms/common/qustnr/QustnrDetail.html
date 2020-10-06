@@ -3,21 +3,20 @@
 
 <head>
   <meta charset='UTF-8'>
-  <title>특화단지 장치점검</title>
+  <title>설문관리 참여현황</title>
   <link href='/css/pbb/reset.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/common.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/style.css' type='text/css' rel='stylesheet'>
-  <!-- handlebars -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"
-    integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw=="
-    crossorigin="anonymous"></script>
+  <link href='/css/pbb/jquery-ui.min.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>
   <!-- jquery -->
   <script type='text/javascript' src='/resources/jquery/jquery-3.5.1.min.js'></script>
+  <script type='text/javascript' src='/resources/jquery/jquery-ui.min.js'></script>
   <!-- common JS -->
   <script type='text/javascript' src='/js/pbb/common.js'></script>
 </head>
 
-<body id='SigngInspectionList'>
+<body id='QustnrDetail'>
   <div id='wrap'>
     <!-- header -->
     <div id='header-wrapper'>
@@ -462,175 +461,259 @@
     <div class='contents'>
       <div class='subpage-contents'>
         <div class='container'>
-          <div class='subpage-title'>
-            <h3>특화단지 장치점검</h3>
-          </div>
-          <div class='search-skin-4 board-search-form lookup-wrapper conts-section'>
-            <form>
-              <div id='list-lookup-forms'>
-                <div class='lookup-forms clear'>
-                  <div class='float-left'>
-                    <label class='select-label'>서비스 유형</label>
-                    <select class='select-form' id='' name=''>
-                      <option>선택</option>
-                    </select>
-                  </div>
-                  <div class='float-left search-subject'>
-                    <label class='select-label'>측정소</label>
-                    <select class='select-form' id='' name=''>
-                      <option>선택</option>
-                    </select>
-                  </div>
-                  <div class='form-reference-btn'>
-                    <button class='btn btn-round'>조회</button>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class='board-lists conts-section'>
-            <div class='view-used-btn board-write-btns text-right'>
-              <a href='javascript:void(0);' onclick='setDevice("#device-management-save-template");' class='btn btn-round'>등록</a>
-              <a href='#' class='btn btn-round'>삭제</a>
+          <div class='board-views conts-section'>
+            <div class="subpage-title">
+              <h3>설문관리 참여현황</h3>
             </div>
-            <div class='board-list-set clear'>
-              <div class='list-count'>
-                <p>조회결과 : <span id='count-result'>9,999</span>건</p>
-              </div>
-              <div class='list-view-selector'>
-                <select class='select-form' id='' name=''>
-                  <option>50개 출력</option>
-                  <option>100개 출력</option>
-                  <option>150개 출력</option>
-                  <option>200개 출력</option>
-                </select>
-              </div>
-            </div>
-            <div class='board-list-table-wrapper text-center'>
-              <table id='InnerMsrstnListTables'>
+            <div class='board-view-tables'>
+              <table>
                 <colgroup>
-                  <col width='5%'>
-                  <col width='19%'>
-                  <col width='19%'>
-                  <col width='19%'>
-                  <col width='19%'>
-                  <col width='19%'>
+                  <col width='210px' />
+                  <col width='*' />
                 </colgroup>
-                <thead class='board-list-header'>
+                <tbody>
                   <tr>
-                    <th>
+                    <th class='view-table-category text-left'>
                       <div>
-                        <p>
-                          <label class="checkbox-label">
-                            <input class="checkbox-form" type="checkbox"><span class="checkbox-img"></span>
-                          </label>
-                        </p>
+                        <p>설문 제목</p>
                       </div>
                     </th>
-                    <th>
+                    <td class='view-table-value text-left'>
                       <div>
-                        <p>서비스 유형</p>
+                        <p><span>설문 제목입니다.</span></p>
                       </div>
-                    </th>
-                    <th>
-                      <div>
-                        <p>측정소 명</p>
-                      </div>
-                    </th>
-                    <th>
-                      <div>
-                        <p>디바이스 명</p>
-                      </div>
-                    </th>
-                    <th>
-                      <div>
-                        <p>점검 세부 장비</p>
-                      </div>
-                    </th>
-                    <th>
-                      <div>
-                        <p>점검 유형</p>
-                      </div>
-                    </th>
+                    </td>
                   </tr>
-                </thead>
-                <tbody class='board-list-body'>
                   <tr>
-                    <td>
+                    <th class='view-table-category text-left'>
                       <div>
-                        <p>
-                          <label class="checkbox-label" for="test1">
-                            <input id="test1" class="checkbox-form" name="test1" type="checkbox"><span class="checkbox-img"></span>
-                          </label>
-                        </p>
+                        <p>설문 기간</p>
+                      </div>
+                    </th>
+                    <td class='view-table-value text-left'>
+                      <div>
+                        <p><span>2020-06-01</span> ~ <span>2020-06-30</span></p>
                       </div>
                     </td>
-                    <td>
+                  </tr>
+                  <tr>
+                    <th class='view-table-category text-left verticalAlignBase'>
                       <div>
-                        <p><span>우리동네 알리미 서비스</span></p>
+                        <p>설문 내용</p>
+                      </div>
+                    </th>
+                    <td class='view-table-value text-left'>
+                      <div id='view-contents-wrapper'>
+                        <div id='view-contents'>
+                          <div id='wr-content'>
+                            <p>게시글</p>
+                          </div>
+                        </div>
                       </div>
                     </td>
-                    <td>
+                  </tr>
+                  <tr>
+                    <th class='view-table-category text-left'>
                       <div>
-                        <p><span>현대 백화점</span></p>
+                        <p>참여자 총 인원</p>
                       </div>
-                    </td>
-                    <td>
+                    </th>
+                    <td class='view-table-value text-left'>
                       <div>
-                        <p><span>알림이 #1</span></p>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p><span><a href='javascript:void(0);' onclick='setDevice("#device-management-save-template");'>B-ray</a></span></p>
-                      </div>
-                    </td>
-                    <td>
-                      <div>
-                        <p><span>점검, 교체, 청소, 검교정</span></p>
+                        <p><span>100</span>명</p>
                       </div>
                     </td>
                   </tr>
                 </tbody>
               </table>
-              <div class='pagenation-wrapper'>
-                <a href='#' class='pagenation-arrow pagenation-prev'>
-                  <span class='sound-only'>이전페이지</span>
-                </a>
-                <ul class='pagenation-lists'>
-                  <li class='pagenation-items active'>
-                    <a href='#'>1</a>
-                  </li>
-                  <li class='pagenation-items'>
-                    <a href='#'>2</a>
-                  </li>
-                  <li class='pagenation-items'>
-                    <a href='#'>3</a>
-                  </li>
-                  <li class='pagenation-items'>
-                    <a href='#'>4</a>
-                  </li>
-                  <li class='pagenation-items'>
-                    <a href='#'>5</a>
-                  </li>
-                  <li class='pagenation-items'>
-                    <a href='#'>6</a>
-                  </li>
-                  <li class='pagenation-items'>
-                    <a href='#'>7</a>
-                  </li>
-                </ul>
-                <a href='#' class='pagenation-arrow pagenation-next'>
-                  <span class='sound-only'>다음페이지</span>
-                </a>
-              </div>
-            </div>
-            <div class='view-used-btn text-center'>
-              <a href='javascript:void(0);' onclick='setDevice("#device-management-save-template");' class='btn btn-round'>등록</a>
-              <a href='#' class='btn btn-round'>삭제</a>
             </div>
           </div>
-        </div>
+          <div class='conts-section'>
+            <div class="subpage-title">
+              <h3>참여현황 상세</h3>
+            </div>
+            <div class='lookup-wrapper conts-section'>
+              <form>
+                <div id='list-lookup-forms'>
+                  <div class='lookup-forms clear'>
+                    <div>
+                      <label class='select-label'>성별</label>
+                      <select class='select-form'>
+                        <option>전체</option>
+                        <option>남자</option>
+                        <option>여자</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label class='select-label'>검색어</label>
+                      <select class='select-form'>
+                        <option>이름</option>
+                        <option>성별</option>
+                        <option>나이</option>
+                        <option>참여일</option>
+                        <option>휴대전화</option>
+                        <option>주소</option>
+                      </select>
+                      <input type="text" class='text-form'>
+                    </div>
+                    <div class='form-reference-btn'>
+                      <button class='btn btn-round'>조회</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class='conts-section'>
+              <div class='board-lists conts-section'>
+                <div class='board-list-set clear'>
+                  <div class='list-count'>
+                    <p>조회결과 : <span id='count-result'>9,999</span>건</p>
+                  </div>
+                  <div class='list-view-selector'>
+                    <select class='select-form' id='' name=''>
+                      <option>50개 출력</option>
+                      <option>100개 출력</option>
+                      <option>150개 출력</option>
+                      <option>200개 출력</option>
+                    </select>
+                  </div>
+                </div>
+                <div class='board-list-table-wrapper'>
+                  <table>
+                    <colgroup>
+                      <col width='5%' />
+                      <col width='15%' />
+                      <col width='15%' />
+                      <col width='15%' />
+                      <col width='15%' />
+                      <col width='15%' />
+                      <col width='20%' />
+                    </colgroup>
+                    <thead class='board-list-header'>
+                      <tr>
+                        <th class='text-center'>
+                          <div>
+                            <p>순번</p>
+                          </div>
+                        </th>
+                        <th class='text-center'>
+                          <div>
+                            <p>이름</p>
+                          </div>
+                        </th>
+                        <th class='text-center'>
+                          <div>
+                            <p>성별</p>
+                          </div>
+                        </th>
+                        <th class='text-center'>
+                          <div>
+                            <p>나이</p>
+                          </div>
+                        </th>
+                        <th class='text-center'>
+                          <div>
+                            <p>참여일</p>
+                          </div>
+                        </th>
+                        <th class='text-center'>
+                          <div>
+                            <p>휴대전화</p>
+                          </div>
+                        </th>
+                        <th class='text-center'>
+                          <div>
+                            <p>주소</p>
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody class='board-list-body'>
+                      <tr>
+                        <td class='text-center'>
+                          <div>
+                            <p><span>1</span></p>
+                          </div>
+                        </td>
+                        <td class='text-center'>
+                          <div>
+                            <p><span>홍길동</span></p>
+                          </div>
+                        </td>
+                        <td class='text-center'>
+                          <div>
+                            <p><span>남</span></p>
+                          </div>
+                        </td>
+                        <td class='text-center'>
+                          <div>
+                            <p><span>10대</span></p>
+                          </div>
+                        </td>
+                        <td class='text-center'>
+                          <div>
+                            <p><span>2020-03-01</span></p>
+                          </div>
+                        </td>
+                        <td class='text-center'>
+                          <div>
+                            <p><span>010-1234-1234</span></p>
+                          </div>
+                        </td>
+                        <td class='text-center'>
+                          <div>
+                            <p><span>부천시 원미구 상동</span></p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class='list-empty'>
+                        <td colspan="7">
+                          <div>
+                            <p class='list-empty-text'>조회 결과가 없습니다.</p>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class='pagenation-wrapper'>
+                    <a href='#' class='pagenation-arrow pagenation-prev'>
+                      <span class='sound-only'>이전페이지</span>
+                    </a>
+                    <ul class='pagenation-lists'>
+                      <li class='pagenation-items active'>
+                        <a href='#'>1</a>
+                      </li>
+                      <li class='pagenation-items'>
+                        <a href='#'>2</a>
+                      </li>
+                      <li class='pagenation-items'>
+                        <a href='#'>3</a>
+                      </li>
+                      <li class='pagenation-items'>
+                        <a href='#'>4</a>
+                      </li>
+                      <li class='pagenation-items'>
+                        <a href='#'>5</a>
+                      </li>
+                      <li class='pagenation-items'>
+                        <a href='#'>6</a>
+                      </li>
+                      <li class='pagenation-items'>
+                        <a href='#'>7</a>
+                      </li>
+                    </ul>
+                    <a href='#' class='pagenation-arrow pagenation-next'>
+                      <span class='sound-only'>다음페이지</span>
+                    </a>
+                  </div>
+                </div>
+                <div id="view-used-btn" class="view-used-btn text-center">
+                  <a href="javascript:void(0);" class="btn btn-round">이전</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
       </div>
     </div>
     <!-- //section -->
@@ -639,213 +722,12 @@
 
     </div>
     <!-- //footer -->
-    <!-- modal -->
-    <div class='modals'></div>
-    <!-- //modal -->
   </div>
-  <!-- 장치 점검 관리 등록 모달 html -->
-  <script id='device-management-save-template' type="text/x-handlebars-template">
-    <div class='device-management-save-template modal-content position-abs'>
-      <div>
-        <div class='modal-header'>
-          <div class="modal-title">
-            <h4>장치 점검 관리 등록</h4>
-            <a href="javascript:void(0);" class="modal-close">
-              <span class="sound-only">팝업닫기</span>
-            </a>
-          </div>
-        </div>
-        <div class='modal-body templateEl'>
-          <div class='device-chart-scroll'>
-            <div class='modal-section'>
-              <div class="subpage-cate-title">
-                <h4>장치 정보</h4>
-              </div>
-              <table class="modal-tables text-left">
-                <colgroup>
-                  <col width='160px' />
-                  <col width='*' />
-                  <col width='160px' />
-                  <col width='*' />
-                </colgroup>
-                <tbody class="board-list-body">
-                  <tr>
-                    <th class='text-center'>
-                      <div>
-                        <p>서비스 유형</p>
-                      </div>
-                    </th>
-                    <td class='text-center'>
-                      <div>
-                        <select class='select-form'>
-                          <option>선택</option>
-                        </select>
-                      </div>
-                    </td>
-                    <th class='text-center'>
-                      <div>
-                        <p>측정소 명</p>
-                      </div>
-                    </th>
-                    <td class='text-center'>
-                      <div>
-                        <select class='select-form'>
-                          <option>선택</option>
-                        </select>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th class='text-center'>
-                      <div>
-                        <p>디바이스 명</p>
-                      </div>
-                    </th>
-                    <td colspan='3' class='text-center'>
-                      <div>
-                        <input type='text' class='text-form'>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class='modal-section'>
-              <div class="subpage-cate-title">
-                <h4>점검 세부장비</h4>
-              </div>
-              <table class="modal-tables text-left">
-                <colgroup>
-                  <col width='15%'>
-                  <col width='15%'>
-                  <col width='15%'>
-                  <col width='15%'>
-                  <col width='15%'>
-                  <col width='15%'>
-                  <col width='10%'>
-                </colgroup>
-                <thead class='board-list-header'>
-                  <tr>
-                    <th class='text-center'>
-                      <div>
-                        <p>점검 세부 장비명</p>
-                      </div>
-                    </th>
-                    <th class='text-center'>
-                      <div>
-                        <p>점검 항목</p>
-                      </div>
-                    </th>
-                    <th class='text-center'>
-                      <div>
-                        <p>점검유형</p>
-                      </div>
-                    </th>
-                    <th class='text-center'>
-                      <div>
-                        <p>점검주기 (일)</p>
-                      </div>
-                    </th>
-                    <th class='text-center'>
-                      <div>
-                        <p>가동일자</p>
-                      </div>
-                    </th>
-                    <th class='text-center'>
-                      <div>
-                        <p>내용</p>
-                      </div>
-                    </th>
-                    <th class='text-center'>
-                      <div>
-                        <a href='javascript:void(0);' class='btn btn-round modal-btn'>추가</a>
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody class="board-list-body">
-                  <tr>
-                    <td class='text-center'>
-                      <div>
-                        <select class='select-form'>
-                          <option>선택</option>
-                        </select>
-                      </div>
-                    </td>
-                    <td class='text-center'>
-                      <div>
-                        <input type='text' class='text-form'>
-                      </div>
-                    </td>
-                    <td class='text-center'>
-                      <div>
-                        <select class='select-form'>
-                          <option>선택</option>
-                        </select>
-                      </div>
-                    </td>
-                    <td class='text-center'>
-                      <div>
-                        <input type='text' class='text-form'>
-                      </div>
-                    </td>
-                    <td class='text-center'>
-                      <div>
-                        <input type='text' class='date-form date-picker'>
-                      </div>
-                    </td>
-                    <td class='text-center'>
-                      <div>
-                        <input type='text' class='text-form'>
-                      </div>
-                    </td>
-                    <td class='text-center'>
-                      <div>
-                        <a href='javascript:void(0);' class='btn btn-round modal-btn'>삭제</a>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class='modal-section'>
-              <div class='view-used-btn text-center'>
-                <a href='javascript:void(0);' class='btn btn-round'>등록</a>
-                <a href='javascript:void(0);' class='btn btn-round' onclick='$(".modals").stop().fadeOut();'>닫기</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class='modal-bg'></div>
-  </script>
-  <!-- // 장치 점검 관리 등록 모달 html -->
-
-  <!-- 상태 모달 예시 스크립트 -->
+  <!-- jquery ui datepicker -->
   <script>
-    function compiling(serviceType) {
-      var source = $(serviceType).html();
-      var template = Handlebars.compile(source);
-      var html = template();
-      return html;
-    };
-    function setDevice(service) {
-      var html = compiling(service);
-      $('.modals')[0].innerHTML = html;
-      $('.modals').stop().fadeIn();
-    };
-    function viewImg() {
-      $('.view-img').stop().fadeIn();
-    }
-    $(document).ready(function() {
-      $(document).on('click', '.modal-bg, .modal-close', function() {
-        $('.modals').stop().fadeOut();
-      });
-      $(document).on('click', '.view-img', function() {
-        $(this).stop().fadeOut();
-      })
-    });
+  $(document).ready(function() {
+    
+  })
   </script>
 </body>
 
