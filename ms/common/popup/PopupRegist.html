@@ -3,7 +3,7 @@
 
 <head>
   <meta charset='UTF-8'>
-  <title>설문관리 결과</title>
+  <title>팝업관리 등록</title>
   <link href='/css/pbb/reset.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/common.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/style.css' type='text/css' rel='stylesheet'>
@@ -16,7 +16,7 @@
   <script type='text/javascript' src='/js/pbb/common.js'></script>
 </head>
 
-<body id='QustnrResultSearch'>
+<body id='PopupRegist'>
   <div id='wrap'>
     <!-- header -->
     <div id='header-wrapper'>
@@ -458,130 +458,146 @@
     </div>
     <!-- //header -->
     <!-- section -->
-    <div class='contents'>
-      <div class='subpage-contents'>
+    <div id='list-conts' class='contents'>
+      <div id='device-state-list' class='subpage-contents'>
         <div class='container'>
           <div class="subpage-title">
-            <h3>설문관리 결과</h3>
+            <h3>팝업관리 등록</h3>
           </div>
-          <div class='board-views conts-section'>
-            <div class='board-view-tables'>
+          <div class='board-write conts-section'>
+            <div class='board-view-tables text-left'>
               <table>
-                <colgroup>
-                  <col width='210px' />
-                  <col width='*' />
-                </colgroup>
                 <tbody>
                   <tr>
-                    <th class='view-table-category text-left'>
+                    <th class='write-table-category text-left'>
                       <div>
-                        <p>설문 제목</p>
+                        <p>팝업명</p>
                       </div>
                     </th>
-                    <td class='view-table-value text-left'>
+                    <td class='text-left'>
                       <div>
-                        <p><span>설문 제목입니다.</span></p>
+                        <input type="text" class='text-form wr-subject'>
                       </div>
                     </td>
                   </tr>
                   <tr>
-                    <th class='view-table-category text-left'>
+                    <th class='write-table-category text-left'>
                       <div>
-                        <p>설문 기간</p>
+                        <p>노출 기간</p>
                       </div>
                     </th>
-                    <td class='view-table-value text-left'>
+                    <th class='text-left'>
                       <div>
-                        <p><span>2020-06-01</span> ~ <span>2020-06-30</span></p>
+                        <input type='text' class='date-form date-picker'>
+                        <span class='text-division'>~</span>
+                        <input type='text' class='date-form date-picker'>
                       </div>
-                    </td>
+                    </th>
                   </tr>
                   <tr>
-                    <th class='view-table-category text-left verticalAlignBase'>
+                    <th class='write-table-category text-left'>
                       <div>
-                        <p>설문 내용</p>
+                        <p>팝업창 위치</p>
                       </div>
                     </th>
-                    <td class='view-table-value text-left'>
-                      <div id='view-contents-wrapper'>
-                        <div id='view-contents'>
-                          <div id='wr-content'>
-                            <p>게시글</p>
-                          </div>
+                    <th class='text-left'>
+                      <div class='popPositions'>
+                        <span>
+                          <label class='text-label'>Top</label>
+                          <input type='text' class='text-form'>
+                          <span class='text-label'>px</span>
+                        </span>
+                        <span>
+                          <label class='text-label'>Left</label>
+                          <input type='text' class='text-form'>
+                          <span class='text-label'>px</span>
+                        </span>
+                      </div>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th class='write-table-category text-left'>
+                      <div>
+                        <p>팝업창 크기</p>
+                      </div>
+                    </th>
+                    <th class='text-left'>
+                      <div class='popSizes'>
+                        <span>
+                          <label class='text-label'>Width</label>
+                          <input type='text' class='text-form'>
+                          <span class='text-label'>px</span>
+                        </span>
+                        <span>
+                          <label class='text-label'>Height</label>
+                          <input type='text' class='text-form'>
+                          <span class='text-label'>px</span>
+                        </span>
+                      </div>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th class='write-table-category text-left'>
+                      <div>
+                        <p>오늘하루닫기 버튼</p>
+                      </div>
+                    </th>
+                    <th class='text-left'>
+                      <div class='useTodayClose'>
+                        <label class='radio-label'>
+                          <input type='radio' name='test' class='radio-form' checked>
+                          <span class='radio-img'></span>
+                          <span class='radio-label-text'>사용</span>
+                        </label>
+                        <label class='radio-label'>
+                          <input type='radio' name='test' class='radio-form'>
+                          <span class='radio-img'></span>
+                          <span class='radio-label-text'>사용않함</span>
+                        </label>
+                      </div>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th class='write-table-category text-left'>
+                      <div>
+                        <p>팝업창 노출여부</p>
+                      </div>
+                    </th>
+                    <th class='text-left'>
+                      <div class='usePopups'>
+                        <label class='radio-label'>
+                          <input type='radio' name='test2' class='radio-form' checked>
+                          <span class='radio-img'></span>
+                          <span class='radio-label-text'>노출</span>
+                        </label>
+                        <label class='radio-label'>
+                          <input type='radio' name='test2' class='radio-form'>
+                          <span class='radio-img'></span>
+                          <span class='radio-label-text'>미노출</span>
+                        </label>
+                      </div>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th class='write-table-category text-left'>
+                      <div>
+                        <p>팝업내용</p>
+                      </div>
+                    </th>
+                    <td class='text-left'>
+                      <div id='write-contents-wrapper'>
+                        <div id='write-contents'>
+                          <textarea class='wr-content'>에디터</textarea>
                         </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th class='view-table-category text-left'>
-                      <div>
-                        <p>참여자 총 인원</p>
-                      </div>
-                    </th>
-                    <td class='view-table-value text-left'>
-                      <div>
-                        <p><span>100</span>명</p>
                       </div>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
-          </div>
-          <div class='qusListsWrapper conts-section'>
-            <ul class='display-flex display-wrap flex-justify-between qus-lists'>
-              <li class='flex-col-50 qus-items'>
-                <div class='qus-item-conts'>
-                  <div class='subpage-cate-title overTitle'>
-                    <h4><span class='qus-item-count'>(질문 1)</span> <span>다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.</span></h4>
-                  </div>
-                  <div class='qus-results'>
-                    <div class='qus-ranks qus-rank-1'>
-                      <p class='qus-rank-title overTitle bolder-text'><span>1.미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보</span></p>
-                      <div class='qus-percentage-wrapper'>
-                        <div class='qus-percentage-count'>
-                          <span>50명</span> / <span>50%</span>
-                        </div>
-                        <div class='qus-percentage' style='width:50%;'></div>
-                      </div>
-                    </div>
-                    <div class='qus-ranks qus-rank-2'>
-                      <p class='qus-rank-title bolder-text'>2.<span>미세먼지 체험</span></p>
-                      <div class='qus-percentage-wrapper'>
-                        <div class='qus-percentage-count'>
-                          <span>30명</span> / <span>30%</span>
-                        </div>
-                        <div class='qus-percentage' style='width:30%;'></div>
-                      </div>
-                    </div>
-                    <div class='qus-ranks qus-rank-3'>
-                      <p class='qus-rank-title bolder-text'>3.<span>기타</span><a href='javascript:void(0);' class='etc-result'>답변보기</a></p>
-                      <div class='qus-percentage-wrapper'>
-                        <div class='qus-percentage-count'>
-                          <span>20명</span> / <span>20%</span>
-                        </div>
-                        <div class='qus-percentage' style='width:20%;'></div>
-                      </div>
-                    </div>
-                    <div class='qus-ranks text-center'>
-                      <a href='javascript:void(0);' class='btn btn-round modal-btn'>전체보기</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class='flex-col-50 qus-items'>
-                <div class='qus-item-conts'>
-                  <div class='subpage-cate-title overTitle'>
-                    <h4><span class='qus-item-count'>(질문 1)</span> <span>다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.</span></h4>
-                  </div>
-                  <div class='qus-results'>
-                    <a href='javascript:void(0);' class='all-result-view btn btn-round modal-btn'>전체보기</a>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <div id="view-used-btn" class="view-used-btn text-center">
-              <a href="javascript:void(0);" class="btn btn-round">이전</a>
+            <div class='view-used-btn text-center'>
+              <a href='#' class='btn btn-round'>등록</a>
+              <a href='#' class='btn btn-round'>취소</a>
             </div>
           </div>
         </div> 
@@ -597,7 +613,26 @@
   <!-- jquery ui datepicker -->
   <script>
   $(document).ready(function() {
-    
+    $('.date-picker').each(function(i) {
+      var $this = $(this);
+      $this.datepicker({
+        changeMonth: true,
+        changeYear: true, 
+        minDate: '-100y', 
+        nextText: '다음 달',
+        prevText: '이전 달',
+        numberOfMonths: [1,1],
+        stepMonths: 3,
+        yearRange: 'c-100:c+10',
+        showButtonPanel: true,  
+        currentText: '오늘 날짜',
+        closeText: '닫기', 
+        dateFormat: "yy-mm-dd",
+        showMonthAfterYear: true ,
+        dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'],
+        monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+      });
+    });
   })
   </script>
 </body>

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset='UTF-8'>
-  <title>설문관리 결과</title>
+  <title>미세먼지 코디네이터 활동 관리 보기</title>
   <link href='/css/pbb/reset.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/common.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/style.css' type='text/css' rel='stylesheet'>
@@ -16,7 +16,7 @@
   <script type='text/javascript' src='/js/pbb/common.js'></script>
 </head>
 
-<body id='QustnrResultSearch'>
+<body id='CoordinatorActManageDetail'>
   <div id='wrap'>
     <!-- header -->
     <div id='header-wrapper'>
@@ -458,51 +458,91 @@
     </div>
     <!-- //header -->
     <!-- section -->
-    <div class='contents'>
-      <div class='subpage-contents'>
+    <div id='list-conts' class='contents'>
+      <div id='device-state-list' class='subpage-contents'>
         <div class='container'>
           <div class="subpage-title">
-            <h3>설문관리 결과</h3>
+            <h3>미세먼지 코디네이터 활동 관리 보기</h3>
           </div>
           <div class='board-views conts-section'>
-            <div class='board-view-tables'>
+            <div class='board-view-tables text-left'>
               <table>
-                <colgroup>
-                  <col width='210px' />
-                  <col width='*' />
-                </colgroup>
+                <thead>
+                  <tr>
+                    <th class='view-table-category text-left'>
+                      <div>
+                        <p>작성자</p>
+                      </div>
+                    </th>
+                    <td class='text-left'>
+                      <div>
+                        <p><span>홍길동</span> 코디네이터</p>
+                      </div>
+                    </td>
+                    <th class='view-table-category text-left'>
+                      <div>
+                        <p>작성일</p>
+                      </div>
+                    </th>
+                    <td class='text-left'>
+                      <div>
+                        <p><span>2020-06-01</span></p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class='view-table-category text-left'>
+                      <div>
+                        <p>활동구분</p>
+                      </div>
+                    </th>
+                    <td class='text-left'>
+                      <div>
+                        <p><span>미세먼지 교육</span></p>
+                      </div>
+                    </td>
+                    <th class='view-table-category text-left'>
+                      <div>
+                        <p>교육일</p>
+                      </div>
+                    </th>
+                    <td class='text-left'>
+                      <div>
+                        <p><span>2020-06-01</span></p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class='view-table-category text-left'>
+                      <div>
+                        <p>지역</p>
+                      </div>
+                    </th>
+                    <td class='text-left'>
+                      <div>
+                        <p><span>부천시 도당동</span></p>
+                      </div>
+                    </td>
+                    <th class='view-table-category text-left'>
+                      <div>
+                        <p>교육시설</p>
+                      </div>
+                    </th>
+                    <td class='text-left'>
+                      <div>
+                        <p><span>도당초등학교</span></p>
+                      </div>
+                    </td>
+                  </tr>
+                </thead>
                 <tbody>
                   <tr>
                     <th class='view-table-category text-left'>
                       <div>
-                        <p>설문 제목</p>
+                        <p>내용</p>
                       </div>
                     </th>
-                    <td class='view-table-value text-left'>
-                      <div>
-                        <p><span>설문 제목입니다.</span></p>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th class='view-table-category text-left'>
-                      <div>
-                        <p>설문 기간</p>
-                      </div>
-                    </th>
-                    <td class='view-table-value text-left'>
-                      <div>
-                        <p><span>2020-06-01</span> ~ <span>2020-06-30</span></p>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th class='view-table-category text-left verticalAlignBase'>
-                      <div>
-                        <p>설문 내용</p>
-                      </div>
-                    </th>
-                    <td class='view-table-value text-left'>
+                    <td class='text-left' colspan='3'>
                       <div id='view-contents-wrapper'>
                         <div id='view-contents'>
                           <div id='wr-content'>
@@ -512,76 +552,52 @@
                       </div>
                     </td>
                   </tr>
+                </tbody>
+                <tfoot>
                   <tr>
                     <th class='view-table-category text-left'>
                       <div>
-                        <p>참여자 총 인원</p>
+                        <p>공개여부</p>
                       </div>
                     </th>
-                    <td class='view-table-value text-left'>
+                    <td class='text-left' colspan='3'>
                       <div>
-                        <p><span>100</span>명</p>
+                        <p><span>비공개</span></p>
                       </div>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <div class='board-next-prev-link text-left'>
+              <table>
+                <tbody>
+                  <tr>
+                    <th class='view-table-category'>
+                      <div>
+                        <a href='#' class='prev-link-category link-category'>이전글</a>
+                      </div>
+                    </th>
+                    <td>
+                      <div><a href='#'>이전글 링크</a></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class='view-table-category'>
+                      <div>
+                        <a href='#' class='next-link-category link-category'>다음글</a>
+                      </div>
+                    </th>
+                    <td>
+                      <div><a href='#'>다음글 링크</a></div>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
-          </div>
-          <div class='qusListsWrapper conts-section'>
-            <ul class='display-flex display-wrap flex-justify-between qus-lists'>
-              <li class='flex-col-50 qus-items'>
-                <div class='qus-item-conts'>
-                  <div class='subpage-cate-title overTitle'>
-                    <h4><span class='qus-item-count'>(질문 1)</span> <span>다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.</span></h4>
-                  </div>
-                  <div class='qus-results'>
-                    <div class='qus-ranks qus-rank-1'>
-                      <p class='qus-rank-title overTitle bolder-text'><span>1.미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보</span></p>
-                      <div class='qus-percentage-wrapper'>
-                        <div class='qus-percentage-count'>
-                          <span>50명</span> / <span>50%</span>
-                        </div>
-                        <div class='qus-percentage' style='width:50%;'></div>
-                      </div>
-                    </div>
-                    <div class='qus-ranks qus-rank-2'>
-                      <p class='qus-rank-title bolder-text'>2.<span>미세먼지 체험</span></p>
-                      <div class='qus-percentage-wrapper'>
-                        <div class='qus-percentage-count'>
-                          <span>30명</span> / <span>30%</span>
-                        </div>
-                        <div class='qus-percentage' style='width:30%;'></div>
-                      </div>
-                    </div>
-                    <div class='qus-ranks qus-rank-3'>
-                      <p class='qus-rank-title bolder-text'>3.<span>기타</span><a href='javascript:void(0);' class='etc-result'>답변보기</a></p>
-                      <div class='qus-percentage-wrapper'>
-                        <div class='qus-percentage-count'>
-                          <span>20명</span> / <span>20%</span>
-                        </div>
-                        <div class='qus-percentage' style='width:20%;'></div>
-                      </div>
-                    </div>
-                    <div class='qus-ranks text-center'>
-                      <a href='javascript:void(0);' class='btn btn-round modal-btn'>전체보기</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class='flex-col-50 qus-items'>
-                <div class='qus-item-conts'>
-                  <div class='subpage-cate-title overTitle'>
-                    <h4><span class='qus-item-count'>(질문 1)</span> <span>다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.</span></h4>
-                  </div>
-                  <div class='qus-results'>
-                    <a href='javascript:void(0);' class='all-result-view btn btn-round modal-btn'>전체보기</a>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <div id="view-used-btn" class="view-used-btn text-center">
-              <a href="javascript:void(0);" class="btn btn-round">이전</a>
+            <div class='view-used-btn text-center'>
+              <a href='#' class='btn btn-round'>삭제</a>
+              <a href='#' class='btn btn-round'>목록</a>
             </div>
           </div>
         </div> 
@@ -594,12 +610,6 @@
     </div>
     <!-- //footer -->
   </div>
-  <!-- jquery ui datepicker -->
-  <script>
-  $(document).ready(function() {
-    
-  })
-  </script>
 </body>
 
 </html>

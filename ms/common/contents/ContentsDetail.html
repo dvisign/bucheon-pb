@@ -3,7 +3,7 @@
 
 <head>
   <meta charset='UTF-8'>
-  <title>설문관리 결과</title>
+  <title>컨텐츠 만족도 보기</title>
   <link href='/css/pbb/reset.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/common.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/style.css' type='text/css' rel='stylesheet'>
@@ -16,7 +16,7 @@
   <script type='text/javascript' src='/js/pbb/common.js'></script>
 </head>
 
-<body id='QustnrResultSearch'>
+<body id='ContentsList'>
   <div id='wrap'>
     <!-- header -->
     <div id='header-wrapper'>
@@ -458,130 +458,230 @@
     </div>
     <!-- //header -->
     <!-- section -->
-    <div class='contents'>
-      <div class='subpage-contents'>
+    <div id='list-conts' class='contents'>
+      <div id='device-state-list' class='subpage-contents'>
         <div class='container'>
-          <div class="subpage-title">
-            <h3>설문관리 결과</h3>
-          </div>
           <div class='board-views conts-section'>
+            <div class="subpage-cate-title">
+              <h4>컨텐츠 만족도 보기</h4>
+            </div>
             <div class='board-view-tables'>
               <table>
-                <colgroup>
-                  <col width='210px' />
-                  <col width='*' />
-                </colgroup>
+                <thead>
+                  <tr>
+                    <th class='view-table-category text-center'>
+                      <div>
+                        <p>메뉴명</p>
+                      </div>
+                    </th>
+                    <td class='text-center' colspan='5'>
+                      <div>
+                        <p>미세먼지발생원 > 산업부문 > 비산먼지 지역</p>
+                      </div>
+                    </td>
+                  </tr>
+                </thead>
                 <tbody>
                   <tr>
-                    <th class='view-table-category text-left'>
+                    <th class='view-table-category text-center' rowspan='2'>
                       <div>
-                        <p>설문 제목</p>
+                        <p>만족도 통계</p>
                       </div>
                     </th>
-                    <td class='view-table-value text-left'>
+                    <th class='view-table-category text-center'>
                       <div>
-                        <p><span>설문 제목입니다.</span></p>
+                        <p>매우만족</p>
                       </div>
-                    </td>
+                    </th>
+                    <th class='view-table-category text-center'>
+                      <div>
+                        <p>만족</p>
+                      </div>
+                    </th>
+                    <th class='view-table-category text-center'>
+                      <div>
+                        <p>보통</p>
+                      </div>
+                    </th>
+                    <th class='view-table-category text-center'>
+                      <div>
+                        <p>불만</p>
+                      </div>
+                    </th>
+                    <th class='view-table-category text-center'>
+                      <div>
+                        <p>매우불만</p>
+                      </div>
+                    </th>
                   </tr>
                   <tr>
-                    <th class='view-table-category text-left'>
+                    <td class='text-center'>
                       <div>
-                        <p>설문 기간</p>
-                      </div>
-                    </th>
-                    <td class='view-table-value text-left'>
-                      <div>
-                        <p><span>2020-06-01</span> ~ <span>2020-06-30</span></p>
+                        <p><span>100</span></p>
                       </div>
                     </td>
-                  </tr>
-                  <tr>
-                    <th class='view-table-category text-left verticalAlignBase'>
+                    <td class='text-center'>
                       <div>
-                        <p>설문 내용</p>
-                      </div>
-                    </th>
-                    <td class='view-table-value text-left'>
-                      <div id='view-contents-wrapper'>
-                        <div id='view-contents'>
-                          <div id='wr-content'>
-                            <p>게시글</p>
-                          </div>
-                        </div>
+                        <p><span>0</span></p>
                       </div>
                     </td>
-                  </tr>
-                  <tr>
-                    <th class='view-table-category text-left'>
+                    <td class='text-center'>
                       <div>
-                        <p>참여자 총 인원</p>
+                        <p><span>0</span></p>
                       </div>
-                    </th>
-                    <td class='view-table-value text-left'>
+                    </td>
+                    <td class='text-center'>
                       <div>
-                        <p><span>100</span>명</p>
+                        <p><span>0</span></p>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>0</span></p>
                       </div>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
+            <div class='view-used-btn text-right'>
+              <a href='javascript:void(0);' class='btn btn-round'>목록</a>
+            </div>
           </div>
-          <div class='qusListsWrapper conts-section'>
-            <ul class='display-flex display-wrap flex-justify-between qus-lists'>
-              <li class='flex-col-50 qus-items'>
-                <div class='qus-item-conts'>
-                  <div class='subpage-cate-title overTitle'>
-                    <h4><span class='qus-item-count'>(질문 1)</span> <span>다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.</span></h4>
-                  </div>
-                  <div class='qus-results'>
-                    <div class='qus-ranks qus-rank-1'>
-                      <p class='qus-rank-title overTitle bolder-text'><span>1.미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보</span></p>
-                      <div class='qus-percentage-wrapper'>
-                        <div class='qus-percentage-count'>
-                          <span>50명</span> / <span>50%</span>
-                        </div>
-                        <div class='qus-percentage' style='width:50%;'></div>
-                      </div>
+          <div class='lookup-wrapper conts-section'>
+            <form>
+              <div id='list-lookup-forms'>
+                <div class='lookup-forms clear'>
+                  <div class='display-flex flex-align-center flex-justify-between w-100'>
+                    <div>
+                      <label class='text-label'>응답기간</label>
+                      <input type='text' class='date-form date-picker'>
+                      <span class='text-division'>~</span>
+                      <input type='text' class='date-form date-picker' id='end-date'>
                     </div>
-                    <div class='qus-ranks qus-rank-2'>
-                      <p class='qus-rank-title bolder-text'>2.<span>미세먼지 체험</span></p>
-                      <div class='qus-percentage-wrapper'>
-                        <div class='qus-percentage-count'>
-                          <span>30명</span> / <span>30%</span>
-                        </div>
-                        <div class='qus-percentage' style='width:30%;'></div>
-                      </div>
+                    <div>
+                      <label class='select-label'>만족도 구분</label>
+                      <select class='select-form'>
+                        <option>전체</option>
+                      </select>
                     </div>
-                    <div class='qus-ranks qus-rank-3'>
-                      <p class='qus-rank-title bolder-text'>3.<span>기타</span><a href='javascript:void(0);' class='etc-result'>답변보기</a></p>
-                      <div class='qus-percentage-wrapper'>
-                        <div class='qus-percentage-count'>
-                          <span>20명</span> / <span>20%</span>
-                        </div>
-                        <div class='qus-percentage' style='width:20%;'></div>
-                      </div>
-                    </div>
-                    <div class='qus-ranks text-center'>
-                      <a href='javascript:void(0);' class='btn btn-round modal-btn'>전체보기</a>
+                    <div>
+                      <button class='btn btn-round'>조회</button>
                     </div>
                   </div>
                 </div>
-              </li>
-              <li class='flex-col-50 qus-items'>
-                <div class='qus-item-conts'>
-                  <div class='subpage-cate-title overTitle'>
-                    <h4><span class='qus-item-count'>(질문 1)</span> <span>다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.</span></h4>
-                  </div>
-                  <div class='qus-results'>
-                    <a href='javascript:void(0);' class='all-result-view btn btn-round modal-btn'>전체보기</a>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <div id="view-used-btn" class="view-used-btn text-center">
-              <a href="javascript:void(0);" class="btn btn-round">이전</a>
+              </div>
+            </form>
+          </div>
+          <div class='board-lists conts-section'>
+            <div class='board-list-set clear'>
+              <div class='list-count'>
+                <p>조회결과 : <span id='count-result'>9,999</span>건</p>
+              </div>
+              <div class='list-view-selector'>
+                <select class='select-form' id='' name=''>
+                  <option>50개 출력</option>
+                  <option>100개 출력</option>
+                  <option>150개 출력</option>
+                  <option>200개 출력</option>
+                </select>
+              </div>
+            </div>
+            <div class='board-list-table-wrapper'>
+              <table>
+                <colgroup>
+                  <col width='5%' />
+                  <col width='20%' />
+                  <col width='60%' />
+                  <col width='15%' />
+                </colgroup>
+                <thead class='board-list-header'>
+                  <tr>
+                    <th class='text-center'>
+                      <div>
+                        <p>번호</p>
+                      </div>
+                    </th>
+                    <th class='text-center'>
+                      <div>
+                        <p>등록일자</p>
+                      </div>
+                    </th>
+                    <th class='text-center'>
+                      <div>
+                        <p>의견내용</p>
+                      </div>
+                    </th>
+                    <th class='text-center'>
+                      <div>
+                        <p>만족도</p>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class='board-list-body'>
+                  <tr>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>99</span></p>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>2020-06-01</span></p>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>의견입니다.</span></p>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <p><span>매우만족</span></p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class='list-empty'>
+                    <td colspan="4">
+                      <div>
+                        <p class='list-empty-text'>조회 결과가 없습니다.</p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class='pagenation-wrapper'>
+                <a href='#' class='pagenation-arrow pagenation-prev'>
+                  <span class='sound-only'>이전페이지</span>
+                </a>
+                <ul class='pagenation-lists'>
+                  <li class='pagenation-items active'>
+                    <a href='#'>1</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>2</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>3</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>4</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>5</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>6</a>
+                  </li>
+                  <li class='pagenation-items'>
+                    <a href='#'>7</a>
+                  </li>
+                </ul>
+                <a href='#' class='pagenation-arrow pagenation-next'>
+                  <span class='sound-only'>다음페이지</span>
+                </a>
+              </div>
             </div>
           </div>
         </div> 
@@ -597,7 +697,26 @@
   <!-- jquery ui datepicker -->
   <script>
   $(document).ready(function() {
-    
+    $('.date-picker').each(function(i) {
+      var $this = $(this);
+      $this.datepicker({
+        changeMonth: true,
+        changeYear: true, 
+        minDate: '-100y', 
+        nextText: '다음 달',
+        prevText: '이전 달',
+        numberOfMonths: [1,1],
+        stepMonths: 3,
+        yearRange: 'c-100:c+10',
+        showButtonPanel: true,  
+        currentText: '오늘 날짜',
+        closeText: '닫기', 
+        dateFormat: "yy-mm-dd",
+        showMonthAfterYear: true ,
+        dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'],
+        monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+      });
+    });
   })
   </script>
 </body>

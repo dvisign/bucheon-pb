@@ -1,13 +1,27 @@
 @charset "utf-8";
-@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+/* NanumSquare  */
+@font-face { font-family: "NanumSquare"; font-style: normal; font-weight: 400; src: local("NanumSquareR"), url(./fonts/NanumSquareR.eot) format("eot"), url(./fonts/NanumSquareR.woff2) format("woff2"), url(./fonts/NanumSquareR.woff) format("woff"), url(./fonts/NanumSquareR.ttf) format("truetype"); }
+
+@font-face { font-family: "NanumSquare"; font-style: normal; font-weight: 600; src: local("NanumSquareB"), url(./fonts/NanumSquareB.eot) format("eot"), url(./fonts/NanumSquareB.woff2) format("woff2"), url(./fonts/NanumSquareB.woff) format("woff"), url(./fonts/NanumSquareB.ttf) format("truetype"); }
+
+@font-face { font-family: "NanumSquare"; font-style: normal; font-weight: 700; src: local("NanumSquareEB"), url(./fonts/NanumSquareEB.eot) format("eot"), url(./fonts/NanumSquareEB.woff) format("woff"), url(./fonts/NanumSquareEB.ttf) format("truetype"); }
+
+/* Rubik */
+@font-face { font-family: "Rubik"; font-style: normal; font-weight: 400; src: local("Rubik-Light"), url(./fonts/Rubik-Light.eot) format("eot"), url(./fonts/Rubik-Light.woff) format("woff"), url(./fonts/Rubik-Light.ttf) format("truetype"); }
+
+@font-face { font-family: "Rubik"; font-style: normal; font-weight: 600; src: local("Rubik-Regular"), url(./fonts/Rubik-Regular.eot) format("eot"), url(./fonts/Rubik-Regular.woff) format("woff"), url(./fonts/Rubik-Regular.ttf) format("truetype"); }
+
+@font-face { font-family: "Rubik"; font-style: normal; font-weight: 700; src: local("Rubik-Medium"), url(./fonts/Rubik-Medium.eot) format("eot"), url(./fonts/Rubik-Medium.woff) format("woff"), url(./fonts/Rubik-Medium.ttf) format("truetype"); }
+
+@font-face { font-family: "Rubik"; font-style: normal; font-weight: 800; src: local("Rubik-SemiBold"), url(./fonts/Rubik-SemiBold.eot) format("eot"), url(./fonts/Rubik-SemiBold.woff) format("woff"), url(./fonts/Rubik-SemiBold.ttf) format("truetype"); }
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 html,
-body {width: 100%;height:100%;font-size: 15px;margin:0; padding:0; min-width:1870px;box-sizing: border-box;font-family: 'NanumSquare', sans-serif;font-weight: normal; line-height:1;}
+body {width: 100%;height:100%;font-size: 15px;margin:0; padding:0; min-width:1870px;box-sizing: border-box;font-family: "Rubik", "NanumSquare", AppleGothic, Arial, Helvetica, sans-serif;font-weight: normal; line-height:1;}
 
 html.popups,
 body.popups {min-width: auto;}
 
-html, body, div, p, span, strong, b, em, iframe, pre, h1, h2, h3, h4, h5, h6, img, dl, dt, dd, fieldset, form, legend, label, table, caption, thead, tbody, tfoot, tr, th, td, ul, ol, li, a, input, select, textarea {margin: 0;padding: 0;box-sizing: border-box;line-height:1;font-family: 'NanumSquare', sans-serif;}
+html, body, div, p, span, strong, b, em, iframe, pre, h1, h2, h3, h4, h5, h6, img, dl, dt, dd, fieldset, form, legend, label, table, caption, thead, tbody, tfoot, tr, th, td, ul, ol, li, a, input, select, textarea {margin: 0;padding: 0;box-sizing: border-box;line-height:1;font-family: "Rubik", "NanumSquare", AppleGothic, Arial, Helvetica, sans-serif;}
 
 table {border-collapse: collapse; border-spacing:0;}
 th, td { vertical-align: middle;}
@@ -39,9 +53,9 @@ a:visited {color:#000; text-decoration: none;}
 .verticalAlignBottom {vertical-align: bottom;}
 .bolder-text {font-weight: 600;transform: skew(-0.03deg);display:inline-block}
 .bold-text {font-weight: 900;transform: skew(-0.03deg);display:inline-block}
-.w-30 {width:30%;}
-.w-50 {width:50%;}
-.w-100 {width:100%;}
+.w-30 {width:30% !important;}
+.w-50 {width:50% !important;}
+.w-100 {width:100% !important;}
 .h-100 {height:100%;}
 .display-flex {display:flex;}
 .display-wrap {flex-wrap: wrap;}

@@ -540,9 +540,18 @@
 #QustnrResultSearch #view-contents-wrapper {padding:18px 20px;}
 #QustnrResultSearch #view-contents {min-height:200px;}
 .qus-items {margin-bottom:60px;}
-.qus-results {border:1px solid #e5e7e9;padding:50px;}
+.qusListsWrapper .qus-items .subpage-cate-title {height:66px;}
+.qusListsWrapper .qus-items .subpage-cate-title.overTitle {overflow:hidden;position: relative;}
+.qusListsWrapper .qus-items .subpage-cate-title.overTitle::after {content:'...';position:absolute;right:0;bottom:0;background-color: #fff;}
+.qusListsWrapper .qus-items .subpage-cate-title > h4 {padding-left:80px;position:relative;}
+.qusListsWrapper .qus-items .subpage-cate-title > h4 > .qus-item-count {position: absolute;left: 0;top:0;}
+.qus-results {border:1px solid #e5e7e9;padding:50px;min-height:400px;position:relative;}
+.qus-results > .all-result-view {position:absolute;top:50%;left:50%;transform: translate(-50%, -50%);}
 .qus-ranks:not(:last-child) {margin-bottom:30px;}
-.qus-rank-title {margin-bottom:13px;}
+.qus-rank-title {margin-bottom:13px;} 
+.qus-rank-title.overTitle {overflow: hidden;position:relative;display: block;}
+.qus-rank-title.overTitle > span {white-space:nowrap;}
+.qus-rank-title.overTitle > span::after {content:'...';position:absolute;right:0;bottom:0;background-color:#fff;}
 .qus-percentage-wrapper {position:relative;height:30px;width:100%;background-color:#f5f7f9;}
 .qus-percentage-count {color:#fff;font-size:15px;position:absolute;top:50%;transform: translateY(-50%);left:10px;z-index:1;}
 .qus-percentage {position: absolute;height:100%;left:0;border-top-right-radius: 20px;border-bottom-right-radius: 20px;}
@@ -557,7 +566,8 @@
 #QustnrDetail .lookup-forms .text-form {min-width: 315px;}
 
 /* page : QustnrUpdt.html */
-#QustnrUpdt .board-write-tables {border-top:1px solid #999da5;border-bottom:1px solid #999da5;}
+#QustnrUpdt .board-write-tables {border-top:1px solid #999da5;}
+#QustnrUpdt .board-write-tables:last-child {border-bottom:1px solid #999da5;}
 #QustnrUpdt .board-write tr:not(:last-child) {border-bottom:1px solid #e6eaee;}
 #QustnrUpdt .board-write th {background-color:#f5f7f9;}
 #QustnrUpdt .board-write td, 
@@ -572,6 +582,58 @@
 
 /* page : ConectStatsSearch.html */
 #ConectStatsSearch .date-selector > .btn {font-size:14px;transform: skew(-0.03deg);}
+
+/* page : ConectSearch.html */
+.visitor-count-cates {}
+.visitor-counts {width:calc(calc((100% - (10px * 2)) / 3));border:1px solid #e5e9ed;background-color:#f4f8fb;padding:50px 0;}
+.visitor-counts:not(:last-child) {margin-right:10px;}
+.visitor-category-name {margin-bottom:20px;font-size:22px;}
+.visitor-count-num {font-family:'PT Sans', sans-serif;font-size:48px;color:#596d93;}
+
+/* page : FyerReducActCntList.html */
+#FyerReducActCntList .checkbox-label { padding: 0; background: none; border: 0; }
+.reducActForm {width:50%;}
+#FyerReducActCntList .board-list-table-wrapper {overflow-x: scroll; padding-bottom:30px;}
+.dataTableCheckbox {width: 60px;}
+.dataTableDate {width:100px;}
+.dataTableDivision {width:120px;}
+.dataTableField {width:200px;}
+
+/* page : MnbyUlfptcChngeList.html */
+#MnbyUlfptcChngeList .checkbox-label { padding: 0; background: none; border: 0; }
+.fptcChngeForm {width:100%;}
+
+/* page : FyerSrcemssnDnstyList.html */
+#FyerSrcemssnDnstyList .checkbox-label { padding: 0; background: none; border: 0; }
+#FyerSrcemssnDnstyList .board-list-table-wrapper {overflow-x: scroll; padding-bottom:30px;}
+.dnstyForm {width:50%;min-width:42px;}
+
+/* page : PopupList.html */
+#PopupList .lookup-forms .text-form {width:390px;}
+
+/* page : PopupRegist.html */
+.popSizes > span,
+.popPositions > span {display:inline-block;}
+.popSizes > span > .text-label,
+.popPositions > span > .text-label {min-width:50px;}
+.useTodayClose .radio-label,
+.usePopups .radio-label { margin-right: 40px; }
+
+/* page : PopupDetail.html */
+.popPositionsView > span,
+.popSizesView > span {display: inline-block;}
+.popPositionsView > span > .text-label,
+.popSizesView > span > .text-label {min-width:50px;}
+
+/* page : ContentsList.html */
+
+/* page : CoordinatorActInfoSearch.html */
+
+/* page : CoordinatorActInfoUpdt.html */
+
+/* page : CoordinatorActManageList.html */
+#CoordinatorActManageList .lookup-forms label {min-width:80px;}
+#CoordinatorActManageList .lookup-forms .text-form {min-width:410px;}
 
 /* qna */
 .qna-intro {padding: 35px 60px 35px 70px; background-color: #f5f7f9; border: 1px solid #e5e7e9;}

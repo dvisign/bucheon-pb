@@ -3,7 +3,7 @@
 
 <head>
   <meta charset='UTF-8'>
-  <title>설문관리 결과</title>
+  <title>저감활동 건수 관리</title>
   <link href='/css/pbb/reset.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/common.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/style.css' type='text/css' rel='stylesheet'>
@@ -16,7 +16,7 @@
   <script type='text/javascript' src='/js/pbb/common.js'></script>
 </head>
 
-<body id='QustnrResultSearch'>
+<body id='FyerReducActCntList'>
   <div id='wrap'>
     <!-- header -->
     <div id='header-wrapper'>
@@ -458,130 +458,119 @@
     </div>
     <!-- //header -->
     <!-- section -->
-    <div class='contents'>
-      <div class='subpage-contents'>
+    <div id='list-conts' class='contents'>
+      <div id='device-state-list' class='subpage-contents'>
         <div class='container'>
           <div class="subpage-title">
-            <h3>설문관리 결과</h3>
+            <h3>연도별 저감활동 건수 관리</h3>
           </div>
-          <div class='board-views conts-section'>
-            <div class='board-view-tables'>
+          <div class='board-lists conts-section'>
+            <div class="view-used-btn board-write-btns text-right">
+              <a class='btn btn-round' href='javascript:void(0);'>추가</a>
+              <a class='btn btn-round' href='javascript:void(0);'>등록</a>
+              <a class='btn btn-round' href='javascript:void(0);'>삭제</a>
+            </div>
+            <div class='board-list-table-wrapper'>
               <table>
-                <colgroup>
-                  <col width='210px' />
-                  <col width='*' />
-                </colgroup>
-                <tbody>
+                <thead class='board-list-header'>
                   <tr>
-                    <th class='view-table-category text-left'>
-                      <div>
-                        <p>설문 제목</p>
+                    <th class='dataTableCheckbox'></th>
+                    <th class='text-center'>
+                      <div class='dataTableDate'>
+                        <p>저감활동 연도</p>
                       </div>
                     </th>
-                    <td class='view-table-value text-left'>
+                    <th class='text-center'>
+                      <div class='dataTableField'>
+                        <p>청소차량 가동</p>
+                      </div>
+                    </th>
+                    <th class='text-center'>
+                      <div class='dataTableField'>
+                        <p>살수 차량 가동</p>
+                      </div>
+                    </th>
+                    <th class='text-center'>
+                      <div class='dataTableField'>
+                        <p>통학로 쿨링포그 가동</p>
+                      </div>
+                    </th>
+                    <th class='text-center'>
+                      <div class='dataTableField'>
+                        <p>건식 집진기 가동</p>
+                      </div>
+                    </th>
+                    <th class='text-center'>
+                      <div class='dataTableField'>
+                        <p>지능형 분무기 가동</p>
+                      </div>
+                    </th>
+                    <th class='text-center'>
+                      <div class='dataTableField'>
+                        <p>미세먼지 교육</p>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class='board-list-body'>
+                  <tr>
+                    <th class='text-center'>
                       <div>
-                        <p><span>설문 제목입니다.</span></p>
+                        <label class="checkbox-label">
+                          <input class="checkbox-form" type="checkbox"><span class="checkbox-img"></span>
+                        </label>
+                      </div>
+                    </th>
+                    <th class='text-center'>
+                      <div>
+                        <p><span>2015년</span></p>
+                      </div>
+                    </th>
+                    <td class='text-center'>
+                      <div>
+                        <input type='text' class='text-form reducActForm'>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <input type='text' class='text-form reducActForm'>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <input type='text' class='text-form reducActForm'>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <input type='text' class='text-form reducActForm'>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <input type='text' class='text-form reducActForm'>
+                      </div>
+                    </td>
+                    <td class='text-center'>
+                      <div>
+                        <input type='text' class='text-form reducActForm'>
                       </div>
                     </td>
                   </tr>
-                  <tr>
-                    <th class='view-table-category text-left'>
+                  <tr class='list-empty'>
+                    <td colspan="8">
                       <div>
-                        <p>설문 기간</p>
-                      </div>
-                    </th>
-                    <td class='view-table-value text-left'>
-                      <div>
-                        <p><span>2020-06-01</span> ~ <span>2020-06-30</span></p>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th class='view-table-category text-left verticalAlignBase'>
-                      <div>
-                        <p>설문 내용</p>
-                      </div>
-                    </th>
-                    <td class='view-table-value text-left'>
-                      <div id='view-contents-wrapper'>
-                        <div id='view-contents'>
-                          <div id='wr-content'>
-                            <p>게시글</p>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th class='view-table-category text-left'>
-                      <div>
-                        <p>참여자 총 인원</p>
-                      </div>
-                    </th>
-                    <td class='view-table-value text-left'>
-                      <div>
-                        <p><span>100</span>명</p>
+                        <p class='list-empty-text'>조회 결과가 없습니다.</p>
                       </div>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
-          </div>
-          <div class='qusListsWrapper conts-section'>
-            <ul class='display-flex display-wrap flex-justify-between qus-lists'>
-              <li class='flex-col-50 qus-items'>
-                <div class='qus-item-conts'>
-                  <div class='subpage-cate-title overTitle'>
-                    <h4><span class='qus-item-count'>(질문 1)</span> <span>다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.</span></h4>
-                  </div>
-                  <div class='qus-results'>
-                    <div class='qus-ranks qus-rank-1'>
-                      <p class='qus-rank-title overTitle bolder-text'><span>1.미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보미세먼지 정보</span></p>
-                      <div class='qus-percentage-wrapper'>
-                        <div class='qus-percentage-count'>
-                          <span>50명</span> / <span>50%</span>
-                        </div>
-                        <div class='qus-percentage' style='width:50%;'></div>
-                      </div>
-                    </div>
-                    <div class='qus-ranks qus-rank-2'>
-                      <p class='qus-rank-title bolder-text'>2.<span>미세먼지 체험</span></p>
-                      <div class='qus-percentage-wrapper'>
-                        <div class='qus-percentage-count'>
-                          <span>30명</span> / <span>30%</span>
-                        </div>
-                        <div class='qus-percentage' style='width:30%;'></div>
-                      </div>
-                    </div>
-                    <div class='qus-ranks qus-rank-3'>
-                      <p class='qus-rank-title bolder-text'>3.<span>기타</span><a href='javascript:void(0);' class='etc-result'>답변보기</a></p>
-                      <div class='qus-percentage-wrapper'>
-                        <div class='qus-percentage-count'>
-                          <span>20명</span> / <span>20%</span>
-                        </div>
-                        <div class='qus-percentage' style='width:20%;'></div>
-                      </div>
-                    </div>
-                    <div class='qus-ranks text-center'>
-                      <a href='javascript:void(0);' class='btn btn-round modal-btn'>전체보기</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class='flex-col-50 qus-items'>
-                <div class='qus-item-conts'>
-                  <div class='subpage-cate-title overTitle'>
-                    <h4><span class='qus-item-count'>(질문 1)</span> <span>다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.다음중 가장 유용하게 생각하는 메뉴를 선택해 주세요.</span></h4>
-                  </div>
-                  <div class='qus-results'>
-                    <a href='javascript:void(0);' class='all-result-view btn btn-round modal-btn'>전체보기</a>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <div id="view-used-btn" class="view-used-btn text-center">
-              <a href="javascript:void(0);" class="btn btn-round">이전</a>
+            <div class='view-used-btn board-write-btns text-center'>
+              <a class='btn btn-round' href='javascript:void(0);'>추가</a>
+              <a class='btn btn-round' href='javascript:void(0);'>등록</a>
+              <a class='btn btn-round' href='javascript:void(0);'>삭제</a>
             </div>
           </div>
         </div> 
@@ -594,12 +583,6 @@
     </div>
     <!-- //footer -->
   </div>
-  <!-- jquery ui datepicker -->
-  <script>
-  $(document).ready(function() {
-    
-  })
-  </script>
 </body>
 
 </html>

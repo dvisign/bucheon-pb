@@ -597,105 +597,227 @@
             <div class='board-write conts-section'>
               <div class='subpage-cate-title display-flex flex-align-center'>
                 <h4>설문지 만들기</h4>
-                <a href='javascript:void(0);' class='subpage-cate-link btn btn-round modal-btn'>질문추가</a>
+                <a href='javascript:void(0);' class='subpage-cate-link btn btn-round modal-btn' onclick='test();'>질문추가</a>
                 <a href='javascript:void(0);' class='subpage-cate-link btn btn-round modal-btn'>질문삭제</a>
                 <span class='bolder-text'>* 설문지 개당 질문은 최대 20개 가능</span>
               </div>
-              <div class='board-write-tables'>
-                <table>
-                  <colgroup>
-                    <col width='160px' />
-                    <col width='465px' />
-                    <col width='160px' />
-                    <col width='465px' />
-                  </colgroup>
-                  <tbody>
-                    <tr>
-                      <th class='text-left'>
-                        <div>
-                          <p><span>(질문1)</span> 설문유형</p>
-                        </div>
-                      </th>
-                      <td class='text-left'>
-                        <div>
-                          <label class='radio-label'>
-                            <input type='radio' class='radio-form' name='qustnrTyp1' value='C' checked>
-                            <span class='radio-img'></span>
-                            <span class='radio-label-text'>선택형</span>
-                          </label>
-                          <label class='radio-label'>
-                            <input type='radio' class='radio-form' name='qustnrTyp1' value='S'>
-                            <span class='radio-img'></span>
-                            <span class='radio-label-text'>문답식</span>
-                          </label>
-                        </div>
-                      </td>
-                      <th class='text-left'>
-                        <div>
-                          <p>기타항목 포함여부</p>
-                        </div>
-                      </th>
-                      <td class='text-left'>
-                        <div>
-                          <label class='wr-notice-label checkbox-label'>
-                            <input type='checkbox' class='checkbox-form' name='etcRspnsYn1' value='Y'>
-                            <span class='checkbox-img'></span>
-                          </label>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th class='text-left'>
-                        <div>
-                          <p>복수응답 여부</p>
-                        </div>
-                      </th>
-                      <td class='text-left' colspan='3'>
-                        <div>
-                          <label class='radio-label'>
-                            <input type='radio' name='test4' class='radio-form' checked>
-                            <span class='radio-img'></span>
-                            <span class='radio-label-text'>복수응답 불가</span>
-                          </label>
-                          <label class='radio-label'>
-                            <input type='radio' name='test4' class='radio-form'>
-                            <span class='radio-img'></span>
-                            <span class='radio-label-text'>복수응답 가능</span>
-                          </label>
-                          <select class='select-form'>
-                            <option>2개</option>
-                          </select>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th class='text-left'>
-                        <div>
-                          <p>질문</p>
-                        </div>
-                      </th>
-                      <td class='text-left' colspan='3'>
-                        <div>
-                          <input type='text' class='text-form' placeholder='질문 내용을 입력해 주세요.'>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th class='text-left'>
-                        <div>
-                          <p>항목 추가/삭제</p>
-                        </div>
-                      </th>
-                      <td class='text-left' colspan='3'>
-                        <div>
-                          <a href='javascript:void(0);' class='subpage-cate-link btn btn-round modal-btn'>항목추가</a>
-                          <a href='javascript:void(0);' class='subpage-cate-link btn btn-round modal-btn'>항목삭제</a>
-                          <span class='bolder-text'>* 항목추가 버튼을 클릭 하시면 항목을 추가 할 수 있습니다 (최대 9개)</span>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div id='compareQus'>
+                <div class='board-write-tables'>
+                  <table>
+                    <colgroup>
+                      <col width='160px' />
+                      <col width='465px' />
+                      <col width='160px' />
+                      <col width='465px' />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th class='text-left'>
+                          <div>
+                            <p><span>(질문1)</span> 설문유형</p>
+                          </div>
+                        </th>
+                        <td class='text-left'>
+                          <div>
+                            <label class='radio-label'>
+                              <input type='radio' class='radio-form' name='qustnrTyp1' value='C' checked disabled>
+                              <span class='radio-img'></span>
+                              <span class='radio-label-text'>선택형</span>
+                            </label>
+                            <label class='radio-label'>
+                              <input type='radio' class='radio-form' name='qustnrTyp1' value='S'>
+                              <span class='radio-img'></span>
+                              <span class='radio-label-text'>문답식</span>
+                            </label>
+                          </div>
+                        </td>
+                        <th class='text-left'>
+                          <div>
+                            <p>기타항목 포함여부</p>
+                          </div>
+                        </th>
+                        <td class='text-left'>
+                          <div>
+                            <label class='wr-notice-label checkbox-label'>
+                              <input type='checkbox' class='checkbox-form' name='etcRspnsYn1' value='Y' disabled='disabled'>
+                              <span class='checkbox-img'></span>
+                            </label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class='text-left'>
+                          <div>
+                            <p>복수응답 여부</p>
+                          </div>
+                        </th>
+                        <td class='text-left' colspan='3'>
+                          <div>
+                            <label class='radio-label'>
+                              <input type='radio' name='test4' class='radio-form' checked>
+                              <span class='radio-img'></span>
+                              <span class='radio-label-text'>복수응답 불가</span>
+                            </label>
+                            <label class='radio-label'>
+                              <input type='radio' name='test4' class='radio-form'>
+                              <span class='radio-img'></span>
+                              <span class='radio-label-text'>복수응답 가능</span>
+                            </label>
+                            <select class='select-form'>
+                              <option>2개</option>
+                            </select>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class='text-left'>
+                          <div>
+                            <p>질문</p>
+                          </div>
+                        </th>
+                        <td class='text-left' colspan='3'>
+                          <div>
+                            <input type='text' class='text-form' placeholder='질문 내용을 입력해 주세요.'>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class='text-left'>
+                          <div>
+                            <p>항목 추가/삭제</p>
+                          </div>
+                        </th>
+                        <td class='text-left' colspan='3'>
+                          <div>
+                            <a href='javascript:void(0);' class='subpage-cate-link btn btn-round modal-btn'>항목추가</a>
+                            <a href='javascript:void(0);' class='subpage-cate-link btn btn-round modal-btn'>항목삭제</a>
+                            <span class='bolder-text'>* 항목추가 버튼을 클릭 하시면 항목을 추가 할 수 있습니다 (최대 9개)</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class='text-left'>
+                          <div>
+                            <p>항목</p>
+                          </div>
+                        </th>
+                        <td class='text-left' colspan='3'>
+                          <div>
+                            <input type='text' class='text-form'>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class='board-write-tables'>
+                  <table>
+                    <colgroup>
+                      <col width='160px' />
+                      <col width='465px' />
+                      <col width='160px' />
+                      <col width='465px' />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th class='text-left'>
+                          <div>
+                            <p><span>(질문1)</span> 설문유형</p>
+                          </div>
+                        </th>
+                        <td class='text-left'>
+                          <div>
+                            <label class='radio-label'>
+                              <input type='radio' class='radio-form' name='qustnrTyp1' value='C' checked>
+                              <span class='radio-img'></span>
+                              <span class='radio-label-text'>선택형</span>
+                            </label>
+                            <label class='radio-label'>
+                              <input type='radio' class='radio-form' name='qustnrTyp1' value='S'>
+                              <span class='radio-img'></span>
+                              <span class='radio-label-text'>문답식</span>
+                            </label>
+                          </div>
+                        </td>
+                        <th class='text-left'>
+                          <div>
+                            <p>기타항목 포함여부</p>
+                          </div>
+                        </th>
+                        <td class='text-left'>
+                          <div>
+                            <label class='wr-notice-label checkbox-label'>
+                              <input type='checkbox' class='checkbox-form' name='etcRspnsYn1' value='Y'>
+                              <span class='checkbox-img'></span>
+                            </label>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class='text-left'>
+                          <div>
+                            <p>복수응답 여부</p>
+                          </div>
+                        </th>
+                        <td class='text-left' colspan='3'>
+                          <div>
+                            <label class='radio-label'>
+                              <input type='radio' name='test4' class='radio-form' checked>
+                              <span class='radio-img'></span>
+                              <span class='radio-label-text'>복수응답 불가</span>
+                            </label>
+                            <label class='radio-label'>
+                              <input type='radio' name='test4' class='radio-form'>
+                              <span class='radio-img'></span>
+                              <span class='radio-label-text'>복수응답 가능</span>
+                            </label>
+                            <select class='select-form'>
+                              <option>2개</option>
+                            </select>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class='text-left'>
+                          <div>
+                            <p>질문</p>
+                          </div>
+                        </th>
+                        <td class='text-left' colspan='3'>
+                          <div>
+                            <input type='text' class='text-form' placeholder='질문 내용을 입력해 주세요.'>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class='text-left'>
+                          <div>
+                            <p>항목 추가/삭제</p>
+                          </div>
+                        </th>
+                        <td class='text-left' colspan='3'>
+                          <div>
+                            <a href='javascript:void(0);' class='subpage-cate-link btn btn-round modal-btn'>항목추가</a>
+                            <a href='javascript:void(0);' class='subpage-cate-link btn btn-round modal-btn'>항목삭제</a>
+                            <span class='bolder-text'>* 항목추가 버튼을 클릭 하시면 항목을 추가 할 수 있습니다 (최대 9개)</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class='text-left'>
+                          <div>
+                            <p>항목</p>
+                          </div>
+                        </th>
+                        <td class='text-left' colspan='3'>
+                          <div>
+                            <input type='text' class='text-form'>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
             <div class='conts-section'>
@@ -715,7 +837,130 @@
     </div>
     <!-- //footer -->
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"
+    integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw=="
+    crossorigin="anonymous"></script>
+    <script id='test2' type="text/x-handlebars-template">
+      <div class='board-write-tables'>
+        <table>
+          <colgroup>
+            <col width='160px' />
+            <col width='465px' />
+            <col width='160px' />
+            <col width='465px' />
+          </colgroup>
+          <tbody>
+            <tr>
+              <th class='text-left'>
+                <div>
+                  <p><span>(질문1)</span> 설문유형</p>
+                </div>
+              </th>
+              <td class='text-left'>
+                <div>
+                  <label class='radio-label'>
+                    <input type='radio' class='radio-form' name='qustnrTyp1' value='C' checked>
+                    <span class='radio-img'></span>
+                    <span class='radio-label-text'>선택형</span>
+                  </label>
+                  <label class='radio-label'>
+                    <input type='radio' class='radio-form' name='qustnrTyp1' value='S'>
+                    <span class='radio-img'></span>
+                    <span class='radio-label-text'>문답식</span>
+                  </label>
+                </div>
+              </td>
+              <th class='text-left'>
+                <div>
+                  <p>기타항목 포함여부</p>
+                </div>
+              </th>
+              <td class='text-left'>
+                <div>
+                  <label class='wr-notice-label checkbox-label'>
+                    <input type='checkbox' class='checkbox-form' name='etcRspnsYn1' value='Y'>
+                    <span class='checkbox-img'></span>
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class='text-left'>
+                <div>
+                  <p>복수응답 여부</p>
+                </div>
+              </th>
+              <td class='text-left' colspan='3'>
+                <div>
+                  <label class='radio-label'>
+                    <input type='radio' name='test4' class='radio-form' checked>
+                    <span class='radio-img'></span>
+                    <span class='radio-label-text'>복수응답 불가</span>
+                  </label>
+                  <label class='radio-label'>
+                    <input type='radio' name='test4' class='radio-form'>
+                    <span class='radio-img'></span>
+                    <span class='radio-label-text'>복수응답 가능</span>
+                  </label>
+                  <select class='select-form'>
+                    <option>2개</option>
+                  </select>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class='text-left'>
+                <div>
+                  <p>질문</p>
+                </div>
+              </th>
+              <td class='text-left' colspan='3'>
+                <div>
+                  <input type='text' class='text-form' placeholder='질문 내용을 입력해 주세요.'>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class='text-left'>
+                <div>
+                  <p>항목 추가/삭제</p>
+                </div>
+              </th>
+              <td class='text-left' colspan='3'>
+                <div>
+                  <a href='javascript:void(0);' class='subpage-cate-link btn btn-round modal-btn'>항목추가</a>
+                  <a href='javascript:void(0);' class='subpage-cate-link btn btn-round modal-btn'>항목삭제</a>
+                  <span class='bolder-text'>* 항목추가 버튼을 클릭 하시면 항목을 추가 할 수 있습니다 (최대 9개)</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class='text-left'>
+                <div>
+                  <p>항목</p>
+                </div>
+              </th>
+              <td class='text-left' colspan='3'>
+                <div>
+                  <input type='text' class='text-form'>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </script>
   <script>
+    function compiling(serviceType) {
+      var source = $(serviceType).html();
+      var template = Handlebars.compile(source);
+      var html = template();
+      return html;
+    };
+    function test() {
+      var html = compiling("#test2");
+      $("#compareQus").append(html);
+    };
     $(document).ready(function() {
       // 설치위치 슬라이드
       $('.date-picker').each(function(i) {
