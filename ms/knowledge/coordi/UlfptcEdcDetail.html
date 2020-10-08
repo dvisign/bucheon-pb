@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>미세먼지 교육 관리</title>
+  <link href='/css/pbb/reset.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/common.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/style.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/jquery-ui.min.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>
+  <!-- jquery -->
+  <script type='text/javascript' src='/resources/jquery/jquery-3.5.1.min.js'></script>
+  <script type='text/javascript' src='/resources/jquery/jquery-ui.min.js'></script>
+  <!-- common JS -->
+  <script type='text/javascript' src='/js/pbb/common.js'></script>
+</head>
+
+<body id='QustnrDetail'>
+  <div id='wrap'>
+    <!-- header -->
+    <div id='header-wrapper'>
+      <div id='headers'>
+        <div class='container-fluid'>
+          <div id='navs' class='clear'>
+            <div id='logos'>
+              <h1><img src='/img/pbb/logo.png' alt='타이틀' /></h1>
+            </div>
+            <div class='container'>
+              <div id='nav-wrapper'>
+                <ul id='nav-lists' class='clear'>
+                  <li class='nav-items'>
+                    <a href='/ms/inventory/ArpltnExhstBplcList.html'>인벤토리 관리</a>
+                    <div class='sub-nav-wrapper'>
+                      <div class='container'>
+                        <ul class='sub-nav-list clear'>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>산업 부문</a>
+                            <ul class='nav-depth-3-list'>
+                              <li>
+                                <a href='javascript:void(0);'>대기오염 배출 사업장</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>굴뚝자동 측정기 사업장</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>비산먼지 발생</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>수송 부문</a>
+                            <ul class='nav-depth-3-list'>
+                              <li>
+                                <a href='javascript:void(0);'>재비산먼지</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>노후경유차량</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>생활 부문</a>
+                            <ul class='nav-depth-3-list'>
+                              <li>
+                                <a href='javascript:void(0);'>매립/소각</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>산불징후</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>기타 부문</a>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>개요 관리</a>
+                            <ul class='nav-depth-3-list'>
+                              <li>
+                                <a href='javascript:void(0);'>산업부문</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>수송부문</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>생활부문</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li class='nav-items'>
+                    <a href='#'>수집연계 관리</a>
+                    <div class='sub-nav-wrapper'>
+                      <div class='container'>
+                        <ul class='sub-nav-list clear'>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>수집장비 데이터용 현황표</a>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>수집연계현황</a>
+                            <ul class='nav-depth-3-list'>
+                              <li>
+                                <a href='javascript:void(0);'>수집현황</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>연계현황</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>수집연계이력</a>
+                            <ul class='nav-depth-3-list'>
+                              <li>
+                                <a href='javascript:void(0);'>수집데이터이력</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>연계데이터이력</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li class='nav-items'>
+                    <a href='#'>분석정보 관리</a>
+                    <div class='sub-nav-wrapper'>
+                      <div class='container'>
+                        <ul class='sub-nav-list clear'>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>우리동네 미세먼지</a>
+                            <ul class='nav-depth-3-list'>
+                              <li>
+                                <a href='javascript:void(0);'>우리동네 미세먼지 조회</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>우리동네 미세먼지 수집 이력</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>우리동네 미세먼지 비교 정보</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>공업단지 비산먼지</a>
+                            <ul class='nav-depth-3-list'>
+                              <li>
+                                <a href='javascript:void(0);'>공업단지 비산먼지 조회</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>공업단지 비산먼지 수집 이력</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>공업단지 비산먼지 비교 정보</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>통학로 미세먼지</a>
+                            <ul class='nav-depth-3-list'>
+                              <li>
+                                <a href='javascript:void(0);'>통학로 미세먼지 조회</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>통학로 미세먼지 수집 이력</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>통학로 미세먼지 비교 정보</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>지하철 미세먼지</a>
+                            <ul class='nav-depth-3-list'>
+                              <li>
+                                <a href='javascript:void(0);'>지하철 미세먼지 조회</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>지하철 미세먼지 수집 이력</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>지하철 미세먼지 비교 정보</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li class='nav-items'>
+                    <a href='#'>특화단지 장치관리</a>
+                    <div class='sub-nav-wrapper'>
+                      <div class='container'>
+                        <ul class='sub-nav-list clear'>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>특화단지 장치상태 현황</a>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>특화단지 장치제어 이력</a>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>특화단지 장치 관리</a>
+                            <ul class='nav-depth-3-list'>
+                              <li>
+                                <a href='javascript:void(0);'>특화단지 장치 관리</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>운영모드 관리</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>측정소 관리</a>
+                            <ul class='nav-depth-3-list'>
+                              <li>
+                                <a href='javascript:void(0);'>측정소 관리</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>측정소 맵 조회</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>사이니지 관리</a>
+                            <ul class='nav-depth-3-list'>
+                              <li>
+                                <a href='javascript:void(0);'>사이니지 모니터링</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>사이니지 배경이미지 관리</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>사이니지 컨텐츠 관리</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>사이니지 구성관리</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>사이니지 이력</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li class='nav-items'>
+                    <a href='#'>저감활동 관리</a>
+                    <div class='sub-nav-wrapper'>
+                      <div class='container'>
+                        <ul class='sub-nav-list clear'>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>미세먼지 저감 사업 관리</a>
+                            <ul class='nav-depth-3-list'>
+                              <li>
+                                <a href='javascript:void(0);'>부천시 미세먼지 저감사업 구성도 관리</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>미세먼지 알림이 서비스 소개 관리</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>비산먼지 저감 서비스 소개 관리</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>학교 통학로 안심 서비스 소개 관리</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>지하철 미세먼지 서비스 소개 관리</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>부천시 미세먼지 저감사업 관리</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>미세먼지 저감 활동 관리</a>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>미세먼지 대응정책 관리</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li class='nav-items'>
+                    <a href='#'>전문가 지식나눔관리</a>
+                    <div class='sub-nav-wrapper'>
+                      <div class='container'>
+                        <ul class='sub-nav-list clear'>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>전문가 제공자료 관리</a>
+                            <ul class='nav-depth-3-list'>
+                              <li>
+                                <a href='javascript:void(0);'>미세먼지 바로 알기</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>대응 꿀팁</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>미세먼지 줄이기 시민 실천 가이드</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>시민 행동 요령 관리</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>미세먼지 계절관리제 관리</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>미세먼지 코디네이터</a>
+                            <ul class='nav-depth-3-list'>
+                              <li>
+                                <a href='javascript:void(0);'>미세먼지 코디네이터 활동 개요 관리</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>미세먼지 코디네이터 활동 관리</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>미세먼지 교육 관리</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li class='nav-items'>
+                    <a href='#'>공통관리</a>
+                    <div class='sub-nav-wrapper'>
+                      <div class='container'>
+                        <ul class='sub-nav-list clear'>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>시스템 관리</a>
+                            <ul class='nav-depth-3-list'>
+                              <li>
+                                <a href='javascript:void(0);'>사용자 관리</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>메뉴 권한그룹 관리(시민)</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>메뉴 권한그룹 관리(관리자)</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>커뮤니티 관리</a>
+                            <ul class='nav-depth-3-list'>
+                              <li>
+                                <a href='javascript:void(0);'>공지사항 관리</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>뉴스 관리</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>FAQ 관리</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>자료실 관리</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>미세먼지 아이디어 관리</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>나의 꿀팁 공유 관리</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>미세먼지 용품 사용후기 관리</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>미세먼지발생실험 관리</a>
+                              </li>
+                              <li>
+                                <a href='javascript:void(0);'>시민제보 관리</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>설문조사 관리</a>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>포털접속 현황</a>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>행사관리</a>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>저감활동 효과보고 관리</a>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>비상저감조치 SMS 발송관리</a>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>사이트 관리</a>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>미세먼지 맵 서비스</a>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>시스템자원 모니터링</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li class='nav-items'>
+                    <a href='#'>수기데이터 관리</a>
+                    <div class='sub-nav-wrapper'>
+                      <div class='container'>
+                        <ul class='sub-nav-list clear'>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>산업부문</a>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>수송부문</a>
+                          </li>
+                          <li class='sub-nav-items'>
+                            <a class='nav-depth-2-link' href='javascript:void(0);'>생활부문</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div id='login-info'>
+              <p id='login-msg'><span>홍길동</span>관리자님, 안녕하세요</p>
+              <a id='logout-btn' href='#'>로그아웃</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='subpage-navs'>
+        <div class='container'>
+          <div id='subpage-nav-links' class='clear'>
+            <div id='sub-nav-home-link' class='subpage-nav-items'>
+              <a href='/ms/main/main.html'><span class='sound-only'>메인</span></a>
+            </div>
+            <div class='subpage-nav-items'>
+              <a href='javascript:void(0);' class=''>특화단지 장치 관리</a>
+            </div>
+            <div class='subpage-nav-items'>
+              <a href='javascript:void(0);' class='sub-nav-depths'>장치 운영모드 관리</a>
+              <ul class='sub-nav-selector'>
+                <li class='select-items'>
+                  <a class='select-links' href='#'>장치 운영모드 관리</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //header -->
+    <!-- section -->
+    <div class='contents'>
+      <div class='subpage-contents'>
+        <div class='container'>
+          <div class="subpage-title">
+            <h3>미세먼지 교육 관리</h3>
+          </div>
+          <div class='board-views conts-section'>
+            <div class="subpage-cate-title">
+              <h4><span>도당초등학교</span> <span>1</span>차 교육 신청현황</h4>
+            </div>
+            <div class='board-list-set clear'>
+              <div class='list-count'>
+                <p><span class='bolder-text'>2020.06</span></p>
+              </div>
+              <div class='list-view-selector'>
+                <select class='select-form'>
+                  <option>전체</option>
+                  <option>교육신청상태</option>
+                  <option>교육진행상태</option>
+                </select>
+                <select class='select-form'>
+                  <option>전체</option>
+                  <option>승인대기</option>
+                  <option>승인완료</option>
+                  <option>승인취소</option>
+                </select>
+                <a href='javascript:void(0);' class='btn btn-round modal-btn'>조회</a>
+              </div>
+            </div>
+            <div class='edcDetailInfoList'>
+              <div class='board-view-tables'>
+                <table>
+                  <colgroup>
+                    <col width='180px' />
+                    <col width='445px' />
+                    <col width='180px' />
+                    <col width='445px' />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>신청자명</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>홍**</span></p>
+                        </div>
+                      </td>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>작성일</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>2020-06-10</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>교육 신청일</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span>2020-06-01</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>교육 강사</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span>홍길동</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>학교명</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>도당초등학교</span></p>
+                        </div>
+                      </td>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>학교 전화번호</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>1234-1234</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>환경담당교사 성명</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>김**</span></p>
+                        </div>
+                      </td>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>환경담당교사 연락처</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>010-1234-1234</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>학년 반</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>5-4</span>반</p>
+                        </div>
+                      </td>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>인원</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>25</span>명</p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>비고</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span>5-4</span>반</p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left' rowspan='2'>
+                        <div>
+                          <p>답변내용</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span class='color-red'>승인취소</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span>교육신청이 취소되었습니다. 다른날 신청해 주세요.</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>교육평가</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class='board-view-tables'>
+                <table>
+                  <colgroup>
+                    <col width='180px' />
+                    <col width='445px' />
+                    <col width='180px' />
+                    <col width='445px' />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>신청자명</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>홍**</span></p>
+                        </div>
+                      </td>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>작성일</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>2020-06-10</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>교육 신청일</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span>2020-06-01</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>교육 강사</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span>홍길동</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>학교명</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>도당초등학교</span></p>
+                        </div>
+                      </td>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>학교 전화번호</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>1234-1234</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>환경담당교사 성명</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>김**</span></p>
+                        </div>
+                      </td>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>환경담당교사 연락처</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>010-1234-1234</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>학년 반</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>5-4</span>반</p>
+                        </div>
+                      </td>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>인원</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>25</span>명</p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>비고</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span>5-4</span>반</p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left' rowspan='2'>
+                        <div>
+                          <p>답변내용</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span class='color-blue'>승인완료</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span>교육 신청이 승인완료되었습니다.</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>교육평가</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p></p>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class='board-view-tables'>
+                <table>
+                  <colgroup>
+                    <col width='180px' />
+                    <col width='445px' />
+                    <col width='180px' />
+                    <col width='445px' />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>신청자명</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>홍**</span></p>
+                        </div>
+                      </td>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>작성일</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>2020-06-10</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>교육 신청일</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span>2020-06-01</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>교육 강사</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span>홍길동</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>학교명</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>도당초등학교</span></p>
+                        </div>
+                      </td>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>학교 전화번호</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>1234-1234</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>환경담당교사 성명</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>김**</span></p>
+                        </div>
+                      </td>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>환경담당교사 연락처</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>010-1234-1234</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>학년 반</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>5-4</span>반</p>
+                        </div>
+                      </td>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>인원</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>25</span>명</p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>비고</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span>5-4</span>반</p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left' rowspan='2'>
+                        <div>
+                          <p>답변내용</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span class='color-blue'>교육완료</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span>교육기관에서 교육 평가를 완료하였습니다.</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left' rowspan='2'>
+                        <div>
+                          <p>교육평가</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span>4.8</span> / <span>5.0</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span>홍길동 교육강사님 교육 너무 감사드립니다~</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class='board-view-tables'>
+                <table>
+                  <colgroup>
+                    <col width='180px' />
+                    <col width='445px' />
+                    <col width='180px' />
+                    <col width='445px' />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>신청자명</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>홍**</span></p>
+                        </div>
+                      </td>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>작성일</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>2020-06-10</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>교육 신청일</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span>2020-06-01</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>교육 강사</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span>홍길동</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>학교명</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>도당초등학교</span></p>
+                        </div>
+                      </td>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>학교 전화번호</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>1234-1234</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>환경담당교사 성명</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>김**</span></p>
+                        </div>
+                      </td>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>환경담당교사 연락처</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>010-1234-1234</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>학년 반</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>5-4</span>반</p>
+                        </div>
+                      </td>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>인원</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left'>
+                        <div>
+                          <p><span>25</span>명</p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left'>
+                        <div>
+                          <p>비고</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span>5-4</span>반</p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left' rowspan='2'>
+                        <div>
+                          <p>답변내용</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span class='color-blue'>수료확인</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span>미세먼지 1차 교육이 종결되었습니다.</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class='view-table-category text-left' rowspan='2'>
+                        <div>
+                          <p>교육평가</p>
+                        </div>
+                      </th>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span>4.8</span> / <span>5.0</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class='view-table-value text-left' colspan='3'>
+                        <div>
+                          <p><span>홍길동 교육강사님 교육 너무 감사드립니다~</span></p>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class='view-used-btn board-write-btns text-center'>
+              <a class='btn btn-round' href='javascript:void(0);'>게시글 삭제</a>
+              <a class='btn btn-round' href='javascript:void(0);'>승인취소</a>
+            </div>
+          </div>
+          <div class='conts-section'>
+            
+          </div>
+        </div> 
+      </div>
+    </div>
+    <!-- //section -->
+    <!-- footer -->
+    <div id='footers'>
+
+    </div>
+    <!-- //footer -->
+  </div>
+  <!-- jquery ui datepicker -->
+  <script>
+  $(document).ready(function() {
+    
+  })
+  </script>
+</body>
+
+</html>

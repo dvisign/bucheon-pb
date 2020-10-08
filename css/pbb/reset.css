@@ -63,3 +63,5 @@ a:visited {color:#000; text-decoration: none;}
 .flex-align-center {align-items: center;}
 .flex-justify-between {justify-content:space-between;}
 .flex-col-50 {width:calc(calc((100% - 20px) / 2));}
+.color-red {color:#ff0000 !important;}
+.color-blue {color:#5b9bd5 !important;}

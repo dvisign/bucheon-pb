@@ -515,8 +515,8 @@
 .collection-data-cate .collection-data-name {padding:15px 0;}
 .collection-data-cate .collection-data-count {padding:15px 0;}
 .collection-data-cate-items {height: calc(100% - 46px);}
-.collection-data-name {width:210px;border-right:1px solid #e5e9ed;}
-.collection-data-count {width:calc(100% - 210px);}
+.collection-data-name {width:210px;border-right:1px solid #e5e9ed;height:100%;padding:13px 0;}
+.collection-data-count {width:calc(100% - 210px);height:100%;padding:13px 0;}
 .collection-data-lists > li:not(:last-child) {margin-bottom:13px;}
 
 /* page : ColctExecuteList.html */
@@ -593,7 +593,7 @@
 /* page : FyerReducActCntList.html */
 #FyerReducActCntList .checkbox-label { padding: 0; background: none; border: 0; }
 .reducActForm {width:50%;}
-#FyerReducActCntList .board-list-table-wrapper {overflow-x: scroll; padding-bottom:30px;}
+#FyerReducActCntList .board-list-table-wrapper {overflow-x: auto; padding-bottom:30px;}
 .dataTableCheckbox {width: 60px;}
 .dataTableDate {width:100px;}
 .dataTableDivision {width:120px;}
@@ -605,7 +605,7 @@
 
 /* page : FyerSrcemssnDnstyList.html */
 #FyerSrcemssnDnstyList .checkbox-label { padding: 0; background: none; border: 0; }
-#FyerSrcemssnDnstyList .board-list-table-wrapper {overflow-x: scroll; padding-bottom:30px;}
+#FyerSrcemssnDnstyList .board-list-table-wrapper {overflow-x: auto; padding-bottom:30px;}
 .dnstyForm {width:50%;min-width:42px;}
 
 /* page : PopupList.html */
@@ -634,6 +634,56 @@
 /* page : CoordinatorActManageList.html */
 #CoordinatorActManageList .lookup-forms label {min-width:80px;}
 #CoordinatorActManageList .lookup-forms .text-form {min-width:410px;}
+
+/* page : UlfptcEdCldrList.html */
+.edu-calendars {position:relative;}
+.calendarsModal {display:none;position:absolute;top:50%;left:50%;transform: translate(-50%, -50%);}
+.calendarModalConts {box-shadow: 8px 4px 16px rgba(0,0,0,0.1);padding:30px;border:1px solid #e6eaee;width:500px;}
+.eduSaveTemplate.modal-content {width:auto;}
+
+/* page : UlfptcEdcList.html */
+#UlfptcEdcList .lookup-forms label:not(.radio-label) {min-width:80px;}
+#UlfptcEdcList .lookup-forms .eduSearchDateName {width: 530px;}
+#UlfptcEdcList .lookup-forms .eduSearchContents {width: 335px;}
+#UlfptcEdcList .lookup-forms .radio-label:not(:last-child) {margin-right:15px;}
+
+/* page : QustnrDetail.html */
+#QustnrDetail .board-list-set .select-form {margin-right:15px;}
+#QustnrDetail .edcDetailInfoList > .board-view-tables:not(:last-child) {margin-bottom:30px;}
+
+/* page : UserDetail.html */
+#UserDetail .checkbox-label {background-color:transparent;padding:10px 0;border:0;}
+#UserDetail .view-table-category .radio-label-text,
+#UserDetail .view-table-category .btn {position: relative;top: -5px;font-weight: 600;}
+#UserDetail .view-table-category .btn {font-size:14px;}
+#UserDetail .view-table-category .radio-label {padding:0;}
+#UserDetail .radio-label-text {font-weight: 600;}
+#UserDetail .checkbox-label-text {margin-left:0;}
+
+/* page : MonitoringPBBSelect.html */
+#MonitoringPBBSelect .lookup-forms .radio-label-text,
+#MonitoringPBBSelect .lookup-forms .btn {margin-right: 15px;margin-left:0;}
+#MonitoringPBBSelect .lookup-forms .btn.active {color: #fff; background-color: #2c64cf;} 
+.serverChartArea:not(:last-child) {margin-bottom:20px;}
+#MonitoringPBBSelect .modals .lookupState:not(:last-child) {margin-bottom:10px;}
+
+/* page : MemoirRclmIncnrList.html */
+#MemoirRclmIncnrList .tab-nav-items {width:50%;}
+#MemoirRclmIncnrList .board-list-body .checkbox-label {border:0;background-color:transparent;padding:0;display: block;}
+#MemoirRclmIncnrList .modals .date-form {width: 310px;}
+#MemoirRclmIncnrList .modals .lookupState:not(:last-child) {margin-bottom: 10px;}
+
+/* page : MemoirFrfireList.html */
+
+/* page : EmgncReducSmsSndList.html */
+#EmgncReducSmsSndList .lookup-forms label {min-width:60px;}
+#EmgncReducSmsSndList .lookup-forms .date-form {width:211px;}
+#EmgncReducSmsSndList .lookup-forms .text-form:not(.phone-form) {width: 440px;}
+#EmgncReducSmsSndList .lookup-forms .text-form.phone-form,
+#EmgncReducSmsSndList .lookup-forms .select-form.phone-form,
+#EmgncReducSmsSndList .modals .text-form.phone-form {width:100px;min-width:auto;}
+#EmgncReducSmsSndList .board-write-btns > .btn {padding:0 50px;}
+#EmgncReducSmsSndList .board-list-body .checkbox-label {padding:0;background-color: transparent;border:0;display:block;}
 
 /* qna */
 .qna-intro {padding: 35px 60px 35px 70px; background-color: #f5f7f9; border: 1px solid #e5e7e9;}
