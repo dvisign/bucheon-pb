@@ -633,6 +633,7 @@
             <div id='area-state-text'>
               <div class='text-left'>
                 <p id='area-state-location'>공업단지</p>
+                <a href='javascript:void(0)' class='chart-pop-close'></a>
               </div>
               <table class='device-data-table text-center'>
                 <tbody>
@@ -886,6 +887,7 @@
             <div id='area-state-text'>
               <div class='text-left'>
                 <p id='area-state-location'>국가망</p>
+                <a href='javascript:void(0)' class='chart-pop-close'></a>
               </div>
               <table class='device-data-table text-center'>
                 <tbody>
@@ -1128,15 +1130,11 @@
     var industryDevicePop = $('.industry-device-chart-pop');
     var nationDevicePop = $('.nation-device-chart-pop');
     var chartPopEl = $('.device-chart-pop');
-    $('.nation-device-btn').hover(function() {
+    $('.nation-device-btn').mouseover(function() {
       nationPopEl.stop().fadeIn();
-    }, function() {
-      nationPopEl.stop().fadeOut();
     });
-    $('.lookup-device-btn').hover(function() {
+    $('.lookup-device-btn').mouseover(function() {
       devicePopEl.stop().fadeIn();
-    }, function() {
-      devicePopEl.stop().fadeOut();
     });
     $('.lookup-device-btn').on('click', function() {
       industryDevicePop.stop().fadeIn();
@@ -1146,6 +1144,8 @@
     });
     $('.chart-pop-close, .chart-pop-bg').on('click', function() {
       chartPopEl.stop().fadeOut();
+      nationPopEl.stop().fadeOut();
+      devicePopEl.stop().fadeOut();
     })
     $('.chart-sort-items > a').on('click', function() {
       var $this = $(this);

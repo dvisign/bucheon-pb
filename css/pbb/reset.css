@@ -62,6 +62,9 @@ a:visited {color:#000; text-decoration: none;}
 .display-column {flex-direction:column}
 .flex-align-center {align-items: center;}
 .flex-justify-between {justify-content:space-between;}
-.flex-col-50 {width:calc(calc((100% - 20px) / 2));}
+.flex-justify-end {justify-content: flex-end;}
+.flex-justify-center {justify-content: center;}
+.flex-justify-evenly {justify-content: space-evenly;}
+.flex-col-50 {width:calc(((100% - 20px) / 2));}
 .color-red {color:#ff0000 !important;}
 .color-blue {color:#5b9bd5 !important;}

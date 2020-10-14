@@ -1,0 +1,42 @@
+/* 클래스 */
+.container {width: 1280px;margin: 0 auto;padding: 0 20px;box-sizing: border-box;}
+.clear::after {display:block;clear:both;content:'';}
+.float_left {float:left !important;}
+.float_right {float:right !important;}
+.text_center {text-align: center;}
+.text_left {text-align: left;}
+.text_right {text-align: right;}
+.sub_contents {padding-top: 80px;}
+.subpageTitle {margin-bottom: 40px;}
+.subpageTitle h3 {font-size: 32px;font-weight: 600;color: #0c1e42;}
+.subpageSectionTitle {margin-bottom:40px;}
+.subpageSectionTitle > h4 {color:#0c1e42;font-weight: 600;font-size:22px;display:inline-block;}
+.conts_section {margin-bottom: 75px;}
+.lookup_wrapper {background: #f5f7f9;padding: 35px 60px 35px 70px;border: 1px solid #e5e7e9;}
+
+/* 폼 */
+.label_text {display: inline-block; color: #696d75; font-size: 15px; font-weight: bold; transform: skew(-0.03deg); margin-right: 15px;}
+.selectForm {display: inline-block; height: 50px; line-height: 50px; font-size: 15px; border-radius: 4px; padding: 0 35px 0 15px; border: 1px solid #d6dade; background-image: url("/img/pbb/common/selector-down-arrow.png"); background-color: #fff; background-repeat: no-repeat; background-position-x: calc(100% - 10px); background-position-y: center; background-size: auto; font-weight: 600; color: #696d75;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  transform: skew(-0.03deg);}
+.dateForm {display: inline-block;height: 50px;line-height: 50px;font-size: 15px;border-radius: 4px;padding: 0 35px 0 15px;border: 1px solid #d6dade;background: #fff url("/img/pbb/common/date-icon.png") no-repeat calc(100% - 10px) center / 15px;font-weight: 600;color: #696d75;box-sizing: border-box;}
+.btn {display: inline-block; font-size: 16px; border: 0; padding: 0 77px; background-color: #596d93; color: #fff; cursor: pointer; height: 50px; line-height: 50px; font-weight: 600; transition: all 0.3s ease-in-out; border-radius: 30px;border:1px solid #596d93;}
+.btn:hover {background-color:#fff;color:#596d93;}
+.textDivision {color:#999da5;font-size:16px;display:inline-block;margin: 0 5px;}
+
+/* 게시판리스트 */
+.boardLists {}
+.boardLists table {width:100%;font-size:14px;}
+.boardLists th,
+.boardLists td {border:1px solid #e5e9ed;height:50px;}
+.boardLists th {background-color:#f5f7f9;color:#696d75;font-weight: 600;}
+.boardLists td {color:#393d45;font-weight: 600;}
+.tableFieldArea {padding:0 8px;}
+.tableEmptyData {padding:100px 0; font-weight: 600; font-size:16px;}
+
+/* UlfptcNclSttusList 페이지 */
+.UlfptcNclSttusList .lookup-forms .selectForm {width:230px;margin-right:15px; position: relative; top: 1px;}
+.UlfptcNclSttusList .submit_btn_wrapper {padding-left:65px;border-left:1px solid #ccc;}
+.UlfptcNclSttusList .lookup-forms .dateForm {width:220px;}

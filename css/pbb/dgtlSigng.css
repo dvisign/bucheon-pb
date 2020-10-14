@@ -1,0 +1,24 @@
+html, body {min-width:auto;background-color:#fff;height:auto;}
+html, body {font-size:calc(15px + 0.4vw)}
+.container {width:100%;max-width:1200px;padding:0;}
+
+.signgContents {max-height:100vh;}
+.signgContents.code-none {}
+.signgContents.code-green {}
+.signgContents.code-blue {}
+.signgContents.code-warning {}
+.signgContents.code-danger {}
+
+.signgLogo {margin: 1rem 0;}
+.signgLogo > img {width:100%;max-width:204px;}
+
+.areaContents > .areaLine:not(:last-child) {margin-bottom:1.5em;}
+.areaA > h2 {font-weight: 600; letter-spacing: -3px; font-family: 'PT Sans', sans-serif;}
+
+.areaB {border-bottom:1px solid #ccc;padding-bottom:1rem;}
+.areaB .flex-items .position-rel {padding-left: 2rem;font-size:0.9rem;}
+.tempIcons {display:inline-block;height:1.7rem;width:1.7rem;background-color:#ccc;border-radius: 50%;overflow: hidden;position: absolute;left: 0;top:50%;transform: translateY(-50%);}
+
+.areaC .flex-items p {font-size:0.9rem;color:#ccc;}
+
+.areaD {background-color:#465568; padding:1rem;color:#ccc;}
