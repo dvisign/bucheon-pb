@@ -6,29 +6,47 @@
 .text_center {text-align: center;}
 .text_left {text-align: left;}
 .text_right {text-align: right;}
+.h-100 {height:100%;}
+.displayFlex {display:flex;}
+.flexJustifyBetween {justify-content: space-between;}
+.flexAlignCenter {align-items: center;}
+
 .sub_contents {padding-top: 80px;}
 .subpageTitle {margin-bottom: 40px;}
-.subpageTitle h3 {font-size: 32px;font-weight: 600;color: #0c1e42;}
+.subpageTitle h3 {font-size: 32px;font-weight: 900;color: #0c1e42;}
+.introText {margin-bottom:22px;}
+.introText p {font-size: 16px; color: #696d75;font-weight: 600;padding-left:17px;position:relative;}
+.introText p::before {content:'※';display:block;position: absolute;left:0;}
+.introText p:not(:last-child) {margin-bottom:15px;}
 .subpageSectionTitle {margin-bottom:20px;}
 .lookup_wrapper .subpageSectionTitle {margin-bottom:40px;}
 .subpageSectionTitle > h4 {color:#0c1e42;font-weight: 600;font-size:22px;display:inline-block;}
 .conts_section {margin-bottom: 75px;}
 .lookupArea {background: #f5f7f9;padding: 35px 60px 35px 70px;border: 1px solid #e5e7e9;}
 
+
 /* 폼 */
 .label_text {display: inline-block; color: #696d75; font-size: 15px; font-weight: 600; transform: skew(-0.03deg); margin-right: 15px;}
-.selectForm {display: inline-block; height: 50px; line-height: 50px; font-size: 15px; border-radius: 4px; padding: 0 35px 0 15px; border: 1px solid #d6dade; background-image: url("/img/pbb/common/selector-down-arrow.png"); background-color: #fff; background-repeat: no-repeat; background-position-x: calc(100% - 10px); background-position-y: center; background-size: auto; font-weight: 600; color: #696d75;
+.selectForm {display: inline-block; height: 50px; line-height: 50px; font-size: 15px; border-radius: 4px; padding: 0 35px 0 15px; border: 1px solid #d6dade; background-image: url("/img/pbb/common/selector-down-arrow.png"); background-color: #fff; background-repeat: no-repeat; background-position-x: calc(100% - 10px); background-position-y: center; background-size: auto; font-weight: 600; color: #999da5;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
   transform: skew(-0.03deg);}
 .dateForm {display: inline-block;height: 50px;line-height: 50px;font-size: 15px;border-radius: 4px;padding: 0 35px 0 15px;border: 1px solid #d6dade;background: #fff url("/img/pbb/common/date-icon.png") no-repeat calc(100% - 10px) center / 15px;font-weight: 600;color: #696d75;box-sizing: border-box;}
+.textForm {display: inline-block; height: 50px; line-height: 50px; font-size: 15px; border-radius: 4px; padding-left: 15px; border: 1px solid #d6dade;box-sizing: border-box;background-color:#fff;}
 .btn {display: inline-block; font-size: 16px; border: 0; padding: 0 77px; background-color: #596d93; color: #fff; cursor: pointer; height: 50px; line-height: 50px; font-weight: 600; transition: all 0.3s ease-in-out; border-radius: 30px;border:1px solid #596d93;}
 .btn:hover {background-color:#fff;color:#596d93;}
 .textDivision {color:#999da5;font-size:16px;display:inline-block;margin: 0 5px;}
 
+/* 조건조회 폼 */
+.lookupLines:not(:last-child) {margin-bottom:10px;}
+.submit_btn_wrapper {padding-left:65px;border-left:1px solid #ccc;}
+
 /* 게시판리스트 */
 .boardLists {}
+.boardLists .boardListSet {margin-bottom: 20px;}
+.boardLists .boardListSet .selectForm {height: 42px;line-height: 42px;}
+.boardLists .boardListSet .listCountData {font-weight: 900;}
 .boardLists table {width:100%;font-size:14px;}
 .boardLists th,
 .boardLists td {border:1px solid #e5e9ed;height:50px;}
@@ -36,12 +54,26 @@
 .boardLists td {color:#393d45;font-weight: 600;}
 .tableFieldArea {padding:0 8px;}
 .tableEmptyData {padding:100px 0; font-weight: 600; font-size:16px;}
+.resultWait {color:#999da5;}
 
-/* /cs/sttusFrcst/UlfptcNclSttusList.html */
-.UlfptcNclSttusList .lookup-forms .selectForm {width:230px;margin-right:15px; position: relative; top: 1px;}
-.UlfptcNclSttusList .submit_btn_wrapper {padding-left:65px;border-left:1px solid #ccc;}
-.UlfptcNclSttusList .lookup-forms .dateForm {width:220px;}
+/* /cs/effect/UlfptcOctyList.html */
+.UlfptcOctyList .lookupFormLines .selectForm {width:230px;margin-right:15px; position: relative; top: 1px;}
+.UlfptcOctyList .lookupFormLines .dateForm {width:220px;}
+.UlfptcOctyList .boardLists .boardColWidth:nth-child(1),
+.UlfptcOctyList .boardLists .boardColWidth:nth-child(2) {width: 70px;}
+.UlfptcOctyList .boardLists .boardColWidth {width: calc((100% - (70px * 2)) / 11);}
 
 /* /cs/effect/ReducActReportList.html */
 .consistencyCompareChartAreas {width:calc(((100% - 20px) / 2));margin-right:20px;}
 .consistencyCompareChartAreas:nth-child(2n) {margin-right:0;}
+.ReducActReportList .boardLists .boardColWidth:first-child {width:160px;}
+.ReducActReportList .boardLists .boardColWidth {width:180px;}
+
+/* /cs/square/ctznBoard/CtznBoardList.html */
+.CtznBoardList .lookupFormLines .selectForm {width:180px;margin-right:15px;}
+.CtznBoardList .lookupFormLines .textForm {width:320px;}
+.CtznBoardList .boardLists .boardColWidth:nth-child(1) {width:200px;}
+.CtznBoardList .boardLists .boardColWidth:nth-child(2) {width: 150px;}
+.CtznBoardList .boardLists .boardColWidth:nth-child(3) {width: 490px;}
+.CtznBoardList .boardLists .boardColWidth:nth-child(4) {width: 200px;}
+.CtznBoardList .boardLists .boardColWidth:nth-child(5) {width: 200px;}
