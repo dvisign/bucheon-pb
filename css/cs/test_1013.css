@@ -6,6 +6,9 @@
 .text_center {text-align: center;}
 .text_left {text-align: left;}
 .text_right {text-align: right;}
+.verticalMiddle {vertical-align: middle;}
+.verticalBase {vertical-align: baseline;}
+.verticalBottom {vertical-align: bottom;}
 .h-100 {height:100%;}
 .displayFlex {display:flex;}
 .flexJustifyBetween {justify-content: space-between;}
@@ -49,12 +52,21 @@
 .boardLists .boardListSet .listCountData {font-weight: 900;}
 .boardLists table {width:100%;font-size:14px;}
 .boardLists th,
-.boardLists td {border:1px solid #e5e9ed;height:50px;}
+.boardLists td {border:1px solid #e5e9ed;height:50px;font-size:15px;}
 .boardLists th {background-color:#f5f7f9;color:#696d75;font-weight: 600;}
 .boardLists td {color:#393d45;font-weight: 600;}
 .tableFieldArea {padding:0 8px;}
 .tableEmptyData {padding:100px 0; font-weight: 600; font-size:16px;}
 .resultWait {color:#999da5;}
+
+/* 게시판보기 */
+.boardView table {width:100%;}
+.boardView th,
+.boardView td {border:1px solid #e5e9ed;height:50px;font-size:15px;}
+.boardView th {background-color:#f5f7f9;color:#696d75;font-weight: 600;}
+.boardView td {color:#393d45;font-weight: 600;}
+.boardView .tableFieldArea {padding:15px 20px;}
+.boardView .preData {white-space: pre-wrap;line-height: 25px;}
 
 /* /cs/effect/UlfptcOctyList.html */
 .UlfptcOctyList .lookupFormLines .selectForm {width:230px;margin-right:15px; position: relative; top: 1px;}
@@ -77,3 +89,8 @@
 .CtznBoardList .boardLists .boardColWidth:nth-child(3) {width: 490px;}
 .CtznBoardList .boardLists .boardColWidth:nth-child(4) {width: 200px;}
 .CtznBoardList .boardLists .boardColWidth:nth-child(5) {width: 200px;}
+
+/* /cs/qustnr/QustnrResultSearch.html */
+.QustnrResultSearch .boardView .boardColWidth:nth-child(1) {width: 210px;}
+.QustnrResultSearch .boardView .boardColWidth:nth-child(2) {width:calc(100% - 210px);}
+.qustItems {}

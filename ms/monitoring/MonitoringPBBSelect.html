@@ -9,9 +9,11 @@
   <link href='/css/pbb/style.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/jquery-ui.min.css' type='text/css' rel='stylesheet'>
   <link href='/css/pbb/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>
+  <link href='/css/pbb/jquery-ui-timepicker-addon.css' type='text/css' rel='stylesheet'>
   <!-- jquery -->
   <script type='text/javascript' src='/resources/jquery/jquery-3.5.1.min.js'></script>
   <script type='text/javascript' src='/resources/jquery/jquery-ui.min.js'></script>
+  <script type='text/javascript' src='/resources/jquery/jquery-ui-timepicker-addon.js'></script>
   <!-- common JS -->
   <script type='text/javascript' src='/js/pbb/common.js'></script>
 </head>
@@ -674,7 +676,7 @@
   $(document).ready(function() {
     $('.date-picker').each(function(i) {
       var $this = $(this);
-      $this.datepicker({
+      $this.datetimepicker({
         changeMonth: true,
         changeYear: true, 
         minDate: '-100y', 
@@ -690,6 +692,10 @@
         showMonthAfterYear: true ,
         dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'],
         monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+        // timepicker 설정
+        timeFormat:'HH:mm',
+        controlType:'select',
+        oneLine:true,
       });
     });
     $('.lookup-date-data').on('click', function() {
