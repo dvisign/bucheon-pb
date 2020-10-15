@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <!--common-->
-    <title>부천시 미세먼지 - 시민용</title>
+    <title>행사공유 보기</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
@@ -21,6 +21,7 @@
     <!--css-->
     <link rel="stylesheet" href="/css/cs/common.css">
     <link rel="stylesheet" href="/css/cs/customui.css">
+    <link rel="stylesheet" href="/css/cs/test_1013.css">
     <!--jquery-->
     <script src="/resources/jquery/jquery-3.5.1.min.js"></script>
 </head>
@@ -35,7 +36,7 @@
         <div class="header_wrap">
             <h1><a href="/"><img src="/img/cs/layout/logo.jpg" alt="판타지아 부천 로고"></a></h1>
             <nav id="globalNav">
-                <button class="close_btn">close</button>
+                <button type="button" class="close_btn">close</button>
                 <h2 class="hidden-txt">global navigation</h2>
                 <!--**button open 클래스를 가지면 active-->
                 <!--**페이지 이동 a태그 class="active" 경우 active 활성화-->
@@ -250,7 +251,7 @@
                 </ul>
             </nav>
             <ul class="gnb_utility">
-                <li class="user_rank_open"><button>user rank</button></li>
+                <li class="user_rank_open"><button type="button">user rank</button></li>
                 <li class="my_page"><a href="#">my page</a></li>
                 <li class="site_map_open"><button type="button">page list</button></li>
             </ul>
@@ -600,42 +601,181 @@
     </header>
     <!--//header-->
 
-<div>
+    <!--container-->
+    <div id="container" class="EventDetail">
+        <div class="sub_contents">
+            <div class="subpageTitle">
+                <div class="container">
+                    <h3>행사공유 보기</h3>
+                </div>
+            </div>
+            <div class="conts_section">
+                <div class="boardView">
+                    <div class="container">
+                        <table>
+                            <colgroup>
+                                <col class="boardViewCategory">
+                                <col class="boardViewCateData">
+                                <col class="boardViewCategory">
+                                <col class="boardViewCateData">
+                            </colgroup>
+                            <thead class="boardViewHeader"></thead>
+                            <tbody class="boardViewBody">
+                                <tr>
+                                    <th class="text_left">
+                                        <div class="tableFieldArea">
+                                            <p>행사 제목</p>
+                                        </div>
+                                    </th>
+                                    <td class="text_left" colspan="3">
+                                        <div class="tableFieldArea">
+                                            <p><span>행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234행사제목1234</span></p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="text_left">
+                                        <div class="tableFieldArea">
+                                            <p>행사구분</p>
+                                        </div>
+                                    </th>
+                                    <td class="text_left">
+                                        <div class="tableFieldArea">
+                                            <p><span>문화체험</span></p>
+                                        </div>
+                                    </td>
+                                    <th class="text_left">
+                                        <div class="tableFieldArea">
+                                            <p>행사일시</p>
+                                        </div>
+                                    </th>
+                                    <td class="text_left">
+                                        <div class="tableFieldArea">
+                                            <p><span>2020-06-01</span> ~ <span>2020-06-30</span></p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="text_left">
+                                        <div class="tableFieldArea">
+                                            <p>담당부서</p>
+                                        </div>
+                                    </th>
+                                    <td class="text_left">
+                                        <div class="tableFieldArea">
+                                            <p><span>문화예술과</span></p>
+                                        </div>
+                                    </td>
+                                    <th class="text_left">
+                                        <div class="tableFieldArea">
+                                            <p>작성일</p>
+                                        </div>
+                                    </th>
+                                    <td class="text_left">
+                                        <div class="tableFieldArea">
+                                            <p><span>2020-06-01</span></p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="text_left">
+                                        <div class="tableFieldArea">
+                                            <p>행사장소</p>
+                                        </div>
+                                    </th>
+                                    <td class="text_left" colspan="3">
+                                        <div class="tableFieldArea">
+                                            <p><span>현대백화점 유플렉스 광장</span></p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="text_left">
+                                        <div class="tableFieldArea">
+                                            <p>문의전화</p>
+                                        </div>
+                                    </th>
+                                    <td class="text_left" colspan="3">
+                                        <div class="tableFieldArea">
+                                            <p><span>010-1234-1234</span></p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="text_left">
+                                        <div class="tableFieldArea">
+                                            <p>첨부파일</p>
+                                        </div>
+                                    </th>
+                                    <td class="text_left" colspan="3">
+                                        <div class="tableFieldArea">
+                                            <a class="fileDownBtn" href="javascript:void(0);">12093841209.jpg</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="text_left">
+                                        <div class="tableFieldArea">
+                                            <p>내용</p>
+                                        </div>
+                                    </th>
+                                    <td class="text_left" colspan="3">
+                                        <div class="tableFieldArea">
+                                            <p class="preData">○ 행사개요 :
+  - 아트마켓 조성 : 15개 부스(공예,팬시,페브릭,인테리어 소품 등)
+  - 이벤트 : 베어브릭 메모이벤트, 룰렛이벤트 진행
+  - 기타 : 포토존
+                                                
+○ 행사시간 : 11:00~18:00
+                                                
+○ 행사소개 : 2018. 아트경기 사업 중 1일 아트마켓 행사 진행
+※ 2018 아트경기 : 국내 미술시장 발전을 위해 경기도가 마련한 도내 예술가 작품전시 및 판매프로젝트
+  - 부천시 : 2018.9.7.~10.3. 심곡천네모갤러리(부흥로336번길7)에서 전시 진행중.</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="boardBtns text_center">
+                            <a href="javascript:void(0);" class="btn prevBtn">이전</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//container-->
 
-</div>
-
-     <!-- footer -->
-     <footer id="footer_wrap">
+    <!--footer -->
+    <footer id="footer_wrap">
         <h2 class="hidden-txt">footer</h2>
         <ul>
-           <li>바로가기<button class="close_btn">close</button></li>
-           <li><a href="#">부천시청</a></li>
-           <li><a href="#">경기도 보건환경연구원</a></li>
-           <li><a href="#">경기도 대기환경</a></li>
-           <li><a href="#">환경부</a></li>
-           <li><a href="#">에어코리아</a></li>
-           <li><a href="#">날씨누리</a></li>
-           <li><a href="#">질병관리본부</a></li>
+            <li>바로가기<button type="button" class="close_btn">close</button></li>
+            <li><a href="#">부천시청</a></li>
+            <li><a href="#">경기도 보건환경연구원</a></li>
+            <li><a href="#">경기도 대기환경</a></li>
+            <li><a href="#">환경부</a></li>
+            <li><a href="#">에어코리아</a></li>
+            <li><a href="#">날씨누리</a></li>
+            <li><a href="#">질병관리본부</a></li>
         </ul>
         <div>
-           <a href="/" class="footer_logo">
-              <img src="/img/cs/layout/logo_footer.jpg" alt="판타지아 푸터 부천 로고">
-           </a>
-           <div class="footer_info">
-              <p class="address">
-                 <span>주소</span>
-                 14547 경기도 부천시 길주로 210(중동)
-              </p>
-              <p>
-                 <span>부천시 365 콜센터</span>
-                 032-320-3000 ( 평일 08~19시 / 주말·공휴일 09~18시 )
-              </p>
-           </div>
-           <p class="copyright">Copyright &copy;2017 BUCHEON CITY All rights reserved.</p>
+            <a href="/" class="footer_logo">\<img src="/img/cs/layout/logo_footer.jpg" alt="판타지아 푸터 부천 로고"></a>
+            <div class="footer_info">
+                <p class="address">
+                    <span>주소</span>
+                    14547 경기도 부천시 길주로 210(중동)
+                </p>
+                <p>
+                    <span>부천시 365 콜센터</span>
+                    032-320-3000 ( 평일 08~19시 / 주말·공휴일 09~18시 )
+                </p>
+            </div>
+            <p class="copyright">Copyright &copy;2017 BUCHEON CITY All rights reserved.</p>
         </div>
-     </footer>
-     <!-- //footer -->
- </div>
+    </footer>
+    <!--//footer -->
+</div>
 <script src="/js/cs/plugin.js"></script>
 <script src="/js/cs/design_common.js"></script>
 </body>

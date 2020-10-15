@@ -57,6 +57,8 @@
 .boardLists th {background-color:#f5f7f9;color:#696d75;font-weight: 600;}
 .boardLists td {color:#393d45;font-weight: 600;}
 .tableFieldArea {padding:10px 8px;font-size:14px;box-sizing: border-box; margin: 0 auto;}
+.tableFieldArea > p,
+.tableFieldArea > a {word-break: break-all;}
 .secretIcon {padding:7px 12px;border-radius: 15px;background-color: #696d75;color:#fff;margin-right:10px;}
 
 .tableEmptyData {padding:100px 0; font-weight: 600; font-size:16px;}
@@ -85,6 +87,9 @@
 .boardView td {color:#393d45;font-weight: 600;}
 .boardView .tableFieldArea {padding:15px 20px;}
 .boardView .preData {white-space: pre-wrap;}
+.boardViewCategory {width:210px;}
+.boardViewCateData {width:calc(100% - 210px);}
+.fileDownBtn {text-decoration: underline !important;}
 
 /* 게시판 버튼 */
 .boardBtns {margin-top:60px;}
@@ -97,26 +102,28 @@
 /* /cs/effect/UlfptcOctyList.html */
 .UlfptcOctyList .lookupFormLines .selectForm {width:230px;margin-right:15px; position: relative; top: 1px;}
 .UlfptcOctyList .lookupFormLines .dateForm {width:220px;}
-.UlfptcOctyList .boardLists .boardColWidth:nth-child(1),
-.UlfptcOctyList .boardLists .boardColWidth:nth-child(2) {width: 70px;}
-.UlfptcOctyList .boardLists .boardColWidth {width: calc((100% - (70px * 2)) / 11);}
+.UlfptcOctyList .boardLists .chartTableData:nth-child(1),
+.UlfptcOctyList .boardLists .chartTableData:nth-child(2) {width: 70px;}
+.UlfptcOctyList .boardLists .chartTableData {width: calc((100% - (70px * 2)) / 11);}
 
 /* /cs/effect/ReducActReportList.html */
 .consistencyCompareChartAreas {width:calc(((100% - 20px) / 2));margin-right:20px;}
 .consistencyCompareChartAreas:nth-child(2n) {margin-right:0;}
-.ReducActReportList .boardLists .boardColWidth:first-child {width:160px;}
-.ReducActReportList .boardLists .boardColWidth {width:180px;}
+.ReducActReportList .boardLists .chartTableData:first-child {width:160px;}
+.ReducActReportList .boardLists .chartTableData {width:180px;}
 
 /* /cs/square/ctznBoard/CtznBoardList.html */
 .CtznBoardList .lookupFormLines .selectForm {width:180px;margin-right:15px;}
 .CtznBoardList .lookupFormLines .textForm {width:320px;}
 
 /* /cs/qustnr/QustnrResultSearch.html */
-.QustnrResultSearch .boardView .boardColWidth:nth-child(1) {width: 210px;}
-.QustnrResultSearch .boardView .boardColWidth:nth-child(2) {width:calc(100% - 210px);}
 .qustItems:not(:last-child) {margin-bottom:60px;}
 .qusSubjects {margin-bottom:30px;}
 .qusSubjects > h4 {font-size: 20px; letter-spacing: -1px; color: #0c1e42;font-weight: 900;}
 .qusAnswerLists {padding:47px 50px;border:1px solid #f0f0f0;}
 .qusAnswerLists.qusAnswerTxt {padding:0;border:0;}
 .qusAnswerLists.qusAnswerTxt > textarea {padding:10px;border:1px solid #c5c9cd; border-radius: 5px;height:140px;width:100%;resize:none;}
+
+/* /cs/square/event/EventDetail.html */
+.EventDetail .boardViewCateData {width:410px;}
+.EventDetail .preData {min-height:500px;}
