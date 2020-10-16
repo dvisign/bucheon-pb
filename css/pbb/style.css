@@ -308,6 +308,7 @@
 #indstrycmplxHistList .lookup-forms #compare-area-selector .select-form {width:165px;min-width:auto;}
 #indstrycmplxHistList .lookup-forms #area-selector .select-form:not(:last-child),
 #indstrycmplxHistList .lookup-forms #compare-area-selector .select-form:not(:last-child) {margin-right:20px;}
+#histLists .lookup-forms .date-form {width:150px;}
 
 /* page : IndstrycmplxSearch.html */
 .lookup-device,

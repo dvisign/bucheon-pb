@@ -39,15 +39,18 @@
 .dateForm {display: inline-block;height: 50px;line-height: 50px;font-size: 15px;border-radius: 4px;padding: 0 35px 0 15px;border: 1px solid #d6dade;background: #fff url("/img/pbb/common/date-icon.png") no-repeat calc(100% - 10px) center / 15px;font-weight: 600;color: #696d75;box-sizing: border-box;}
 .textForm {display: inline-block; height: 50px; line-height: 50px; font-size: 15px; border-radius: 4px; padding-left: 15px; border: 1px solid #d6dade;box-sizing: border-box;background-color:#fff;}
 .radioLabel {display:inline-block;position: relative;padding-left:30px;line-height: 22px;}
-.radioForm {display: none;}
+.radioForm {width: 0;height: 0;overflow: hidden;display: inline-block;text-indent: -9999px;line-height: 1px;position: absolute;}
 .radioForm + .radioImg {display:inline-block;width:22px;height:22px;border:1px solid #c7cbcf;border-radius: 50%;overflow: hidden;background-color:#fff;box-sizing: border-box;position: absolute;left:0;}
 .radioForm:checked + .radioImg {border:6px solid #596d93;}
+.radioForm:focus + .radioImg {outline:1px solid #161616;}
 .checkboxLabel {display:inline-block;position: relative;padding-left:30px;line-height: 22px;}
-.checkboxForm {display:none;}
+.checkboxForm {width: 0;height: 0;overflow: hidden;display: inline-block;text-indent: -9999px;line-height: 1px;position: absolute;}
 .checkboxForm + .checkboxImg {display:inline-block;width:22px; height:22px;border:1px solid #d6dade;border-radius: 3px;overflow:hidden;background-color:#fff;position: absolute;left:0;box-sizing: border-box;}
 .checkboxForm:checked + .checkboxImg {background:url('/img/pbb/common/checked_img.png') no-repeat center / auto;}
+.checkboxForm:focus + .checkboxImg {outline:1px solid #161616;}
 .btn {display: inline-block; font-size: 16px; border: 0; padding: 0 77px; background-color: #596d93; color: #fff; cursor: pointer; height: 50px; line-height: 50px; font-weight: 600; transition: all 0.3s ease-in-out; border-radius: 30px;border:1px solid #596d93;}
 .btn:hover {background-color:#fff;color:#596d93;}
+.btn:focus {outline:1px solid #161616;}
 .textDivision {color:#999da5;font-size:16px;display:inline-block;margin: 0 5px;}
 
 /* 조건조회 폼 */
@@ -147,8 +150,8 @@
 .qusSubjects {margin-bottom:30px;}
 .qusSubjects > h4 {font-size: 20px; letter-spacing: -1px; color: #0c1e42;font-weight: 900;}
 .qusAnswerLists {padding:47px 50px;border:1px solid #f0f0f0;}
-.qusAnswerItems {}
-.qusAnswerItems:not(:last-child) {margin-bottom:30px;}
+.qusAnswerItems {line-height:34px;}
+.qusAnswerItems:not(:last-child) {margin-bottom:22px;}
 .qusAnswerItems .textForm {height:34px; line-height: 34px;width:400px;} 
 .qusAnswerLists.qusAnswerTxt {padding:0;border:0;}
 .qusAnswerLists.qusAnswerTxt > textarea {padding:10px;border:1px solid #c5c9cd; border-radius: 5px;height:140px;width:100%;resize:none;}
