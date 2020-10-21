@@ -19,9 +19,9 @@
     <link rel="icon" href="">
     <!--//common-->
     <!--css-->
-    <link rel="stylesheet" href="/css/cs/common.css">
-    <link rel="stylesheet" href="/css/cs/customui.css">
-    <link rel="stylesheet" href="/css/cs/test_1013.css">
+    <link rel="stylesheet" href="/css/pbb/cs/common.css">
+    <link rel="stylesheet" href="/css/pbb/cs/customui.css">
+    <link rel="stylesheet" href="/css/pbb/cs/test_1013.css">
     <!--jquery-->
     <script src="/resources/jquery/jquery-3.5.1.min.js"></script>
 </head>
@@ -603,6 +603,32 @@
 
     <!--container-->
     <div id="container" class="EventDetail">
+        <div class="breadcrumb_wrap">
+            <h3 class="hidden-txt">breadcrumb</h3>
+            <div>
+               <a href="/">home</a>
+               <!--
+               crumb_depth 가 multiple_depth 클래스를 가지면
+               -화살표 아이콘, hover 효과
+               -->
+               <div class="crumb_depth multiple_depth">
+                  <strong tabindex="0">산업부분</strong>
+                  <ul>
+                     <!--
+                     a 태그 class="active" 활성 표시
+                     -->
+                     <li><a href="#" class="active">대기오염배출물 사업장</a></li>
+                     <li><a href="#">대기오염배출물 사업장</a></li>
+                     <li><a href="#">대기오염배출물 사업장</a></li>
+                  </ul>
+                  <span>arrow icon</span>
+               </div>
+               <div class="crumb_depth">
+                  <strong>산업부분</strong>
+               </div>
+      
+            </div>
+        </div>
         <div class="sub_contents">
             <div class="subpageTitle">
                 <div class="container">

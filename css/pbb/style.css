@@ -277,7 +277,7 @@
 #auto-forms,
 #tod-forms {padding:40px 0;border-top:1px solid #999da5; border-bottom:1px solid #999da5;}
 .exception-policy-items {float:left;margin:0 10px 10px 0;}
-.exception-policy-items:nth-child(6) {margin-right:0;}
+/* .exception-policy-items:nth-child(6) {margin-right:0;} */
 .exception-policy-label {min-width:200px}
 
 /* AUTO / TOD */
@@ -623,7 +623,7 @@
 .dnstyForm {width:50%;min-width:42px;}
 
 /* page : PopupList.html */
-#PopupList .lookup-forms .text-form {width:390px;}
+#PopupList .lookup-forms .text-form {width:550px;}
 
 /* page : PopupRegist.html */
 .popSizes > span,
@@ -655,6 +655,46 @@
 .calendarModalConts {box-shadow: 8px 4px 16px rgba(0,0,0,0.1);padding:30px;border:1px solid #e6eaee;width:500px;}
 .eduSaveTemplate.modal-content {width:auto;}
 
+#UlfptcEdCldrList .fc-toolbar.fc-header-toolbar {position:relative;}
+#UlfptcEdCldrList .fc-toolbar.fc-header-toolbar .fc-center > h2 {line-height:32px;}
+#UlfptcEdCldrList #calendar .fc-header-toolbar .fc-left {position:absolute;left:0;}
+#UlfptcEdCldrList #calendar .fc-header-toolbar .fc-right {position:absolute;right:0;}
+#UlfptcEdCldrList #calendar .fc-widget-content .fc-day-grid-event {padding:15px; cursor:pointer;font-weight:600;border:0;}
+#UlfptcEdCldrList #calendar.fc-ltr .fc-basic-view .fc-day-top .fc-day-number {margin-bottom:30px;}
+#UlfptcEdCldrList #calendar .fc-head-container .fc-sun,
+#UlfptcEdCldrList #calendar .fc-sun > a {color:#D25565;}
+#UlfptcEdCldrList #calendar .fc-head-container .fc-sat,
+#UlfptcEdCldrList #calendar .fc-sat > a {color:#74c0fc;}
+
+#UlfptcEdCldrList .eduMarkerColor .radio-form + .radio-img {border-radius: 0;}
+
+#UlfptcEdCldrList .eduMarkerColor .radio-form.markerRed + .radio-img {border-color:#D25565;}
+#UlfptcEdCldrList .eduMarkerColor .radio-form.markerRed:checked + .radio-img {background-color:#D25565 !important;border:1px solid #fff;}
+
+#UlfptcEdCldrList .eduMarkerColor .radio-form.markerPup + .radio-img {border-color:#9775fa;}
+#UlfptcEdCldrList .eduMarkerColor .radio-form.markerPup:checked + .radio-img {background-color:#9775fa !important;border:1px solid #fff;}
+
+#UlfptcEdCldrList .eduMarkerColor .radio-form.markerOrng + .radio-img {border-color:#ffa94d;}
+#UlfptcEdCldrList .eduMarkerColor .radio-form.markerOrng:checked + .radio-img {background-color:#ffa94d !important;border:1px solid #fff;}
+
+#UlfptcEdCldrList .eduMarkerColor .radio-form.markerBlue + .radio-img {border-color:#74c0fc;}
+#UlfptcEdCldrList .eduMarkerColor .radio-form.markerBlue:checked + .radio-img {background-color:#74c0fc !important;border:1px solid #fff;}
+
+#UlfptcEdCldrList .eduMarkerColor .radio-form.markerPink + .radio-img {border-color:#f06595;}
+#UlfptcEdCldrList .eduMarkerColor .radio-form.markerPink:checked + .radio-img {background-color:#f06595 !important;border:1px solid #fff;}
+
+#UlfptcEdCldrList .eduMarkerColor .radio-form.markerLightGreen + .radio-img {border-color:#63e6be;}
+#UlfptcEdCldrList .eduMarkerColor .radio-form.markerLightGreen:checked + .radio-img {background-color:#63e6be !important;border:1px solid #fff;}
+
+#UlfptcEdCldrList .eduMarkerColor .radio-form.markerGreen + .radio-img {border-color:#a9e34b;}
+#UlfptcEdCldrList .eduMarkerColor .radio-form.markerGreen:checked + .radio-img {background-color:#a9e34b !important;border:1px solid #fff;}
+
+#UlfptcEdCldrList .eduMarkerColor .radio-form.markerNavy + .radio-img {border-color:#4d638c;}
+#UlfptcEdCldrList .eduMarkerColor .radio-form.markerNavy:checked + .radio-img {background-color:#4d638c !important;border:1px solid #fff;}
+
+#UlfptcEdCldrList .eduMarkerColor .radio-form.markerBlack + .radio-img {border-color:#495057;}
+#UlfptcEdCldrList .eduMarkerColor .radio-form.markerBlack:checked + .radio-img {background-color:#495057 !important;border:1px solid #fff;}
+
 /* page : UlfptcEdcList.html */
 #UlfptcEdcList .lookup-forms label:not(.radio-label) {min-width:80px;}
 #UlfptcEdcList .lookup-forms .eduSearchDateName {width: 530px;}
@@ -673,6 +713,9 @@
 #UserDetail .view-table-category .radio-label {padding:0;}
 #UserDetail .radio-label-text {font-weight: 600;}
 #UserDetail .checkbox-label-text {margin-left:0;}
+
+/* page : UserList */
+#UserList .checkbox-label {padding:0;border:0;background:transparent;}
 
 /* page : MonitoringPBBSelect.html */
 #MonitoringPBBSelect .lookup-forms .checkbox-label {padding:0;border:0;background-color: transparent;}
@@ -704,6 +747,23 @@
 
 /* page : viewMenu */
 #viewMenu .board-list-body .checkbox-label {padding:0;background-color:transparent;border:0;}
+
+/* page : UlfptcEdcDetail.html */
+.answerText {padding-right:80px;}
+.answerTextBtn {position:absolute;right:0;top:0;color:#696d75 !important;}
+#answerSave {position:absolute;right:35px;top:50%;transform:translateY(-50%);color:#696d75 !important;}
+#answerCancle {position:absolute;right:0;top:50%;transform:translateY(-50%);color:#696d75 !important;}
+.answerTextBtn > i {font-size:1.3rem;}
+#answerSave > i {font-size:1.5rem;}
+#answerCancle > i {font-size:1.3rem;}
+#modifyEdcAnswerCn > #edcAnswerCn {width:100%;}
+.starGrade {border-bottom:1px solid #e6eaee;}
+.starGrade .fa-star {color:#fff100;display:inline-block;margin-right:10px;}
+
+/* event */
+#eventRegidt .radio-label:not(:last-child) {margin-right:20px;}
+#eventRegidt .eventTargetSelector {position:relative;top:-5px;display:inline-block;}
+#eventRegidt .eventTargetSelector > .text-form {width:60px;}
 
 /* qna */
 .qna-intro {padding: 35px 60px 35px 70px; background-color: #f5f7f9; border: 1px solid #e5e7e9;}

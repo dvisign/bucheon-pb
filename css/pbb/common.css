@@ -300,6 +300,7 @@ transform: skew(-0.03deg);
 .view2-contents img {max-width: 100%; height: auto !important;}
 
 /* 썸네일 게시판 스킨 */
+.thumb-board-list {padding:30px 0;border-top:1px solid #d6dade;border-bottom:1px solid #d6dade;}
 .thumb-board-list > .thumb-list-items {width: calc((100% - (10px * 3)) / 4); margin-right: 10px; margin-bottom:40px;}
 .thumb-board-list > .thumb-list-items:nth-child(4n) {margin-right:0;}
 .thumb-imgs {}
@@ -310,6 +311,8 @@ transform: skew(-0.03deg);
 .thumb-wr-source {margin-bottom:10px;}
 .thumb-wr-datetime {margin-bottom:10px;}
 .thumb-wr-hit {}
+.thumb-list-empty {padding:100px 0;}
+.thumb-list-empty-text {font-size:16px;}
 
 /* 서비스 소개 보기 스킨 */
 .service-view-body > .clear > div {width: calc(50% - 10px);}
