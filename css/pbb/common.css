@@ -353,6 +353,7 @@ transform: skew(-0.03deg);
 .pagenation-wrapper a {width:30px;height:30px;line-height:30px;font-size:16px;color:#393d45;border-radius: 3px;transition:0.3s;}
 .pagenation-items.active > a,
 .pagenation-items > a:hover {background-color:#2c64cf;color:#fff;}
+.pagenation-arrow {position:relative;top:10px;}
 .pagenation-arrow.pagenation-prev {background: url('/img/pbb/common/gray-prev-arrow.png') no-repeat center / auto;}
 .pagenation-arrow.pagenation-next {background: url('/img/pbb/common/gray-next-arrow.png') no-repeat center / auto;}
 
