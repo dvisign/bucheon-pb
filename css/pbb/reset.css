@@ -61,6 +61,7 @@ a:visited {color:#000; text-decoration: none;}
 .display-wrap {flex-wrap: wrap;}
 .display-column {flex-direction:column}
 .flex-align-center {align-items: center;}
+.flex-align-end {align-items: flex-end;}
 .flex-justify-between {justify-content:space-between;}
 .flex-justify-end {justify-content: flex-end;}
 .flex-justify-center {justify-content: center;}

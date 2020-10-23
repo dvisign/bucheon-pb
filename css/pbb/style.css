@@ -471,9 +471,7 @@
 
 .EodsDscamtListTable:first-child {width:100px;}
 .EodsDscamtListTable:not(:first-child) {width:115px;}
-#EodsDscamtList .tab-nav-list {border-top:0;}
-#EodsDscamtList .tab-nav-items {width:calc(100% / 4);}
-#EodsDscamtList .tab-nav-items {border-top:1px solid #c5c9cd;}
+#EodsDscamtList .tab-nav-items {width:calc(100% / 9);}
 
 /* page : ReodsList.html */
 .reodsListChart {margin-bottom:30px;}
