@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <!--common-->
-    <title>현황 및 예보 > 미세먼지 수치 > 현황</title>
+    <title>부천시 미세먼지 - 시민용</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
@@ -19,17 +19,13 @@
     <link rel="icon" href="">
     <!--//common-->
     <!--css-->
-    <link href='/css/pbb/cs/jquery-ui.min.css' type='text/css' rel='stylesheet'>
-    <link href='/css/pbb/cs/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>
     <link rel="stylesheet" href="/css/pbb/cs/common.css">
     <link rel="stylesheet" href="/css/pbb/cs/customui.css">
-    <link rel="stylesheet" href="/css/pbb/cs/test_1013.css">
     <!--jquery-->
     <script src="/resources/jquery/jquery-3.5.1.min.js"></script>
-    <script type='text/javascript' src='/resources/jquery/jquery-ui.min.js'></script>
 </head>
 <body>
-<div class="wrap">
+<div id="wrap">
     <!--header-->
     <!--skip nav-->
     <a class="go_active_nav" href="#global_nav">메뉴 바로가기</a>
@@ -602,274 +598,277 @@
             </div>
         </div>
     </header>
+    <div id="questionWrap">
+        <a href="javascript:viod:(0)">
+            <div>문의하기 이미지</div>
+            문의하기
+        </a>
+    </div>
     <!--//header-->
 
-    <div id='container' class='UlfptcNclSttusList'>
-        <div class="breadcrumb_wrap">
-            <h3 class="hidden-txt">breadcrumb</h3>
-            <div>
-               <a href="/">home</a>
-               <!--
-               crumb_depth 가 multiple_depth 클래스를 가지면
-               -화살표 아이콘, hover 효과
-               -->
-               <div class="crumb_depth multiple_depth">
-                  <strong tabindex="0">산업부분</strong>
-                  <ul>
-                     <!--
-                     a 태그 class="active" 활성 표시
-                     -->
-                     <li><a href="#" class="active">대기오염배출물 사업장</a></li>
-                     <li><a href="#">대기오염배출물 사업장</a></li>
-                     <li><a href="#">대기오염배출물 사업장</a></li>
-                  </ul>
-                  <span>arrow icon</span>
-               </div>
-               <div class="crumb_depth">
-                  <strong>산업부분</strong>
-               </div>
-      
+<div id='container' class='UlfptcNclSttusList'>
+    <div class="breadcrumb_wrap">
+        <div>
+            <a href="/">home</a>
+            <!--
+            crumb_depth 가 multiple_depth 클래스를 가지면
+            -화살표 아이콘, hover 효과
+            -->
+            <div class="crumb_depth multiple_depth">
+                <strong tabindex="0">산업부분</strong>
+                <ul>
+                    <!--
+                    a 태그 class="active" 활성 표시
+                    -->
+                    <li><a href="#" class="active">대기오염배출물 사업장</a></li>
+                    <li><a href="#">대기오염배출물 사업장</a></li>
+                    <li><a href="#">대기오염배출물 사업장</a></li>
+                </ul>
+                <span>arrow icon</span>
             </div>
+            <div class="crumb_depth">
+                <strong>산업부분</strong>
+            </div>
+
         </div>
-        <div class="sub_contents">
-            <div class="subpageTitle">
+    </div>
+    <div id="subTitle">
+        <h3>미세먼지 수치 현황</h3>
+    </div>
+    <div class="sub_contents">
+        <div class="conts_section">
+            <div class="lookup_wrapper">
                 <div class="container">
-                    <h3>미세먼지 수치 현황</h3>
-                </div>
-            </div>
-            <div class="conts_section">
-                <div class="lookup_wrapper">
-                    <div class="container">
-                        <div class="lookupArea">
-                            <form>
-                                <div id="list-lookup-forms">
-                                    <div class="lookup-forms clear">
-                                        <div class="float_left">
-                                            <label class="label_text">측정일시</label>
-                                            <input type="text" class="dateForm date_picker">
-                                        </div>
-                                        <div class="float_right">
-                                            <div class="submit_btn_wrapper">
-                                                <button class="btn btn-round">조회</button>
-                                            </div>
+                    <div class="lookupArea">
+                        <form>
+                            <div id="list-lookup-forms">
+                                <div class="lookup-forms clear">
+                                    <div class="float_left">
+                                        <label class="label_text">측정일시</label>
+                                        <input type="text" class="dateForm date_picker">
+                                    </div>
+                                    <div class="float_right">
+                                        <div class="submit_btn_wrapper">
+                                            <button class="btn btn-round">조회</button>
                                         </div>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div class="conts_section">
-                <div class="boardLists">
-                    <div class="container">
-                        <table>
-                            <colgroup>
-                                <col class='dataField'>
-                                <col class='dataField'>
-                                <col class='dataField'>
-                                <col class='dataField'>
-                                <col class='dataField'>
-                                <col class='dataField'>
-                                <col class='dataField'>
-                                <col class='dataField'>
-                                <col class='dataField'>
-                            </colgroup>
-                            <thead class="boardListHeader">
-                                <tr>
-                                    <th class="text_center" rowspan='2'>
-                                        <div class="tableFieldArea">
-                                            <p>측정소</p>
-                                        </div>
-                                    </th>
-                                    <th class="text_center" colspan='2'>
-                                        <div class="tableFieldArea">
-                                            <p>통합대기환경지수</p>
-                                        </div>
-                                    </th>
-                                    <th class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p>초미세먼지</p>
-                                        </div>
-                                    </th>
-                                    <th class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p>미세먼지</p>
-                                        </div>
-                                    </th>
-                                    <th class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p>오존</p>
-                                        </div>
-                                    </th>
-                                    <th class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p>이산화질소</p>
-                                        </div>
-                                    </th>
-                                    <th class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p>일산화탄소</p>
-                                        </div>
-                                    </th>
-                                    <th class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p>아황산가스</p>
-                                        </div>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p>등급</p>
-                                        </div>
-                                    </th>
-                                    <th class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p>지수</p>
-                                        </div>
-                                    </th>
-                                    <th class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p>PM2.5</p>
-                                        </div>
-                                    </th>
-                                    <th class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p>PM10</p>
-                                        </div>
-                                    </th>
-                                    <th class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p>O3</p>
-                                        </div>
-                                    </th>
-                                    <th class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p>NO2</p>
-                                        </div>
-                                    </th>
-                                    <th class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p>CO</p>
-                                        </div>
-                                    </th>
-                                    <th class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p>SO2</p>
-                                        </div>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="boardListBody">
-                                <tr>
-                                    <td class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p><span>내동</span></p>
-                                        </div>
-                                    </td>
-                                    <td class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p><span class='lookupStatus codeGreen'></span></p>
-                                        </div>
-                                    </td>
-                                    <td class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p><span>54</span></p>
-                                        </div>
-                                    </td>
-                                    <td class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p><span>15</span></p>
-                                        </div>
-                                    </td>
-                                    <td class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p><span>21</span></p>
-                                        </div>
-                                    </td>
-                                    <td class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p><span>0.018</span></p>
-                                        </div>
-                                    </td>
-                                    <td class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p><span>0.022</span></p>
-                                        </div>
-                                    </td>
-                                    <td class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p><span>0.3</span></p>
-                                        </div>
-                                    </td>
-                                    <td class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p><span>0.002</span></p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p><span>내동</span></p>
-                                        </div>
-                                    </td>
-                                    <td class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p><span class='lookupStatus codeBlue'></span></p>
-                                        </div>
-                                    </td>
-                                    <td class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p><span>54</span></p>
-                                        </div>
-                                    </td>
-                                    <td class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p><span>15</span></p>
-                                        </div>
-                                    </td>
-                                    <td class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p><span>21</span></p>
-                                        </div>
-                                    </td>
-                                    <td class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p><span>0.018</span></p>
-                                        </div>
-                                    </td>
-                                    <td class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p><span>0.022</span></p>
-                                        </div>
-                                    </td>
-                                    <td class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p><span>0.3</span></p>
-                                        </div>
-                                    </td>
-                                    <td class="text_center">
-                                        <div class="tableFieldArea">
-                                            <p><span>0.002</span></p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="listEmpty">
-                                    <td colspan="9" class="text_center">
-                                        <div class="tableEmptyData">
-                                            <p>조회된 데이터가 없습니다.</p>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+        </div>
+        <div class="conts_section">
+            <div class="boardLists">
+                <div class="container">
+                    <table>
+                        <colgroup>
+                            <col class='dataField'>
+                            <col class='dataField'>
+                            <col class='dataField'>
+                            <col class='dataField'>
+                            <col class='dataField'>
+                            <col class='dataField'>
+                            <col class='dataField'>
+                            <col class='dataField'>
+                            <col class='dataField'>
+                        </colgroup>
+                        <thead class="boardListHeader">
+                        <tr>
+                            <th class="text_center" rowspan='2'>
+                                <div class="tableFieldArea">
+                                    <p>측정소</p>
+                                </div>
+                            </th>
+                            <th class="text_center" colspan='2'>
+                                <div class="tableFieldArea">
+                                    <p>통합대기환경지수</p>
+                                </div>
+                            </th>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>초미세먼지</p>
+                                </div>
+                            </th>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>미세먼지</p>
+                                </div>
+                            </th>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>오존</p>
+                                </div>
+                            </th>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>이산화질소</p>
+                                </div>
+                            </th>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>일산화탄소</p>
+                                </div>
+                            </th>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>아황산가스</p>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>등급</p>
+                                </div>
+                            </th>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>지수</p>
+                                </div>
+                            </th>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>PM2.5</p>
+                                </div>
+                            </th>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>PM10</p>
+                                </div>
+                            </th>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>O3</p>
+                                </div>
+                            </th>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>NO2</p>
+                                </div>
+                            </th>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>CO</p>
+                                </div>
+                            </th>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>SO2</p>
+                                </div>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody class="boardListBody">
+                        <tr>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>내동</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span class='lookupStatus codeGreen'></span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>54</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>15</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>21</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>0.018</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>0.022</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>0.3</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>0.002</span></p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>내동</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span class='lookupStatus codeBlue'></span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>54</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>15</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>21</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>0.018</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>0.022</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>0.3</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>0.002</span></p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="listEmpty">
+                            <td colspan="9" class="text_center">
+                                <div class="tableEmptyData">
+                                    <p>조회된 데이터가 없습니다.</p>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
      <!-- footer -->
      <footer id="footer_wrap">
@@ -905,29 +904,5 @@
  </div>
 <script src="/js/pbb/plugin.js"></script>
 <script src="/js/pbb/design_common.js"></script>
-<script>
-    $(document).ready(function() {
-        $('.date_picker').each(function(i) {
-            var $this = $(this);
-            $this.datepicker({
-                changeMonth: true,
-                changeYear: true, 
-                minDate: '-100y', 
-                nextText: '다음 달',
-                prevText: '이전 달',
-                numberOfMonths: [1,1],
-                stepMonths: 3,
-                yearRange: 'c-100:c+10',
-                showButtonPanel: true,  
-                currentText: '오늘 날짜',
-                closeText: '닫기', 
-                dateFormat: "yy-mm-dd",
-                showMonthAfterYear: true ,
-                dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'],
-                monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
-            });
-        });
-    })
-</script>
 </body>
 </html>

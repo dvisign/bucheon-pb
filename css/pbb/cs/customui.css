@@ -1,18 +1,18 @@
 /* NanumSquare  */
-@font-face { font-family: "NanumSquare"; font-style: normal; font-weight: 400; src: local("NanumSquareR"), url(../fonts/NanumSquareR.eot) format("eot"), url(../fonts/NanumSquareR.woff2) format("woff2"), url(../fonts/NanumSquareR.woff) format("woff"), url(../fonts/NanumSquareR.ttf) format("truetype"); }
+@font-face { font-family: "NanumSquare"; font-style: normal; font-weight: 400; src: local("NanumSquareR"), url(./fonts/NanumSquareR.eot) format("eot"), url(./fonts/NanumSquareR.woff2) format("woff2"), url(./fonts/NanumSquareR.woff) format("woff"), url(./fonts/NanumSquareR.ttf) format("truetype"); }
 
-@font-face { font-family: "NanumSquare"; font-style: normal; font-weight: 600; src: local("NanumSquareB"), url(../fonts/NanumSquareB.eot) format("eot"), url(../fonts/NanumSquareB.woff2) format("woff2"), url(../fonts/NanumSquareB.woff) format("woff"), url(../fonts/NanumSquareB.ttf) format("truetype"); }
+@font-face { font-family: "NanumSquare"; font-style: normal; font-weight: 600; src: local("NanumSquareB"), url(./fonts/NanumSquareB.eot) format("eot"), url(./fonts/NanumSquareB.woff2) format("woff2"), url(./fonts/NanumSquareB.woff) format("woff"), url(./fonts/NanumSquareB.ttf) format("truetype"); }
 
-@font-face { font-family: "NanumSquare"; font-style: normal; font-weight: 700; src: local("NanumSquareEB"), url(../fonts/NanumSquareEB.eot) format("eot"), url(../fonts/NanumSquareEB.woff) format("woff"), url(../fonts/NanumSquareEB.ttf) format("truetype"); }
+@font-face { font-family: "NanumSquare"; font-style: normal; font-weight: 700; src: local("NanumSquareEB"), url(./fonts/NanumSquareEB.eot) format("eot"), url(./fonts/NanumSquareEB.woff) format("woff"), url(./fonts/NanumSquareEB.ttf) format("truetype"); }
 
 /* Rubik */
-@font-face { font-family: "Rubik"; font-style: normal; font-weight: 400; src: local("Rubik-Light"), url(../fonts/Rubik-Light.eot) format("eot"), url(../fonts/Rubik-Light.woff) format("woff"), url(../fonts/Rubik-Light.ttf) format("truetype"); }
+@font-face { font-family: "Rubik"; font-style: normal; font-weight: 400; src: local("Rubik-Light"), url(./fonts/Rubik-Light.eot) format("eot"), url(./fonts/Rubik-Light.woff) format("woff"), url(./fonts/Rubik-Light.ttf) format("truetype"); }
 
-@font-face { font-family: "Rubik"; font-style: normal; font-weight: 600; src: local("Rubik-Regular"), url(../fonts/Rubik-Regular.eot) format("eot"), url(../fonts/Rubik-Regular.woff) format("woff"), url(../fonts/Rubik-Regular.ttf) format("truetype"); }
+@font-face { font-family: "Rubik"; font-style: normal; font-weight: 600; src: local("Rubik-Regular"), url(./fonts/Rubik-Regular.eot) format("eot"), url(./fonts/Rubik-Regular.woff) format("woff"), url(./fonts/Rubik-Regular.ttf) format("truetype"); }
 
-@font-face { font-family: "Rubik"; font-style: normal; font-weight: 700; src: local("Rubik-Medium"), url(../fonts/Rubik-Medium.eot) format("eot"), url(../fonts/Rubik-Medium.woff) format("woff"), url(../fonts/Rubik-Medium.ttf) format("truetype"); }
+@font-face { font-family: "Rubik"; font-style: normal; font-weight: 700; src: local("Rubik-Medium"), url(./fonts/Rubik-Medium.eot) format("eot"), url(./fonts/Rubik-Medium.woff) format("woff"), url(./fonts/Rubik-Medium.ttf) format("truetype"); }
 
-@font-face { font-family: "Rubik"; font-style: normal; font-weight: 800; src: local("Rubik-SemiBold"), url(../fonts/Rubik-SemiBold.eot) format("eot"), url(../fonts/Rubik-SemiBold.woff) format("woff"), url(../fonts/Rubik-SemiBold.ttf) format("truetype"); }
+@font-face { font-family: "Rubik"; font-style: normal; font-weight: 800; src: local("Rubik-SemiBold"), url(./fonts/Rubik-SemiBold.eot) format("eot"), url(./fonts/Rubik-SemiBold.woff) format("woff"), url(./fonts/Rubik-SemiBold.ttf) format("truetype"); }
 
 /* reset css */
 article, aside, footer, header, nav, section { display: block; }
