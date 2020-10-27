@@ -21,6 +21,8 @@
     <!--css-->
     <link rel="stylesheet" href="/css/pbb/cs/common.css">
     <link rel="stylesheet" href="/css/pbb/cs/customui.css">
+    <!-- css 정문채 -->
+    <link rel="stylesheet" href="/css/pbb/cs/test_1013.css">
     <!--jquery-->
     <script src="/resources/jquery/jquery-3.5.1.min.js"></script>
 </head>
@@ -637,464 +639,452 @@
             <h3>우리시 미세먼지 발생량</h3>
         </div>
         <div class="sub_contents">
-            <div class="conts_section">
-                <div class="lookup_wrapper">
-                    <div class="container">
-                        <div class="lookupArea">
-                            <form>
-                                <div id="list-lookup-forms">
-                                    <div class="lookupFormLines displayFlex flexJustifyBetween">
-                                        <div class="flexItems">
-                                            <div>
-                                                <label class="label_text">조회기간</label>
-                                                <select class="selectForm">
-                                                    <option>선택</option>
-                                                </select>
-                                                <input type="text" class="dateForm date_picker">
-                                                <span class='textDivision'>~</span>
-                                                <input type="text" class="dateForm date_picker">
-                                            </div>
-                                        </div>
-                                        <div class="flexItems">
-                                            <div class="submit_btn_wrapper">
-                                                <button class="btn btn-round">조회</button>
-                                            </div>
-                                        </div>
+            <div class="lookup_wrapper">
+                <div class="lookupArea">
+                    <form>
+                        <div id="list-lookup-forms">
+                            <div class="lookupFormLines displayFlex flexJustifyBetween">
+                                <div class="flexItems">
+                                    <div>
+                                        <label class="label_text">조회기간</label>
+                                        <select class="selectForm">
+                                            <option>선택</option>
+                                        </select>
+                                        <input type="text" class="dateForm date_picker">
+                                        <span class='textDivision'>~</span>
+                                        <input type="text" class="dateForm date_picker">
                                     </div>
                                 </div>
-                            </form>
+                                <div class="flexItems">
+                                    <div class="submit_btn_wrapper">
+                                        <button class="btn btn-round">조회</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
-            <div class="conts_section">
-                <div class="container">
-                    <div class="chartArea">
-                        <div style="height:300px; border:30px solid pink;">차트영역</div>
-                    </div>
-                </div>
+            <div class="chartArea">
+                <div style="height:300px; border:30px solid pink;">차트영역</div>
             </div>
-            <div class="conts_section">
-                <div class="boardLists">
-                    <div class="container">
-                        <table>
-                            <colgroup>
-                                <col class="chartTableData" >
-                                <col class="chartTableData" >
-                                <col class="chartTableData" >
-                                <col class="chartTableData" >
-                                <col class="chartTableData" >
-                                <col class="chartTableData" >
-                                <col class="chartTableData" >
-                                <col class="chartTableData" >
-                                <col class="chartTableData" >
-                                <col class="chartTableData" >
-                                <col class="chartTableData" >
-                                <col class="chartTableData" >
-                                <col class="chartTableData" >
-                            </colgroup>
-                            <thead class="boardListHeader">
-                            <tr>
-                                <th class="text_center" colspan="2">
-                                    <div class="tableFieldArea">
-                                        <p>일자</p>
-                                    </div>
-                                </th>
-                                <th class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p><span>2020-05-13</span></p>
-                                        <p><span>00</span>시</p>
-                                    </div>
-                                </th>
-                                <th class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p><span>2020-05-13</span></p>
-                                        <p><span>01</span>시</p>
-                                    </div>
-                                </th>
-                                <th class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p><span>2020-05-13</span></p>
-                                        <p><span>02</span>시</p>
-                                    </div>
-                                </th>
-                                <th class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p><span>2020-05-13</span></p>
-                                        <p><span>03</span>시</p>
-                                    </div>
-                                </th>
-                                <th class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p><span>2020-05-13</span></p>
-                                        <p><span>04</span>시</p>
-                                    </div>
-                                </th>
-                                <th class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p><span>2020-05-13</span></p>
-                                        <p><span>05</span>시</p>
-                                    </div>
-                                </th>
-                                <th class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p><span>2020-05-13</span></p>
-                                        <p><span>06</span>시</p>
-                                    </div>
-                                </th>
-                                <th class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p><span>2020-05-13</span></p>
-                                        <p><span>07</span>시</p>
-                                    </div>
-                                </th>
-                                <th class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p><span>2020-05-13</span></p>
-                                        <p><span>08</span>시</p>
-                                    </div>
-                                </th>
-                                <th class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p><span>2020-05-13</span></p>
-                                        <p><span>09</span>시</p>
-                                    </div>
-                                </th>
-                                <th class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p><span>2020-05-13</span></p>
-                                        <p><span>10</span>시</p>
-                                    </div>
-                                </th>
-                            </tr>
-                            </thead>
-                            <tbody class="boardListBody">
-                            <tr>
-                                <td class="text_center" rowspan="5">
-                                    <div class="tableFieldArea">
-                                        <p>미세먼지</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>내동</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>20</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>32</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>10</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>34</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>30</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>23</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>21</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>32</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>10</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>34</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>30</p>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>소사본동</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>20</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>32</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>10</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>34</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>30</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>23</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>21</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>32</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>10</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>34</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>30</p>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>송내대로</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>20</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>32</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>10</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>34</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>30</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>23</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>21</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>32</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>10</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>34</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>30</p>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>오정동</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>20</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>32</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>10</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>34</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>30</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>23</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>21</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>32</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>10</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>34</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>30</p>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>중2동</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>20</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>32</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>10</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>34</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>30</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>23</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>21</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>32</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>10</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>34</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>30</p>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="listEmpty">
-                                <td colspan="13" class="text_center">
-                                    <div class="tableEmptyData">
-                                        <p>조회된 데이터가 없습니다.</p>
-                                    </div>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+            <div class="boardLists">
+                <table>
+                    <colgroup>
+                        <col class="chartTableData" >
+                        <col class="chartTableData" >
+                        <col class="chartTableData" >
+                        <col class="chartTableData" >
+                        <col class="chartTableData" >
+                        <col class="chartTableData" >
+                        <col class="chartTableData" >
+                        <col class="chartTableData" >
+                        <col class="chartTableData" >
+                        <col class="chartTableData" >
+                        <col class="chartTableData" >
+                        <col class="chartTableData" >
+                        <col class="chartTableData" >
+                    </colgroup>
+                    <thead class="boardListHeader">
+                    <tr>
+                        <th class="text_center" colspan="2">
+                            <div class="tableFieldArea">
+                                <p>일자</p>
+                            </div>
+                        </th>
+                        <th class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>2020-05-13</span></p>
+                                <p><span>00</span>시</p>
+                            </div>
+                        </th>
+                        <th class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>2020-05-13</span></p>
+                                <p><span>01</span>시</p>
+                            </div>
+                        </th>
+                        <th class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>2020-05-13</span></p>
+                                <p><span>02</span>시</p>
+                            </div>
+                        </th>
+                        <th class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>2020-05-13</span></p>
+                                <p><span>03</span>시</p>
+                            </div>
+                        </th>
+                        <th class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>2020-05-13</span></p>
+                                <p><span>04</span>시</p>
+                            </div>
+                        </th>
+                        <th class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>2020-05-13</span></p>
+                                <p><span>05</span>시</p>
+                            </div>
+                        </th>
+                        <th class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>2020-05-13</span></p>
+                                <p><span>06</span>시</p>
+                            </div>
+                        </th>
+                        <th class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>2020-05-13</span></p>
+                                <p><span>07</span>시</p>
+                            </div>
+                        </th>
+                        <th class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>2020-05-13</span></p>
+                                <p><span>08</span>시</p>
+                            </div>
+                        </th>
+                        <th class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>2020-05-13</span></p>
+                                <p><span>09</span>시</p>
+                            </div>
+                        </th>
+                        <th class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>2020-05-13</span></p>
+                                <p><span>10</span>시</p>
+                            </div>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody class="boardListBody">
+                    <tr>
+                        <td class="text_center" rowspan="5">
+                            <div class="tableFieldArea">
+                                <p>미세먼지</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>내동</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>20</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>32</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>10</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>34</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>30</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>23</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>21</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>32</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>10</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>34</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>30</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>소사본동</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>20</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>32</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>10</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>34</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>30</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>23</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>21</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>32</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>10</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>34</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>30</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>송내대로</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>20</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>32</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>10</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>34</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>30</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>23</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>21</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>32</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>10</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>34</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>30</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>오정동</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>20</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>32</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>10</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>34</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>30</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>23</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>21</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>32</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>10</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>34</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>30</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>중2동</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>20</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>32</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>10</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>34</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>30</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>23</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>21</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>32</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>10</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>34</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>30</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="listEmpty">
+                        <td colspan="13" class="text_center">
+                            <div class="tableEmptyData">
+                                <p>조회된 데이터가 없습니다.</p>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

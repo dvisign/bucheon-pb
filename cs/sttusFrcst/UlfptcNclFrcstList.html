@@ -21,6 +21,8 @@
     <!--css-->
     <link rel="stylesheet" href="/css/pbb/cs/common.css">
     <link rel="stylesheet" href="/css/pbb/cs/customui.css">
+    <!-- css 정문채 -->
+    <link rel="stylesheet" href="/css/pbb/cs/test_1013.css">
     <!--jquery-->
     <script src="/resources/jquery/jquery-3.5.1.min.js"></script>
 </head>
@@ -637,526 +639,510 @@
         <h3>우리동네 미세먼지 예보</h3>
     </div>
     <div class="sub_contents">
-        <div class="conts_section">
-            <div class="lookup_wrapper">
-                <div class="container">
-                    <div class="lookupArea">
-                        <form>
-                            <div id="list-lookup-forms">
-                                <div class="lookup-forms clear">
-                                    <div class="float_left">
-                                        <label class="label_text">측정일시</label>
-                                        <input type="text" class="dateForm date_picker">
-                                    </div>
-                                    <div class="float_right">
-                                        <div class="submit_btn_wrapper">
-                                            <button class="btn btn-round">조회</button>
-                                        </div>
-                                    </div>
+        <div class="lookup_wrapper">
+            <div class="lookupArea">
+                <form>
+                    <div id="list-lookup-forms">
+                        <div class="lookup-forms clear">
+                            <div class="float_left">
+                                <label class="label_text">측정일시</label>
+                                <input type="text" class="dateForm date_picker">
+                            </div>
+                            <div class="float_right">
+                                <div class="submit_btn_wrapper">
+                                    <button class="btn btn-round">조회</button>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
-        <div class="conts_section">
-            <div class="boardLists">
-                <div class="container">
-                    <div class="subpageSectionTitle">
-                        <h4>예보일시 <span>2020-06-25</span></h4>
-                    </div>
-                    <div class="introText">
-                        <p>미세먼지 예보 등급은 PM10과 PM2.5중 높은 등급을 기준으로 발표됨.</p>
-                    </div>
-                    <table>
-                        <colgroup>
-                            <col class="dataField">
-                            <col class="dataField">
-                            <col class="dataField">
-                            <col class="dataField">
-                            <col class="dataField">
-                            <col class="dataField">
-                        </colgroup>
-                        <thead class="boardListHeader">
-                        <tr>
-                            <th class="text_center" rowspan="3">
-                                <div class="tableFieldArea">
-                                    <p>구분</p>
-                                </div>
-                            </th>
-                            <th class="text_center" colspan="6">
-                                <div class="tableFieldArea">
-                                    <p>오늘(<span>2020-06-25</span>)</p>
-                                </div>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th class="text_center" colspan="2">
-                                <div class="tableFieldArea">
-                                    <p>경기</p>
-                                </div>
-                            </th>
-                            <th class="text_center" rowspan="2" colspan="2">
-                                <div class="tableFieldArea">
-                                    <p>서울</p>
-                                </div>
-                            </th>
-                            <th class="text_center" rowspan="2" colspan="2">
-                                <div class="tableFieldArea">
-                                    <p>인천</p>
-                                </div>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th class="text_center">
-                                <div class="tableFieldArea">
-                                    <p>북부</p>
-                                </div>
-                            </th>
-                            <th class="text_center">
-                                <div class="tableFieldArea">
-                                    <p>남부<br>(부천포함)</p>
-                                </div>
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody class="boardListBody">
-                        <tr>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>미세먼지</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>PM10</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>PM2.5</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="listEmpty">
-                            <td colspan="7" class="text_center">
-                                <div class="tableEmptyData">
-                                    <p>조회된 데이터가 없습니다.</p>
-                                </div>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
+        <div class="boardLists">
+            <div class="subpageSectionTitle">
+                <h4>예보일시 <span>2020-06-25</span></h4>
             </div>
+            <div class="introText">
+                <p>미세먼지 예보 등급은 PM10과 PM2.5중 높은 등급을 기준으로 발표됨.</p>
+            </div>
+            <table>
+                <colgroup>
+                    <col class="dataField">
+                    <col class="dataField">
+                    <col class="dataField">
+                    <col class="dataField">
+                    <col class="dataField">
+                    <col class="dataField">
+                </colgroup>
+                <thead class="boardListHeader">
+                <tr>
+                    <th class="text_center" rowspan="3">
+                        <div class="tableFieldArea">
+                            <p>구분</p>
+                        </div>
+                    </th>
+                    <th class="text_center" colspan="6">
+                        <div class="tableFieldArea">
+                            <p>오늘(<span>2020-06-25</span>)</p>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="text_center" colspan="2">
+                        <div class="tableFieldArea">
+                            <p>경기</p>
+                        </div>
+                    </th>
+                    <th class="text_center" rowspan="2" colspan="2">
+                        <div class="tableFieldArea">
+                            <p>서울</p>
+                        </div>
+                    </th>
+                    <th class="text_center" rowspan="2" colspan="2">
+                        <div class="tableFieldArea">
+                            <p>인천</p>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="text_center">
+                        <div class="tableFieldArea">
+                            <p>북부</p>
+                        </div>
+                    </th>
+                    <th class="text_center">
+                        <div class="tableFieldArea">
+                            <p>남부<br>(부천포함)</p>
+                        </div>
+                    </th>
+                </tr>
+                </thead>
+                <tbody class="boardListBody">
+                <tr>
+                    <td class="text_center">
+                        <div class="tableFieldArea">
+                            <p><span>미세먼지</span></p>
+                        </div>
+                    </td>
+                    <td class="text_center">
+                        <div class="tableFieldArea">
+                            <p><span>보통</span></p>
+                        </div>
+                    </td>
+                    <td class="text_center">
+                        <div class="tableFieldArea">
+                            <p><span>보통</span></p>
+                        </div>
+                    </td>
+                    <td class="text_center">
+                        <div class="tableFieldArea">
+                            <p><span>보통</span></p>
+                        </div>
+                    </td>
+                    <td class="text_center">
+                        <div class="tableFieldArea">
+                            <p><span>보통</span></p>
+                        </div>
+                    </td>
+                    <td class="text_center">
+                        <div class="tableFieldArea">
+                            <p><span>보통</span></p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text_center">
+                        <div class="tableFieldArea">
+                            <p><span>PM10</span></p>
+                        </div>
+                    </td>
+                    <td class="text_center">
+                        <div class="tableFieldArea">
+                            <p><span>보통</span></p>
+                        </div>
+                    </td>
+                    <td class="text_center">
+                        <div class="tableFieldArea">
+                            <p><span>보통</span></p>
+                        </div>
+                    </td>
+                    <td class="text_center">
+                        <div class="tableFieldArea">
+                            <p><span>보통</span></p>
+                        </div>
+                    </td>
+                    <td class="text_center">
+                        <div class="tableFieldArea">
+                            <p><span>보통</span></p>
+                        </div>
+                    </td>
+                    <td class="text_center">
+                        <div class="tableFieldArea">
+                            <p><span>보통</span></p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text_center">
+                        <div class="tableFieldArea">
+                            <p><span>PM2.5</span></p>
+                        </div>
+                    </td>
+                    <td class="text_center">
+                        <div class="tableFieldArea">
+                            <p><span>보통</span></p>
+                        </div>
+                    </td>
+                    <td class="text_center">
+                        <div class="tableFieldArea">
+                            <p><span>보통</span></p>
+                        </div>
+                    </td>
+                    <td class="text_center">
+                        <div class="tableFieldArea">
+                            <p><span>보통</span></p>
+                        </div>
+                    </td>
+                    <td class="text_center">
+                        <div class="tableFieldArea">
+                            <p><span>보통</span></p>
+                        </div>
+                    </td>
+                    <td class="text_center">
+                        <div class="tableFieldArea">
+                            <p><span>보통</span></p>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="listEmpty">
+                    <td colspan="7" class="text_center">
+                        <div class="tableEmptyData">
+                            <p>조회된 데이터가 없습니다.</p>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="conts_section">
-            <div class="boardLists">
-                <div class="container">
-                    <table>
-                        <colgroup>
-                            <col class="dataField">
-                            <col class="dataField">
-                            <col class="dataField">
-                            <col class="dataField">
-                            <col class="dataField">
-                            <col class="dataField">
-                        </colgroup>
-                        <thead class="boardListHeader">
-                        <tr>
-                            <th class="text_center" rowspan="3">
-                                <div class="tableFieldArea">
-                                    <p>구분</p>
-                                </div>
-                            </th>
-                            <th class="text_center" colspan="6">
-                                <div class="tableFieldArea">
-                                    <p>내일(<span>2020-06-26</span>)</p>
-                                </div>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th class="text_center" colspan="2">
-                                <div class="tableFieldArea">
-                                    <p>경기</p>
-                                </div>
-                            </th>
-                            <th class="text_center" rowspan="2" colspan="2">
-                                <div class="tableFieldArea">
-                                    <p>서울</p>
-                                </div>
-                            </th>
-                            <th class="text_center" rowspan="2" colspan="2">
-                                <div class="tableFieldArea">
-                                    <p>인천</p>
-                                </div>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th class="text_center">
-                                <div class="tableFieldArea">
-                                    <p>북부</p>
-                                </div>
-                            </th>
-                            <th class="text_center">
-                                <div class="tableFieldArea">
-                                    <p>남부<br>(부천포함)</p>
-                                </div>
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody class="boardListBody">
-                        <tr>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>미세먼지</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>PM10</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>PM2.5</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="listEmpty">
-                            <td colspan="7" class="text_center">
-                                <div class="tableEmptyData">
-                                    <p>조회된 데이터가 없습니다.</p>
-                                </div>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+        <div class="boardLists">
+            <table>
+                <colgroup>
+                    <col class="dataField">
+                    <col class="dataField">
+                    <col class="dataField">
+                    <col class="dataField">
+                    <col class="dataField">
+                    <col class="dataField">
+                </colgroup>
+                <thead class="boardListHeader">
+                    <tr>
+                        <th class="text_center" rowspan="3">
+                            <div class="tableFieldArea">
+                                <p>구분</p>
+                            </div>
+                        </th>
+                        <th class="text_center" colspan="6">
+                            <div class="tableFieldArea">
+                                <p>내일(<span>2020-06-26</span>)</p>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="text_center" colspan="2">
+                            <div class="tableFieldArea">
+                                <p>경기</p>
+                            </div>
+                        </th>
+                        <th class="text_center" rowspan="2" colspan="2">
+                            <div class="tableFieldArea">
+                                <p>서울</p>
+                            </div>
+                        </th>
+                        <th class="text_center" rowspan="2" colspan="2">
+                            <div class="tableFieldArea">
+                                <p>인천</p>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="text_center">
+                            <div class="tableFieldArea">
+                                <p>북부</p>
+                            </div>
+                        </th>
+                        <th class="text_center">
+                            <div class="tableFieldArea">
+                                <p>남부<br>(부천포함)</p>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="boardListBody">
+                    <tr>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>미세먼지</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>PM10</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>PM2.5</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="listEmpty">
+                        <td colspan="7" class="text_center">
+                            <div class="tableEmptyData">
+                                <p>조회된 데이터가 없습니다.</p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="conts_section">
-            <div class="boardLists">
-                <div class="container">
-                    <table>
-                        <colgroup>
-                            <col class="dataField">
-                            <col class="dataField">
-                            <col class="dataField">
-                            <col class="dataField">
-                            <col class="dataField">
-                            <col class="dataField">
-                        </colgroup>
-                        <thead class="boardListHeader">
-                        <tr>
-                            <th class="text_center" rowspan="3">
-                                <div class="tableFieldArea">
-                                    <p>구분</p>
-                                </div>
-                            </th>
-                            <th class="text_center" colspan="6">
-                                <div class="tableFieldArea">
-                                    <p>모래(<span>2020-06-28</span>)</p>
-                                </div>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th class="text_center" colspan="2">
-                                <div class="tableFieldArea">
-                                    <p>경기</p>
-                                </div>
-                            </th>
-                            <th class="text_center" rowspan="2" colspan="2">
-                                <div class="tableFieldArea">
-                                    <p>서울</p>
-                                </div>
-                            </th>
-                            <th class="text_center" rowspan="2" colspan="2">
-                                <div class="tableFieldArea">
-                                    <p>인천</p>
-                                </div>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th class="text_center">
-                                <div class="tableFieldArea">
-                                    <p>북부</p>
-                                </div>
-                            </th>
-                            <th class="text_center">
-                                <div class="tableFieldArea">
-                                    <p>남부<br>(부천포함)</p>
-                                </div>
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody class="boardListBody">
-                        <tr>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>미세먼지</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>PM10</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>PM2.5</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                            <td class="text_center">
-                                <div class="tableFieldArea">
-                                    <p><span>보통</span></p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="listEmpty">
-                            <td colspan="7" class="text_center">
-                                <div class="tableEmptyData">
-                                    <p>모래 예보는 17시에 발표됩니다.</p>
-                                </div>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+        <div class="boardLists">
+            <table>
+                <colgroup>
+                    <col class="dataField">
+                    <col class="dataField">
+                    <col class="dataField">
+                    <col class="dataField">
+                    <col class="dataField">
+                    <col class="dataField">
+                </colgroup>
+                <thead class="boardListHeader">
+                    <tr>
+                        <th class="text_center" rowspan="3">
+                            <div class="tableFieldArea">
+                                <p>구분</p>
+                            </div>
+                        </th>
+                        <th class="text_center" colspan="6">
+                            <div class="tableFieldArea">
+                                <p>모래(<span>2020-06-28</span>)</p>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="text_center" colspan="2">
+                            <div class="tableFieldArea">
+                                <p>경기</p>
+                            </div>
+                        </th>
+                        <th class="text_center" rowspan="2" colspan="2">
+                            <div class="tableFieldArea">
+                                <p>서울</p>
+                            </div>
+                        </th>
+                        <th class="text_center" rowspan="2" colspan="2">
+                            <div class="tableFieldArea">
+                                <p>인천</p>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="text_center">
+                            <div class="tableFieldArea">
+                                <p>북부</p>
+                            </div>
+                        </th>
+                        <th class="text_center">
+                            <div class="tableFieldArea">
+                                <p>남부<br>(부천포함)</p>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="boardListBody">
+                    <tr>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>미세먼지</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>PM10</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>PM2.5</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>보통</span></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="listEmpty">
+                        <td colspan="7" class="text_center">
+                            <div class="tableEmptyData">
+                                <p>모래 예보는 17시에 발표됩니다.</p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

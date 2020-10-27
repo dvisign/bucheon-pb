@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -21,8 +22,13 @@
     <!--css-->
     <link rel="stylesheet" href="/css/pbb/cs/common.css">
     <link rel="stylesheet" href="/css/pbb/cs/customui.css">
+    <!-- css 정문채 -->
+    <link rel="stylesheet" href="/css/pbb/cs/test_1013.css">
     <!--jquery-->
     <script src="/resources/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/resources/jquery/jquery-ui.min.js"></script>
+    <script src="/resources/jquery/jquery-ui-timepicker-addon.js"></script>
+
 </head>
 <body>
 <div id="wrap">
@@ -597,18 +603,439 @@
                 </ul>
             </div>
         </div>
+        <div id="questionWrap">
+            <a href="javascript:viod:(0)">
+                <div>문의하기 이미지</div>
+                문의하기
+            </a>
+        </div>
     </header>
-    <div id="questionWrap">
-        <a href="javascript:viod:(0)">
-            <div>문의하기 이미지</div>
-            문의하기
-        </a>
-    </div>
     <!--//header-->
 
-<div>
-
-</div>
+    <!--container-->
+    <div id="container" class="MyEdcSchdulCldrList">
+        <div class="breadcrumb_wrap">
+            <div>
+                <a href="/">home</a>
+                <!--
+                crumb_depth 가 multiple_depth 클래스를 가지면
+                -화살표 아이콘, hover 효과
+                -->
+                <div class="crumb_depth multiple_depth">
+                    <strong tabindex="0">산업부분</strong>
+                    <ul>
+                        <!--**a 태그 class="active" 현재 페이지 활성 표시-->
+                        <li><a href="#" class="active">대기오염배출물 사업장</a></li>
+                        <li><a href="#">대기오염배출물 사업장</a></li>
+                        <li><a href="#">대기오염배출물 사업장</a></li>
+                    </ul>
+                    <span>arrow icon</span>
+                </div>
+                <div class="crumb_depth ">
+                    <strong>산업부분</strong>
+                </div>
+            </div>
+        </div>
+        <div id="subTitle">
+            <h3>찾아가는 미세먼지 교실</h3>
+        </div>
+        <div class="sub_contents">
+            <!--**안내 영역은 작업시 style 지워주세요-->
+            <div class="schdulCldrListLookup_wrap">
+                <table>
+                    <colgroup>
+                        <col width="160px">
+                    </colgroup>
+                    <tbody>
+                    <tr>
+                        <th>조회일자</th>
+                        <td>
+                            <div class="lookupLines">
+                                <input type="text" class="dateForm date_picker">
+                                <span class="textDivision">~</span>
+                                <input type="text" class="dateForm date_picker">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>조회내용</th>
+                        <td>
+                            <div class="lookupLines">
+                                <select class="selectForm" style="width:20%;">
+                                    <option>유형 선택</option>
+                                </select>
+                                <input type="text" class="textForm" style="width:70%; margin:0 0 0 2%;">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>교육차수</th>
+                        <td>
+                            <label class="radioLabel">
+                                <input type="radio" class="radioForm" name="test1" checked="">
+                                <span class="radioImg"></span>
+                                <span class="label_text">전체</span>
+                            </label>
+                            <label class="radioLabel">
+                                <input type="radio" class="radioForm" name="test1">
+                                <span class="radioImg"></span>
+                                <span class="label_text">1차</span>
+                            </label>
+                            <label class="radioLabel">
+                                <input type="radio" class="radioForm" name="test1">
+                                <span class="radioImg"></span>
+                                <span class="label_text">2차</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>교육신청상태</th>
+                        <td>
+                            <label class="radioLabel">
+                                <input type="radio" class="radioForm" name="test2" checked="">
+                                <span class="radioImg"></span>
+                                <span class="label_text">전체</span>
+                            </label>
+                            <label class="radioLabel">
+                                <input type="radio" class="radioForm" name="test2">
+                                <span class="radioImg"></span>
+                                <span class="label_text">승인대기</span>
+                            </label>
+                            <label class="radioLabel">
+                                <input type="radio" class="radioForm" name="test2">
+                                <span class="radioImg"></span>
+                                <span class="label_text">승인완료</span>
+                            </label>
+                            <label class="radioLabel">
+                                <input type="radio" class="radioForm" name="test2">
+                                <span class="radioImg"></span>
+                                <span class="label_text">승인취소</span>
+                            </label>
+                            <label class="radioLabel">
+                                <input type="radio" class="radioForm" name="test2">
+                                <span class="radioImg"></span>
+                                <span class="label_text">교육완료</span>
+                            </label>
+                            <label class="radioLabel">
+                                <input type="radio" class="radioForm" name="test2">
+                                <span class="radioImg"></span>
+                                <span class="label_text">수료확인</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>교육상태</th>
+                        <td>
+                            <label class="radioLabel">
+                                <input type="radio" class="radioForm" name="test3" checked="">
+                                <span class="radioImg"></span>
+                                <span class="label_text">전체</span>
+                            </label>
+                            <label class="radioLabel">
+                                <input type="radio" class="radioForm" name="test3">
+                                <span class="radioImg"></span>
+                                <span class="label_text">교육완료</span>
+                            </label>
+                            <label class="radioLabel">
+                                <input type="radio" class="radioForm" name="test3">
+                                <span class="radioImg"></span>
+                                <span class="label_text">수료확인</span>
+                            </label>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="cta_wrap">
+                    <button type="button" class="active">조회</button>
+                    <a href="javascript:viod(0)" class="cta_btn">등록</a>
+                    <a href="javascript:viod(0)" class="cta_btn">캘린더 보기</a>
+                </div>
+            </div>
+            <div class="schdulCldrList_wrap boardLists">
+                <div class="boardListSet displayFlex flexAlignCenter flexJustifyBetween">
+                    <div class="listCount">
+                        <p>
+                            <span>조회결과 : </span>
+                            <span class="listCountData">9,999</span>건
+                        </p>
+                    </div>
+                    <div class="listViewSelector">
+                        <select class="selectForm">
+                            <option>50개 출력</option>
+                            <option>100개 출력</option>
+                            <option>150개 출력</option>
+                            <option>200개 출력</option>
+                        </select>
+                    </div>
+                </div>
+                <table>
+                    <colgroup>
+                        <col width="60px">
+                        <col>
+                        <col>
+                        <col width="100px">
+                        <col width="100px">
+                        <col width="100px">
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead class="boardListHeader">
+                        <tr>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>순번</p>
+                                </div>
+                            </th>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>신청일자</p>
+                                </div>
+                            </th>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>신청초등학교</p>
+                                </div>
+                            </th>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>학년</p>
+                                </div>
+                            </th>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>반</p>
+                                </div>
+                            </th>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>교육차수</p>
+                                </div>
+                            </th>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>교육신청상태</p>
+                                </div>
+                            </th>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>교육상태</p>
+                                </div>
+                            </th>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>교육변화</p>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="boardListBody">
+                        <tr>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>1</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>2020-06-19</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span><a href="javascript:void(0)">상동초등학교</a></span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>4</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>2</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>1차</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>승인대기</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center"></td>
+                            <td class="text_center"></td>
+                        </tr>
+                        <tr>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>1</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>2020-06-19</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span><a href="javascript:void(0)">산중동초등학교</a></span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>4</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>2</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>2차</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span style="opacity:.5">승인취소</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center"></td>
+                            <td class="text_center"></td>
+                        </tr>
+                        <tr>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>1</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>2020-06-19</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span><a href="javascript:void(0)">상동초등학교</a></span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>4</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>2</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>1차</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>승인대기</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>수료확인</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <button type="button" class="edc_more">교육결과보기</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>1</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>2020-06-19</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span><a href="javascript:void(0)">상동초등학교</a></span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>4</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>2</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>1차</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>승인대기</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center"></td>
+                            <td class="text_center"></td>
+                        </tr>
+                        <tr class="listEmpty">
+                            <td colspan="9" class="text_center">
+                                <div class="tableEmptyData">
+                                    <p>조회된 데이터가 없습니다.</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pagenation-wrapper">
+                    <a href="javascript:void(0);" class="pagenation-arrow pagenation-prev">
+                        <span class="sound-only">이전페이지</span>
+                    </a>
+                    <div class="pagenation-items active">
+                        <a href="javascript:void(0);">1</a>
+                    </div>
+                    <div class="pagenation-items">
+                        <a href="javascript:void(0);">2</a>
+                    </div>
+                    <div class="pagenation-items">
+                        <a href="javascript:void(0);">3</a>
+                    </div>
+                    <div class="pagenation-items">
+                        <a href="javascript:void(0);">4</a>
+                    </div>
+                    <div class="pagenation-items">
+                        <a href="javascript:void(0);">5</a>
+                    </div>
+                    <div class="pagenation-items">
+                        <a href="javascript:void(0);">6</a>
+                    </div>
+                    <div class="pagenation-items">
+                        <a href="javascript:void(0);">7</a>
+                    </div>
+                    <a href="javascript:void(0);" class="pagenation-arrow pagenation-next">
+                        <span class="sound-only">다음페이지</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//container-->
 
      <!-- footer -->
      <footer id="footer_wrap">

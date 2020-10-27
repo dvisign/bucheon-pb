@@ -21,6 +21,8 @@
     <!--css-->
     <link rel="stylesheet" href="/css/pbb/cs/common.css">
     <link rel="stylesheet" href="/css/pbb/cs/customui.css">
+    <!-- css 정문채 -->
+    <link rel="stylesheet" href="/css/pbb/cs/test_1013.css">
     <!--jquery-->
     <script src="/resources/jquery/jquery-3.5.1.min.js"></script>
 </head>
@@ -637,168 +639,155 @@
             <h3>우리시 미세먼지 저감활동 보고
         </div>
         <div class="sub_contents">
-
-            <div class="conts_section">
-                <div class="lookup_wrapper">
-                    <div class="container">
-                        <div class="lookupArea">
-                            <form>
-                                <div id="list-lookup-forms">
-                                    <div class="lookupFormLines displayFlex flexJustifyBetween">
-                                        <div class="flexItems">
-                                            <div>
-                                                <label class="label_text">조회년도</label>
-                                                <input type="text" class="dateForm date_picker">
-                                            </div>
-                                        </div>
-                                        <div class="flexItems">
-                                            <div class="submit_btn_wrapper">
-                                                <button class="btn btn-round">조회</button>
-                                            </div>
-                                        </div>
+            <div class="lookup_wrapper">
+                <div class="lookupArea">
+                    <form>
+                        <div id="list-lookup-forms">
+                            <div class="lookupFormLines displayFlex flexJustifyBetween">
+                                <div class="flexItems">
+                                    <div>
+                                        <label class="label_text">조회년도</label>
+                                        <input type="text" class="dateForm date_picker">
                                     </div>
                                 </div>
-                            </form>
+                                <div class="flexItems">
+                                    <div class="submit_btn_wrapper">
+                                        <button class="btn btn-round">조회</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
-            <div class="conts_section">
-                <div class="boardLists">
-                    <div class="container">
+            <div class="boardLists">
+                <div class="subpageSectionTitle">
+                    <h4>2020년 저감활동 건수</h4>
+                </div>
+                <table>
+                    <colgroup>
+                        <col class="chartTableData" >
+                        <col class="chartTableData" >
+                        <col class="chartTableData" >
+                        <col class="chartTableData" >
+                        <col class="chartTableData" >
+                        <col class="chartTableData" >
+                        <col class="chartTableData" >
+                    </colgroup>
+                    <thead class="boardListHeader">
+                    <tr>
+                        <th class="text_center">
+                            <div class="tableFieldArea">
+                                <p>저감활동</p>
+                            </div>
+                        </th>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>청소차량 가동</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>살수차량 가동</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>통학로 쿨링포그 가동</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>건식집진기 가동</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>지능형 분무기 가동</p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p>미세먼지 교육</p>
+                            </div>
+                        </td>
+                    </tr>
+                    </thead>
+                    <tbody class="boardListBody">
+                    <tr>
+                        <th class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>2020</span>년</p>
+                            </div>
+                        </th>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>20</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>32</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>10</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>34</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>30</span></p>
+                            </div>
+                        </td>
+                        <td class="text_center">
+                            <div class="tableFieldArea">
+                                <p><span>23</span></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="listEmpty">
+                        <td colspan="7" class="text_center">
+                            <div class="tableEmptyData">
+                                <p>조회된 데이터가 없습니다.</p>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="chartSections">
+                <div class="subpageSectionTitle">
+                    <h4>전년대비 월별 미세먼지 변화량</h4>
+                </div>
+                <div class="chartArea">
+                    <div style="height:300px; border:30px solid pink;">차트영역</div>
+                </div>
+            </div>
+            <div class="chartSections">
+                <div class="subpageSectionTitle">
+                    <h4>부천시 전년대비 배출원별 농도 비교</h4>
+                </div>
+                <div class="consistencyCompareChart clear">
+                    <div class="consistencyCompareChartAreas float_left">
                         <div class="subpageSectionTitle">
-                            <h4>2020년 저감활동 건수</h4>
+                            <h4>2018년</h4>
                         </div>
-                        <table>
-                            <colgroup>
-                                <col class="chartTableData" >
-                                <col class="chartTableData" >
-                                <col class="chartTableData" >
-                                <col class="chartTableData" >
-                                <col class="chartTableData" >
-                                <col class="chartTableData" >
-                                <col class="chartTableData" >
-                            </colgroup>
-                            <thead class="boardListHeader">
-                            <tr>
-                                <th class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>저감활동</p>
-                                    </div>
-                                </th>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>청소차량 가동</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>살수차량 가동</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>통학로 쿨링포그 가동</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>건식집진기 가동</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>지능형 분무기 가동</p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p>미세먼지 교육</p>
-                                    </div>
-                                </td>
-                            </tr>
-                            </thead>
-                            <tbody class="boardListBody">
-                            <tr>
-                                <th class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p><span>2020</span>년</p>
-                                    </div>
-                                </th>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p><span>20</span></p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p><span>32</span></p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p><span>10</span></p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p><span>34</span></p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p><span>30</span></p>
-                                    </div>
-                                </td>
-                                <td class="text_center">
-                                    <div class="tableFieldArea">
-                                        <p><span>23</span></p>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="listEmpty">
-                                <td colspan="7" class="text_center">
-                                    <div class="tableEmptyData">
-                                        <p>조회된 데이터가 없습니다.</p>
-                                    </div>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="conts_section">
-                <div class="container">
-                    <div class="subpageSectionTitle">
-                        <h4>전년대비 월별 미세먼지 변화량</h4>
-                    </div>
-                    <div class="chartArea">
-                        <div style="height:300px; border:30px solid pink;">차트영역</div>
-                    </div>
-                </div>
-            </div>
-            <div class="conts_section">
-                <div class="container">
-                    <div class="subpageSectionTitle">
-                        <h4>부천시 전년대비 배출원별 농도 비교</h4>
-                    </div>
-                    <div class="consistencyCompareChart clear">
-                        <div class="consistencyCompareChartAreas float_left">
-                            <div class="subpageSectionTitle">
-                                <h4>2018년</h4>
-                            </div>
-                            <div class="chartArea">
-                                <div style="height:300px; border:30px solid pink;">차트영역</div>
-                            </div>
+                        <div class="chartArea">
+                            <div style="height:300px; border:30px solid pink;">차트영역</div>
                         </div>
-                        <div class="consistencyCompareChartAreas float_left">
-                            <div class="subpageSectionTitle">
-                                <h4>2019년</h4>
-                            </div>
-                            <div class="chartArea">
-                                <div style="height:300px; border:30px solid pink;">차트영역</div>
-                            </div>
+                    </div>
+                    <div class="consistencyCompareChartAreas float_left">
+                        <div class="subpageSectionTitle">
+                            <h4>2019년</h4>
+                        </div>
+                        <div class="chartArea">
+                            <div style="height:300px; border:30px solid pink;">차트영역</div>
                         </div>
                     </div>
                 </div>

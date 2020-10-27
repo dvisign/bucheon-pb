@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <!--common-->
     <title>부천시 미세먼지 - 시민용</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <meta name="title" content="">
     <meta name="Description" content="">
     <meta name="Keywords" content="">
@@ -21,628 +23,1111 @@
     <!--css-->
     <link rel="stylesheet" href="/css/pbb/cs/common.css">
     <link rel="stylesheet" href="/css/pbb/cs/customui.css">
+    <!-- css 정문채 -->
+    <link rel="stylesheet" href="/css/pbb/cs/test_1013.css">
     <!--jquery-->
     <script src="/resources/jquery/jquery-3.5.1.min.js"></script>
+    <!-- handlebars -->
+    <script src="/resources/handlebars/handlebars.min-v4.7.6.js"></script>
+    <script src="/resources/handlebars/handlebars-helper.js"></script>
 </head>
+
 <body>
-<div id="wrap">
-    <!--header-->
-    <!--skip nav-->
-    <a class="go_active_nav" href="#global_nav">메뉴 바로가기</a>
-    <a class="go_active_content" href="#container">본문 바로가기</a>
-    <!--//skip nav-->
-    <header id="globalHeader">
-        <div class="header_wrap">
-            <h1><a href="/"><img src="/img/cs/layout/logo.jpg" alt="판타지아 부천 로고"></a></h1>
-            <nav id="globalNav">
-                <button class="close_btn">close</button>
-                <h2 class="hidden-txt">global navigation</h2>
-                <!--**button open 클래스를 가지면 active-->
-                <!--**페이지 이동 a태그 class="active" 경우 active 활성화-->
-                <ul class="gnb_wrap">
-                    <li>
-                        <a href="#">우리시 미세먼지 발생량</a>
-                        <dlv class="depth_wrap">
-                            <div class="depth_list">
-                                <div class="depth2">
-                                    <a href="#" class="active">산업부문</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">대기오염배출물 사업장</a></li>
-                                        <li><a href="#">굴뚝 자동측정기 사업장</a></li>
-                                        <li><a href="#">비산먼지 발생</a></li>
-                                    </ul>
+    <div id="wrap">
+        <!--header-->
+        <!--skip nav-->
+        <a class="go_active_nav" href="#global_nav">메뉴 바로가기</a>
+        <a class="go_active_content" href="#container">본문 바로가기</a>
+        <!--//skip nav-->
+        <header id="globalHeader">
+            <div class="header_wrap">
+                <h1><a href="/"><img src="/img/cs/layout/logo.jpg" alt="판타지아 부천 로고"></a></h1>
+                <nav id="globalNav">
+                    <button class="close_btn">close</button>
+                    <h2 class="hidden-txt">global navigation</h2>
+                    <!--**button open 클래스를 가지면 active-->
+                    <!--**페이지 이동 a태그 class="active" 경우 active 활성화-->
+                    <ul class="gnb_wrap">
+                        <li>
+                            <a href="#">우리시 미세먼지 발생량</a>
+                            <dlv class="depth_wrap">
+                                <div class="depth_list">
+                                    <div class="depth2">
+                                        <a href="#" class="active">산업부문</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">대기오염배출물 사업장</a></li>
+                                            <li><a href="#">굴뚝 자동측정기 사업장</a></li>
+                                            <li><a href="#">비산먼지 발생</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">수송부문</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">재비산먼지</a></li>
+                                            <li><a href="#">노후 경유차량</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">생활부문</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">매립/소각</a></li>
+                                            <li><a href="#">산불징후</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="depth2">
-                                    <a href="#">수송부문</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">재비산먼지</a></li>
-                                        <li><a href="#">노후 경유차량</a></li>
-                                    </ul>
+                            </dlv>
+                        </li>
+                        <li>
+                            <a href="#">현황 및 예보</a>
+                            <dlv class="depth_wrap">
+                                <div class="depth_list">
+                                    <div class="depth2">
+                                        <a href="#">미세먼지 수치</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">현황</a></li>
+                                            <li><a href="#">예보</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">미세먼지 지수구간</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">지수정보</a></li>
+                                            <li><a href="#">행동요령</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="depth2">
-                                    <a href="#">생활부문</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">매립/소각</a></li>
-                                        <li><a href="#">산불징후</a></li>
-                                    </ul>
+                            </dlv>
+                        </li>
+                        <li>
+                            <a href="#">우리시 저감활동</a>
+                            <dlv class="depth_wrap">
+                                <div class="depth_list">
+                                    <div class="depth2">
+                                        <a href="#">미세먼지 대응 정책</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">미세먼지 비상저감조치</a></li>
+                                            <li><a href="#">미세먼지 경보제</a></li>
+                                            <li><a href="#">미세먼지 대응 추진실적</a></li>
+                                            <li><a href="#">우리시 미세먼지 대책담당관</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">스마트 미세먼지 클린 특화단지 조성사업</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">우리동네 미세먼지 정보 제공</a></li>
+                                            <li><a href="#">공업단지 비산먼지 저감</a></li>
+                                            <li><a href="#">통학로 청정-안심 공기 제공</a></li>
+                                            <li><a href="#">지하철 미세먼지 저감</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">미세먼지 대응 추진사업</a>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">우리시 미세먼지 저감 활동내역</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </dlv>
-                    </li>
-                    <li>
-                        <a href="#">현황 및 예보</a>
-                        <dlv class="depth_wrap">
-                            <div class="depth_list">
-                                <div class="depth2">
-                                    <a href="#">미세먼지 수치</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">현황</a></li>
-                                        <li><a href="#">예보</a></li>
-                                    </ul>
+                            </dlv>
+                        </li>
+                        <li>
+                            <a href="#">저감효과 및 추이</a>
+                            <dlv class="depth_wrap">
+                                <div class="depth_list">
+                                    <div class="depth2">
+                                        <a href="#">우리시 미세먼지 발생량</a>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">우리시 미세먼지 저감활동 효과 보고</a>
+                                    </div>
                                 </div>
-                                <div class="depth2">
-                                    <a href="#">미세먼지 지수구간</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">지수정보</a></li>
-                                        <li><a href="#">행동요령</a></li>
-                                    </ul>
+                            </dlv>
+                        </li>
+                        <li>
+                            <a href="#">시민참여 광장</a>
+                            <dlv class="depth_wrap">
+                                <div class="depth_list">
+                                    <div class="depth2">
+                                        <a href="#">미세먼지 맵 서비스</a>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">개인맞춤 서비스</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">나의 관심지역</a></li>
+                                            <li><a href="#">나의 제보</a></li>
+                                            <li><a href="#">나의 설문</a></li>
+                                            <li><a href="#">나의 아이디어</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">커뮤니티 서비스</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">행사 공유</a></li>
+                                            <li><a href="#">미세먼지 아이디어</a></li>
+                                            <li><a href="#">나의 꿀팁 공유</a></li>
+                                            <li><a href="#">나의 아이디어</a></li>
+                                            <li><a href="#">미세먼지 용품 사용후기</a></li>
+                                            <li><a href="#">미세먼지 발생 실험</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">부천시에 바란다</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </dlv>
-                    </li>
-                    <li>
-                        <a href="#">우리시 저감활동</a>
-                        <dlv class="depth_wrap">
-                            <div class="depth_list">
-                                <div class="depth2">
-                                    <a href="#">미세먼지 대응 정책</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">미세먼지 비상저감조치</a></li>
-                                        <li><a href="#">미세먼지 경보제</a></li>
-                                        <li><a href="#">미세먼지 대응 추진실적</a></li>
-                                        <li><a href="#">우리시 미세먼지 대책담당관</a></li>
-                                    </ul>
+                            </dlv>
+                        </li>
+                        <li>
+                            <a href="#">전문가 지식나눔 관리</a>
+                            <dlv class="depth_wrap">
+                                <div class="depth_list">
+                                    <div class="depth2">
+                                        <a href="#">미세먼지 바로알기</a>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">미세먼지 코디네이터</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">코디네이터 활동 개요</a></li>
+                                            <li><a href="#">코디네이터 활동</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">찾아가는 미세먼지 교실</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">미세먼지 대응 꿀팁</a></li>
+                                            <li><a href="#">미세먼지 아이디어</a></li>
+                                            <li><a href="#">미세먼지 줄이기 시민</a></li>
+                                            <li><a href="#">실천 가이드</a></li>
+                                            <li><a href="#">시민 행동요령</a></li>
+                                            <li><a href="#">미세먼지 게절관리제</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">미세먼지 대응 꿀팁</a>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">미세먼지 소통채널</a>
+                                    </div>
                                 </div>
-                                <div class="depth2">
-                                    <a href="#">스마트 미세먼지 클린 특화단지 조성사업</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">우리동네 미세먼지 정보 제공</a></li>
-                                        <li><a href="#">공업단지 비산먼지 저감</a></li>
-                                        <li><a href="#">통학로 청정-안심 공기 제공</a></li>
-                                        <li><a href="#">지하철 미세먼지 저감</a></li>
-                                    </ul>
+                            </dlv>
+                        </li>
+                        <li>
+                            <a href="#">게시판</a>
+                            <dlv class="depth_wrap">
+                                <div class="depth_list">
+                                    <div class="depth2">
+                                        <a href="#">공지사항</a>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">뉴스</a>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">FAQ</a>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">Q&A</a>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">자료실</a>
+                                    </div>
                                 </div>
-                                <div class="depth2">
-                                    <a href="#">미세먼지 대응 추진사업</a>
+                            </dlv>
+                        </li>
+                        <li>
+                            <a href="#">My 서비스</a>
+                            <dlv class="depth_wrap">
+                                <div class="depth_list">
+                                    <div class="depth2">
+                                        <a href="#">MY정보 저장</a>
+                                        <ul class="depth3">
+                                            <li>
+                                                <a href="#">MY정보 저장</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">코디네이터 경력관리</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">MY서비스 메뉴</a>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">개인맞춤 서비스 제공</a>
+                                    </div>
                                 </div>
-                                <div class="depth2">
-                                    <a href="#">우리시 미세먼지 저감 활동내역</a>
-                                </div>
-                            </div>
-                        </dlv>
-                    </li>
-                    <li>
-                        <a href="#">저감효과 및 추이</a>
-                        <dlv class="depth_wrap">
-                            <div class="depth_list">
-                                <div class="depth2">
-                                    <a href="#">우리시 미세먼지 발생량</a>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">우리시 미세먼지 저감활동 효과 보고</a>
-                                </div>
-                            </div>
-                        </dlv>
-                    </li>
-                    <li>
-                        <a href="#">시민참여 광장</a>
-                        <dlv class="depth_wrap">
-                            <div class="depth_list">
-                                <div class="depth2">
-                                    <a href="#">미세먼지 맵 서비스</a>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">개인맞춤 서비스</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">나의 관심지역</a></li>
-                                        <li><a href="#">나의 제보</a></li>
-                                        <li><a href="#">나의 설문</a></li>
-                                        <li><a href="#">나의 아이디어</a></li>
-                                    </ul>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">커뮤니티 서비스</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">행사 공유</a></li>
-                                        <li><a href="#">미세먼지 아이디어</a></li>
-                                        <li><a href="#">나의 꿀팁 공유</a></li>
-                                        <li><a href="#">나의 아이디어</a></li>
-                                        <li><a href="#">미세먼지 용품 사용후기</a></li>
-                                        <li><a href="#">미세먼지 발생 실험</a></li>
-                                    </ul>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">부천시에 바란다</a>
-                                </div>
-                            </div>
-                        </dlv>
-                    </li>
-                    <li>
-                        <a href="#">전문가 지식나눔 관리</a>
-                        <dlv class="depth_wrap">
-                            <div class="depth_list">
-                                <div class="depth2">
-                                    <a href="#">미세먼지 바로알기</a>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">미세먼지 코디네이터</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">코디네이터 활동 개요</a></li>
-                                        <li><a href="#">코디네이터 활동</a></li>
-                                    </ul>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">찾아가는 미세먼지 교실</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">미세먼지 대응 꿀팁</a></li>
-                                        <li><a href="#">미세먼지 아이디어</a></li>
-                                        <li><a href="#">미세먼지 줄이기 시민</a></li>
-                                        <li><a href="#">실천 가이드</a></li>
-                                        <li><a href="#">시민 행동요령</a></li>
-                                        <li><a href="#">미세먼지 게절관리제</a></li>
-                                    </ul>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">미세먼지 대응 꿀팁</a>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">미세먼지 소통채널</a>
-                                </div>
-                            </div>
-                        </dlv>
-                    </li>
-                    <li>
-                        <a href="#">게시판</a>
-                        <dlv class="depth_wrap">
-                            <div class="depth_list">
-                                <div class="depth2">
-                                    <a href="#">공지사항</a>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">뉴스</a>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">FAQ</a>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">Q&A</a>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">자료실</a>
-                                </div>
-                            </div>
-                        </dlv>
-                    </li>
-                    <li>
-                        <a href="#">My 서비스</a>
-                        <dlv class="depth_wrap">
-                            <div class="depth_list">
-                                <div class="depth2">
-                                    <a href="#">MY정보 저장</a>
-                                    <ul class="depth3">
-                                        <li>
-                                            <a href="#">MY정보 저장</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">코디네이터 경력관리</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">MY서비스 메뉴</a>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">개인맞춤 서비스 제공</a>
-                                </div>
-                            </div>
-                        </dlv>
-                    </li>
+                            </dlv>
+                        </li>
+                    </ul>
+                </nav>
+                <ul class="gnb_utility">
+                    <li class="user_rank_open"><button>user rank</button></li>
+                    <li class="my_page"><a href="#">my page</a></li>
+                    <li class="site_map_open"><button type="button">page list</button></li>
                 </ul>
-            </nav>
-            <ul class="gnb_utility">
-                <li class="user_rank_open"><button>user rank</button></li>
-                <li class="my_page"><a href="#">my page</a></li>
-                <li class="site_map_open"><button type="button">page list</button></li>
-            </ul>
-        </div>
-        <div class="site_map_wrap">
-            <h2 class="hidden-txt">site map</h2>
-            <div class="map_header">
-                <div>
+            </div>
+            <div class="site_map_wrap">
+                <h2 class="hidden-txt">site map</h2>
+                <div class="map_header">
                     <div>
-                        <h2>사이트맵</h2>
-                        <button type="button" class="close_btn">close</button>
+                        <div>
+                            <h2>사이트맵</h2>
+                            <button type="button" class="close_btn">close</button>
+                        </div>
+                    </div>
+                    <ul>
+                        <li class="active"><button type="button">우리시 미세먼지 발생량</button></li>
+                        <li><button type="button">현황 및 예보</button></li>
+                        <li><button type="button">우리시 저감활동</button></li>
+                        <li><button type="button">저감효과 및 추이</button></li>
+                        <li><button type="button">시민참여 광장</button></li>
+                        <li><button type="button">전문가 지식나눔 관리</button></li>
+                        <li><button type="button">게시판</button></li>
+                        <li><button type="button">My 서비스</button></li>
+                    </ul>
+                </div>
+                <div class="map_list_wrap">
+                    <ul>
+                        <li>
+                            <a href="#">우리시 미세먼지 발생량</a>
+                            <dlv class="map_depth_wrap">
+                                <div class="map_depth_list">
+                                    <div class="depth2">
+                                        <a href="#">산업부문</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">대기오염배출물 사업장</a></li>
+                                            <li><a href="#">굴뚝 자동측정기 사업장</a></li>
+                                            <li><a href="#">비산먼지 발생</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">수송부문</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">재비산먼지</a></li>
+                                            <li><a href="#">노후 경유차량</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">생활부문</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">매립/소각</a></li>
+                                            <li><a href="#">산불징후</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dlv>
+                        </li>
+                        <li>
+                            <a href="#">현황 및 예보</a>
+                            <dlv class="map_depth_wrap">
+                                <div class="map_depth_list">
+                                    <div class="depth2">
+                                        <a href="#">미세먼지 수치</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">현황</a></li>
+                                            <li><a href="#">예보</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">미세먼지 지수구간</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">지수정보</a></li>
+                                            <li><a href="#">행동요령</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dlv>
+                        </li>
+                        <li>
+                            <a href="#">우리시 저감활동</a>
+                            <dlv class="map_depth_wrap">
+                                <div class="map_depth_list">
+                                    <div class="depth2">
+                                        <a href="#">미세먼지 대응 정책</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">미세먼지 비상저감조치</a></li>
+                                            <li><a href="#">미세먼지 경보제</a></li>
+                                            <li><a href="#">미세먼지 대응 추진실적</a></li>
+                                            <li><a href="#">우리시 미세먼지 대책담당관</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">스마트 미세먼지 클린 특화단지 조성사업</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">우리동네 미세먼지 정보 제공</a></li>
+                                            <li><a href="#">공업단지 비산먼지 저감</a></li>
+                                            <li><a href="#">통학로 청정-안심 공기 제공</a></li>
+                                            <li><a href="#">지하철 미세먼지 저감</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">미세먼지 대응 추진사업</a>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">우리시 미세먼지 저감 활동내역</a>
+                                    </div>
+                                </div>
+                            </dlv>
+                        </li>
+                        <li>
+                            <a href="#">저감효과 및 추이</a>
+                            <dlv class="map_depth_wrap">
+                                <div class="map_depth_list">
+                                    <div class="depth2">
+                                        <a href="#">우리시 미세먼지 발생량</a>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">우리시 미세먼지 저감활동 효과 보고</a>
+                                    </div>
+                                </div>
+                            </dlv>
+                        </li>
+                        <li>
+                            <a href="#">시민참여 광장</a>
+                            <dlv class="map_depth_wrap">
+                                <div class="map_depth_list">
+                                    <div class="depth2">
+                                        <a href="#">미세먼지 맵 서비스</a>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">개인맞춤 서비스</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">나의 관심지역</a></li>
+                                            <li><a href="#">나의 제보</a></li>
+                                            <li><a href="#">나의 설문</a></li>
+                                            <li><a href="#">나의 아이디어</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">커뮤니티 서비스</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">행사 공유</a></li>
+                                            <li><a href="#">미세먼지 아이디어</a></li>
+                                            <li><a href="#">나의 꿀팁 공유</a></li>
+                                            <li><a href="#">나의 아이디어</a></li>
+                                            <li><a href="#">미세먼지 용품 사용후기</a></li>
+                                            <li><a href="#">미세먼지 발생 실험</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">부천시에 바란다</a>
+                                    </div>
+                                </div>
+                            </dlv>
+                        </li>
+                        <li>
+                            <a href="#">전문가 지식나눔 관리</a>
+                            <dlv class="map_depth_wrap">
+                                <div class="map_depth_list">
+                                    <div class="depth2">
+                                        <a href="#">미세먼지 바로알기</a>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">미세먼지 코디네이터</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">코디네이터 활동 개요</a></li>
+                                            <li><a href="#">코디네이터 활동</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">찾아가는 미세먼지 교실</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">미세먼지 대응 꿀팁</a></li>
+                                            <li><a href="#">미세먼지 아이디어</a></li>
+                                            <li><a href="#">미세먼지 줄이기 시민</a></li>
+                                            <li><a href="#">실천 가이드</a></li>
+                                            <li><a href="#">시민 행동요령</a></li>
+                                            <li><a href="#">미세먼지 게절관리제</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">미세먼지 대응 꿀팁</a>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">미세먼지 소통채널</a>
+                                    </div>
+                                </div>
+                            </dlv>
+                        </li>
+                        <li>
+                            <a href="#">게시판</a>
+                            <dlv class="map_depth_wrap">
+                                <div class="map_depth_list">
+                                    <div class="depth2">
+                                        <a href="#">공지사항</a>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">뉴스</a>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">FAQ</a>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">Q&A</a>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">자료실</a>
+                                    </div>
+                                </div>
+                            </dlv>
+                        </li>
+                        <li>
+                            <a href="#">My 서비스</a>
+                            <dlv class="map_depth_wrap">
+                                <div class="map_depth_list">
+                                    <div class="depth2">
+                                        <a href="#">MY정보 저장</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">MY정보 저장</a></li>
+                                            <li><a href="#">코디네이터 경력관리</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">MY서비스 메뉴</a>
+                                    </div>
+                                    <div class="depth2">
+                                        <a href="#">개인맞춤 서비스 제공</a>
+                                    </div>
+                                </div>
+                            </dlv>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="user_rank_wrap">
+                <button type="button" class="close_btn">close</button>
+                <div>
+                    <div class="rank_title">
+                        <h3>명예시민 TOP 10</h3>
+                        <button type="button">?</button>
+                    </div>
+                    <ul class="user_top3">
+                        <li>
+                            <span>1</span>
+                            <img src="/img/cs/common/icon_rank_top1.png" alt="명예시민 top 1 아이콘">
+                            <div>
+                                <strong>홍길동이</strong>
+                                <ul>
+                                    <li>
+                                        채택
+                                        <span>4,241</span>
+                                    </li>
+                                    <li>
+                                        좋아요
+                                        <span>241</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <span>2</span>
+                            <img src="/img/cs/common/icon_rank_top2.png" alt="명예시민 top 2 아이콘">
+                            <div>
+                                <strong>아무개</strong>
+                                <ul>
+                                    <li>
+                                        채택
+                                        <span>4,241</span>
+                                    </li>
+                                    <li>
+                                        좋아요
+                                        <span>241</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <span>3</span>
+                            <img src="/img/cs/common/icon_rank_top3.png" alt="명예시민 top 3 아이콘">
+                            <div>
+                                <strong>아무개</strong>
+                                <ul>
+                                    <li>
+                                        채택
+                                        <span>4,241</span>
+                                    </li>
+                                    <li>
+                                        좋아요
+                                        <span>241</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="user_ranker">
+                        <li>
+                            <span>4</span>
+                            <img src="/img/cs/common/icon_rank_user.jpg" alt="명예시민 아이콘">
+                            <div>
+                                <strong>아무개</strong>
+                            </div>
+                        </li>
+                        <li>
+                            <span>5</span>
+                            <img src="/img/cs/common/icon_rank_user.jpg" alt="명예시민 아이콘">
+                            <div>
+                                <strong>아무개</strong>
+                            </div>
+                        </li>
+                        <li>
+                            <span>6</span>
+                            <img src="/img/cs/common/icon_rank_user.jpg" alt="명예시민 아이콘">
+                            <div>
+                                <strong>아무개</strong>
+                            </div>
+                        </li>
+                        <li>
+                            <span>7</span>
+                            <img src="/img/cs/common/icon_rank_user.jpg" alt="명예시민 아이콘">
+                            <div>
+                                <strong>아무개</strong>
+                            </div>
+                        </li>
+                        <li>
+                            <span>8</span>
+                            <img src="/img/cs/common/icon_rank_user.jpg" alt="명예시민 아이콘">
+                            <div>
+                                <strong>아무개</strong>
+                            </div>
+                        </li>
+                        <li>
+                            <span>9</span>
+                            <img src="/img/cs/common/icon_rank_user.jpg" alt="명예시민 아이콘">
+                            <div>
+                                <strong>아무개</strong>
+                            </div>
+                        </li>
+                        <li>
+                            <span>10</span>
+                            <img src="/img/cs/common/icon_rank_user.jpg" alt="명예시민 아이콘">
+                            <div>
+                                <strong>아무개</strong>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div id="questionWrap">
+            <a href="javascript:viod:(0)">
+                <div>문의하기 이미지</div>
+                문의하기
+            </a>
+        </div>
+        <!--//header-->
+
+        <!--container-->
+        <div id="container" class="EventSearch">
+            <div class="breadcrumb_wrap">
+                <div>
+                    <a href="/">home</a>
+                    <!--
+                    crumb_depth 가 multiple_depth 클래스를 가지면
+                    -화살표 아이콘, hover 효과
+                    -->
+                    <div class="crumb_depth multiple_depth">
+                        <strong tabindex="0">산업부분</strong>
+                        <ul>
+                            <!--
+                            a 태그 class="active" 활성 표시
+                            -->
+                            <li><a href="#" class="active">대기오염배출물 사업장</a></li>
+                            <li><a href="#">대기오염배출물 사업장</a></li>
+                            <li><a href="#">대기오염배출물 사업장</a></li>
+                        </ul>
+                        <span>arrow icon</span>
+                    </div>
+                    <div class="crumb_depth">
+                        <strong>산업부분</strong>
+                    </div>
+    
+                </div>
+            </div>
+            <div id="subTitle">
+                <h3>행사 공유</h3>
+            </div>
+            <div class="sub_contents">
+                <div class='monthSelector text_center'>
+                    <div class='yearArea'>
+                        <a href='javascript:void(0);' class='monthArrBtn prevMonth'><span class='sound-only'>이전 달</span></a>
+                        <h4>2020</h4>
+                        <a href='javascript:void(0);' class='monthArrBtn nextMonth'><span class='sound-only'>다음 달</span></a>
+                    </div>
+                    <div class='monthArea'>
+                        <ul class='monthLists displayFlex flexJustifyCenter'>
+                            <li class='monthItems'>
+                                <a href='javascript:void(0);'>1</a>
+                            </li>
+                            <li class='monthItems'>
+                                <a href='javascript:void(0);'>2</a>
+                            </li>
+                            <li class='monthItems'>
+                                <a href='javascript:void(0);'>3</a>
+                            </li>
+                            <li class='monthItems'>
+                                <a href='javascript:void(0);'>4</a>
+                            </li>
+                            <li class='monthItems'>
+                                <a href='javascript:void(0);'>5</a>
+                            </li>
+                            <li class='monthItems'>
+                                <a href='javascript:void(0);'>6</a>
+                            </li>
+                            <li class='monthItems'>
+                                <a href='javascript:void(0);'>7</a>
+                            </li>
+                            <li class='monthItems'>
+                                <a href='javascript:void(0);'>8</a>
+                            </li>
+                            <li class='monthItems'>
+                                <a href='javascript:void(0);'>9</a>
+                            </li>
+                            <li class='monthItems'>
+                                <a href='javascript:void(0);'>10</a>
+                            </li>
+                            <li class='monthItems'>
+                                <a href='javascript:void(0);' class='active'>11</a>
+                            </li>
+                            <li class='monthItems'>
+                                <a href='javascript:void(0);'>12</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <ul>
-                    <li class="active"><button type="button">우리시 미세먼지 발생량</button></li>
-                    <li><button type="button">현황 및 예보</button></li>
-                    <li><button type="button">우리시 저감활동</button></li>
-                    <li><button type="button">저감효과 및 추이</button></li>
-                    <li><button type="button">시민참여 광장</button></li>
-                    <li><button type="button">전문가 지식나눔 관리</button></li>
-                    <li><button type="button">게시판</button></li>
-                    <li><button type="button">My 서비스</button></li>
-                </ul>
-            </div>
-            <div class="map_list_wrap">
-                <ul>
-                    <li>
-                        <a href="#">우리시 미세먼지 발생량</a>
-                        <dlv class="map_depth_wrap">
-                            <div class="map_depth_list">
-                                <div class="depth2">
-                                    <a href="#">산업부문</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">대기오염배출물 사업장</a></li>
-                                        <li><a href="#">굴뚝 자동측정기 사업장</a></li>
-                                        <li><a href="#">비산먼지 발생</a></li>
-                                    </ul>
+                <div class='calendarSection'>
+                    <div class='eventHeaders'>
+                        <div class='displayFlex flexJustifyBetween flexAlignCenter'>
+                            <div class='eventCategories'>
+                                <ul class='eventCategoryLists clear'>
+                                    <li class='eventCategoryItems float_left'>
+                                        <span class='cateAvatars cateAvatar010'></span>
+                                        <span>공연</span>
+                                    </li>
+                                    <li class='eventCategoryItems float_left'>
+                                        <span class='cateAvatars cateAvatar020'></span>
+                                        <span>전시</span>
+                                    </li>
+                                    <li class='eventCategoryItems float_left'>
+                                        <span class='cateAvatars cateAvatar030'></span>
+                                        <span>축제/이벤트</span>
+                                    </li>
+                                    <li class='eventCategoryItems float_left'>
+                                        <span class='cateAvatars cateAvatar040'></span>
+                                        <span>무료영화</span>
+                                    </li>
+                                    <li class='eventCategoryItems float_left'>
+                                        <span class='cateAvatars cateAvatar050'></span>
+                                        <span>문화체험</span>
+                                    </li>
+                                    <li class='eventCategoryItems float_left'>
+                                        <span class='cateAvatars cateAvatar060'></span>
+                                        <span>체육행사</span>
+                                    </li>
+                                    <li class='eventCategoryItems float_left'>
+                                        <span class='cateAvatars cateAvatar070'></span>
+                                        <span>체육행사</span>
+                                    </li>
+                                    <li class='eventCategoryItems float_left'>
+                                        <span class='cateAvatars cateAvatar999'></span>
+                                        <span>기타</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class='eventBtns'>
+                                <a href='javascript:void(0);'>캘린더 보기</a>
+                                <a href='javascript:void(0);'>텍스트 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id='calendar' class='calendar'>
+                        <div class='calendarWeekToolbar displayFlex flexAlignCenter flexJustifyCenter'>
+                            <div class='calendarDay calendarDaySun calendarWeekToolbarDay'>
+                                <span>일</span>
+                            </div>
+                            <div class='calendarDay calendarDayMon calendarWeekToolbarDay'>
+                                <span>월</span>
+                            </div>
+                            <div class='calendarDay calendarDayTue calendarWeekToolbarDay'>
+                                <span>화</span>
+                            </div>
+                            <div class='calendarDay calendarDayWed calendarWeekToolbarDay'>
+                                <span>수</span>
+                            </div>
+                            <div class='calendarDay calendarDayThu calendarWeekToolbarDay'>
+                                <span>목</span>
+                            </div>
+                            <div class='calendarDay calendarDayFri calendarWeekToolbarDay'>
+                                <span>금</span>
+                            </div>
+                            <div class='calendarDay calendarDaySat calendarWeekToolbarDay'>
+                                <span>토</span>
+                            </div>
+                        </div>
+                        <div class='calendarBody'>
+                            <div class='calendarWeekLine'>
+                                <div class='calendarWeeks displayFlex flexAlignCenter flexJustifyCenter'>
+                                    <div class='calendarDay calendarDaySun calendarWeekToolbarDay notThisMonth'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>28</span>
+                                            <div class='calendarEventLists clear'>
+                                                <div class='calendarEventItems float_left'>
+                                                    <a href='javascript:void(0);' class='cateAvatars cateAvatar040'></a>
+                                                </div>
+                                                <div class='calendarEventItems float_left'>
+                                                    <a href='javascript:void(0);' class='cateAvatars cateAvatar020'></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayMon calendarWeekToolbarDay notThisMonth'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>29</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayTue calendarWeekToolbarDay notThisMonth'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>30</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayWed calendarWeekToolbarDay notThisMonth'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>31</span>
+                                            <div class='calendarEventLists clear'>
+                                                <div class='calendarEventItems float_left'>
+                                                    <a href='javascript:void(0);' class='cateAvatars cateAvatar020'></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayThu calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>1</span>
+                                            <div class='calendarEventLists clear'>
+                                                <div class='calendarEventItems float_left'>
+                                                    <a href='javascript:void(0);' class='cateAvatars cateAvatar040'></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayFri calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>2</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDaySat calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>3</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="depth2">
-                                    <a href="#">수송부문</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">재비산먼지</a></li>
-                                        <li><a href="#">노후 경유차량</a></li>
-                                    </ul>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">생활부문</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">매립/소각</a></li>
-                                        <li><a href="#">산불징후</a></li>
-                                    </ul>
+                                <div class='calendarEducations dateStart-6 dateNotEnd'>
+                                    <div class='calendarEduDateLine markerBlue'>
+                                        <p class='calendarEduName'>찾아가는 미세먼지 교실</p>
+                                    </div>
                                 </div>
                             </div>
-                        </dlv>
-                    </li>
-                    <li>
-                        <a href="#">현황 및 예보</a>
-                        <dlv class="map_depth_wrap">
-                            <div class="map_depth_list">
-                                <div class="depth2">
-                                    <a href="#">미세먼지 수치</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">현황</a></li>
-                                        <li><a href="#">예보</a></li>
-                                    </ul>
+                            <div class='calendarWeekLine'>
+                                <div class='calendarWeeks displayFlex flexAlignCenter flexJustifyCenter'>
+                                    <div class='calendarDay calendarDaySun calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>4</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayMon calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>5</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayTue calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>6</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayWed calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>7</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayThu calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>8</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayFri calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>9</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDaySat calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>10</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="depth2">
-                                    <a href="#">미세먼지 지수구간</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">지수정보</a></li>
-                                        <li><a href="#">행동요령</a></li>
-                                    </ul>
+                                <div class='calendarEducations dateNotEnd dateContinue'>
+                                    <div class='calendarEduDateLine markerBlue'></div>
+                                </div>
+                                <!-- <div class='calendarEducations dateStart-6 dateNotEnd'>
+                        <div class='calendarEduDateLine markerNavy'>
+                          <p class='calendarEduName'>찾아가는 미세먼지 교실</p>
+                        </div>
+                      </div> -->
+                            </div>
+                            <div class='calendarWeekLine'>
+                                <div class='calendarWeeks displayFlex flexAlignCenter flexJustifyCenter'>
+                                    <div class='calendarDay calendarDaySun calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>11</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayMon calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>12</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayTue calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>13</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayWed calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>14</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayThu calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>15</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayFri calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>16</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDaySat calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>17</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='calendarEducations dateEnd dateEnd-5'>
+                                    <div class='calendarEduDateLine markerBlue'></div>
                                 </div>
                             </div>
-                        </dlv>
-                    </li>
-                    <li>
-                        <a href="#">우리시 저감활동</a>
-                        <dlv class="map_depth_wrap">
-                            <div class="map_depth_list">
-                                <div class="depth2">
-                                    <a href="#">미세먼지 대응 정책</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">미세먼지 비상저감조치</a></li>
-                                        <li><a href="#">미세먼지 경보제</a></li>
-                                        <li><a href="#">미세먼지 대응 추진실적</a></li>
-                                        <li><a href="#">우리시 미세먼지 대책담당관</a></li>
-                                    </ul>
+                            <div class='calendarWeekLine'>
+                                <div class='calendarWeeks displayFlex flexAlignCenter flexJustifyCenter'>
+                                    <div class='calendarDay calendarDaySun calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>18</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayMon calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>19</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayTue calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>20</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayWed calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>21</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayThu calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>22</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayFri calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>23</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDaySat calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>24</span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="depth2">
-                                    <a href="#">스마트 미세먼지 클린 특화단지 조성사업</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">우리동네 미세먼지 정보 제공</a></li>
-                                        <li><a href="#">공업단지 비산먼지 저감</a></li>
-                                        <li><a href="#">통학로 청정-안심 공기 제공</a></li>
-                                        <li><a href="#">지하철 미세먼지 저감</a></li>
-                                    </ul>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">미세먼지 대응 추진사업</a>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">우리시 미세먼지 저감 활동내역</a>
-                                </div>
-                            </div>
-                        </dlv>
-                    </li>
-                    <li>
-                        <a href="#">저감효과 및 추이</a>
-                        <dlv class="map_depth_wrap">
-                            <div class="map_depth_list">
-                                <div class="depth2">
-                                    <a href="#">우리시 미세먼지 발생량</a>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">우리시 미세먼지 저감활동 효과 보고</a>
-                                </div>
-                            </div>
-                        </dlv>
-                    </li>
-                    <li>
-                        <a href="#">시민참여 광장</a>
-                        <dlv class="map_depth_wrap">
-                            <div class="map_depth_list">
-                                <div class="depth2">
-                                    <a href="#">미세먼지 맵 서비스</a>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">개인맞춤 서비스</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">나의 관심지역</a></li>
-                                        <li><a href="#">나의 제보</a></li>
-                                        <li><a href="#">나의 설문</a></li>
-                                        <li><a href="#">나의 아이디어</a></li>
-                                    </ul>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">커뮤니티 서비스</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">행사 공유</a></li>
-                                        <li><a href="#">미세먼지 아이디어</a></li>
-                                        <li><a href="#">나의 꿀팁 공유</a></li>
-                                        <li><a href="#">나의 아이디어</a></li>
-                                        <li><a href="#">미세먼지 용품 사용후기</a></li>
-                                        <li><a href="#">미세먼지 발생 실험</a></li>
-                                    </ul>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">부천시에 바란다</a>
+                                <div class='calendarEducations dateStart-1 dateEnd-5'>
+                                    <div class='calendarEduDateLine markerRed'>
+                                        <p class='calendarEduName'>찾아가는 미세먼지 교실</p>
+                                    </div>
                                 </div>
                             </div>
-                        </dlv>
-                    </li>
-                    <li>
-                        <a href="#">전문가 지식나눔 관리</a>
-                        <dlv class="map_depth_wrap">
-                            <div class="map_depth_list">
-                                <div class="depth2">
-                                    <a href="#">미세먼지 바로알기</a>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">미세먼지 코디네이터</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">코디네이터 활동 개요</a></li>
-                                        <li><a href="#">코디네이터 활동</a></li>
-                                    </ul>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">찾아가는 미세먼지 교실</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">미세먼지 대응 꿀팁</a></li>
-                                        <li><a href="#">미세먼지 아이디어</a></li>
-                                        <li><a href="#">미세먼지 줄이기 시민</a></li>
-                                        <li><a href="#">실천 가이드</a></li>
-                                        <li><a href="#">시민 행동요령</a></li>
-                                        <li><a href="#">미세먼지 게절관리제</a></li>
-                                    </ul>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">미세먼지 대응 꿀팁</a>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">미세먼지 소통채널</a>
-                                </div>
-                            </div>
-                        </dlv>
-                    </li>
-                    <li>
-                        <a href="#">게시판</a>
-                        <dlv class="map_depth_wrap">
-                            <div class="map_depth_list">
-                                <div class="depth2">
-                                    <a href="#">공지사항</a>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">뉴스</a>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">FAQ</a>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">Q&A</a>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">자료실</a>
+                            <div class='calendarWeekLine'>
+                                <div class='calendarWeeks displayFlex flexAlignCenter flexJustifyCenter'>
+                                    <div class='calendarDay calendarDaySun calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>25</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayMon calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>26</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayTue calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>27</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayWed calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>28</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayThu calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>29</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDayFri calendarWeekToolbarDay'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>30</span>
+                                        </div>
+                                    </div>
+                                    <div class='calendarDay calendarDaySat calendarWeekToolbarDay notThisMonth'>
+                                        <div class='calrenderDayContents'>
+                                            <span class='calendarDayText'>1</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </dlv>
-                    </li>
-                    <li>
-                        <a href="#">My 서비스</a>
-                        <dlv class="map_depth_wrap">
-                            <div class="map_depth_list">
-                                <div class="depth2">
-                                    <a href="#">MY정보 저장</a>
-                                    <ul class="depth3">
-                                        <li><a href="#">MY정보 저장</a></li>
-                                        <li><a href="#">코디네이터 경력관리</a></li>
-                                    </ul>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">MY서비스 메뉴</a>
-                                </div>
-                                <div class="depth2">
-                                    <a href="#">개인맞춤 서비스 제공</a>
-                                </div>
-                            </div>
-                        </dlv>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-        <div class="user_rank_wrap">
-            <button type="button" class="close_btn">close</button>
-            <div>
-                <div class="rank_title">
-                    <h3>명예시민 TOP 10</h3>
-                    <button type="button">?</button>
+                        </div>
+                    </div>
                 </div>
-                <ul class="user_top3">
-                    <li>
-                        <span>1</span>
-                        <img src="/img/cs/common/icon_rank_top1.png" alt="명예시민 top 1 아이콘">
-                        <div>
-                            <strong>홍길동이</strong>
-                            <ul>
-                                <li>
-                                    채택
-                                    <span>4,241</span>
-                                </li>
-                                <li>
-                                    좋아요
-                                    <span>241</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <span>2</span>
-                        <img src="/img/cs/common/icon_rank_top2.png" alt="명예시민 top 2 아이콘">
-                        <div>
-                            <strong>아무개</strong>
-                            <ul>
-                                <li>
-                                    채택
-                                    <span>4,241</span>
-                                </li>
-                                <li>
-                                    좋아요
-                                    <span>241</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <span>3</span>
-                        <img src="/img/cs/common/icon_rank_top3.png" alt="명예시민 top 3 아이콘">
-                        <div>
-                            <strong>아무개</strong>
-                            <ul>
-                                <li>
-                                    채택
-                                    <span>4,241</span>
-                                </li>
-                                <li>
-                                    좋아요
-                                    <span>241</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-                <ul class="user_ranker">
-                    <li>
-                        <span>4</span>
-                        <img src="/img/cs/common/icon_rank_user.jpg" alt="명예시민 아이콘">
-                        <div>
-                            <strong>아무개</strong>
-                        </div>
-                    </li>
-                    <li>
-                        <span>5</span>
-                        <img src="/img/cs/common/icon_rank_user.jpg" alt="명예시민 아이콘">
-                        <div>
-                            <strong>아무개</strong>
-                        </div>
-                    </li>
-                    <li>
-                        <span>6</span>
-                        <img src="/img/cs/common/icon_rank_user.jpg" alt="명예시민 아이콘">
-                        <div>
-                            <strong>아무개</strong>
-                        </div>
-                    </li>
-                    <li>
-                        <span>7</span>
-                        <img src="/img/cs/common/icon_rank_user.jpg" alt="명예시민 아이콘">
-                        <div>
-                            <strong>아무개</strong>
-                        </div>
-                    </li>
-                    <li>
-                        <span>8</span>
-                        <img src="/img/cs/common/icon_rank_user.jpg" alt="명예시민 아이콘">
-                        <div>
-                            <strong>아무개</strong>
-                        </div>
-                    </li>
-                    <li>
-                        <span>9</span>
-                        <img src="/img/cs/common/icon_rank_user.jpg" alt="명예시민 아이콘">
-                        <div>
-                            <strong>아무개</strong>
-                        </div>
-                    </li>
-                    <li>
-                        <span>10</span>
-                        <img src="/img/cs/common/icon_rank_user.jpg" alt="명예시민 아이콘">
-                        <div>
-                            <strong>아무개</strong>
-                        </div>
-                    </li>
-                </ul>
             </div>
         </div>
-    </header>
-    <div id="questionWrap">
-        <a href="javascript:viod:(0)">
-            <div>문의하기 이미지</div>
-            문의하기
-        </a>
+        <!--//container-->
+
+        <!-- footer -->
+        <footer id="footer_wrap">
+            <h2 class="hidden-txt">footer</h2>
+            <ul>
+                <li>바로가기<button class="close_btn">close</button></li>
+                <li><a href="#">부천시청</a></li>
+                <li><a href="#">경기도 보건환경연구원</a></li>
+                <li><a href="#">경기도 대기환경</a></li>
+                <li><a href="#">환경부</a></li>
+                <li><a href="#">에어코리아</a></li>
+                <li><a href="#">날씨누리</a></li>
+                <li><a href="#">질병관리본부</a></li>
+            </ul>
+            <div>
+                <a href="/" class="footer_logo">
+                    <img src="/img/cs/layout/logo_footer.jpg" alt="판타지아 푸터 부천 로고">
+                </a>
+                <div class="footer_info">
+                    <p class="address">
+                        <span>주소</span>
+                        14547 경기도 부천시 길주로 210(중동)
+                    </p>
+                    <p>
+                        <span>부천시 365 콜센터</span>
+                        032-320-3000 ( 평일 08~19시 / 주말·공휴일 09~18시 )
+                    </p>
+                </div>
+                <p class="copyright">Copyright &copy;2017 BUCHEON CITY All rights reserved.</p>
+            </div>
+        </footer>
+        <!-- //footer -->
     </div>
-    <!--//header-->
-
-<div>
-
-</div>
-
-     <!-- footer -->
-     <footer id="footer_wrap">
-        <h2 class="hidden-txt">footer</h2>
-        <ul>
-           <li>바로가기<button class="close_btn">close</button></li>
-           <li><a href="#">부천시청</a></li>
-           <li><a href="#">경기도 보건환경연구원</a></li>
-           <li><a href="#">경기도 대기환경</a></li>
-           <li><a href="#">환경부</a></li>
-           <li><a href="#">에어코리아</a></li>
-           <li><a href="#">날씨누리</a></li>
-           <li><a href="#">질병관리본부</a></li>
-        </ul>
-        <div>
-           <a href="/" class="footer_logo">
-              <img src="/img/cs/layout/logo_footer.jpg" alt="판타지아 푸터 부천 로고">
-           </a>
-           <div class="footer_info">
-              <p class="address">
-                 <span>주소</span>
-                 14547 경기도 부천시 길주로 210(중동)
-              </p>
-              <p>
-                 <span>부천시 365 콜센터</span>
-                 032-320-3000 ( 평일 08~19시 / 주말·공휴일 09~18시 )
-              </p>
-           </div>
-           <p class="copyright">Copyright &copy;2017 BUCHEON CITY All rights reserved.</p>
+    <script src="/js/pbb/plugin.js"></script>
+    <script src="/js/pbb/design_common.js"></script>
+    <script id='eduModals' type="text/x-handlebars-template">
+        <div class='eduModals calendarModals'>
+          <div class='eduModalWrapper'>
+            <div class='eduModalContents'>
+              <h4 class='educationModalName'>{{education_name}}</h4>
+              <p class='educationModalDate'>교육 기간 : {{education_start_date}} ~ {{education_end_date}}</p>
+              <p class='educationModalDate'>신청 마감 기한 : {{education_deadline}}</p>
+              <span class='educationCircles'></span>
+            </div>
+            <div class='calendarModalBtns text-center'>
+              <a href='javascript:void(0);' class='modal-close calendarModalCloser'></a>
+            </div>
+          </div>
         </div>
-     </footer>
-     <!-- //footer -->
- </div>
-<script src="/js/pbb/plugin.js"></script>
-<script src="/js/pbb/design_common.js"></script>
+    </script>
+    <script id='eventModals' type="text/x-handlebars-template">
+        <div class='eventModals calendarModals'>
+          <div class='eventModalWrapper'>
+            <div class='eventModalContents'>
+              <div class='eventModalLists'>
+                {{#data}}
+                <div class='eventModalItems'>
+                  <span class='cateAvatars cateAvatar{{code}}'></span>
+                  <p class='eventModalDate'>[{{start_date}} ~ {{end_date}}]</p>
+                  <p class='eventModalName'>{{name}}</p>
+                </div>
+                {{/data}}
+              </div>
+              <div class='calendarModalBtns'>
+                <a href='javascript:void(0);' class='modal-close calendarModalCloser'></a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </script>
+    <script>
+        function compiling(target, data) {
+          var source = $(target).html();
+          var template = Handlebars.compile(source);
+          var html = template(data);
+          return html;
+        };
+        $(document).ready(function() {
+          $('.calendarEduDateLine').on("click", function() {
+            var $this = $(this);
+            var thisParents = $this.parents('.calendarWeekLine');
+            var leftPos = $this.parents('.calendarEducations').css('left');
+            var dummyData = {
+              education_name : '찾아가는 미세먼지 교실',
+              education_start_date : '2020.03.26',
+              education_end_date : '2020.05.25',
+              education_deadline : '2020.05.25'
+            };
+            $('.eduModals').remove();
+            var html = compiling('#eduModals', dummyData);
+            thisParents.append(html);
+            $('.educationCircles').css("background", $this.css('color'))
+            $('.eduModals').css({
+              "left":leftPos,
+              "top":"80px"
+            });
+          });
+          $('.calendarEventItems > .cateAvatars').on('click', function() {
+            var dummyData = {
+              data : [
+                {
+                  code : '040',
+                  name : '9월중 소향관 무료영화상영(기생충)',
+                  start_date : '2020.10.28',
+                  end_date : '2020.11.01'
+                },
+                {
+                  code : '020',
+                  name : '9월중 소향관 전시회',
+                  start_date : '2020.10.28',
+                  end_date : '2020.10.31'
+                }
+              ]
+            };
+            var $this = $(this);
+            var thisParents = $this.parents('.calrenderDayContents');
+            var leftPos = $this.parents('.calendarEducations').css('left');
+            var html = compiling('#eventModals', dummyData);
+            $('.eventModals').remove();
+            thisParents.append(html);
+          });
+          $(document).on('click', '.calendarModalCloser', function() {
+            $('.calendarModals').remove();
+          });
+        }) 
+    </script>
 </body>
+
 </html>

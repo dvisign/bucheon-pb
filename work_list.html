@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -121,7 +122,7 @@
 			<th></th>
 			<th>1depth</th>
 			<th>2depth</th>
-			<th>3depth</th>
+			<th>시민용 기획서 v1.04 기준 </th>
 			<th colspan="2">마크업 파일명</th>
 			<th>작업처리</th>
 		</tr>
@@ -129,7 +130,7 @@
 			<th>구분</th>
 			<th>Label</th>
 			<th>Label</th>
-			<th>Label</th>
+			<th>Page Number</th>
 			<th>Folder</th>
 			<th>File</th>
 			<th>상태</th>
@@ -141,6 +142,7 @@
 	<div class="ia_guide">
 		<strong>테이블에 색에 따른 진행 상태 분류</strong>
 		<div class="ok">퍼블 진행중</div>
+		<div class="ok2">작업한 페이지 중에 동일한 페이지가 있거나 개발에서 바로 완료 되는 페이지</div>
 		<div class="ok3">퍼블 완료 - 디자인/기획까지 컨펌 완료</div>
 	</div>
 	<!--공통-->
@@ -182,101 +184,29 @@
 			<col>
 		</colgroup>
 		<tbody>
-		<tr class="">
+		<tr class="ok">
 			<td>Main</td>
 			<td></td>
 			<td></td>
-			<td></td>
+			<td>17 ~ 56, 65, 70 ~ 79, 83 ~ 85</td>
 			<td>/cs/main/</td>
 			<td><a href="#" target="_blank">Main</a></td>
-			<td></td>
+			<td>Desktop / mobile</td>
 		</tr>
 		<tr class="">
 			<td>login</td>
 			<td></td>
 			<td></td>
-			<td></td>
+			<td>16</td>
 			<td>/cs/login/</td>
 			<td><a href="#" target="_blank">Login</a></td>
-			<td></td>
+			<td>@</td>
 		</tr>
 		</tbody>
 
 	</table>
 	<!-- //메인 -->
 
-	<!--미세먼지 발생원-->
-	<h2>미세먼지 발생원</h2>
-	<table>
-		<colgroup>
-			<col width="10%">
-			<col width="15%">
-			<col width="15%">
-			<col width="20%">
-			<col width="10%">
-			<col width="10%">
-			<col>
-		</colgroup>
-		<tbody>
-		<!--산업-->
-		<tr class="">
-			<td rowspan="3">산업</td>
-			<td>대기오염배출사업장</td>
-			<td></td>
-			<td></td>
-			<td rowspan="7">/cs/inventory/</td>
-			<td><a href="#" target="_blank">CtznArpltnExhstBplcList</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>굴뚝자동측정기사업장</td>
-			<td></td>
-			<td></td>
-			<td><a href="#" target="_blank">CtznChmnyAtmcMesureBplcList</a></td>
-			<td></td>
-		</tr>
-		<tr class="">
-			<td>비산먼지발생</td>
-			<td></td>
-			<td></td>
-			<td><a href="#" target="_blank">CtznEodsDscamtList</a></td>
-			<td></td>
-		</tr>
-		<!--수송-->
-		<tr class="">
-			<td rowspan="2">수송</td>
-			<td>재비산먼지</td>
-			<td></td>
-			<td></td>
-			<td><a href="#" target="_blank">CtznReodsList</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>노후경유차량조회</td>
-			<td></td>
-			<td></td>
-			<td><a href="#" target="_blank">CtznSpanuatVhcleList</a></td>
-			<td></td>
-		</tr>
-		<!--생활-->
-		<tr class="">
-			<td rowspan="2">생활</td>
-			<td>매립/소각</td>
-			<td></td>
-			<td></td>
-			<td><a href="#" target="_blank">CtznRclmIncnrList</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>소각산불징후예보</td>
-			<td></td>
-			<td></td>
-			<td><a href="#" target="_blank">CtznFrfireList</a></td>
-			<td></td>
-		</tr>
-		</tbody>
-	</table>
-	<!--//미세먼지 발생원-->
 
 	<!--현황 및 예보-->
 	<h2>현황 및 예보</h2>
@@ -292,168 +222,41 @@
 		</colgroup>
 		<tbody>
 		<!--미세먼지 수치-->
-		<tr class="">
+		<tr class="ok">
 			<td rowspan="2">미세먼지 수치</td>
 			<td>현황</td>
 			<td></td>
-			<td></td>
+			<td>104</td>
 			<td rowspan="4">/cs/sttusFrcst/</td>
 			<td><a href="#" target="_blank">UlfptcNclSttusList</a></td>
-			<td></td>
+			<td>Desktop / </td>
 		</tr>
-		<tr>
+		<tr class="ok">
 			<td>예보</td>
 			<td></td>
-			<td></td>
+			<td>105</td>
 			<td><a href="#" target="_blank">UlfptcNclFrcstList</a></td>
-			<td></td>
+			<td>Desktop / </td>
 		</tr>
 		<!--미세먼지 지수구간-->
 		<tr class="">
 			<td rowspan="2">미세먼지 지수구간</td>
 			<td>지수정보</td>
 			<td></td>
-			<td></td>
+			<td>106</td>
 			<td><a href="#" target="_blank">UlfptcIdexSctnInfoSearch</a></td>
-			<td></td>
+			<td>@</td>
 		</tr>
 		<tr>
 			<td>행동요령</td>
 			<td></td>
-			<td></td>
+			<td>107</td>
 			<td><a href="#" target="_blank">UlfptcIdexSctnActCheatSearch</a></td>
-			<td></td>
+			<td>@</td>
 		</tr>
 		</tbody>
 	</table>
 	<!--//현황 및 예보-->
-
-	<!--우리시의 저감활동-->
-	<h2>우리시의 저감활동</h2>
-	<table>
-		<colgroup>
-			<col width="10%">
-			<col width="15%">
-			<col width="15%">
-			<col width="20%">
-			<col width="10%">
-			<col width="10%">
-			<col>
-		</colgroup>
-		<tbody>
-		<!--미세먼지 대응정책-->
-		<tr class="">
-			<td rowspan="3">미세먼지 대응정책</td>
-			<td>미세먼지 비상저감조치</td>
-			<td></td>
-			<td></td>
-			<td rowspan="3">/cs/reduction/policy/</td>
-			<td><a href="#" target="_blank">PolicySumryInfoSelect</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>미세먼지 대응 추진 실적</td>
-			<td></td>
-			<td></td>
-			<td><a href="#" target="_blank">PolicyAcmsltList</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>우리시 미세먼지 대책 담당관</td>
-			<td></td>
-			<td></td>
-			<td><a href="#" target="_blank">PolicyDeptSelect</a></td>
-			<td></td>
-		</tr>
-		<!--스마트 미세먼지 클린 특화단지 조성사업-->
-		<tr class="">
-			<td rowspan="8">스마트 미세먼지 클린 <br>특화단지 조성사업</td>
-			<td rowspan="2">미세먼지 알림이 서비스</td>
-			<td rowspan="2"></td>
-			<td rowspan="2"></td>
-			<td rowspan="2">/cs/reduction/bsns/</td>
-			<td><a href="#" target="_blank">PBBSvcSearch</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">LcInfoSearch</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td rowspan="2">비산먼지 저감 서비스</td>
-			<td rowspan="2"></td>
-			<td rowspan="2"></td>
-			<td rowspan="2">/cs/reduction/bsns/</td>
-			<td><a href="#" target="_blank">PBBSvcSearch</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">LcInfoSearch</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td rowspan="2">학교 통학로 안심 서비스</td>
-			<td rowspan="2"></td>
-			<td rowspan="2"></td>
-			<td rowspan="2">/cs/reduction/bsns/</td>
-			<td><a href="#" target="_blank">PBBSvcSearch</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">LcInfoSearch</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td rowspan="2">지하철 미세먼지 서비스</td>
-			<td rowspan="2"></td>
-			<td rowspan="2"></td>
-			<td rowspan="2">/cs/reduction/bsns/</td>
-			<td><a href="#" target="_blank">PBBSvcSearch</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">LcInfoSearch</a></td>
-			<td></td>
-		</tr>
-		<!--미세먼지 대응 추진 사업-->
-		<tr class="">
-			<td rowspan="4" class="ok">미세먼지 대응 추진 사업</td>
-			<td rowspan="4">미세먼지 대응 추진 사업</td>
-			<td rowspan="4"></td>
-			<td rowspan="4"></td>
-			<td rowspan="4">/cs/reduction/bsns/</td>
-			<td><a href="#" target="_blank">BsnsList</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">BsnsDetail</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">BsnsImageSearch</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">LcInfoSearch</a></td>
-			<td></td>
-		</tr>
-		<!--우리시 미세먼지 저감활동-->
-		<tr class="">
-			<td rowspan="2">우리시의 저감활동</td>
-			<td rowspan="2">미세먼지 대응 추진 사업</td>
-			<td rowspan="2"></td>
-			<td rowspan="2"></td>
-			<td rowspan="2">/cs/reduction/act/</td>
-			<td><a href="#" target="_blank">ActList</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">ActDetail</a></td>
-			<td></td>
-		</tr>
-		</tbody>
-	</table>
-	<!--//우리시의 저감활동-->
 
 	<!--저감 효과 및 추이-->
 	<h2>저감 효과 및 추이</h2>
@@ -469,23 +272,23 @@
 		</colgroup>
 		<tbody>
 		<!--우리시 미세먼지 발생량-->
-		<tr class="">
+		<tr class="ok">
 			<td>우리시 미세먼지 발생량</td>
 			<td>우리시 미세먼지 발생량</td>
 			<td></td>
-			<td></td>
+			<td>127</td>
 			<td rowspan="2">/cs/effect/</td>
 			<td><a href="#" target="_blank">UlfptcOctyList</a></td>
-			<td></td>
+			<td>Desktop / </td>
 		</tr>
 		<!--우리시 미세먼지 저감활동 보고-->
-		<tr class="">
+		<tr class="ok">
 			<td>우리시 미세먼지 저감활동 보고</td>
 			<td>우리시 미세먼지 저감활동 보고</td>
 			<td></td>
-			<td></td>
+			<td>128</td>
 			<td><a href="#" target="_blank">ReducActReportList</a></td>
-			<td></td>
+			<td>Desktop / </td>
 		</tr>
 		</tbody>
 	</table>
@@ -504,201 +307,85 @@
 			<col>
 		</colgroup>
 		<tbody>
-		<!--미세먼지 맵 서비스-->
-		<tr class="">
-			<td>미세먼지 맵 서비스</td>
-			<td>미세먼지 맵 서비스</td>
-			<td></td>
-			<td></td>
-			<td>/cs/square/mapsvc/</td>
-			<td><a href="#" target="_blank">MapsvcSearch</a></td>
-			<td></td>
-		</tr>
 		<!--개인맞춤 서비스-->
-		<tr class="">
-			<td rowspan="12">개인맞춤 서비스</td>
-			<td>My 관심지역</td>
+		<tr class="ok">
+			<td rowspan="3">개인맞춤 서비스</td>
+			<td>My 제보</td>
 			<td></td>
-			<td></td>
-			<td>/cs/myservice/</td>
-			<td><a href="#" target="_blank">CondisList</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td rowspan="4">My 제보</td>
-			<td rowspan="4"></td>
-			<td rowspan="4"></td>
-			<td rowspan="4">/cs/square/ctznBoard/</td>
+			<td>133</td>
+			<td>/cs/square/ctznBoard/</td>
 			<td><a href="#" target="_blank">CtznBoardList</a></td>
-			<td></td>
+			<td>Desktop / </td>
 		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CtznBoardDetail</a></td>
+		<tr class="ok">
+			<td>My 설문조사</td>
 			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CtznBoardRegist</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CtznBoardUpdt</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td rowspan="3">My 설문조사</td>
-			<td rowspan="3"></td>
-			<td rowspan="3"></td>
-			<td rowspan="3">/cs/square/qustnr/</td>
-			<td><a href="#" target="_blank">QustnrList</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">QustnrDetail</a></td>
-			<td></td>
-		</tr>
-		<tr>
+			<td>140</td>
+			<td>/cs/square/qustnr/</td>
 			<td><a href="#" target="_blank">QustnrResultSearch</a></td>
-			<td></td>
+			<td>Desktop / </td>
 		</tr>
-		<tr>
-			<td rowspan="4">My 아이디어</td>
-			<td rowspan="4"></td>
-			<td rowspan="4"></td>
-			<td rowspan="4">/cs/square/ctznBoard/</td>
+		<tr class="ok">
+			<td>My 아이디어 / 미세먼지 아이디어</td>
+			<td></td>
+			<td>141, 148 같은 디자인</td>
+			<td>/cs/square/ctznBoard/</td>
 			<td><a href="#" target="_blank">CtznBoardList</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CtznBoardDetail</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CtznBoardRegist</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CtznBoardUpdt</a></td>
-			<td></td>
+			<td>Desktop / </td>
 		</tr>
 		<!--커뮤니티 서비스-->
-		<tr class="">
-			<td rowspan="19">커뮤니티 서비스</td>
+		<tr class="ok">
+			<td rowspan="6">커뮤니티 서비스</td>
 			<td rowspan="3">행사공유</td>
 			<td rowspan="3"></td>
-			<td rowspan="3"></td>
+			<td>145</td>
 			<td rowspan="3">/cs/square/event/</td>
 			<td><a href="#" target="_blank">EventList</a></td>
-			<td></td>
+			<td>공통 켈린더</td>
 		</tr>
-		<tr>
+		<tr class="ok">
+			<td>146</td>
 			<td><a href="#" target="_blank">EventSearch</a></td>
-			<td></td>
+			<td>공통 켈린더</td>
 		</tr>
-		<tr>
+		<tr class="ok">
+			<td>147</td>
 			<td><a href="#" target="_blank">EventDetail</a></td>
-			<td></td>
+			<td>Desktop / </td>
 		</tr>
-		<tr>
-			<td rowspan="4">미세먼지 아이디어</td>
-			<td rowspan="4"></td>
-			<td rowspan="4"></td>
-			<td rowspan="4">/cs/square/ctznBoard/</td>
+		<tr class="ok">
+			<td>나의 꿀팁 공유</td>
+			<td></td>
+			<td>152</td>
+			<td>/cs/square/ctznBoard/</td>
 			<td><a href="#" target="_blank">CtznBoardList</a></td>
-			<td></td>
+			<td>Desktop / </td>
 		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CtznBoardDetail</a></td>
+		<tr class="ok">
+			<td>미세먼지 용품 사용후기</td>
 			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CtznBoardRegist</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CtznBoardUpdt</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td rowspan="4">나의 꿀팁 공유</td>
-			<td rowspan="4"></td>
-			<td rowspan="4"></td>
-			<td rowspan="4">/cs/square/ctznBoard/</td>
+			<td>156</td>
+			<td>/cs/square/ctznBoard/</td>
 			<td><a href="#" target="_blank">CtznBoardList</a></td>
-			<td></td>
+			<td>Desktop / </td>
 		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CtznBoardDetail</a></td>
+		<tr class="ok">
+			<td>미세먼지 발생실험</td>
 			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CtznBoardRegist</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CtznBoardUpdt</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td rowspan="4">미세먼지 용품 사용후기</td>
-			<td rowspan="4"></td>
-			<td rowspan="4"></td>
-			<td rowspan="4">/cs/square/ctznBoard/</td>
+			<td>160</td>
+			<td>/cs/square/ctznBoard/</td>
 			<td><a href="#" target="_blank">CtznBoardList</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CtznBoardDetail</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CtznBoardRegist</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CtznBoardUpdt</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td rowspan="4">미세먼지 발생실험</td>
-			<td rowspan="4"></td>
-			<td rowspan="4"></td>
-			<td rowspan="4">/cs/square/ctznBoard/</td>
-			<td><a href="#" target="_blank">CtznBoardList</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CtznBoardDetail</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CtznBoardRegist</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CtznBoardUpdt</a></td>
-			<td></td>
+			<td>Desktop / </td>
 		</tr>
 		<!--부천시에 바란다-->
-		<tr class="">
-			<td rowspan="4">부천시에 바란다</td>
-			<td rowspan="4">시민제보</td>
-			<td rowspan="4"></td>
-			<td rowspan="4"></td>
-			<td rowspan="4">/cs/square/ctznBoard/</td>
-			<td><a href="#" target="_blank">CtznBoardList</a></td>
+		<tr class="ok">
+			<td>부천시에 바란다</td>
+			<td>시민제보</td>
 			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CtznBoardDetail</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CtznBoardRegist</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CtznBoardUpdt</a></td>
-			<td></td>
+			<td>164</td>
+			<td>/cs/square/ctznBoard/</td>
+			<td><a href="#" target="_blank">CtznBoardList02</a></td>
+			<td>Desktop / </td>
 		</tr>
 		</tbody>
 	</table>
@@ -717,254 +404,59 @@
 			<col>
 		</colgroup>
 		<tbody>
-		<!--미세먼지 바로알기-->
-		<tr class="">
-			<td rowspan="2">미세먼지 바로알기</td>
-			<td rowspan="2">팩트뉴스</td>
-			<td rowspan="2"></td>
-			<td rowspan="2"></td>
-			<td rowspan="2">/cs/knowledge/board/</td>
-			<td><a href="#" target="_blank">KnowledgeBoardList</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">KnowledgeBoardDetail</a></td>
-			<td></td>
-		</tr>
 		<!--미세먼지 코디네이터-->
-		<tr class="">
-			<td rowspan="5">미세먼지 코디네이터</td>
-			<td>미세먼지 코디네이터 활동 개요</td>
+		<tr class="ok">
+			<td>미세먼지 코디네이터</td>
+			<td>미세먼지 코디네이터 활동</td>
 			<td></td>
-			<td></td>
+			<td>174</td>
 			<td>/cs/knowledge/coordi/</td>
-			<td><a href="#" target="_blank">CoordinatorActInfoSearch</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td rowspan="4">미세먼지 코디네이터 활동</td>
-			<td rowspan="4"></td>
-			<td rowspan="4"></td>
-			<td rowspan="4">/cs/knowledge/coordi/</td>
-			<td><a href="#" target="_blank">CoordinatorActList</a></td>
-			<td></td>
-		</tr>
-		<tr>
 			<td><a href="#" target="_blank">CoordinatorActRegist</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CoordinatorActDetail</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CoordinatorActUpdt</a></td>
-			<td></td>
+			<td>Desktop / </td>
 		</tr>
 		<!--찾아가는 미세먼지 교실-->
 		<tr class="">
-			<td rowspan="11">찾아가는 미세먼지 교실</td>
-			<td rowspan="11">찾아가는 미세먼지 교실</td>
-			<td rowspan="11"></td>
-			<td rowspan="11"></td>
-			<td rowspan="11">/cs/knowledge/coordi/</td>
-			<td><a href="#" target="_blank">UlfptcEdcCldrList</a></td>
-			<td></td>
-		</tr>
-		<tr>
+			<td rowspan="4">찾아가는 미세먼지 교실</td>
+			<td rowspan="4">찾아가는 미세먼지 교실</td>
+			<td rowspan="4"></td>
+			<td>177</td>
+			<td rowspan="4">/cs/knowledge/coordi/</td>
 			<td><a href="#" target="_blank">UlfptcEdcList</a></td>
-			<td></td>
+			<td>공통 켈린더(주간 표시 기능 없음)</td>
 		</tr>
-		<tr>
+		<tr class="ok">
+			<td>178</td>
 			<td><a href="#" target="_blank">MyEdcSchdulCldrList</a></td>
-			<td></td>
+			<td>Desktop / </td>
 		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CoordinatorUlfptcEdcCldrList</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">CoordinatorUlfptcEdcList</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">UlfptcEdcDetail</a></td>
-			<td></td>
-		</tr>
-		<tr>
+		<tr class="ok">
+			<td>183</td>
 			<td><a href="#" target="_blank">UlfptcEdcRegist</a></td>
-			<td></td>
+			<td>Desktop / </td>
 		</tr>
 		<tr>
-			<td><a href="#" target="_blank">UlfptcEdcUpdt</a></td>
-			<td></td>
-		</tr>
-		<tr>
+			<td>185</td>
 			<td><a href="#" target="_blank">UlfptcEdcEvlPopup</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">UlfptcEdcEvlRegistPopup</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">InstrctrList</a></td>
-			<td></td>
-		</tr>
-		<!--미세먼지 대응 꿀팁-->
-		<tr class="">
-			<td rowspan="5">미세먼지 대응 꿀팁</td>
-			<td rowspan="2">미세먼지 대응 꿀팁</td>
-			<td rowspan="2"></td>
-			<td rowspan="2"></td>
-			<td rowspan="2">/cs/knowledge/board/</td>
-			<td><a href="#" target="_blank">KnowledgeBoardList</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">KnowledgeBoardDetail</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>미세먼지 줄이기 시민 실천 가이드</td>
-			<td></td>
-			<td></td>
-			<td>/cs/knowledge/cntmsr/</td>
-			<td><a href="#" target="_blank">CntrmsrTipSearch</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>시민 행동 요령</td>
-			<td></td>
-			<td></td>
-			<td>/cs/knowledge/cntmsr/</td>
-			<td><a href="#" target="_blank">CntrmsrTipSearch</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>미세먼지 계절관리제</td>
-			<td></td>
-			<td></td>
-			<td>/cs/knowledge/cntmsr/</td>
-			<td><a href="#" target="_blank">CntrmsrTipSearch</a></td>
-			<td></td>
+			<td>관리자 공통팝업 사용</td>
 		</tr>
 		<!--미세먼지 소통채널-->
-		<tr class="">
-			<td rowspan="4">미세먼지 소통채널</td>
-			<td rowspan="4">설문조사</td>
-			<td rowspan="4"></td>
-			<td rowspan="4"></td>
-			<td rowspan="4">/cs/square/qustnr/</td>
-			<td><a href="#" target="_blank">QustnrList</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">QustnrDetail</a></td>
-			<td></td>
-		</tr>
-		<tr>
+		<tr class="ok">
+			<td rowspan="2">미세먼지 소통채널</td>
+			<td rowspan="2">설문조사</td>
+			<td rowspan="2"></td>
+			<td>201</td>
+			<td rowspan="2">/cs/square/qustnr/</td>
 			<td><a href="#" target="_blank">QustnrResultSearch</a></td>
-			<td></td>
+			<td>Desktop / </td>
 		</tr>
-		<tr>
+		<tr class="ok">
+			<td>204</td>
 			<td><a href="#" target="_blank">QustnrRegist</a></td>
-			<td></td>
+			<td>Desktop / </td>
 		</tr>
 		</tbody>
 	</table>
 	<!--//전문가 지식나눔-->
-
-	<!--게시판-->
-	<h2>게시판</h2>
-	<table>
-		<colgroup>
-			<col width="10%">
-			<col width="15%">
-			<col width="15%">
-			<col width="20%">
-			<col width="10%">
-			<col width="10%">
-			<col>
-		</colgroup>
-		<tbody>
-		<!--공지사항-->
-		<tr class="">
-			<td rowspan="2">공지사항</td>
-			<td rowspan="2">공지사항</td>
-			<td rowspan="2"></td>
-			<td rowspan="2"></td>
-			<td rowspan="2">/cs/cmmnty/</td>
-			<td><a href="#" target="_blank">BoardNoticeList</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">BoardNoticeDetail</a></td>
-			<td></td>
-		</tr>
-		<!--뉴스-->
-		<tr class="">
-			<td rowspan="2">뉴스</td>
-			<td rowspan="2">뉴스</td>
-			<td rowspan="2"></td>
-			<td rowspan="2"></td>
-			<td rowspan="2">/cs/cmmnty/</td>
-			<td><a href="#" target="_blank">BoardNewsList</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">BoardNewsDetail</a></td>
-			<td></td>
-		</tr>
-		<!--FAQ-->
-		<tr class="">
-			<td>FAQ</td>
-			<td>FAQ</td>
-			<td></td>
-			<td></td>
-			<td>/cs/cmmnty/</td>
-			<td><a href="#" target="_blank">BoardFaqSelect</a></td>
-			<td></td>
-		</tr>
-		<!--Q&A-->
-		<tr class="">
-			<td rowspan="4">Q&A</td>
-			<td rowspan="4">Q&A</td>
-			<td rowspan="4"></td>
-			<td rowspan="4"></td>
-			<td rowspan="4">/cs/cmmnty/</td>
-			<td><a href="#" target="_blank">BoardQAList</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">BoardQADetail</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">BoardQARegist</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">BoardQAUpdt</a></td>
-			<td></td>
-		</tr>
-		<!--자료실-->
-		<tr class="">
-			<td rowspan="2">자료실</td>
-			<td rowspan="2">자료실</td>
-			<td rowspan="2"></td>
-			<td rowspan="2"></td>
-			<td rowspan="2">/cs/cmmnty/</td>
-			<td><a href="#" target="_blank">BoardRecsroomList</a></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td><a href="#" target="_blank">BoardRecsroomDetail</a></td>
-			<td></td>
-		</tr>
-		</tbody>
-	</table>
-	<!--//게시판-->
 
 	<!--My 서비스-->
 	<h2>My 서비스</h2>
@@ -980,66 +472,166 @@
 		</colgroup>
 		<tbody>
 		<!--My 정보저장-->
-		<tr class="">
+		<tr class="ok">
 			<td>My 정보저장</td>
 			<td>My 정보저장</td>
 			<td></td>
-			<td></td>
+			<td>226</td>
 			<td>/cs/myservice/</td>
 			<td><a href="#" target="_blank">MyInfoList</a></td>
-			<td></td>
+			<td>Desktop / </td>
 		</tr>
 		<!--코디네이터 경력 관리-->
-		<tr class="">
-			<td rowspan="8">코디네이터 경력 관리</td>
-			<td rowspan="8">코디네이터 경력 관리</td>
-			<td rowspan="8"></td>
-			<td rowspan="8"></td>
-			<td rowspan="8">/cs/coordicareer/</td>
+		<tr class="ok">
+			<td rowspan="5">코디네이터 경력 관리</td>
+			<td rowspan="5">코디네이터 경력 관리</td>
+			<td rowspan="5"></td>
+			<td>228</td>
+			<td rowspan="5">/cs/coordicareer/</td>
 			<td><a href="#" target="_blank">CoordinatorCareerList</a></td>
-			<td></td>
+			<td>Desktop / </td>
 		</tr>
 		<tr>
+			<td>229</td>
 			<td><a href="#" target="_blank">CoordinatorTrnngEdcDetailPopup</a></td>
-			<td></td>
+			<td>관리자 공통팝업 사용</td>
 		</tr>
 		<tr>
-			<td><a href="#" target="_blank">CoordinatorTrnngEdcRegistPopup</a></td>
-			<td></td>
-		</tr>
-		<tr>
+			<td>231</td>
 			<td><a href="#" target="_blank">CoordinatorTrnngEdcUpdtPopup</a></td>
-			<td></td>
+            <td>관리자 공통팝업 사용</td>
 		</tr>
 		<tr>
-			<td><a href="#" target="_blank">CoordinatorEdcActCareerDetailPopup</a></td>
-			<td></td>
-		</tr>
-		<tr>
+			<td>233</td>
 			<td><a href="#" target="_blank">CoordinatorEtcActCareerDetailPopup</a></td>
-			<td></td>
+            <td>관리자 공통팝업 사용</td>
 		</tr>
 		<tr>
-			<td><a href="#" target="_blank">CoordinatorEtcActCareerRegistPopup</a></td>
-			<td></td>
-		</tr>
-		<tr>
+			<td>237</td>
 			<td><a href="#" target="_blank">CoordinatorEtcActCareerUpdtPopup</a></td>
-			<td></td>
+            <td>관리자 공통팝업 사용</td>
 		</tr>
 		<!--My 서비스메뉴-->
 		<tr class="">
-			<td>My 서비스메뉴</td>
+			<td rowspan="2">My 서비스메뉴</td>
 			<td>My 서비스메뉴</td>
 			<td></td>
-			<td></td>
+			<td>238</td>
 			<td>/cs/myservice/</td>
 			<td><a href="#" target="_blank">MySvcList</a></td>
+			<td>@</td>
+		</tr>
+		<tr class="ok">
+			<td>개인맞춤서비스 제공</td>
 			<td></td>
+			<td>240</td>
+			<td>/cs/myservice/</td>
+			<td><a href="#" target="_blank">Personalized</a></td>
+			<td>Desktop / </td>
 		</tr>
 		</tbody>
 	</table>
 	<!--//My 서비스-->
+
+	<!--etc-->
+	<h2>링크 확정 안된 페이지 - 특화단지사업 안내 영역</h2>
+	<table>
+		<colgroup>
+			<col width="10%">
+			<col width="15%">
+			<col width="15%">
+			<col width="20%">
+			<col width="10%">
+			<col width="10%">
+			<col>
+		</colgroup>
+		<tbody>
+		<!--스마트 미세먼지 클린특화단지-->
+		<tr class="">
+			<td rowspan="6">스마트 미세먼지 클린특화단지</td>
+			<td>스마트 미세먼지 클린 특화단지 조성사업</td>
+			<td></td>
+			<td>57 ~ 58</td>
+			<td></td>
+			<td><a href="#" target="_blank">미정</a></td>
+			<td>@</td>
+		</tr>
+		<tr class="">
+			<td>우리동네 미세먼지 정보 제공 서비스</td>
+			<td></td>
+			<td>59</td>
+			<td></td>
+			<td><a href="#" target="_blank">미정</a></td>
+			<td>@</td>
+		</tr>
+		<tr class="">
+			<td>공업단지 비산먼지 해결 서비스</td>
+			<td></td>
+			<td>60</td>
+			<td></td>
+			<td><a href="#" target="_blank">미정</a></td>
+			<td>@</td>
+		</tr>
+		<tr class="">
+			<td>통학로 청정-안심공기 제공 서비스</td>
+			<td></td>
+			<td>61</td>
+			<td></td>
+			<td><a href="#" target="_blank">미정</a></td>
+			<td>@</td>
+		</tr>
+		<tr class="">
+			<td>지하철역 미세먼지 저감 서비스</td>
+			<td></td>
+			<td>62</td>
+			<td></td>
+			<td><a href="#" target="_blank">미정</a></td>
+			<td>@</td>
+		</tr>
+		<tr class="">
+			<td>빅데이터 기반 미세먼지 대응 서비스</td>
+			<td></td>
+			<td>63</td>
+			<td></td>
+			<td><a href="#" target="_blank">미정</a></td>
+			<td>@</td>
+		</tr>
+
+		</tbody>
+	</table>
+	<!--//etc-->
+
+	<!--전문가 지식나눔-->
+	<h2>*추가 작업 페이지* 전문가 지식나눔 </h2>
+	<table>
+		<colgroup>
+			<col width="10%">
+			<col width="15%">
+			<col width="15%">
+			<col width="20%">
+			<col width="10%">
+			<col width="10%">
+			<col>
+		</colgroup>
+		<tbody>
+		<!--미세먼지 바로알기-->
+		<tr class="ok">
+			<td rowspan="2">미세먼지 바로알기</td>
+			<td rowspan="2">팩트뉴스</td>
+			<td rowspan="2"></td>
+			<td>168</td>
+			<td rowspan="2">/cs/knowledge/board/</td>
+			<td><a href="#" target="_blank">KnowledgeBoardList</a></td>
+			<td>Desktop / </td>
+		</tr>
+		<tr class="ok">
+			<td>169</td>
+			<td><a href="#" target="_blank">KnowledgeBoardDetail</a></td>
+			<td>Desktop / </td>
+		</tr>
+		</tbody>
+	</table>
+
 
 
 	<!--//Applications-->

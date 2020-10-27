@@ -106,7 +106,7 @@ table { width: 100%; text-align: left; border-collapse: collapse; border-spacing
 /* Point color setting */
 /* Background - color setting */
 /** BASE SETTING */
-#globalHeader .header_wrap #globalNav .gnb_wrap:after, #globalHeader .header_wrap #globalNav .gnb_wrap .depth_wrap .depth_list:after, #globalHeader .header_wrap .gnb_utility:after, #globalHeader .site_map_wrap .map_list_wrap > ul > li:after, #globalHeader .user_rank_wrap .user_top3 > li:after, #globalHeader .user_rank_wrap .user_top3 > li div ul:after, #globalHeader .user_rank_wrap .user_ranker > li:after, #footer_wrap > div:after, .main_wrap .visual:after, .main_wrap .life_index .life_index_list .condition_wrap .condition_info_wrap:after, .main_wrap .life_index .life_index_list .condition_wrap .condition_info_wrap .condition_info > ul:after, .main_wrap .life_index .life_index_list .condition_wrap .condition_table:after, .main_wrap .dulle_gil > div .dulle_slick_wrap .dulle_slick_ui .btn_wrap:after, .main_wrap .bucheon_festival .festival_slick_ui .btn_wrap:after, .main_wrap .estate_info > div .estate_slick:after, .main_wrap .bucheon_etc > div:after, .main_wrap .bucheon_etc > div .dust_forecast .cdt_category:after, .main_wrap .bucheon_etc > div .dust_forecast .cdt_display:after, .main_wrap .bucheon_etc > div .dust_reduct .img_info .img_display_wrap:after, .main_wrap .bucheon_etc > div .dust_participat .page_list_wrap:after, .main_wrap .bucheon_communicate > div .bucheon_communicate_slick:after, .Personalized .float_wrap:after, .Personalized .float_wrap .cont_list_info_wrap ul li:after { content: " "; display: block; clear: both; }
+#globalHeader .header_wrap #globalNav .gnb_wrap:after, #globalHeader .header_wrap #globalNav .gnb_wrap .depth_wrap .depth_list:after, #globalHeader .header_wrap .gnb_utility:after, #globalHeader .site_map_wrap .map_list_wrap > ul > li:after, #globalHeader .user_rank_wrap .user_top3 > li:after, #globalHeader .user_rank_wrap .user_top3 > li div ul:after, #globalHeader .user_rank_wrap .user_ranker > li:after, #footer_wrap > div:after, .main_wrap .visual:after, .main_wrap .life_index .life_index_list .condition_wrap .condition_info_wrap:after, .main_wrap .life_index .life_index_list .condition_wrap .condition_info_wrap .condition_info > ul:after, .main_wrap .life_index .life_index_list .condition_wrap .condition_table:after, .main_wrap .dulle_gil > div .dulle_slick_wrap .dulle_slick_ui .btn_wrap:after, .main_wrap .bucheon_festival .festival_slick_ui .btn_wrap:after, .main_wrap .estate_info > div .estate_slick:after, .main_wrap .bucheon_etc > div:after, .main_wrap .bucheon_etc > div .dust_forecast .cdt_category:after, .main_wrap .bucheon_etc > div .dust_forecast .cdt_display:after, .main_wrap .bucheon_etc > div .dust_reduct .img_info .img_display_wrap:after, .main_wrap .bucheon_etc > div .dust_participat .page_list_wrap:after, .main_wrap .bucheon_communicate > div .bucheon_communicate_slick:after, .Personalized .float_wrap:after, .Personalized .float_wrap .cont_list_info_wrap ul li:after, .CoordinatorCareerList .sub_contents .cont_header:after { content: " "; display: block; clear: both; }
 
 @media only screen and (max-width: 1856px) { html { font-size: 20px !important; } }
 
@@ -1402,13 +1402,74 @@ label, button { cursor: pointer; }
 
 .main_wrap #pageAlert { width: 480px; height: 60px; background-color: rgba(0, 0, 0, 0.8); color: #fff; font-weight: 600; text-align: center; font-size: 16px; letter-spacing: -.5px; padding: 0 0 0 20px; position: fixed; left: 50%; bottom: 50px; z-index: 100; line-height: 60px; background-image: url("/img/cs/main/icon_alert.png"); background-position: 20px 50%; background-repeat: no-repeat; -webkit-transform: translate(-50%, 0); -moz-transform: translate(-50%, 0); -ms-transform: translate(-50%, 0); -o-transform: translate(-50%, 0); transform: translate(-50%, 0); -webkit-border-radius: 30px; -moz-border-radius: 30px; border-radius: 30px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; display: none; }
 
+/* /cs/square/qustnr/QustnrRegist.html */
+.QustnrRegist .regist_wrap { width: 1280px; margin: 0 auto; padding: 120px 20px; border-top: 1px solid #999da5; border-bottom: 1px solid #e6eaee; }
+
+.QustnrRegist .regist_wrap .txt_wrap { width: 400px; margin: 0 auto; padding: 110px 0 0; text-align: center; background: url("/img/cs/square/icon_regist.jpg") 50% 0 no-repeat; }
+
+.QustnrRegist .regist_wrap strong { color: #0c1e42; font-weight: 600; font-size: 36px; line-height: 48px; letter-spacing: -3px; }
+
+.QustnrRegist .regist_wrap p { color: #999da5; font-weight: 600; margin: 30px 0 70px; font-size: 20px; line-height: 32px; letter-spacing: -1px; }
+
+.QustnrRegist .regist_wrap a { height: 50px; padding: 0 60px; font-size: 16px; font-weight: 600; line-height: 50px; color: #696d75; border: 1px solid #c6cace; display: inline-block; -webkit-border-radius: 50px; -moz-border-radius: 50px; border-radius: 50px; -webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -o-transition: all 0.2s ease; -ms-transition: all 0.2s ease; }
+
+.QustnrRegist .regist_wrap a:hover { background-color: #2c64cf; color: #fff; }
+
+/* /cs/square/ctznBoard/CtznBoardList02.html */
+.CtznBoardList .report_info_wrap { width: 1280px; margin: 0 auto; border-top: 1px solid #e6eaee; border-bottom: 1px solid #e6eaee; padding: 50px; background: url("/img/cs/square/icon_report_info.jpg") 97% 50% no-repeat; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.CtznBoardList .report_info_wrap ul { margin: 0 0 20px; }
+
+.CtznBoardList .report_info_wrap ul li { color: #393d45; font-weight: 600; font-size: 16px; line-height: 28px; letter-spacing: -.5px; }
+
+.CtznBoardList .report_info_wrap ul li:before { width: 4px; height: 4px; content: ""; display: inline-block; background-color: #393d45; vertical-align: middle; margin: 0 10px 0 0; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+
+.CtznBoardList .report_info_wrap a { width: 180px; height: 50px; display: inline-block; font-size: 16px; letter-spacing: -.5px; line-height: 50px; color: #fff; font-weight: 600; text-align: center; margin: 0 15px 0 0; border: 1px solid transparent; -webkit-border-radius: 90px; -moz-border-radius: 90px; border-radius: 90px; -webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -o-transition: all 0.2s ease; -ms-transition: all 0.2s ease; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.CtznBoardList .report_info_wrap a.complaints_btn { background-color: #787b83; }
+
+.CtznBoardList .report_info_wrap a.complaints_btn:hover { background-color: #fff; color: #787b83; border: 1px solid #787b83; }
+
+.CtznBoardList .report_info_wrap a.propose_btn { background-color: #30405e; }
+
+.CtznBoardList .report_info_wrap a.propose_btn:hover { background-color: #fff; color: #30405e; border: 1px solid #30405e; }
+
 /* 미세먼지 코디네이터 활동 - 등록 - CoordinatorActRegist */
-.CoordinatorActRegist .sub_contents { width: 1280px; margin: 0 auto 80px; padding: 20px 0 0; }
+.CoordinatorActRegist .sub_contents { width: 1280px; margin: 0 auto 80px; padding: 20px 20px 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 .CoordinatorActRegist .sub_contents .codi_banner { height: 150px; }
 
 .CoordinatorActRegist .sub_contents .resister_wrap { margin: 40px 0 0; }
 
+.CoordinatorActRegist .sub_contents .upload_info { display: inline; font-size: 14px; letter-spacing: -.5px; color: #696d75; }
+
+.CoordinatorActRegist .sub_contents .img_disclamer { margin: 15px 0; }
+
+.CoordinatorActRegist .sub_contents .img_disclamer li { color: #696d75; font-weight: 600; font-size: 14px; line-height: 26px; letter-spacing: -.5px; }
+
+/* 찾아가는 미세먼지 교실 - 등록 - MyEdcSchdulCldrList */
+.MyEdcSchdulCldrList .sub_contents { width: 1280px; margin: 0 auto 80px; padding: 40px 20px 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.MyEdcSchdulCldrList .sub_contents .schdulCldrListLookup_wrap table th, .MyEdcSchdulCldrList .sub_contents .schdulCldrListLookup_wrap table td { border: 1px solid #e6eaee; padding: 15px 0 15px 20px; }
+
+.MyEdcSchdulCldrList .sub_contents .schdulCldrListLookup_wrap table th { background-color: #f5f7f9; font-size: 15px; color: #696d75; font-weight: 600; }
+
+.MyEdcSchdulCldrList .sub_contents .schdulCldrList_wrap { margin: 70px 0 0; }
+
+.MyEdcSchdulCldrList .sub_contents .edc_more { font-size: 14px; color: #fff; background-color: #787b83; padding: 10px 16px; -webkit-border-radius: 30px; -moz-border-radius: 30px; border-radius: 30px; }
+
+/* 찾아가는 미세먼지 교실 - 등록 - UlfptcEdcRegist */
+.UlfptcEdcRegist .sub_contents { width: 1280px; margin: 0 auto 80px; padding: 20px 20px 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.UlfptcEdcRegist .sub_contents .codi_banner { height: 150px; }
+
+.UlfptcEdcRegist .sub_contents .resister_wrap { margin: 40px 0 0; }
+
+.UlfptcEdcRegist .sub_contents .upload_info { display: inline; font-size: 14px; letter-spacing: -.5px; color: #696d75; }
+
+.UlfptcEdcRegist .sub_contents .inquiry_btn { color: #fff; padding: 8px 15px; background-color: #787b83; margin: 0 0 0 15px; -webkit-border-radius: 30px; -moz-border-radius: 30px; border-radius: 30px; }
+
+/* 개인맞춤서비스 제공 - Personalized */
 .Personalized .personal_txtWrap { width: 1280px; margin: 26px auto 0; }
 
 .Personalized .personal_txtWrap .personal_label { display: inline-block; vertical-align: middle; padding: 4px 12px; background-color: #e9f4ff; color: #2c64cf; font-weight: 600; font-size: 14px; line-height: 26px; letter-spacing: -.5px; -webkit-border-radius: 20px; -moz-border-radius: 20px; border-radius: 20px; }
@@ -1537,6 +1598,50 @@ label, button { cursor: pointer; }
 
 .Personalized .float_wrap .event_wrap .family_event { margin: 0 0 32px; }
 
+/* 개인맞춤서비스 제공 - 	MyInfoList */
+.MyInfoList .sub_contents { width: 1280px; margin: 0 auto 80px; padding: 20px 20px 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.MyInfoList .sub_contents .myinfolist_wrap table { margin: 0 0 50px; }
+
+.MyInfoList .sub_contents .myinfolist_wrap table th, .MyInfoList .sub_contents .myinfolist_wrap table td { border: 1px solid #e6eaee; padding: 20px; line-height: 20px; font-style: 15px; }
+
+.MyInfoList .sub_contents .myinfolist_wrap table th { background-color: #f5f7f9; font-size: 15px; color: #696d75; font-weight: 600; }
+
+.MyInfoList .sub_contents .myinfolist_wrap table p { display: inline-block; font-size: 15px; color: #696d75; stroke-linecap: -.5px; }
+
+.MyInfoList .sub_contents .myinfolist_wrap table thead th { text-align: center; font-size: 16px; color: #596d93; padding: 10px; }
+
+.MyInfoList .sub_contents .myinfolist_wrap table .radioLabel, .MyInfoList .sub_contents .myinfolist_wrap table .checkboxLabel { margin: 10px 0 10px 20px; }
+
+.MyInfoList .sub_contents .myinfolist_wrap table .area_label .checkboxLabel, .MyInfoList .sub_contents .myinfolist_wrap table .area_label .radioLabel { width: 70px; }
+
+.MyInfoList .sub_contents .myinfolist_wrap table .myinfo_cta { font-size: 14px; color: #fff; background-color: #787b83; padding: 10px 16px; display: inline-block; margin: 0 0 0 10px; -webkit-border-radius: 30px; -moz-border-radius: 30px; border-radius: 30px; }
+
+.MyInfoList .sub_contents .myinfolist_wrap table .att_area_wrap { position: relative; }
+
+.MyInfoList .sub_contents .myinfolist_wrap table .my_area_btn { position: absolute; top: 50%; right: 280px; -webkit-transform: translate(0, -50%); -moz-transform: translate(0, -50%); -ms-transform: translate(0, -50%); -o-transform: translate(0, -50%); transform: translate(0, -50%); }
+
+.MyInfoList .sub_contents .txt_wrap { margin: 0 0 20px; }
+
+/* 미세먼지 코디네이터 경력 관리 - CoordinatorCareerList */
+.CoordinatorCareerList .sub_contents { width: 1280px; margin: 0 auto 80px; padding: 20px 20px 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.CoordinatorCareerList .sub_contents .career_table_wrap table th, .CoordinatorCareerList .sub_contents .career_table_wrap table td { border: 1px solid #e6eaee; padding: 20px; }
+
+.CoordinatorCareerList .sub_contents .career_table_wrap table th { background-color: #f5f7f9; font-size: 15px; color: #696d75; font-weight: 600; }
+
+.CoordinatorCareerList .sub_contents .career_table_wrap table p { display: inline-block; }
+
+.CoordinatorCareerList .sub_contents .codi_cta { font-size: 14px; color: #fff; background-color: #787b83; padding: 10px 16px; display: inline-block; margin: 0 0 0 10px; -webkit-border-radius: 30px; -moz-border-radius: 30px; border-radius: 30px; }
+
+.CoordinatorCareerList .sub_contents .codi_cont_wrap { margin: 60px 0; }
+
+.CoordinatorCareerList .sub_contents .cont_header { margin: 0 0 20px; }
+
+.CoordinatorCareerList .sub_contents .cont_header .codi_cta_wrap { float: right; }
+
+.CoordinatorCareerList .sub_contents .cont_header strong { color: #0c1e42; font-weight: 600; font-size: 22px; line-height: 34px; letter-spacing: -1px; }
+
 /* common css */
 .hidden-txt, legend { width: 0; height: 0; overflow: hidden; display: inline-block; text-indent: -9999px; line-height: 1px; position: absolute; }
 
@@ -1643,6 +1748,13 @@ input.basic_txt_input:disabled { background-color: #f5f7f9; font-size: 15px; }
 
 textarea.basic_txt_area { line-height: 28px; resize: none; padding: 10px 20px; }
 
+/* form 등록 취소 버튼 */
+.cta_wrap { width: 100%; text-align: center; margin: 60px 0 0; }
+
+.cta_wrap button, .cta_wrap a.cta_btn { width: 160px; height: 50px; font-size: 16px; line-height: 50px; font-weight: 600; color: #696d75; border: 1px solid #c6cace; display: inline-block; vertical-align: middle; margin: 0 5px 0; -webkit-border-radius: 50px; -moz-border-radius: 50px; border-radius: 50px; -webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -o-transition: all 0.2s ease; -ms-transition: all 0.2s ease; }
+
+.cta_wrap button:hover, .cta_wrap button.active, .cta_wrap a.cta_btn:hover { background-color: #2c64cf; color: #fff; }
+
 /* Slider */
 .slick-slider { position: relative; display: block; box-sizing: border-box; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -webkit-touch-callout: none; -khtml-user-select: none; -ms-touch-action: pan-y; touch-action: pan-y; -webkit-tap-highlight-color: transparent; }
 
@@ -1729,304 +1841,3 @@ textarea.basic_txt_area { line-height: 28px; resize: none; padding: 10px 20px; }
 .slick-dots li button:before { font-family: 'slick'; font-size: 6px; line-height: 20px; position: absolute; top: 0; left: 0; width: 20px; height: 20px; content: '•'; text-align: center; opacity: .25; color: black; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 .slick-dots li.slick-active button:before { opacity: .75; color: black; }
-
-/* 클래스 */
-.container { width: 1280px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; }
-
-.sound-only { display: inline-block; position: absolute; top: 0; left: 0; width: 0; height: 0; margin: 0; padding: 0; font-size: 0; line-height: 0; border: 0; overflow: hidden; }
-
-.clear::after { display: block; clear: both; content: ''; }
-
-.float_left { float: left !important; }
-
-.float_right { float: right !important; }
-
-.text_center { text-align: center; }
-
-.text_left { text-align: left; }
-
-.text_right { text-align: right; }
-
-.verticalMiddle { vertical-align: middle; }
-
-.verticalBase { vertical-align: baseline; }
-
-.verticalBottom { vertical-align: bottom; }
-
-.w-100 { width: 100%; }
-
-.h-100 { height: 100%; }
-
-.displayFlex { display: flex; }
-
-.flexWrap { flex-wrap: wrap; }
-
-.flexJustifyBetween { justify-content: space-between; }
-
-.flexAlignCenter { align-items: center; }
-
-.sub_contents { padding: 80px 0; }
-
-.subpageTitle { margin-bottom: 40px; }
-
-.subpageTitle h3 { font-size: 32px; font-weight: 900; color: #0c1e42; }
-
-.introText { margin-bottom: 22px; }
-
-.introText p { font-size: 16px; color: #696d75; font-weight: 600; padding-left: 17px; position: relative; }
-
-.introText p::before { content: '※'; display: block; position: absolute; left: 0; }
-
-.introText p:not(:last-child) { margin-bottom: 15px; }
-
-.subpageSectionTitle { margin-bottom: 20px; }
-
-.lookup_wrapper .subpageSectionTitle { margin-bottom: 40px; }
-
-.subpageSectionTitle > h4 { color: #0c1e42; font-weight: 900; font-size: 22px; display: inline-block; }
-
-.conts_section { margin-bottom: 75px; }
-
-.lookupArea { background: #f5f7f9; padding: 35px 60px 35px 70px; border: 1px solid #e5e7e9; }
-
-/* 폼 */
-.label_text { display: inline-block; color: #696d75; font-size: 15px; font-weight: 600; transform: skew(-0.03deg); margin-right: 15px; }
-
-.selectForm { display: inline-block; height: 50px; line-height: 50px; font-size: 15px; border-radius: 4px; padding: 0 35px 0 15px; border: 1px solid #d6dade; background-image: url("/img/pbb/common/selector-down-arrow.png"); background-color: #fff; background-repeat: no-repeat; background-position-x: calc(100% - 10px); background-position-y: center; background-size: auto; font-weight: 600; color: #999da5; -moz-appearance: none; -webkit-appearance: none; appearance: none; transform: skew(-0.03deg); }
-
-.dateForm { display: inline-block; height: 50px; line-height: 50px; font-size: 15px; border-radius: 4px; padding: 0 35px 0 15px; border: 1px solid #d6dade; background: #fff url("/img/pbb/common/date-icon.png") no-repeat calc(100% - 10px) center/15px; font-weight: 600; color: #696d75; box-sizing: border-box; }
-
-.textForm { display: inline-block; height: 50px; line-height: 50px; font-size: 15px; border-radius: 4px; padding-left: 15px; border: 1px solid #d6dade; box-sizing: border-box; background-color: #fff; }
-
-.radioLabel { display: inline-block; position: relative; padding-left: 30px; line-height: 22px; }
-
-.radioForm { width: 0; height: 0; overflow: hidden; display: inline-block; text-indent: -9999px; line-height: 1px; position: absolute; }
-
-.radioForm + .radioImg { display: inline-block; width: 22px; height: 22px; border: 1px solid #c7cbcf; border-radius: 50%; overflow: hidden; background-color: #fff; box-sizing: border-box; position: absolute; left: 0; }
-
-.radioForm:checked + .radioImg { border: 6px solid #596d93; }
-
-.radioForm:focus + .radioImg { outline: 1px solid #161616; }
-
-.checkboxLabel { display: inline-block; position: relative; padding-left: 30px; line-height: 22px; }
-
-.checkboxForm { width: 0; height: 0; overflow: hidden; display: inline-block; text-indent: -9999px; line-height: 1px; position: absolute; }
-
-.checkboxForm + .checkboxImg { display: inline-block; width: 22px; height: 22px; border: 1px solid #d6dade; border-radius: 3px; overflow: hidden; background-color: #fff; position: absolute; left: 0; box-sizing: border-box; }
-
-.checkboxForm:checked + .checkboxImg { background: url("/img/pbb/common/checked_img.png") no-repeat center/auto; }
-
-.checkboxForm:focus + .checkboxImg { outline: 1px solid #161616; }
-
-.btn { display: inline-block; font-size: 16px; border: 0; padding: 0 77px; background-color: #596d93; color: #fff; cursor: pointer; height: 50px; line-height: 50px; font-weight: 600; transition: all 0.3s ease-in-out; border-radius: 30px; border: 1px solid #596d93; }
-
-.btn:hover { background-color: #fff; color: #596d93; }
-
-.btn:focus { outline: 1px solid #161616; }
-
-.textDivision { color: #999da5; font-size: 16px; display: inline-block; margin: 0 5px; }
-
-/* 조건조회 폼 */
-.lookupLines:not(:last-child) { margin-bottom: 10px; }
-
-.submit_btn_wrapper { padding-left: 65px; border-left: 1px solid #ccc; }
-
-/* 게시판리스트 */
-.boardLists .boardListSet { margin-bottom: 20px; }
-
-.boardLists .boardListSet .selectForm { height: 42px; line-height: 42px; }
-
-.boardLists .boardListSet .listCountData { font-weight: 900; }
-
-.boardLists table { width: 100%; }
-
-.boardLists th, .boardLists td { border: 1px solid #e5e9ed; height: 50px; }
-
-.boardLists th { background-color: #f5f7f9; color: #696d75; font-weight: 600; }
-
-.boardLists td { color: #393d45; font-weight: 600; }
-
-.tableFieldArea { padding: 10px 8px; font-size: 14px; box-sizing: border-box; margin: 0 auto; }
-
-.tableFieldArea > p, .tableFieldArea > a { word-break: break-all; }
-
-.secretIcon { padding: 7px 12px; border-radius: 15px; background-color: #696d75; color: #fff; margin-right: 10px; }
-
-.lookupStatus { display: block; margin: 0 auto; width: 20px; height: 20px; border-radius: 50%; }
-
-.lookupStatus.codeGreen { background-color: #3ec730; }
-
-.lookupStatus.codeBlue { background-color: #0096ff; }
-
-.lookupStatus.codeRed { background-color: #ff4040; }
-
-.tableEmptyData { padding: 100px 0; font-weight: 600; font-size: 16px; }
-
-.resultWait { color: #999da5; }
-
-.boardWrDateTime { width: 200px; }
-
-.boardWrSubject { width: 490px; }
-
-.boardWrType, .boardWrHit { width: 150px; }
-
-.boardAnswerCpDate, .boardAnswerState { width: 200px; }
-
-.boardWrName { width: 200px; }
-
-/* 썸네일 게시판 리스트 */
-.boardThumbWrapper { padding: 30px 0; border-top: 1px solid #d6dade; border-bottom: 1px solid #d6dade; }
-
-.boardThumbLists > .boardThumbListItems { width: calc((100% - (10px * 3)) / 4); margin-right: 10px; margin-bottom: 40px; }
-
-.boardThumbLists > .boardThumbListItems:nth-child(4n) { margin-right: 0; }
-
-.boardThumbListImgs > a { display: block; }
-
-.boardThumbListImgs img { width: 100%; }
-
-.boardThumbListInfo { margin-top: 20px; }
-
-.boardThumbSubjects { font-size: 19px; font-weight: 600; margin-bottom: 15px; }
-
-.boardThumbSources { margin-bottom: 10px; }
-
-.boardThumbDatetimes { margin-bottom: 10px; }
-
-.boardThumbListEmpty { padding: 100px 0; }
-
-.boardThumbListEmptyText { font-size: 16px; font-weight: 600; }
-
-/* 게시판 페이지네이션 */
-.pagenation-wrapper { margin-top: 50px; text-align: center; }
-
-.pagenation-wrapper a, .pagenation-lists, .pagenation-items { display: inline-block; }
-
-.pagenation-items { margin: 0 2px; }
-
-.pagenation-lists { position: relative; top: -10px; }
-
-.pagenation-wrapper a { width: 30px; height: 30px; line-height: 30px; font-size: 16px; color: #393d45; border-radius: 3px; transition: 0.3s; }
-
-.pagenation-items.active > a, .pagenation-items > a:hover { background-color: #2c64cf; color: #fff; }
-
-.pagenation-arrow { position: relative; top: 10px; }
-
-.pagenation-arrow.pagenation-prev { background: url("/img/pbb/common/gray-prev-arrow.png") no-repeat center/auto; }
-
-.pagenation-arrow.pagenation-next { background: url("/img/pbb/common/gray-next-arrow.png") no-repeat center/auto; }
-
-/* .pagenations {text-align: center; margin-top: 50px;}
-.pagenations > a {width: 30px; height: 30px; line-height: 30px; font-size: 16px; color: #393d45; border-radius: 3px; transition: all 0.3s ease-in-out;display:inline-block;}
-.pagenationItems.active,
-.pagenationItems:hover {background-color: #2c64cf; color: #fff;}
-.pagenationArrows {position: relative; top: 10px;}
-.pagenationArrows.pagenationPrev { background: url("/img/pbb/common/gray-prev-arrow.png") no-repeat center / auto; }
-.pagenationArrows.pagenationNext {background: url("/img/pbb/common/gray-next-arrow.png") no-repeat center / auto;} */
-/* 게시판보기 */
-.boardView table { width: 100%; line-height: 25px; }
-
-.boardView th, .boardView td { border: 1px solid #e5e9ed; height: 50px; font-size: 15px; }
-
-.boardView th { background-color: #f5f7f9; color: #696d75; font-weight: 600; }
-
-.boardView td { color: #393d45; font-weight: 600; }
-
-.boardView .tableFieldArea { padding: 15px 20px; }
-
-.boardView .preData { white-space: pre-wrap; }
-
-.boardView .preData img { width: auto; max-width: 100%; }
-
-.boardViewCategory { width: 210px; }
-
-.boardViewCateData { width: calc(100% - 210px); }
-
-.boardViewInfoCategory { width: 410px; }
-
-.fileDownBtn { text-decoration: underline !important; }
-
-/* 게시판 버튼 */
-.boardBtns { margin-top: 60px; }
-
-.boardBtns .btn { padding: 0; width: 160px; color: #696d75; border: 1px solid #c5c9cd; background-color: #fff; }
-
-.boardBtns .btn:hover, .boardBtns .btn:focus { color: #fff; background-color: #2c64cf; border: 1px solid #2c64cf; }
-
-.boardBtns .btn:not(:last-child) { margin-right: 25px; }
-
-.boardBtns .prevBtn { background-image: url("/img/pbb/common/gray-prev-arrow.png"); background-repeat: no-repeat; background-position-y: center; background-position-x: 30px; }
-
-.boardBtns .prevBtn:hover { background-image: url("/img/pbb/common/white-prev-arrow.png"); }
-
-/* /cs/effect/UlfptcOctyList.html */
-.UlfptcOctyList .lookupFormLines .selectForm { width: 230px; margin-right: 15px; position: relative; top: 1px; }
-
-.UlfptcOctyList .lookupFormLines .dateForm { width: 220px; }
-
-.UlfptcOctyList .boardLists .chartTableData:nth-child(1), .UlfptcOctyList .boardLists .chartTableData:nth-child(2) { width: 70px; }
-
-.UlfptcOctyList .boardLists .chartTableData { width: calc((100% - (70px * 2)) / 11); }
-
-/* /cs/effect/ReducActReportList.html */
-.consistencyCompareChartAreas { width: calc(((100% - 20px) / 2)); margin-right: 20px; }
-
-.consistencyCompareChartAreas:nth-child(2n) { margin-right: 0; }
-
-.ReducActReportList .boardLists .chartTableData:first-child { width: 160px; }
-
-.ReducActReportList .boardLists .chartTableData { width: 180px; }
-
-/* /cs/square/ctznBoard/CtznBoardList.html */
-.CtznBoardList .lookupFormLines .selectForm { width: 180px; margin-right: 15px; }
-
-.CtznBoardList .lookupFormLines .textForm { width: 320px; }
-
-/* 미세먼지 아이디어 리스트  */
-#ideaBoardLists .boardWrDateTime { width: 150px; }
-
-#ideaBoardLists .boardWrSubject { width: 490px; }
-
-#ideaBoardLists .boardWrName { width: 150px; }
-
-#ideaBoardLists .boardWrHit { width: 100px; }
-
-#ideaBoardLists .boardAnswerCpDate, #ideaBoardLists .boardAnswerState { width: 150px; }
-
-/* 나의꿀팁공유 리스트 */
-#tipBoardLists .boardWrSubject { width: 690px; }
-
-/* 미세먼지 발생실험 리스트 */
-#experimentBoardLists .boardWrSubject { width: 690px; }
-
-/* /cs/qustnr/QustnrResultSearch.html */
-.qustItems:not(:last-child) { margin-bottom: 60px; }
-
-.qusSubjects { margin-bottom: 30px; }
-
-.qusSubjects > h4 { font-size: 20px; letter-spacing: -1px; color: #0c1e42; font-weight: 900; }
-
-.qusAnswerLists { padding: 47px 50px; border: 1px solid #f0f0f0; }
-
-.qusAnswerItems { line-height: 34px; }
-
-.qusAnswerItems:not(:last-child) { margin-bottom: 22px; }
-
-.qusAnswerItems .textForm { height: 34px; line-height: 34px; width: 400px; }
-
-.qusAnswerLists.qusAnswerTxt { padding: 0; border: 0; }
-
-.qusAnswerLists.qusAnswerTxt > textarea { padding: 10px; border: 1px solid #c5c9cd; border-radius: 5px; height: 140px; width: 100%; resize: none; }
-
-/* /cs/square/event/EventDetail.html */
-.EventDetail .boardViewCateData { width: 410px; }
-
-.EventDetail .preData { min-height: 500px; }
-
-/* /cs/sttusFrcst/UlfptcNclSttusList.html */
-.UlfptcNclSttusList .boardLists .dataField { width: calc(100% / 9); }
-
-/* /cs/sttusFrcst/UlfptcNclFrcstList.html */
-.UlfptcNclFrcstList .boardLists .dataField { width: calc(100% / 6); }
-
-/*# sourceMappingURL=../cs/map/common.css.map */
