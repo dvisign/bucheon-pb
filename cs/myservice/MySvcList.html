@@ -18,11 +18,17 @@
     <link rel="apple-touch-icon" content="">
     <link rel="icon" href="">
     <!--//common-->
+    <!-- css 정문채 -->
+    <link rel="stylesheet" href="/css/pbb/cs/test_1013.css">
     <!--css-->
     <link rel="stylesheet" href="/css/pbb/cs/common.css">
     <link rel="stylesheet" href="/css/pbb/cs/customui.css">
+
     <!--jquery-->
     <script src="/resources/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/resources/jquery/jquery-ui.min.js"></script>
+    <script src="/resources/jquery/jquery-ui-timepicker-addon.js"></script>
+
 </head>
 <body>
 <div id="wrap">
@@ -597,18 +603,124 @@
                 </ul>
             </div>
         </div>
+        <div id="questionWrap">
+            <a href="javascript:void:(0)">
+                <div>문의하기 이미지</div>
+                문의하기
+            </a>
+        </div>
     </header>
-    <div id="questionWrap">
-        <a href="javascript:viod:(0)">
-            <div>문의하기 이미지</div>
-            문의하기
-        </a>
-    </div>
     <!--//header-->
 
-<div>
-    
-</div>
+    <!--container-->
+    <div id="container" class="MySvcList">
+        <div class="breadcrumb_wrap">
+            <div>
+                <a href="/">home</a>
+                <!--
+                crumb_depth 가 multiple_depth 클래스를 가지면
+                -화살표 아이콘, hover 효과
+                -->
+                <div class="crumb_depth multiple_depth">
+                    <strong tabindex="0">산업부분</strong>
+                    <ul>
+                        <!--**a 태그 class="active" 현재 페이지 활성 표시-->
+                        <li><a href="#" class="active">대기오염배출물 사업장</a></li>
+                        <li><a href="#">대기오염배출물 사업장</a></li>
+                        <li><a href="#">대기오염배출물 사업장</a></li>
+                    </ul>
+                    <span>arrow icon</span>
+                </div>
+                <div class="crumb_depth ">
+                    <strong>산업부분</strong>
+                </div>
+            </div>
+        </div>
+        <div id="subTitle">
+            <h3>My서비스 메뉴</h3>
+        </div>
+        <div class="sub_contents">
+            <div class="svc_cont">
+                <strong>서비스 메뉴</strong>
+                <ul class="main_category displayFlex flexAlignCenter flexJustifyBetween">
+                    <li class="active">
+                        <button type="button">대분류1</button>
+                    </li>
+                    <li>
+                        <button type="button">대분류2</button>
+                    </li>
+                    <li>
+                        <button type="button">대분류3</button>
+                    </li>
+                    <li>
+                        <button type="button">대분류4</button>
+                    </li>
+                    <li>
+                        <button type="button">대분류5</button>
+                    </li>
+                    <li>
+                        <button type="button">대분류6</button>
+                    </li>
+                    <li>
+                        <button type="button">대분류7</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="svc_cont category_wrap">
+                <div class="middle_category">
+                    <strong>중분류</strong>
+                    <div class="category_list">
+                        <ul>
+                            <li>
+                                <label class="checkboxLabel" for="middleEvent1">
+                                    <input id="middleEvent1" class="checkboxForm" type="checkbox">
+                                    <span class="checkboxImg"></span>
+                                    <span class="label_text">중분류1</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="checkboxLabel" for="middleEvent2">
+                                    <input id="middleEvent2" class="checkboxForm" type="checkbox">
+                                    <span class="checkboxImg"></span>
+                                    <span class="label_text">중분류2</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="Subclass">
+                    <strong>소분류</strong>
+                    <div class="category_list">
+                        <ul class="displayFlex flexAlignCenter flexJustifyBetween">
+                            <li>
+                                <label class="checkboxLabel" for="SubclassEvent1">
+                                    <input id="SubclassEvent1" class="checkboxForm" type="checkbox">
+                                    <span class="checkboxImg"></span>
+                                    <span class="label_text">소분류1</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="checkboxLabel" for="SubclassEvent2">
+                                    <input id="SubclassEvent2" class="checkboxForm" type="checkbox">
+                                    <span class="checkboxImg"></span>
+                                    <span class="label_text">소분류2</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="checkboxLabel" for="SubclassEvent3">
+                                    <input id="SubclassEvent3" class="checkboxForm" type="checkbox">
+                                    <span class="checkboxImg"></span>
+                                    <span class="label_text">소분류3</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--//container-->
 
      <!-- footer -->
      <footer id="footer_wrap">

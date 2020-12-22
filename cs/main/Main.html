@@ -18,11 +18,17 @@
     <link rel="apple-touch-icon" content="">
     <link rel="icon" href="">
     <!--//common-->
+    <!-- css 정문채 -->
+    <link rel="stylesheet" href="/css/pbb/cs/test_1013.css">
     <!--css-->
     <link rel="stylesheet" href="/css/pbb/cs/common.css">
     <link rel="stylesheet" href="/css/pbb/cs/customui.css">
+
     <!--jquery-->
     <script src="/resources/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/resources/jquery/jquery-ui.min.js"></script>
+    <script src="/resources/jquery/jquery-ui-timepicker-addon.js"></script>
+
 </head>
 <body>
 <div id="wrap">
@@ -597,13 +603,13 @@
                 </ul>
             </div>
         </div>
+        <div id="questionWrap">
+            <a href="javascript:void:(0)">
+                <div>문의하기 이미지</div>
+                문의하기
+            </a>
+        </div>
     </header>
-    <div id="questionWrap">
-        <a href="javascript:viod:(0)">
-            <div>문의하기 이미지</div>
-            문의하기
-        </a>
-    </div>
     <!--//header-->
 
     <!--container-->
@@ -2954,6 +2960,31 @@
                             <strong>매우나쁨</strong>
                             <div class="cdt_indices_wrap"><span>0.125</span> ppm</div>
                         </li>
+                        <li class="cdt_good">
+                            <strong class="display_title">미세먼지</strong>
+                            <div class="cdt_img"><img src="/img/cs/main/icon_cdt_good.jpg" alt="좋음 아이콘"></div>
+                            <strong>좋음</strong>
+                            <div class="cdt_indices_wrap"><span>25</span> ㎍/㎥</div>
+
+                        </li>
+                        <li class="cdt_usually">
+                            <strong class="display_title">초미세먼지</strong>
+                            <div class="cdt_img"><img src="/img/cs/main/icon_cdt_usually.jpg" alt="보통 아이콘"></div>
+                            <strong>보통</strong>
+                            <div class="cdt_indices_wrap"><span>17</span> ㎍/㎥</div>
+                        </li>
+                        <li class="cdt_bad">
+                            <strong class="display_title">오존지수</strong>
+                            <div class="cdt_img"><img src="/img/cs/main/icon_cdt_bad.jpg" alt="나쁨 아이콘"></div>
+                            <strong>나쁨</strong>
+                            <div class="cdt_indices_wrap"><span>0.095</span> ppm</div>
+                        </li>
+                        <li class="cdt_terrible">
+                            <strong class="display_title">이산화질소</strong>
+                            <div class="cdt_img"><img src="/img/cs/main/icon_cdt_terrible.jpg" alt="매우나쁨 아이콘"></div>
+                            <strong>매우나쁨</strong>
+                            <div class="cdt_indices_wrap"><span>0.125</span> ppm</div>
+                        </li>
                     </ul>
                 </div>
                 <!--**dust_reduct 영역은 2개 타입이 있습니다. css - txt_info, img_info-->
@@ -3291,5 +3322,10 @@
  </div>
 <script src="/js/pbb/plugin.js"></script>
 <script src="/js/pbb/design_common.js"></script>
+<script>
+    $('.cdt_display').on('afterChange', function(e, slick, currentSlide) {
+        alert(`슬라이드 이동 후 시작점 슬라이드 번호 ${currentSlide}`)
+    })
+</script>
 </body>
 </html>

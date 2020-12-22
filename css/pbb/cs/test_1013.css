@@ -1,397 +1,593 @@
+@charset "UTF-8";
 /* 클래스 */
-.container {width: 1280px;margin: 0 auto;padding: 0 20px;box-sizing: border-box;}
-.sound-only {display: inline-block;position: absolute;top: 0;left: 0;width: 0;height: 0; margin: 0; padding: 0; font-size: 0; line-height: 0; border: 0; overflow: hidden;}
-.clear::after {display:block;clear:both;content:'';}
-.float_left {float:left !important;}
-.float_right {float:right !important;}
-.text_center {text-align: center;}
-.text_left {text-align: left;}
-.text_right {text-align: right;}
-.verticalMiddle {vertical-align: middle;}
-.verticalBase {vertical-align: baseline;}
-.verticalBottom {vertical-align: bottom;}
-.w-100 {width:100%;}
-.h-100 {height:100%;}
-.displayFlex {display:flex;}
-.flexWrap{flex-wrap: wrap;}
-.flexJustifyBetween {justify-content: space-between;}
-.flexJustifyCenter {justify-content: center;}
-.flexAlignCenter {align-items: center;}
+.container { width: 1280px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; }
 
-.subpageTitle {margin-bottom: 40px;}
-.subpageTitle h3 {font-size: 32px;font-weight: 900;color: #0c1e42;}
-.introText {margin-bottom:22px;}
-.introText p {font-size: 16px; color: #696d75;font-weight: 600;padding-left:17px;position:relative;}
-.introText p::before {content:'※';display:block;position: absolute;left:0;}
-.introText p:not(:last-child) {margin-bottom:15px;}
-.subpageSectionTitle {margin-bottom:20px;}
-.lookup_wrapper .subpageSectionTitle {margin-bottom:40px;}
-.subpageSectionTitle > h4 {color:#0c1e42;font-weight: 900;font-size:22px;display:inline-block;}
-.conts_section {margin-bottom: 75px;}
-.lookupArea {background: #f5f7f9;padding: 35px 60px 35px 70px;border: 1px solid #e5e7e9;}
+.sound-only { display: inline-block; position: absolute; top: 0; left: 0; width: 0; height: 0; margin: 0; padding: 0; font-size: 0; line-height: 0; border: 0; overflow: hidden; }
 
+.clear::after { display: block; clear: both; content: ''; }
+
+.float_left { float: left !important; }
+
+.float_right { float: right !important; }
+
+.text_center { text-align: center; }
+
+.text_left { text-align: left; }
+
+.text_right { text-align: right; }
+
+.verticalMiddle { vertical-align: middle; }
+
+.verticalBase { vertical-align: baseline; }
+
+.verticalBottom { vertical-align: bottom; }
+
+.w-100 { width: 100%; }
+
+.h-100 { height: 100%; }
+
+.displayFlex { display: flex; }
+
+.flexWrap { flex-wrap: wrap; }
+
+.flexJustifyBetween { justify-content: space-between; }
+
+.flexJustifyCenter { justify-content: center; }
+
+.flexAlignCenter { align-items: center; }
+
+.subpageTitle { margin-bottom: 40px; }
+
+.subpageTitle h3 { font-size: 32px; font-weight: 900; color: #0c1e42; }
+
+.introText { margin-bottom: 22px; }
+
+.introText p { font-size: 16px; color: #696d75; font-weight: 600; padding-left: 17px; position: relative; }
+
+.introText p::before { content: '※'; display: block; position: absolute; left: 0; }
+
+.introText p:not(:last-child) { margin-bottom: 15px; }
+
+.subpageSectionTitle { margin-bottom: 20px; }
+
+.lookup_wrapper .subpageSectionTitle { margin-bottom: 40px; }
+
+.subpageSectionTitle > h4 { color: #0c1e42; font-weight: 900; font-size: 22px; display: inline-block; }
+
+.conts_section { margin-bottom: 75px; }
+
+.lookupArea { background: #f5f7f9; padding: 35px 60px 35px 70px; border: 1px solid #e5e7e9; }
 
 /* 폼 */
-.label_text {display: inline-block; color: #696d75; font-size: 15px; font-weight: 600; transform: skew(-0.03deg); margin-right: 15px;}
-.selectForm {display: inline-block; height: 50px; line-height: 50px; font-size: 15px; border-radius: 4px; padding: 0 35px 0 15px; border: 1px solid #d6dade; background-image: url("/img/pbb/common/selector-down-arrow.png"); background-color: #fff; background-repeat: no-repeat; background-position-x: calc(100% - 10px); background-position-y: center; background-size: auto; font-weight: 600; color: #999da5;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  transform: skew(-0.03deg);}
-.dateForm {display: inline-block;height: 50px;line-height: 50px;font-size: 15px;border-radius: 4px;padding: 0 35px 0 15px;border: 1px solid #d6dade;background: #fff url("/img/pbb/common/date-icon.png") no-repeat calc(100% - 10px) center / 15px;font-weight: 600;color: #696d75;box-sizing: border-box;}
-.textForm {display: inline-block; height: 50px; line-height: 50px; font-size: 15px; border-radius: 4px; padding-left: 15px; border: 1px solid #d6dade;box-sizing: border-box;background-color:#fff;}
-.radioLabel {display:inline-block;position: relative;padding-left:30px;line-height: 22px;}
-.radioForm {width: 0;height: 0;overflow: hidden;display: inline-block;text-indent: -9999px;line-height: 1px;position: absolute;}
-.radioForm + .radioImg {display:inline-block;width:22px;height:22px;border:1px solid #c7cbcf;border-radius: 50%;overflow: hidden;background-color:#fff;box-sizing: border-box;position: absolute;left:0;}
-.radioForm:checked + .radioImg {border:6px solid #596d93;}
-.radioForm:focus + .radioImg {outline:1px solid #161616;}
-.checkboxLabel {display:inline-block;position: relative;padding-left:30px;line-height: 22px;}
-.checkboxForm {width: 0;height: 0;overflow: hidden;display: inline-block;text-indent: -9999px;line-height: 1px;position: absolute;}
-.checkboxForm + .checkboxImg {display:inline-block;width:22px; height:22px;border:1px solid #d6dade;border-radius: 3px;overflow:hidden;background-color:#fff;position: absolute;left:0;box-sizing: border-box;}
-.checkboxForm:checked + .checkboxImg {background:url('/img/pbb/common/checked_img.png') no-repeat center / auto;}
-.checkboxForm:focus + .checkboxImg {outline:1px solid #161616;}
-.btn {display: inline-block; font-size: 16px; border: 0; padding: 0 77px; background-color: #596d93; color: #fff; cursor: pointer; height: 50px; line-height: 50px; font-weight: 600; transition: all 0.3s ease-in-out; border-radius: 30px;border:1px solid #596d93;}
-.btn:hover {background-color:#fff;color:#596d93;}
-.btn:focus {outline:1px solid #161616;}
-.textDivision {color:#999da5;font-size:16px;display:inline-block;margin: 0 5px;}
+.label_text { display: inline-block; color: #696d75; font-size: 15px; font-weight: 600; transform: skew(-0.03deg); margin-right: 15px; }
+
+.selectForm { display: inline-block; height: 50px; line-height: 50px; font-size: 15px; border-radius: 4px; padding: 0 35px 0 15px; border: 1px solid #d6dade; background-image: url("/img/pbb/common/selector-down-arrow.png"); background-color: #fff; background-repeat: no-repeat; background-position-x: calc(100% - 10px); background-position-y: center; background-size: auto; font-weight: 600; color: #999da5; -moz-appearance: none; -webkit-appearance: none; appearance: none; transform: skew(-0.03deg); }
+
+.dateForm { display: inline-block; height: 50px; line-height: 50px; font-size: 15px; border-radius: 4px; padding: 0 35px 0 15px; border: 1px solid #d6dade; background: #fff url("/img/pbb/common/date-icon.png") no-repeat calc(100% - 10px) center/15px; font-weight: 600; color: #696d75; box-sizing: border-box; }
+
+.textForm { display: inline-block; height: 50px; line-height: 50px; font-size: 15px; border-radius: 4px; padding-left: 15px; border: 1px solid #d6dade; box-sizing: border-box; background-color: #fff; }
+
+.radioLabel { display: inline-block; position: relative; padding-left: 30px; line-height: 22px; }
+
+.radioForm { width: 0; height: 0; overflow: hidden; display: inline-block; text-indent: -9999px; line-height: 1px; position: absolute; }
+
+.radioForm + .radioImg { display: inline-block; width: 22px; height: 22px; border: 1px solid #c7cbcf; border-radius: 50%; overflow: hidden; background-color: #fff; box-sizing: border-box; position: absolute; left: 0; }
+
+.radioForm:checked + .radioImg { border: 6px solid #596d93; }
+
+.radioForm:focus + .radioImg { outline: 1px solid #161616; }
+
+.checkboxLabel { display: inline-block; position: relative; padding-left: 30px; line-height: 22px; }
+
+.checkboxForm { width: 0; height: 0; overflow: hidden; display: inline-block; text-indent: -9999px; line-height: 1px; position: absolute; }
+
+.checkboxForm + .checkboxImg { display: inline-block; width: 22px; height: 22px; border: 1px solid #d6dade; border-radius: 3px; overflow: hidden; background-color: #fff; position: absolute; left: 0; box-sizing: border-box; }
+
+.checkboxForm:checked + .checkboxImg { background: url("/img/pbb/common/checked_img.png") no-repeat center/auto; }
+
+.checkboxForm:focus + .checkboxImg { outline: 1px solid #161616; }
+
+.btn { display: inline-block; font-size: 16px; border: 0; padding: 0 77px; background-color: #596d93; color: #fff; cursor: pointer; height: 50px; line-height: 50px; font-weight: 600; transition: all 0.3s ease-in-out; border-radius: 30px; border: 1px solid #596d93; }
+
+.btn:hover { background-color: #fff; color: #596d93; }
+
+.btn:focus { outline: 1px solid #161616; }
+
+.textDivision { color: #999da5; font-size: 16px; display: inline-block; margin: 0 5px; }
 
 /* 조건조회 폼 */
-.lookupLines:not(:last-child) {margin-bottom:10px;}
-.submit_btn_wrapper {padding-left:65px;border-left:1px solid #ccc;}
+.lookupLines:not(:last-child) { margin-bottom: 10px; }
+
+.submit_btn_wrapper { padding-left: 65px; border-left: 1px solid #ccc; }
 
 /* 게시판리스트 */
-.boardLists {margin:60px 0;}
-.boardLists .boardListSet {margin-bottom: 20px;}
-.boardLists .boardListSet .selectForm {height: 42px;line-height: 42px;}
-.boardLists .boardListSet .listCountData {font-weight: 900;}
-.boardLists table {width:100%;}
-.boardLists th,
-.boardLists td {border:1px solid #e5e9ed;height:50px;}
-.boardLists th {background-color:#f5f7f9;color:#696d75;font-weight: 600;}
-.boardLists td {color:#393d45;font-weight: 600;}
-.tableFieldArea {padding:10px 8px;font-size:14px;box-sizing: border-box; margin: 0 auto;}
-.tableFieldArea > p,
-.tableFieldArea > a {word-break: break-all;}
-.secretIcon {padding:7px 12px;border-radius: 15px;background-color: #696d75;color:#fff;margin-right:10px;}
-.lookupStatus {display:block;margin:0 auto;width:20px;height:20px;border-radius: 50%;}
-.lookupStatus.codeGreen {background-color:#3ec730;}
-.lookupStatus.codeBlue {background-color:#0096ff;}
-.lookupStatus.codeRed {background-color:#ff4040;}
+.boardLists { margin: 60px 0; }
 
-.tableEmptyData {padding:100px 0; font-weight: 600; font-size:16px;}
-.resultWait {color:#999da5;}
-.boardWrDateTime {width:200px;}
-.boardWrSubject {width: 490px;}
-.boardWrType,
-.boardWrHit {width: 150px;}
-.boardAnswerCpDate,
-.boardAnswerState {width: 200px;}
-.boardWrName {width: 200px;}
-.boardEventDate {width:300px;}
-.boardEventType {width:100px;}
-.boardEventName {width:390px;}
-.boardEventPlace {width:150px;}
-.boardEventDepartment {width:150px;}
-.boardEventPhone {width:150px;}
+.boardLists .boardListSet { margin-bottom: 20px; }
+
+.boardLists .boardListSet .selectForm { height: 42px; line-height: 42px; }
+
+.boardLists .boardListSet .listCountData { font-weight: 900; }
+
+.boardLists table { width: 100%; }
+
+.boardLists th, .boardLists td { border: 1px solid #e5e9ed; height: 50px; }
+
+.boardLists th { background-color: #f5f7f9; color: #696d75; font-weight: 600; }
+
+.boardLists td { color: #393d45; font-weight: 600; }
+
+.boardLists .board-list-body a {}
+
+.tableFieldArea { padding: 10px 8px; font-size: 14px; box-sizing: border-box; margin: 0 auto; }
+
+.tableFieldArea > p, .tableFieldArea > a { word-break: break-all; }
+
+.secretIcon { padding: 7px 12px; border-radius: 15px; background-color: #696d75; color: #fff; margin-right: 10px; }
+
+.lookupStatus { display: block; margin: 0 auto; width: 20px; height: 20px; border-radius: 50%; }
+
+.lookupStatus.codeGreen { background-color: #3ec730; }
+
+.lookupStatus.codeBlue { background-color: #0096ff; }
+
+.lookupStatus.codeRed { background-color: #ff4040; }
+
+.tableEmptyData { padding: 100px 0; font-weight: 600; font-size: 16px; }
+
+.resultWait { color: #999da5; }
+
+.boardWrDateTime { width: 200px; }
+
+.boardWrSubject { width: 490px; }
+
+.boardWrType, .boardWrHit { width: 150px; }
+
+.boardAnswerCpDate, .boardAnswerState { width: 200px; }
+
+.boardWrName { width: 200px; }
+
+.boardEventDate { width: 300px; }
+
+.boardEventType { width: 100px; }
+
+.boardEventName { width: 390px; }
+
+.boardEventPlace { width: 150px; }
+
+.boardEventDepartment { width: 150px; }
+
+.boardEventPhone { width: 150px; }
 
 /* 썸네일 게시판 리스트 */
-.boardThumbWrapper {padding: 30px 0; border-top: 1px solid #d6dade; border-bottom: 1px solid #d6dade;}
-.boardThumbLists > .boardThumbListItems {width: calc((100% - (10px * 3)) / 4); margin-right: 10px; margin-bottom: 40px;}
-.boardThumbLists > .boardThumbListItems:nth-child(4n) {margin-right: 0;}
-.boardThumbListImgs {}
-.boardThumbListImgs > a {display:block;}
-.boardThumbListImgs img {width:100%;}
-.boardThumbListInfo {margin-top: 20px;}
-.boardThumbSubjects {font-size: 19px; font-weight: 600;margin-bottom: 15px;}
-.boardThumbSources {margin-bottom: 10px;}
-.boardThumbDatetimes {margin-bottom: 10px;}
-.boardThumbHits {}
-.boardThumbListEmpty {padding:100px 0;}
-.boardThumbListEmptyText {font-size:16px; font-weight: 600;}
+.boardThumbWrapper { padding: 30px 0; border-top: 1px solid #d6dade; border-bottom: 1px solid #d6dade; }
+
+.boardThumbLists > .boardThumbListItems { width: calc((100% - (10px * 3)) / 4); margin-right: 10px; margin-bottom: 40px; }
+
+.boardThumbLists > .boardThumbListItems:nth-child(4n) { margin-right: 0; }
+
+.boardThumbListImgs > a { display: block; }
+
+.boardThumbListImgs img { width: 100%; }
+
+.boardThumbListInfo { margin-top: 20px; }
+
+.boardThumbSubjects { font-size: 19px; font-weight: 600; margin-bottom: 15px; }
+
+.boardThumbSources { margin-bottom: 10px; }
+
+.boardThumbDatetimes { margin-bottom: 10px; }
+
+.boardThumbListEmpty { padding: 100px 0; }
+
+.boardThumbListEmptyText { font-size: 16px; font-weight: 600; }
 
 /* 게시판 페이지네이션 */
-.pagenation-wrapper {margin-top:50px;text-align: center;}
-.pagenation-wrapper a,
-.pagenation-lists,
-.pagenation-items {display:inline-block;}
-.pagenation-items {margin:0 2px;}
-.pagenation-lists {position: relative; top:-10px;}
-.pagenation-wrapper a {width:30px;height:30px;line-height:30px;font-size:16px;color:#393d45;border-radius: 3px;transition:0.3s;}
-.pagenation-items.active > a,
-.pagenation-items > a:hover {background-color:#2c64cf;color:#fff;}
-.pagenation-arrow {position:relative;top:10px;}
-.pagenation-arrow.pagenation-prev {background: url('/img/pbb/common/gray-prev-arrow.png') no-repeat center / auto;}
-.pagenation-arrow.pagenation-next {background: url('/img/pbb/common/gray-next-arrow.png') no-repeat center / auto;}
+.pagenation-wrapper { margin-top: 50px; text-align: center; }
+
+.pagenation-wrapper a, .pagenation-lists, .pagenation-items { display: inline-block; }
+
+.pagenation-items { margin: 0 2px; }
+
+.pagenation-lists { position: relative; top: -10px; }
+
+.pagenation-wrapper a { width: 30px; height: 30px; line-height: 30px; font-size: 16px; color: #393d45; border-radius: 3px; transition: 0.3s; }
+
+.pagenation-items.active > a, .pagenation-items > a:hover { background-color: #2c64cf; color: #fff; }
+
+.pagenation-arrow { position: relative; top: 10px; }
+
+.pagenation-arrow.pagenation-prev { background: url("/img/pbb/common/gray-prev-arrow.png") no-repeat center/auto; }
+
+.pagenation-arrow.pagenation-next { background: url("/img/pbb/common/gray-next-arrow.png") no-repeat center/auto; }
 
 /* .pagenations {text-align: center; margin-top: 50px;}
 .pagenations > a {width: 30px; height: 30px; line-height: 30px; font-size: 16px; color: #393d45; border-radius: 3px; transition: all 0.3s ease-in-out;display:inline-block;}
-.pagenationItems.active, 
+.pagenationItems.active,
 .pagenationItems:hover {background-color: #2c64cf; color: #fff;}
 .pagenationArrows {position: relative; top: 10px;}
 .pagenationArrows.pagenationPrev { background: url("/img/pbb/common/gray-prev-arrow.png") no-repeat center / auto; }
 .pagenationArrows.pagenationNext {background: url("/img/pbb/common/gray-next-arrow.png") no-repeat center / auto;} */
-
 /* 게시판보기 */
-.boardView {margin-bottom:60px;}
-.boardView table {width:100%; line-height: 25px;}
-.boardView th,
-.boardView td {border:1px solid #e5e9ed;height:50px;font-size:15px;}
-.boardView th {background-color:#f5f7f9;color:#696d75;font-weight: 600;}
-.boardView td {color:#393d45;font-weight: 600;}
-.boardView .tableFieldArea {padding:15px 20px;}
-.boardView .preData {white-space: pre-wrap;}
-.boardView .preData img {width:auto;max-width:100%;}
-.boardViewCategory {width:210px;}
-.boardViewCateData {width:calc(100% - 210px);}
-.boardViewInfoCategory {width:410px;}
-.fileDownBtn {text-decoration: underline !important;}
+.boardView { margin-bottom: 60px; }
+
+.boardView table { width: 100%; line-height: 25px; }
+
+.boardView th, .boardView td { border: 1px solid #e5e9ed; height: 50px; font-size: 15px; }
+
+.boardView th { background-color: #f5f7f9; color: #696d75; font-weight: 600; }
+
+.boardView td { color: #393d45; font-weight: 600; }
+
+.boardView .tableFieldArea { padding: 15px 20px; }
+
+.boardView .preData { white-space: pre-wrap; }
+
+.boardView .preData img { width: auto; max-width: 100%; }
+
+.boardViewCategory { width: 210px; }
+
+.boardViewCateData { width: calc(100% - 210px); }
+
+.boardViewInfoCategory { width: 410px; }
+
+.fileDownBtn { text-decoration: underline !important; }
 
 /* 게시판 버튼 */
-.boardBtns {margin-top:60px;}
-.boardBtns .btn {padding:0;width:160px;color:#696d75;border:1px solid #c5c9cd;background-color:#fff;} 
-.boardBtns .btn:hover,
-.boardBtns .btn:focus {color:#fff; background-color:#2c64cf;border:1px solid #2c64cf;} 
-.boardBtns .btn:not(:last-child) {margin-right:25px;} 
-.prevBtn {background-image:url("/img/pbb/common/gray-prev-arrow.png");background-repeat: no-repeat;background-position-y: center;background-position-x: 30px;}
-.prevBtn:hover {background-image:url("/img/pbb/common/white-prev-arrow.png");}
+.boardBtns { margin-top: 60px; }
+
+.boardBtns .btn { padding: 0; width: 160px; color: #696d75; border: 1px solid #c5c9cd; background-color: #fff; }
+
+.boardBtns .btn:hover, .boardBtns .btn:focus { color: #fff; background-color: #2c64cf; border: 1px solid #2c64cf; }
+
+.boardBtns .btn:not(:last-child) { margin-right: 25px; }
+
+.prevBtn { background-image: url("/img/pbb/common/gray-prev-arrow.png"); background-repeat: no-repeat; background-position-y: center; background-position-x: 30px; }
+
+.prevBtn:hover { background-image: url("/img/pbb/common/white-prev-arrow.png"); }
 
 /* /cs/effect/UlfptcOctyList.html */
-.UlfptcOctyList .sub_contents {width: 1280px; margin: 0 auto 80px; padding: 40px 20px 0;-webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-.UlfptcOctyList .lookupFormLines .selectForm {width:230px;margin-right:15px; position: relative; top: 1px;}
-.UlfptcOctyList .lookupFormLines .dateForm {width:220px;}
-.UlfptcOctyList .chartArea {margin-top:60px;}
-.UlfptcOctyList .boardLists .chartTableData:nth-child(1),
-.UlfptcOctyList .boardLists .chartTableData:nth-child(2) {width: 70px;}
-.UlfptcOctyList .boardLists .chartTableData {width: calc((100% - (70px * 2)) / 11);}
+.UlfptcOctyList .sub_contents { width: 1280px; margin: 0 auto 80px; padding: 40px 20px 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.UlfptcOctyList .lookupFormLines .selectForm { width: 230px; margin-right: 15px; position: relative; top: 1px; }
+
+.UlfptcOctyList .lookupFormLines .dateForm { width: 220px; }
+
+.UlfptcOctyList .chartArea { margin-top: 60px; }
+
+.UlfptcOctyList .boardLists .chartTableData:nth-child(1), .UlfptcOctyList .boardLists .chartTableData:nth-child(2) { width: 70px; }
+
+.UlfptcOctyList .boardLists .chartTableData { width: calc((100% - (70px * 2)) / 11); }
 
 /* /cs/effect/ReducActReportList.html */
-.ReducActReportList .sub_contents {width: 1280px; margin: 0 auto 80px; padding: 40px 20px 0;-webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-.consistencyCompareChartAreas {width:calc(((100% - 20px) / 2));margin-right:20px;}
-.consistencyCompareChartAreas:nth-child(2n) {margin-right:0;}
-.ReducActReportList .boardLists .chartTableData:first-child {width:160px;}
-.ReducActReportList .boardLists .chartTableData {width:180px;}
-.ReducActReportList .chartSections {margin-bottom:60px;}
+.ReducActReportList .sub_contents { width: 1280px; margin: 0 auto 80px; padding: 40px 20px 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.consistencyCompareChartAreas { width: calc(((100% - 20px) / 2)); margin-right: 20px; }
+
+.consistencyCompareChartAreas:nth-child(2n) { margin-right: 0; }
+
+.ReducActReportList .boardLists .chartTableData:first-child { width: 160px; }
+
+.ReducActReportList .boardLists .chartTableData { width: 180px; }
+
+.ReducActReportList .chartSections { margin-bottom: 60px; }
 
 /* /cs/square/ctznBoard/CtznBoardList.html */
-.CtznBoardList .sub_contents {width: 1280px; margin: 0 auto 80px; padding: 40px 20px 0;-webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-.CtznBoardList .lookupFormLines .selectForm {width:180px;margin-right:15px;}
-.CtznBoardList .lookupFormLines .textForm {width:320px;}
+.CtznBoardList .sub_contents { width: 1280px; margin: 0 auto 80px; padding: 40px 20px 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.CtznBoardList .lookupFormLines .selectForm { width: 180px; margin-right: 15px; }
+
+.CtznBoardList .lookupFormLines .textForm { width: 320px; }
 
 /* 미세먼지 아이디어 리스트  */
-#ideaBoardLists .boardWrDateTime {width:150px;}
-#ideaBoardLists .boardWrSubject {width: 490px;}
-#ideaBoardLists .boardWrName {width: 150px;}
-#ideaBoardLists .boardWrHit {width: 100px;}
-#ideaBoardLists .boardAnswerCpDate,
-#ideaBoardLists .boardAnswerState {width: 150px;}
+#ideaBoardLists .boardWrDateTime { width: 150px; }
+
+#ideaBoardLists .boardWrSubject { width: 490px; }
+
+#ideaBoardLists .boardWrName { width: 150px; }
+
+#ideaBoardLists .boardWrHit { width: 100px; }
+
+#ideaBoardLists .boardAnswerCpDate, #ideaBoardLists .boardAnswerState { width: 150px; }
+
 /* 나의꿀팁공유 리스트 */
-#tipBoardLists .boardWrDateTime {}
-#tipBoardLists .boardWrSubject {width:690px;}
-#tipBoardLists .boardWrName {}
-#tipBoardLists .boardWrHit {}
+#tipBoardLists .boardWrSubject { width: 690px; }
+
 /* 미세먼지 발생실험 리스트 */
-#experimentBoardLists .boardWrDateTime {}
-#experimentBoardLists .boardWrSubject {width:690px;}
-#experimentBoardLists .boardWrName {}
-#experimentBoardLists .boardWrHit {}
+#experimentBoardLists .boardWrSubject { width: 690px; }
 
 /* /cs/square/qustnr/QustnrResultSearch.html */
-.QustnrResultSearch .sub_contents {width: 1280px; margin: 0 auto 80px; padding: 40px 20px 0; -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;}
-.qustItems:not(:last-child) {margin-bottom:60px;}
-.qusSubjects {margin-bottom:30px;}
-.qusSubjects > h4 {font-size: 20px; letter-spacing: -1px; color: #0c1e42;font-weight: 900;}
-.qusAnswerLists {padding:47px 50px;border:1px solid #f0f0f0;}
-.qusAnswerItems {line-height:34px;}
-.qusAnswerItems:not(:last-child) {margin-bottom:22px;}
-.qusAnswerItems .textForm {height:34px; line-height: 34px;width:400px;} 
-.qusAnswerLists.qusAnswerTxt {padding:0;border:0;}
-.qusAnswerLists.qusAnswerTxt > textarea {padding:10px;border:1px solid #c5c9cd; border-radius: 5px;height:140px;width:100%;resize:none;}
+.QustnrResultSearch .sub_contents { width: 1280px; margin: 0 auto 80px; padding: 40px 20px 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.qustItems:not(:last-child) { margin-bottom: 60px; }
+
+.qusSubjects { margin-bottom: 30px; }
+
+.qusSubjects > h4 { font-size: 20px; letter-spacing: -1px; color: #0c1e42; font-weight: 900; }
+
+.qusAnswerLists { padding: 47px 50px; border: 1px solid #f0f0f0; }
+
+.qusAnswerItems { line-height: 34px; }
+
+.qusAnswerItems:not(:last-child) { margin-bottom: 22px; }
+
+.qusAnswerItems .textForm { height: 34px; line-height: 34px; width: 400px; }
+
+.qusAnswerLists.qusAnswerTxt { padding: 0; border: 0; }
+
+.qusAnswerLists.qusAnswerTxt > textarea { padding: 10px; border: 1px solid #c5c9cd; border-radius: 5px; height: 140px; width: 100%; resize: none; }
 
 /* /cs/square/event/EventDetail.html */
-.EventDetail .sub_contents {width: 1280px; margin: 0 auto 80px; padding: 40px 20px 0;-webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-.EventDetail .boardViewCateData {width:410px;}
-.EventDetail .preData {min-height:500px;}
+.EventDetail .sub_contents { width: 1280px; margin: 0 auto 80px; padding: 40px 20px 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.EventDetail .boardViewCateData { width: 410px; }
+
+.EventDetail .preData { min-height: 500px; }
 
 /* /cs/sttusFrcst/UlfptcNclSttusList.html */
-.UlfptcNclSttusList .sub_contents {width: 1280px; margin: 0 auto 80px; padding: 40px 20px 0;-webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-.UlfptcNclSttusList .boardLists .dataField {width:calc(100% / 9)}
+.UlfptcNclSttusList .sub_contents { width: 1280px; margin: 0 auto 80px; padding: 40px 20px 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.UlfptcNclSttusList .boardLists .dataField { width: calc(100% / 9); }
 
 /* /cs/sttusFrcst/UlfptcNclFrcstList.html */
-.UlfptcNclFrcstList .sub_contents {width: 1280px; margin: 0 auto 80px; padding: 40px 20px 0;-webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-.UlfptcNclFrcstList .boardLists .dataField {width:calc(100% / 6)}
+.UlfptcNclFrcstList .sub_contents { width: 1280px; margin: 0 auto 80px; padding: 40px 20px 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.UlfptcNclFrcstList .boardLists .dataField { width: calc(100% / 6); }
 
 /* /cs/square/event/EventSearch.html */
-.EventSearch .sub_contents {width: 1280px; margin: 0 auto 80px; padding: 40px 20px 0; -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;}
+.EventSearch .sub_contents { width: 1280px; margin: 0 auto 80px; padding: 40px 20px 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 /* /cs/square/event/EventList.html */
-.EventList .sub_contents {width: 1280px; margin: 0 auto 80px; padding: 40px 20px 0; -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;}
-.EventList .lookup_wrapper {margin-bottom:60px;}
-.EventList .lookupFormLines .selectForm {width: 180px; margin-right: 15px;}
-.EventList .lookupFormLines .textForm {width: 490px;}
+.EventList .sub_contents { width: 1280px; margin: 0 auto 80px; padding: 40px 20px 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.EventList .lookup_wrapper { margin-bottom: 60px; }
+
+.EventList .lookupFormLines .selectForm { width: 180px; margin-right: 15px; }
+
+.EventList .lookupFormLines .textForm { width: 490px; }
 
 /* /cs/square/event/UlfptcEdCldrList.html */
-.UlfptcEdCldrList .sub_contents {width: 1280px; margin: 0 auto 80px; padding: 40px 20px 0; -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;}
+.UlfptcEdCldrList .sub_contents { width: 1280px; margin: 0 auto 80px; padding: 40px 20px 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 /* 달력 */
-.monthSelector {padding:50px 0 30px 0;border:1px solid #e5e7e9;margin-bottom:60px;}
-.yearArea > h4 {font-size: 36px;color: #333333;text-align: center;display: inline-block;margin:0 20px;}
-.monthArrBtn {width: 26px;height:26px;display: inline-block;}
-.monthArrBtn.prevMonth {background: url('/img/pbb/common/gray-prev-arrow.png') no-repeat center / auto;}
-.monthArrBtn.nextMonth {background: url('/img/pbb/common/gray-next-arrow.png') no-repeat center / auto;}
+.monthSelector { padding: 50px 0 30px 0; border: 1px solid #e5e7e9; margin-bottom: 60px; }
 
-.monthArea {margin-top:33px;}
-.monthItems:not(:last-child) {margin-right:30px;}
-.monthItems > a {display: inline-block;width:40px;height:40px;line-height: 40px;border-radius: 50%;color:#999da5;font-size:16px;font-weight: 600;}
-.monthItems > a.active {display: inline-block;width:40px;height:40px;line-height: 40px;border-radius: 50%;color:#fff;background-color:#2c64cf;}
+.yearArea > h4 { font-size: 36px; color: #333333; text-align: center; display: inline-block; margin: 0 20px; }
 
-.eventCategoryItems:not(:last-child){margin-right:20px;}
-.eventCategoryItems > span {display: inline-block;font-size:14px;}
-.eventCategoryItems > span:not(.cateAvatars) {font-size:16px;}
-.cateAvatars {width:30px;height: 30px;border-radius: 50%;color:#fff;line-height: 30px;text-align: center;display: inline-block;position: relative;top:-1px;}
-.cateAvatars.cateAvatar010 {background-color:#3a9fc5;}
-.cateAvatars.cateAvatar020 {background-color:#344c8c;}
-.cateAvatars.cateAvatar030 {background-color:#518318;}
-.cateAvatars.cateAvatar040 {background-color:#c94494;}
-.cateAvatars.cateAvatar050 {background-color:#d96b03;}
-.cateAvatars.cateAvatar060 {background-color:#3961bf;}
-.cateAvatars.cateAvatar070 {background-color:#6238b4;}
-.cateAvatars.cateAvatar999 {background-color:#838b9a;}
+.monthArrBtn { width: 26px; height: 26px; display: inline-block; }
 
-.cateAvatars::after {color:#fff;font-size: 14px;}
-.cateAvatars.cateAvatar010::after {content:'공';}
-.cateAvatars.cateAvatar020::after {content:'전';}
-.cateAvatars.cateAvatar030::after {content:'축';}
-.cateAvatars.cateAvatar040::after {content:'영';}
-.cateAvatars.cateAvatar050::after {content:'문';}
-.cateAvatars.cateAvatar060::after {content:'체';}
-.cateAvatars.cateAvatar070::after {content:'행';}
-.cateAvatars.cateAvatar999::after {content:'기';}
+.monthArrBtn.prevMonth { background: url("/img/pbb/common/gray-prev-arrow.png") no-repeat center/auto; }
 
-.board-lists .eventBtns {margin-right:3px;}
-.eventBtns > a {display:inline-block; padding:0 16px; height:42px; line-height:42px; background-color:#fff;border-radius: 4px; transition: all 0.3s ease-in-out;color:#696d75;border:1px solid #d5d9dd;font-weight: 600;font-size:15px;}
-.eventBtns > a:hover {background-color:#2c64cf;color:#fff;border:1px solid #2c64cf;}
+.monthArrBtn.nextMonth { background: url("/img/pbb/common/gray-next-arrow.png") no-repeat center/auto; }
 
-.calendar {margin-top:25px;border:1px solid #e0e0e0;font-size:14px;}
-.calendarWeekToolbar {text-align: center;background-color:#f5f7f9;border-bottom: 1px solid #e0e0e0;}
-.calendarDay {width:calc(100% / 7);box-sizing: border-box;}
-.calendarWeekToolbar .calendarDay {padding:15px 0;}
-.calendarDaySun {color:#ee4d5d;}
-.calendarDaySat {color:#2c64cf;}
+.monthArea { margin-top: 33px; }
 
-.calendarWeekLine {position: relative;}
-.calendarWeekLine:not(:last-child) {border-bottom:1px solid #e0e0e0;}
-.calendarWeeks > .calendarDay {height:170px;padding:17px;}
-.calendarWeeks > .calendarDay:not(:last-child) {border-right: 1px solid #e0e0e0;}
-.calendarWeeks > .calendarDay.notThisMonth {background: url('/img/pbb/notday.png') no-repeat center / auto;}
-.calrenderDayContents {height:100%;position:relative;}
-.calendarDayText {position:absolute;left: 0;top: 0;}
+.monthItems:not(:last-child) { margin-right: 30px; }
 
-.calendarEventLists {padding-top: 40px;}
-.calendarEventItems {width:calc(100% / 4); text-align: center;margin-top: 5px;}
-.calendarEventItems:nth-child(4n) {margin-right:0;}
-.calendarEventItems > .cateAvatars {cursor:pointer;}
+.monthItems > a { display: inline-block; width: 40px; height: 40px; line-height: 40px; border-radius: 50%; color: #999da5; font-size: 16px; font-weight: 600; }
 
-.calendarEducations {position:absolute;top:40px;}
-.dateStart-1 {left:20px;width:calc(100% - 40px);}
-.dateStart-2 {left:calc(((100% / 7) * 1) + 20px);width:calc(((100% / 7) * 6) - 40px);}
-.dateStart-3 {left:calc(((100% / 7) * 2) + 20px);width:calc(((100% / 7) * 5) - 40px);}
-.dateStart-4 {left:calc(((100% / 7) * 3) + 20px);width:calc(((100% / 7) * 4) - 40px);}
-.dateStart-5 {left:calc(((100% / 7) * 4) + 20px);width:calc(((100% / 7) * 3) - 40px);}
-.dateStart-6 {left:calc(((100% / 7) * 5) + 20px);width:calc(((100% / 7) * 2) - 40px);}
-.dateStart-7 {left:calc(((100% / 7) * 6) + 20px);width:calc(((100% / 7) * 1) - 40px);}
+.monthItems > a.active { display: inline-block; width: 40px; height: 40px; line-height: 40px; border-radius: 50%; color: #fff; background-color: #2c64cf; }
 
-.dateNotEnd > .calendarEduDateLine { border-top-right-radius: 0;border-bottom-right-radius: 0 }
-.dateNotEnd.dateStart-1 {}
-.dateNotEnd.dateStart-2 {width:calc(((100% / 7) * 6) - 20px);}
-.dateNotEnd.dateStart-3 {width:calc(((100% / 7) * 5) - 20px);}
-.dateNotEnd.dateStart-4 {width:calc(((100% / 7) * 4) - 20px);}
-.dateNotEnd.dateStart-5 {width:calc(((100% / 7) * 3) - 20px);}
-.dateNotEnd.dateStart-6 {width:calc(((100% / 7) * 2) - 20px);}
-.dateNotEnd.dateStart-7 {width:calc(((100% / 7) * 1) - 20px);}
+.eventCategoryItems:not(:last-child) { margin-right: 20px; }
 
-.dateNotEnd.dateContinue {left:0;width:100%;}
-.dateNotEnd.dateContinue > .calendarEduDateLine {border-radius: 0;}
+.eventCategoryItems > span { display: inline-block; font-size: 14px; }
 
-.dateEnd > .calendarEduDateLine {border-top-left-radius: 0; border-bottom-left-radius: 0;}
+.eventCategoryItems > span:not(.cateAvatars) { font-size: 16px; }
 
-.dateEnd-1 {width:calc(((100% / 7) * 1) - 40px);}
-.dateEnd-2 {width:calc(((100% / 7) * 2) - 40px);}
-.dateEnd-3 {width:calc(((100% / 7) * 3) - 40px);}
-.dateEnd-4 {width:calc(((100% / 7) * 4) - 40px);}
-.dateEnd-5 {width:calc(((100% / 7) * 5) - 40px);}
-.dateEnd-6 {width:calc(((100% / 7) * 6) - 40px);}
-.dateEnd-7 {width:calc(((100% / 7) * 7) - 40px);}
+.cateAvatars { width: 30px; height: 30px; border-radius: 50%; color: #fff; line-height: 30px; text-align: center; display: inline-block; position: relative; top: -1px; }
 
-.dateEnd {left:0;}
-.dateEnd.dateEnd-1 {width:calc(((100% / 7) * 1) - 20px);}
-.dateEnd.dateEnd-2 {width:calc(((100% / 7) * 2) - 20px);}
-.dateEnd.dateEnd-3 {width:calc(((100% / 7) * 3) - 20px);}
-.dateEnd.dateEnd-4 {width:calc(((100% / 7) * 4) - 20px);}
-.dateEnd.dateEnd-5 {width:calc(((100% / 7) * 5) - 20px);}
-.dateEnd.dateEnd-6 {width:calc(((100% / 7) * 6) - 20px);}
-.dateEnd.dateEnd-7 {width:calc(((100% / 7) * 7) - 20px);}
+.cateAvatars.cateAvatar010 { background-color: #3a9fc5; }
 
+.cateAvatars.cateAvatar020 { background-color: #344c8c; }
 
-.calendarEduDateLine {width:100%;border-radius: 15px;height:30px;cursor: pointer;}
-.calendarEduDateLine.markerRed {background-color:rgba(210, 85, 101, 0.3); color:#D25565;}
-.calendarEduDateLine.markerPup {background-color:rgba(151, 117, 250, 0.3); color:#9775fa;}
-.calendarEduDateLine.markerOrng {background-color:rgba(255, 169, 77, 0.3); color:#ffa94d;}
-.calendarEduDateLine.markerBlue {background-color:rgba(116, 192, 252, 0.3); color:#74c0fc;}
-.calendarEduDateLine.markerPink {background-color:rgba(240, 101, 149, 0.3); color:#f06595;}
-.calendarEduDateLine.markerLightGreen {background-color:rgba(99, 230, 190, 0.3); color:#63e6be;}
-.calendarEduDateLine.markerGreen {background-color:rgba(169, 227, 75, 0.3); color:#a9e34b;}
-.calendarEduDateLine.markerNavy {background-color:rgba(77, 99, 140, 0.3); color:#4d638c;}
-.calendarEduDateLine.markerBlack {background-color:rgba(73, 80, 87, 0.3); color:#495057;}
-.calendarEduName {padding:0 30px;line-height:30px;position:relative;font-weight: 900;transform: skew(-0.03deg);}
-.calendarEduName::after {content:'';position:absolute;left:15px;width:6px; height:6px;display:block;top:50%;transform: translateY(-50%);border-radius: 50%;}
-.markerRed .calendarEduName::after {background-color:#D25565;}
-.markerPup .calendarEduName::after {background-color:#9775fa;}
-.markerOrng .calendarEduName::after {background-color:#ffa94d;}
-.markerBlue .calendarEduName::after {background-color:#74c0fc;}
-.markerPink .calendarEduName::after {background-color:#f06595;}
-.markerLightGreen .calendarEduName::after {background-color:#63e6be;}
-.markerGreen .calendarEduName::after {background-color:#a9e34b;}
-.markerNavy .calendarEduName::after {background-color:#4d638c;}
-.markerBlack .calendarEduName::after {background-color:#495057;}
+.cateAvatars.cateAvatar030 { background-color: #518318; }
 
-.eduModals {position:absolute;border:1px solid #d5d9dd;box-shadow: 8px 4px 16px rgba(0,0,0,0.1);background-color:#fff;z-index:1;width:360px;}
-.eduModalWrapper {position: relative;padding:40px 0;}
-.eduModalContents {padding-left:50px;position:relative;margin:0 30px;}
-.educationModalName {font-size: 17px; color: #393d45;margin-bottom:12px;line-height:30px;}
-.educationModalDate {font-size: 14px; color:#999da5;line-height: 20px;}
-.educationCircles {display:inline-block;width:30px;height:30px;position:absolute;left: 0;top: 0;border-radius: 50%;}
-.calendarModalBtns {}
-.calendarModalBtns > .customBtn {color:#fff;background-color:#2c64cf;border:1px solid #2c64cf;padding:11px 33px;border-radius: 30px;transition: all 0.3s ease-in-out;font-weight: 600;display:inline-block;}
-.calendarModalBtns > .modal-close {right: 15px;top: 15px;width: 16px;height: 16px;}
-.modal-close {display: inline-block;width: 20px;height: 20px;position: absolute; right: 0; top: 0; background: url('/img/pbb/common/gray-close.png') no-repeat center / auto; cursor: pointer; z-index: 1;}
+.cateAvatars.cateAvatar040 { background-color: #c94494; }
 
-.eventModals {position:absolute;border:1px solid #d5d9dd;box-shadow: 8px 4px 16px rgba(0,0,0,0.1);background-color:#fff;z-index:1;width:360px;color:#393d45;}
-.eventModalWrapper {padding:40px 30px;position:relative;}
-.eventModalContents {}
-.eventModalLists {}
-.eventModalItems {font-size:14px; position:relative;padding-left:50px;margin-bottom:20px;}
-.eventModalItems:last-child {margin-bottom:0;}
-.eventModalItems > .cateAvatars {position:absolute;left: 0;top: 0;}
-.eventModalName {color:#393d45;font-weight: 900;transform: skew(-0.03deg);}
-.eventModalDate {color:#999da5;margin-bottom:5px;font-weight: 600;}
+.cateAvatars.cateAvatar050 { background-color: #d96b03; }
 
+.cateAvatars.cateAvatar060 { background-color: #3961bf; }
+
+.cateAvatars.cateAvatar070 { background-color: #6238b4; }
+
+.cateAvatars.cateAvatar999 { background-color: #838b9a; }
+
+.cateAvatars::after { color: #fff; font-size: 14px; }
+
+.cateAvatars.cateAvatar010::after { content: '공'; }
+
+.cateAvatars.cateAvatar020::after { content: '전'; }
+
+.cateAvatars.cateAvatar030::after { content: '축'; }
+
+.cateAvatars.cateAvatar040::after { content: '영'; }
+
+.cateAvatars.cateAvatar050::after { content: '문'; }
+
+.cateAvatars.cateAvatar060::after { content: '체'; }
+
+.cateAvatars.cateAvatar070::after { content: '행'; }
+
+.cateAvatars.cateAvatar999::after { content: '기'; }
+
+.board-lists .eventBtns { margin-right: 3px; }
+
+.eventBtns > a { display: inline-block; padding: 0 16px; height: 42px; line-height: 42px; background-color: #fff; border-radius: 4px; transition: all 0.3s ease-in-out; color: #696d75; border: 1px solid #d5d9dd; font-weight: 600; font-size: 15px; }
+
+.eventBtns > a:hover { background-color: #2c64cf; color: #fff; border: 1px solid #2c64cf; }
+
+.calendar { margin-top: 25px; border: 1px solid #e0e0e0; font-size: 14px; }
+
+.calendarWeekToolbar { text-align: center; background-color: #f5f7f9; border-bottom: 1px solid #e0e0e0; }
+
+.calendarDay { width: calc(100% / 7); box-sizing: border-box; }
+
+.calendarWeekToolbar .calendarDay { padding: 15px 0; }
+
+.calendarDaySun { color: #ee4d5d; }
+
+.calendarDaySat { color: #2c64cf; }
+
+.calendarWeekLine { position: relative; }
+
+.calendarWeekLine:not(:last-child) { border-bottom: 1px solid #e0e0e0; }
+
+.calendarWeeks > .calendarDay { height: 170px; padding: 17px; }
+
+.calendarWeeks > .calendarDay:not(:last-child) { border-right: 1px solid #e0e0e0; }
+
+.calendarWeeks > .calendarDay.notThisMonth { background: url("/img/pbb/notday.png") no-repeat center/auto; }
+
+.calrenderDayContents { height: 100%; position: relative; }
+
+.calendarDayText { position: absolute; left: 0; top: 0; }
+
+.calendarEventLists { padding-top: 40px; }
+
+.calendarEventItems { width: calc(100% / 4); text-align: center; margin-top: 5px; }
+
+.calendarEventItems:nth-child(4n) { margin-right: 0; }
+
+.calendarEventItems > .cateAvatars { cursor: pointer; }
+
+.calendarEducations { position: absolute; top: 40px; }
+
+.dateStart-1 { left: 20px; width: calc(100% - 40px); }
+
+.dateStart-2 { left: calc(((100% / 7) * 1) + 20px); width: calc(((100% / 7) * 6) - 40px); }
+
+.dateStart-3 { left: calc(((100% / 7) * 2) + 20px); width: calc(((100% / 7) * 5) - 40px); }
+
+.dateStart-4 { left: calc(((100% / 7) * 3) + 20px); width: calc(((100% / 7) * 4) - 40px); }
+
+.dateStart-5 { left: calc(((100% / 7) * 4) + 20px); width: calc(((100% / 7) * 3) - 40px); }
+
+.dateStart-6 { left: calc(((100% / 7) * 5) + 20px); width: calc(((100% / 7) * 2) - 40px); }
+
+.dateStart-7 { left: calc(((100% / 7) * 6) + 20px); width: calc(((100% / 7) * 1) - 40px); }
+
+.dateNotEnd > .calendarEduDateLine { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+
+.dateNotEnd.dateStart-2 { width: calc(((100% / 7) * 6) - 20px); }
+
+.dateNotEnd.dateStart-3 { width: calc(((100% / 7) * 5) - 20px); }
+
+.dateNotEnd.dateStart-4 { width: calc(((100% / 7) * 4) - 20px); }
+
+.dateNotEnd.dateStart-5 { width: calc(((100% / 7) * 3) - 20px); }
+
+.dateNotEnd.dateStart-6 { width: calc(((100% / 7) * 2) - 20px); }
+
+.dateNotEnd.dateStart-7 { width: calc(((100% / 7) * 1) - 20px); }
+
+.dateNotEnd.dateContinue { left: 0; width: 100%; }
+
+.dateNotEnd.dateContinue > .calendarEduDateLine { border-radius: 0; }
+
+.dateEnd > .calendarEduDateLine { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+
+.dateEnd-1 { width: calc(((100% / 7) * 1) - 40px); }
+
+.dateEnd-2 { width: calc(((100% / 7) * 2) - 40px); }
+
+.dateEnd-3 { width: calc(((100% / 7) * 3) - 40px); }
+
+.dateEnd-4 { width: calc(((100% / 7) * 4) - 40px); }
+
+.dateEnd-5 { width: calc(((100% / 7) * 5) - 40px); }
+
+.dateEnd-6 { width: calc(((100% / 7) * 6) - 40px); }
+
+.dateEnd-7 { width: calc(((100% / 7) * 7) - 40px); }
+
+.dateEnd { left: 0; }
+
+.dateEnd.dateEnd-1 { width: calc(((100% / 7) * 1) - 20px); }
+
+.dateEnd.dateEnd-2 { width: calc(((100% / 7) * 2) - 20px); }
+
+.dateEnd.dateEnd-3 { width: calc(((100% / 7) * 3) - 20px); }
+
+.dateEnd.dateEnd-4 { width: calc(((100% / 7) * 4) - 20px); }
+
+.dateEnd.dateEnd-5 { width: calc(((100% / 7) * 5) - 20px); }
+
+.dateEnd.dateEnd-6 { width: calc(((100% / 7) * 6) - 20px); }
+
+.dateEnd.dateEnd-7 { width: calc(((100% / 7) * 7) - 20px); }
+
+.calendarEduDateLine { width: 100%; border-radius: 15px; height: 30px; cursor: pointer; }
+
+.calendarEduDateLine.markerRed { background-color: rgba(210, 85, 101, 0.3); color: #D25565; }
+
+.calendarEduDateLine.markerPup { background-color: rgba(151, 117, 250, 0.3); color: #9775fa; }
+
+.calendarEduDateLine.markerOrng { background-color: rgba(255, 169, 77, 0.3); color: #ffa94d; }
+
+.calendarEduDateLine.markerBlue { background-color: rgba(116, 192, 252, 0.3); color: #74c0fc; }
+
+.calendarEduDateLine.markerPink { background-color: rgba(240, 101, 149, 0.3); color: #f06595; }
+
+.calendarEduDateLine.markerLightGreen { background-color: rgba(99, 230, 190, 0.3); color: #63e6be; }
+
+.calendarEduDateLine.markerGreen { background-color: rgba(169, 227, 75, 0.3); color: #a9e34b; }
+
+.calendarEduDateLine.markerNavy { background-color: rgba(77, 99, 140, 0.3); color: #4d638c; }
+
+.calendarEduDateLine.markerBlack { background-color: rgba(73, 80, 87, 0.3); color: #495057; }
+
+.calendarEduName { padding: 0 30px; line-height: 30px; position: relative; font-weight: 900; transform: skew(-0.03deg); }
+
+.calendarEduName::after { content: ''; position: absolute; left: 15px; width: 6px; height: 6px; display: block; top: 50%; transform: translateY(-50%); border-radius: 50%; }
+
+.markerRed .calendarEduName::after { background-color: #D25565; }
+
+.markerPup .calendarEduName::after { background-color: #9775fa; }
+
+.markerOrng .calendarEduName::after { background-color: #ffa94d; }
+
+.markerBlue .calendarEduName::after { background-color: #74c0fc; }
+
+.markerPink .calendarEduName::after { background-color: #f06595; }
+
+.markerLightGreen .calendarEduName::after { background-color: #63e6be; }
+
+.markerGreen .calendarEduName::after { background-color: #a9e34b; }
+
+.markerNavy .calendarEduName::after { background-color: #4d638c; }
+
+.markerBlack .calendarEduName::after { background-color: #495057; }
+
+.eduModals { position: absolute; border: 1px solid #d5d9dd; box-shadow: 8px 4px 16px rgba(0, 0, 0, 0.1); background-color: #fff; z-index: 1; width: 360px; }
+
+.eduModalWrapper { position: relative; padding: 40px 0; }
+
+.eduModalContents { padding-left: 50px; position: relative; margin: 0 30px; }
+
+.educationModalName { font-size: 17px; color: #393d45; margin-bottom: 12px; line-height: 30px; }
+
+.educationModalDate { font-size: 14px; color: #999da5; line-height: 20px; }
+
+.educationCircles { display: inline-block; width: 30px; height: 30px; position: absolute; left: 0; top: 0; border-radius: 50%; }
+
+.calendarModalBtns > .customBtn { color: #fff; background-color: #2c64cf; border: 1px solid #2c64cf; padding: 11px 33px; border-radius: 30px; transition: all 0.3s ease-in-out; font-weight: 600; display: inline-block; }
+
+.calendarModalBtns > .modal-close { right: 15px; top: 15px; width: 16px; height: 16px; }
+
+.modal-close { display: inline-block; width: 20px; height: 20px; position: absolute; right: 0; top: 0; background: url("/img/pbb/common/gray-close.png") no-repeat center/auto; cursor: pointer; z-index: 1; }
+
+.eventModals { position: absolute; border: 1px solid #d5d9dd; box-shadow: 8px 4px 16px rgba(0, 0, 0, 0.1); background-color: #fff; z-index: 1; width: 360px; color: #393d45; }
+
+.eventModalWrapper { padding: 40px 30px; position: relative; }
+
+.eventModalItems { font-size: 14px; position: relative; padding-left: 50px; margin-bottom: 20px; }
+
+.eventModalItems:last-child { margin-bottom: 0; }
+
+.eventModalItems > .cateAvatars { position: absolute; left: 0; top: 0; }
+
+.eventModalName { color: #393d45; font-weight: 900; transform: skew(-0.03deg); }
+
+.eventModalDate { color: #999da5; margin-bottom: 5px; font-weight: 600; }
+
+/*# sourceMappingURL=../cs/map/test_1013.css.map */

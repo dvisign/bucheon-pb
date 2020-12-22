@@ -1,26 +1,50 @@
 "use strict";
 var winW;
 var winH;
-var esStep = "Expo.ease";
 var $window = $(window);
 var winSc;
 var $html = $("html");
+var quarterWidth = 1025;
+var slickbreakpoint = 1024;
+var deviceChk = null;
+/*
+* deviceChk - 가로 값으로 디바이스 확인
+* quarterWidth  - 모바일 변환 시점
+* slickbreakpoint  - 슬릭 변환 width 값
+*/
 $window.on("load", function () {
     winW = $(this).width();
     winH = $(this).height();
     winSc = $(this).scrollTop();
+    if(winW > quarterWidth){
+        deviceChk ="desktop";
+    }else{
+        deviceChk ="mobile";
+    }
+
     $(this).on("resize", function () {
         winW = $(this).width();
         winH = $(this).height();
+        // width 확인후 모바일 데스크탑 판별 함수 실행
+        if(this.resizeTo){
+            clearInterval(this.resizeTo);
+        }
+        this.resizeTo = setTimeout(function () {
+            if(winW > quarterWidth){
+                deviceChk ="desktop";
+            }else{
+                deviceChk ="mobile";
+            }
+            $(this).trigger("resizeEnd");
+        }, 500);
     });
-    $(this).trigger("resize");
-
+    $(this).on("resizeEnd", function() {
+        console.log(deviceChk);
+    })
     main();
     layout();
     scrollEvent();
     subpageEvenet();
-
-
 
 });
 // tab event
@@ -44,20 +68,11 @@ function shiftTabkey(event, callBack) {
         }
     }
 }
-function userAgentChk(callDesktop, callMobile ) {
-    var userAgent = navigator.userAgent;
-    if (userAgent.match(/iPhone|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|LG|nokia|SonyEricsson/i) != null || userAgent.match(/LG|SAMSUNG|Samsung/) != null){
-        // mobile
-        if(callMobile){
-            callMobile()
-            console.log("mobile");
-        }
-    }else{
-        // desktop
-        if(callDesktop){
-            callDesktop();
-            console.log("desktop");
-        }
+function userAgentChk(callDesktop, callMobile) {
+    if(deviceChk ==="desktop"){
+        callDesktop();
+    }else if(deviceChk ==="mobile"){
+        callMobile();
     }
 }
 
@@ -65,8 +80,15 @@ function userAgentChk(callDesktop, callMobile ) {
 function layout() {
     var $windowH = $(window).height();
     var $globalHeader = $("#globalHeader");
-
     userAgentChk(desktop, mobile);
+    $window.on("resizeEnd", function() {
+        if(deviceChk ==="desktop"){
+            desktop();
+        }else if(deviceChk ==="mobile"){
+            mobile();
+        }
+    });
+
     // desktop event
     function desktop() {
         // gnb in / out
@@ -136,7 +158,7 @@ function layout() {
             }
         });
 
-      //gnb last list event
+        //gnb last list event
         for(var n = 0, m = $depthLast.length; n < m ; n++){
             $depthLast.eq(n).find(".depth2").eq(-1).find("a").eq(-1).on("keydown",function (event) {
             var _this = $(this);
@@ -149,7 +171,7 @@ function layout() {
             });
         }
 
-      // breadcrumb tap event
+        // breadcrumb tap event
         function breadcrumbTap() {
             var $breadcrumbList = $(".breadcrumb_wrap .crumb_depth");
             $breadcrumbList.mouseleave(function () {
@@ -186,7 +208,7 @@ function layout() {
         }
         breadcrumbTap();
 
-      // site map
+        // site map
         function siteMap() {
             var $siteMapWrap = $globalHeader.find(".site_map_wrap");
             var $mapListWrap = $(".map_list_wrap>ul");
@@ -241,9 +263,8 @@ function layout() {
              })
         }
         rank();
-
-
     }
+
     // mobile Event
     function mobile() {
         // gnb
@@ -294,37 +315,205 @@ function layout() {
         }
         rank();
     }
-
-
-
-    //date_picker
-    $(document).ready(function() {
-        $('.date_picker').each(function(i) {
-            var $this = $(this);
-            $this.datepicker({
-                changeMonth: true,
-                changeYear: true,
-                minDate: '-100y',
-                nextText: '다음 달',
-                prevText: '이전 달',
-                numberOfMonths: [1,1],
-                stepMonths: 3,
-                yearRange: 'c-100:c+10',
-                showButtonPanel: true,
-                currentText: '오늘 날짜',
-                closeText: '닫기',
-                dateFormat: "yy-mm-dd",
-                showMonthAfterYear: true ,
-                dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'],
-                monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
-            });
-        });
-    })
-
 }
 function main() {
     var $mainWrap = $(".main_wrap");
     userAgentChk(desktop, mobile);
+    // 둘래길
+    function dulleSlick() {
+        var $dulleSlickWrap = $(".dulle_slick_wrap");
+        var $dulleSlick = $(".dulle_slick");
+        var $dulleSlickLength = $dulleSlick.find(".dulle_list").length;
+        var $indexArea = $dulleSlickWrap.find(".dulle_index");
+        var $indexLengthArea = $dulleSlickWrap.find(".dulle_length");
+        var $indexBar = $dulleSlickWrap.find(".dulle_indicater div");
+        var indicaterwidth = $indexBar.width();
+        var activeIndex = 0;
+        $indexLengthArea.html("0"+$dulleSlickLength);
+        $dulleSlick.slick({
+            slidesToShow:3,
+            prevArrow: $('.dulle_slick_ui .slick_prev'),
+            nextArrow: $('.dulle_slick_ui .slick_next'),
+            responsive:[
+                {
+                    breakpoint:slickbreakpoint,
+                    settings:{
+                        slidesToShow:1,
+                        centerMode: true
+                    }
+                }
+            ]
+        });
+        // resize 변수 초기화
+        $window.on("resizeEnd", function() {
+            indicaterwidth = $indexBar.width();
+            $indexBar.css({"left": (activeIndex)*indicaterwidth});
+        })
+        $dulleSlick.on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+            activeIndex = nextSlide;
+            $indexArea.html("0"+(nextSlide+1));
+            TweenMax.to($indexBar, .3, {left:(nextSlide)*indicaterwidth});
+        });
+    }
+    dulleSlick();
+
+    function festivalSlick() {
+        // 행사
+        var $festivalSlickWrap = $(".bucheon_festival");
+        var $festivalSlick = $(".festival_slick");
+        var $festivalList = $festivalSlick.find(".festival_list");
+        var $festivalSlickLength = $festivalList.length;
+        var $indexArea =$festivalSlickWrap .find(".festival_index");
+        var $indexLengthArea = $festivalSlickWrap.find(".festival_length");
+        var $indexBar = $festivalSlickWrap.find(".festival_indicater div");
+        var indicaterwidth = $indexBar.width();
+        var cssList = [".bifan", ".biaf", ".bicof", ".bbic"];
+        var activeIndex = 0;
+        $indexLengthArea.html("0"+$festivalSlickLength);
+        $festivalSlick.slick({
+            slidesToShow:1,
+            prevArrow: $('.festival_slick_ui .slick_prev'),
+            nextArrow: $('.festival_slick_ui .slick_next'),
+            speed:1000,
+            swipe:false,
+            responsive:[
+                {
+                    breakpoint:slickbreakpoint,
+                    settings:{
+                        slidesToShow:1,
+                        speed:1000,
+                        swipe:true
+                    }
+                }
+            ]
+        });
+        // resize 변수 초기화
+        $window.on("resizeEnd", function() {
+            var _$indexList = $festivalSlick.find(cssList[activeIndex]);
+            indicaterwidth = $indexBar.width();
+            $indexBar.css({"left": (activeIndex)*indicaterwidth});
+            _$indexList.find("p").css({"opacity":1, "left": 0});
+            _$indexList.find("strong").css({"opacity":1, "left": 0});
+            _$indexList.find("a").css({"opacity":1, "left": 0});
+            _$indexList.find(".festival_logo").css({"opacity":1, "left": 0});
+        })
+        // 인디케이터 이벤트
+        $festivalSlick.on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+            activeIndex = nextSlide;
+            $indexArea.html("0"+(nextSlide+1));
+            TweenMax.to($indexBar, .3, {left:(nextSlide)*indicaterwidth});
+            if(deviceChk === "desktop"){
+                var _$indexList = $festivalSlick.find(cssList[nextSlide]);
+                TweenMax.set(_$indexList.find(".festival_visual_img"), {scale:"1.1"});
+                TweenMax.set(_$indexList.find("p"), {left:"-300px", opacity:0});
+                TweenMax.set(_$indexList.find("strong"), {left:"-200px", opacity:0});
+                TweenMax.set(_$indexList.find("a"), {opacity:0});
+                TweenMax.set(_$indexList.find(".festival_logo"), {left:"-100px", opacity:0});
+            }
+        });
+        // afterChange 모션 이벤트
+        $festivalSlick.on("afterChange", function (event, slick, currentSlide) {
+            if(deviceChk === "desktop"){
+                var _$indexList = $festivalSlick.find(cssList[currentSlide]);
+                TweenMax.to(_$indexList.find(".festival_visual_img"), 1, {scale:"1", ease:Sine.easeOut});
+                TweenMax.to(_$indexList.find("p"), .8, {left:0, opacity:1, delay:.2});
+                TweenMax.to(_$indexList.find("strong"), .8, {left:0, opacity:1, delay:.4});
+                TweenMax.to(_$indexList.find("a"), .8, {opacity:1, delay:.5});
+                TweenMax.to(_$indexList.find(".festival_logo"), .8, {left:0, opacity:1, delay:.6});
+            }
+        });
+    }
+    festivalSlick();
+
+    function estateSlick() {
+        var $estateSlick = $(".estate_slick");
+        var estateSlickLength = $estateSlick.find(".estate_list").length;
+        var $estateSlickUi = $(".estate_slick_ui");
+        var $indexArea = $estateSlickUi.find(".estatee_index");
+        var $indexLengthArea = $estateSlickUi.find(".estate_length");
+        var $indexBar = $estateSlickUi.find(".estate_indicater div");
+        var indicaterwidth = $indexBar.width((360/20)/estateSlickLength+"rem");
+        var activeIndex = 0;
+        indicaterwidth = $indexBar.width();
+        $indexLengthArea.html("0"+estateSlickLength);
+        $estateSlick.slick({
+            slidesToShow:4,
+            prevArrow: $('.estate_info .slick_prev'),
+            nextArrow: $('.estate_info .slick_next'),
+            responsive:[
+                {
+                    breakpoint:slickbreakpoint,
+                    settings:{
+                        slidesToShow:1,
+                        centerMode: true
+                    }
+                }
+            ]
+        });
+        // resize 변수 초기화
+        $window.on("resizeEnd", function() {
+            indicaterwidth = $indexBar.width();
+            $indexBar.css({"left": (activeIndex)*indicaterwidth});
+        })
+        $estateSlick.on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+            activeIndex = nextSlide;
+            $indexArea.html("0"+(nextSlide+1));
+            TweenMax.to($indexBar, .3, {left:(nextSlide)*indicaterwidth});
+        });
+    }
+    estateSlick();
+
+    function reductSlick() {
+        var $reductSlick = $(".reduct_slick");
+        $reductSlick.slick({
+            slidesToShow:1,
+            fade: true,
+            dots: true
+        });
+    }
+    reductSlick();
+
+    function communicateSlick() {
+        var $communicateSlick = $(".bucheon_communicate_slick");
+        var communicateSlickLength = $communicateSlick.find(".communi_list").length;
+        var $communicateSlickUi =$(".communicate_slick_ui");
+        var $indexArea = $communicateSlickUi.find(".communicate_index");
+        var $indexLengthArea = $communicateSlickUi.find(".communicate_length");
+        var $indexBar = $communicateSlickUi.find(".communicate_indicater div");
+        var indicaterwidth = $indexBar.width();
+        var activeIndex = 0;
+        $indexLengthArea.html("0"+communicateSlickLength);
+        $communicateSlick.slick({
+            slidesToShow:4,
+            responsive:[
+                {
+                    breakpoint:slickbreakpoint,
+                    settings:{
+                        slidesToShow:1,
+                        centerMode: true
+                    }
+                }
+            ]
+        });
+        // resize 변수 초기화
+        $window.on("resizeEnd", function() {
+            indicaterwidth = $indexBar.width();
+            $indexBar.css({"left": (activeIndex)*indicaterwidth});
+        })
+        $communicateSlick.on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+            activeIndex = nextSlide;
+            $indexArea.html("0"+(nextSlide+1));
+            TweenMax.to($indexBar, .3, {left:(nextSlide)*indicaterwidth});
+        });
+    }
+    communicateSlick();
+
+    // 미세먼지 예보
+    $('.cdt_display').slick({
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        arrows : true
+    });
     // desktop event
     function desktop() {
         function visualEvent() {
@@ -340,20 +529,22 @@ function main() {
                     $mainWrapList.eq(i).find("li").eq(n).prepend("<span>"+(n+1)+"</span>");
                 }
             }
+            function activeAction(activeIndex) {
+                $mainWrapList.removeClass("active");
+                $mainWrapList.eq(activeIndex).addClass("active");
+                $mainIndicater.removeClass("active");
+                $mainIndicater.eq(activeIndex).addClass("active");
+                $visualImgMap.removeClass("active");
+                $visualImgMap.eq(activeIndex).addClass("active");
+            }
             function intervalEenvt(){
                 if(count < mainWrapListLength){
                     count++;
                 }else{
                     count = 0;
                 }
-                $mainWrapList.removeClass("active");
-                $mainWrapList.eq(count).addClass("active");
-                $mainIndicater.removeClass("active");
-                $mainIndicater.eq(count).addClass("active");
-                $visualImgMap.removeClass("active");
-                $visualImgMap.eq(count).addClass("active");
+                activeAction(count);
 
-                // console.log(count);
             }
 
             rollingFn = setInterval(intervalEenvt, interavlTime);
@@ -366,7 +557,10 @@ function main() {
             });
             //
             $mainWrap.find(".visual_lnb").find("a").mouseenter(function () {
+                var _index = $(this).parent().index();
+                count = _index;
                 clearInterval(rollingFn);
+                activeAction(count);
             });
             $mainWrap.find(".visual_lnb").find("a").mouseleave(function () {
                 rollingFn = setInterval(intervalEenvt, interavlTime);
@@ -386,17 +580,12 @@ function main() {
                         count = mainWrapListLength;
                     }
                 }
-                $mainWrapList.removeClass("active");
-                $mainWrapList.eq(count).addClass("active");
-                $mainIndicater.removeClass("active");
-                $mainIndicater.eq(count).addClass("active");
-                $visualImgMap.removeClass("active");
-                $visualImgMap.eq(count).addClass("active");
+                activeAction(count);
             })
 
         }
         visualEvent();
-        
+
         function lifeEvent() {
             var $lifeIndex = $(".life_index");
             var $lifeIndexList = $lifeIndex.find(".life_index_list").children("li");
@@ -412,107 +601,10 @@ function main() {
             })
         }
         lifeEvent();
-
-        function dulleEvent() {
-            var $dulleSlickWrap = $(".dulle_slick_wrap");
-            var $dulleSlick = $(".dulle_slick");
-            var $dulleSlickLength = $dulleSlick.find(".dulle_list").length;
-            var $indexArea = $dulleSlickWrap.find(".dulle_index");
-            var $indexLengthArea = $dulleSlickWrap.find(".dulle_length");
-            var $indexBar = $dulleSlickWrap.find(".dulle_indicater div");
-            var indicaterwidth = $indexBar.width();
-            $indexLengthArea.html("0"+$dulleSlickLength);
-            $dulleSlick.slick({
-                slidesToShow:3,
-                prevArrow: $('.dulle_slick_ui .slick_prev'),
-                nextArrow: $('.dulle_slick_ui .slick_next')
-            });
-            $dulleSlick.on("beforeChange", function (event, slick, currentSlide, nextSlide) {
-                $indexArea.html("0"+(nextSlide+1));
-                TweenMax.to($indexBar, .3, {left:(nextSlide)*indicaterwidth});
-            });
-        }
-        dulleEvent();
-
-        function festivalEvent() {
-            var $festivalSlickWrap = $(".bucheon_festival");
-            var $festivalSlick = $(".festival_slick");
-            var $festivalList = $festivalSlick.find(".festival_list");
-            var $festivalSlickLength = $festivalList.length;
-            var $indexArea = $festivalSlickWrap.find(".festival_index");
-            var $indexLengthArea = $festivalSlickWrap.find(".festival_length");
-            var $indexBar = $festivalSlickWrap.find(".festival_indicater div");
-            var indicaterwidth = $indexBar.width();
-            var cssList = [".bifan", ".biaf", ".bicof", ".bbic"];
-
-            $indexLengthArea.html("0"+$festivalSlickLength);
-            $festivalSlick.slick({
-                slidesToShow:1,
-                prevArrow: $('.festival_slick_ui .slick_prev'),
-                nextArrow: $('.festival_slick_ui .slick_next'),
-                speed:1000,
-                swipe:false
-            });
-            // 인디케이터 이벤트
-            $festivalSlick.on("beforeChange", function (event, slick, currentSlide, nextSlide) {
-                var _$indexList = $festivalSlick.find(cssList[nextSlide]);
-                $indexArea.html("0"+(nextSlide+1));
-                TweenMax.to($indexBar, .3, {left:(nextSlide)*indicaterwidth});
-                TweenMax.set(_$indexList.find(".festival_visual_img"), {scale:"1.1"});
-                TweenMax.set(_$indexList.find("p"), {left:"-300px", opacity:0});
-                TweenMax.set(_$indexList.find("strong"), {left:"-200px", opacity:0});
-                TweenMax.set(_$indexList.find("a"), {opacity:0});
-                TweenMax.set(_$indexList.find(".festival_logo"), {left:"-100px", opacity:0});
-            });
-            // afterChange 모션 이벤트
-            $festivalSlick.on("afterChange", function (event, slick, currentSlide) {
-                var _$indexList = $festivalSlick.find(cssList[currentSlide]);
-                TweenMax.to(_$indexList.find(".festival_visual_img"), 1, {scale:"1", ease:Sine.easeOut});
-                TweenMax.to(_$indexList.find("p"), .8, {left:0, opacity:1, delay:.2});
-                TweenMax.to(_$indexList.find("strong"), .8, {left:0, opacity:1, delay:.4});
-                TweenMax.to(_$indexList.find("a"), .8, {opacity:1, delay:.5});
-                TweenMax.to(_$indexList.find(".festival_logo"), .8, {left:0, opacity:1, delay:.6});
-            });
-
-        }
-        festivalEvent();
-
-        function estateEvent() {
-            var $estateSlick = $(".estate_slick");
-            var estateSlickLength = $estateSlick.find(".estate_list").length;
-            var $estateSlickUi =$(".estate_slick_ui")
-            var $indexArea = $estateSlickUi.find(".estatee_index");
-            var $indexLengthArea = $estateSlickUi.find(".estate_length");
-            var $indexBar = $estateSlickUi.find(".estate_indicater div");
-            var indicaterwidth = $indexBar.width();
-
-            $indexLengthArea.html("0"+estateSlickLength);
-            $estateSlick.slick({
-                slidesToShow:4,
-                prevArrow: $('.estate_info .slick_prev'),
-                nextArrow: $('.estate_info .slick_next')
-            });
-            $estateSlick.on("beforeChange", function (event, slick, currentSlide, nextSlide) {
-                $indexArea.html("0"+(nextSlide+1));
-                TweenMax.to($indexBar, .3, {left:(nextSlide)*indicaterwidth});
-            });
-        }
-        estateEvent();
-
-        function reductEvent() {
-            var $reductSlick = $(".reduct_slick");
-            $reductSlick.slick({
-                slidesToShow:1,
-                fade: true,
-                dots: true
-            });
-        }
-        reductEvent();
-
     }
+
     // mobile Event
     function mobile() {
-
         function lifeEvent() {
             var $lifeIndex = $(".life_index");
             var $lifeIndexListWrap = $lifeIndex.find(".life_index_list");
@@ -526,147 +618,29 @@ function main() {
                 _listActive.siblings().removeClass("active");
                 _listActive.addClass("active");
 
-
                 TweenMax.to(_listActive.siblings().children(".condition_wrap"), .3, {display:"none", opacity:0});
                 TweenMax.to(_listActive.children(".condition_wrap"), .3, {display:"block", opacity:1, onComplete:function () {
-                        if(_conditionWrap.eq(0).hasClass("temp_condition")){
-                            var _depthConH =_conditionWrap.find(".condition_wrap").height();
-                            $lifeIndexListWrap.css({"padding-bottom":"calc(12rem + "+ (_depthConH + 100) + "px)"});
+                    if(_conditionWrap.eq(0).hasClass("temp_condition")){
+                        var _depthConH =_conditionWrap.find(".condition_wrap").height();
+                        $lifeIndexListWrap.css({"padding-bottom":"calc(12rem + "+ (_depthConH + 100) + "px)"});
+                    }else{
+                        if(_listActive.parents(".condition_wrap").hasClass("temp_condition")){
+                            var _depthConH2 =_listActive.find(".condition_wrap").height();
+                            $lifeIndexListWrap.css({"padding-bottom":"calc(12rem + "+ (_depthConH2 + 100) + "px)"});
+                            _listActive.parents(".condition_wrap").find(".condition_table")
                         }else{
-                            if(_listActive.parents(".condition_wrap").hasClass("temp_condition")){
-                                var _depthConH2 =_listActive.find(".condition_wrap").height();
-                                $lifeIndexListWrap.css({"padding-bottom":"calc(12rem + "+ (_depthConH2 + 100) + "px)"});
-                                _listActive.parents(".condition_wrap").find(".condition_table")
-                            }else{
-                                $lifeIndexListWrap.css({"padding-bottom": _conH+100 + "px"});
-                            }
+                            $lifeIndexListWrap.css({"padding-bottom": _conH+100 + "px"});
                         }
-                    }});
+                    }
+                }});
             });
         }
         lifeEvent();
-
-        function dulleEvent() {
-            var $dulleSlickWrap = $(".dulle_slick_wrap");
-            var $dulleSlick = $(".dulle_slick");
-            var $dulleSlickLength = $dulleSlick.find(".dulle_list").length;
-            var $indexArea = $dulleSlickWrap.find(".dulle_index");
-            var $indexLengthArea = $dulleSlickWrap.find(".dulle_length");
-            var $indexBar = $dulleSlickWrap.find(".dulle_indicater div");
-            var indicaterwidth = $indexBar.width();
-            $indexLengthArea.html("0"+$dulleSlickLength);
-            $dulleSlick.slick({
-                slidesToShow:1,
-                centerMode: true,
-                prevArrow: $('.dulle_slick_ui .slick_prev'),
-                nextArrow: $('.dulle_slick_ui .slick_next')
-            });
-            $dulleSlick.on("beforeChange", function (event, slick, currentSlide, nextSlide) {
-                $indexArea.html("0"+(nextSlide+1));
-                TweenMax.to($indexBar, .3, {left:(nextSlide)*indicaterwidth});
-            });
-        }
-        dulleEvent();
-
-        function festivalEvent() {
-            var $festivalSlickWrap = $(".bucheon_festival");
-            var $festivalSlick = $(".festival_slick");
-            var $festivalList = $festivalSlick.find(".festival_list");
-            var $festivalSlickLength = $festivalList.length;
-            var $indexArea = $festivalSlickWrap.find(".festival_index");
-            var $indexLengthArea = $festivalSlickWrap.find(".festival_length");
-            var $indexBar = $festivalSlickWrap.find(".festival_indicater div");
-            var indicaterwidth = $indexBar.width();
-            var cssList = [".bifan", ".biaf", ".bicof", ".bbic"];
-
-            $indexLengthArea.html("0"+$festivalSlickLength);
-            $festivalSlick.slick({
-                slidesToShow:1,
-                prevArrow: $('.festival_slick_ui .slick_prev'),
-                nextArrow: $('.festival_slick_ui .slick_next'),
-                speed:1000,
-            });
-            // 인디케이터 이벤트
-            $festivalSlick.on("beforeChange", function (event, slick, currentSlide, nextSlide) {
-                // var _$indexList = $festivalSlick.find(cssList[nextSlide]);
-                $indexArea.html("0"+(nextSlide+1));
-                TweenMax.to($indexBar, .3, {left:(nextSlide)*indicaterwidth});
-                // TweenMax.set(_$indexList.find("p"), {left:"-300px", opacity:0});
-                // TweenMax.set(_$indexList.find("strong"), {left:"-200px", opacity:0});
-                // TweenMax.set(_$indexList.find("a"), {opacity:0});
-                // TweenMax.set(_$indexList.find(".festival_logo"), {left:"-100px", opacity:0});
-            });
-            // afterChange 모션 이벤트
-            // $festivalSlick.on("afterChange", function (event, slick, currentSlide) {
-            //     var _$indexList = $festivalSlick.find(cssList[currentSlide]);
-            //     TweenMax.to(_$indexList.find("p"), .8, {left:0, opacity:1});
-            //     TweenMax.to(_$indexList.find("strong"), .8, {left:0, opacity:1, delay:.2});
-            //     TweenMax.to(_$indexList.find("a"), .8, {opacity:1, delay:.3});
-            //     TweenMax.to(_$indexList.find(".festival_logo"), .8, {left:0, opacity:1, delay:.4});
-            // });
-
-        }
-        festivalEvent();
-
-        function estateEvent() {
-            var $estateSlick = $(".estate_slick");
-            var estateSlickLength = $estateSlick.find(".estate_list").length;
-            var $estateSlickUi =$(".estate_slick_ui")
-            var $indexArea = $estateSlickUi.find(".estatee_index");
-            var $indexLengthArea = $estateSlickUi.find(".estate_length");
-            var $indexBar = $estateSlickUi.find(".estate_indicater div");
-            var indicaterwidth = $indexBar.width();
-
-            $indexLengthArea.html("0"+estateSlickLength);
-            $estateSlick.slick({
-                slidesToShow:1,
-                centerMode: true
-            });
-            $estateSlick.on("beforeChange", function (event, slick, currentSlide, nextSlide) {
-                $indexArea.html("0"+(nextSlide+1));
-                TweenMax.to($indexBar, .3, {left:(nextSlide)*indicaterwidth});
-            });
-        }
-        estateEvent();
-
-        function reductEvent() {
-            var $reductSlick = $(".reduct_slick");
-            $reductSlick.slick({
-                slidesToShow:1,
-                fade: true,
-                dots: true
-            });
-        }
-        reductEvent();
-
-        function communicateEvent() {
-            var $communicateSlick = $(".bucheon_communicate_slick");
-            var communicateSlickLength = $communicateSlick.find(".communi_list").length;
-            var $communicateSlickUi =$(".communicate_slick_ui")
-            var $indexArea = $communicateSlickUi.find(".communicate_index");
-            var $indexLengthArea = $communicateSlickUi.find(".communicate_length");
-            var $indexBar = $communicateSlickUi.find(".communicate_indicater div");
-            var indicaterwidth = $indexBar.width();
-
-            $indexLengthArea.html("0"+communicateSlickLength);
-            $communicateSlick.slick({
-                slidesToShow:1,
-                centerMode: true
-            });
-            $communicateSlick.on("beforeChange", function (event, slick, currentSlide, nextSlide) {
-                $indexArea.html("0"+(nextSlide+1));
-                TweenMax.to($indexBar, .3, {left:(nextSlide)*indicaterwidth});
-            });
-        }
-        communicateEvent();
     }
-
-
 }
 function scrollEvent() {
-    userAgentChk(desktop);
+    userAgentChk(desktop, mobile);
     //desktop event
-
     function desktop() {
         var $questionWrap = $("#questionWrap");
         var htmlEndPos = $html.height() - ($window.height() + $("#footer_wrap").height());
@@ -692,14 +666,18 @@ function scrollEvent() {
             }
         });
     }
+    //mobile event
+    function mobile() {
+        return false;
+    }
 }
 function subpageEvenet() {
+
     // 개인맞춤서비스 제공
     var $Personalized =  $(".Personalized");
     var $listInfo = $Personalized.find(".cont_list_info_wrap");
     var $listInfoOpen = $listInfo.find(".info_more_btn");
     var $listInfoClose = $listInfo.find(".info_more").find("button");
-    console.log($listInfoClose);
     $listInfoOpen.on("click" , function () {
         var _$infoMore = $(this).parent().find(".info_more");
         TweenMax.to(_$infoMore, .3, {display:"block", opacity:1});
@@ -707,5 +685,51 @@ function subpageEvenet() {
     $listInfoClose.on("click" ,function () {
         TweenMax.to($(this).parent(), .3, {display:"none", opacity:0});
     })
-    // //개인맞춤서비스 제공
+
+    // slick 미세먼지 저감효과
+    function effectSlick() {
+        var $reductionEffect = $(".ReductionEffect");
+        var $effectSlick = $reductionEffect.find(".effect_slick");
+        var effectSlickLength = $effectSlick.find(".effect_list").length;
+        var $effectSlickUi = $(".effect_slick_ui")
+        var $indexArea = $effectSlickUi.find(".effect_index");
+        var $indexLengthArea = $effectSlickUi.find(".effect_length");
+        var $indexBar = $effectSlickUi.find(".effect_indicater div");
+        var indicaterwidth = $indexBar.width((360/20)/effectSlickLength+"rem");
+        indicaterwidth = $indexBar.width();
+        var activeIndex = 0;
+        var slickToShow = 4;
+        var $slickPrev = $('.reductionEffect_slick_wrap .slick_prev');
+        var $slickNext = $('.reductionEffect_slick_wrap .slick_next');
+        $indexLengthArea.html("0"+effectSlickLength);
+        if(effectSlickLength < slickToShow){
+            $slickPrev.css({"display":"none"});
+            $slickNext.css({"display":"none"});
+        }
+        $effectSlick.slick({
+            slidesToShow:slickToShow,
+            infinite:true,
+            prevArrow: $slickPrev,
+            nextArrow: $slickNext,
+            responsive:[
+                {
+                    breakpoint:slickbreakpoint,
+                    settings:{
+                        slidesToShow:1,
+                        centerMode: true
+                    }
+                }
+            ]
+        });
+        $window.on("resizeEnd", function() {
+            indicaterwidth = $indexBar.width();
+            $indexBar.css({"left": (activeIndex)*indicaterwidth});
+        })
+        $effectSlick.on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+            activeIndex = nextSlide;
+            $indexArea.html("0"+(nextSlide+1));
+            TweenMax.to($indexBar, .3, {left:(nextSlide)*indicaterwidth});
+        });
+    }
+    effectSlick();
 }

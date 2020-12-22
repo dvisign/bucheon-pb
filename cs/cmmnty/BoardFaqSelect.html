@@ -18,11 +18,68 @@
     <link rel="apple-touch-icon" content="">
     <link rel="icon" href="">
     <!--//common-->
+    <!-- css 정문채 -->
+    <link rel="stylesheet" href="/css/pbb/cs/test_1013.css">
     <!--css-->
     <link rel="stylesheet" href="/css/pbb/cs/common.css">
     <link rel="stylesheet" href="/css/pbb/cs/customui.css">
+
     <!--jquery-->
     <script src="/resources/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/resources/jquery/jquery-ui.min.js"></script>
+    <script src="/resources/jquery/jquery-ui-timepicker-addon.js"></script>
+    <style>
+
+        .BoardFaqSelect .sub_contents { width: 1280px; margin: 0 auto 150px; padding: 20px 20px 0; }
+
+        .BoardFaqSelect .sub_contents .icon_wrap { margin: 30px 0 60px; }
+
+        .BoardFaqSelect .sub_contents .icon_wrap ul { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around; }
+
+        .BoardFaqSelect .sub_contents .icon_wrap ul li { text-align: center; }
+
+        .BoardFaqSelect .sub_contents .icon_wrap .icon_img { width: 90px; margin: 0 auto 14px; }
+
+        .BoardFaqSelect .sub_contents .icon_wrap span { color: #696d75; font-size: 17px; line-height: 29px; letter-spacing: -.5px; }
+
+        .BoardFaqSelect .sub_contents .float_left .selectForm { width: 150px; }
+
+        .BoardFaqSelect .sub_contents .float_left .textForm { width: 300px; }
+
+        .BoardFaqSelect .sub_contents .float_right .submit_btn_wrapper .btn { width: 140px; padding: 0; margin: 0 5px 0; }
+
+        .BoardFaqSelect .sub_contents .float_right .submit_btn_wrapper .questionBtn { background-color: #fff; color: #696d75; border-color: #c6cace; }
+
+        .BoardFaqSelect .sub_contents .faq_wrap { margin: 100px 0 0; }
+
+        .BoardFaqSelect .sub_contents .faq_wrap .faq_list_wrap li:last-child { border-bottom: 1px solid #e6eaee; }
+
+        .BoardFaqSelect .sub_contents .faq_wrap .faq_list_wrap li button { width: 100%; height: 60px; border-top: 1px solid #e6eaee; text-align: left; padding: 0 80px 0 30px; color: #393d45; font-weight: 600; position: relative; font-size: 16px; line-height: 28px; letter-spacing: -.5px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+        .BoardFaqSelect .sub_contents .faq_wrap .faq_list_wrap li button:after { width: 10px; height: 10px; display: block; content: ""; border-top: 2px solid #b7bbbf; border-right: 2px solid #b7bbbf; position: absolute; top: 25px; right: 30px; -webkit-transform: rotate(135deg); -moz-transform: rotate(135deg); -ms-transform: rotate(135deg); -o-transform: rotate(135deg); transform: rotate(135deg); -webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -o-transition: all 0.2s ease; -ms-transition: all 0.2s ease; }
+
+        .BoardFaqSelect .sub_contents .faq_wrap .faq_list_wrap li div { display: none; padding: 20px 60px; color: #393d45; font-weight: 600; border-top: 1px solid #e6eaee; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; font-size: 16px; line-height: 28px; letter-spacing: -.5px; }
+
+        .BoardFaqSelect .sub_contents .faq_wrap .faq_list_wrap li div p { color: #393d45; font-weight: 600; margin: 0 0 20px; font-size: 16px; line-height: 28px; letter-spacing: -.5px; }
+
+        .BoardFaqSelect .sub_contents .faq_wrap .faq_list_wrap li div a { color: #2c64cf; }
+
+        .BoardFaqSelect .sub_contents .faq_wrap .faq_list_wrap li.active { height: auto; }
+
+        .BoardFaqSelect .sub_contents .faq_wrap .faq_list_wrap li.active button { color: #2c64cf; background-color: #f5f7f9; }
+
+        .BoardFaqSelect .sub_contents .faq_wrap .faq_list_wrap li.active button:after { border-color: #2c64cf; -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg); transform: rotate(-45deg); }
+
+        @media screen and (max-width: 1024px) { .BoardFaqSelect .sub_contents { width: 100%; margin: 0 auto 7.5rem; padding: 1rem 1.5rem 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+            .BoardFaqSelect .sub_contents .icon_wrap { margin: 0 0 3rem; }
+            .BoardFaqSelect .sub_contents .icon_wrap ul { display: block; }
+            .BoardFaqSelect .sub_contents .icon_wrap ul li { width: 25%; float: left; margin: 2rem 0 0; }
+            .BoardFaqSelect .sub_contents .icon_wrap ul:after { display: block; content: ""; clear: both; }
+            .BoardFaqSelect .sub_contents .icon_wrap .icon_img { width: 5rem; margin: 0 auto 1rem; }
+            .BoardFaqSelect .sub_contents .icon_wrap .icon_img img { width: 100%; }
+            .BoardFaqSelect .sub_contents .icon_wrap span { font-size: 1.3rem; } }
+            .BoardFaqSelect .sub_contents .float_right .submit_btn_wrapper .btn { width: 130px; padding: 0; margin: 0 5px 10px; }
+    </style>
 </head>
 <body>
 <div id="wrap">
@@ -597,19 +654,198 @@
                 </ul>
             </div>
         </div>
+        <div id="questionWrap">
+            <a href="javascript:void:(0)">
+                <div>문의하기 이미지</div>
+                문의하기
+            </a>
+        </div>
     </header>
-    <div id="questionWrap">
-        <a href="javascript:viod:(0)">
-            <div>문의하기 이미지</div>
-            문의하기
-        </a>
-    </div>
     <!--//header-->
+    <!--container-->
+    <div id="container" class="BoardFaqSelect">
+        <div class="breadcrumb_wrap">
+            <div>
+                <a href="/">home</a>
+                <!--
+                crumb_depth 가 multiple_depth 클래스를 가지면
+                -화살표 아이콘, hover 효과
+                -->
+                <div class="crumb_depth multiple_depth">
+                    <strong tabindex="0">산업부분</strong>
+                    <ul>
+                        <!--
+                        a 태그 class="active" 활성 표시
+                        -->
+                        <li><a href="#" class="active">대기오염배출물 사업장</a></li>
+                        <li><a href="#">대기오염배출물 사업장</a></li>
+                        <li><a href="#">대기오염배출물 사업장</a></li>
+                    </ul>
+                    <span>arrow icon</span>
+                </div>
+                <div class="crumb_depth">
+                    <strong>산업부분</strong>
+                </div>
 
-<div>
+            </div>
+        </div>
+        <div id="subTitle">
+            <h3>미세먼지 수치 현황</h3>
+            <p>부천시 미세먼지와 관련하여 시민들이 자주 묻는 질문들을 한곳에 모아서 제공합니다.</p>
+        </div>
+        <div class="sub_contents">
+            <div class="icon_wrap">
+                <ul>
+                    <li>
+                        <div class="icon_img"><img src="/img/cs/cmmnty/icon_img01.jpg" alt=""></div>
+                        <span>미세먼지</span>
+                    </li>
+                    <li>
+                        <div class="icon_img"><img src="/img/cs/cmmnty/icon_img02.jpg" alt=""></div>
+                        <span>정책</span>
+                    </li>
+                    <li>
+                        <div class="icon_img"><img src="/img/cs/cmmnty/icon_img03.jpg" alt=""></div>
+                        <span>특화단지</span>
+                    </li>
+                    <li>
+                        <div class="icon_img"><img src="/img/cs/cmmnty/icon_img04.jpg" alt=""></div>
+                        <span>시민행동요령</span>
+                    </li>
+                    <li>
+                        <div class="icon_img"><img src="/img/cs/cmmnty/icon_img05.jpg" alt=""></div>
+                        <span>미세먼지알림이</span>
+                    </li>
+                    <li>
+                        <div class="icon_img"><img src="/img/cs/cmmnty/icon_img06.jpg" alt=""></div>
+                        <span>측정소</span>
+                    </li>
+                    <li>
+                        <div class="icon_img"><img src="/img/cs/cmmnty/icon_img07.jpg" alt=""></div>
+                        <span>계절관리제</span>
+                    </li>
+                    <li>
+                        <div class="icon_img"><img src="/img/cs/cmmnty/icon_img08.jpg" alt=""></div>
+                        <span>차량2부제</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="lookup_wrapper">
+                <div class="lookupArea">
+                    <form>
+                        <div id="list-lookup-forms">
+                            <div class="lookup-forms clear">
+                                <div class="float_left">
+                                    <div class="lookupLines">
+                                        <label class="label_text">조회조건</label>
+                                        <select class="selectForm">
+                                            <option>제목</option>
+                                        </select>
+                                        <input type="text" class="textForm">
+                                    </div>
+                                </div>
+                                <div class="float_right">
+                                    <div class="submit_btn_wrapper">
+                                        <button class="btn btn-round">조회</button>
+                                        <button class="btn btn-round questionBtn">문의하기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="faq_wrap">
+                <ul class="faq_list_wrap">
+                    <li>
+                        <button type="button">Q. 자주 묻는 질문 제목</button>
+                        <div>
+                            <p>A. 자주 묻는 질문에 대한 답변입니다.</p>
+                            <a href="javascript:void(0);">첨부파일 : 20200305-13256.PDF</a>
+                        </div>
+                    </li>
+                    <li>
+                        <button type="button">Q. 자주 묻는 질문 제목</button>
+                        <div>
+                            <p>A. 자주 묻는 질문에 대한 답변입니다.</p>
+                            <a href="javascript:void(0);">첨부파일 : 20200305-13256.PDF</a>
+                        </div>
+                    </li>
+                    <li>
+                        <button type="button">Q. 자주 묻는 질문 제목</button>
+                        <div>
+                            <p>A. 자주 묻는 질문에 대한 답변입니다.</p>
+                            <a href="javascript:void(0);">첨부파일 : 20200305-13256.PDF</a>
+                        </div>
+                    </li>
+                    <li>
+                        <button type="button">Q. 자주 묻는 질문 제목</button>
+                        <div>
+                            <p>A. 자주 묻는 질문에 대한 답변입니다.</p>
+                            <a href="javascript:void(0);">첨부파일 : 20200305-13256.PDF</a>
+                        </div>
+                    </li>
+                    <li>
+                        <button type="button">Q. 자주 묻는 질문 제목</button>
+                        <div>
+                            <p>A. 자주 묻는 질문에 대한 답변입니다.</p>
+                            <a href="javascript:void(0);">첨부파일 : 20200305-13256.PDF</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="pagenation-wrapper">
+                    <a href="javascript:void(0);" class="pagenation-arrow pagenation-prev">
+                        <span class="sound-only">이전페이지</span>
+                    </a>
+                    <div class="pagenation-items active">
+                        <a href="javascript:void(0);">1</a>
+                    </div>
+                    <div class="pagenation-items">
+                        <a href="javascript:void(0);">2</a>
+                    </div>
+                    <div class="pagenation-items">
+                        <a href="javascript:void(0);">3</a>
+                    </div>
+                    <div class="pagenation-items">
+                        <a href="javascript:void(0);">4</a>
+                    </div>
+                    <div class="pagenation-items">
+                        <a href="javascript:void(0);">5</a>
+                    </div>
+                    <div class="pagenation-items">
+                        <a href="javascript:void(0);">6</a>
+                    </div>
+                    <div class="pagenation-items">
+                        <a href="javascript:void(0);">7</a>
+                    </div>
+                    <a href="javascript:void(0);" class="pagenation-arrow pagenation-next">
+                        <span class="sound-only">다음페이지</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//container-->
+    <!--아코디언 핸들러-->
+    <script>
+        function faqFuntion() {
+            var $boardFaqSelect = $(".BoardFaqSelect");
+            var $faqListWrap = $boardFaqSelect.find(".faq_list_wrap");
+            var $faqList = $faqListWrap.find("li button");
 
-</div>
-
+            $faqList.on("click", function () {
+                var $thisParent= $(this).parent();
+                if(!$thisParent.hasClass("active")){
+                    $thisParent.addClass("active");
+                    $thisParent.find("div").stop().slideDown(500);
+                }else{
+                    $thisParent.removeClass("active");
+                    $thisParent.find("div").stop().slideUp(500);
+                }
+            });
+        }
+        faqFuntion();
+    </script>
      <!-- footer -->
      <footer id="footer_wrap">
         <h2 class="hidden-txt">footer</h2>

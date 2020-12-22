@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!--common-->
+    <title>부천시 미세먼지 - 시민용</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="title" content="">
+    <meta name="Description" content="">
+    <meta name="Keywords" content="">
+    <meta name="Author" content="">
+    <meta name="robots" content="ALL">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <link rel="shortcut icon" content="">
+    <link rel="apple-touch-icon" content="">
+    <link rel="icon" href="">
+    <!--//common-->
+    <!-- css 정문채 -->
+    <link rel="stylesheet" href="/css/pbb/cs/test_1013.css">
+    <!--css-->
+    <link rel="stylesheet" href="/css/pbb/cs/common.css">
+    <link rel="stylesheet" href="/css/pbb/cs/customui.css">
+
+    <!--jquery-->
+    <script src="/resources/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/resources/jquery/jquery-ui.min.js"></script>
+    <script src="/resources/jquery/jquery-ui-timepicker-addon.js"></script>
+
+</head>
+<body>
+<div id="wrap">
+    <!--header-->
+    <!--skip nav-->
+    <a class="go_active_nav" href="#global_nav">메뉴 바로가기</a>
+    <a class="go_active_content" href="#container">본문 바로가기</a>
+    <!--//skip nav-->
+    <header id="globalHeader">
+        <div class="header_wrap">
+            <h1><a href="/"><img src="/img/cs/layout/logo.jpg" alt="판타지아 부천 로고"></a></h1>
+            <nav id="globalNav">
+                <button class="close_btn">close</button>
+                <h2 class="hidden-txt">global navigation</h2>
+                <!--**button open 클래스를 가지면 active-->
+                <!--**페이지 이동 a태그 class="active" 경우 active 활성화-->
+                <ul class="gnb_wrap">
+                    <li>
+                        <a href="#">우리시 미세먼지 발생량</a>
+                        <dlv class="depth_wrap">
+                            <div class="depth_list">
+                                <div class="depth2">
+                                    <a href="#" class="active">산업부문</a>
+                                    <ul class="depth3">
+                                        <li><a href="#">대기오염배출물 사업장</a></li>
+                                        <li><a href="#">굴뚝 자동측정기 사업장</a></li>
+                                        <li><a href="#">비산먼지 발생</a></li>
+                                    </ul>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">수송부문</a>
+                                    <ul class="depth3">
+                                        <li><a href="#">재비산먼지</a></li>
+                                        <li><a href="#">노후 경유차량</a></li>
+                                    </ul>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">생활부문</a>
+                                    <ul class="depth3">
+                                        <li><a href="#">매립/소각</a></li>
+                                        <li><a href="#">산불징후</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </dlv>
+                    </li>
+                    <li>
+                        <a href="#">현황 및 예보</a>
+                        <dlv class="depth_wrap">
+                            <div class="depth_list">
+                                <div class="depth2">
+                                    <a href="#">미세먼지 수치</a>
+                                    <ul class="depth3">
+                                        <li><a href="#">현황</a></li>
+                                        <li><a href="#">예보</a></li>
+                                    </ul>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">미세먼지 지수구간</a>
+                                    <ul class="depth3">
+                                        <li><a href="#">지수정보</a></li>
+                                        <li><a href="#">행동요령</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </dlv>
+                    </li>
+                    <li>
+                        <a href="#">우리시 저감활동</a>
+                        <dlv class="depth_wrap">
+                            <div class="depth_list">
+                                <div class="depth2">
+                                    <a href="#">미세먼지 대응 정책</a>
+                                    <ul class="depth3">
+                                        <li><a href="#">미세먼지 비상저감조치</a></li>
+                                        <li><a href="#">미세먼지 경보제</a></li>
+                                        <li><a href="#">미세먼지 대응 추진실적</a></li>
+                                        <li><a href="#">우리시 미세먼지 대책담당관</a></li>
+                                    </ul>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">스마트 미세먼지 클린 특화단지 조성사업</a>
+                                    <ul class="depth3">
+                                        <li><a href="#">우리동네 미세먼지 정보 제공</a></li>
+                                        <li><a href="#">공업단지 비산먼지 저감</a></li>
+                                        <li><a href="#">통학로 청정-안심 공기 제공</a></li>
+                                        <li><a href="#">지하철 미세먼지 저감</a></li>
+                                    </ul>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">미세먼지 대응 추진사업</a>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">우리시 미세먼지 저감 활동내역</a>
+                                </div>
+                            </div>
+                        </dlv>
+                    </li>
+                    <li>
+                        <a href="#">저감효과 및 추이</a>
+                        <dlv class="depth_wrap">
+                            <div class="depth_list">
+                                <div class="depth2">
+                                    <a href="#">우리시 미세먼지 발생량</a>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">우리시 미세먼지 저감활동 효과 보고</a>
+                                </div>
+                            </div>
+                        </dlv>
+                    </li>
+                    <li>
+                        <a href="#">시민참여 광장</a>
+                        <dlv class="depth_wrap">
+                            <div class="depth_list">
+                                <div class="depth2">
+                                    <a href="#">미세먼지 맵 서비스</a>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">개인맞춤 서비스</a>
+                                    <ul class="depth3">
+                                        <li><a href="#">나의 관심지역</a></li>
+                                        <li><a href="#">나의 제보</a></li>
+                                        <li><a href="#">나의 설문</a></li>
+                                        <li><a href="#">나의 아이디어</a></li>
+                                    </ul>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">커뮤니티 서비스</a>
+                                    <ul class="depth3">
+                                        <li><a href="#">행사 공유</a></li>
+                                        <li><a href="#">미세먼지 아이디어</a></li>
+                                        <li><a href="#">나의 꿀팁 공유</a></li>
+                                        <li><a href="#">나의 아이디어</a></li>
+                                        <li><a href="#">미세먼지 용품 사용후기</a></li>
+                                        <li><a href="#">미세먼지 발생 실험</a></li>
+                                    </ul>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">부천시에 바란다</a>
+                                </div>
+                            </div>
+                        </dlv>
+                    </li>
+                    <li>
+                        <a href="#">전문가 지식나눔 관리</a>
+                        <dlv class="depth_wrap">
+                            <div class="depth_list">
+                                <div class="depth2">
+                                    <a href="#">미세먼지 바로알기</a>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">미세먼지 코디네이터</a>
+                                    <ul class="depth3">
+                                        <li><a href="#">코디네이터 활동 개요</a></li>
+                                        <li><a href="#">코디네이터 활동</a></li>
+                                    </ul>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">찾아가는 미세먼지 교실</a>
+                                    <ul class="depth3">
+                                        <li><a href="#">미세먼지 대응 꿀팁</a></li>
+                                        <li><a href="#">미세먼지 아이디어</a></li>
+                                        <li><a href="#">미세먼지 줄이기 시민</a></li>
+                                        <li><a href="#">실천 가이드</a></li>
+                                        <li><a href="#">시민 행동요령</a></li>
+                                        <li><a href="#">미세먼지 게절관리제</a></li>
+                                    </ul>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">미세먼지 대응 꿀팁</a>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">미세먼지 소통채널</a>
+                                </div>
+                            </div>
+                        </dlv>
+                    </li>
+                    <li>
+                        <a href="#">게시판</a>
+                        <dlv class="depth_wrap">
+                            <div class="depth_list">
+                                <div class="depth2">
+                                    <a href="#">공지사항</a>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">뉴스</a>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">FAQ</a>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">Q&A</a>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">자료실</a>
+                                </div>
+                            </div>
+                        </dlv>
+                    </li>
+                    <li>
+                        <a href="#">My 서비스</a>
+                        <dlv class="depth_wrap">
+                            <div class="depth_list">
+                                <div class="depth2">
+                                    <a href="#">MY정보 저장</a>
+                                    <ul class="depth3">
+                                        <li>
+                                            <a href="#">MY정보 저장</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">코디네이터 경력관리</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">MY서비스 메뉴</a>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">개인맞춤 서비스 제공</a>
+                                </div>
+                            </div>
+                        </dlv>
+                    </li>
+                </ul>
+            </nav>
+            <ul class="gnb_utility">
+                <li class="user_rank_open"><button>user rank</button></li>
+                <li class="my_page"><a href="#">my page</a></li>
+                <li class="site_map_open"><button type="button">page list</button></li>
+            </ul>
+        </div>
+        <div class="site_map_wrap">
+            <h2 class="hidden-txt">site map</h2>
+            <div class="map_header">
+                <div>
+                    <div>
+                        <h2>사이트맵</h2>
+                        <button type="button" class="close_btn">close</button>
+                    </div>
+                </div>
+                <ul>
+                    <li class="active"><button type="button">우리시 미세먼지 발생량</button></li>
+                    <li><button type="button">현황 및 예보</button></li>
+                    <li><button type="button">우리시 저감활동</button></li>
+                    <li><button type="button">저감효과 및 추이</button></li>
+                    <li><button type="button">시민참여 광장</button></li>
+                    <li><button type="button">전문가 지식나눔 관리</button></li>
+                    <li><button type="button">게시판</button></li>
+                    <li><button type="button">My 서비스</button></li>
+                </ul>
+            </div>
+            <div class="map_list_wrap">
+                <ul>
+                    <li>
+                        <a href="#">우리시 미세먼지 발생량</a>
+                        <dlv class="map_depth_wrap">
+                            <div class="map_depth_list">
+                                <div class="depth2">
+                                    <a href="#">산업부문</a>
+                                    <ul class="depth3">
+                                        <li><a href="#">대기오염배출물 사업장</a></li>
+                                        <li><a href="#">굴뚝 자동측정기 사업장</a></li>
+                                        <li><a href="#">비산먼지 발생</a></li>
+                                    </ul>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">수송부문</a>
+                                    <ul class="depth3">
+                                        <li><a href="#">재비산먼지</a></li>
+                                        <li><a href="#">노후 경유차량</a></li>
+                                    </ul>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">생활부문</a>
+                                    <ul class="depth3">
+                                        <li><a href="#">매립/소각</a></li>
+                                        <li><a href="#">산불징후</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </dlv>
+                    </li>
+                    <li>
+                        <a href="#">현황 및 예보</a>
+                        <dlv class="map_depth_wrap">
+                            <div class="map_depth_list">
+                                <div class="depth2">
+                                    <a href="#">미세먼지 수치</a>
+                                    <ul class="depth3">
+                                        <li><a href="#">현황</a></li>
+                                        <li><a href="#">예보</a></li>
+                                    </ul>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">미세먼지 지수구간</a>
+                                    <ul class="depth3">
+                                        <li><a href="#">지수정보</a></li>
+                                        <li><a href="#">행동요령</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </dlv>
+                    </li>
+                    <li>
+                        <a href="#">우리시 저감활동</a>
+                        <dlv class="map_depth_wrap">
+                            <div class="map_depth_list">
+                                <div class="depth2">
+                                    <a href="#">미세먼지 대응 정책</a>
+                                    <ul class="depth3">
+                                        <li><a href="#">미세먼지 비상저감조치</a></li>
+                                        <li><a href="#">미세먼지 경보제</a></li>
+                                        <li><a href="#">미세먼지 대응 추진실적</a></li>
+                                        <li><a href="#">우리시 미세먼지 대책담당관</a></li>
+                                    </ul>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">스마트 미세먼지 클린 특화단지 조성사업</a>
+                                    <ul class="depth3">
+                                        <li><a href="#">우리동네 미세먼지 정보 제공</a></li>
+                                        <li><a href="#">공업단지 비산먼지 저감</a></li>
+                                        <li><a href="#">통학로 청정-안심 공기 제공</a></li>
+                                        <li><a href="#">지하철 미세먼지 저감</a></li>
+                                    </ul>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">미세먼지 대응 추진사업</a>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">우리시 미세먼지 저감 활동내역</a>
+                                </div>
+                            </div>
+                        </dlv>
+                    </li>
+                    <li>
+                        <a href="#">저감효과 및 추이</a>
+                        <dlv class="map_depth_wrap">
+                            <div class="map_depth_list">
+                                <div class="depth2">
+                                    <a href="#">우리시 미세먼지 발생량</a>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">우리시 미세먼지 저감활동 효과 보고</a>
+                                </div>
+                            </div>
+                        </dlv>
+                    </li>
+                    <li>
+                        <a href="#">시민참여 광장</a>
+                        <dlv class="map_depth_wrap">
+                            <div class="map_depth_list">
+                                <div class="depth2">
+                                    <a href="#">미세먼지 맵 서비스</a>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">개인맞춤 서비스</a>
+                                    <ul class="depth3">
+                                        <li><a href="#">나의 관심지역</a></li>
+                                        <li><a href="#">나의 제보</a></li>
+                                        <li><a href="#">나의 설문</a></li>
+                                        <li><a href="#">나의 아이디어</a></li>
+                                    </ul>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">커뮤니티 서비스</a>
+                                    <ul class="depth3">
+                                        <li><a href="#">행사 공유</a></li>
+                                        <li><a href="#">미세먼지 아이디어</a></li>
+                                        <li><a href="#">나의 꿀팁 공유</a></li>
+                                        <li><a href="#">나의 아이디어</a></li>
+                                        <li><a href="#">미세먼지 용품 사용후기</a></li>
+                                        <li><a href="#">미세먼지 발생 실험</a></li>
+                                    </ul>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">부천시에 바란다</a>
+                                </div>
+                            </div>
+                        </dlv>
+                    </li>
+                    <li>
+                        <a href="#">전문가 지식나눔 관리</a>
+                        <dlv class="map_depth_wrap">
+                            <div class="map_depth_list">
+                                <div class="depth2">
+                                    <a href="#">미세먼지 바로알기</a>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">미세먼지 코디네이터</a>
+                                    <ul class="depth3">
+                                        <li><a href="#">코디네이터 활동 개요</a></li>
+                                        <li><a href="#">코디네이터 활동</a></li>
+                                    </ul>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">찾아가는 미세먼지 교실</a>
+                                    <ul class="depth3">
+                                        <li><a href="#">미세먼지 대응 꿀팁</a></li>
+                                        <li><a href="#">미세먼지 아이디어</a></li>
+                                        <li><a href="#">미세먼지 줄이기 시민</a></li>
+                                        <li><a href="#">실천 가이드</a></li>
+                                        <li><a href="#">시민 행동요령</a></li>
+                                        <li><a href="#">미세먼지 게절관리제</a></li>
+                                    </ul>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">미세먼지 대응 꿀팁</a>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">미세먼지 소통채널</a>
+                                </div>
+                            </div>
+                        </dlv>
+                    </li>
+                    <li>
+                        <a href="#">게시판</a>
+                        <dlv class="map_depth_wrap">
+                            <div class="map_depth_list">
+                                <div class="depth2">
+                                    <a href="#">공지사항</a>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">뉴스</a>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">FAQ</a>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">Q&A</a>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">자료실</a>
+                                </div>
+                            </div>
+                        </dlv>
+                    </li>
+                    <li>
+                        <a href="#">My 서비스</a>
+                        <dlv class="map_depth_wrap">
+                            <div class="map_depth_list">
+                                <div class="depth2">
+                                    <a href="#">MY정보 저장</a>
+                                    <ul class="depth3">
+                                        <li><a href="#">MY정보 저장</a></li>
+                                        <li><a href="#">코디네이터 경력관리</a></li>
+                                    </ul>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">MY서비스 메뉴</a>
+                                </div>
+                                <div class="depth2">
+                                    <a href="#">개인맞춤 서비스 제공</a>
+                                </div>
+                            </div>
+                        </dlv>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="user_rank_wrap">
+            <button type="button" class="close_btn">close</button>
+            <div>
+                <div class="rank_title">
+                    <h3>명예시민 TOP 10</h3>
+                    <button type="button">?</button>
+                </div>
+                <ul class="user_top3">
+                    <li>
+                        <span>1</span>
+                        <img src="/img/cs/common/icon_rank_top1.png" alt="명예시민 top 1 아이콘">
+                        <div>
+                            <strong>홍길동이</strong>
+                            <ul>
+                                <li>
+                                    채택
+                                    <span>4,241</span>
+                                </li>
+                                <li>
+                                    좋아요
+                                    <span>241</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <span>2</span>
+                        <img src="/img/cs/common/icon_rank_top2.png" alt="명예시민 top 2 아이콘">
+                        <div>
+                            <strong>아무개</strong>
+                            <ul>
+                                <li>
+                                    채택
+                                    <span>4,241</span>
+                                </li>
+                                <li>
+                                    좋아요
+                                    <span>241</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <span>3</span>
+                        <img src="/img/cs/common/icon_rank_top3.png" alt="명예시민 top 3 아이콘">
+                        <div>
+                            <strong>아무개</strong>
+                            <ul>
+                                <li>
+                                    채택
+                                    <span>4,241</span>
+                                </li>
+                                <li>
+                                    좋아요
+                                    <span>241</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="user_ranker">
+                    <li>
+                        <span>4</span>
+                        <img src="/img/cs/common/icon_rank_user.jpg" alt="명예시민 아이콘">
+                        <div>
+                            <strong>아무개</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <span>5</span>
+                        <img src="/img/cs/common/icon_rank_user.jpg" alt="명예시민 아이콘">
+                        <div>
+                            <strong>아무개</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <span>6</span>
+                        <img src="/img/cs/common/icon_rank_user.jpg" alt="명예시민 아이콘">
+                        <div>
+                            <strong>아무개</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <span>7</span>
+                        <img src="/img/cs/common/icon_rank_user.jpg" alt="명예시민 아이콘">
+                        <div>
+                            <strong>아무개</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <span>8</span>
+                        <img src="/img/cs/common/icon_rank_user.jpg" alt="명예시민 아이콘">
+                        <div>
+                            <strong>아무개</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <span>9</span>
+                        <img src="/img/cs/common/icon_rank_user.jpg" alt="명예시민 아이콘">
+                        <div>
+                            <strong>아무개</strong>
+                        </div>
+                    </li>
+                    <li>
+                        <span>10</span>
+                        <img src="/img/cs/common/icon_rank_user.jpg" alt="명예시민 아이콘">
+                        <div>
+                            <strong>아무개</strong>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="questionWrap">
+            <a href="javascript:void:(0)">
+                <div>문의하기 이미지</div>
+                문의하기
+            </a>
+        </div>
+    </header>
+    <!--//header-->
+
+    <!--container-->
+    <div id="container" class="CtznBoardList">
+        <div class="breadcrumb_wrap">
+            <div>
+                <a href="/">home</a>
+                <!--
+                crumb_depth 가 multiple_depth 클래스를 가지면
+                -화살표 아이콘, hover 효과
+                -->
+                <div class="crumb_depth multiple_depth">
+                    <strong tabindex="0">산업부분</strong>
+                    <ul>
+                        <!--
+                        a 태그 class="active" 활성 표시
+                        -->
+                        <li><a href="#" class="active">대기오염배출물 사업장</a></li>
+                        <li><a href="#">대기오염배출물 사업장</a></li>
+                        <li><a href="#">대기오염배출물 사업장</a></li>
+                    </ul>
+                    <span>arrow icon</span>
+                </div>
+                <div class="crumb_depth">
+                    <strong>산업부분</strong>
+                </div>
+
+            </div>
+        </div>
+        <div id="subTitle">
+            <h3>시민 제보</h3>
+        </div>
+        <div class="sub_contents">
+            <div class="introText">
+                <p>민원과 관련된 내용은 부천시 민원실에 연락 부탁드립니다.</p>
+                <p>비방글 및 포탈 관리상의 규정에 부합하지 않는 내용은 삭제될 수 있습니다.</p>
+            </div>
+            <div class="report_info_wrap">
+                <ul>
+                    <li>시민 제보는 미세먼지 발생이 의심되는 곳에 대한 신고 또는 개선이 필요한 부분을 제안하는 공간으로 이 외의 내용은 전자민원시민제안 접수 바랍니다.</li>
+                    <li>게시판 서비스 품질을 저해하는 불건전한 게시물(저속한 표현, 타인의 명예훼손 등)은 본인 동의없이 삭제 될 수 있습니다.</li>
+                    <li>개인정보 보호를 위해 이메일, 주소, 주민번호, 전화번호 등 개인정보 사항을 게시하는 것을 주의 바랍니다.</li>
+                </ul>
+                <a href="javascript:void(0)" class="complaints_btn">전자민원 바로가기</a>
+                <a href="javascript:void(0)" class="propose_btn">시민제안 바로가기</a>
+            </div>
+            <div class="conts_section">
+                <div class="lookup_wrapper">
+                    <div class="lookupArea">
+                        <form>
+                            <div id="list-lookup-forms">
+                                <div class="lookupFormLines displayFlex flexJustifyBetween">
+                                    <div class="flexItems">
+                                        <div class='lookupLines'>
+                                            <label class="label_text">조회기간</label>
+                                            <input type="text" class="dateForm date_picker">
+                                            <span class='textDivision'>~</span>
+                                            <input type="text" class="dateForm date_picker">
+                                        </div>
+                                        <div class='lookupLines'>
+                                            <label class="label_text">조회내용</label>
+                                            <select class="selectForm">
+                                                <option>유형 선택</option>
+                                            </select>
+                                            <select class="selectForm">
+                                                <option>제목</option>
+                                            </select>
+                                            <input type="text" class="textForm">
+                                        </div>
+                                    </div>
+                                    <div class="flexItems">
+                                        <div class="submit_btn_wrapper h-100 displayFlex flexAlignCenter">
+                                            <button class="btn btn-round">조회</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- my 제보 리스트 -->
+            <div class="conts_section">
+                <div class="boardLists">
+                    <div class="boardListSet displayFlex flexAlignCenter flexJustifyBetween">
+                        <div class="listCount">
+                            <p>
+                                <span>조회결과 : </span>
+                                <span class="listCountData">9,999</span>건
+                            </p>
+                        </div>
+                        <div class="listViewSelector">
+                            <select class="selectForm">
+                                <option>50개 출력</option>
+                                <option>100개 출력</option>
+                                <option>150개 출력</option>
+                                <option>200개 출력</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="boardListTable">
+                        <table>
+                            <colgroup>
+                                <col class="boardWrDateTime">
+                                <col class="boardWrType">
+                                <col class="boardWrSubject">
+                                <col class="boardAnswerCpDate">
+                                <col class="boardAnswerState">
+                            </colgroup>
+                            <thead class="boardListHeader">
+                            <tr>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>등록일</p>
+                                    </div>
+                                </th>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>유형</p>
+                                    </div>
+                                </th>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>제목</p>
+                                    </div>
+                                </th>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>답변등록일자</p>
+                                    </div>
+                                </th>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>답변등록상태</p>
+                                    </div>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody class="boardListBody">
+                            <tr>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2020-06-19</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>불법소각</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <a href="javascript:void(0);"><span>제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목제보 제목</span></a>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span></span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span class="resultWait">답변등록대기</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2020-06-19</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>불법소각2</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <a href="javascript:void(0);"><span>제보 제목2</span></a>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2020-06-20</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span class="resultSuccess">답변등록완료</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="listEmpty">
+                                <td colspan="5" class="text_center">
+                                    <div class="tableEmptyData">
+                                        <p>조회된 데이터가 없습니다.</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class='pagenation-wrapper'>
+                        <a href='javascript:void(0);' class='pagenation-arrow pagenation-prev'>
+                            <span class='sound-only'>이전페이지</span>
+                        </a>
+                        <div class='pagenation-items active'>
+                            <a href='javascript:void(0);'>1</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>2</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>3</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>4</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>5</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>6</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>7</a>
+                        </div>
+                        <a href='javascript:void(0);' class='pagenation-arrow pagenation-next'>
+                            <span class='sound-only'>다음페이지</span>
+                        </a>
+                    </div>
+                    <div class="boardBtns text_center">
+                        <a href="javascript:void(0);" class="btn">등록</a>
+                    </div>
+                </div>
+            </div>
+            <!-- my 아이디어 리스트 -->
+            <div class="conts_section">
+                <div class="boardLists">
+                    <div class="boardListSet displayFlex flexAlignCenter flexJustifyBetween">
+                        <div class="listCount">
+                            <p>
+                                <span>조회결과 : </span>
+                                <span class="listCountData">9,999</span>건
+                            </p>
+                        </div>
+                        <div class="listViewSelector">
+                            <select class="selectForm">
+                                <option>50개 출력</option>
+                                <option>100개 출력</option>
+                                <option>150개 출력</option>
+                                <option>200개 출력</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="boardListTable">
+                        <table>
+                            <colgroup>
+                                <col class="boardWrDateTime">
+                                <col class="boardWrSubject">
+                                <col class="boardWrHit">
+                                <col class="boardAnswerCpDate">
+                                <col class="boardAnswerState">
+                            </colgroup>
+                            <thead class="boardListHeader">
+                            <tr>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>등록일</p>
+                                    </div>
+                                </th>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>제목</p>
+                                    </div>
+                                </th>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>추천수</p>
+                                    </div>
+                                </th>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>답변등록일자</p>
+                                    </div>
+                                </th>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>답변등록상태</p>
+                                    </div>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody class="boardListBody">
+                            <tr>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2020-06-19</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <a href="javascript:void(0);"><span>아이디어 제목</span></a>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>1</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span></span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span class="resultWait">답변등록대기</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2020-06-19</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <a href="javascript:void(0);"><span>아이디어 제목2</span></a>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2020-06-20</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span class="resultSuccess">답변등록완료</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2020-06-19</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <a href="javascript:void(0);"><span class="secretIcon">비밀글</span><span>아이디어 제목2</span></a>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2020-06-20</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span class="resultSuccess">답변등록완료</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="listEmpty">
+                                <td colspan="5" class="text_center">
+                                    <div class="tableEmptyData">
+                                        <p>조회된 데이터가 없습니다.</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class='pagenation-wrapper'>
+                        <a href='javascript:void(0);' class='pagenation-arrow pagenation-prev'>
+                            <span class='sound-only'>이전페이지</span>
+                        </a>
+                        <div class='pagenation-items active'>
+                            <a href='javascript:void(0);'>1</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>2</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>3</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>4</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>5</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>6</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>7</a>
+                        </div>
+                        <a href='javascript:void(0);' class='pagenation-arrow pagenation-next'>
+                            <span class='sound-only'>다음페이지</span>
+                        </a>
+                    </div>
+                    <div class="boardBtns text_center">
+                        <a href="javascript:void(0);" class="btn">등록</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 미세먼지 아이디어 리스트 -->
+            <div class="conts_section">
+                <div class="boardLists">
+                    <div class="boardListSet displayFlex flexAlignCenter flexJustifyBetween">
+                        <div class="listCount">
+                            <p>
+                                <span>조회결과 : </span>
+                                <span class="listCountData">9,999</span>건
+                            </p>
+                        </div>
+                        <div class="listViewSelector">
+                            <select class="selectForm">
+                                <option>50개 출력</option>
+                                <option>100개 출력</option>
+                                <option>150개 출력</option>
+                                <option>200개 출력</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="boardListTable">
+                        <table id="ideaBoardLists">
+                            <colgroup>
+                                <col class="boardWrDateTime">
+                                <col class="boardWrSubject">
+                                <col class="boardWrName">
+                                <col class="boardWrHit">
+                                <col class="boardAnswerCpDate">
+                                <col class="boardAnswerState">
+                            </colgroup>
+                            <thead class="boardListHeader">
+                            <tr>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>등록일</p>
+                                    </div>
+                                </th>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>제목</p>
+                                    </div>
+                                </th>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>작성자</p>
+                                    </div>
+                                </th>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>추천수</p>
+                                    </div>
+                                </th>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>답변등록일자</p>
+                                    </div>
+                                </th>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>답변등록상태</p>
+                                    </div>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody class="boardListBody">
+                            <tr>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2020-06-19</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <a href="javascript:void(0);"><span>아이디어 제목</span></a>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>작성자1</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>1</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span></span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span class="resultWait">답변등록대기</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2020-06-19</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <a href="javascript:void(0);"><span>아이디어 제목2</span></a>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>작성자2</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2020-06-20</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span class="resultSuccess">답변등록완료</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2020-06-19</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <a href="javascript:void(0);"><span class="secretIcon">비밀글</span><span>아이디어 제목2</span></a>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>작성자3</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2020-06-20</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span class="resultSuccess">답변등록완료</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="listEmpty">
+                                <td colspan="6" class="text_center">
+                                    <div class="tableEmptyData">
+                                        <p>조회된 데이터가 없습니다.</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class='pagenation-wrapper'>
+                        <a href='javascript:void(0);' class='pagenation-arrow pagenation-prev'>
+                            <span class='sound-only'>이전페이지</span>
+                        </a>
+                        <div class='pagenation-items active'>
+                            <a href='javascript:void(0);'>1</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>2</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>3</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>4</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>5</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>6</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>7</a>
+                        </div>
+                        <a href='javascript:void(0);' class='pagenation-arrow pagenation-next'>
+                            <span class='sound-only'>다음페이지</span>
+                        </a>
+                    </div>
+                    <div class="boardBtns text_center">
+                        <a href="javascript:void(0);" class="btn">등록</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 나의 꿀팁공유 리스트 -->
+            <div class="conts_section">
+                <div class="boardLists">
+                    <div class="boardListSet displayFlex flexAlignCenter flexJustifyBetween">
+                        <div class="listCount">
+                            <p>
+                                <span>조회결과 : </span>
+                                <span class="listCountData">9,999</span>건
+                            </p>
+                        </div>
+                        <div class="listViewSelector">
+                            <select class="selectForm">
+                                <option>50개 출력</option>
+                                <option>100개 출력</option>
+                                <option>150개 출력</option>
+                                <option>200개 출력</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="boardListTable">
+                        <table id="tipBoardLists">
+                            <colgroup>
+                                <col class="boardWrDateTime">
+                                <col class="boardWrSubject">
+                                <col class="boardWrName">
+                                <col class="boardWrHit">
+                            </colgroup>
+                            <thead class="boardListHeader">
+                            <tr>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>등록일</p>
+                                    </div>
+                                </th>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>제목</p>
+                                    </div>
+                                </th>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>작성자</p>
+                                    </div>
+                                </th>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>추천수</p>
+                                    </div>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody class="boardListBody">
+                            <tr>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2020-06-19</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <a href="javascript:void(0);"><span>아이디어 제목</span></a>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>작성자1</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>1</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2020-06-19</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <a href="javascript:void(0);"><span>아이디어 제목2</span></a>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>작성자2</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2020-06-19</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <a href="javascript:void(0);"><span>아이디어 제목2</span></a>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>작성자3</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="listEmpty">
+                                <td colspan="4" class="text_center">
+                                    <div class="tableEmptyData">
+                                        <p>조회된 데이터가 없습니다.</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class='pagenation-wrapper'>
+                        <a href='javascript:void(0);' class='pagenation-arrow pagenation-prev'>
+                            <span class='sound-only'>이전페이지</span>
+                        </a>
+                        <div class='pagenation-items active'>
+                            <a href='javascript:void(0);'>1</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>2</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>3</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>4</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>5</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>6</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>7</a>
+                        </div>
+                        <a href='javascript:void(0);' class='pagenation-arrow pagenation-next'>
+                            <span class='sound-only'>다음페이지</span>
+                        </a>
+                    </div>
+                    <div class="boardBtns text_center">
+                        <a href="javascript:void(0);" class="btn">등록</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 미세먼지 발생실험 리스트 -->
+            <div class="conts_section">
+                <div class="boardLists">
+                    <div class="boardListSet displayFlex flexAlignCenter flexJustifyBetween">
+                        <div class="listCount">
+                            <p>
+                                <span>조회결과 : </span>
+                                <span class="listCountData">9,999</span>건
+                            </p>
+                        </div>
+                        <div class="listViewSelector">
+                            <select class="selectForm">
+                                <option>50개 출력</option>
+                                <option>100개 출력</option>
+                                <option>150개 출력</option>
+                                <option>200개 출력</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="boardListTable">
+                        <table id="experimentBoardLists">
+                            <colgroup>
+                                <col class="boardWrDateTime">
+                                <col class="boardWrSubject">
+                                <col class="boardWrName">
+                                <col class="boardWrHit">
+                            </colgroup>
+                            <thead class="boardListHeader">
+                            <tr>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>등록일</p>
+                                    </div>
+                                </th>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>제목</p>
+                                    </div>
+                                </th>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>작성자</p>
+                                    </div>
+                                </th>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>추천수</p>
+                                    </div>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody class="boardListBody">
+                            <tr>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2020-06-19</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_left">
+                                    <div class="tableFieldArea">
+                                        <a href="javascript:void(0);"><span>아이디어 제목</span></a>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>작성자1</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>1</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2020-06-19</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_left">
+                                    <div class="tableFieldArea">
+                                        <a href="javascript:void(0);"><span>아이디어 제목2</span></a>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>작성자2</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2020-06-19</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_left">
+                                    <div class="tableFieldArea">
+                                        <a href="javascript:void(0);"><span>아이디어 제목2</span></a>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>작성자3</span></p>
+                                    </div>
+                                </td>
+                                <td class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p><span>2</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="listEmpty">
+                                <td colspan="6" class="text_center">
+                                    <div class="tableEmptyData">
+                                        <p>조회된 데이터가 없습니다.</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class='pagenation-wrapper'>
+                        <a href='javascript:void(0);' class='pagenation-arrow pagenation-prev'>
+                            <span class='sound-only'>이전페이지</span>
+                        </a>
+                        <div class='pagenation-items active'>
+                            <a href='javascript:void(0);'>1</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>2</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>3</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>4</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>5</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>6</a>
+                        </div>
+                        <div class='pagenation-items'>
+                            <a href='javascript:void(0);'>7</a>
+                        </div>
+                        <a href='javascript:void(0);' class='pagenation-arrow pagenation-next'>
+                            <span class='sound-only'>다음페이지</span>
+                        </a>
+                    </div>
+                    <div class="boardBtns text_center">
+                        <a href="javascript:void(0);" class="btn">등록</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//container-->
+
+     <!-- footer -->
+     <footer id="footer_wrap">
+        <h2 class="hidden-txt">footer</h2>
+        <ul>
+           <li>바로가기<button class="close_btn">close</button></li>
+           <li><a href="#">부천시청</a></li>
+           <li><a href="#">경기도 보건환경연구원</a></li>
+           <li><a href="#">경기도 대기환경</a></li>
+           <li><a href="#">환경부</a></li>
+           <li><a href="#">에어코리아</a></li>
+           <li><a href="#">날씨누리</a></li>
+           <li><a href="#">질병관리본부</a></li>
+        </ul>
+        <div>
+           <a href="/" class="footer_logo">
+              <img src="/img/cs/layout/logo_footer.jpg" alt="판타지아 푸터 부천 로고">
+           </a>
+           <div class="footer_info">
+              <p class="address">
+                 <span>주소</span>
+                 14547 경기도 부천시 길주로 210(중동)
+              </p>
+              <p>
+                 <span>부천시 365 콜센터</span>
+                 032-320-3000 ( 평일 08~19시 / 주말·공휴일 09~18시 )
+              </p>
+           </div>
+           <p class="copyright">Copyright &copy;2017 BUCHEON CITY All rights reserved.</p>
+        </div>
+     </footer>
+     <!-- //footer -->
+ </div>
+<script src="/js/pbb/plugin.js"></script>
+<script src="/js/pbb/design_common.js"></script>
+</body>
+</html>

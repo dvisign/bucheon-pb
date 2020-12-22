@@ -18,11 +18,17 @@
     <link rel="apple-touch-icon" content="">
     <link rel="icon" href="">
     <!--//common-->
+    <!-- css 정문채 -->
+    <link rel="stylesheet" href="/css/pbb/cs/test_1013.css">
     <!--css-->
     <link rel="stylesheet" href="/css/pbb/cs/common.css">
     <link rel="stylesheet" href="/css/pbb/cs/customui.css">
+
     <!--jquery-->
     <script src="/resources/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/resources/jquery/jquery-ui.min.js"></script>
+    <script src="/resources/jquery/jquery-ui-timepicker-addon.js"></script>
+
 </head>
 <body>
 <div id="wrap">
@@ -597,18 +603,539 @@
                 </ul>
             </div>
         </div>
+        <div id="questionWrap">
+            <a href="javascript:void:(0)">
+                <div>문의하기 이미지</div>
+                문의하기
+            </a>
+        </div>
     </header>
-    <div id="questionWrap">
-        <a href="javascript:viod:(0)">
-            <div>문의하기 이미지</div>
-            문의하기
-        </a>
-    </div>
     <!--//header-->
 
-<div>
-
-</div>
+    <!--container-->
+    <div id="container" class="	UlfptcIdexSctnActCheatSearch">
+        <div class="breadcrumb_wrap">
+            <div>
+                <a href="/">home</a>
+                <!--
+                crumb_depth 가 multiple_depth 클래스를 가지면
+                -화살표 아이콘, hover 효과
+                -->
+                <div class="crumb_depth multiple_depth">
+                    <strong tabindex="0">산업부분</strong>
+                    <ul>
+                        <!--**a 태그 class="active" 현재 페이지 활성 표시-->
+                        <li><a href="#" class="active">대기오염배출물 사업장</a></li>
+                        <li><a href="#">대기오염배출물 사업장</a></li>
+                        <li><a href="#">대기오염배출물 사업장</a></li>
+                    </ul>
+                    <span>arrow icon</span>
+                </div>
+                <div class="crumb_depth ">
+                    <strong>산업부분</strong>
+                </div>
+            </div>
+        </div>
+        <div id="subTitle">
+            <h3>미미세먼지 행동요령</h3>
+            <p>행동요령</p>
+        </div>
+        <div class="sub_contents">
+            <div class="action_list_wrap">
+                <div class="list_box">
+                    <ul>
+                        <li class="list01">
+                            <strong>외출은 가급적 자제하기</strong>
+                            <p>야외모임, 캠프, 스포츠 등 실외활동 최소화하기</p>
+                        </li>
+                        <li class="list02">
+                            <strong>외출 시 보건용 마스크(식약처 인증) 착용하기</strong>
+                            <p>마스크 착용 시 공기누설을 체크하며 안면에 마스크를 밀착해 착용하기</p>
+                        </li>
+                        <li class="list03">
+                            <strong>외출 시 대기오염이 심한 곳은 피하고 활동량 줄이기</strong>
+                            <p>미세먼지 농도가 높은 도로변, 공사장 등에서 지체시간 줄이기<br>호흡량 증가로 미세먼지 흡입이 우려되는 격렬한 외부활동 줄이기</p>
+                        </li>
+                        <li class="list04">
+                            <strong>외출 후 깨끗이 씻기</strong>
+                            <p>온몸을 구석구석 씻고, 특히 필수적으로 손ㆍ발ㆍ눈ㆍ코를 흐르는 물에 씻고 양치질하기</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list_box">
+                    <ul>
+                        <li class="list05">
+                            <strong>물과 비타민C가 풍부한 과일ㆍ야채 섭취하기</strong>
+                            <p>노폐물 배출 효과가 있는 물, 항산화 효과가 있는 과일ㆍ야채 등 충분히 섭취하기</p>
+                        </li>
+                        <li class="list06">
+                            <strong>환기, 실내 물청소 등 실내 공기질 관리하기</strong>
+                            <p>실내ㆍ외 공기 오염도를 고려하여 적절한 환기 실시하기</p>
+                        </li>
+                        <li class="list07">
+                            <strong>대기오염 유발행위 자제하기</strong>
+                            <p>자가용 운전 대신 대중교통 이용, 폐기물 태우는 행위 등 자제하기</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--표현-->
+            <div class="ulfptc_cont_wrap">
+                <div class="ulfptc_header">
+                    <strong>표현</strong>
+                </div>
+                <div class="boardListTable">
+                    <table>
+                        <caption>표현 테이블</caption>
+                        <colgroup>
+                            <col style="width:16.6%;">
+                            <col style="width:16.6%;">
+                            <col style="width:16.6%;">
+                            <col style="width:16.6%;">
+                            <col style="width:16.6%;">
+                            <col style="width:16.6%;">
+                        </colgroup>
+                        <thaed>
+                            <tr>
+                                <th>
+                                    <div class="tableFieldArea">
+                                        <p>구분</p>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="tableFieldArea">
+                                        <p>좋음</p>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="tableFieldArea">
+                                        <p>보통</p>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="tableFieldArea">
+                                        <p>나쁨</p>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="tableFieldArea">
+                                        <p>매우나쁨</p>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="tableFieldArea">
+                                        <p>점검중</p>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thaed>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>통합대기환경지수</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>0~50</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>51~100</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>101~250</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>251 이상</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>-</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>상징색</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>파랑</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>초록</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>노랑</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>빨강</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>점검중</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>RGB Code</span></p>
+                                    </div>
+                                </td>
+                                <td style="background-color:#5c8cdd; color:#fff">
+                                    <div class="tableFieldArea">
+                                        <p><span>5c8cdd</span></p>
+                                    </div>
+                                </td>
+                                <td style="background-color:#65b24b; color:#fff">
+                                    <div class="tableFieldArea">
+                                        <p><span>65b24b</span></p>
+                                    </div>
+                                </td>
+                                <td style="background-color:#e2d058; color:#393d45">
+                                    <div class="tableFieldArea">
+                                        <p><span>e2d058</span></p>
+                                    </div>
+                                </td>
+                                <td style="background-color:#ec7a7a; color:#fff">
+                                    <div class="tableFieldArea">
+                                        <p><span>ec7a7a</span></p>
+                                    </div>
+                                </td>
+                                <td style="background-color:#717b84; color:#fff">
+                                    <div class="tableFieldArea">
+                                        <p><span>717b84</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>픽토그램</span></p>
+                                    </div>
+                                </td>
+                                <td style="background:url(/img/cs/sttusFrcst/icon_good.jpg) 50% no-repeat">
+                                    <div class="tableFieldArea">
+                                        <p><span></span></p>
+                                    </div>
+                                </td>
+                                <td style="background:url(/img/cs/sttusFrcst/icon_usually.jpg) 50% no-repeat">
+                                    <div class="tableFieldArea">
+                                        <p><span></span></p>
+                                    </div>
+                                </td>
+                                <td style="background:url(/img/cs/sttusFrcst/icon_bad.jpg) 50% no-repeat">
+                                    <div class="tableFieldArea">
+                                        <p><span></span></p>
+                                    </div>
+                                </td>
+                                <td style="background:url(/img/cs/sttusFrcst/icon_terrible.jpg) 50% no-repeat">
+                                    <div class="tableFieldArea">
+                                        <p><span></span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>-</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>PM-2.5(㎍/㎥)</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>0~15</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>16~35</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>36~75</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>76 이상</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>점검중</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>PM-10(㎍/㎥)</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>0~30</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>31~80</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>81~150</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea ">
+                                        <p><span>151 이상</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>점검중</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>O3(ppm)</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>0~0.030</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>0.031~0.090</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>0.091~0.150</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>0.151 이상</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>점검중</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>NO2(ppm)</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>0~0.030</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>0.031~0.060</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>0.061~0.200</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>0.201 이상</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>점검중</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>CO(ppm)</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>0~2.00</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>2.01~9.00</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>9.01~15.00</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>15.01 이상</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>점검중</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>SO2(ppm)</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>0~0.020</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>0.021~0.050</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>0.051~0.150</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>0.151 이상</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>점검중</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--지수구간-->
+            <div class="ulfptc_cont_wrap">
+                <div class="ulfptc_header">
+                    <strong>지수구간</strong>
+                </div>
+                <div class="boardListTable">
+                    <table>
+                        <caption>지수구간 테이블</caption>
+                        <colgroup>
+                            <col style="width:20%;">
+                            <col style="width:80%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div class="tableFieldArea">
+                                        <p><span>지수구분</span></p>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="tableFieldArea">
+                                        <p><span>구간의미</span></p>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>좋음</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>대기오염 관련 질환자군에서도 영향이 유발되지 않을 수준</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>보통</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>환자군에게 만성 노출시 경미한 영향이 유발될 수 있는 수준</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>나쁨</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>환자군 및 민감군에게 유해한 영향이 유발될 수 있는 수준<br>환자군 및 민감군(어린이, 노약자 등)에게 유해한 영향 유발, 일반인도 건강상 불쾌감을 경험할 수 있는 수준</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>매우나쁨</span></p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tableFieldArea">
+                                        <p><span>환자군 및 민감군에게 급성 노출 시 심각한 영향 유발, 일반인도 약한 영향이 유발될 수 있는 수준</span></p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//container-->
 
      <!-- footer -->
      <footer id="footer_wrap">

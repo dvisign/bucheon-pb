@@ -1,0 +1,42 @@
+/* class */
+.wrapper {width:100%;}
+.fluidContainer {width:1820px;margin:0 auto;}
+.container {width:1280px;margin:0 auto;}
+.smallIcons {display:inline-block;padding:8px 15px 8px 40px;background-color:#555;color:#fff;background-image: url('/img/v2/common/bar-icon-notice.png');background-repeat: no-repeat;background-position-x: 15px;background-position-y: center;background-size:20px;border-radius: 15px;font-size:1rem;font-weight: 600;}
+.h-100 {height:100%;}
+.clear::after {content:'';display:block;clear:both;}
+
+.displayFlex {display:flex}
+.justifyBetween {justify-content: space-between;}
+.alignItemsCenter {align-items: center;}
+
+/* header */
+#navWrapper {position:fixed;width:100%;left:0;top:0;background-color:#fff;z-index:999;}
+
+#topNavArea {border-bottom:1px solid rgba(0, 0, 0, 0.12);}
+
+#topNavs {margin:0 auto;position: relative;padding:10px 0;}
+#topNotice {text-align: center;position: absolute;left:0;right:0;margin:0 auto;top:50%;transform: translateY(-50%);width:calc(100% - 200px);}
+.topNoticeLinks {font-size:1rem;font-weight: 600;display:inline-block;margin-left:5px;}
+#topNavBtns {float:right;}
+#topNavBtns > .logInOutBtn,
+#topNavBtns > .sideBtn {float: left;}
+#topNavBtns > .logInOutBtn {margin-right:20px;}
+.logInOutBtn {display:inline-block;width:28px;height:28px;background-position: center;background-repeat: no-repeat;background-size:cover;}
+.logInOutBtn.logIn {background-image:url('/img/v2/common/bar-icon-login.png');}
+.sideBtn {display:inline-block;width:28px;height:28px;background-position: center;background-repeat: no-repeat;background-size: cover;background-image: url('/img/v2/common/bar-icon-list.png');}
+
+#navArea {width:100%;position: relative;}
+#navArea::before,
+#navArea::after {content:'';display:block;height:2px;position:absolute;top:100%;z-index: 1;}
+#navArea::before {left:0;background-color:#e31626;width:24%;}
+#navArea::after {right:0;background-color:#006dbb;width:76%;}
+#navs {padding:9px 0;}
+#navLogos a{position: relative;}
+#navLogos img {width:100%;max-width:126px;display:block;}
+#navLogoTxt {display:block;margin-left:8px;letter-spacing: -1.44px;font-size: 1.615rem;font-weight: 600;}
+#navLists {}
+.navItems:not(:first-child) {margin-left:59px;}
+.navItems > a {font-size:1.4rem;font-weight: 900;letter-spacing: -1px;}
+
+.subNavs {position: absolute;top: 100%;left: 0;width:100%;border: 1px solid #000;z-index: -1;background-color:#fff;border-bottom:1px solid #1e4aa1;padding-top:27px;padding-bottom:31px;}

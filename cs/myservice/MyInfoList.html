@@ -18,11 +18,17 @@
     <link rel="apple-touch-icon" content="">
     <link rel="icon" href="">
     <!--//common-->
+    <!-- css 정문채 -->
+    <link rel="stylesheet" href="/css/pbb/cs/test_1013.css">
     <!--css-->
     <link rel="stylesheet" href="/css/pbb/cs/common.css">
     <link rel="stylesheet" href="/css/pbb/cs/customui.css">
+
     <!--jquery-->
     <script src="/resources/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/resources/jquery/jquery-ui.min.js"></script>
+    <script src="/resources/jquery/jquery-ui-timepicker-addon.js"></script>
+
 </head>
 <body>
 <div id="wrap">
@@ -597,18 +603,565 @@
                 </ul>
             </div>
         </div>
+        <div id="questionWrap">
+            <a href="javascript:void:(0)">
+                <div>문의하기 이미지</div>
+                문의하기
+            </a>
+        </div>
     </header>
-    <div id="questionWrap">
-        <a href="javascript:viod:(0)">
-            <div>문의하기 이미지</div>
-            문의하기
-        </a>
-    </div>
     <!--//header-->
 
-<div>
-    
-</div>
+    <!--container-->
+    <div id="container" class="MyInfoList">
+        <div class="breadcrumb_wrap">
+            <div>
+                <a href="/">home</a>
+                <!--
+                crumb_depth 가 multiple_depth 클래스를 가지면
+                -화살표 아이콘, hover 효과
+                -->
+                <div class="crumb_depth multiple_depth">
+                    <strong tabindex="0">산업부분</strong>
+                    <ul>
+                        <!--**a 태그 class="active" 현재 페이지 활성 표시-->
+                        <li><a href="#" class="active">대기오염배출물 사업장</a></li>
+                        <li><a href="#">대기오염배출물 사업장</a></li>
+                        <li><a href="#">대기오염배출물 사업장</a></li>
+                    </ul>
+                    <span>arrow icon</span>
+                </div>
+                <div class="crumb_depth ">
+                    <strong>산업부분</strong>
+                </div>
+            </div>
+        </div>
+        <div id="subTitle">
+            <h3>미세먼지 코디네이터 활동</h3>
+            <p>코디네이터 활동 등록</p>
+        </div>
+        <div class="sub_contents">
+            <!--**안내 영역은 작업시 style 지워주세요-->
+            <div class="myinfolist_wrap">
+                <form method="post">
+                    <div class="boardListTable">
+                        <table>
+                            <caption>내정보 등록 테이블 입니다.</caption>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th><label>성별</label></th>
+                                <td>
+                                    <label class="radioLabel">
+                                        <input type="radio" class="radioForm" name="gender">
+                                        <span class="radioImg"></span>
+                                        <span class="label_text">남성</span>
+                                    </label>
+                                    <label class="radioLabel">
+                                        <input type="radio" class="radioForm" name="gender">
+                                        <span class="radioImg"></span>
+                                        <span class="label_text">여성</span>
+                                    </label>
+                                </td>
+                            <tr>
+                                <th><label>연령(남)</label></th>
+                                <td>
+                                    <label class="radioLabel">
+                                        <input type="radio" class="radioForm" name="age">
+                                        <span class="radioImg"></span>
+                                        <span class="label_text">1세 ~ 5세</span>
+                                    </label>
+                                    <label class="radioLabel">
+                                        <input type="radio" class="radioForm" name="age">
+                                        <span class="radioImg"></span>
+                                        <span class="label_text">6세 ~ 13세</span>
+                                    </label>
+                                    <label class="radioLabel">
+                                        <input type="radio" class="radioForm" name="age">
+                                        <span class="radioImg"></span>
+                                        <span class="label_text">14세 ~ 64세</span>
+                                    </label>
+                                    <label class="radioLabel">
+                                        <input type="radio" class="radioForm" name="age">
+                                        <span class="radioImg"></span>
+                                        <span class="label_text">65세 이상</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label>연령(여)</label></th>
+                                <td>
+                                    <label class="radioLabel">
+                                        <input type="radio" class="radioForm" name="age">
+                                        <span class="radioImg"></span>
+                                        <span class="label_text">1세 ~ 5세</span>
+                                    </label>
+                                    <label class="radioLabel">
+                                        <input type="radio" class="radioForm" name="age">
+                                        <span class="radioImg"></span>
+                                        <span class="label_text">6세 ~ 13세</span>
+                                    </label>
+                                    <label class="radioLabel">
+                                        <input type="radio" class="radioForm" name="age">
+                                        <span class="radioImg"></span>
+                                        <span class="label_text">14세 ~ 64세</span>
+                                    </label>
+                                    <label class="radioLabel">
+                                        <input type="radio" class="radioForm" name="age">
+                                        <span class="radioImg"></span>
+                                        <span class="label_text">65세 이상</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label>임산부 여부(여)</label></th>
+                                <td>
+                                    <label class="radioLabel">
+                                        <input type="radio" class="radioForm" name="pregnant">
+                                        <span class="radioImg"></span>
+                                        <span class="label_text">네</span>
+                                    </label>
+                                    <label class="radioLabel">
+                                        <input type="radio" class="radioForm" name="pregnant">
+                                        <span class="radioImg"></span>
+                                        <span class="label_text">아니요</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label>심뇌혈관,  호흡기, 알레르기 질환 여부</label></th>
+                                <td>
+                                    <label class="radioLabel">
+                                        <input type="radio" class="radioForm" name="disease">
+                                        <span class="radioImg"></span>
+                                        <span class="label_text">네</span>
+                                    </label>
+                                    <label class="radioLabel">
+                                        <input type="radio" class="radioForm" name="disease">
+                                        <span class="radioImg"></span>
+                                        <span class="label_text">아니요</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!--질환정보-->
+                        <table>
+                            <caption>질환정보 테이블 입니다.</caption>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th colspan="2">질환정보</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th><label>심뇌혈관질환 여부</label></th>
+                                <td>
+                                    <label class="radioLabel">
+                                        <input type="radio" class="radioForm" name="heart_brain">
+                                        <span class="radioImg"></span>
+                                        <span class="label_text">네</span>
+                                    </label>
+                                    <label class="radioLabel">
+                                        <input type="radio" class="radioForm" name="heart_brain">
+                                        <span class="radioImg"></span>
+                                        <span class="label_text">아니요</span>
+                                    </label>
+                                    <p>* 심장질환-허혈성심장질환(심근경색, 협심증), 뇌혈관질환-뇌졸중(허혈성, 출혈성), 선행질환(고혈압, 당뇨, 고지혈증, 동맥경화증) 등</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label>호흡기질환 여부</label></th>
+                                <td>
+                                    <label class="radioLabel">
+                                        <input type="radio" class="radioForm" name="breath">
+                                        <span class="radioImg"></span>
+                                        <span class="label_text">네</span>
+                                    </label>
+                                    <label class="radioLabel">
+                                        <input type="radio" class="radioForm" name="breath">
+                                        <span class="radioImg"></span>
+                                        <span class="label_text">아니요</span>
+                                    </label>
+                                    <p>* 유행성 감기, 기관지천식(외인성, 내인성, 혼합성), 만성폐쇄성폐질환, 폐기종, 폐섬유화증, 기관지염(단순성, 급성, 만성), 결핵, 폐렴, 폐암</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label>알레르기질환 여부</label></th>
+                                <td>
+                                    <label class="radioLabel">
+                                        <input type="radio" class="radioForm" name="allergy">
+                                        <span class="radioImg"></span>
+                                        <span class="label_text">네</span>
+                                    </label>
+                                    <label class="radioLabel">
+                                        <input type="radio" class="radioForm" name="allergy">
+                                        <span class="radioImg"></span>
+                                        <span class="label_text">아니요</span>
+                                    </label>
+                                    <p>* 알레르기 천식, 알레르기 비염, 아토피 피부염, 알레르기 결막염</p>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!--관심 시설 및 관심 지수-->
+                        <table>
+                            <caption>관심 시설 및 관심 지수 테이블 입니다.</caption>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th colspan="2">관심 시설 및 관심 지수</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th>관심시설</th>
+                                <td>
+                                    <label class="checkboxLabel" for="facility1">
+                                        <input id="facility1" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">어린이집</span>
+                                    </label>
+                                    <label class="checkboxLabel" for="facility2">
+                                        <input id="facility2" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">유치원</span>
+                                    </label>
+                                    <label class="checkboxLabel" for="facility3">
+                                        <input id="facility3" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">초등학교</span>
+                                    </label>
+                                    <label class="checkboxLabel" for="facility4">
+                                        <input id="facility4" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">중학교</span>
+                                    </label>
+                                    <label class="checkboxLabel" for="facility5">
+                                        <input id="facility5" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">고등학교</span>
+                                    </label>
+                                    <label class="checkboxLabel" for="facility6">
+                                        <input id="facility6" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">노인요양시설</span>
+                                    </label>
+                                    <label class="checkboxLabel" for="facility7">
+                                        <input id="facility7" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">옥외작업</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>관심 생활지수</th>
+                                <td>
+                                    <label class="checkboxLabel" for="life1">
+                                        <input id="life1" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">식중도 지수</span>
+                                    </label>
+                                    <label class="checkboxLabel" for="life2">
+                                        <input id="life2" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">체감온도(5월15일~10월15일)</span>
+                                    </label>
+                                    <label class="checkboxLabel" for="life3">
+                                        <input id="life3" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">자외선 지수</span>
+                                    </label>
+                                    <label class="checkboxLabel" for="life4">
+                                        <input id="life4" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">대기확산지수</span>
+                                    </label>
+                                    <label class="checkboxLabel" for="life5">
+                                        <input id="life5" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">동파가능지수 (11~3월)</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>관심 보건 기상지수</th>
+                                <td>
+                                    <label class="checkboxLabel" for="health1">
+                                        <input id="health1" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">식중천식폐질환가능 지수독 지수</span>
+                                    </label>
+                                    <label class="checkboxLabel" for="health2">
+                                        <input id="health2" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">뇌졸중가능 지수 </span>
+                                    </label>
+                                    <label class="checkboxLabel" for="health3">
+                                        <input id="health3" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">감기가능 지수(9월~4월)</span>
+                                    </label>
+                                    <label class="checkboxLabel" for="health4">
+                                        <input id="health4" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">꽃가루농도위험지수(참나무)(4월~6월)</span>
+                                    </label>
+                                    <label class="checkboxLabel" for="health5">
+                                        <input id="health5" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">꽃가루농도위험지수(잡초류)(9월~4월)</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>관심 행사정보 (부천시)</th>
+                                <td>
+                                    <label class="checkboxLabel" for="bcEvent1">
+                                        <input id="bcEvent1" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">공연</span>
+                                    </label>
+                                    <label class="checkboxLabel" for="bcEvent2">
+                                        <input id="bcEvent2" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">전시</span>
+                                    </label>
+                                    <label class="checkboxLabel" for="bcEvent3">
+                                        <input id="bcEvent3" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">축제/이벤트</span>
+                                    </label>
+                                    <label class="checkboxLabel" for="bcEvent4">
+                                        <input id="bcEvent4" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">무료영화</span>
+                                    </label>
+                                    <label class="checkboxLabel" for="bcEvent5">
+                                        <input id="bcEvent5" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">문화체험</span>
+                                    </label>
+                                    <label class="checkboxLabel" for="bcEvent6">
+                                        <input id="bcEvent6" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">채육행사</span>
+                                    </label>
+                                    <label class="checkboxLabel" for="bcEvent7">
+                                        <input id="bcEvent7" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">공공행사</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <caption>차량 관리 테이블 입니다.</caption>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th>차량 소유여부</th>
+                                <td>
+                                    <label class="radioLabel">
+                                        <input type="radio" class="radioForm" name="car">
+                                        <span class="radioImg"></span>
+                                        <span class="label_text">네</span>
+                                    </label>
+                                    <label class="radioLabel">
+                                        <input type="radio" class="radioForm" name="car">
+                                        <span class="radioImg"></span>
+                                        <span class="label_text">아니요</span>
+                                    </label>
+                                    <a href="javascript:void(0)" class="myinfo_cta">소유차량 등급조회</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>비상저감조치 안내 및 개절관리제 안내</th>
+                                <td>
+                                    <label class="checkboxLabel" for="car_info1">
+                                        <input id="car_info1" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">공공기관</span>
+                                    </label>
+                                    <label class="checkboxLabel" for="car_info2">
+                                        <input id="car_info2" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">민간차량 자율참여</span>
+                                    </label>
+                                    <label class="checkboxLabel" for="car_info3">
+                                        <input id="car_info3" class="checkboxForm" type="checkbox">
+                                        <span class="checkboxImg"></span>
+                                        <span class="label_text">배출가스 5등급 운행제한 안내</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!--관심지역-->
+                        <table>
+                            <caption>관심지역 테이블 입니다.</caption>
+                            <colgroup>
+                                <col width="160px">
+                                <col>
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th colspan="2">관심지역</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th>관심지역(최대5개)</th>
+                                <td class="att_area_wrap">
+                                    <div class="area_label">
+                                        <label class="checkboxLabel" for="att_area1">
+                                            <input id="att_area1" class="checkboxForm" type="checkbox">
+                                            <span class="checkboxImg"></span>
+                                            <span class="label_text">소사본동</span>
+                                        </label>
+                                        <label class="checkboxLabel" for="att_area2">
+                                            <input id="att_area2" class="checkboxForm" type="checkbox">
+                                            <span class="checkboxImg"></span>
+                                            <span class="label_text">대산동</span>
+                                        </label>
+                                        <label class="checkboxLabel" for="att_area3">
+                                            <input id="att_area3" class="checkboxForm" type="checkbox">
+                                            <span class="checkboxImg"></span>
+                                            <span class="label_text">법안동</span>
+                                        </label>
+                                        <label class="checkboxLabel" for="att_area4">
+                                            <input id="att_area4" class="checkboxForm" type="checkbox">
+                                            <span class="checkboxImg"></span>
+                                            <span class="label_text">부천동</span>
+                                        </label>
+                                        <label class="checkboxLabel" for="att_area5">
+                                            <input id="att_area5" class="checkboxForm" type="checkbox">
+                                            <span class="checkboxImg"></span>
+                                            <span class="label_text">신중동</span>
+                                        </label>
+                                    </div>
+                                    <div class="area_label">
+                                        <label class="checkboxLabel" for="att_area6">
+                                            <input id="att_area6" class="checkboxForm" type="checkbox">
+                                            <span class="checkboxImg"></span>
+                                            <span class="label_text">중동</span>
+                                        </label>
+                                        <label class="checkboxLabel" for="att_area7">
+                                            <input id="att_area7" class="checkboxForm" type="checkbox">
+                                            <span class="checkboxImg"></span>
+                                            <span class="label_text">상동</span>
+                                        </label>
+                                        <label class="checkboxLabel" for="att_area8">
+                                            <input id="att_area8" class="checkboxForm" type="checkbox">
+                                            <span class="checkboxImg"></span>
+                                            <span class="label_text">심곡동</span>
+                                        </label>
+                                        <label class="checkboxLabel" for="att_area9">
+                                            <input id="att_area9" class="checkboxForm" type="checkbox">
+                                            <span class="checkboxImg"></span>
+                                            <span class="label_text">오정동</span>
+                                        </label>
+                                        <label class="checkboxLabel" for="att_area10">
+                                            <input id="att_area10" class="checkboxForm" type="checkbox">
+                                            <span class="checkboxImg"></span>
+                                            <span class="label_text">성곡동</span>
+                                        </label>
+                                    </div>
+                                    <a href="javascript:void(0)" class="my_area_btn myinfo_cta">나의 관심지역가기</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>거주동</th>
+                                <td>
+                                    <div class="area_label">
+                                        <label class="radioLabel">
+                                            <input type="radio" class="radioForm" name="residence">
+                                            <span class="radioImg"></span>
+                                            <span class="label_text">소사본동</span>
+                                        </label>
+                                        <label class="radioLabel">
+                                            <input type="radio" class="radioForm" name="residence">
+                                            <span class="radioImg"></span>
+                                            <span class="label_text">대산동</span>
+                                        </label>
+                                        <label class="radioLabel">
+                                            <input type="radio" class="radioForm" name="residence">
+                                            <span class="radioImg"></span>
+                                            <span class="label_text">법안동</span>
+                                        </label>
+                                        <label class="radioLabel">
+                                            <input type="radio" class="radioForm" name="residence">
+                                            <span class="radioImg"></span>
+                                            <span class="label_text">부천동</span>
+                                        </label>
+                                        <label class="radioLabel">
+                                            <input type="radio" class="radioForm" name="residence">
+                                            <span class="radioImg"></span>
+                                            <span class="label_text">신중동</span>
+                                        </label>
+                                    </div>
+                                    <div class="area_label">
+                                        <label class="radioLabel">
+                                            <input type="radio" class="radioForm" name="residence">
+                                            <span class="radioImg"></span>
+                                            <span class="label_text">중동</span>
+                                        </label>
+                                        <label class="radioLabel">
+                                            <input type="radio" class="radioForm" name="residence">
+                                            <span class="radioImg"></span>
+                                            <span class="label_text">상동</span>
+                                        </label>
+                                        <label class="radioLabel">
+                                            <input type="radio" class="radioForm" name="residence">
+                                            <span class="radioImg"></span>
+                                            <span class="label_text">심곡동</span>
+                                        </label>
+                                        <label class="radioLabel">
+                                            <input type="radio" class="radioForm" name="residence">
+                                            <span class="radioImg"></span>
+                                            <span class="label_text">오정동</span>
+                                        </label>
+                                        <label class="radioLabel">
+                                            <input type="radio" class="radioForm" name="residence">
+                                            <span class="radioImg"></span>
+                                            <span class="label_text">성곡동</span>
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="txt_wrap" style="background-color:#ffe5e5; line-height:300px; color: #ff0000; text-align: center;">
+                        텍스트
+                    </div>
+                    <label class="radioLabel">
+                        <input type="radio" class="radioForm" name="agree">
+                        <span class="radioImg"></span>
+                        <span class="label_text">위의 개인정보 수집 및 이용에 동의합니다.</span>
+                    </label>
+                    <div class="cta_wrap">
+                        <button type="submit" class="active">수정</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--//container-->
 
      <!-- footer -->
      <footer id="footer_wrap">

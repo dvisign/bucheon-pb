@@ -548,7 +548,7 @@ transform: skew(-0.03deg);
 .dateStart-7 {left:calc(((100% / 7) * 6) + 20px);width:calc(((100% / 7) * 1) - 40px);}
 
 .dateNotEnd > .calendarEduDateLine { border-top-right-radius: 0;border-bottom-right-radius: 0 }
-.dateNotEnd.dateStart-1 {}
+.dateNotEnd.dateStart-1 {width:calc(100% - 20px);}
 .dateNotEnd.dateStart-2 {width:calc(((100% / 7) * 6) - 20px);}
 .dateNotEnd.dateStart-3 {width:calc(((100% / 7) * 5) - 20px);}
 .dateNotEnd.dateStart-4 {width:calc(((100% / 7) * 4) - 20px);}

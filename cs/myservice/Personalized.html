@@ -18,11 +18,17 @@
     <link rel="apple-touch-icon" content="">
     <link rel="icon" href="">
     <!--//common-->
+    <!-- css 정문채 -->
+    <link rel="stylesheet" href="/css/pbb/cs/test_1013.css">
     <!--css-->
     <link rel="stylesheet" href="/css/pbb/cs/common.css">
     <link rel="stylesheet" href="/css/pbb/cs/customui.css">
+
     <!--jquery-->
     <script src="/resources/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/resources/jquery/jquery-ui.min.js"></script>
+    <script src="/resources/jquery/jquery-ui-timepicker-addon.js"></script>
+
 </head>
 <body>
 <div id="wrap">
@@ -597,13 +603,13 @@
                 </ul>
             </div>
         </div>
+        <div id="questionWrap">
+            <a href="javascript:void:(0)">
+                <div>문의하기 이미지</div>
+                문의하기
+            </a>
+        </div>
     </header>
-    <div id="questionWrap">
-        <a href="javascript:viod:(0)">
-            <div>문의하기 이미지</div>
-            문의하기
-        </a>
-    </div>
     <!--//header-->
 
     <!--container-->
@@ -639,519 +645,504 @@
         </div>
         <div class="sub_contents">
             <!--**안내 영역은 작업시 style 지워주세요-->
-            <div class="container">
-                <div class="float_wrap">
-                    <div class="dust_info">
-                        <div class="list_header">
-                            <strong>미세먼지 정보 제공</strong>
-                            <div class="deadline">2021.03.31 기준</div>
-                        </div>
-                        <div class="dust_graph" style="background-color: #ffe5e5; color: #f00;">
-                            그래프 영역
-                        </div>
-                        <div class="cont_list_info_wrap">
-                            <!--** 지수 표시 색상 css / 좋음 cdt_good / 보통 cdt_usually / 나쁨 cdt_bad / 매우 나쁨 cdt_terrible / -->
-                            <!--** info_more 상세 정보 들여 쓰기 2번이면 dl에 class=indent_2 / 관심시설 (대응 요령 : 초등학교)더보기 -->
-                            <ul>
-                                <li>
+            <div class="float_wrap">
+                <div class="dust_info">
+                    <div class="list_header">
+                        <strong>미세먼지 정보 제공</strong>
+                        <div class="deadline">2021.03.31 기준</div>
+                    </div>
+                    <div class="dust_graph" style="background-color: #ffe5e5; color: #f00; line-height: 240px; text-align:center;">
+                        그래프 영역
+                    </div>
+                    <div class="cont_list_info_wrap">
+                        <!--** 지수 표시 색상 css / 좋음 cdt_good / 보통 cdt_usually / 나쁨 cdt_bad / 매우 나쁨 cdt_terrible / -->
+                        <!--** info_more 상세 정보 들여 쓰기 2번이면 dl에 class=indent_2 / 관심시설 (대응 요령 : 초등학교)더보기 -->
+                        <ul>
+                            <li>
+                                <div class="txt_wrap">
                                     <p>부천시 오늘의 미세먼지</p>
                                     <strong class="cdt_bad">"나쁨"</strong>
-                                    <button class="info_more_btn" type="button">더보기</button>
-                                    <div class="info_more">
-                                        <div class="info_title">
-                                            <p>부천시 오늘의 미세먼지</p><strong class="cdt_bad">“나쁨“</strong>
-                                        </div>
-                                        <button type="button">닫기</button>
-                                        <dl>
-                                            <dt>◎ 예보등급</dt>
-                                            <dd>[미세먼지] 수도권·강원영서·세종·충북·충남·전북·대구는 '나쁨', 그 밖의 권역은 '좋음'∼'보통'으로 예상됨.</dd>
-                                            <dt>◎ 원인분석</dt>
-                                            <dd>[미세먼지] 대부분 중서부지역과 일부 남부지역은 대기 정체와 기류수렴으로 국내 발생 미세먼지가 축적되어 농도가 높을 것으로 예상됨.</dd>
-                                        </dl>
+                                </div>
+                                <button class="info_more_btn" type="button">더보기</button>
+                                <div class="info_more">
+                                    <div class="info_title">
+                                        <p>부천시 오늘의 미세먼지</p><strong class="cdt_bad">“나쁨“</strong>
                                     </div>
-                                </li>
-                                <li>
+                                    <button type="button">닫기</button>
+                                    <dl>
+                                        <dt>◎ 예보등급</dt>
+                                        <dd>[미세먼지] 수도권·강원영서·세종·충북·충남·전북·대구는 '나쁨', 그 밖의 권역은 '좋음'∼'보통'으로 예상됨.</dd>
+                                        <dt>◎ 원인분석</dt>
+                                        <dd>[미세먼지] 대부분 중서부지역과 일부 남부지역은 대기 정체와 기류수렴으로 국내 발생 미세먼지가 축적되어 농도가 높을 것으로 예상됨.</dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="txt_wrap">
                                     <p>경기도 미세먼지 주의보∙경보</p>
                                     <strong class="cdt_terrible">"주의보 발령"</strong>
+                                </div>
+                                <button class="info_more_btn" type="button">더보기</button>
+                                <div class="info_more">
+                                    <div class="info_title">
+                                        <p>경기도 미세먼지(PM10) 주의보∙경보</p><strong class="cdt_terrible">"주의보 발령"</strong>
+                                    </div>
+                                    <button type="button">닫기</button>
+                                    <dl>
+                                        <dt>◎ 주의보 발령</dt>
+                                        <dd>발령일시 - 2020.02.22일 / 10:00</dd>
+                                        <dd>발령농도 – 161</dd>
+                                        <dt>◎ 주의보 발령</dt>
+                                        <dd>해지일시 - 2020.02.22일 / 16:00</dd>
+                                        <dd>해지농도 - 91</dd>
+                                        <dd>최고농도 193 / 경과시간 6 시간</dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="txt_wrap">
+                                    <p>부천시 오늘의 미세먼지</p>
+                                    <strong>"발령 없음"</strong>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="txt_wrap">
+                                    <p>부천시 오늘의 미세먼지</p>
+                                    <strong>"시행기간 아님"</strong>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="fit_wrap">
+                    <div class="info_wrap_1">
+                        <div class="dust_info">
+                            <div class="list_header">
+                                <strong>맞춤 행동요령 및 대응요령 안내</strong>
+                                <div class="deadline">2021.03.31 기준</div>
+                            </div>
+                        </div>
+                        <div class="cont_list_info_wrap">
+                            <ul>
+                                <li>
+                                    <div class="txt_wrap">
+                                        <p>맞춤형 행동 요령 및 건강수칙 (민감군 : 심뇌혈관질환자)</p>
+                                    </div>
                                     <button class="info_more_btn" type="button">더보기</button>
                                     <div class="info_more">
                                         <div class="info_title">
-                                            <p>경기도 미세먼지(PM10) 주의보∙경보</p><strong class="cdt_terrible">"주의보 발령"</strong>
+                                            <p>맞춤형 행동 요령 및 건강수칙 (민감군 : 심뇌혈관질환자)</p>
                                         </div>
                                         <button type="button">닫기</button>
                                         <dl>
-                                            <dt>◎ 주의보 발령</dt>
-                                            <dd>발령일시 - 2020.02.22일 / 10:00</dd>
-                                            <dd>발령농도 – 161</dd>
-                                            <dt>◎ 주의보 발령</dt>
-                                            <dd>해지일시 - 2020.02.22일 / 16:00</dd>
-                                            <dd>해지농도 - 91</dd>
-                                            <dd>최고농도 193 / 경과시간 6 시간</dd>
+                                            <dt>◎ 건강수칙</dt>
+                                            <dd>[평소 협압, 당뇨, 비만을 관리하세요</dd>
+                                            <dd>잊지 말고 약을 먹고 진료일정을 지키세요</dd>
+                                            <dd>증상 악화 시바로 진료를 받으세요</dd>
+                                            <dd>금연하고 간접흡연을 피하세요</dd>
+                                            <dd>미세먼지 가 나쁠 때는 외출시 보건용 마스크를 쓰세요</dd>
+                                            <dd>숨이 차거나 머리가 아프면 바로 벗어야 합니다.</dd>
+                                            <dd>미세먼지가 나쁠 때는 야외활동을 자제 하세요</dd>
+                                            <dd>외출 시 대로변, 공사장 주변 등 대기오염이 심한 곳을 피하세요</dd>
+                                            <dt>◎ 행동 및 대응요령</dt>
+                                            <dd>외출은 가급적 자제하기</dd>
+                                            <dd>외출시 보건용 마스트(식약처 인증) 착용하기</dd>
+                                            <dd>외출시 대기오염이 심한곳은 피하고, 활동량 줄기이</dd>
+                                            <dd>외출 후 깨끗이 씻기</dd>
+                                            <dd>물과 비타민 C가 풍부한 과일 ∙야채 섭취하기</dd>
+                                            <dd>환기, 실내 물청소 등 실내 공기질 관리하기</dd>
+                                            <dd>대기오염 유발행위 자제하기</dd>
+                                            <dt>◎“나쁨” 단계 대응요령</dt>
+                                            <dd>미세먼지 마스크 착용이 필요합니다.</dd>
+                                            <dd>실외활동 -  마스크 작용 후 실외할동, 장기간 혹은 무리한 실외활동 금지, 도로변 공사장 등 피함, 외출자제 하세요</dd>
+                                            <dd>실내환기 - 청소, 요리등 실내활동 후에 짧은 환기 하세요</dd>
+                                            <dd>교통이용 정보 - 마스크쓰고 대중교통 이출,  외부노출짧게, 가급적 대중교통 이용하세요</dd>
                                         </dl>
                                     </div>
                                 </li>
                                 <li>
-                                    <p>부천시 오늘의 미세먼지</p>
-                                    <strong>"발령 없음"</strong>
+                                    <div class="txt_wrap">
+                                        <p>관심시설 (대응 요령 : 초등학교)</p>
+                                    </div>
+                                    <button class="info_more_btn" type="button">더보기</button>
+                                    <div class="info_more">
+                                        <div class="info_title">
+                                            <p>관심시설 (대응 요령 : 초등학교)</p>
+                                        </div>
+                                        <button type="button">닫기</button>
+                                        <dl class="indent_2">
+                                            <dt>◎ 부천시 미세먼지 "주의보 발령"</dt>
+                                            <dd>▫  PM10(미세먼지) 150 ㎍/m3 이상,</dd>
+                                            <dd>▫  PM2.5 (초미세먼지) 36  ㎍/m3 이상 1시간 지속</dd>
+                                            <dt>◎ [원아, 학생] 초등학교 대응요령</dt>
+                                            <dd>▫  실외수업(활동) 단축 또는 금지</dd>
+                                            <dd>- 실외 체육활동, 현장학습, 운동회 등을 실내수업(활동)으로 대체</dd>
+                                            <dd>▫  시설 내 기계, 기계류 세척 등 식당 위생관리 강화</dd>
+                                        </dl>
+                                    </div>
                                 </li>
                                 <li>
-                                    <p>부천시 오늘의 미세먼지</p>
-                                    <strong>"시행기간 아님"</strong>
+                                    <div class="txt_wrap">
+                                        <p>차량 운행 (차량 소유)</p>
+                                    </div>
+                                    <button class="info_more_btn" type="button">더보기</button>
+                                    <div class="info_more">
+                                        <div class="info_title">
+                                            <p>차량 운행 (차량 소유)</p>
+                                        </div>
+                                        <button type="button">닫기</button>
+                                        <dl class="indent_2">
+                                            <dt>◎  주요 이동 수단 중 “지하철, 버스“ 이용이 필요합니다</dt>
+                                            <dt>◎ 미세먼지가 “나쁨“ 단계로 자동차 운행은 가급적이면</dt>
+                                        </dl>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="fit_wrap">
-                        <div class="info_wrap_1">
-                            <div class="dust_info">
-                                <div class="list_header">
-                                    <strong>맞춤 행동요령 및 대응요령 안내</strong>
-                                    <div class="deadline">2021.03.31 기준</div>
-                                </div>
-                            </div>
-                            <div class="cont_list_info_wrap">
-                                <ul>
-                                    <li>
-                                        <p>맞춤형 행동 요령 및 건강수칙 (민감군 : 심뇌혈관질환자)</p>
-                                        <button class="info_more_btn" type="button">더보기</button>
-                                        <div class="info_more">
-                                            <div class="info_title">
-                                                <p>맞춤형 행동 요령 및 건강수칙 (민감군 : 심뇌혈관질환자)</p>
-                                            </div>
-                                            <button type="button">닫기</button>
-                                            <dl>
-                                                <dt>◎ 건강수칙</dt>
-                                                <dd>[평소 협압, 당뇨, 비만을 관리하세요</dd>
-                                                <dd>잊지 말고 약을 먹고 진료일정을 지키세요</dd>
-                                                <dd>증상 악화 시바로 진료를 받으세요</dd>
-                                                <dd>금연하고 간접흡연을 피하세요</dd>
-                                                <dd>미세먼지 가 나쁠 때는 외출시 보건용 마스크를 쓰세요</dd>
-                                                <dd>숨이 차거나 머리가 아프면 바로 벗어야 합니다.</dd>
-                                                <dd>미세먼지가 나쁠 때는 야외활동을 자제 하세요</dd>
-                                                <dd>외출 시 대로변, 공사장 주변 등 대기오염이 심한 곳을 피하세요</dd>
-                                                <dt>◎ 행동 및 대응요령</dt>
-                                                <dd>외출은 가급적 자제하기</dd>
-                                                <dd>외출시 보건용 마스트(식약처 인증) 착용하기</dd>
-                                                <dd>외출시 대기오염이 심한곳은 피하고, 활동량 줄기이</dd>
-                                                <dd>외출 후 깨끗이 씻기</dd>
-                                                <dd>물과 비타민 C가 풍부한 과일 ∙야채 섭취하기</dd>
-                                                <dd>환기, 실내 물청소 등 실내 공기질 관리하기</dd>
-                                                <dd>대기오염 유발행위 자제하기</dd>
-                                                <dt>◎“나쁨” 단계 대응요령</dt>
-                                                <dd>미세먼지 마스크 착용이 필요합니다.</dd>
-                                                <dd>실외활동 -  마스크 작용 후 실외할동, 장기간 혹은 무리한 실외활동 금지, 도로변 공사장 등 피함, 외출자제 하세요</dd>
-                                                <dd>실내환기 - 청소, 요리등 실내활동 후에 짧은 환기 하세요</dd>
-                                                <dd>교통이용 정보 - 마스크쓰고 대중교통 이출,  외부노출짧게, 가급적 대중교통 이용하세요</dd>
-                                            </dl>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <p>관심시설 (대응 요령 : 초등학교)</p>
-                                        <button class="info_more_btn" type="button">더보기</button>
-                                        <div class="info_more">
-                                            <div class="info_title">
-                                                <p>관심시설 (대응 요령 : 초등학교)</p>
-                                            </div>
-                                            <button type="button">닫기</button>
-                                            <dl class="indent_2">
-                                                <dt>◎ 부천시 미세먼지 "주의보 발령"</dt>
-                                                <dd>▫  PM10(미세먼지) 150 ㎍/m3 이상,</dd>
-                                                <dd>▫  PM2.5 (초미세먼지) 36  ㎍/m3 이상 1시간 지속</dd>
-                                                <dt>◎ [원아, 학생] 초등학교 대응요령</dt>
-                                                <dd>▫  실외수업(활동) 단축 또는 금지</dd>
-                                                <dd>- 실외 체육활동, 현장학습, 운동회 등을 실내수업(활동)으로 대체</dd>
-                                                <dd>▫  시설 내 기계, 기계류 세척 등 식당 위생관리 강화</dd>
-                                            </dl>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <p>차량 운행 (차량 소유)</p>
-                                        <button class="info_more_btn" type="button">더보기</button>
-                                        <div class="info_more">
-                                            <div class="info_title">
-                                                <p>차량 운행 (차량 소유)</p>
-                                            </div>
-                                            <button type="button">닫기</button>
-                                            <dl class="indent_2">
-                                                <dt>◎  주요 이동 수단 중 “지하철, 버스“ 이용이 필요합니다</dt>
-                                                <dt>◎ 미세먼지가 “나쁨“ 단계로 자동차 운행은 가급적이면</dt>
-                                            </dl>
-                                        </div>
-                                    </li>
-                                </ul>
+                    <div class="info_wrap_2">
+                        <div class="dust_info">
+                            <div class="list_header">
+                                <strong>맞춤 생활지수 및  보건기상지수 안내</strong>
+                                <div class="deadline">2021.03.31 기준</div>
                             </div>
                         </div>
-                        <div class="info_wrap_2">
-                            <div class="dust_info">
-                                <div class="list_header">
-                                    <strong>맞춤 생활지수 및  보건기상지수 안내</strong>
-                                    <div class="deadline">2021.03.31 기준</div>
-                                </div>
-                            </div>
-                            <div class="cont_list_info_wrap">
-                                <ul>
-                                    <li>
+                        <div class="cont_list_info_wrap">
+                            <ul>
+                                <li>
+                                    <div class="txt_wrap">
                                         <p>생활지수 – 체감온도</p>
-                                        <button class="info_more_btn" type="button">더보기</button>
-                                        <div class="info_more">
-                                            <div class="info_title">
-                                                <p>생활 지수 – 체감온도</p>
-                                            </div>
-                                            <button type="button">닫기</button>
-                                            <dl class="indent_2">
-                                                <dt>◎  “관심” 단계 - 노인</dt>
-                                                <dd>온열질환에 취약한 영유아·노약자는 30분 간격 으로 쉬면 서 야외 활동</dd>
-                                                <dd>온열질환에 취약한 영유아·노약자가 야외 활동을  할 때 불편해하는지 관찰</dd>
-                                                <dd>온열질환에 취약한 영유아·노약자는 야외 활동  시간을 줄이고, 수시로 상태 확인</dd>
-
-                                            </dl>
+                                    </div>
+                                    <button class="info_more_btn" type="button">더보기</button>
+                                    <div class="info_more">
+                                        <div class="info_title">
+                                            <p>생활 지수 – 체감온도</p>
                                         </div>
-                                    </li>
-                                    <li>
+                                        <button type="button">닫기</button>
+                                        <dl class="indent_2">
+                                            <dt>◎  “관심” 단계 - 노인</dt>
+                                            <dd>온열질환에 취약한 영유아·노약자는 30분 간격 으로 쉬면 서 야외 활동</dd>
+                                            <dd>온열질환에 취약한 영유아·노약자가 야외 활동을  할 때 불편해하는지 관찰</dd>
+                                            <dd>온열질환에 취약한 영유아·노약자는 야외 활동  시간을 줄이고, 수시로 상태 확인</dd>
+
+                                        </dl>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="txt_wrap">
                                         <p>생활지수 – 자외선지수</p>
-                                        <button class="info_more_btn" type="button">더보기</button>
-                                        <div class="info_more">
-                                            <div class="info_title">
-                                                <p>생활 지수 – 체감온도</p>
-                                            </div>
-                                            <button type="button">닫기</button>
-                                            <dl class="indent_2">
-                                                <dt>◎  “관심” 단계 - 노인</dt>
-                                                <dd>온열질환에 취약한 영유아·노약자는 30분 간격 으로 쉬면 서 야외 활동</dd>
-                                                <dd>온열질환에 취약한 영유아·노약자가 야외 활동을  할 때 불편해하는지 관찰</dd>
-                                                <dd>온열질환에 취약한 영유아·노약자는 야외 활동  시간을 줄이고, 수시로 상태 확인</dd>
-
-                                            </dl>
+                                    </div>
+                                    <button class="info_more_btn" type="button">더보기</button>
+                                    <div class="info_more">
+                                        <div class="info_title">
+                                            <p>생활 지수 – 체감온도</p>
                                         </div>
-                                    </li>
-                                    <li>
+                                        <button type="button">닫기</button>
+                                        <dl class="indent_2">
+                                            <dt>◎  “관심” 단계 - 노인</dt>
+                                            <dd>온열질환에 취약한 영유아·노약자는 30분 간격 으로 쉬면 서 야외 활동</dd>
+                                            <dd>온열질환에 취약한 영유아·노약자가 야외 활동을  할 때 불편해하는지 관찰</dd>
+                                            <dd>온열질환에 취약한 영유아·노약자는 야외 활동  시간을 줄이고, 수시로 상태 확인</dd>
+
+                                        </dl>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="txt_wrap">
                                         <p>보건기상지수 – 감기가능 지수</p>
-                                        <button class="info_more_btn" type="button">더보기</button>
-                                        <div class="info_more">
-                                            <div class="info_title">
-                                                <p>생활 지수 – 체감온도</p>
-                                            </div>
-                                            <button type="button">닫기</button>
-                                            <dl class="indent_2">
-                                                <dt>◎  “관심” 단계 - 노인</dt>
-                                                <dd>온열질환에 취약한 영유아·노약자는 30분 간격 으로 쉬면 서 야외 활동</dd>
-                                                <dd>온열질환에 취약한 영유아·노약자가 야외 활동을  할 때 불편해하는지 관찰</dd>
-                                                <dd>온열질환에 취약한 영유아·노약자는 야외 활동  시간을 줄이고, 수시로 상태 확인</dd>
-
-                                            </dl>
+                                    </div>
+                                    <button class="info_more_btn" type="button">더보기</button>
+                                    <div class="info_more">
+                                        <div class="info_title">
+                                            <p>생활 지수 – 체감온도</p>
                                         </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="float_wrap">
-                    <div class="table_wrap1">
-                        <div class="list_header">
-                            <strong>관심지역별 미세먼지 정보</strong>
-                        </div>
-                        <table>
-                            <colgroup>
-                                <col width="25%">
-                                <col width="25%">
-                                <col width="25%">
-                                <col width="25%">
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th rowspan="2">관심지역</th>
-                                    <th class="b_line">미세먼지 현황 (PM10/PM2.5)</th>
-                                    <th colspan="2">미세먼지 예보</th>
-                                </tr>
-                                <tr>
-                                    <th>오늘</th>
-                                    <th>내일</th>
-                                    <th>모레</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>소사본동</td>
-                                    <td>나쁨/나쁨</td>
-                                    <td>보통/보통</td>
-                                    <td>보통/보통</td>
-                                </tr>
-                                <tr>
-                                    <td>소사본동</td>
-                                    <td>나쁨/나쁨</td>
-                                    <td>보통/보통</td>
-                                    <td>보통/보통</td>
-                                </tr>
-                                <tr>
-                                    <td>소사본동</td>
-                                    <td>나쁨/나쁨</td>
-                                    <td>보통/보통</td>
-                                    <td>보통/보통</td>
-                                </tr>
-                                <tr>
-                                    <td>소사본동</td>
-                                    <td>나쁨/나쁨</td>
-                                    <td>보통/보통</td>
-                                    <td>보통/보통</td>
-                                </tr>
-                                <tr>
-                                    <td>소사본동</td>
-                                    <td>나쁨/나쁨</td>
-                                    <td>보통/보통</td>
-                                    <td>보통/보통</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="table_wrap2">
-                        <div class="list_header">
-                            <strong>관심지역별 미세먼지 정보</strong>
-                        </div>
-                        <table>
-                            <colgroup>
-                                <col width="30%">
-                                <col width="35%">
-                                <col width="35%">
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th rowspan="2">관심지역</th>
-                                    <th>미세먼지 현황 (PM10/PM2.5)</th>
-                                    <th>미세먼지 예보</th>
-                                </tr>
-                                <tr>
-                                    <th>오늘</th>
-                                    <th>내일</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>소사본동</td>
-                                    <td>나쁨/나쁨</td>
-                                    <td>보통/보통</td>
-                                </tr>
-                                <tr>
-                                    <td>소사본동</td>
-                                    <td>나쁨/나쁨</td>
-                                    <td>보통/보통</td>
-                                </tr>
-                                <tr>
-                                    <td>소사본동</td>
-                                    <td>나쁨/나쁨</td>
-                                    <td>보통/보통</td>
-                                </tr>
-                                <tr>
-                                    <td>소사본동</td>
-                                    <td>나쁨/나쁨</td>
-                                    <td>보통/보통</td>
-                                </tr>
-                                <tr>
-                                    <td>소사본동</td>
-                                    <td>나쁨/나쁨</td>
-                                    <td>보통/보통</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="float_wrap">
-                    <div class="calendar_wrap">
-                        <div class="list_header">
-                            <strong>뭐할까? 행사정보 맞춤 제공 </strong>
-                            <div class="deadline">2021.03.31 기준</div>
-                            <a href="javascript:void(0)">더보기</a>
-                        </div>
-                        <table class="calendar_table">
-                            <colgroup>
-                                <col width="14.3%">
-                                <col width="14.3%">
-                                <col width="14.3%">
-                                <col width="14.3%">
-                                <col width="14.3%">
-                                <col width="14.3%">
-                                <col width="14.2%">
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th class="sunday"><span>일</span></th>
-                                    <th><span>월</span></th>
-                                    <th><span>화</span></th>
-                                    <th><span>수</span></th>
-                                    <th><span>목</span></th>
-                                    <th><span>금</span></th>
-                                    <th><span>토</span></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="sunday">
-                                        <span>1</span>
-                                        <div class="denote" style="background-color: #3a9fc5;">공</div>
-                                        <div class="denote" style="background-color: #344c8c;">전</div>
-                                        <div class="denote" style="background-color: #3a9fc5;">공</div>
-                                        <div class="denote" style="background-color: #344c8c;">전</div>
+                                        <button type="button">닫기</button>
+                                        <dl class="indent_2">
+                                            <dt>◎  “관심” 단계 - 노인</dt>
+                                            <dd>온열질환에 취약한 영유아·노약자는 30분 간격 으로 쉬면 서 야외 활동</dd>
+                                            <dd>온열질환에 취약한 영유아·노약자가 야외 활동을  할 때 불편해하는지 관찰</dd>
+                                            <dd>온열질환에 취약한 영유아·노약자는 야외 활동  시간을 줄이고, 수시로 상태 확인</dd>
 
-                                    </td>
-                                    <td>
-                                        <span>2</span>
-                                    </td>
-                                    <td>
-                                        <span>3</span>
-                                    </td>
-                                    <td>
-                                        <span>4</span>
-                                    </td>
-                                    <td>
-                                        <span>5</span>
-                                    </td>
-                                    <td>
-                                        <span>6</span>
-                                    </td>
-                                    <td>
-                                        <span>7</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="sunday">
-                                        <span>1</span>
-                                    </td>
-                                    <td>
-                                        <span>2</span>
-                                    </td>
-                                    <td>
-                                        <span>3</span>
-                                    </td>
-                                    <td>
-                                        <span>4</span>
-                                    </td>
-                                    <td>
-                                        <span>5</span>
-                                    </td>
-                                    <td>
-                                        <span>6</span>
-                                    </td>
-                                    <td>
-                                        <span>7</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="sunday">
-                                        <span>1</span>
-                                    </td>
-                                    <td>
-                                        <span>2</span>
-                                    </td>
-                                    <td>
-                                        <span>3</span>
-                                    </td>
-                                    <td>
-                                        <span>4</span>
-                                    </td>
-                                    <td>
-                                        <span>5</span>
-                                    </td>
-                                    <td>
-                                        <span>6</span>
-                                    </td>
-                                    <td>
-                                        <span>7</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="sunday">
-                                        <span>1</span>
-                                    </td>
-                                    <td>
-                                        <span>2</span>
-                                    </td>
-                                    <td>
-                                        <span>3</span>
-                                    </td>
-                                    <td>
-                                        <span>4</span>
-                                    </td>
-                                    <td>
-                                        <span>5</span>
-                                    </td>
-                                    <td>
-                                        <span>6</span>
-                                    </td>
-                                    <td>
-                                        <span>7</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="sunday">
-                                        <span>1</span>
-                                    </td>
-                                    <td>
-                                        <span>2</span>
-                                    </td>
-                                    <td>
-                                        <span>3</span>
-                                    </td>
-                                    <td>
-                                        <span>4</span>
-                                    </td>
-                                    <td>
-                                        <span>5</span>
-                                    </td>
-                                    <td>
-                                        <span>6</span>
-                                    </td>
-                                    <td>
-                                        <span>7</span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="event_wrap">
-                        <div class="family_event">
-                            <div class="list_header">
-                                <strong>가족과 같이 할 수 있는 행사 <span>2건</span></strong>
-                            </div>
-                            <div class="event_list_info_wrap">
-                                <ul>
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            <div class="denote" style="background-color: #344c8c;">전</div>
-                                            <p>[2019.09.18 ~ 2019.09.19] 9월중 소향관 전시회  9월중 소향관 전시회  9월중 소향관 전시회  9월중 소향관 전시회</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            <div class="denote" style="background-color: #3a9fc5;">공</div>
-                                            <p>[2019.09.18 ~ 2019.09.19] 9월중 소향관 무료영화상영(기생충)</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                                        </dl>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="couple_event">
-                            <div class="list_header">
-                                <strong>연인과 같이 할 수 있는 행사 <span>4건</span></strong>
-                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="float_wrap">
+                <div class="table_wrap1">
+                    <div class="list_header">
+                        <strong>관심지역별 미세먼지 정보</strong>
+                    </div>
+                    <table>
+                        <colgroup>
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th rowspan="2">관심지역</th>
+                            <th class="b_line">미세먼지 현황 (PM10/PM2.5)</th>
+                            <th colspan="2">미세먼지 예보</th>
+                        </tr>
+                        <tr>
+                            <th>오늘</th>
+                            <th>내일</th>
+                            <th>모레</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>소사본동</td>
+                            <td>나쁨/나쁨</td>
+                            <td>보통/보통</td>
+                            <td>보통/보통</td>
+                        </tr>
+                        <tr>
+                            <td>소사본동</td>
+                            <td>나쁨/나쁨</td>
+                            <td>보통/보통</td>
+                            <td>보통/보통</td>
+                        </tr>
+                        <tr>
+                            <td>소사본동</td>
+                            <td>나쁨/나쁨</td>
+                            <td>보통/보통</td>
+                            <td>보통/보통</td>
+                        </tr>
+                        <tr>
+                            <td>소사본동</td>
+                            <td>나쁨/나쁨</td>
+                            <td>보통/보통</td>
+                            <td>보통/보통</td>
+                        </tr>
+                        <tr>
+                            <td>소사본동</td>
+                            <td>나쁨/나쁨</td>
+                            <td>보통/보통</td>
+                            <td>보통/보통</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table_wrap2">
+                    <div class="list_header">
+                        <strong>관심지역별 미세먼지 정보</strong>
+                    </div>
+                    <table>
+                        <colgroup>
+                            <col width="30%">
+                            <col width="35%">
+                            <col width="35%">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th rowspan="2">관심지역</th>
+                            <th>미세먼지 현황 (PM10/PM2.5)</th>
+                            <th>미세먼지 예보</th>
+                        </tr>
+                        <tr>
+                            <th>오늘</th>
+                            <th>내일</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>소사본동</td>
+                            <td>나쁨/나쁨</td>
+                            <td>보통/보통</td>
+                        </tr>
+                        <tr>
+                            <td>소사본동</td>
+                            <td>나쁨/나쁨</td>
+                            <td>보통/보통</td>
+                        </tr>
+                        <tr>
+                            <td>소사본동</td>
+                            <td>나쁨/나쁨</td>
+                            <td>보통/보통</td>
+                        </tr>
+                        <tr>
+                            <td>소사본동</td>
+                            <td>나쁨/나쁨</td>
+                            <td>보통/보통</td>
+                        </tr>
+                        <tr>
+                            <td>소사본동</td>
+                            <td>나쁨/나쁨</td>
+                            <td>보통/보통</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="float_wrap">
+                <div class="calendar_wrap">
+                    <div class="list_header">
+                        <strong>뭐할까? 행사정보 맞춤 제공 </strong>
+                        <div class="deadline">2021.03.31 기준</div>
+                        <a href="javascript:void(0)">더보기</a>
+                    </div>
+                    <table class="calendar_table">
+                        <colgroup>
+                            <col width="14.3%">
+                            <col width="14.3%">
+                            <col width="14.3%">
+                            <col width="14.3%">
+                            <col width="14.3%">
+                            <col width="14.3%">
+                            <col width="14.2%">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th class="sunday"><span>일</span></th>
+                            <th><span>월</span></th>
+                            <th><span>화</span></th>
+                            <th><span>수</span></th>
+                            <th><span>목</span></th>
+                            <th><span>금</span></th>
+                            <th><span>토</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="sunday">
+                                <span>1</span>
+                                <div class="denote" style="background-color: #3a9fc5;">공</div>
+                                <div class="denote" style="background-color: #344c8c;">전</div>
+                                <div class="denote" style="background-color: #3a9fc5;">공</div>
+                                <div class="denote" style="background-color: #344c8c;">전</div>
+
+                            </td>
+                            <td>
+                                <span>2</span>
+                            </td>
+                            <td>
+                                <span>3</span>
+                            </td>
+                            <td>
+                                <span>4</span>
+                            </td>
+                            <td>
+                                <span>5</span>
+                            </td>
+                            <td>
+                                <span>6</span>
+                            </td>
+                            <td>
+                                <span>7</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sunday">
+                                <span>1</span>
+                            </td>
+                            <td>
+                                <span>2</span>
+                            </td>
+                            <td>
+                                <span>3</span>
+                            </td>
+                            <td>
+                                <span>4</span>
+                            </td>
+                            <td>
+                                <span>5</span>
+                            </td>
+                            <td>
+                                <span>6</span>
+                            </td>
+                            <td>
+                                <span>7</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sunday">
+                                <span>1</span>
+                            </td>
+                            <td>
+                                <span>2</span>
+                            </td>
+                            <td>
+                                <span>3</span>
+                            </td>
+                            <td>
+                                <span>4</span>
+                            </td>
+                            <td>
+                                <span>5</span>
+                            </td>
+                            <td>
+                                <span>6</span>
+                            </td>
+                            <td>
+                                <span>7</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sunday">
+                                <span>1</span>
+                            </td>
+                            <td>
+                                <span>2</span>
+                            </td>
+                            <td>
+                                <span>3</span>
+                            </td>
+                            <td>
+                                <span>4</span>
+                            </td>
+                            <td>
+                                <span>5</span>
+                            </td>
+                            <td>
+                                <span>6</span>
+                            </td>
+                            <td>
+                                <span>7</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="sunday">
+                                <span>1</span>
+                            </td>
+                            <td>
+                                <span>2</span>
+                            </td>
+                            <td>
+                                <span>3</span>
+                            </td>
+                            <td>
+                                <span>4</span>
+                            </td>
+                            <td>
+                                <span>5</span>
+                            </td>
+                            <td>
+                                <span>6</span>
+                            </td>
+                            <td>
+                                <span>7</span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="event_wrap">
+                    <div class="family_event">
+                        <div class="list_header">
+                            <strong>가족과 같이 할 수 있는 행사 <span>2건</span></strong>
                         </div>
                         <div class="event_list_info_wrap">
                             <ul>
                                 <li>
                                     <a href="javascript:void(0)">
-                                        <div class="denote" style="background-color: #3a9fc5;">공</div>
-                                        <p>[2019.09.18 ~ 2019.09.19] 9월중 소향관 무료영화상영(기생충)</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">
-                                        <div class="denote" style="background-color: #3a9fc5;">공</div>
-                                        <p>[2019.09.18 ~ 2019.09.19] 9월중 소향관 무료영화상영(기생충)</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">
-                                        <div class="denote" style="background-color: #3a9fc5;">공</div>
-                                        <p>[2019.09.18 ~ 2019.09.19] 9월중 소향관 무료영화상영(기생충)</p>
+                                        <div class="denote" style="background-color: #344c8c;">전</div>
+                                        <p>[2019.09.18 ~ 2019.09.19] 9월중 소향관 전시회  9월중 소향관 전시회  9월중 소향관 전시회  9월중 소향관 전시회</p>
                                     </a>
                                 </li>
                                 <li>
@@ -1162,6 +1153,39 @@
                                 </li>
                             </ul>
                         </div>
+                    </div>
+                    <div class="couple_event">
+                        <div class="list_header">
+                            <strong>연인과 같이 할 수 있는 행사 <span>4건</span></strong>
+                        </div>
+                    </div>
+                    <div class="event_list_info_wrap">
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <div class="denote" style="background-color: #3a9fc5;">공</div>
+                                    <p>[2019.09.18 ~ 2019.09.19] 9월중 소향관 무료영화상영(기생충)</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <div class="denote" style="background-color: #3a9fc5;">공</div>
+                                    <p>[2019.09.18 ~ 2019.09.19] 9월중 소향관 무료영화상영(기생충)</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <div class="denote" style="background-color: #3a9fc5;">공</div>
+                                    <p>[2019.09.18 ~ 2019.09.19] 9월중 소향관 무료영화상영(기생충)</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <div class="denote" style="background-color: #3a9fc5;">공</div>
+                                    <p>[2019.09.18 ~ 2019.09.19] 9월중 소향관 무료영화상영(기생충)</p>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

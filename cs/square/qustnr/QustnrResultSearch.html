@@ -18,13 +18,17 @@
     <link rel="apple-touch-icon" content="">
     <link rel="icon" href="">
     <!--//common-->
+    <!-- css 정문채 -->
+    <link rel="stylesheet" href="/css/pbb/cs/test_1013.css">
     <!--css-->
     <link rel="stylesheet" href="/css/pbb/cs/common.css">
     <link rel="stylesheet" href="/css/pbb/cs/customui.css">
-    <!-- css 정문채 -->
-    <link rel="stylesheet" href="/css/pbb/cs/test_1013.css">
+
     <!--jquery-->
     <script src="/resources/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/resources/jquery/jquery-ui.min.js"></script>
+    <script src="/resources/jquery/jquery-ui-timepicker-addon.js"></script>
+
 </head>
 <body>
 <div id="wrap">
@@ -599,13 +603,13 @@
                 </ul>
             </div>
         </div>
+        <div id="questionWrap">
+            <a href="javascript:void:(0)">
+                <div>문의하기 이미지</div>
+                문의하기
+            </a>
+        </div>
     </header>
-    <div id="questionWrap">
-        <a href="javascript:viod:(0)">
-            <div>문의하기 이미지</div>
-            문의하기
-        </a>
-    </div>
     <!--//header-->
 
     <!--container-->
@@ -640,56 +644,58 @@
         </div>
         <div class="sub_contents">
             <div class="boardView">
-                <table>
-                    <colgroup>
-                        <col class="boardViewCategory">
-                        <col class="boardViewCateData">
-                    </colgroup>
-                    <thead class="boardViewHeader"></thead>
-                    <tbody class="boardViewBody">
-                    <tr>
-                        <th class="text_left verticalBase">
-                            <div class="tableFieldArea">
-                                <p>설문 제목</p>
-                            </div>
-                        </th>
-                        <td class="text_left verticalBase">
-                            <div class="tableFieldArea">
-                                <p><span>설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234</span></p>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="text_left">
-                            <div class="tableFieldArea">
-                                <p>설문 기간</p>
-                            </div>
-                        </th>
-                        <td class="text_left">
-                            <div class="tableFieldArea">
-                                <p><span>2020-06-01</span> ~ <span>2020-06-30</span></p>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="text_left verticalBase">
-                            <div class="tableFieldArea">
-                                <p>설문 내용</p>
-                            </div>
-                        </th>
-                        <td class="text_left verticalBase">
-                            <div class="tableFieldArea">
-                                <p class="preData">부천시 미세먼지 포탈 서비스를 제공합니다.
-                                    미세먼지 빅데이터 연계를 통해 부천시민에게 빠르고 정확한 미세먼지 정보를 제공하겠습니다.
-                                    이번 통합 사업에 앞서 어떤 콘텐츠를 가장 많이 사용하는지 알아보기 위해
-                                    다음과 같은 설문을 준비 했습니다.
+                <div class="boardListTable">
+                    <table>
+                        <colgroup>
+                            <col class="boardViewCategory">
+                            <col class="boardViewCateData">
+                        </colgroup>
+                        <thead class="boardViewHeader"></thead>
+                        <tbody class="boardViewBody">
+                        <tr>
+                            <th class="text_left verticalBase">
+                                <div class="tableFieldArea">
+                                    <p>설문 제목</p>
+                                </div>
+                            </th>
+                            <td class="text_left verticalBase">
+                                <div class="tableFieldArea">
+                                    <p><span>설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234설문 제목1234</span></p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="text_left">
+                                <div class="tableFieldArea">
+                                    <p>설문 기간</p>
+                                </div>
+                            </th>
+                            <td class="text_left">
+                                <div class="tableFieldArea">
+                                    <p><span>2020-06-01</span> ~ <span>2020-06-30</span></p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="text_left verticalBase">
+                                <div class="tableFieldArea">
+                                    <p>설문 내용</p>
+                                </div>
+                            </th>
+                            <td class="text_left verticalBase">
+                                <div class="tableFieldArea">
+                                    <p class="preData">부천시 미세먼지 포탈 서비스를 제공합니다.
+                                        미세먼지 빅데이터 연계를 통해 부천시민에게 빠르고 정확한 미세먼지 정보를 제공하겠습니다.
+                                        이번 통합 사업에 앞서 어떤 콘텐츠를 가장 많이 사용하는지 알아보기 위해
+                                        다음과 같은 설문을 준비 했습니다.
 
-                                    감사합니다.</p>
-                            </div>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                                        감사합니다.</p>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div class="qusWrapper">
                 <form>

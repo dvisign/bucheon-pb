@@ -18,11 +18,17 @@
     <link rel="apple-touch-icon" content="">
     <link rel="icon" href="">
     <!--//common-->
+    <!-- css 정문채 -->
+    <link rel="stylesheet" href="/css/pbb/cs/test_1013.css">
     <!--css-->
     <link rel="stylesheet" href="/css/pbb/cs/common.css">
     <link rel="stylesheet" href="/css/pbb/cs/customui.css">
+
     <!--jquery-->
     <script src="/resources/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/resources/jquery/jquery-ui.min.js"></script>
+    <script src="/resources/jquery/jquery-ui-timepicker-addon.js"></script>
+
 </head>
 <body>
 <div id="wrap">
@@ -597,18 +603,715 @@
                 </ul>
             </div>
         </div>
+        <div id="questionWrap">
+            <a href="javascript:void:(0)">
+                <div>문의하기 이미지</div>
+                문의하기
+            </a>
+        </div>
     </header>
-    <div id="questionWrap">
-        <a href="javascript:viod:(0)">
-            <div>문의하기 이미지</div>
-            문의하기
-        </a>
-    </div>
     <!--//header-->
 
-<div>
+    <!--container-->
+    <div id="container" class="UlfptcIdexSctnInfoSearch">
+        <div class="breadcrumb_wrap">
+            <div>
+                <a href="/">home</a>
+                <!--
+                crumb_depth 가 multiple_depth 클래스를 가지면
+                -화살표 아이콘, hover 효과
+                -->
+                <div class="crumb_depth multiple_depth">
+                    <strong tabindex="0">산업부분</strong>
+                    <ul>
+                        <!--
+                        a 태그 class="active" 활성 표시
+                        -->
+                        <li><a href="#" class="active">대기오염배출물 사업장</a></li>
+                        <li><a href="#">대기오염배출물 사업장</a></li>
+                        <li><a href="#">대기오염배출물 사업장</a></li>
+                    </ul>
+                    <span>arrow icon</span>
+                </div>
+                <div class="crumb_depth">
+                    <strong>산업부분</strong>
+                </div>
 
-</div>
+            </div>
+        </div>
+        <div id="subTitle">
+            <h3>생활지수 정보</h3>
+        </div>
+        <div class="sub_contents">
+            <div class="lookup_wrapper">
+                <div class="lookupArea">
+                    <form>
+                        <div id="list-lookup-forms">
+                            <div class="lookup-forms clear">
+                                <div class="float_left">
+                                    <label class="label_text">기준일자</label>
+                                    <input type="text" id="label1" class="basic_txt_input" value="2020-06-25" disabled="" style="width:220px; background-color:#fff">
+                                </div>
+                                <div class="float_right">
+                                    <div class="submit_btn_wrapper">
+                                        <button class="btn btn-round">조회</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="boardLists">
+                <div class="boardListTable">
+                    <table style="width:1240px">
+                        <colgroup>
+                            <col class="dataField">
+                            <col class="dataField">
+                            <col class="dataField">
+                            <col class="dataField">
+                            <col class="dataField">
+                            <col class="dataField">
+                            <col class="dataField">
+                            <col class="dataField">
+                            <col class="dataField">
+                            <col class="dataField">
+                            <col class="dataField">
+                            <col class="dataField">
+                            <col class="dataField">
+                            <col class="dataField">
+                            <col class="dataField">
+                            <col class="dataField">
+                            <col class="dataField">
+                            <col class="dataField">
+                            <col class="dataField">
+                            <col class="dataField">
+                            <col class="dataField">
+                            <col class="dataField">
+                        </colgroup>
+                        <thead class="boardListHeader">
+                            <tr>
+                                <th class="text_center">
+                                    <div class="tableFieldArea">
+                                        <p>날짜</p>
+                                    </div>
+                                </th>
+                                <th class="text_center" colspan="5">
+                                    <div class="tableFieldArea">
+                                        <p>오늘 (<span>2020-06-25</span>)</p>
+                                    </div>
+                                </th>
+                                <th class="text_center" colspan="8">
+                                    <div class="tableFieldArea">
+                                        <p>내일 (<span>2020-06-26</span>)</p>
+                                    </div>
+                                </th>
+                                <th class="text_center" colspan="8">
+                                    <div class="tableFieldArea">
+                                        <p>모레 (<span>2020-06-27</span>)</p>
+                                    </div>
+                                </th>
+                            </tr>
+                             <tr>
+                                 <th class="text_center">
+                                     <div class="tableFieldArea">
+                                         <p>시각</p>
+                                     </div>
+                                 </th>
+                                <!--오늘-->
+                                 <th class="text_center">
+                                     <div class="tableFieldArea">
+                                         <p>12</p>
+                                     </div>
+                                 </th>
+                                 <th class="text_center">
+                                     <div class="tableFieldArea">
+                                         <p>15</p>
+                                     </div>
+                                 </th>
+                                 <th class="text_center">
+                                     <div class="tableFieldArea">
+                                         <p>18</p>
+                                     </div>
+                                 </th>
+                                 <th class="text_center">
+                                     <div class="tableFieldArea">
+                                         <p>21</p>
+                                     </div>
+                                 </th>
+                                 <th class="text_center">
+                                     <div class="tableFieldArea">
+                                         <p>24</p>
+                                     </div>
+                                 </th>
+                                <!--//오늘-->
+                                 <!--내일-->
+                                 <th class="text_center">
+                                     <div class="tableFieldArea">
+                                         <p>03</p>
+                                     </div>
+                                 </th>
+                                 <th class="text_center">
+                                     <div class="tableFieldArea">
+                                         <p>06</p>
+                                     </div>
+                                 </th>
+                                 <th class="text_center">
+                                     <div class="tableFieldArea">
+                                         <p>09</p>
+                                     </div>
+                                 </th>
+                                 <th class="text_center">
+                                     <div class="tableFieldArea">
+                                         <p>12</p>
+                                     </div>
+                                 </th>
+                                 <th class="text_center">
+                                     <div class="tableFieldArea">
+                                         <p>15</p>
+                                     </div>
+                                 </th>
+                                 <th class="text_center">
+                                     <div class="tableFieldArea">
+                                         <p>18</p>
+                                     </div>
+                                 </th>
+                                 <th class="text_center">
+                                     <div class="tableFieldArea">
+                                         <p>21</p>
+                                     </div>
+                                 </th>
+                                 <th class="text_center">
+                                     <div class="tableFieldArea">
+                                         <p>24</p>
+                                     </div>
+                                 </th>
+                                 <!--//내일-->
+                                 <!--모레-->
+                                 <th class="text_center">
+                                     <div class="tableFieldArea">
+                                         <p>03</p>
+                                     </div>
+                                 </th>
+                                 <th class="text_center">
+                                     <div class="tableFieldArea">
+                                         <p>06</p>
+                                     </div>
+                                 </th>
+                                 <th class="text_center">
+                                     <div class="tableFieldArea">
+                                         <p>09</p>
+                                     </div>
+                                 </th>
+                                 <th class="text_center">
+                                     <div class="tableFieldArea">
+                                         <p>12</p>
+                                     </div>
+                                 </th>
+                                 <th class="text_center">
+                                     <div class="tableFieldArea">
+                                         <p>15</p>
+                                     </div>
+                                 </th>
+                                 <th class="text_center">
+                                     <div class="tableFieldArea">
+                                         <p>18</p>
+                                     </div>
+                                 </th>
+                                 <th class="text_center">
+                                     <div class="tableFieldArea">
+                                         <p>21</p>
+                                     </div>
+                                 </th>
+                                 <th class="text_center">
+                                     <div class="tableFieldArea">
+                                         <p>24</p>
+                                     </div>
+                                 </th>
+                                 <!--//모레-->
+                             </tr>
+                        </thead>
+                        <tbody class="boardListBody">
+                        <tr>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p><span>대기 확산지수</span></p>
+                                </div>
+                            </td>
+                            <!--오늘-->
+                            <td class="text_center cdt_good">
+                                <div class="tableFieldArea">
+                                    <p><span>좋음</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center cdt_usually">
+                                <div class="tableFieldArea">
+                                    <p><span>보통</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center cdt_bad">
+                                <div class="tableFieldArea">
+                                    <p><span>나쁨</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center cdt_terrible">
+                                <div class="tableFieldArea">
+                                    <p><span>매우<br>나쁨</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center cdt_usually">
+                                <div class="tableFieldArea">
+                                    <p><span>보통</span></p>
+                                </div>
+                            </td>
+                            <!--//오늘-->
+                            <!--내일-->
+                            <td class="text_center cdt_usually">
+                                <div class="tableFieldArea">
+                                    <p><span>보통</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center cdt_usually">
+                                <div class="tableFieldArea">
+                                    <p><span>보통</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center cdt_usually">
+                                <div class="tableFieldArea">
+                                    <p><span>보통</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center cdt_usually">
+                                <div class="tableFieldArea">
+                                    <p><span>보통</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center cdt_usually">
+                                <div class="tableFieldArea">
+                                    <p><span>보통</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center cdt_usually">
+                                <div class="tableFieldArea">
+                                    <p><span>보통</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center cdt_usually">
+                                <div class="tableFieldArea">
+                                    <p><span>보통</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center cdt_usually">
+                                <div class="tableFieldArea">
+                                    <p><span>보통</span></p>
+                                </div>
+                            </td>
+                            <!--//내일-->
+                            <!--모레-->
+                            <td class="text_center cdt_usually">
+                                <div class="tableFieldArea">
+                                    <p><span>보통</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center cdt_usually">
+                                <div class="tableFieldArea">
+                                    <p><span>보통</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center cdt_usually">
+                                <div class="tableFieldArea">
+                                    <p><span>보통</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center cdt_usually">
+                                <div class="tableFieldArea">
+                                    <p><span>보통</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center cdt_usually">
+                                <div class="tableFieldArea">
+                                    <p><span>보통</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center cdt_usually">
+                                <div class="tableFieldArea">
+                                    <p><span>보통</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center cdt_usually">
+                                <div class="tableFieldArea">
+                                    <p><span>보통</span></p>
+                                </div>
+                            </td>
+                            <td class="text_center cdt_usually">
+                                <div class="tableFieldArea">
+                                    <p><span>보통</span></p>
+                                </div>
+                            </td>
+                            <!--//모레-->
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="boardLists">
+                <div class="boardListTable">
+                    <table style="width:1240px">
+                        <colgroup>
+                            <col class="dataField" style="width: 15%;">
+                            <col class="dataField">
+                            <col class="dataField" style="width: 20%;"> 
+                            <col class="dataField">
+                            <col class="dataField" style="width: 20%;">
+                            <col class="dataField">
+                            <col class="dataField" style="width: 20%;">
+                        </colgroup>
+                        <thead class="boardListHeader">
+                        <tr>
+                            <th class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>날짜</p>
+                                </div>
+                            </th>
+                            <th class="text_center" colspan="2">
+                                <div class="tableFieldArea">
+                                    <p>오늘 (<span>2020-06-25</span>)</p>
+                                </div>
+                            </th>
+                            <th class="text_center" colspan="2">
+                                <div class="tableFieldArea">
+                                    <p>내일 (<span>2020-06-26</span>)</p>
+                                </div>
+                            </th>
+                            <th class="text_center" colspan="2">
+                                <div class="tableFieldArea">
+                                    <p>모레 (<span>2020-06-27</span>)</p>
+                                </div>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody class="boardListBody">
+                        <tr>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>식중독지수</p>
+                                </div>
+                            </td>
+                            <!--오늘-->
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>관심</p>
+                                    <div>(<span>39</span>)</div>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <div class="cartArea">
+                                        <img src="/img/cs/sttusFrcst/sample_img_01.jpg" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                            <!--//오늘-->
+                            <!--내일-->
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>관심</p>
+                                    <div>(<span>39</span>)</div>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <div class="cartArea">
+                                        <img src="/img/cs/sttusFrcst/sample_img_01.jpg" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                            <!--//내일-->
+                            <!--모레-->
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>관심</p>
+                                    <div>(<span>39</span>)</div>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <div class="cartArea">
+                                        <img src="/img/cs/sttusFrcst/sample_img_01.jpg" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                            <!--//모레-->
+                        </tr>
+                        <tr>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>자외선지수</p>
+                                </div>
+                            </td>
+                            <!--오늘-->
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>관심</p>
+                                    <div>(<span>39</span>)</div>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <div class="cartArea">
+                                        <img src="/img/cs/sttusFrcst/sample_img_01.jpg" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                            <!--//오늘-->
+                            <!--내일-->
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>관심</p>
+                                    <div>(<span>39</span>)</div>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <div class="cartArea">
+                                        <img src="/img/cs/sttusFrcst/sample_img_01.jpg" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                            <!--//내일-->
+                            <!--모레-->
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>관심</p>
+                                    <div>(<span>39</span>)</div>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <div class="cartArea">
+                                        <img src="/img/cs/sttusFrcst/sample_img_01.jpg" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                            <!--//모레-->
+                        </tr>
+                        <tr>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>천식폐질환 가능지수</p>
+                                </div>
+                            </td>
+                            <!--오늘-->
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>관심</p>
+                                    <div>(<span>39</span>)</div>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <div class="cartArea">
+                                        <img src="/img/cs/sttusFrcst/sample_img_01.jpg" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                            <!--//오늘-->
+                            <!--내일-->
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>관심</p>
+                                    <div>(<span>39</span>)</div>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <div class="cartArea">
+                                        <img src="/img/cs/sttusFrcst/sample_img_01.jpg" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                            <!--//내일-->
+                            <!--모레-->
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>관심</p>
+                                    <div>(<span>39</span>)</div>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <div class="cartArea">
+                                        <img src="/img/cs/sttusFrcst/sample_img_01.jpg" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                            <!--//모레-->
+                        </tr>
+                        <tr>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>노졸증 가능지수</p>
+                                </div>
+                            </td>
+                            <!--오늘-->
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>관심</p>
+                                    <div>(<span>39</span>)</div>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <div class="cartArea">
+                                        <img src="/img/cs/sttusFrcst/sample_img_01.jpg" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                            <!--//오늘-->
+                            <!--내일-->
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>관심</p>
+                                    <div>(<span>39</span>)</div>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <div class="cartArea">
+                                        <img src="/img/cs/sttusFrcst/sample_img_01.jpg" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                            <!--//내일-->
+                            <!--모레-->
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>관심</p>
+                                    <div>(<span>39</span>)</div>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <div class="cartArea">
+                                        <img src="/img/cs/sttusFrcst/sample_img_01.jpg" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                            <!--//모레-->
+                        </tr>
+                        <tr>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>꽃가루농도 위험지수(참나무)</p>
+                                </div>
+                            </td>
+                            <!--오늘-->
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>관심</p>
+                                    <div>(<span>39</span>)</div>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <div class="cartArea">
+                                        <img src="/img/cs/sttusFrcst/sample_img_01.jpg" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                            <!--//오늘-->
+                            <!--내일-->
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>관심</p>
+                                    <div>(<span>39</span>)</div>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <div class="cartArea">
+                                        <img src="/img/cs/sttusFrcst/sample_img_01.jpg" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                            <!--//내일-->
+                            <!--모레-->
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>관심</p>
+                                    <div>(<span>39</span>)</div>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <div class="cartArea">
+                                        <img src="/img/cs/sttusFrcst/sample_img_01.jpg" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                            <!--//모레-->
+                        </tr>
+                        <tr>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>꽃가루농도 위험지수(소나무)</p>
+                                </div>
+                            </td>
+                            <!--오늘-->
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>관심</p>
+                                    <div>(<span>39</span>)</div>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <div class="cartArea">
+                                        <img src="/img/cs/sttusFrcst/sample_img_01.jpg" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                            <!--//오늘-->
+                            <!--내일-->
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>관심</p>
+                                    <div>(<span>39</span>)</div>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <div class="cartArea">
+                                        <img src="/img/cs/sttusFrcst/sample_img_01.jpg" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                            <!--//내일-->
+                            <!--모레-->
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <p>관심</p>
+                                    <div>(<span>39</span>)</div>
+                                </div>
+                            </td>
+                            <td class="text_center">
+                                <div class="tableFieldArea">
+                                    <div class="cartArea">
+                                        <img src="/img/cs/sttusFrcst/sample_img_01.jpg" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                            <!--//모레-->
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//container-->
 
      <!-- footer -->
      <footer id="footer_wrap">

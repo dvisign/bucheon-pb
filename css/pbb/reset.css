@@ -53,6 +53,7 @@ a:visited {color:#000; text-decoration: none;}
 .verticalAlignBottom {vertical-align: bottom;}
 .bolder-text {font-weight: 600;transform: skew(-0.03deg);display:inline-block}
 .bold-text {font-weight: 900;transform: skew(-0.03deg);display:inline-block}
+.w-25 {width:25% !important;}
 .w-30 {width:30% !important;}
 .w-50 {width:50% !important;}
 .w-100 {width:100% !important;}
@@ -60,6 +61,7 @@ a:visited {color:#000; text-decoration: none;}
 .display-flex {display:flex;}
 .display-wrap {flex-wrap: wrap;}
 .display-column {flex-direction:column}
+.display-row-reverse {flex-direction: row-reverse;}
 .flex-align-center {align-items: center;}
 .flex-align-end {align-items: flex-end;}
 .flex-justify-between {justify-content:space-between;}

@@ -18,11 +18,17 @@
     <link rel="apple-touch-icon" content="">
     <link rel="icon" href="">
     <!--//common-->
+    <!-- css 정문채 -->
+    <link rel="stylesheet" href="/css/pbb/cs/test_1013.css">
     <!--css-->
     <link rel="stylesheet" href="/css/pbb/cs/common.css">
     <link rel="stylesheet" href="/css/pbb/cs/customui.css">
+
     <!--jquery-->
     <script src="/resources/jquery/jquery-3.5.1.min.js"></script>
+    <script src="/resources/jquery/jquery-ui.min.js"></script>
+    <script src="/resources/jquery/jquery-ui-timepicker-addon.js"></script>
+
 </head>
 <body>
 <div id="wrap">
@@ -597,18 +603,144 @@
                 </ul>
             </div>
         </div>
+        <div id="questionWrap">
+            <a href="javascript:void:(0)">
+                <div>문의하기 이미지</div>
+                문의하기
+            </a>
+        </div>
     </header>
-    <div id="questionWrap">
-        <a href="javascript:viod:(0)">
-            <div>문의하기 이미지</div>
-            문의하기
-        </a>
-    </div>
     <!--//header-->
 
-<div>
-    a
-</div>
+    <!--container-->
+    <div id="container" class="CoordinatorCareerList">
+        <div class="breadcrumb_wrap">
+            <div>
+                <a href="/">home</a>
+                <!--
+                crumb_depth 가 multiple_depth 클래스를 가지면
+                -화살표 아이콘, hover 효과
+                -->
+                <div class="crumb_depth multiple_depth">
+                    <strong tabindex="0">산업부분</strong>
+                    <ul>
+                        <!--**a 태그 class="active" 현재 페이지 활성 표시-->
+                        <li><a href="#" class="active">대기오염배출물 사업장</a></li>
+                        <li><a href="#">대기오염배출물 사업장</a></li>
+                        <li><a href="#">대기오염배출물 사업장</a></li>
+                    </ul>
+                    <span>arrow icon</span>
+                </div>
+                <div class="crumb_depth">
+                    <strong>산업부분</strong>
+                </div>
+            </div>
+        </div>
+        <div id="subTitle">
+            <h3>미세먼지 코디네이터 활동</h3>
+            <p>코디네이터 경력 관리</p>
+        </div>
+        <div class="sub_contents">
+            <div class="career_table_wrap">
+                <div class="boardListTable">
+                    <table>
+                        <caption>코디네이터 경력 테이블</caption>
+                        <colgroup>
+                            <col width="160px">
+                            <col width="460px">
+                            <col width="160px">
+                            <col width="460px">
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <th><p>이름</p></th>
+                            <td><p>홍길동</p></td>
+                            <th><p>평가점수</p></th>
+                            <td>
+                                <p><span>4.8</span> / <span>5.0</span> (<span>20</span>)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><p>코디네이터 경력</p></th>
+                            <td><p>미세먼지코디네이터 1급</p></td>
+                            <th><p>이메일</p></th>
+                            <td><p>emial.@emial.com</p></td>
+                        </tr>
+                        <tr>
+                            <th><p>교육활동 가능시간</p></th>
+                            <td>
+                                <p><span>월,수,금</span> / <span>1교시~1교시, 3~4교시, 6~7교시</span></p>
+                                <button type="button" class="codi_cta">수정</button>
+                            </td>
+                            <th><p>활동가능동</p></th>
+                            <td>
+                                <p>신중동, 상동</p>
+                                <button type="button" class="codi_cta">수정</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--코디네이터 양성 교육 자격-->
+            <div class="codi_cont_wrap">
+                <div class="cont_header">
+                    <strong>코디네이터 양성 교육 자격</strong>
+                    <div class="codi_cta_wrap">
+                        <button type="button" class="codi_cta">추가</button>
+                        <button type="button" class="codi_cta">삭제</button>
+                    </div>
+                </div>
+                <div class="boardListTable">
+                    <table>
+                        <caption>코디네이터 양성 교육 자격 테이블</caption>
+                        <tbody>
+                            <tr>
+                                <th style="background-color:#ffe5e5; line-height:240px; color: #ff0000; text-align: center;"> 테이블 영역</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--교육활동경력-->
+            <div class="codi_cont_wrap">
+                <div class="cont_header">
+                    <strong>교육활동경력</strong>
+                </div>
+                <div class="boardListTable">
+                    <table>
+                        <caption>교육활동경력 테이블</caption>
+                        <tbody>
+                        <tr>
+                            <th style="background-color:#ffe5e5; line-height:240px; color: #ff0000; text-align: center;"> 테이블 영역</th>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--기타활동경력-->
+            <div class="codi_cont_wrap">
+                <div class="cont_header">
+                    <strong>기타활동경력</strong>
+                    <div class="codi_cta_wrap">
+                        <button type="button" class="codi_cta">추가</button>
+                        <button type="button" class="codi_cta">삭제</button>
+                    </div>
+                </div>
+                <div class="boardListTable">
+                    <table>
+                        <caption>기타활동경력 테이블</caption>
+                        <tbody>
+                        <tr>
+                            <th style="background-color:#ffe5e5; line-height:240px; color: #ff0000; text-align: center;"> 테이블 영역</th>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//container-->
 
      <!-- footer -->
      <footer id="footer_wrap">
