@@ -1,10 +1,34 @@
 @charset "UTF-8";
 /* NanumSquare  */
-@font-face { font-family: "NanumSquare"; font-style: normal; font-weight: 400; src: local("NanumSquareR"), url(../fonts/NanumSquareR.eot) format("eot"), url(../fonts/NanumSquareR.woff2) format("woff2"), url(../fonts/NanumSquareR.woff) format("woff"), url(../fonts/NanumSquareR.ttf) format("truetype"); }
-
-@font-face { font-family: "NanumSquare"; font-style: normal; font-weight: 600; src: local("NanumSquareB"), url(../fonts/NanumSquareB.eot) format("eot"), url(../fonts/NanumSquareB.woff2) format("woff2"), url(../fonts/NanumSquareB.woff) format("woff"), url(../fonts/NanumSquareB.ttf) format("truetype"); }
-
-@font-face { font-family: "NanumSquare"; font-style: normal; font-weight: 700; src: local("NanumSquareEB"), url(../fonts/NanumSquareEB.eot) format("eot"), url(../fonts/NanumSquareEB.woff) format("woff"), url(../fonts/NanumSquareEB.ttf) format("truetype"); }
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+/* @font-face { 
+  font-family: "NanumSquare"; font-style: normal; 
+  font-weight: 400; 
+  src: local("NanumSquareR"), 
+  url(../fonts/NanumSquareR.eot) format("eot"), 
+  url(../fonts/NanumSquareR.woff2) format("woff2"), 
+  url(../fonts/NanumSquareR.woff) format("woff"), 
+  url(../fonts/NanumSquareR.ttf) format("truetype"); 
+}
+@font-face { 
+  font-family: "NanumSquare"; 
+  font-style: normal; 
+  font-weight: 600; 
+  src: local("NanumSquareB"), 
+  url(../fonts/NanumSquareB.eot) format("eot"), 
+  url(../fonts/NanumSquareB.woff2) format("woff2"), 
+  url(../fonts/NanumSquareB.woff) format("woff"), 
+  url(../fonts/NanumSquareB.ttf) format("truetype"); 
+}
+@font-face { 
+  font-family: "NanumSquare"; 
+  font-style: normal; 
+  font-weight: 700; 
+  src: local("NanumSquareEB"), 
+  url(../fonts/NanumSquareEB.eot) format("eot"), 
+  url(../fonts/NanumSquareEB.woff) format("woff"), 
+  url(../fonts/NanumSquareEB.ttf) format("truetype"); 
+} */
 
 /* Rubik */
 @font-face { font-family: "Rubik"; font-style: normal; font-weight: 400; src: local("Rubik-Light"), url(../fonts/Rubik-Light.eot) format("eot"), url(../fonts/Rubik-Light.woff) format("woff"), url(../fonts/Rubik-Light.ttf) format("truetype"); }
