@@ -5,17 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>부천시 미세먼지 빅데이터 플랫폼</title>
+  <link rel="stylesheet" href="/css/pbb/v2/slick-theme.css">
+  <link rel="stylesheet" href="/css/pbb/v2/slick.css">
   <link rel="stylesheet" href="/css/pbb/v2/reset.css">
   <link rel="stylesheet" href="/css/pbb/v2/common.css">
   <link rel="stylesheet" href="/css/pbb/v2/style.css">
   <!-- jquery -->
   <script src="/resources/jquery/jquery-3.5.1.min.js"></script>
+  <!-- slick -->
+  <script src="/js/pbb/slick.min.js"></script>
   <!-- kakao apis -->
   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=45e3c6ea96e8632f69735a69f4fa70b9&libraries=services"></script><script charset="UTF-8" src="http://t1.daumcdn.net/mapjsapi/js/main/4.3.1-fixed/kakao.js"></script><script charset="UTF-8" src="http://s1.daumcdn.net/svc/attach/U03/cssjs/mapapi/libs/1.0.1/1515130215283/services.js"></script>
   <!-- common js -->
   <script src="/js/pbb/v2/common.js"></script>
   <script>
     $(document).ready(function() {
+      $('#topNotice').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      });
       var opSet = {
         el : "maps",
         center : {
@@ -55,6 +64,28 @@
         }
       }
       var mapInit = new callKaKaoMaps(opSet);
+      $("#areaAverage .foldBtn").on("click", function() {
+        var _this = $(this);
+        var slideEl = $('#areaAverageStatusLists');
+        if (_this.hasClass('on')) {
+          _this.removeClass('on');
+          slideEl.stop().slideUp();
+        } else {
+          _this.addClass('on');
+          slideEl.stop().slideDown();
+        }
+      });
+      $("#dustBusiness .foldBtn").on("click", function() {
+        var _this = $(this);
+        var slideEl = $('#dustBusinessStatusLists');
+        if (_this.hasClass('on')) {
+          _this.removeClass('on');
+          slideEl.stop().slideUp();
+        } else {
+          _this.addClass('on');
+          slideEl.stop().slideDown();
+        }
+      });
       mapInit.init();
     });
   </script>
@@ -68,10 +99,16 @@
         <!-- 상단 알림 -->
         <div id="topNavArea">
           <div class="fluidContainer">
-            <div id="topNavs" class="clear">
+            <div id="topNavs">
               <div id="topNotice">
-                <span class="smallIcons">알림</span>
-                <a href="javascript:void(0)" class="topNoticeLinks">오늘 미세먼지 주의입니다. 외출시 마스크를 꼭 착용하세요.</a>
+                <div>
+                  <span class="smallIcons">알림</span>
+                  <a href="javascript:void(0)" class="topNoticeLinks">오늘 미세먼지 주의입니다. 외출시 마스크를 꼭 착용하세요.</a>
+                </div>
+                <div>
+                  <span class="smallIcons">알림</span>
+                  <a href="javascript:void(0)" class="topNoticeLinks">오늘 미세먼지 주의입니다. 외출시 마스크를 꼭 착용하세요.</a>
+                </div>
               </div>
               <div id="topNavBtns">
                 <a href="javascript:void(0)" class="logInOutBtn logIn"></a>
@@ -606,7 +643,7 @@
     </header>
     <!-- /헤더 -->
     <article class="sectionWrapper">
-      <div id="mainVisualMaps">
+      <section id="mainVisualMaps">
         <div id="maps"></div>
         <div id="leftData" class="dataLayer">
           <div id="mapController" class="clear">
@@ -619,14 +656,14 @@
               <button id="zoomOut"><span class="soundOnly">축소</span></button>
             </div>
           </div>
-          <div id="dustStatus">
-            <div>
+          <div id="mapInformation">
+            <div id="dustStatus">
               <div id="areaAverage">
-                <div id="areaAverageHeader">
-                  <p id="areaAverageTitle">부천시 평균</p>
+                <div id="areaAverageHeader" class="mapInfoHeader">
+                  <p id="areaAverageTitle" class="mapInfoTitle">부천시 평균</p>
                   <p id="areaAverageDate">2020년 11월 20일</p>
                   <div class="foldBtnWrapper">
-                    <a class="foldBtn on" href="javascript:void(0);"><span class="soundOnly">접기</span></a>
+                    <a class="foldBtn on" href="javascript:void(0);"></a>
                   </div>
                 </div>
                 <div id="areaAverageDatas" class="code-red">
@@ -636,25 +673,132 @@
                   </div>
                 </div>
               </div>
+              <ul id="areaAverageStatusLists">
+                <li class="areaAverageStatusItems">
+                  <a href="javascript:void(0);">초미세먼지 PM-2.5</a>
+                </li>
+                <li class="areaAverageStatusItems">
+                  <a href="javascript:void(0);">미세먼지 PM-10</a>
+                </li>
+                <li class="areaAverageStatusItems active">
+                  <a href="javascript:void(0);">오존 O₃</a>
+                </li>
+              </ul>
             </div>
-            <ul id="areaAverageStatusLists">
-              <li>
-                <a href="javascript:void(0);">초미세먼지 PM-2.5</a>
-              </li>
-              <li>
-                <a href="javascript:void(0);">미세먼지 PM-10</a>
-              </li>
-              <li>
-                <a href="javascript:void(0);">오존 O₃</a>
-              </li>
-            </ul>
+            <div id="dustBusinessStatus">
+              <div id="dustBusiness">
+                <div id="businessHeader" class="mapInfoHeader">
+                  <p id="businessTitle" class="mapInfoTitle">부천시 평균</p>
+                  <div class="foldBtnWrapper">
+                    <a class="foldBtn on" href="javascript:void(0);"></a>
+                  </div>
+                </div>
+              </div>
+              <ul id="dustBusinessStatusLists">
+                <li class="dustBusinessStatusItems active">
+                  <a href="javascript:void(0);"><span class="dustBusinessNunber">01</span><span>교통</span></a>
+                  <ul class="subDustBusinessStatusList">
+                    <li class="subDustBusinessStatusItems">
+                      <a href="javascript:void(0);">차량2부제</a>
+                    </li>
+                    <li class="subDustBusinessStatusItems">
+                      <a href="javascript:void(0);">청소차 운행</a>
+                    </li>
+                    <li class="subDustBusinessStatusItems">
+                      <a href="javascript:void(0);">대충교통</a>
+                    </li>
+                    <li class="subDustBusinessStatusItems">
+                      <a href="javascript:void(0);">친환경 차량 보급</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="dustBusinessStatusItems">
+                  <a href="javascript:void(0);"><span class="dustBusinessNunber">02</span><span>환경에너지</span></a>
+                </li>
+                <li class="dustBusinessStatusItems">
+                  <a href="javascript:void(0);"><span class="dustBusinessNunber">03</span><span>지역특별관리</span></a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
+        <div id="rightData" class="dataLayer">
+          <ul id="mapChartDataList">
+            <li class="mapChartDataItems clear">
+              <a href="javascript:void(0);" class="chartBtns active" id="chartBigData"></a>
+              <div class="mapCharts">
+                차트
+              </div>
+            </li>
+            <li class="mapChartDataItems clear">
+              <a href="javascript:void(0);" class="chartBtns" id="chartVillage"></a>
+              <div class="mapCharts">
+                차트
+              </div>
+            </li>
+            <li class="mapChartDataItems clear">
+              <a href="javascript:void(0);" class="chartBtns" id="chartIndust"></a>
+              <div class="mapCharts">
+                차트
+              </div>
+            </li>
+            <li class="mapChartDataItems clear">
+              <a href="javascript:void(0);" class="chartBtns" id="chartSchool"></a>
+              <div class="mapCharts">
+                차트
+              </div>
+            </li>
+            <li class="mapChartDataItems clear">
+              <a href="javascript:void(0);" class="chartBtns" id="chartSubway"></a>
+              <div class="mapCharts">
+                차트
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id="mainContents">
+        <div class="container">
+          <div id="mainContsWrapper" class="clear">
+            <div id="dustForecast">
+              asfd
+            </div>
+            <div id="behaviors">
+              asf
+            </div>
+          </div>
+        </div>
+      </section>
     </article>
-    <footer>
-      푸터
-    </footer>
+    <footer id="footer_wrap">
+      <h2 class="hidden-txt">footer</h2>
+      <ul>
+         <li>바로가기<button class="close_btn">close</button></li>
+         <li><a href="#">부천시청</a></li>
+         <li><a href="#">경기도 보건환경연구원</a></li>
+         <li><a href="#">경기도 대기환경</a></li>
+         <li><a href="#">환경부</a></li>
+         <li><a href="#">에어코리아</a></li>
+         <li><a href="#">날씨누리</a></li>
+         <li><a href="#">질병관리본부</a></li>
+      </ul>
+      <div>
+         <a href="/" class="footer_logo">
+            <img src="/img/cs/layout/logo_footer.jpg" alt="판타지아 푸터 부천 로고">
+         </a>
+         <div class="footer_info">
+            <p class="address">
+               <span>주소</span>
+               14547 경기도 부천시 길주로 210(중동)
+            </p>
+            <p>
+               <span>부천시 365 콜센터</span>
+               032-320-3000 ( 평일 08~19시 / 주말·공휴일 09~18시 )
+            </p>
+         </div>
+         <p class="copyright">Copyright &copy;2017 BUCHEON CITY All rights reserved.</p>
+      </div>
+   </footer>
   </div>
 </body>
 

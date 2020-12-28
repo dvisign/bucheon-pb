@@ -147,3 +147,4 @@ html, body { font-family: "Rubik", "NanumSquare", AppleGothic, Arial, Helvetica,
 strong, h1, h2, h3, h4, h5, h6 { font-weight: 600; }
 
 label, button { cursor: pointer; }
+.hidden-txt, legend { width: 0; height: 0; overflow: hidden; display: inline-block; text-indent: -9999px; line-height: 1px; position: absolute; }

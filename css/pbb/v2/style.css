@@ -10,7 +10,9 @@
 #zoomController {margin-left:5px;width:calc((36px * 2) + 1px);background-color:#eee;overflow: hidden;}
 #zoomController > button,
 #viewController > button {display:block;float:left;}
-#viewController > button {height:34px;background-color:#fff;border-radius: 4px;padding:0 8px;letter-spacing: -0.32px;font-weight: 600;transform: skew(-0.03deg);}
+#viewController > button {height:34px;background-color:#fff;border-radius: 4px;letter-spacing: -0.32px;font-weight: 600;transform: skew(-0.03deg);}
+#viewController > button#defualtView {width:44px;}
+#viewController > button#skyView {width:90px;}
 #viewController > button.active {background-color:#606060;color:#fff;}
 #zoomController > button {width:36px;position:relative;height:40px;background-color:#fff;}
 #zoomController > #zoomIn::after,
@@ -21,15 +23,61 @@
 #zoomController > #zoomOut::before {content:'';display:block;background-color:#666;position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);width:12px; height:2px;}
 /* /지도 컨트롤러 */
 /* 미세먼지 상태 */
-#dustStatus {margin-top:10px;background-color:#fff;border:1px solid #dadada;}
-#areaAverageHeader {padding:10px;position: relative;}
-#areaAverageTitle {margin:3px auto;font-size: 18px;color: #111;letter-spacing: -0.36px;font-weight: 600;}
+#mapInformation {width:220px;margin-top:10px;}
+#dustStatus {margin-bottom:10px;width:100%;background-color:rgba(255, 255, 255, 0.8);border:1px solid #dadada;}
+.mapInfoHeader {padding:10px 12px;position: relative;}
+.mapInfoTitle {margin:3px auto;font-size: 18px;color: #111;letter-spacing: -0.36px;font-weight: 600;}
 #areaAverageDate {margin-top:15px;font-size:15px;letter-spacing: -0.3px;font-weight: 600;color:#111;transform: skew(-0.03deg);}
-#areaAverage .foldBtnWrapper {position: absolute;right:10px;top:10px;}
+#dustStatus .foldBtnWrapper {position: absolute;right:10px;top:10px;}
 #areaAverageDatas {padding:20px 13px;color:#fff;}
 #areaAverageDatas.code-red {background-color:#ff0000;}
 #areaAverageValue {float:left;font-family: "Rubik";font-weight: 600;letter-spacing: -1px;font-size: 20px;}
 #areaAverageDatas.code-red #areaAverageStatus::after {float:right;content:'매우나쁨';font-size:20px;letter-spacing: -1px;font-weight: 600;}
 #areaAverageStatusLists {padding:12px 10px;}
+.areaAverageStatusItems {text-align: center;}
+.areaAverageStatusItems:not(:last-child) {margin-bottom:10px;}
+.areaAverageStatusItems > a {display:block;font-size:18px;color:#111;letter-spacing: -0.36px;font-weight: 600;padding:18px;border:1px solid #ccc;transition: all 0.3s ease-in-out;background-color:#fff;}
+.areaAverageStatusItems.active > a,
+.areaAverageStatusItems:hover > a {background-color:#444;border:1px solid #444;color:#fff;}
 /* /미세먼지 상태 */
+/* 저감사업 상태 */
+#dustBusinessStatus {margin-bottom:10px;width:100%;background-color:rgba(255, 255, 255, 0.8);border:1px solid #dadada;}
+#dustBusinessStatus .foldBtnWrapper {position: absolute;right:10px;top:10px;}
+#dustBusinessStatusLists {padding:10px 12px;}
+.dustBusinessStatusItems {position:relative;background-color: #fff;border:1px solid #dadada;transition: all 0.3s ease-in-out;}
+.dustBusinessStatusItems.active,
+.dustBusinessStatusItems:hover {background-color: #f1f1f1;}
+.dustBusinessStatusItems:not(:last-child) {margin-bottom:5px;}
+.dustBusinessStatusItems > a {display:block;width:100%;padding:17px 16px 17px 26px;letter-spacing: -0.32px;font-size:16px;font-weight: 600;transform: skew(-0.03deg);position: relative;}
+.dustBusinessStatusItems > a::before {content:'';display:block;width:20px;height:20px;position: absolute;background-color:#cde2ff;border-radius: 50%;z-index: -1;top:50%;transform: translateY(-50%);left:15px;}
+.dustBusinessStatusItems.active > a::before {background-color:#c6d1e1;}
+.dustBusinessStatusItems > a::after {content:'';display:block;width:12px;height:7px;background-image:url('/img/v2/common/icon-down.png');background-position: center;background-repeat: no-repeat;background-size: cover;position:absolute;right:16px;top:50%;transform: translateY(-50%);transition: all 0.3s ease-in-out;}
+.dustBusinessStatusItems.active > a::after {background-image:url('/img/v2/common/icon-up.png');}
+.dustBusinessStatusItems > a > span {display:inline-block;}
+.dustBusinessNunber {margin-right:11px;font-family: 'Rubik';}
+.subDustBusinessStatusList {padding:0 16px 11px 53px;}
+.subDustBusinessStatusItems:not(:last-child) {margin-bottom:10px;}
+.subDustBusinessStatusItems > a {font-weight: 600;display: inline-block;transform: skew(-0.03deg);font-size:14px;}
+/* /저감사업 상태 */
+/* 차트 */
+#rightData.dataLayer {position: absolute; z-index: 1; top: 5px; right: 50px;}
+.mapChartDataItems {height:120px;}
+.mapChartDataItems .chartBtns {float:right;display:block;width:100px;height:100%;background-color:#fff;position:relative;background-position: center;background-repeat: no-repeat;background-size: auto;border:1px solid #dadada;}
+.mapChartDataItems .chartBtns::after {content:'';display:block;width:34px;height:34px;border-radius: 50%;border:1px solid #dadada;background-color:#fff;position:absolute;top:50%;right:calc(100% - (34px / 2)); transform: translateY(-50%);background-image: url('/img/v2/common/icon-left.png');background-position: center;background-size: 7px;background-repeat: no-repeat;}
+.mapChartDataItems .chartBtns.active::after {background-image: url('/img/v2/common/icon-right.png');}
+.mapChartDataItems .chartBtns#chartBigData {background-image: url('/img/v2/main/img-bigdata.jpg');}
+.mapChartDataItems .chartBtns#chartVillage {background-image: url('/img/v2/main/img-village.jpg');}
+.mapChartDataItems .chartBtns#chartIndust {background-image: url('/img/v2/main/img-indust.jpg');}
+.mapChartDataItems .chartBtns#chartSchool {background-image: url('/img/v2/main/img-school.jpg');}
+.mapChartDataItems .chartBtns#chartSubway {background-image: url('/img/v2/main/img-subway.jpg');}
+.mapChartDataItems .mapCharts {float:right;width:0;overflow: hidden;height:100%;background-color:rgba(255, 255, 255, 0.8);border:1px solid #dadada;border-right:0;}
+.mapChartDataItems .chartBtns.active + div.mapCharts {width:auto;}
+.mapChartDataItems:not(:last-child) {margin-bottom:10px;}
+/* /차트 */
+/* 컨텐츠 */
+#mainContents {padding:50px 0 255px 0;background-color:#fff;}
+#mainContsWrapper {border:1px solid #eee;}
+#dustForecast {float:left;width:50%;border-right:1px solid #eee;padding:45px 19px 0 19px;}
+#behaviors {float:right;width:50%;padding:45px 19px 0 19px;}
+/* /컨텐츠 */
 /* /main */
