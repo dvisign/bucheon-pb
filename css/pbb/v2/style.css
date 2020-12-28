@@ -1,0 +1,35 @@
+/* main */
+#mainVisualMaps {height:calc(100vh - 140px);min-height:770px;position:relative;}
+#maps {height:100%;position: relative;}
+#leftData.dataLayer {position:absolute;z-index: 1;top:5px;left:50px;}
+/* 지도 컨트롤러 */
+#mapController {}
+#zoomController,
+#viewController {float:left;background-color:#fff;border-radius: 4px;box-shadow: 0px 2px 3px 0 rgba(0, 0, 0, 0.3);}
+#viewController {padding:3px;}
+#zoomController {margin-left:5px;width:calc((36px * 2) + 1px);background-color:#eee;overflow: hidden;}
+#zoomController > button,
+#viewController > button {display:block;float:left;}
+#viewController > button {height:34px;background-color:#fff;border-radius: 4px;padding:0 8px;letter-spacing: -0.32px;font-weight: 600;transform: skew(-0.03deg);}
+#viewController > button.active {background-color:#606060;color:#fff;}
+#zoomController > button {width:36px;position:relative;height:40px;background-color:#fff;}
+#zoomController > #zoomIn::after,
+#zoomController > #zoomIn::before {content:'';display:block;background-color:#666;position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);}
+#zoomController > #zoomIn::after {width:12px;height:2px;}
+#zoomController > #zoomIn::before {width:2px;height:12px;}
+#zoomController > #zoomOut {float:right;}
+#zoomController > #zoomOut::before {content:'';display:block;background-color:#666;position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);width:12px; height:2px;}
+/* /지도 컨트롤러 */
+/* 미세먼지 상태 */
+#dustStatus {margin-top:10px;background-color:#fff;border:1px solid #dadada;}
+#areaAverageHeader {padding:10px;position: relative;}
+#areaAverageTitle {margin:3px auto;font-size: 18px;color: #111;letter-spacing: -0.36px;font-weight: 600;}
+#areaAverageDate {margin-top:15px;font-size:15px;letter-spacing: -0.3px;font-weight: 600;color:#111;transform: skew(-0.03deg);}
+#areaAverage .foldBtnWrapper {position: absolute;right:10px;top:10px;}
+#areaAverageDatas {padding:20px 13px;color:#fff;}
+#areaAverageDatas.code-red {background-color:#ff0000;}
+#areaAverageValue {float:left;font-family: "Rubik";font-weight: 600;letter-spacing: -1px;font-size: 20px;}
+#areaAverageDatas.code-red #areaAverageStatus::after {float:right;content:'매우나쁨';font-size:20px;letter-spacing: -1px;font-weight: 600;}
+#areaAverageStatusLists {padding:12px 10px;}
+/* /미세먼지 상태 */
+/* /main */
