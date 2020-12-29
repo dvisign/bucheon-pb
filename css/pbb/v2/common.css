@@ -11,9 +11,13 @@
 .foldBtn::before {content:'';position: absolute;top:50%;left:50%;transform: translate(-50%, -50%);background-color:#111;}
 .foldBtn::after {width:12px;height:2px;}
 .foldBtn::before {width:2px;height:12px;}
-
 .foldBtn.on::before {transform: translate(-50%, -50%) rotate(270deg);}
-
+.addBtns {display:block;width:30px;height:30px;}
+.addBtns > .addIcons {display:block;width:100%;height:100%;border:1px solid #ddd;background-color:#fff;position: relative;border-radius: 4px;}
+.addBtns > .addIcons::before,
+.addBtns > .addIcons::after {content:'';display:block;position: absolute;top:50%;left:50%;transform: translate(-50%, -50%);background-color:#666}
+.addBtns > .addIcons::before {width:2px;height:12px;}
+.addBtns > .addIcons::after {width:12px;height:2px;}
 .displayFlex {display:flex}
 .justifyBetween {justify-content: space-between;}
 .alignItemsCenter {align-items: center;}
@@ -47,9 +51,10 @@
 
 #navLists {}
 .navItems {float:left;}
-.navItems:not(:first-child) {margin-left:59px;}
-.navItems > a {font-size:1.4rem;font-weight: 600;letter-spacing: -1px;display:inline-block;padding:35px 0;transition: all 0.3s ease-in-out;color:#111;}
+.navItems > a {font-size:1.4rem;font-weight: 600;letter-spacing: -1px;display:inline-block;padding:35px 30px;transition: all 0.3s ease-in-out;color:#111;}
+.navItems:last-child > a {padding-right:0;}
 .navItems.active > a {color:#1460f1;}
+.navItems.active .subNavs {z-index:1;}
 .subNavs {position: absolute;top: 100%;left: 0;width:100%;border: 1px solid #000;z-index: -1;background-color:#fff;border-bottom:1px solid #1e4aa1;display:none;z-index: 0;}
 .subNavs.active{z-index:1;}
 

@@ -20,10 +20,58 @@
   <script src="/js/pbb/v2/common.js"></script>
   <script>
     $(document).ready(function() {
+      $("#dustBusiness .foldBtn").on("click", function() {
+        var _this = $(this);
+        var slideEl = $('#dustBusinessStatusLists');
+        if (_this.hasClass('on')) {
+          _this.removeClass('on');
+          $('.dustBusinessStatusItems').removeClass('active');
+          slideEl.stop().slideUp();
+        } else {
+          _this.addClass('on');
+          slideEl.stop().slideDown();
+        }
+      });
+      // 아코디언 이벤트
+      var accordion = new accordionEvent({
+        // 아코디언 버튼
+        el : ".dustBusinessStatusItems > a",
+        // 아코디언 컨텐츠 
+        contents : ".subDustBusinessStatusList",
+        // 로드시 아코디언 펼침
+        opens : true,
+        // 로드시 아코디언 펼칠때 열릴 인덱스
+        openIndex : 0,
+        // 아코디언 이벤트 세팅 후 커스텀이벤트 등록
+        customEvent : function() {
+
+        }
+      });
       $('#topNotice').slick({
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1
+      });
+      $("#airInfoUl").slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows : false,
+        dots : true
+      })
+      $(".dustReduct").on('init', function(e, s) {
+        var targetHeight = $('#dustForecast').height();
+        $(this).css("height",targetHeight + "px");
+        console.log('init')
+      })
+      $(".dustReduct").slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows : false,
+        dots : true,
+        fade: true,
+        cssEase: 'linear'
       });
       var opSet = {
         el : "maps",
@@ -67,17 +115,6 @@
       $("#areaAverage .foldBtn").on("click", function() {
         var _this = $(this);
         var slideEl = $('#areaAverageStatusLists');
-        if (_this.hasClass('on')) {
-          _this.removeClass('on');
-          slideEl.stop().slideUp();
-        } else {
-          _this.addClass('on');
-          slideEl.stop().slideDown();
-        }
-      });
-      $("#dustBusiness .foldBtn").on("click", function() {
-        var _this = $(this);
-        var slideEl = $('#dustBusinessStatusLists');
         if (_this.hasClass('on')) {
           _this.removeClass('on');
           slideEl.stop().slideUp();
@@ -666,12 +703,38 @@
                     <a class="foldBtn on" href="javascript:void(0);"></a>
                   </div>
                 </div>
+                <div id="areaAverageDatas" class="code-blue">
+                  <div class="clear">
+                    <p id="areaAverageValue">50 ug/m3</p>
+                    <p id="areaAverageStatus"></p>
+                  </div>
+                </div>
+                <!--
+                코드 클래스
+                <div id="areaAverageDatas" class="code-green">
+                  <div class="clear">
+                    <p id="areaAverageValue">50 ug/m3</p>
+                    <p id="areaAverageStatus"></p>
+                  </div>
+                </div>
+                <div id="areaAverageDatas" class="code-warning">
+                  <div class="clear">
+                    <p id="areaAverageValue">50 ug/m3</p>
+                    <p id="areaAverageStatus"></p>
+                  </div>
+                </div>
                 <div id="areaAverageDatas" class="code-red">
                   <div class="clear">
                     <p id="areaAverageValue">50 ug/m3</p>
                     <p id="areaAverageStatus"></p>
                   </div>
                 </div>
+                <div id="areaAverageDatas" class="code-default">
+                  <div class="clear">
+                    <p id="areaAverageValue">-</p>
+                  </div>
+                </div>
+                -->
               </div>
               <ul id="areaAverageStatusLists">
                 <li class="areaAverageStatusItems">
@@ -688,14 +751,14 @@
             <div id="dustBusinessStatus">
               <div id="dustBusiness">
                 <div id="businessHeader" class="mapInfoHeader">
-                  <p id="businessTitle" class="mapInfoTitle">부천시 평균</p>
+                  <p id="businessTitle" class="mapInfoTitle">미세먼지 저감사업</p>
                   <div class="foldBtnWrapper">
                     <a class="foldBtn on" href="javascript:void(0);"></a>
                   </div>
                 </div>
               </div>
               <ul id="dustBusinessStatusLists">
-                <li class="dustBusinessStatusItems active">
+                <li class="dustBusinessStatusItems">
                   <a href="javascript:void(0);"><span class="dustBusinessNunber">01</span><span>교통</span></a>
                   <ul class="subDustBusinessStatusList">
                     <li class="subDustBusinessStatusItems">
@@ -714,9 +777,28 @@
                 </li>
                 <li class="dustBusinessStatusItems">
                   <a href="javascript:void(0);"><span class="dustBusinessNunber">02</span><span>환경에너지</span></a>
+                  <ul class="subDustBusinessStatusList">
+                    <li class="subDustBusinessStatusItems">
+                      <a href="javascript:void(0);">도시숲 조성</a>
+                    </li>
+                    <li class="subDustBusinessStatusItems">
+                      <a href="javascript:void(0);">친환경 에너지 전환</a>
+                    </li>
+                  </ul>
                 </li>
                 <li class="dustBusinessStatusItems">
                   <a href="javascript:void(0);"><span class="dustBusinessNunber">03</span><span>지역특별관리</span></a>
+                  <ul class="subDustBusinessStatusList">
+                    <li class="subDustBusinessStatusItems">
+                      <a href="javascript:void(0);">공업단지 특별관리</a>
+                    </li>
+                    <li class="subDustBusinessStatusItems">
+                      <a href="javascript:void(0);">특별 관리 도로</a>
+                    </li>
+                    <li class="subDustBusinessStatusItems">
+                      <a href="javascript:void(0);">스마트 미세먼지 클린존</a>
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </div>
@@ -756,15 +838,451 @@
             </li>
           </ul>
         </div>
+        <!-- 아이콘 모음 (개발단에서는 html에는 삭제) -->
+        <div style="position: absolute;left:20%;top:50%;z-index: 10;">
+          <div>
+            <img src="/img/v2/icons/icon_pop_005_bad.png" alt="">
+            <img src="/img/v2/icons/icon_pop_005_good.png" alt="">
+            <img src="/img/v2/icons/icon_pop_005_terrible.png" alt="">
+            <img src="/img/v2/icons/icon_pop_005_usually.png" alt="">
+            <img src="/img/v2/icons/icon_pop_006_bad.png" alt="">
+            <img src="/img/v2/icons/icon_pop_006_good.png" alt="">
+            <img src="/img/v2/icons/icon_pop_006_terrible.png" alt="">
+            <img src="/img/v2/icons/icon_pop_006_usually.png" alt="">
+            <img src="/img/v2/icons/icon_pop_007_bad.png" alt="">
+            <img src="/img/v2/icons/icon_pop_007_good.png" alt="">
+            <img src="/img/v2/icons/icon_pop_007_terrible.png" alt="">
+            <img src="/img/v2/icons/icon_pop_007_usually.png" alt="">
+          </div>
+          <div>
+            <img src="/img/v2/icons/icon_pop_008_bad.png" alt="">
+            <img src="/img/v2/icons/icon_pop_008_good.png" alt="">
+            <img src="/img/v2/icons/icon_pop_008_terrible.png" alt="">
+            <img src="/img/v2/icons/icon_pop_008_usually.png" alt="">
+            <img src="/img/v2/icons/icon_pop_building_bad.png" alt="">
+            <img src="/img/v2/icons/icon_pop_building_good.png" alt="">
+            <img src="/img/v2/icons/icon_pop_building_terrible.png" alt="">
+            <img src="/img/v2/icons/icon_pop_building_usually.png" alt="">
+            <img src="/img/v2/icons/icon_pop_road_bad.png" alt="">
+            <img src="/img/v2/icons/icon_pop_road_good.png" alt="">
+            <img src="/img/v2/icons/icon_pop_road_terrible.png" alt="">
+            <img src="/img/v2/icons/icon_pop_road_usually.png" alt="">
+          </div>
+          <div>
+            <img src="/img/v2/icons/black_icon_pop_005.png" alt="">
+            <img src="/img/v2/icons/black_icon_pop_006.png" alt="">
+            <img src="/img/v2/icons/black_icon_pop_007.png" alt="">
+            <img src="/img/v2/icons/black_icon_pop_008.png" alt="">
+          </div>
+        </div>
+        <style>
+          
+        </style>
+        <!-- /아이콘 모음 (개발단에서는 html에는 삭제) -->
       </section>
       <section id="mainContents">
         <div class="container">
-          <div id="mainContsWrapper" class="clear">
+          <div id="bucheonEtc" class="clear">
             <div id="dustForecast">
-              asfd
+              <div class="etcListHeader clear">
+                <h2>미세먼지 예보(<span id="airInfoMsrstnNm">소산본동</span>)</h2>
+                <div class="deadline">
+                  <span id="airInfoDate">2020-12-29 14:00 기준</span>
+                  <a href="javascript:void(0);" class="addBtns"><span class="addIcons"></span></a>
+                </div>
+              </div>
+              <ul class="cdtCategory clear">
+                <li class="cdtBlue"><span>좋음</span></li>
+                <li class="cdtGreen"><span>보통</span></li>
+                <li class="cdtWarning"><span>나쁨</span></li>
+                <li class="cdtRed"><span>매우나쁨</span></li>
+              </ul>
+              <div class="cdtDisplay" id="airInfoUl">
+                <div class="cdtStatus">
+                  <ul class="cdtStatusLists clear">
+                    <li class="cdtStatusItems dustStatus codeBlue">
+                      <h4 class="cdtTitles">미세먼지</h4>
+                      <div class="cdtStatusIcons">
+                        <div class="iconImgs"></div>
+                      </div>
+                      <div class="statusKeys">
+                        <p class="statusTxtColor">좋음</p>
+                      </div>
+                      <div class="statusValues">
+                        <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
+                      </div>
+                    </li>
+                    <li class="cdtStatusItems ultrafineDustStatus codeBlue">
+                      <h4 class="cdtTitles">초미세먼지</h4>
+                      <div class="cdtStatusIcons">
+                        <div class="iconImgs"></div>
+                      </div>
+                      <div class="statusKeys">
+                        <p class="statusTxtColor">좋음</p>
+                      </div>
+                      <div class="statusValues">
+                        <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
+                      </div>
+                    </li>
+                    <li class="cdtStatusItems ozoneStatus codeBlue">
+                      <h4 class="cdtTitles">오존</h4>
+                      <div class="cdtStatusIcons">
+                        <div class="iconImgs"></div>
+                      </div>
+                      <div class="statusKeys">
+                        <p class="statusTxtColor">좋음</p>
+                      </div>
+                      <div class="statusValues">
+                        <p><span class="statusTxtColor">0.015</span> ppm</p>
+                      </div>
+                    </li>
+                    <li class="cdtStatusItems nitDioxideStatus codeBlue">
+                      <h4 class="cdtTitles">이산화질소</h4>
+                      <div class="cdtStatusIcons">
+                        <div class="iconImgs"></div>
+                      </div>
+                      <div class="statusKeys">
+                        <p class="statusTxtColor">좋음</p>
+                      </div>
+                      <div class="statusValues">
+                        <p><span class="statusTxtColor">0.015</span> ppm</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="cdtStatus">
+                  <ul class="cdtStatusLists clear">
+                    <li class="cdtStatusItems dustStatus codeGreen">
+                      <h4 class="cdtTitles">미세먼지</h4>
+                      <div class="cdtStatusIcons">
+                        <div class="iconImgs"></div>
+                      </div>
+                      <div class="statusKeys">
+                        <p class="statusTxtColor">보통</p>
+                      </div>
+                      <div class="statusValues">
+                        <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
+                      </div>
+                    </li>
+                    <li class="cdtStatusItems ultrafineDustStatus codeGreen">
+                      <h4 class="cdtTitles">초미세먼지</h4>
+                      <div class="cdtStatusIcons">
+                        <div class="iconImgs"></div>
+                      </div>
+                      <div class="statusKeys">
+                        <p class="statusTxtColor">보통</p>
+                      </div>
+                      <div class="statusValues">
+                        <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
+                      </div>
+                    </li>
+                    <li class="cdtStatusItems ozoneStatus codeGreen">
+                      <h4 class="cdtTitles">오존</h4>
+                      <div class="cdtStatusIcons">
+                        <div class="iconImgs"></div>
+                      </div>
+                      <div class="statusKeys">
+                        <p class="statusTxtColor">보통</p>
+                      </div>
+                      <div class="statusValues">
+                        <p><span class="statusTxtColor">0.015</span> ppm</p>
+                      </div>
+                    </li>
+                    <li class="cdtStatusItems nitDioxideStatus codeGreen">
+                      <h4 class="cdtTitles">이산화질소</h4>
+                      <div class="cdtStatusIcons">
+                        <div class="iconImgs"></div>
+                      </div>
+                      <div class="statusKeys">
+                        <p class="statusTxtColor">보통</p>
+                      </div>
+                      <div class="statusValues">
+                        <p><span class="statusTxtColor">0.015</span> ppm</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="cdtStatus">
+                  <ul class="cdtStatusLists clear">
+                    <li class="cdtStatusItems dustStatus codeWarning">
+                      <h4 class="cdtTitles">미세먼지</h4>
+                      <div class="cdtStatusIcons">
+                        <div class="iconImgs"></div>
+                      </div>
+                      <div class="statusKeys">
+                        <p class="statusTxtColor">나쁨</p>
+                      </div>
+                      <div class="statusValues">
+                        <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
+                      </div>
+                    </li>
+                    <li class="cdtStatusItems ultrafineDustStatus codeWarning">
+                      <h4 class="cdtTitles">초미세먼지</h4>
+                      <div class="cdtStatusIcons">
+                        <div class="iconImgs"></div>
+                      </div>
+                      <div class="statusKeys">
+                        <p class="statusTxtColor">나쁨</p>
+                      </div>
+                      <div class="statusValues">
+                        <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
+                      </div>
+                    </li>
+                    <li class="cdtStatusItems ozoneStatus codeWarning">
+                      <h4 class="cdtTitles">오존</h4>
+                      <div class="cdtStatusIcons">
+                        <div class="iconImgs"></div>
+                      </div>
+                      <div class="statusKeys">
+                        <p class="statusTxtColor">나쁨</p>
+                      </div>
+                      <div class="statusValues">
+                        <p><span class="statusTxtColor">0.015</span> ppm</p>
+                      </div>
+                    </li>
+                    <li class="cdtStatusItems nitDioxideStatus codeWarning">
+                      <h4 class="cdtTitles">이산화질소</h4>
+                      <div class="cdtStatusIcons">
+                        <div class="iconImgs"></div>
+                      </div>
+                      <div class="statusKeys">
+                        <p class="statusTxtColor">나쁨</p>
+                      </div>
+                      <div class="statusValues">
+                        <p><span class="statusTxtColor">0.015</span> ppm</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="cdtStatus">
+                  <ul class="cdtStatusLists clear">
+                    <li class="cdtStatusItems dustStatus codeRed">
+                      <h4 class="cdtTitles">미세먼지</h4>
+                      <div class="cdtStatusIcons">
+                        <div class="iconImgs"></div>
+                      </div>
+                      <div class="statusKeys">
+                        <p class="statusTxtColor">매우나쁨</p>
+                      </div>
+                      <div class="statusValues">
+                        <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
+                      </div>
+                    </li>
+                    <li class="cdtStatusItems ultrafineDustStatus codeRed">
+                      <h4 class="cdtTitles">초미세먼지</h4>
+                      <div class="cdtStatusIcons">
+                        <div class="iconImgs"></div>
+                      </div>
+                      <div class="statusKeys">
+                        <p class="statusTxtColor">매우나쁨</p>
+                      </div>
+                      <div class="statusValues">
+                        <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
+                      </div>
+                    </li>
+                    <li class="cdtStatusItems ozoneStatus codeRed">
+                      <h4 class="cdtTitles">오존</h4>
+                      <div class="cdtStatusIcons">
+                        <div class="iconImgs"></div>
+                      </div>
+                      <div class="statusKeys">
+                        <p class="statusTxtColor">매우나쁨</p>
+                      </div>
+                      <div class="statusValues">
+                        <p><span class="statusTxtColor">0.015</span> ppm</p>
+                      </div>
+                    </li>
+                    <li class="cdtStatusItems nitDioxideStatus codeRed">
+                      <h4 class="cdtTitles">이산화질소</h4>
+                      <div class="cdtStatusIcons">
+                        <div class="iconImgs"></div>
+                      </div>
+                      <div class="statusKeys">
+                        <p class="statusTxtColor">매우나쁨</p>
+                      </div>
+                      <div class="statusValues">
+                        <p><span class="statusTxtColor">0.015</span> ppm</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="cdtStatus">
+                  <ul class="cdtStatusLists clear">
+                    <li class="cdtStatusItems dustStatus codeDefault">
+                      <h4 class="cdtTitles">미세먼지</h4>
+                      <div class="cdtStatusIcons">
+                        <div class="iconImgs"></div>
+                      </div>
+                      <div class="statusKeys">
+                        <p class="statusTxtColor">-</p>
+                      </div>
+                      <div class="statusValues">
+                        <p><span class="statusTxtColor">-</span> ㎍/㎥</p>
+                      </div>
+                    </li>
+                    <li class="cdtStatusItems ultrafineDustStatus codeDefault">
+                      <h4 class="cdtTitles">초미세먼지</h4>
+                      <div class="cdtStatusIcons">
+                        <div class="iconImgs"></div>
+                      </div>
+                      <div class="statusKeys">
+                        <p class="statusTxtColor">-</p>
+                      </div>
+                      <div class="statusValues">
+                        <p><span class="statusTxtColor">-</span> ㎍/㎥</p>
+                      </div>
+                    </li>
+                    <li class="cdtStatusItems ozoneStatus codeDefault">
+                      <h4 class="cdtTitles">오존</h4>
+                      <div class="cdtStatusIcons">
+                        <div class="iconImgs"></div>
+                      </div>
+                      <div class="statusKeys">
+                        <p class="statusTxtColor">-</p>
+                      </div>
+                      <div class="statusValues">
+                        <p><span class="statusTxtColor">-</span> ppm</p>
+                      </div>
+                    </li>
+                    <li class="cdtStatusItems nitDioxideStatus codeDefault">
+                      <h4 class="cdtTitles">이산화질소</h4>
+                      <div class="cdtStatusIcons">
+                        <div class="iconImgs"></div>
+                      </div>
+                      <div class="statusKeys">
+                        <p class="statusTxtColor">-</p>
+                      </div>
+                      <div class="statusValues">
+                        <p><span class="statusTxtColor">-</span> ppm</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
             <div id="behaviors">
-              asf
+              <div class="dustReduct">
+                <div class="dustReductTxtInfo">
+                  <div class="etcListHeader clear">
+                    <h2>예보 기준에 따른 시민행동 요령</h2>
+                  </div>
+                  <div class="behaviorsInfoTxt">
+                    <div class="deadline">
+                      <span id="airInfoDate">2020-12-29 14:00 기준</span>
+                    </div>
+                    <div class="behaviorsInfoTablesWrapper">
+                      <table class="behaviorsInfoTables">
+                        <tbody>
+                          <tr>
+                            <th class="behaviorsInfoCategory" colspan="2">
+                              <div>
+                                <p>예보등급 ㎍/㎥</p>
+                              </div>
+                            </th>
+                            <th class="behaviorsInfoCategory">
+                              <div>
+                                <p>보통 (31-80)</p>
+                              </div>
+                            </th>
+                          </tr>
+                          <tr>
+                            <th class="behaviorsInfoCategory firstCategory" rowspan="2">
+                              <div>
+                                <p>시민행동<br>요령</p>
+                              </div>
+                            </th>
+                            <th class="behaviorsInfoCategory secondCategory">
+                              <div>
+                                <p>민감군</p>
+                              </div>
+                            </th>
+                            <td class="behaviorsInfoTableTxt">
+                              <div>
+                                <p>실외활동시 특별히 행동에 제약을 받을 필요는 없지만 몸상태에 따라 유의하여 활동</p>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th class="behaviorsInfoCategory secondCategory">
+                              <div>
+                                <p>일반인</p>
+                              </div>
+                            </th>
+                            <td class="behaviorsInfoTableTxt">
+                              <div>
+                                <p>실외활동시 특별히 행동에 제약</p>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="behaviorsInfoNotice">
+                      <p>민감군 : 영·유아, 어린이, 임산부, 어린이, 호흡기·심혈관 질환자 등 대기오염에 노출되었을 경우 건강 등에 영향을 받기 쉬운사람</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="dustReductTxtInfo">
+                  <div class="etcListHeader clear">
+                    <h2>금일 미세먼지 예보기준에 따른 시민행동 요령 (초미세먼지)</h2>
+                  </div>
+                  <div class="behaviorsInfoTxt">
+                    <div class="deadline">
+                      <span id="airInfoDate">2020-12-29 14:00 기준</span>
+                    </div>
+                    <div class="behaviorsInfoTablesWrapper">
+                      <table class="behaviorsInfoTables">
+                        <tbody>
+                          <tr>
+                            <th class="behaviorsInfoCategory" colspan="2">
+                              <div>
+                                <p>예보등급 ㎍/㎥</p>
+                              </div>
+                            </th>
+                            <th class="behaviorsInfoCategory">
+                              <div>
+                                <p>보통 (16-35)</p>
+                              </div>
+                            </th>
+                          </tr>
+                          <tr>
+                            <th class="behaviorsInfoCategory firstCategory" rowspan="2">
+                              <div>
+                                <p>시민행동<br>요령</p>
+                              </div>
+                            </th>
+                            <th class="behaviorsInfoCategory secondCategory">
+                              <div>
+                                <p>민감군</p>
+                              </div>
+                            </th>
+                            <td class="behaviorsInfoTableTxt">
+                              <div>
+                                <p>실외활동시 특별히 행동에 제약을 받을 필요는 없지만 몸상태에 따라 유의하여 활동</p>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th class="behaviorsInfoCategory secondCategory">
+                              <div>
+                                <p>일반인</p>
+                              </div>
+                            </th>
+                            <td class="behaviorsInfoTableTxt">
+                              <div>
+                                <p>-</p>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="behaviorsInfoNotice">
+                      <p>민감군 : 영·유아, 어린이, 임산부, 어린이, 호흡기·심혈관 질환자 등 대기오염에 노출되었을 경우 건강 등에 영향을 받기 쉬운사람</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

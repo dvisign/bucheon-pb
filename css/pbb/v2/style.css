@@ -5,14 +5,14 @@
 /* 지도 컨트롤러 */
 #mapController {}
 #zoomController,
-#viewController {float:left;background-color:#fff;border-radius: 4px;box-shadow: 0px 2px 3px 0 rgba(0, 0, 0, 0.3);}
-#viewController {padding:3px;}
-#zoomController {margin-left:5px;width:calc((36px * 2) + 1px);background-color:#eee;overflow: hidden;}
+#viewController {background-color:#fff;border-radius: 4px;box-shadow: 0px 2px 3px 0 rgba(0, 0, 0, 0.3);}
+#viewController {float:left;padding:3px;width:calc(100% - (73px + 10px));}
+#zoomController {float:right;width:calc((36px * 2) + 1px);background-color:#eee;overflow: hidden;}
 #zoomController > button,
 #viewController > button {display:block;float:left;}
 #viewController > button {height:34px;background-color:#fff;border-radius: 4px;letter-spacing: -0.32px;font-weight: 600;transform: skew(-0.03deg);}
-#viewController > button#defualtView {width:44px;}
-#viewController > button#skyView {width:90px;}
+#viewController > button#defualtView {width:35%;}
+#viewController > button#skyView {width:65%;}
 #viewController > button.active {background-color:#606060;color:#fff;}
 #zoomController > button {width:36px;position:relative;height:40px;background-color:#fff;}
 #zoomController > #zoomIn::after,
@@ -23,16 +23,25 @@
 #zoomController > #zoomOut::before {content:'';display:block;background-color:#666;position:absolute;left:50%;top:50%;transform: translate(-50%, -50%);width:12px; height:2px;}
 /* /지도 컨트롤러 */
 /* 미세먼지 상태 */
-#mapInformation {width:220px;margin-top:10px;}
+#mapInformation {width:240px;margin-top:10px;}
 #dustStatus {margin-bottom:10px;width:100%;background-color:rgba(255, 255, 255, 0.8);border:1px solid #dadada;}
 .mapInfoHeader {padding:10px 12px;position: relative;}
 .mapInfoTitle {margin:3px auto;font-size: 18px;color: #111;letter-spacing: -0.36px;font-weight: 600;}
 #areaAverageDate {margin-top:15px;font-size:15px;letter-spacing: -0.3px;font-weight: 600;color:#111;transform: skew(-0.03deg);}
 #dustStatus .foldBtnWrapper {position: absolute;right:10px;top:10px;}
 #areaAverageDatas {padding:20px 13px;color:#fff;}
+#areaAverageDatas.code-blue {background-color:#40b0ff;}
+#areaAverageDatas.code-green {background-color:#6ed564;}
+#areaAverageDatas.code-warning {background-color:#ff9600;}
 #areaAverageDatas.code-red {background-color:#ff0000;}
+#areaAverageDatas.code-default {background-color:#999;}
+#areaAverageDatas.code-default #areaAverageValue {width:100%;text-align: center;}
+#areaAverageDatas #areaAverageStatus::after {float:right;font-size:20px;letter-spacing: -1px;font-weight: 600;}
+#areaAverageDatas.code-blue #areaAverageStatus::after {content:'매우 좋음';}
+#areaAverageDatas.code-green #areaAverageStatus::after {content:'좋음';}
+#areaAverageDatas.code-warning #areaAverageStatus::after {content:'보통';}
+#areaAverageDatas.code-red #areaAverageStatus::after {content:'매우 나쁨';}
 #areaAverageValue {float:left;font-family: "Rubik";font-weight: 600;letter-spacing: -1px;font-size: 20px;}
-#areaAverageDatas.code-red #areaAverageStatus::after {float:right;content:'매우나쁨';font-size:20px;letter-spacing: -1px;font-weight: 600;}
 #areaAverageStatusLists {padding:12px 10px;}
 .areaAverageStatusItems {text-align: center;}
 .areaAverageStatusItems:not(:last-child) {margin-bottom:10px;}
@@ -55,8 +64,8 @@
 .dustBusinessStatusItems.active > a::after {background-image:url('/img/v2/common/icon-up.png');}
 .dustBusinessStatusItems > a > span {display:inline-block;}
 .dustBusinessNunber {margin-right:11px;font-family: 'Rubik';}
-.subDustBusinessStatusList {padding:0 16px 11px 53px;}
-.subDustBusinessStatusItems:not(:last-child) {margin-bottom:10px;}
+.subDustBusinessStatusList {padding:0 16px 0 53px;display:none;}
+.subDustBusinessStatusItems {margin-bottom:10px;}
 .subDustBusinessStatusItems > a {font-weight: 600;display: inline-block;transform: skew(-0.03deg);font-size:14px;}
 /* /저감사업 상태 */
 /* 차트 */
@@ -76,8 +85,73 @@
 /* /차트 */
 /* 컨텐츠 */
 #mainContents {padding:50px 0 255px 0;background-color:#fff;}
-#mainContsWrapper {border:1px solid #eee;}
+#bucheonEtc {border:1px solid #eee;}
 #dustForecast {float:left;width:50%;border-right:1px solid #eee;padding:45px 19px 0 19px;}
 #behaviors {float:right;width:50%;padding:45px 19px 0 19px;}
+.etcListHeader {position: relative;padding-bottom:40px;}
+.etcListHeader > h2 {float:left;color:#111;font-size:22px;font-weight: 600;letter-spacing: -0.88px;}
+.etcListHeader > .deadline {float:right;margin-right:40px;margin-top:6px;}
+.deadline > #airInfoDate {display:inline-block;font-family: 'Rubik';font-size:14px;color:#999;letter-spacing: -0.28px;}
+.deadline > .addBtns {position:absolute;top:-2px;right:0;}
+.cdtCategory {width:100%;padding-bottom:45px;}
+.cdtCategory > li {float:left;width:calc((100% - 3px) / 4);}
+.cdtCategory > li:not(:last-child) {margin-right:1px;}
+.cdtBlue {border-top:2px solid #4ba2ff; color:#4ba2ff;}
+.cdtGreen {border-top:2px solid #3ec730; color:#3ec730;}
+.cdtWarning {border-top:2px solid #f59a53; color:#f59a53;}
+.cdtRed {border-top:2px solid #f55755; color:#f55755;}
+.cdtCategory > li > span {display: block;font-size:12px;font-weight: 600;transform: skew(-0.03deg);letter-spacing: -1.08px;margin-top:9px;}
+.cdtDisplay.slick-dotted.slick-slider {padding-bottom:105px;margin-bottom:0;}
+.cdtStatusLists {}
+.cdtStatus:focus {outline:none;}
+.cdtStatusItems {float:left;width:calc(100% / 4);text-align: center;}
+.cdtStatusItems .cdtTitles {color:#333;font-size:20px;letter-spacing: -0.9px;margin-bottom:34px;}
+.cdtStatusItems.dustStatus {}
+.cdtStatusItems.ultrafineDustStatus {}
+.cdtStatusItems.ozoneStatus {}
+.cdtStatusItems.nitDioxideStatus {}
+.cdtStatusItems .iconImgs {width:54px;height:54px;margin:0 auto;background-size:54px;background-position: center;background-repeat: no-repeat;border-radius: 50%;overflow: hidden;position: relative;} 
+.cdtStatusItems.codeBlue .iconImgs {background-image: url('/img/v2/icons/icon-bg-good.png');} 
+.cdtStatusItems.codeGreen .iconImgs {background-image: url('/img/v2/icons/icon-bg-normal.png');} 
+.cdtStatusItems.codeWarning .iconImgs {background-image: url('/img/v2/icons/icon-bg-bad.png');} 
+.cdtStatusItems.codeRed .iconImgs {background-image: url('/img/v2/icons/icon-bg-verybad.png');} 
+.cdtStatusItems.codeDefault .iconImgs {border:2px solid #999;} 
+.cdtStatusItems.codeDefault .iconImgs::after {content:'-';display:block;position: absolute;top:50%;left:50%;transform: translate(-50%, -50%);font-weight: 600;font-size:20px;} 
+.cdtStatusItems .cdtStatusIcons {margin-bottom:36px;}
+.cdtStatusItems.codeBlue .statusTxtColor {color:#4ba2ff;} 
+.cdtStatusItems.codeGreen .statusTxtColor {color:#3ec730;} 
+.cdtStatusItems.codeWarning .statusTxtColor {color:#f59a53;} 
+.cdtStatusItems.codeRed .statusTxtColor {color:#f55755;} 
+.cdtStatusItems.codeDefault .statusTxtColor {color:#999;} 
+.cdtStatusItems .statusKeys {font-size:20px;font-weight: 600;letter-spacing: -0.8px;margin-bottom:9px;}
+.cdtStatusItems .statusValues {font-size:16px;letter-spacing: -0.32px;font-weight: 600;color:#666;}
+.cdtStatusItems .statusValues .statusTxtColor {font-family: 'Rubik';font-size:22px;letter-spacing: -0.99px;font-weight: 600;}
+
+#bucheonEtc .slick-dots {bottom:29px;}
+#bucheonEtc .slick-dots li {width:12px;height:12px;}
+#bucheonEtc .slick-dots li button:before {content:'';background-color:#ddd;border-radius: 50%;line-height: 1;width:12px;height:12px;opacity:0.5;transition: all 0.3s ease-in-out;}
+#bucheonEtc .slick-dots li button:hover::before {opacity:1;}
+#bucheonEtc .slick-dots li.slick-active button:before {background-color:#2c64cf;opacity:1;}
+.dustReduct.slick-dotted.slick-slider {margin-bottom:0;height:100%;}
+.dustReductTxtInfo:focus {outline:none;}
+#behaviors .etcListHeader {padding-bottom:14px;}
+.behaviorsInfoTxt .deadline {text-align: right;}
+.behaviorsInfoTablesWrapper {margin-top:17px;}
+.behaviorsInfoTables {width:100%;text-align: center;}
+.behaviorsInfoTables,
+.behaviorsInfoTables th,
+.behaviorsInfoTables td {border:1px solid #ddd;padding:0 15px;}
+.behaviorsInfoTables th,
+.behaviorsInfoTables td {height:60px;}
+.behaviorsInfoTables th > div > p {color:#111;font-size:18px;font-weight: 600;letter-spacing: -0.72px;}
+.behaviorsInfoTables th.behaviorsInfoCategory {background-color:#edf3ff;}
+.behaviorsInfoTables th.firstCategory, 
+.behaviorsInfoTables th.secondCategory {width:110px;}
+.behaviorsInfoTables th.secondCategory {background-color:#f5f8fe;}
+.behaviorsInfoTables td.behaviorsInfoTableTxt p{text-align: left;font-size:14px;line-height: 1.25;letter-spacing: -0.65px;word-break: keep-all;color:#111;font-weight: 600;transform: skew(-0.03deg);}
+.behaviorsInfoNotice {margin-top:24px;padding:0 8px;}
+.behaviorsInfoNotice > p {padding-left:15px;position: relative;font-size: 14px;color:#111;letter-spacing: 0.64px;line-height: 1.25;font-weight: 600;transform: skew(-0.03deg);}
+.behaviorsInfoNotice > p::after {content:'※';display:block;position: absolute;left:0;top:0;}
+
 /* /컨텐츠 */
 /* /main */

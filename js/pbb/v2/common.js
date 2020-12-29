@@ -1,4 +1,49 @@
 'use strict';
+var accordionEvent = function(obj) {
+  var el = obj.el;
+  var contents = obj.contents;
+  var opens = obj.opens;
+  var openIndex = obj.openIndex;
+  var customEvent = obj.customEvent;
+  var slideDownEvent = function(target) {
+    target.addClass('active');
+    target.siblings().removeClass('active');
+    target.find(contents).stop().slideDown();
+    target.siblings().find(contents).stop().slideUp();
+  }
+  var slideUpEvent = function(target) {
+    target.removeClass('active');
+    target.siblings().removeClass('active');
+    target.find(contents).stop().slideUp();
+    target.siblings().find(contents).stop().slideUp();
+  }
+  var init = function() {
+    var _target = $(el);
+    if (opens) {
+      _target.each(function(i) {
+        var _this = $(this);
+        var _parents = _this.parent();
+        if (i === openIndex) {
+          slideDownEvent(_parents);
+        }
+      })
+    }
+    _target.on('click', function() {
+      var _this = $(this);
+      var _parents = _this.parent();
+      if (_parents.hasClass('active')) {
+        slideUpEvent(_parents)
+      } else {
+        slideDownEvent(_parents)
+      }
+    });
+    if (customEvent) {
+      customEvent();
+    }
+  };
+  return init();
+}
+
 var fadeInOutEvent = function(obj) {
   var layer = obj.layer;
   var openBtn = obj.openBtn;
