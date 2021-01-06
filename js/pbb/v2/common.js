@@ -50,24 +50,30 @@ var fadeInOutEvent = function(obj) {
   var closeBtn = obj.closeBtn;
   var delay = obj.delay;
   var initPrev = obj.initPrev;
-  var outCallBack = obj.outCallBack;
   var inCallBack = obj.inCallBack;
+  var outBefore = obj.outBefore;
+  var outCallBack = obj.outCallBack;
   var addEvent = obj.addEvent;
   var init = function() {
     initPrev();
     $(openBtn).on("click", function() {
-      $(layer).stop().fadeIn(delay);
-      if (inCallBack) {
-        inCallBack();
-      }
+      $(layer).stop().fadeIn(delay, function() {
+        if (inCallBack) {
+          inCallBack();
+        }
+        addEvent();
+      });
     })
     $(closeBtn).on("click", function() {
-      $(layer).stop().fadeOut(delay);
-      if (outCallBack) {
-        outCallBack();
+      if (outBefore) {
+        outBefore();
       }
+      $(layer).stop().fadeOut(delay, function() {
+        if (outCallBack) {
+          outCallBack();
+        }
+      });
     });
-    addEvent();
   };
   return init();
 };
@@ -146,7 +152,6 @@ $(document).ready(function() {
   // 전역 변수
   var siteMap = $('#siteMaps');
   var _body = $("body");
-
   // 서브 내비게이션 마우스오버 슬라이드 이벤트
   $('.navItems').hover(function() {
     $(this).addClass('active');
@@ -175,16 +180,19 @@ $(document).ready(function() {
         });
       }
     },
-    outCallBack : function() {
-      _body.css({
-        "height":"auto",
-        "overflow" : "auto"
-      });
-    },
     inCallBack : function() {
       _body.css({
         "height":"100vh",
         "overflow" : "hidden"
+      });
+    },
+    outBefore : function() {
+      $("#siteMapArea").scrollTop(0);
+    },
+    outCallBack : function() {
+      _body.css({
+        "height":"auto",
+        "overflow" : "auto"
       });
     },
     addEvent : function() {
@@ -204,7 +212,6 @@ $(document).ready(function() {
       $(".siteMapNavItems a").on("click", function() {
         var _this = $(this);
         var _index = _this.parents('.siteMapNavItems').index();
-        console.log(_index)
         scrollArea.stop().animate({
           "scrollTop":sectionPosArr[_index] + "px"
         });
