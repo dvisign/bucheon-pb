@@ -1,5 +1,6 @@
 #mainVisualMaps {position:relative;}
 #maps {height:calc(100vh - 58px); min-height: 580px;position: relative;}
+.mainMarker {width:75px;height:92px;transform:translateY(13px);}
 #leftData.dataLayer {position: absolute;top:0;left: 0;width:100%;z-index: 1;}
 #mapInformation {display:flex;flex-direction: column-reverse;}
 #dustBusiness {border-bottom:1px solid #ccc;text-align: center;}
@@ -66,18 +67,42 @@
 /* /지도 컨트롤러 */
 /* 차트 */
 #rightData.dataLayer {padding:0 10px;margin-top:16px;}
-.mapChartDataItems {height:120px;}
-.mapChartDataItems .chartBtns {float:right;display:block;width:100px;height:100%;background-color:#fff;position:relative;background-position: center;background-repeat: no-repeat;background-size: auto;border:1px solid #dadada;}
-.mapChartDataItems .chartBtns::after {content:'';display:block;width:34px;height:34px;border-radius: 50%;border:1px solid #dadada;background-color:#fff;position:absolute;top:50%;right:calc(100% - (34px / 2)); transform: translateY(-50%);background-image: url('/img/v2/common/icon-left.png');background-position: center;background-size: 7px;background-repeat: no-repeat;}
+.mapChartDataItems {height:120px;overflow-x: hidden;}
+.mapChartDataItems .chartBtns {float:right;display:block;width:100px;height:100%;background-color:#fff;position:relative;background-position: center;background-repeat: no-repeat;background-size: auto;border:1px solid #dadada;z-index:1;}
+.mapChartDataItems .chartBtns::after {content:'';display:block;width:34px;height:34px;border-radius: 50%;border:1px solid #dadada;background-color:#fff;position:absolute;top:50%;right:calc(100% - (34px / 2)); transform: translateY(-50%);background-image: url('/img/v2/common/icon-left.png');background-position: center;background-size: 7px;background-repeat: no-repeat;z-index: 1;}
 .mapChartDataItems .chartBtns.active::after {background-image: url('/img/v2/common/icon-right.png');}
 .mapChartDataItems .chartBtns#chartBigData {background-image: url('/img/v2/main/img-bigdata.jpg');}
 .mapChartDataItems .chartBtns#chartVillage {background-image: url('/img/v2/main/img-village.jpg');}
 .mapChartDataItems .chartBtns#chartIndust {background-image: url('/img/v2/main/img-indust.jpg');}
 .mapChartDataItems .chartBtns#chartSchool {background-image: url('/img/v2/main/img-school.jpg');}
 .mapChartDataItems .chartBtns#chartSubway {background-image: url('/img/v2/main/img-subway.jpg');}
-.mapChartDataItems .mapCharts {float:right;width:0;overflow: hidden;height:100%;background-color:rgba(255, 255, 255, 0.8);border:1px solid #dadada;border-right:0;}
-.mapChartDataItems .chartBtns.active + div.mapCharts {width:auto;}
+.mapChartDataItems .mapCharts {transition:0.3s;float:right;overflow: hidden;height:100%;background-color:rgba(255, 255, 255, 0.8);border:1px solid #dadada;border-right:0;width:calc(100% - 100px)}
+.mapChartDataItems .chartBtns.active + div.mapCharts {overflow-x: hidden;}
+.mapChartDataItems .chartBtns:not(.active) + div.mapCharts {transform: translateX(100%);}
+.mapChartDataItems .chartAreas {}
+/* .mapChartDataItems .chartBtns.active + div.mapCharts::-webkit-scrollbar {
+  display:none;
+} */
 .mapChartDataItems:not(:last-child) {margin-bottom:10px;}
+.circleCharts {text-align: center;}
+.circleChartItems {width:calc((100% / 3) - 23px);float:left;position:relative;padding-top:40px;margin-right:23px;}
+.circleChartTitles {position:absolute;width:100%;transform:translateX(-50%) skew(-0.03deg);left:50%;top:14px;color:#111;min-width:95px;}
+.chartDw {position:relative;}
+#moveWatering,
+#fixWatering,
+#fanChart,
+#airClean {width:66px;height:66px;}
+.chartDw div {margin:0 auto;}
+.chartGauge::after {position:absolute;left:50%;top:50%;z-index:1;transform: translate(-50%, -50%) skew(-0.03deg);font-weight: 900;word-break: break-all;}
+.chartGauge.code-blue::after {content:"좋음";color:#40b0ff;}
+.chartGauge.code-green::after {content:"보통";color:#6ed564;}
+.chartGauge.code-warning::after {content:"나쁨";color:#ff9600;}
+.chartGauge.code-red::after {content:"매우나쁨";color:#ff0000;}
+.chartGauge.code-default::after {content:"-";color:#999;}
+#moveWatering {border-radius: 50%;border:1px solid #2c64cf;background-image:url('/img/v2/icons/icon-move.png');background-position:center;background-repeat: no-repeat;background-size:42px;}
+#fixWatering {border-radius: 50%;border:1px solid #2c64cf;background-image:url('/img/v2/icons/icon-fix.png');background-position:center;background-repeat: no-repeat;background-size:47px;}
+#fanChart {border-radius: 50%;border:1px solid #2c64cf;background-image:url('/img/v2/icons/icon-fan.png');background-position:center;background-repeat: no-repeat;background-size:44px;}
+#airClean {border-radius: 50%;border:1px solid #2c64cf;background-image:url('/img/v2/icons/icon-clean.png');background-position:center;background-repeat: no-repeat;background-size:43px;}
 /* /차트 */
 
 /* 컨텐츠 */
@@ -233,9 +258,17 @@
   .mapChartDataItems .chartBtns#chartIndust {background-image: url('/img/v2/main/img-indust.jpg');}
   .mapChartDataItems .chartBtns#chartSchool {background-image: url('/img/v2/main/img-school.jpg');}
   .mapChartDataItems .chartBtns#chartSubway {background-image: url('/img/v2/main/img-subway.jpg');}
-  .mapChartDataItems .mapCharts {float:right;width:0;overflow: hidden;height:100%;background-color:rgba(255, 255, 255, 0.8);border:1px solid #dadada;border-right:0;}
-  .mapChartDataItems .chartBtns.active + div.mapCharts {width:auto;}
+  .mapChartDataItems .mapCharts {width:auto;float:right;overflow: hidden;height:100%;background-color:rgba(255, 255, 255, 0.8);border:1px solid #dadada;border-right:0;}
+  .mapChartDataItems:nth-child(1) .mapCharts,
+  .mapChartDataItems:nth-child(2) .mapCharts,
+  .mapChartDataItems:nth-child(3) .mapCharts {width:320px;}
+  .mapChartDataItems .chartBtns.active + div.mapCharts {}
+  /* .mapChartDataItems .chartAreas {overflow-x:hidden;} */
   .mapChartDataItems:not(:last-child) {margin-bottom:10px;}
+  .circleCharts {margin-left:27px;}
+  .circleChartItems {width:74px;}
+  .circleChartTitles {font-size:16px;letter-spacing: -0.32px;}
+  .chartDw {font-size:14px;}
   /* /차트 */
   /* 컨텐츠 */
   #mainContents {padding:50px 0 255px 0;background-color:#fff;}
@@ -309,3 +342,14 @@
   /* /컨텐츠 */
   /* /main */
 }
+
+/* 우리동네 미세먼지 농도 */
+#adUlfptcSearch .dustBusinessStatusItems > a {text-align: center;transition:all 0.3s ease-in-out;}
+#adUlfptcSearch .dustBusinessStatusItems > a::before,
+#adUlfptcSearch .dustBusinessStatusItems > a::after {display:none;}
+#adUlfptcSearch .dustBusinessStatusItems.active a {background-color:#006dbb; color:#fff;} 
+
+@media(min-width:1280px) {
+
+}
+/* /우리동네 미세먼지 농도 */

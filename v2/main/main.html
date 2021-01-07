@@ -40,9 +40,11 @@
         // 아코디언 컨텐츠 
         contents : ".subDustBusinessStatusList",
         // 로드시 아코디언 펼침
-        opens : true,
+        opens : false,
         // 로드시 아코디언 펼칠때 열릴 인덱스
         openIndex : 0,
+        // 중복선택
+        overlap : false,
         // 아코디언 이벤트 세팅 후 커스텀이벤트 등록
         customEvent : function() {
 
@@ -59,6 +61,13 @@
         slidesToScroll: 1,
         arrows : false,
         dots : true
+      });
+      $("#dustChartSlider").slick({
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        arrows : false,
+        dots : false
       })
       $(".dustReduct").on('init', function(e, s) {
         var targetHeight = $('#dustForecast').height();
@@ -124,7 +133,31 @@
           slideEl.stop().slideDown();
         }
       });
+      $('.chartBtns').on('click', function() {
+        var _this = $(this);
+        var _active = _this.hasClass('active');
+        var device = getDevice();
+        if (device === "PC") {
+          if (_active) {
+            _this.removeClass('active');
+          } else {
+            _this.addClass('active');
+          }
+        }
+      });
       mapInit.init();
+      $(window).resize(function() {
+        var device = getDevice();
+        if (device == "PC") {
+          
+        } else {
+          $('.chartBtns').each(function(i) {
+            var _this = $(this);
+            _this.addClass('active');
+          });
+        };
+      });
+      $(window).trigger('resize');
     });
   </script>
 </head>
@@ -680,621 +713,742 @@
       </div>
     </div>
     <!-- /상단 알림 -->
-    <article class="sectionWrapper">
-      <section id="mainVisualMaps">
-        <div id="maps"></div>
-        <div id="leftData" class="dataLayer">
-          <div id="mapInformation">
-            <div id="dustStatus">
-              <div>
-                <div id="mapController" class="clear">
-                  <div id="viewController">
-                    <button id="defualtView" class="typeSet" data-type="ROADMAP">지도</button>
-                    <button id="skyView" class="typeSet" data-type="SKYVIEW">스카이뷰</button>
+    <main class="sectionWrapper">
+      <article>
+        <section id="mainVisualMaps">
+          <div id="maps"></div>
+          <div id="leftData" class="dataLayer">
+            <div id="mapInformation">
+              <div id="dustStatus">
+                <div>
+                  <div id="mapController" class="clear">
+                    <div id="viewController">
+                      <button id="defualtView" class="typeSet" data-type="ROADMAP">지도</button>
+                      <button id="skyView" class="typeSet" data-type="SKYVIEW">스카이뷰</button>
+                    </div>
+                    <div id="zoomController">
+                      <button id="zoomIn"><span class="soundOnly">확대</span></button>
+                      <button id="zoomOut"><span class="soundOnly">축소</span></button>
+                    </div>
                   </div>
-                  <div id="zoomController">
-                    <button id="zoomIn"><span class="soundOnly">확대</span></button>
-                    <button id="zoomOut"><span class="soundOnly">축소</span></button>
+                  <div id="areaAverage">
+                    <div id="areaAverageHeader" class="mapInfoHeader">
+                      <p id="areaAverageTitle" class="mapInfoTitle">부천시 평균</p>
+                      <p id="areaAverageDate">2020년 11월 20일</p>
+                      <div class="foldBtnWrapper">
+                        <a class="foldBtn on" href="javascript:void(0);"></a>
+                      </div>
+                    </div>
+                    <div id="areaAverageDatas" class="code-blue">
+                      <div class="clear">
+                        <p id="areaAverageValue">50 ug/m3</p>
+                        <p id="areaAverageStatus"></p>
+                      </div>
+                    </div>
+                    <!--
+                    코드 클래스
+                    <div id="areaAverageDatas" class="code-green">
+                      <div class="clear">
+                        <p id="areaAverageValue">50 ug/m3</p>
+                        <p id="areaAverageStatus"></p>
+                      </div>
+                    </div>
+                    <div id="areaAverageDatas" class="code-warning">
+                      <div class="clear">
+                        <p id="areaAverageValue">50 ug/m3</p>
+                        <p id="areaAverageStatus"></p>
+                      </div>
+                    </div>
+                    <div id="areaAverageDatas" class="code-red">
+                      <div class="clear">
+                        <p id="areaAverageValue">50 ug/m3</p>
+                        <p id="areaAverageStatus"></p>
+                      </div>
+                    </div>
+                    <div id="areaAverageDatas" class="code-default">
+                      <div class="clear">
+                        <p id="areaAverageValue">-</p>
+                      </div>
+                    </div>
+                    -->
                   </div>
                 </div>
-                <div id="areaAverage">
-                  <div id="areaAverageHeader" class="mapInfoHeader">
-                    <p id="areaAverageTitle" class="mapInfoTitle">부천시 평균</p>
-                    <p id="areaAverageDate">2020년 11월 20일</p>
+                <ul id="areaAverageStatusLists" class="clear">
+                  <li class="areaAverageStatusItems">
+                    <a href="javascript:void(0);">초미세먼지 PM-2.5</a>
+                  </li>
+                  <li class="areaAverageStatusItems">
+                    <a href="javascript:void(0);">미세먼지 PM-10</a>
+                  </li>
+                  <li class="areaAverageStatusItems active">
+                    <a href="javascript:void(0);">오존 O₃</a>
+                  </li>
+                </ul>
+              </div>
+              <div id="dustBusinessStatus">
+                <div id="dustBusiness">
+                  <div id="businessHeader" class="mapInfoHeader">
+                    <p id="businessTitle" class="mapInfoTitle">미세먼지 저감사업</p>
                     <div class="foldBtnWrapper">
                       <a class="foldBtn on" href="javascript:void(0);"></a>
                     </div>
                   </div>
-                  <div id="areaAverageDatas" class="code-blue">
-                    <div class="clear">
-                      <p id="areaAverageValue">50 ug/m3</p>
-                      <p id="areaAverageStatus"></p>
-                    </div>
-                  </div>
-                  <!--
-                  코드 클래스
-                  <div id="areaAverageDatas" class="code-green">
-                    <div class="clear">
-                      <p id="areaAverageValue">50 ug/m3</p>
-                      <p id="areaAverageStatus"></p>
-                    </div>
-                  </div>
-                  <div id="areaAverageDatas" class="code-warning">
-                    <div class="clear">
-                      <p id="areaAverageValue">50 ug/m3</p>
-                      <p id="areaAverageStatus"></p>
-                    </div>
-                  </div>
-                  <div id="areaAverageDatas" class="code-red">
-                    <div class="clear">
-                      <p id="areaAverageValue">50 ug/m3</p>
-                      <p id="areaAverageStatus"></p>
-                    </div>
-                  </div>
-                  <div id="areaAverageDatas" class="code-default">
-                    <div class="clear">
-                      <p id="areaAverageValue">-</p>
-                    </div>
-                  </div>
-                  -->
                 </div>
-              </div>
-              <ul id="areaAverageStatusLists" class="clear">
-                <li class="areaAverageStatusItems">
-                  <a href="javascript:void(0);">초미세먼지 PM-2.5</a>
-                </li>
-                <li class="areaAverageStatusItems">
-                  <a href="javascript:void(0);">미세먼지 PM-10</a>
-                </li>
-                <li class="areaAverageStatusItems active">
-                  <a href="javascript:void(0);">오존 O₃</a>
-                </li>
-              </ul>
-            </div>
-            <div id="dustBusinessStatus">
-              <div id="dustBusiness">
-                <div id="businessHeader" class="mapInfoHeader">
-                  <p id="businessTitle" class="mapInfoTitle">미세먼지 저감사업</p>
-                  <div class="foldBtnWrapper">
-                    <a class="foldBtn on" href="javascript:void(0);"></a>
-                  </div>
-                </div>
-              </div>
-              <ul id="dustBusinessStatusLists" class="clear">
-                <li class="dustBusinessStatusItems">
-                  <a href="javascript:void(0);"><span class="dustBusinessNunber">01</span><span>교통</span></a>
-                  <ul class="subDustBusinessStatusList">
-                    <li class="subDustBusinessStatusItems">
-                      <a href="javascript:void(0);">차량2부제</a>
-                    </li>
-                    <li class="subDustBusinessStatusItems">
-                      <a href="javascript:void(0);">청소차 운행</a>
-                    </li>
-                    <li class="subDustBusinessStatusItems">
-                      <a href="javascript:void(0);">대충교통</a>
-                    </li>
-                    <li class="subDustBusinessStatusItems">
-                      <a href="javascript:void(0);">친환경 차량 보급</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="dustBusinessStatusItems">
-                  <a href="javascript:void(0);"><span class="dustBusinessNunber">02</span><span>환경에너지</span></a>
-                  <ul class="subDustBusinessStatusList">
-                    <li class="subDustBusinessStatusItems">
-                      <a href="javascript:void(0);">도시숲 조성</a>
-                    </li>
-                    <li class="subDustBusinessStatusItems">
-                      <a href="javascript:void(0);">친환경 에너지 전환</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="dustBusinessStatusItems">
-                  <a href="javascript:void(0);"><span class="dustBusinessNunber">03</span><span>지역특별관리</span></a>
-                  <ul class="subDustBusinessStatusList">
-                    <li class="subDustBusinessStatusItems">
-                      <a href="javascript:void(0);">공업단지 특별관리</a>
-                    </li>
-                    <li class="subDustBusinessStatusItems">
-                      <a href="javascript:void(0);">특별 관리 도로</a>
-                    </li>
-                    <li class="subDustBusinessStatusItems">
-                      <a href="javascript:void(0);">스마트 미세먼지 클린존</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div id="rightData" class="dataLayer">
-          <ul id="mapChartDataList">
-            <li class="mapChartDataItems clear">
-              <a href="javascript:void(0);" class="chartBtns active" id="chartBigData"></a>
-              <div class="mapCharts">
-                차트
-              </div>
-            </li>
-            <li class="mapChartDataItems clear">
-              <a href="javascript:void(0);" class="chartBtns" id="chartVillage"></a>
-              <div class="mapCharts">
-                차트
-              </div>
-            </li>
-            <li class="mapChartDataItems clear">
-              <a href="javascript:void(0);" class="chartBtns" id="chartIndust"></a>
-              <div class="mapCharts">
-                차트
-              </div>
-            </li>
-            <li class="mapChartDataItems clear">
-              <a href="javascript:void(0);" class="chartBtns" id="chartSchool"></a>
-              <div class="mapCharts">
-                차트
-              </div>
-            </li>
-            <li class="mapChartDataItems clear">
-              <a href="javascript:void(0);" class="chartBtns" id="chartSubway"></a>
-              <div class="mapCharts">
-                차트
-              </div>
-            </li>
-          </ul>
-        </div>
-        <!-- 아이콘 모음 (개발단에서는 html에는 삭제) -->
-        <div id="icons" style="position: absolute;left:20%;top:50%;z-index: 10;">
-          <div>
-            <img src="/img/v2/icons/icon_pop_005_bad.png" alt="">
-            <img src="/img/v2/icons/icon_pop_005_good.png" alt="">
-            <img src="/img/v2/icons/icon_pop_005_terrible.png" alt="">
-            <img src="/img/v2/icons/icon_pop_005_usually.png" alt="">
-            <img src="/img/v2/icons/icon_pop_006_bad.png" alt="">
-            <img src="/img/v2/icons/icon_pop_006_good.png" alt="">
-            <img src="/img/v2/icons/icon_pop_006_terrible.png" alt="">
-            <img src="/img/v2/icons/icon_pop_006_usually.png" alt="">
-            <img src="/img/v2/icons/icon_pop_007_bad.png" alt="">
-            <img src="/img/v2/icons/icon_pop_007_good.png" alt="">
-            <img src="/img/v2/icons/icon_pop_007_terrible.png" alt="">
-            <img src="/img/v2/icons/icon_pop_007_usually.png" alt="">
-          </div>
-          <div>
-            <img src="/img/v2/icons/icon_pop_008_bad.png" alt="">
-            <img src="/img/v2/icons/icon_pop_008_good.png" alt="">
-            <img src="/img/v2/icons/icon_pop_008_terrible.png" alt="">
-            <img src="/img/v2/icons/icon_pop_008_usually.png" alt="">
-            <img src="/img/v2/icons/icon_pop_building_bad.png" alt="">
-            <img src="/img/v2/icons/icon_pop_building_good.png" alt="">
-            <img src="/img/v2/icons/icon_pop_building_terrible.png" alt="">
-            <img src="/img/v2/icons/icon_pop_building_usually.png" alt="">
-            <img src="/img/v2/icons/icon_pop_road_bad.png" alt="">
-            <img src="/img/v2/icons/icon_pop_road_good.png" alt="">
-            <img src="/img/v2/icons/icon_pop_road_terrible.png" alt="">
-            <img src="/img/v2/icons/icon_pop_road_usually.png" alt="">
-          </div>
-          <div>
-            <img src="/img/v2/icons/black_icon_pop_005.png" alt="">
-            <img src="/img/v2/icons/black_icon_pop_006.png" alt="">
-            <img src="/img/v2/icons/black_icon_pop_007.png" alt="">
-            <img src="/img/v2/icons/black_icon_pop_008.png" alt="">
-          </div>
-        </div>
-        <style>
-          #icons {display: none;}
-          @media(min-width:1280px) {
-            #icons {display:block;}
-          }
-        </style>
-        <!-- /아이콘 모음 (개발단에서는 html에는 삭제) -->
-      </section>
-      <section id="mainContents">
-        <div class="container">
-          <div id="bucheonEtc" class="clear">
-            <div id="dustForecast">
-              <div class="etcListHeader clear">
-                <h2>미세먼지 예보(<span id="airInfoMsrstnNm">소산본동</span>)</h2>
-                <div class="deadline">
-                  <span id="airInfoDate">2020-12-29 14:00 기준</span>
-                  <a href="javascript:void(0);" class="addBtns"><span class="addIcons"></span></a>
-                </div>
-              </div>
-              <ul class="cdtCategory clear">
-                <li class="cdtBlue"><span>좋음</span></li>
-                <li class="cdtGreen"><span>보통</span></li>
-                <li class="cdtWarning"><span>나쁨</span></li>
-                <li class="cdtRed"><span>매우나쁨</span></li>
-              </ul>
-              <div class="cdtDisplay" id="airInfoUl">
-                <div class="cdtStatus">
-                  <ul class="cdtStatusLists clear">
-                    <li class="cdtStatusItems dustStatus codeBlue">
-                      <h4 class="cdtTitles">미세먼지</h4>
-                      <div class="cdtStatusIcons">
-                        <div class="iconImgs"></div>
-                      </div>
-                      <div class="statusKeys">
-                        <p class="statusTxtColor">좋음</p>
-                      </div>
-                      <div class="statusValues">
-                        <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
-                      </div>
-                    </li>
-                    <li class="cdtStatusItems ultrafineDustStatus codeBlue">
-                      <h4 class="cdtTitles">초미세먼지</h4>
-                      <div class="cdtStatusIcons">
-                        <div class="iconImgs"></div>
-                      </div>
-                      <div class="statusKeys">
-                        <p class="statusTxtColor">좋음</p>
-                      </div>
-                      <div class="statusValues">
-                        <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
-                      </div>
-                    </li>
-                    <li class="cdtStatusItems ozoneStatus codeBlue">
-                      <h4 class="cdtTitles">오존</h4>
-                      <div class="cdtStatusIcons">
-                        <div class="iconImgs"></div>
-                      </div>
-                      <div class="statusKeys">
-                        <p class="statusTxtColor">좋음</p>
-                      </div>
-                      <div class="statusValues">
-                        <p><span class="statusTxtColor">0.015</span> ppm</p>
-                      </div>
-                    </li>
-                    <li class="cdtStatusItems nitDioxideStatus codeBlue">
-                      <h4 class="cdtTitles">이산화질소</h4>
-                      <div class="cdtStatusIcons">
-                        <div class="iconImgs"></div>
-                      </div>
-                      <div class="statusKeys">
-                        <p class="statusTxtColor">좋음</p>
-                      </div>
-                      <div class="statusValues">
-                        <p><span class="statusTxtColor">0.015</span> ppm</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="cdtStatus">
-                  <ul class="cdtStatusLists clear">
-                    <li class="cdtStatusItems dustStatus codeGreen">
-                      <h4 class="cdtTitles">미세먼지</h4>
-                      <div class="cdtStatusIcons">
-                        <div class="iconImgs"></div>
-                      </div>
-                      <div class="statusKeys">
-                        <p class="statusTxtColor">보통</p>
-                      </div>
-                      <div class="statusValues">
-                        <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
-                      </div>
-                    </li>
-                    <li class="cdtStatusItems ultrafineDustStatus codeGreen">
-                      <h4 class="cdtTitles">초미세먼지</h4>
-                      <div class="cdtStatusIcons">
-                        <div class="iconImgs"></div>
-                      </div>
-                      <div class="statusKeys">
-                        <p class="statusTxtColor">보통</p>
-                      </div>
-                      <div class="statusValues">
-                        <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
-                      </div>
-                    </li>
-                    <li class="cdtStatusItems ozoneStatus codeGreen">
-                      <h4 class="cdtTitles">오존</h4>
-                      <div class="cdtStatusIcons">
-                        <div class="iconImgs"></div>
-                      </div>
-                      <div class="statusKeys">
-                        <p class="statusTxtColor">보통</p>
-                      </div>
-                      <div class="statusValues">
-                        <p><span class="statusTxtColor">0.015</span> ppm</p>
-                      </div>
-                    </li>
-                    <li class="cdtStatusItems nitDioxideStatus codeGreen">
-                      <h4 class="cdtTitles">이산화질소</h4>
-                      <div class="cdtStatusIcons">
-                        <div class="iconImgs"></div>
-                      </div>
-                      <div class="statusKeys">
-                        <p class="statusTxtColor">보통</p>
-                      </div>
-                      <div class="statusValues">
-                        <p><span class="statusTxtColor">0.015</span> ppm</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="cdtStatus">
-                  <ul class="cdtStatusLists clear">
-                    <li class="cdtStatusItems dustStatus codeWarning">
-                      <h4 class="cdtTitles">미세먼지</h4>
-                      <div class="cdtStatusIcons">
-                        <div class="iconImgs"></div>
-                      </div>
-                      <div class="statusKeys">
-                        <p class="statusTxtColor">나쁨</p>
-                      </div>
-                      <div class="statusValues">
-                        <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
-                      </div>
-                    </li>
-                    <li class="cdtStatusItems ultrafineDustStatus codeWarning">
-                      <h4 class="cdtTitles">초미세먼지</h4>
-                      <div class="cdtStatusIcons">
-                        <div class="iconImgs"></div>
-                      </div>
-                      <div class="statusKeys">
-                        <p class="statusTxtColor">나쁨</p>
-                      </div>
-                      <div class="statusValues">
-                        <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
-                      </div>
-                    </li>
-                    <li class="cdtStatusItems ozoneStatus codeWarning">
-                      <h4 class="cdtTitles">오존</h4>
-                      <div class="cdtStatusIcons">
-                        <div class="iconImgs"></div>
-                      </div>
-                      <div class="statusKeys">
-                        <p class="statusTxtColor">나쁨</p>
-                      </div>
-                      <div class="statusValues">
-                        <p><span class="statusTxtColor">0.015</span> ppm</p>
-                      </div>
-                    </li>
-                    <li class="cdtStatusItems nitDioxideStatus codeWarning">
-                      <h4 class="cdtTitles">이산화질소</h4>
-                      <div class="cdtStatusIcons">
-                        <div class="iconImgs"></div>
-                      </div>
-                      <div class="statusKeys">
-                        <p class="statusTxtColor">나쁨</p>
-                      </div>
-                      <div class="statusValues">
-                        <p><span class="statusTxtColor">0.015</span> ppm</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="cdtStatus">
-                  <ul class="cdtStatusLists clear">
-                    <li class="cdtStatusItems dustStatus codeRed">
-                      <h4 class="cdtTitles">미세먼지</h4>
-                      <div class="cdtStatusIcons">
-                        <div class="iconImgs"></div>
-                      </div>
-                      <div class="statusKeys">
-                        <p class="statusTxtColor">매우나쁨</p>
-                      </div>
-                      <div class="statusValues">
-                        <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
-                      </div>
-                    </li>
-                    <li class="cdtStatusItems ultrafineDustStatus codeRed">
-                      <h4 class="cdtTitles">초미세먼지</h4>
-                      <div class="cdtStatusIcons">
-                        <div class="iconImgs"></div>
-                      </div>
-                      <div class="statusKeys">
-                        <p class="statusTxtColor">매우나쁨</p>
-                      </div>
-                      <div class="statusValues">
-                        <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
-                      </div>
-                    </li>
-                    <li class="cdtStatusItems ozoneStatus codeRed">
-                      <h4 class="cdtTitles">오존</h4>
-                      <div class="cdtStatusIcons">
-                        <div class="iconImgs"></div>
-                      </div>
-                      <div class="statusKeys">
-                        <p class="statusTxtColor">매우나쁨</p>
-                      </div>
-                      <div class="statusValues">
-                        <p><span class="statusTxtColor">0.015</span> ppm</p>
-                      </div>
-                    </li>
-                    <li class="cdtStatusItems nitDioxideStatus codeRed">
-                      <h4 class="cdtTitles">이산화질소</h4>
-                      <div class="cdtStatusIcons">
-                        <div class="iconImgs"></div>
-                      </div>
-                      <div class="statusKeys">
-                        <p class="statusTxtColor">매우나쁨</p>
-                      </div>
-                      <div class="statusValues">
-                        <p><span class="statusTxtColor">0.015</span> ppm</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="cdtStatus">
-                  <ul class="cdtStatusLists clear">
-                    <li class="cdtStatusItems dustStatus codeDefault">
-                      <h4 class="cdtTitles">미세먼지</h4>
-                      <div class="cdtStatusIcons">
-                        <div class="iconImgs"></div>
-                      </div>
-                      <div class="statusKeys">
-                        <p class="statusTxtColor">-</p>
-                      </div>
-                      <div class="statusValues">
-                        <p><span class="statusTxtColor">-</span> ㎍/㎥</p>
-                      </div>
-                    </li>
-                    <li class="cdtStatusItems ultrafineDustStatus codeDefault">
-                      <h4 class="cdtTitles">초미세먼지</h4>
-                      <div class="cdtStatusIcons">
-                        <div class="iconImgs"></div>
-                      </div>
-                      <div class="statusKeys">
-                        <p class="statusTxtColor">-</p>
-                      </div>
-                      <div class="statusValues">
-                        <p><span class="statusTxtColor">-</span> ㎍/㎥</p>
-                      </div>
-                    </li>
-                    <li class="cdtStatusItems ozoneStatus codeDefault">
-                      <h4 class="cdtTitles">오존</h4>
-                      <div class="cdtStatusIcons">
-                        <div class="iconImgs"></div>
-                      </div>
-                      <div class="statusKeys">
-                        <p class="statusTxtColor">-</p>
-                      </div>
-                      <div class="statusValues">
-                        <p><span class="statusTxtColor">-</span> ppm</p>
-                      </div>
-                    </li>
-                    <li class="cdtStatusItems nitDioxideStatus codeDefault">
-                      <h4 class="cdtTitles">이산화질소</h4>
-                      <div class="cdtStatusIcons">
-                        <div class="iconImgs"></div>
-                      </div>
-                      <div class="statusKeys">
-                        <p class="statusTxtColor">-</p>
-                      </div>
-                      <div class="statusValues">
-                        <p><span class="statusTxtColor">-</span> ppm</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div id="behaviors">
-              <div class="dustReduct">
-                <div class="dustReductTxtInfo">
-                  <div class="etcListHeader clear">
-                    <h2>예보 기준에 따른 시민행동 요령</h2>
-                    <div class="deadline">
-                      <span id="airInfoDate">2020-12-29 14:00 기준</span>
-                    </div>
-                  </div>
-                  <div class="behaviorsInfoTxt">
-                    
-                    <div class="behaviorsInfoTablesWrapper">
-                      <table class="behaviorsInfoTables">
-                        <tbody>
-                          <tr>
-                            <th class="behaviorsInfoCategory" colspan="2">
-                              <div>
-                                <p>예보등급 ㎍/㎥</p>
-                              </div>
-                            </th>
-                            <th class="behaviorsInfoCategory">
-                              <div>
-                                <p>보통 (31-80)</p>
-                              </div>
-                            </th>
-                          </tr>
-                          <tr>
-                            <th class="behaviorsInfoCategory firstCategory" rowspan="2">
-                              <div>
-                                <p>시민행동<br>요령</p>
-                              </div>
-                            </th>
-                            <th class="behaviorsInfoCategory secondCategory">
-                              <div>
-                                <p>민감군</p>
-                              </div>
-                            </th>
-                            <td class="behaviorsInfoTableTxt">
-                              <div>
-                                <p>실외활동시 특별히 행동에 제약을 받을 필요는 없지만 몸상태에 따라 유의하여 활동</p>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th class="behaviorsInfoCategory secondCategory">
-                              <div>
-                                <p>일반인</p>
-                              </div>
-                            </th>
-                            <td class="behaviorsInfoTableTxt">
-                              <div>
-                                <p>실외활동시 특별히 행동에 제약</p>
-                              </div>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <div class="behaviorsInfoNotice">
-                      <p>민감군 : 영·유아, 어린이, 임산부, 어린이, 호흡기·심혈관 질환자 등 대기오염에 노출되었을 경우 건강 등에 영향을 받기 쉬운사람</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="dustReductTxtInfo">
-                  <div class="etcListHeader clear">
-                    <h2>금일 미세먼지 예보기준에 따른 시민행동 요령 (초미세먼지)</h2>
-                  </div>
-                  <div class="behaviorsInfoTxt">
-                    <div class="deadline">
-                      <span id="airInfoDate">2020-12-29 14:00 기준</span>
-                    </div>
-                    <div class="behaviorsInfoTablesWrapper">
-                      <table class="behaviorsInfoTables">
-                        <tbody>
-                          <tr>
-                            <th class="behaviorsInfoCategory" colspan="2">
-                              <div>
-                                <p>예보등급 ㎍/㎥</p>
-                              </div>
-                            </th>
-                            <th class="behaviorsInfoCategory">
-                              <div>
-                                <p>보통 (16-35)</p>
-                              </div>
-                            </th>
-                          </tr>
-                          <tr>
-                            <th class="behaviorsInfoCategory firstCategory" rowspan="2">
-                              <div>
-                                <p>시민행동<br>요령</p>
-                              </div>
-                            </th>
-                            <th class="behaviorsInfoCategory secondCategory">
-                              <div>
-                                <p>민감군</p>
-                              </div>
-                            </th>
-                            <td class="behaviorsInfoTableTxt">
-                              <div>
-                                <p>실외활동시 특별히 행동에 제약을 받을 필요는 없지만 몸상태에 따라 유의하여 활동</p>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th class="behaviorsInfoCategory secondCategory">
-                              <div>
-                                <p>일반인</p>
-                              </div>
-                            </th>
-                            <td class="behaviorsInfoTableTxt">
-                              <div>
-                                <p>-</p>
-                              </div>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <div class="behaviorsInfoNotice">
-                      <p>민감군 : 영·유아, 어린이, 임산부, 어린이, 호흡기·심혈관 질환자 등 대기오염에 노출되었을 경우 건강 등에 영향을 받기 쉬운사람</p>
-                    </div>
-                  </div>
-                </div>
+                <ul id="dustBusinessStatusLists" class="clear">
+                  <li class="dustBusinessStatusItems">
+                    <a href="javascript:void(0);"><span class="dustBusinessNunber">01</span><span>교통</span></a>
+                    <ul class="subDustBusinessStatusList">
+                      <li class="subDustBusinessStatusItems">
+                        <a href="javascript:void(0);">차량2부제</a>
+                      </li>
+                      <li class="subDustBusinessStatusItems">
+                        <a href="javascript:void(0);">청소차 운행</a>
+                      </li>
+                      <li class="subDustBusinessStatusItems">
+                        <a href="javascript:void(0);">대충교통</a>
+                      </li>
+                      <li class="subDustBusinessStatusItems">
+                        <a href="javascript:void(0);">친환경 차량 보급</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dustBusinessStatusItems">
+                    <a href="javascript:void(0);"><span class="dustBusinessNunber">02</span><span>환경에너지</span></a>
+                    <ul class="subDustBusinessStatusList">
+                      <li class="subDustBusinessStatusItems">
+                        <a href="javascript:void(0);">도시숲 조성</a>
+                      </li>
+                      <li class="subDustBusinessStatusItems">
+                        <a href="javascript:void(0);">친환경 에너지 전환</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dustBusinessStatusItems">
+                    <a href="javascript:void(0);"><span class="dustBusinessNunber">03</span><span>지역특별관리</span></a>
+                    <ul class="subDustBusinessStatusList">
+                      <li class="subDustBusinessStatusItems">
+                        <a href="javascript:void(0);">공업단지 특별관리</a>
+                      </li>
+                      <li class="subDustBusinessStatusItems">
+                        <a href="javascript:void(0);">특별 관리 도로</a>
+                      </li>
+                      <li class="subDustBusinessStatusItems">
+                        <a href="javascript:void(0);">스마트 미세먼지 클린존</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    </article>
+          <div id="rightData" class="dataLayer">
+            <ul id="mapChartDataList">
+              <li class="mapChartDataItems clear">
+                <a href="javascript:void(0);" class="chartBtns active" id="chartBigData"></a>
+                <div class="mapCharts">
+                  <div id="chartBigDataDiv" class="chartAreas">
+                    <div style="position: relative;"><div dir="ltr" style="position: relative; width: 320px; height: 100px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="320" height="100" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_0"><clipPath id="_ABSTRACT_RENDERER_ID_1"><rect x="41" y="19" width="238" height="62"></rect></clipPath><filter id="_ABSTRACT_RENDERER_ID_3"><feGaussianBlur in="SourceAlpha" stdDeviation="2"></feGaussianBlur><feOffset dx="1" dy="1"></feOffset><feComponentTransfer><feFuncA type="linear" slope="0.1"></feFuncA></feComponentTransfer><feMerge><feMergeNode></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter></defs><rect x="0" y="0" width="320" height="100" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><rect x="41" y="19" width="238" height="62" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g clip-path="url(http://127.0.0.1:8080/csn/Main.do#_ABSTRACT_RENDERER_ID_1)"><g><rect x="41" y="80" width="238" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="41" y="19" width="238" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect></g><g><rect x="46" y="20" width="9" height="60" stroke="#6ed564" stroke-width="1" fill="#6ed564"></rect><rect x="64" y="28" width="9" height="52" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect><rect x="83" y="35" width="9" height="45" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect><rect x="101" y="47" width="9" height="33" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect><rect x="119" y="47" width="9" height="33" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect><rect x="137" y="54" width="9" height="26" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect><rect x="155" y="58" width="10" height="22" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect><rect x="174" y="47" width="9" height="33" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect><rect x="192" y="51" width="9" height="29" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect><rect x="210" y="47" width="9" height="33" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect><rect x="228" y="47" width="9" height="33" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect><rect x="247" y="51" width="9" height="29" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect><rect x="265" y="51" width="9" height="29" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect></g><g><rect x="41" y="80" width="238" height="1" stroke="none" stroke-width="0" fill="#333333"></rect></g></g><g></g><g><g><text text-anchor="end" x="52.190384615384616" y="90.72798002192098" font-family="Arial" font-size="9" transform="rotate(-30 52.190384615384616 90.72798002192098)" stroke="none" stroke-width="0" fill="#222222">01</text></g><g><text text-anchor="end" x="88.65192307692307" y="90.72798002192098" font-family="Arial" font-size="9" transform="rotate(-30 88.65192307692307 90.72798002192098)" stroke="none" stroke-width="0" fill="#222222">03</text></g><g><text text-anchor="end" x="125.11346153846154" y="90.72798002192098" font-family="Arial" font-size="9" transform="rotate(-30 125.11346153846154 90.72798002192098)" stroke="none" stroke-width="0" fill="#222222">05</text></g><g><text text-anchor="end" x="161.575" y="90.72798002192098" font-family="Arial" font-size="9" transform="rotate(-30 161.575 90.72798002192098)" stroke="none" stroke-width="0" fill="#222222">07</text></g><g><text text-anchor="end" x="198.03653846153844" y="90.72798002192098" font-family="Arial" font-size="9" transform="rotate(-30 198.03653846153844 90.72798002192098)" stroke="none" stroke-width="0" fill="#222222">09</text></g><g><text text-anchor="end" x="234.4980769230769" y="90.72798002192098" font-family="Arial" font-size="9" transform="rotate(-30 234.4980769230769 90.72798002192098)" stroke="none" stroke-width="0" fill="#222222">11</text></g><g><text text-anchor="end" x="270.95961538461535" y="90.72798002192098" font-family="Arial" font-size="9" transform="rotate(-30 270.95961538461535 90.72798002192098)" stroke="none" stroke-width="0" fill="#222222">13</text></g><g><text text-anchor="end" x="32" y="83.65" font-family="Arial" font-size="9" stroke="none" stroke-width="0" fill="#444444">0</text></g><g><text text-anchor="end" x="32" y="22.65" font-family="Arial" font-size="9" stroke="none" stroke-width="0" fill="#444444">16</text></g></g></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>측정일시</th><th>pm-2.5 수치</th></tr></thead><tbody><tr><td>01</td><td>16</td></tr><tr><td>02</td><td>14</td></tr><tr><td>03</td><td>12</td></tr><tr><td>04</td><td>9</td></tr><tr><td>05</td><td>9</td></tr><tr><td>06</td><td>7</td></tr><tr><td>07</td><td>6</td></tr><tr><td>08</td><td>9</td></tr><tr><td>09</td><td>8</td></tr><tr><td>10</td><td>9</td></tr><tr><td>11</td><td>9</td></tr><tr><td>12</td><td>8</td></tr><tr><td>13</td><td>8</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 110px; left: 330px; white-space: nowrap; font-family: Arial; font-size: 9px; font-weight: bold;">9</div><div></div></div>
+                  </div>
+                </div>
+              </li>
+              <li class="mapChartDataItems clear">
+                <a href="javascript:void(0);" class="chartBtns active" id="chartVillage"></a>
+                <div class="mapCharts">
+                  <div class="chartAreas">
+                    <div id="dustChartSlider" class="circleCharts clear">
+                      <div class="circleChartItems">
+                        <h3 class="circleChartTitles">부천시청</h3>
+                        <div class="chartDw">
+                          <div id="chartVillageDiv">
+                            <div style="position: relative;"><div dir="ltr" style="position: relative; width: 66px; height: 66px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="66" height="66" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_2"></defs><rect x="0" y="0" width="66" height="66" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><path d="M11.030594473581957,40.138292570061296L1.615134962259937,43.19756081437328A33,33,0,0,1,33,0L32.99999999999999,9.900000000000002A23.099999999999998,23.099999999999998,0,0,0,11.030594473581957,40.138292570061296" stroke="#ffffff" stroke-width="1" fill="#f2f2f2"></path><text text-anchor="start" x="9.307349152294975" y="25.151706838013652" font-family="Arial" font-size="6" stroke="none" stroke-width="0" fill="#ffffff">30%</text></g><g><path d="M33,9.900000000000002L33,0A33,33,0,1,1,1.615134962259937,43.19756081437328L11.030594473581957,40.138292570061296A23.099999999999998,23.099999999999998,0,1,0,33,9.900000000000002" stroke="#ffffff" stroke-width="1" fill="#40b0ff"></path><text text-anchor="start" x="36.692650847705025" y="45.04829316198636" font-family="Arial" font-size="6" stroke="none" stroke-width="0" fill="#ffffff">70%</text></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th></th><th>per</th></tr></thead><tbody><tr><td></td><td>70</td></tr><tr><td></td><td>30</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 76px; left: 76px; white-space: nowrap; font-family: Arial; font-size: 6px;">30%</div><div></div></div>
+                          </div>
+                          <span class="chartGauge code-blue"></span>
+                        </div>
+                      </div>
+                      <div class="circleChartItems">
+                        <h3 class="circleChartTitles">굴포천</h3>
+                        <div class="chartDw">
+                          <div id="chartVillageDiv">
+                            <div style="position: relative;"><div dir="ltr" style="position: relative; width: 66px; height: 66px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="66" height="66" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_2"></defs><rect x="0" y="0" width="66" height="66" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><path d="M11.030594473581957,40.138292570061296L1.615134962259937,43.19756081437328A33,33,0,0,1,33,0L32.99999999999999,9.900000000000002A23.099999999999998,23.099999999999998,0,0,0,11.030594473581957,40.138292570061296" stroke="#ffffff" stroke-width="1" fill="#f2f2f2"></path><text text-anchor="start" x="9.307349152294975" y="25.151706838013652" font-family="Arial" font-size="6" stroke="none" stroke-width="0" fill="#ffffff">30%</text></g><g><path d="M33,9.900000000000002L33,0A33,33,0,1,1,1.615134962259937,43.19756081437328L11.030594473581957,40.138292570061296A23.099999999999998,23.099999999999998,0,1,0,33,9.900000000000002" stroke="#ffffff" stroke-width="1" fill="#40b0ff"></path><text text-anchor="start" x="36.692650847705025" y="45.04829316198636" font-family="Arial" font-size="6" stroke="none" stroke-width="0" fill="#ffffff">70%</text></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th></th><th>per</th></tr></thead><tbody><tr><td></td><td>70</td></tr><tr><td></td><td>30</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 76px; left: 76px; white-space: nowrap; font-family: Arial; font-size: 6px;">30%</div><div></div></div>
+                          </div>
+                          <span class="chartGauge code-green"></span>
+                        </div>
+                      </div>
+                      <div class="circleChartItems">
+                        <h3 class="circleChartTitles">굴포천</h3>
+                        <div class="chartDw">
+                          <div id="chartVillageDiv">
+                            <div style="position: relative;"><div dir="ltr" style="position: relative; width: 66px; height: 66px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="66" height="66" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_2"></defs><rect x="0" y="0" width="66" height="66" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><path d="M11.030594473581957,40.138292570061296L1.615134962259937,43.19756081437328A33,33,0,0,1,33,0L32.99999999999999,9.900000000000002A23.099999999999998,23.099999999999998,0,0,0,11.030594473581957,40.138292570061296" stroke="#ffffff" stroke-width="1" fill="#f2f2f2"></path><text text-anchor="start" x="9.307349152294975" y="25.151706838013652" font-family="Arial" font-size="6" stroke="none" stroke-width="0" fill="#ffffff">30%</text></g><g><path d="M33,9.900000000000002L33,0A33,33,0,1,1,1.615134962259937,43.19756081437328L11.030594473581957,40.138292570061296A23.099999999999998,23.099999999999998,0,1,0,33,9.900000000000002" stroke="#ffffff" stroke-width="1" fill="#40b0ff"></path><text text-anchor="start" x="36.692650847705025" y="45.04829316198636" font-family="Arial" font-size="6" stroke="none" stroke-width="0" fill="#ffffff">70%</text></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th></th><th>per</th></tr></thead><tbody><tr><td></td><td>70</td></tr><tr><td></td><td>30</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 76px; left: 76px; white-space: nowrap; font-family: Arial; font-size: 6px;">30%</div><div></div></div>
+                          </div>
+                          <span class="chartGauge code-green"></span>
+                        </div>
+                      </div>
+                      <div class="circleChartItems">
+                        <h3 class="circleChartTitles">부천시청</h3>
+                        <div class="chartDw">
+                          <div id="chartVillageDiv">
+                            <div style="position: relative;"><div dir="ltr" style="position: relative; width: 66px; height: 66px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="66" height="66" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_2"></defs><rect x="0" y="0" width="66" height="66" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><path d="M11.030594473581957,40.138292570061296L1.615134962259937,43.19756081437328A33,33,0,0,1,33,0L32.99999999999999,9.900000000000002A23.099999999999998,23.099999999999998,0,0,0,11.030594473581957,40.138292570061296" stroke="#ffffff" stroke-width="1" fill="#f2f2f2"></path><text text-anchor="start" x="9.307349152294975" y="25.151706838013652" font-family="Arial" font-size="6" stroke="none" stroke-width="0" fill="#ffffff">30%</text></g><g><path d="M33,9.900000000000002L33,0A33,33,0,1,1,1.615134962259937,43.19756081437328L11.030594473581957,40.138292570061296A23.099999999999998,23.099999999999998,0,1,0,33,9.900000000000002" stroke="#ffffff" stroke-width="1" fill="#40b0ff"></path><text text-anchor="start" x="36.692650847705025" y="45.04829316198636" font-family="Arial" font-size="6" stroke="none" stroke-width="0" fill="#ffffff">70%</text></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th></th><th>per</th></tr></thead><tbody><tr><td></td><td>70</td></tr><tr><td></td><td>30</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 76px; left: 76px; white-space: nowrap; font-family: Arial; font-size: 6px;">30%</div><div></div></div>
+                          </div>
+                          <span class="chartGauge code-blue"></span>
+                        </div>
+                      </div>
+                      <div class="circleChartItems">
+                        <h3 class="circleChartTitles">굴포천</h3>
+                        <div class="chartDw">
+                          <div id="chartVillageDiv">
+                            <div style="position: relative;"><div dir="ltr" style="position: relative; width: 66px; height: 66px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="66" height="66" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_2"></defs><rect x="0" y="0" width="66" height="66" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><path d="M11.030594473581957,40.138292570061296L1.615134962259937,43.19756081437328A33,33,0,0,1,33,0L32.99999999999999,9.900000000000002A23.099999999999998,23.099999999999998,0,0,0,11.030594473581957,40.138292570061296" stroke="#ffffff" stroke-width="1" fill="#f2f2f2"></path><text text-anchor="start" x="9.307349152294975" y="25.151706838013652" font-family="Arial" font-size="6" stroke="none" stroke-width="0" fill="#ffffff">30%</text></g><g><path d="M33,9.900000000000002L33,0A33,33,0,1,1,1.615134962259937,43.19756081437328L11.030594473581957,40.138292570061296A23.099999999999998,23.099999999999998,0,1,0,33,9.900000000000002" stroke="#ffffff" stroke-width="1" fill="#40b0ff"></path><text text-anchor="start" x="36.692650847705025" y="45.04829316198636" font-family="Arial" font-size="6" stroke="none" stroke-width="0" fill="#ffffff">70%</text></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th></th><th>per</th></tr></thead><tbody><tr><td></td><td>70</td></tr><tr><td></td><td>30</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 76px; left: 76px; white-space: nowrap; font-family: Arial; font-size: 6px;">30%</div><div></div></div>
+                          </div>
+                          <span class="chartGauge code-green"></span>
+                        </div>
+                      </div>
+                      <div class="circleChartItems">
+                        <h3 class="circleChartTitles">굴포천</h3>
+                        <div class="chartDw">
+                          <div id="chartVillageDiv">
+                            <div style="position: relative;"><div dir="ltr" style="position: relative; width: 66px; height: 66px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="66" height="66" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_2"></defs><rect x="0" y="0" width="66" height="66" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><path d="M11.030594473581957,40.138292570061296L1.615134962259937,43.19756081437328A33,33,0,0,1,33,0L32.99999999999999,9.900000000000002A23.099999999999998,23.099999999999998,0,0,0,11.030594473581957,40.138292570061296" stroke="#ffffff" stroke-width="1" fill="#f2f2f2"></path><text text-anchor="start" x="9.307349152294975" y="25.151706838013652" font-family="Arial" font-size="6" stroke="none" stroke-width="0" fill="#ffffff">30%</text></g><g><path d="M33,9.900000000000002L33,0A33,33,0,1,1,1.615134962259937,43.19756081437328L11.030594473581957,40.138292570061296A23.099999999999998,23.099999999999998,0,1,0,33,9.900000000000002" stroke="#ffffff" stroke-width="1" fill="#40b0ff"></path><text text-anchor="start" x="36.692650847705025" y="45.04829316198636" font-family="Arial" font-size="6" stroke="none" stroke-width="0" fill="#ffffff">70%</text></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th></th><th>per</th></tr></thead><tbody><tr><td></td><td>70</td></tr><tr><td></td><td>30</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 76px; left: 76px; white-space: nowrap; font-family: Arial; font-size: 6px;">30%</div><div></div></div>
+                          </div>
+                          <span class="chartGauge code-green"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="mapChartDataItems clear">
+                <a href="javascript:void(0);" class="chartBtns active" id="chartIndust"></a>
+                <div class="mapCharts">
+                  <div class="chartAreas">
+                    <div class="circleCharts clear">
+                      <div class="circleChartItems">
+                        <h3 class="circleChartTitles">대기상태</h3>
+                        <div class="chartDw">
+                          <div id="chartVillageDiv">
+                            <div style="position: relative;"><div dir="ltr" style="position: relative; width: 66px; height: 66px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="66" height="66" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_2"></defs><rect x="0" y="0" width="66" height="66" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><path d="M11.030594473581957,40.138292570061296L1.615134962259937,43.19756081437328A33,33,0,0,1,33,0L32.99999999999999,9.900000000000002A23.099999999999998,23.099999999999998,0,0,0,11.030594473581957,40.138292570061296" stroke="#ffffff" stroke-width="1" fill="#f2f2f2"></path><text text-anchor="start" x="9.307349152294975" y="25.151706838013652" font-family="Arial" font-size="6" stroke="none" stroke-width="0" fill="#ffffff">30%</text></g><g><path d="M33,9.900000000000002L33,0A33,33,0,1,1,1.615134962259937,43.19756081437328L11.030594473581957,40.138292570061296A23.099999999999998,23.099999999999998,0,1,0,33,9.900000000000002" stroke="#ffffff" stroke-width="1" fill="#40b0ff"></path><text text-anchor="start" x="36.692650847705025" y="45.04829316198636" font-family="Arial" font-size="6" stroke="none" stroke-width="0" fill="#ffffff">70%</text></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th></th><th>per</th></tr></thead><tbody><tr><td></td><td>70</td></tr><tr><td></td><td>30</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 76px; left: 76px; white-space: nowrap; font-family: Arial; font-size: 6px;">30%</div><div></div></div>
+                          </div>
+                          <span class="chartGauge code-warning"></span>
+                        </div>
+                      </div>
+                      <div class="circleChartItems">
+                        <h3 class="circleChartTitles">이동살수</h3>
+                        <div class="chartDw">
+                          <div id="moveWatering"></div>
+                        </div>
+                      </div>
+                      <div class="circleChartItems">
+                        <h3 class="circleChartTitles">고정살수(<span>1</span>단)</h3>
+                        <div class="chartDw">
+                          <div id="fixWatering"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="mapChartDataItems clear">
+                <a href="javascript:void(0);" class="chartBtns active" id="chartSchool"></a>
+                <div class="mapCharts">
+                  <div class="chartAreas">
+                    <div class="circleCharts clear">
+                      <div class="circleChartItems">
+                        <h3 class="circleChartTitles">대기상태</h3>
+                        <div class="chartDw">
+                          <div id="chartVillageDiv">
+                            <div style="position: relative;"><div dir="ltr" style="position: relative; width: 66px; height: 66px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="66" height="66" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_2"></defs><rect x="0" y="0" width="66" height="66" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><path d="M11.030594473581957,40.138292570061296L1.615134962259937,43.19756081437328A33,33,0,0,1,33,0L32.99999999999999,9.900000000000002A23.099999999999998,23.099999999999998,0,0,0,11.030594473581957,40.138292570061296" stroke="#ffffff" stroke-width="1" fill="#f2f2f2"></path><text text-anchor="start" x="9.307349152294975" y="25.151706838013652" font-family="Arial" font-size="6" stroke="none" stroke-width="0" fill="#ffffff">30%</text></g><g><path d="M33,9.900000000000002L33,0A33,33,0,1,1,1.615134962259937,43.19756081437328L11.030594473581957,40.138292570061296A23.099999999999998,23.099999999999998,0,1,0,33,9.900000000000002" stroke="#ffffff" stroke-width="1" fill="#40b0ff"></path><text text-anchor="start" x="36.692650847705025" y="45.04829316198636" font-family="Arial" font-size="6" stroke="none" stroke-width="0" fill="#ffffff">70%</text></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th></th><th>per</th></tr></thead><tbody><tr><td></td><td>70</td></tr><tr><td></td><td>30</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 76px; left: 76px; white-space: nowrap; font-family: Arial; font-size: 6px;">30%</div><div></div></div>
+                          </div>
+                          <span class="chartGauge code-red"></span>
+                        </div>
+                      </div>
+                      <div class="circleChartItems">
+                        <h3 class="circleChartTitles">팬(<span>1</span>단)</h3>
+                        <div class="chartDw">
+                          <div id="fanChart"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="mapChartDataItems clear">
+                <a href="javascript:void(0);" class="chartBtns active" id="chartSubway"></a>
+                <div class="mapCharts">
+                  <div class="chartAreas">
+                    <div class="circleCharts clear">
+                      <div class="circleChartItems">
+                        <h3 class="circleChartTitles">대기상태</h3>
+                        <div class="chartDw">
+                          <div id="chartVillageDiv">
+                            <div style="position: relative;"><div dir="ltr" style="position: relative; width: 66px; height: 66px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="66" height="66" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_2"></defs><rect x="0" y="0" width="66" height="66" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><path d="M11.030594473581957,40.138292570061296L1.615134962259937,43.19756081437328A33,33,0,0,1,33,0L32.99999999999999,9.900000000000002A23.099999999999998,23.099999999999998,0,0,0,11.030594473581957,40.138292570061296" stroke="#ffffff" stroke-width="1" fill="#f2f2f2"></path><text text-anchor="start" x="9.307349152294975" y="25.151706838013652" font-family="Arial" font-size="6" stroke="none" stroke-width="0" fill="#ffffff">30%</text></g><g><path d="M33,9.900000000000002L33,0A33,33,0,1,1,1.615134962259937,43.19756081437328L11.030594473581957,40.138292570061296A23.099999999999998,23.099999999999998,0,1,0,33,9.900000000000002" stroke="#ffffff" stroke-width="1" fill="#40b0ff"></path><text text-anchor="start" x="36.692650847705025" y="45.04829316198636" font-family="Arial" font-size="6" stroke="none" stroke-width="0" fill="#ffffff">70%</text></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th></th><th>per</th></tr></thead><tbody><tr><td></td><td>70</td></tr><tr><td></td><td>30</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 76px; left: 76px; white-space: nowrap; font-family: Arial; font-size: 6px;">30%</div><div></div></div>
+                          </div>
+                          <span class="chartGauge code-blue"></span>
+                        </div>
+                      </div>
+                      <div class="circleChartItems">
+                        <h3 class="circleChartTitles">공기청정(<span>2</span>단)</h3>
+                        <div class="chartDw">
+                          <div id="airClean"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- 아이콘 모음 (개발단에서는 html에는 삭제) -->
+          <div id="icons" style="position: absolute;left:20%;top:50%;z-index: 10;">
+            <div>
+              <img src="/img/v2/icons/icon_pop_005_bad.png" alt="">
+              <img src="/img/v2/icons/icon_pop_005_good.png" alt="">
+              <img src="/img/v2/icons/icon_pop_005_terrible.png" alt="">
+              <img src="/img/v2/icons/icon_pop_005_usually.png" alt="">
+              <img src="/img/v2/icons/icon_pop_006_bad.png" alt="">
+              <img src="/img/v2/icons/icon_pop_006_good.png" alt="">
+              <img src="/img/v2/icons/icon_pop_006_terrible.png" alt="">
+              <img src="/img/v2/icons/icon_pop_006_usually.png" alt="">
+              <img src="/img/v2/icons/icon_pop_007_bad.png" alt="">
+              <img src="/img/v2/icons/icon_pop_007_good.png" alt="">
+              <img src="/img/v2/icons/icon_pop_007_terrible.png" alt="">
+              <img src="/img/v2/icons/icon_pop_007_usually.png" alt="">
+            </div>
+            <div>
+              <img src="/img/v2/icons/icon_pop_008_bad.png" alt="">
+              <img src="/img/v2/icons/icon_pop_008_good.png" alt="">
+              <img src="/img/v2/icons/icon_pop_008_terrible.png" alt="">
+              <img src="/img/v2/icons/icon_pop_008_usually.png" alt="">
+              <img src="/img/v2/icons/icon_pop_building_bad.png" alt="">
+              <img src="/img/v2/icons/icon_pop_building_good.png" alt="">
+              <img src="/img/v2/icons/icon_pop_building_terrible.png" alt="">
+              <img src="/img/v2/icons/icon_pop_building_usually.png" alt="">
+              <img src="/img/v2/icons/icon_pop_road_bad.png" alt="">
+              <img src="/img/v2/icons/icon_pop_road_good.png" alt="">
+              <img src="/img/v2/icons/icon_pop_road_terrible.png" alt="">
+              <img src="/img/v2/icons/icon_pop_road_usually.png" alt="">
+            </div>
+            <div>
+              <img src="/img/v2/icons/black_icon_pop_005.png" alt="">
+              <img src="/img/v2/icons/black_icon_pop_006.png" alt="">
+              <img src="/img/v2/icons/black_icon_pop_007.png" alt="">
+              <img src="/img/v2/icons/black_icon_pop_008.png" alt="">
+            </div>
+          </div>
+          <style>
+            #icons {display: none;}
+            @media(min-width:1280px) {
+              #icons {display:block;}
+            }
+          </style>
+          <!-- /아이콘 모음 (개발단에서는 html에는 삭제) -->
+        </section>
+        <section id="mainContents">
+          <div class="container">
+            <div id="bucheonEtc" class="clear">
+              <div id="dustForecast">
+                <div class="etcListHeader clear">
+                  <h2>미세먼지 예보(<span id="airInfoMsrstnNm">소산본동</span>)</h2>
+                  <div class="deadline">
+                    <span id="airInfoDate">2020-12-29 14:00 기준</span>
+                    <a href="javascript:void(0);" class="addBtns"><span class="addIcons"></span></a>
+                  </div>
+                </div>
+                <ul class="cdtCategory clear">
+                  <li class="cdtBlue"><span>좋음</span></li>
+                  <li class="cdtGreen"><span>보통</span></li>
+                  <li class="cdtWarning"><span>나쁨</span></li>
+                  <li class="cdtRed"><span>매우나쁨</span></li>
+                </ul>
+                <div class="cdtDisplay" id="airInfoUl">
+                  <div class="cdtStatus">
+                    <ul class="cdtStatusLists clear">
+                      <li class="cdtStatusItems dustStatus codeBlue">
+                        <h4 class="cdtTitles">미세먼지</h4>
+                        <div class="cdtStatusIcons">
+                          <div class="iconImgs"></div>
+                        </div>
+                        <div class="statusKeys">
+                          <p class="statusTxtColor">좋음</p>
+                        </div>
+                        <div class="statusValues">
+                          <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
+                        </div>
+                      </li>
+                      <li class="cdtStatusItems ultrafineDustStatus codeBlue">
+                        <h4 class="cdtTitles">초미세먼지</h4>
+                        <div class="cdtStatusIcons">
+                          <div class="iconImgs"></div>
+                        </div>
+                        <div class="statusKeys">
+                          <p class="statusTxtColor">좋음</p>
+                        </div>
+                        <div class="statusValues">
+                          <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
+                        </div>
+                      </li>
+                      <li class="cdtStatusItems ozoneStatus codeBlue">
+                        <h4 class="cdtTitles">오존</h4>
+                        <div class="cdtStatusIcons">
+                          <div class="iconImgs"></div>
+                        </div>
+                        <div class="statusKeys">
+                          <p class="statusTxtColor">좋음</p>
+                        </div>
+                        <div class="statusValues">
+                          <p><span class="statusTxtColor">0.015</span> ppm</p>
+                        </div>
+                      </li>
+                      <li class="cdtStatusItems nitDioxideStatus codeBlue">
+                        <h4 class="cdtTitles">이산화질소</h4>
+                        <div class="cdtStatusIcons">
+                          <div class="iconImgs"></div>
+                        </div>
+                        <div class="statusKeys">
+                          <p class="statusTxtColor">좋음</p>
+                        </div>
+                        <div class="statusValues">
+                          <p><span class="statusTxtColor">0.015</span> ppm</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="cdtStatus">
+                    <ul class="cdtStatusLists clear">
+                      <li class="cdtStatusItems dustStatus codeGreen">
+                        <h4 class="cdtTitles">미세먼지</h4>
+                        <div class="cdtStatusIcons">
+                          <div class="iconImgs"></div>
+                        </div>
+                        <div class="statusKeys">
+                          <p class="statusTxtColor">보통</p>
+                        </div>
+                        <div class="statusValues">
+                          <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
+                        </div>
+                      </li>
+                      <li class="cdtStatusItems ultrafineDustStatus codeGreen">
+                        <h4 class="cdtTitles">초미세먼지</h4>
+                        <div class="cdtStatusIcons">
+                          <div class="iconImgs"></div>
+                        </div>
+                        <div class="statusKeys">
+                          <p class="statusTxtColor">보통</p>
+                        </div>
+                        <div class="statusValues">
+                          <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
+                        </div>
+                      </li>
+                      <li class="cdtStatusItems ozoneStatus codeGreen">
+                        <h4 class="cdtTitles">오존</h4>
+                        <div class="cdtStatusIcons">
+                          <div class="iconImgs"></div>
+                        </div>
+                        <div class="statusKeys">
+                          <p class="statusTxtColor">보통</p>
+                        </div>
+                        <div class="statusValues">
+                          <p><span class="statusTxtColor">0.015</span> ppm</p>
+                        </div>
+                      </li>
+                      <li class="cdtStatusItems nitDioxideStatus codeGreen">
+                        <h4 class="cdtTitles">이산화질소</h4>
+                        <div class="cdtStatusIcons">
+                          <div class="iconImgs"></div>
+                        </div>
+                        <div class="statusKeys">
+                          <p class="statusTxtColor">보통</p>
+                        </div>
+                        <div class="statusValues">
+                          <p><span class="statusTxtColor">0.015</span> ppm</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="cdtStatus">
+                    <ul class="cdtStatusLists clear">
+                      <li class="cdtStatusItems dustStatus codeWarning">
+                        <h4 class="cdtTitles">미세먼지</h4>
+                        <div class="cdtStatusIcons">
+                          <div class="iconImgs"></div>
+                        </div>
+                        <div class="statusKeys">
+                          <p class="statusTxtColor">나쁨</p>
+                        </div>
+                        <div class="statusValues">
+                          <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
+                        </div>
+                      </li>
+                      <li class="cdtStatusItems ultrafineDustStatus codeWarning">
+                        <h4 class="cdtTitles">초미세먼지</h4>
+                        <div class="cdtStatusIcons">
+                          <div class="iconImgs"></div>
+                        </div>
+                        <div class="statusKeys">
+                          <p class="statusTxtColor">나쁨</p>
+                        </div>
+                        <div class="statusValues">
+                          <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
+                        </div>
+                      </li>
+                      <li class="cdtStatusItems ozoneStatus codeWarning">
+                        <h4 class="cdtTitles">오존</h4>
+                        <div class="cdtStatusIcons">
+                          <div class="iconImgs"></div>
+                        </div>
+                        <div class="statusKeys">
+                          <p class="statusTxtColor">나쁨</p>
+                        </div>
+                        <div class="statusValues">
+                          <p><span class="statusTxtColor">0.015</span> ppm</p>
+                        </div>
+                      </li>
+                      <li class="cdtStatusItems nitDioxideStatus codeWarning">
+                        <h4 class="cdtTitles">이산화질소</h4>
+                        <div class="cdtStatusIcons">
+                          <div class="iconImgs"></div>
+                        </div>
+                        <div class="statusKeys">
+                          <p class="statusTxtColor">나쁨</p>
+                        </div>
+                        <div class="statusValues">
+                          <p><span class="statusTxtColor">0.015</span> ppm</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="cdtStatus">
+                    <ul class="cdtStatusLists clear">
+                      <li class="cdtStatusItems dustStatus codeRed">
+                        <h4 class="cdtTitles">미세먼지</h4>
+                        <div class="cdtStatusIcons">
+                          <div class="iconImgs"></div>
+                        </div>
+                        <div class="statusKeys">
+                          <p class="statusTxtColor">매우나쁨</p>
+                        </div>
+                        <div class="statusValues">
+                          <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
+                        </div>
+                      </li>
+                      <li class="cdtStatusItems ultrafineDustStatus codeRed">
+                        <h4 class="cdtTitles">초미세먼지</h4>
+                        <div class="cdtStatusIcons">
+                          <div class="iconImgs"></div>
+                        </div>
+                        <div class="statusKeys">
+                          <p class="statusTxtColor">매우나쁨</p>
+                        </div>
+                        <div class="statusValues">
+                          <p><span class="statusTxtColor">25</span> ㎍/㎥</p>
+                        </div>
+                      </li>
+                      <li class="cdtStatusItems ozoneStatus codeRed">
+                        <h4 class="cdtTitles">오존</h4>
+                        <div class="cdtStatusIcons">
+                          <div class="iconImgs"></div>
+                        </div>
+                        <div class="statusKeys">
+                          <p class="statusTxtColor">매우나쁨</p>
+                        </div>
+                        <div class="statusValues">
+                          <p><span class="statusTxtColor">0.015</span> ppm</p>
+                        </div>
+                      </li>
+                      <li class="cdtStatusItems nitDioxideStatus codeRed">
+                        <h4 class="cdtTitles">이산화질소</h4>
+                        <div class="cdtStatusIcons">
+                          <div class="iconImgs"></div>
+                        </div>
+                        <div class="statusKeys">
+                          <p class="statusTxtColor">매우나쁨</p>
+                        </div>
+                        <div class="statusValues">
+                          <p><span class="statusTxtColor">0.015</span> ppm</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="cdtStatus">
+                    <ul class="cdtStatusLists clear">
+                      <li class="cdtStatusItems dustStatus codeDefault">
+                        <h4 class="cdtTitles">미세먼지</h4>
+                        <div class="cdtStatusIcons">
+                          <div class="iconImgs"></div>
+                        </div>
+                        <div class="statusKeys">
+                          <p class="statusTxtColor">-</p>
+                        </div>
+                        <div class="statusValues">
+                          <p><span class="statusTxtColor">-</span> ㎍/㎥</p>
+                        </div>
+                      </li>
+                      <li class="cdtStatusItems ultrafineDustStatus codeDefault">
+                        <h4 class="cdtTitles">초미세먼지</h4>
+                        <div class="cdtStatusIcons">
+                          <div class="iconImgs"></div>
+                        </div>
+                        <div class="statusKeys">
+                          <p class="statusTxtColor">-</p>
+                        </div>
+                        <div class="statusValues">
+                          <p><span class="statusTxtColor">-</span> ㎍/㎥</p>
+                        </div>
+                      </li>
+                      <li class="cdtStatusItems ozoneStatus codeDefault">
+                        <h4 class="cdtTitles">오존</h4>
+                        <div class="cdtStatusIcons">
+                          <div class="iconImgs"></div>
+                        </div>
+                        <div class="statusKeys">
+                          <p class="statusTxtColor">-</p>
+                        </div>
+                        <div class="statusValues">
+                          <p><span class="statusTxtColor">-</span> ppm</p>
+                        </div>
+                      </li>
+                      <li class="cdtStatusItems nitDioxideStatus codeDefault">
+                        <h4 class="cdtTitles">이산화질소</h4>
+                        <div class="cdtStatusIcons">
+                          <div class="iconImgs"></div>
+                        </div>
+                        <div class="statusKeys">
+                          <p class="statusTxtColor">-</p>
+                        </div>
+                        <div class="statusValues">
+                          <p><span class="statusTxtColor">-</span> ppm</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div id="behaviors">
+                <div class="dustReduct">
+                  <div class="dustReductTxtInfo">
+                    <div class="etcListHeader clear">
+                      <h2>예보 기준에 따른 시민행동 요령</h2>
+                      <div class="deadline">
+                        <span id="airInfoDate">2020-12-29 14:00 기준</span>
+                      </div>
+                    </div>
+                    <div class="behaviorsInfoTxt">
+                      
+                      <div class="behaviorsInfoTablesWrapper">
+                        <table class="behaviorsInfoTables">
+                          <tbody>
+                            <tr>
+                              <th class="behaviorsInfoCategory" colspan="2">
+                                <div>
+                                  <p>예보등급 ㎍/㎥</p>
+                                </div>
+                              </th>
+                              <th class="behaviorsInfoCategory">
+                                <div>
+                                  <p>보통 (31-80)</p>
+                                </div>
+                              </th>
+                            </tr>
+                            <tr>
+                              <th class="behaviorsInfoCategory firstCategory" rowspan="2">
+                                <div>
+                                  <p>시민행동<br>요령</p>
+                                </div>
+                              </th>
+                              <th class="behaviorsInfoCategory secondCategory">
+                                <div>
+                                  <p>민감군</p>
+                                </div>
+                              </th>
+                              <td class="behaviorsInfoTableTxt">
+                                <div>
+                                  <p>실외활동시 특별히 행동에 제약을 받을 필요는 없지만 몸상태에 따라 유의하여 활동</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th class="behaviorsInfoCategory secondCategory">
+                                <div>
+                                  <p>일반인</p>
+                                </div>
+                              </th>
+                              <td class="behaviorsInfoTableTxt">
+                                <div>
+                                  <p>실외활동시 특별히 행동에 제약</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="behaviorsInfoNotice">
+                        <p>민감군 : 영·유아, 어린이, 임산부, 어린이, 호흡기·심혈관 질환자 등 대기오염에 노출되었을 경우 건강 등에 영향을 받기 쉬운사람</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dustReductTxtInfo">
+                    <div class="etcListHeader clear">
+                      <h2>금일 미세먼지 예보기준에 따른 시민행동 요령 (초미세먼지)</h2>
+                    </div>
+                    <div class="behaviorsInfoTxt">
+                      <div class="deadline">
+                        <span id="airInfoDate">2020-12-29 14:00 기준</span>
+                      </div>
+                      <div class="behaviorsInfoTablesWrapper">
+                        <table class="behaviorsInfoTables">
+                          <tbody>
+                            <tr>
+                              <th class="behaviorsInfoCategory" colspan="2">
+                                <div>
+                                  <p>예보등급 ㎍/㎥</p>
+                                </div>
+                              </th>
+                              <th class="behaviorsInfoCategory">
+                                <div>
+                                  <p>보통 (16-35)</p>
+                                </div>
+                              </th>
+                            </tr>
+                            <tr>
+                              <th class="behaviorsInfoCategory firstCategory" rowspan="2">
+                                <div>
+                                  <p>시민행동<br>요령</p>
+                                </div>
+                              </th>
+                              <th class="behaviorsInfoCategory secondCategory">
+                                <div>
+                                  <p>민감군</p>
+                                </div>
+                              </th>
+                              <td class="behaviorsInfoTableTxt">
+                                <div>
+                                  <p>실외활동시 특별히 행동에 제약을 받을 필요는 없지만 몸상태에 따라 유의하여 활동</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th class="behaviorsInfoCategory secondCategory">
+                                <div>
+                                  <p>일반인</p>
+                                </div>
+                              </th>
+                              <td class="behaviorsInfoTableTxt">
+                                <div>
+                                  <p>-</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="behaviorsInfoNotice">
+                        <p>민감군 : 영·유아, 어린이, 임산부, 어린이, 호흡기·심혈관 질환자 등 대기오염에 노출되었을 경우 건강 등에 영향을 받기 쉬운사람</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
     <footer id="footer_wrap">
       <h2 class="hidden-txt">footer</h2>
       <ul id="footerNavs" class="clear">

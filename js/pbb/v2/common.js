@@ -5,17 +5,23 @@ var accordionEvent = function(obj) {
   var opens = obj.opens;
   var openIndex = obj.openIndex;
   var customEvent = obj.customEvent;
+  var overlap = obj.overlap;
+  var onClick = obj.onClick;
   var slideDownEvent = function(target) {
     target.addClass('active');
-    target.siblings().removeClass('active');
     target.find(contents).stop().slideDown();
-    target.siblings().find(contents).stop().slideUp();
+    if (!overlap) {
+      target.siblings().removeClass('active');
+      target.siblings().find(contents).stop().slideUp();
+    }
   }
   var slideUpEvent = function(target) {
     target.removeClass('active');
-    target.siblings().removeClass('active');
     target.find(contents).stop().slideUp();
-    target.siblings().find(contents).stop().slideUp();
+    if (!overlap) {
+      target.siblings().removeClass('active');
+      target.siblings().find(contents).stop().slideUp();
+    }
   }
   var init = function() {
     var _target = $(el);
@@ -36,6 +42,9 @@ var accordionEvent = function(obj) {
       } else {
         slideDownEvent(_parents)
       }
+      if (onClick) {
+        onClick(_this);
+      }
     });
     if (customEvent) {
       customEvent();
@@ -43,7 +52,6 @@ var accordionEvent = function(obj) {
   };
   return init();
 }
-
 var fadeInOutEvent = function(obj) {
   var layer = obj.layer;
   var openBtn = obj.openBtn;
@@ -89,8 +97,8 @@ var callKaKaoMaps = function(obj) {
   var zoomAble = obj.zoomAble;
   var customMapTypes = obj.customMapTypes;
   var addEvent = obj.addEvent;
+  var map = new kakao.maps.Map(el, option);
   var init = function() {
-    var map = new kakao.maps.Map(el, option);
     if (zoomCtr.init) {
       var zoomCtrInit = new kakao.maps.ZoomControl();
       map.addControl(zoomCtrInit, kakao.maps.ControlPosition[zoomCtr.position]);
@@ -133,7 +141,8 @@ var callKaKaoMaps = function(obj) {
   };
   return {
     init : init,
-    obj : obj
+    obj : obj,
+    map : map
   };
 };
 function siteMapScrollEvent(nowPos, sectionArr) {
@@ -148,6 +157,19 @@ function setMapTypes(map, types) {
   $('[data-type="'+types+'"]').addClass("active");
   map.setMapTypeId(kakao.maps.MapTypeId[types])
 }
+function getDevice() {
+  var _window = $(window);
+  var _width = _window.width();
+  if (_width >= 1280) {
+    return 'PC';
+  }
+  if (_width <= 1280 && _width >= 720) {
+    return 'TABLET';
+  }
+  if (_width < 720) {
+    return 'MOBILE';
+  }
+};
 $(document).ready(function() {
   // 전역 변수
   var siteMap = $('#siteMaps');
@@ -160,6 +182,10 @@ $(document).ready(function() {
     $(this).removeClass('active');
     $(this).find('.subNavs').stop().slideUp();
   });
+  // 모달닫기
+  $('.modalBg').on('click',  function() {
+    $('.modals').stop().fadeOut();
+  })
   new fadeInOutEvent({
     layer : "#siteMaps",
     openBtn : ".sideBtn",
