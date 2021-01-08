@@ -997,7 +997,7 @@
           <!-- 아이콘 모음 (개발단에서는 html에는 삭제) -->
           <div id="icons" style="position: absolute;left:20%;top:50%;z-index: 10;">
             <div>
-              <img src="/img/v2/icons/icon_pop_005_bad.png" alt="">
+              <img onclick="$('.modals').stop().fadeIn();" src="/img/v2/icons/icon_pop_005_bad.png" alt="">
               <img src="/img/v2/icons/icon_pop_005_good.png" alt="">
               <img src="/img/v2/icons/icon_pop_005_terrible.png" alt="">
               <img src="/img/v2/icons/icon_pop_005_usually.png" alt="">
@@ -1480,7 +1480,34 @@
           </div>
         </div>
       </div>
-   </footer>
+    </footer>
+    <div class="modals">
+      <div class="modalContents publicVehicle">
+        <div class="modalSkins modalSkin1">
+          <div class="modalHeader textCenter">
+            <div class="modalTitle">
+              <h4>공공부문 차량 2부제</h4>
+              <a href="javascript:void(0);" class="closeBtn typeX">
+                <span></span>
+              </a>
+            </div>
+          </div>
+          <div class="modalBody">
+            <div class="modalScrolls">
+              <div class="modalSection">
+                <p class="textCenter nomalTxt">고농도 미세먼지 저감조치 발령 시 시청, 행정복지 센터 등 공공기관을 대상으로 차량2부제 시행</p>
+                <p class="textLeft nomalTxt department"><span>담당부서 :</span>자원순환과</p>
+              </div>
+            </div>
+          </div>
+          <div class="modalBtnWrapper clear">
+            <a href="javascript:void(0);" class="modalBtns">저감효과 분석 확인</a>
+            <a href="javascript:void(0);" class="modalBtns closeBtn">닫기</a>
+          </div>
+        </div>
+      </div>
+      <div class="modalBg"></div>
+    </div>
   </div>
 </body>
 

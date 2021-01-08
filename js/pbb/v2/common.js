@@ -183,7 +183,7 @@ $(document).ready(function() {
     $(this).find('.subNavs').stop().slideUp();
   });
   // 모달닫기
-  $('.modalBg').on('click',  function() {
+  $('.modalBg, .closeBtn').on('click',  function() {
     $('.modals').stop().fadeOut();
   })
   new fadeInOutEvent({
