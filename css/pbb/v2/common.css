@@ -156,7 +156,7 @@
 .depthLink::after {content:'';display:block;width:12px;height:7px;background-image:url('/img/v2/common/icon-down-gray.png');background-repeat: no-repeat;background-position:center;position:absolute;top:50%;right:15px;transform: translateY(-50%);transition: all 0.3s ease-in-out;}
 .depthLink.listNull::after {display:none;}
 .depthLink.active::after {transform: translateY(-50%) rotate(180deg);}
-.depthLink.active + .depthLinkList {display:block;background-color:#fff;}
+.depthLink.active + .depthLinkList {display:block;background-color:#fff;border:1px solid #dadada;border-top:0;}
 .depthLinkList {position:absolute;top:100%;z-index:2;background-color:#f3f3f3;}
 .depthLinkItems > a {white-space: nowrap;display:block;color:#666; transition: all 0.3s ease-in-out;position:relative;left:0;}
 .depthLinkItems > a:hover {color:#1460f1;left:10px;}
