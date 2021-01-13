@@ -145,6 +145,104 @@ var callKaKaoMaps = function(obj) {
     map : map
   };
 };
+var dropDownSet = function(obj) {
+  var wrapper = $(obj.wrapper);
+  var link = wrapper.find(obj.link);
+  var list = wrapper.find(obj.list);
+  var items = wrapper.find(obj.items);
+  var useSub = obj.useSub;
+  var customLinkEvent = obj.customLinkEvent;
+  var customItemEvent = obj.customItemEvent;
+  var open = obj.open;
+  var type = obj.type;
+  var listWidth = wrapper.width();
+  var itemWidth = items.width();
+  var dropEvent = function() {
+    switch(type) {
+      case "HOVER" : 
+        wrapper.hover(function() {
+          var _this = $(this).children(obj.link);
+          var active = _this.hasClass('active');
+          if (!active) {
+            list.stop().slideDown();
+            _this.addClass('active');
+          }
+        }, function() {
+          var _this = $(this).children(obj.link);
+          var active = _this.hasClass('active');
+          if (active) {
+            list.stop().slideUp();
+            _this.removeClass('active');
+          }
+        });
+        break;
+      case "CLICK" :
+        link.on('click', function() {
+          var _this = $(this);
+          var active = _this.hasClass('active');
+          if (active) {
+            list.stop().slideUp();
+            _this.removeClass('active');
+          } else {
+            list.stop().slideDown();
+            _this.addClass('active');
+          }
+        });
+      break;
+      default : 
+        link.on('click', function() {
+          var _this = $(this);
+          var active = _this.hasClass('active');
+          if (active) {
+            list.stop().slideUp();
+            _this.removeClass('active');
+          } else {
+            list.stop().slideDown();
+            _this.addClass('active');
+          }
+        });
+      break;
+    }
+  };
+  var size = function() {
+    wrapper.css('width', 'auto');
+    items.css('width', 'auto');
+    if (listWidth < itemWidth) {
+      wrapper.css('width', itemWidth + "px");
+    } else {
+      items.css('width', listWidth + "px");
+    };
+  }
+  var init = function() {
+    $(window).resize(function() {
+      size();
+    })
+    size();
+    if (!open) {
+      list.css('display', 'none');
+    };
+    if (open) {
+      list.css('display', 'block');
+      link.addClass('active');
+    }
+    if (customLinkEvent) {
+      link.on('click', function() {
+        var _this = $(this);
+        customLinkEvent(_this)
+      });
+    };
+    if (customItemEvent) {
+      items.on('click', function() {
+        var _this = $(this);
+        customItemEvent(_this);
+      })
+    };
+    if (useSub) {
+      dropEvent();
+    }
+  };
+  return {init};
+};
 function siteMapScrollEvent(nowPos, sectionArr) {
   for (var i = 0; i < sectionArr.length; i++) {
     if (nowPos > sectionArr[i]-20) {
@@ -170,7 +268,7 @@ function getDevice() {
     return 'MOBILE';
   }
 };
-$(document).ready(function() {
+window.onload = function() {
   // 전역 변수
   var siteMap = $('#siteMaps');
   var _body = $("body");
@@ -185,7 +283,29 @@ $(document).ready(function() {
   // 모달닫기
   $('.modalBg, .closeBtn').on('click',  function() {
     $('.modals').stop().fadeOut();
-  })
+  });
+  // jquery ui datepicker
+  $('.dateForm').each(function(i) {
+    var $this = $(this);
+    $this.datepicker({
+      changeMonth: true,
+      changeYear: true, 
+      minDate: '-100y', 
+      maxDate: new Date(),
+      nextText: '다음 달',
+      prevText: '이전 달',
+      numberOfMonths: [1,1],
+      stepMonths: 1,
+      yearRange: 'c-100:c+10',
+      showButtonPanel: true,  
+      currentText: '오늘 날짜',
+      closeText: '닫기', 
+      dateFormat: "yy-mm-dd",
+      showMonthAfterYear: true ,
+      dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+      monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+    });
+  });
   new fadeInOutEvent({
     layer : "#siteMaps",
     openBtn : ".sideBtn",
@@ -244,4 +364,20 @@ $(document).ready(function() {
       });
     }
   });
-});
+  var dropwdownDepth2 = new dropDownSet({
+    wrapper : "#depth3",
+    useSub : true,
+    link : ".depthLink",
+    list : "#depth3LinkList",
+    items : ".depthLinkItems",
+    open : false,
+    type : "HOVER",
+    customLinkEvent : function(thisEl) {
+
+    },
+    customItemEvent : function(thisEl) {
+      
+    }
+  });
+  dropwdownDepth2.init();
+};

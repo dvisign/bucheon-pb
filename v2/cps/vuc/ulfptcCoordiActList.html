@@ -20,97 +20,16 @@
   <script src="/js/pbb/v2/common.js"></script>
   <script>
     $(document).ready(function() {
-      // 아코디언 이벤트
-      var accordion = new accordionEvent({
-        // 아코디언 버튼
-        el : ".dustBusinessStatusItems > a",
-        // 로드시 아코디언 펼침
-        opens : false,
-        // 중복선택
-        overlap : true,
-        // 클릭이벤트
-        onClick : function(thisEl) {
-          console.log(thisEl)
-        },
-        // 아코디언 이벤트 세팅 후 커스텀이벤트 등록
-        customEvent : function() {
-
-        }
-      });
       $('#topNotice').slick({
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1
       });
-      var opSet = {
-        el : "maps",
-        center : {
-          lat : 33.450701,
-          lng : 126.570667
-        },
-        level : 3,
-        zoomCtr : {
-          init : false,
-          position : "",
-          custom : function(dom, map) {
-
-          }
-        },
-        customZoomCtr : {
-          in : document.getElementById('zoomIn'),
-          out : document.getElementById('zoomOut')
-        },
-        mapCtr : {
-          init : false,
-          position : "",
-          custom : function(dom, map) {
-
-          } 
-        },
-        customMapTypes : function(map) {
-          setMapTypes(map, "ROADMAP");
-          $('.typeSet').on("click", function() {
-            var _this = $(this);
-            var types = _this.attr('data-type');
-            $('.typeSet').removeClass('active');
-            setMapTypes(map, types);
-          });
-        },
-        addEvent : function(map) {
-          var mapTypes = map.getMapTypeId();
-        }
-      }
-      var mapInit = new callKaKaoMaps(opSet);
-      $("#areaAverage .foldBtn").on("click", function() {
-        var _this = $(this);
-        var slideEl = $('#areaAverageStatusLists');
-        if (_this.hasClass('on')) {
-          _this.removeClass('on');
-          slideEl.stop().slideUp();
-        } else {
-          _this.addClass('on');
-          slideEl.stop().slideDown();
-        }
-      });
-      $("#dustBusiness .foldBtn").on("click", function() {
-        var _this = $(this);
-        var slideEl = $('#dustBusinessStatusLists');
-        if (_this.hasClass('on')) {
-          _this.removeClass('on');
-          $('.dustBusinessStatusItems').removeClass('active');
-          $('.subDustBusinessStatusList').css("display","none");
-          slideEl.stop().slideUp();
-        } else {
-          _this.addClass('on');
-          slideEl.stop().slideDown();
-        }
-      });
-      mapInit.init();
     });
   </script>
 </head>
 
-<body id="adUlfptcSearch">
+<body id="ulfptcCoordiActList">
   <div class="wrapper">
     <!-- 헤더 -->
     <header id="headers">
@@ -687,116 +606,225 @@
     </div>
     <!-- /depth -->
     <main class="sectionWrapper">
-      <article>
-        <section id="mainVisualMaps">
-          <div id="maps"></div>
-          <div id="leftData" class="dataLayer">
-            <div id="mapInformation">
-              <div id="dustStatus">
-                <div>
-                  <div id="mapController" class="clear">
-                    <div id="viewController">
-                      <button id="defualtView" class="typeSet" data-type="ROADMAP">지도</button>
-                      <button id="skyView" class="typeSet" data-type="SKYVIEW">스카이뷰</button>
-                    </div>
-                    <div id="zoomController">
-                      <button id="zoomIn"><span class="soundOnly">확대</span></button>
-                      <button id="zoomOut"><span class="soundOnly">축소</span></button>
-                    </div>
+      <article class="subPages">
+        <section>
+          <div class="sm-container">
+            <div class="subPageHeader">
+              <h3>미세먼지 코디네이터 활동</h3>
+            </div>
+            <div class="subpageContents">
+              <div class="searchFilters">
+                <div class="displayFlex justifyBetween alignItemsCenter">
+                  <div class="searchTextFilter">
+                    <label class="labelText">검색내용</label><input type="text" class="textForm">
                   </div>
-                  <div id="areaAverage">
-                    <div id="areaAverageHeader" class="mapInfoHeader">
-                      <p id="areaAverageTitle" class="mapInfoTitle">부천시 평균</p>
-                      <p id="areaAverageDate">2020년 11월 20일</p>
-                      <div class="foldBtnWrapper">
-                        <a class="foldBtn on" href="javascript:void(0);"></a>
-                      </div>
-                    </div>
-                    <div id="areaAverageDatas" class="code-blue">
-                      <div class="clear">
-                        <p id="areaAverageValue">50 ug/m3</p>
-                        <p id="areaAverageStatus"></p>
-                      </div>
-                    </div>
-                    <!--
-                    코드 클래스
-                    <div id="areaAverageDatas" class="code-green">
-                      <div class="clear">
-                        <p id="areaAverageValue">50 ug/m3</p>
-                        <p id="areaAverageStatus"></p>
-                      </div>
-                    </div>
-                    <div id="areaAverageDatas" class="code-warning">
-                      <div class="clear">
-                        <p id="areaAverageValue">50 ug/m3</p>
-                        <p id="areaAverageStatus"></p>
-                      </div>
-                    </div>
-                    <div id="areaAverageDatas" class="code-red">
-                      <div class="clear">
-                        <p id="areaAverageValue">50 ug/m3</p>
-                        <p id="areaAverageStatus"></p>
-                      </div>
-                    </div>
-                    <div id="areaAverageDatas" class="code-default">
-                      <div class="clear">
-                        <p id="areaAverageValue">-</p>
-                      </div>
-                    </div>
-                    -->
+                  <div class="searchSubmits">
+                    <a href="javascript:void(0);" class="submitBtn">조회</a>
                   </div>
                 </div>
-                <ul id="areaAverageStatusLists" class="clear">
-                  <li class="areaAverageStatusItems">
-                    <a href="javascript:void(0);">초미세먼지 PM-2.5</a>
-                  </li>
-                  <li class="areaAverageStatusItems">
-                    <a href="javascript:void(0);">미세먼지 PM-10</a>
-                  </li>
-                  <li class="areaAverageStatusItems active">
-                    <a href="javascript:void(0);">오존 O₃</a>
-                  </li>
-                </ul>
               </div>
-              <div id="dustBusinessStatus">
-                <div id="dustBusiness">
-                  <div id="businessHeader" class="mapInfoHeader">
-                    <p id="businessTitle" class="mapInfoTitle">측정망 구분</p>
-                    <div class="foldBtnWrapper">
-                      <a class="foldBtn on" href="javascript:void(0);"></a>
+              <div id="activityCountList" class="dataChartTable">
+                <div class="sectionHeader displayFlex justifyBetween alignItemsCenter">
+                  <h4 class="sectionTitles">활동건수</h4>
+                  <div class="viewOptions">
+                    <select class="selectForm">
+                      <option>전체</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="activityCount">
+                  <ul class="activityCountCates clear">
+                    <li class="activeityItems">
+                      <div class="activityCountCateItems">
+                        <span>1월</span>
+                      </div>
+                      <div class="activityCountValue">
+                        <span>0</span>
+                      </div>
+                    </li>
+                    <li class="activeityItems">
+                      <div class="activityCountCateItems">
+                        <span>2월</span>
+                      </div>
+                      <div class="activityCountValue">
+                        <span>0</span>
+                      </div>
+                    </li>
+                    <li class="activeityItems">
+                      <div class="activityCountCateItems">
+                        <span>3월</span>
+                      </div>
+                      <div class="activityCountValue">
+                        <span>0</span>
+                      </div>
+                    </li>
+                    <li class="activeityItems">
+                      <div class="activityCountCateItems">
+                        <span>4월</span>
+                      </div>
+                      <div class="activityCountValue">
+                        <span>0</span>
+                      </div>
+                    </li>
+                    <li class="activeityItems">
+                      <div class="activityCountCateItems">
+                        <span>5월</span>
+                      </div>
+                      <div class="activityCountValue">
+                        <span>0</span>
+                      </div>
+                    </li>
+                    <li class="activeityItems">
+                      <div class="activityCountCateItems">
+                        <span>6월</span>
+                      </div>
+                      <div class="activityCountValue">
+                        <span>0</span>
+                      </div>
+                    </li>
+                    <li class="activeityItems">
+                      <div class="activityCountCateItems">
+                        <span>7월</span>
+                      </div>
+                      <div class="activityCountValue">
+                        <span>0</span>
+                      </div>
+                    </li>
+                    <li class="activeityItems">
+                      <div class="activityCountCateItems">
+                        <span>8월</span>
+                      </div>
+                      <div class="activityCountValue">
+                        <span>0</span>
+                      </div>
+                    </li>
+                    <li class="activeityItems">
+                      <div class="activityCountCateItems">
+                        <span>9월</span>
+                      </div>
+                      <div class="activityCountValue">
+                        <span>0</span>
+                      </div>
+                    </li>
+                    <li class="activeityItems">
+                      <div class="activityCountCateItems">
+                        <span>10월</span>
+                      </div>
+                      <div class="activityCountValue">
+                        <span>0</span>
+                      </div>
+                    </li>
+                    <li class="activeityItems">
+                      <div class="activityCountCateItems">
+                        <span>11월</span>
+                      </div>
+                      <div class="activityCountValue">
+                        <span>0</span>
+                      </div>
+                    </li>
+                    <li class="activeityItems">
+                      <div class="activityCountCateItems">
+                        <span>12월</span>
+                      </div>
+                      <div class="activityCountValue">
+                        <span>0</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div id="codiActHistory">
+                <div class="sectionHeader">
+                  <h4 class="sectionTitles">코디네이터 활동 이력</h4>
+                  <div class="displayFlex alignItemsCenter justifyBetween">
+                    <div class="searchCount">
+                      <p>조회결과 : <span>0</span>건</p>
+                    </div>
+                    <div class="viewOptions">
+                      <select class="selectForm">
+                        <option>전체</option>
+                      </select>
                     </div>
                   </div>
                 </div>
-                <ul id="dustBusinessStatusLists" class="clear">
-                  <li class="dustBusinessStatusItems">
-                    <a href="javascript:void(0);">국가측정망</a>
-                  </li>
-                  <li class="dustBusinessStatusItems">
-                    <a href="javascript:void(0);">우리동네</a>
-                  </li>
-                  <li class="dustBusinessStatusItems">
-                    <a href="javascript:void(0);">특별관리지역</a>
-                  </li>
-                </ul>
+                <div class="boardLists">
+                  <div class="boardHeader">
+                    <div class="boardListCategory boardItems">
+                      <div class="listWrNum listComponents">
+                        <span class="listValues">순번</span>
+                      </div>
+                      <div class="listWrSubject listComponents">
+                        <span class="listValues">활동제목</span>
+                      </div>
+                      <div class="listActDateTime listComponents">
+                        <span class="listValues">활동기간</span>
+                      </div>
+                      <div class="listCdName listComponents">
+                        <span class="listValues">코디네이터</span>
+                      </div>
+                      <div class="listWrDateTime listComponents">
+                        <span class="listValues">작성일자</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="boardBody">
+                    <div class="boardList">
+                      <div class="boardItems">
+                        <div class="listWrNum listComponents">
+                          <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                            <span class="listValues">0</span>
+                          </div>
+                        </div>
+                        <div class="listWrSubject listComponents">
+                          <a href="#" class="listLinks">도담초등학교 3-2반 1차 교육활동도담초등학교 3-2반 1차 교육활동도담초등학교 3-2반 1차 교육활동도담초등학교 3-2반 1차 교육활동도담초등학교 3-2반 1차 교육활동도담초등학교 3-2반 1차 교육활동도담초등학교 3-2반 1차 교육활동</a>
+                        </div>
+                        <div class="listActDateTime listComponents">
+                          <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                            <span class="listValues">2020-11-09 ~ 2020-10-09</span>
+                          </div>
+                        </div>
+                        <div class="listCdName listComponents">
+                          <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                            <span class="listValues">테스트</span>
+                          </div>
+                        </div>
+                        <div class="listWrDateTime listComponents">
+                          <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                            <span class="listValues">2020-08-21</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pagenations">
+                  <ul class="pageList">
+                    <li class="pageItems prevPager">
+                      <a href="#"></a>
+                    </li>
+                    <li class="pageItems active">
+                      <a href="#">1</a>
+                    </li>
+                    <li class="pageItems">
+                      <a href="#">2</a>
+                    </li>
+                    <li class="pageItems">
+                      <a href="#">3</a>
+                    </li>
+                    <li class="pageItems">
+                      <a href="#">4</a>
+                    </li>
+                    <li class="pageItems">
+                      <a href="#">5</a>
+                    </li>
+                    <li class="pageItems nextPager">
+                      <a href="#"></a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-          <!-- 개발시 삭제 -->
-          <div style="position:absolute;top:50%;left:50%;transform: translate(-50%, -50%);z-index: 1;">
-            <a href="javascript:void(0)" onclick="$('#modal1').stop().fadeIn();">
-              <img src="/img/v2/icons/black_icon_pop_005.png">
-            </a>
-            <a href="javascript:void(0)" onclick="$('#modal2').stop().fadeIn();">
-              <img src="/img/v2/icons/icon_pop_005_good.png">
-            </a>
-            <a href="javascript:void(0)" onclick="$('#modal3').stop().fadeIn();">
-              <img src="/img/v2/icons/icon_pop_road_usually.png">
-            </a>
-          </div>
-          <script>
-            
-          </script>
-          <!-- /개발시 삭제 -->
         </section>
       </article>
     </main>
@@ -832,324 +860,6 @@
         </div>
       </div>
     </footer>
-    <div class="modals" id="modal1">
-      <div class="modalContents">
-        <div class="modalSkins modalSkin1">
-          <div class="modalHeader textCenter">
-            <div class="modalTitle">
-              <h4><span>오정동</span> 대기질 정보</h4>
-              <a href="javascript:void(0);" class="closeBtn typeX">
-                <span></span>
-              </a>
-            </div>
-          </div>
-          <div class="modalBody">
-            <div class="modalScrolls">
-              <div class="modalSection">
-                <h5 class="modalSectionTitle textCenter"><span>2020년 11월 12일 13시</span> (<span>오정동</span>측정소)</h5>
-                <div class="modalDataTables">
-                  <table>
-                    <colgroup>
-                      <col width="120px">
-                      <col width="80px">
-                      <col width="90px">
-                      <col width="70px">
-                    </colgroup>
-                    <tbody>
-                      <tr>
-                        <th class="textLeft modalTableCategory">
-                          <div>
-                            <p>초미세먼지</p>
-                          </div>
-                        </th>
-                        <td class="textCenter">
-                          <div>
-                            <span>PM-2.5</span>
-                          </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-blue">50ug/m3</span>
-                          </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-blue">좋음</span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="textLeft modalTableCategory">
-                          <div>
-                            <p>미세먼지</p>
-                          </div>
-                        </th>
-                        <td class="textCenter">
-                          <div>
-                            <span>PM-10</span>
-                          </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-green">50ug/m3</span>
-                          </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-green">보통</span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="textLeft modalTableCategory">
-                          <div>
-                            <p>오존</p>
-                          </div>
-                        </th>
-                        <td class="textCenter">
-                          <div>
-                            <span>PM-2.5</span>
-                          </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-warning">50ug/m3</span>
-                          </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-warning">나쁨</span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="textLeft modalTableCategory">
-                          <div>
-                            <p>이산화탄소</p>
-                          </div>
-                        </th>
-                        <td class="textCenter">
-                          <div>
-                            <span>PM-2.5</span>
-                          </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-red">50ug/m3</span>
-                          </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-red">매우나쁨</span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="textLeft modalTableCategory">
-                          <div>
-                            <p>일산화탄소</p>
-                          </div>
-                        </th>
-                        <td class="textCenter">
-                          <div>
-                            <span>PM-2.5</span>
-                          </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-green">50ug/m3</span>
-                          </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-green">보통</span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="textLeft modalTableCategory">
-                          <div>
-                            <p>아황산가스</p>
-                          </div>
-                        </th>
-                        <td class="textCenter">
-                          <div>
-                            <span>PM-2.5</span>
-                          </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-blue">50ug/m3</span>
-                          </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-blue">좋음</span>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modalBg"></div>
-    </div>
-    <div class="modals" id="modal2">
-      <div class="modalContents">
-        <div class="modalSkins modalSkin2">
-          <div class="modalHeader">
-            <div class="modalTitle">
-              <h4><span>부천시 오정동</span>측정소 (국가 도시 대기 측정소)</h4>
-              <a href="javascript:void(0);" class="closeBtn typeX">
-                <span></span>
-              </a>
-            </div>
-          </div>
-          <div class="modalBody">
-            <div class="modalScrolls">
-              <div class="modalSection">
-                <div class="modalNationDevice">
-                  <div class="modalNationDeviceState clear">
-                    <div class="modalNationDeviceData">
-                      <h5 class="modalSectionTitle textCenter"><span>부천시 성오로 172</span>(<span>오정동 어울마당 아트홀</span>)</h5>
-                      <div class="devDataDetail">
-                        <h6>세부정보</h6>
-                        <div class="devDetailDataList clear">
-                          <div class="devDetailDataItems">
-                            <div class="devDetailDataCategory">
-                              <span>PM-2.5</span>
-                            </div>
-                            <div class="devDetailDataValue code-red">
-                              <span>19ug/m3</span>
-                              <span>매우나쁨</span>
-                            </div>
-                          </div>
-                          <div class="devDetailDataItems">
-                            <div class="devDetailDataCategory">
-                              <span>PM-10</span>
-                            </div>
-                            <div class="devDetailDataValue code-blue">
-                              <span>19ug/m3</span>
-                              <span>좋음</span>
-                            </div>
-                          </div>
-                          <div class="devDetailDataItems">
-                            <div class="devDetailDataCategory">
-                              <span>오존</span>
-                            </div>
-                            <div class="devDetailDataValue code-green">
-                              <span>19ug/m3</span>
-                              <span>보통</span>
-                            </div>
-                          </div>
-                          <div class="devDetailDataItems">
-                            <div class="devDetailDataCategory">
-                              <span>이산화질소</span>
-                            </div>
-                            <div class="devDetailDataValue code-warning">
-                              <span>19ug/m3</span>
-                              <span>나쁨</span>
-                            </div>
-                          </div>
-                          <div class="devDetailDataItems">
-                            <div class="devDetailDataCategory">
-                              <span>일산화탄소</span>
-                            </div>
-                            <div class="devDetailDataValue code-red">
-                              <span>19ug/m3</span>
-                              <span>매우나쁨</span>
-                            </div>
-                          </div>
-                          <div class="devDetailDataItems">
-                            <div class="devDetailDataCategory">
-                              <span>아황산가스</span>
-                            </div>
-                            <div class="devDetailDataValue code-red">
-                              <span>19ug/m3</span>
-                              <span>매우나쁨</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="modalNationDeviceInfo code-blue">
-                      <div>
-                        <p class="textLeft devInfoCategory"><span>초미세먼지</span></p>
-                        <p class="textRight devInfoState"><span>좋음</span></p>
-                        <p class="textRight devInfoData"><span class="devInfoDataValue">96</span><span>ug/m3</span></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="modalNationDeviceChart clear">
-                  <div class="deviceChart1">
-                    <h6 class="chartTitles">미세먼지(PM10)</h6>
-                    <div class="deviceChartArea" style="height:100px;border:10px solid pink;background-color: antiquewhite;">차트영역</div>
-                  </div>
-                  <div class="deviceChart2">
-                    <h6 class="chartTitles">미세먼지(PM2.5)</h6>
-                    <div class="deviceChartArea" style="height:100px;border:10px solid pink;background-color: antiquewhite;">차트영역</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modalBg"></div>
-    </div>
-    <div class="modals" id="modal3">
-      <div class="modalContents">
-        <div class="modalSkins modalSkin2">
-          <div class="modalHeader">
-            <div class="modalTitle">
-              <h4>공업단지 미세먼지 해결 서비스 S01 (<span>석천로</span>)</h4>
-              <a href="javascript:void(0);" class="closeBtn typeX">
-                <span></span>
-              </a>
-            </div>
-          </div>
-          <div class="modalBody">
-            <div class="modalScrolls">
-              <div class="modalSection">
-                <div class="modalNationDevice">
-                  <div class="modalCompareState clear">
-                    <div class="modalCompareData">
-                      <h5 class="modalSectionTitle textCenter"><span>부천시 성오로 172</span>(<span>오정동 어울마당 아트홀</span>)</h5>
-                      <div class="devDataDetail">
-                        <h6>PM 2.5 24시간 농도별 현황</h6>
-                        <div class="serviceDataChart" style="border:20px solid pink;background-color:antiquewhite;">
-                          차트
-                        </div>
-                      </div>
-                    </div>
-                    <div class="modalCompareInfo textCenter code-red clear">
-                      <div class="devState">
-                        <p class="devInfoCategory"><span>초미세먼지</span></p>
-                        <p class="devInfoState"><span>매우나쁨</span></p>
-                      </div>
-                      <div class="compareState">
-                        <p class="devInfoCategory"><span>측정소 비교</span></p>
-                        <p class="devInfoState"><span>높음</span></p>
-                        <p class="devPlace">중2동측정소</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modalBtnWrapper clear">
-            <a href="javascript:void(0);" class="w-100 modalBtns">정보서비스 안내</a>
-          </div>
-        </div>
-      </div>
-      <div class="modalBg"></div>
-    </div>
   </div>
 </body>
 

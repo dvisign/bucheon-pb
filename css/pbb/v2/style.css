@@ -39,9 +39,9 @@
 #areaAverageDatas.code-red {background-color:#ff0000;}
 #areaAverageDatas.code-default {background-color:#999;}
 #areaAverageDatas.code-default #areaAverageValue {width:100%;text-align: center;}
-#areaAverageDatas.code-blue #areaAverageStatus::after {content:'매우 좋음';}
-#areaAverageDatas.code-green #areaAverageStatus::after {content:'좋음';}
-#areaAverageDatas.code-warning #areaAverageStatus::after {content:'보통';}
+#areaAverageDatas.code-blue #areaAverageStatus::after {content:'좋음';}
+#areaAverageDatas.code-green #areaAverageStatus::after {content:'보통';}
+#areaAverageDatas.code-warning #areaAverageStatus::after {content:'나쁨';}
 #areaAverageDatas.code-red #areaAverageStatus::after {content:'매우 나쁨';}
 #areaAverageValue {float:left;font-family: "Rubik";font-weight: 600;letter-spacing: -1px;font-size: 13px;}
 #areaAverageDatas #areaAverageStatus::after {float:right;font-size:12px;letter-spacing: -1px;font-weight: 600;}
@@ -67,7 +67,7 @@
 /* /지도 컨트롤러 */
 /* 차트 */
 #rightData.dataLayer {padding:0 10px;margin-top:16px;}
-.mapChartDataItems {height:120px;overflow-x: hidden;}
+.mapChartDataItems {height:120px;}
 .mapChartDataItems .chartBtns {float:right;display:block;width:100px;height:100%;background-color:#fff;position:relative;background-position: center;background-repeat: no-repeat;background-size: auto;border:1px solid #dadada;z-index:1;}
 .mapChartDataItems .chartBtns::after {content:'';display:block;width:34px;height:34px;border-radius: 50%;border:1px solid #dadada;background-color:#fff;position:absolute;top:50%;right:calc(100% - (34px / 2)); transform: translateY(-50%);background-image: url('/img/v2/common/icon-left.png');background-position: center;background-size: 7px;background-repeat: no-repeat;z-index: 1;}
 .mapChartDataItems .chartBtns.active::after {background-image: url('/img/v2/common/icon-right.png');}
@@ -76,17 +76,17 @@
 .mapChartDataItems .chartBtns#chartIndust {background-image: url('/img/v2/main/img-indust.jpg');}
 .mapChartDataItems .chartBtns#chartSchool {background-image: url('/img/v2/main/img-school.jpg');}
 .mapChartDataItems .chartBtns#chartSubway {background-image: url('/img/v2/main/img-subway.jpg');}
-.mapChartDataItems .mapCharts {transition:0.3s;float:right;overflow: hidden;height:100%;background-color:rgba(255, 255, 255, 0.8);border:1px solid #dadada;border-right:0;width:calc(100% - 100px)}
-.mapChartDataItems .chartBtns.active + div.mapCharts {overflow-x: hidden;}
-.mapChartDataItems .chartBtns:not(.active) + div.mapCharts {transform: translateX(100%);}
-.mapChartDataItems .chartAreas {}
-/* .mapChartDataItems .chartBtns.active + div.mapCharts::-webkit-scrollbar {
-  display:none;
-} */
+.mapChartDataItems .mapCharts {transition:0.3s;float:right;height:100%;border:1px solid #dadada;border-right:0;overflow: hidden;}
+.mapChartDataItems .chartBtns.active + div.mapCharts {}
+.mapChartDataItems .chartBtns:not(.active) + div.mapCharts {}
+.mapChartDataItems .chartAreas {height:100%;background-color:rgba(255, 255, 255, 0.8);transition: 0.3s;}
+.mapChartDataItems .mapCharts {width:calc(100% - 100px);}
+.mapChartDataItems .chartBtns:not(.active) + div.mapCharts {width:0;}
 .mapChartDataItems:not(:last-child) {margin-bottom:10px;}
+
 .circleCharts {text-align: center;}
-.circleChartItems {width:calc((100% / 3) - 23px);float:left;position:relative;padding-top:40px;margin-right:23px;}
-.circleChartTitles {position:absolute;width:100%;transform:translateX(-50%) skew(-0.03deg);left:50%;top:14px;color:#111;min-width:95px;}
+.circleChartItems {width:calc(100% / 3);float:left;position:relative;padding-top:40px;}
+.circleChartTitles {position:absolute;transform:translateX(-50%) skew(-0.03deg);left:50%;top:14px;color:#111;white-space: nowrap;}
 .chartDw {position:relative;}
 #moveWatering,
 #fixWatering,
@@ -175,7 +175,7 @@
 .behaviorsInfoNotice > p {padding-left:15px;position: relative;font-size: 12px;color:#111;letter-spacing: 0.64px;line-height: 1.25;font-weight: 600;transform: skew(-0.03deg);}
 .behaviorsInfoNotice > p::after {content:'※';display:block;position: absolute;left:0;top:0;}
 /* /컨텐츠 */
-
+/* /main */
 @media(min-width:720px) {
   .mapInfoTitle {font-size: 26px; line-height: 0.92; letter-spacing: -0.65px;}
 }
@@ -229,6 +229,7 @@
   /* 저감사업 상태 */
   #dustBusiness {border-bottom:0;text-align: left;}
   #dustBusinessStatus {position:static;margin-bottom:10px;width:100%;background-color:rgba(255, 255, 255, 0.8);border:1px solid #dadada;text-align: left;}
+  #dustBusinessStatus.active {border:3px solid #006dbb;}
   #dustBusinessStatus .foldBtnWrapper {left:auto;right:10px;top:10px;}
   #dustBusinessStatusLists {padding:10px 12px;}
   .dustBusinessStatusItems {background-color: #fff;border:1px solid #dadada;transition: all 0.3s ease-in-out;float:none;width:100%;}
@@ -258,16 +259,21 @@
   .mapChartDataItems .chartBtns#chartIndust {background-image: url('/img/v2/main/img-indust.jpg');}
   .mapChartDataItems .chartBtns#chartSchool {background-image: url('/img/v2/main/img-school.jpg');}
   .mapChartDataItems .chartBtns#chartSubway {background-image: url('/img/v2/main/img-subway.jpg');}
-  .mapChartDataItems .mapCharts {width:auto;float:right;overflow: hidden;height:100%;background-color:rgba(255, 255, 255, 0.8);border:1px solid #dadada;border-right:0;}
+  .mapChartDataItems .mapCharts {position:relative;float:right;height:100%;border:1px solid #dadada;border-right:0;}
   .mapChartDataItems:nth-child(1) .mapCharts,
   .mapChartDataItems:nth-child(2) .mapCharts,
   .mapChartDataItems:nth-child(3) .mapCharts {width:320px;}
-  .mapChartDataItems .chartBtns.active + div.mapCharts {}
-  /* .mapChartDataItems .chartAreas {overflow-x:hidden;} */
+  #dustChartSlider {width:319px;}
+  .mapChartDataItems:nth-child(4) .mapCharts,
+  .mapChartDataItems:nth-child(5) .mapCharts {width:222px;}
+  .mapChartDataItems:nth-child(4) .mapCharts .circleChartItems,
+  .mapChartDataItems:nth-child(5) .mapCharts .circleChartItems {width:calc(100% / 2);}
+  .mapChartDataItems .chartBtns:not(.active) + div.mapCharts {width:0;}
   .mapChartDataItems:not(:last-child) {margin-bottom:10px;}
-  .circleCharts {margin-left:27px;}
-  .circleChartItems {width:74px;}
+  .circleCharts {padding:0 28px;}
+  .circleChartItems {}
   .circleChartTitles {font-size:16px;letter-spacing: -0.32px;}
+  .circleChartTitles.active {background-color:#006dbb;color:#fff;border-radius: 15px;padding:8px 12px;top:4px;}
   .chartDw {font-size:14px;}
   /* /차트 */
   /* 컨텐츠 */
@@ -348,8 +354,59 @@
 #adUlfptcSearch .dustBusinessStatusItems > a::before,
 #adUlfptcSearch .dustBusinessStatusItems > a::after {display:none;}
 #adUlfptcSearch .dustBusinessStatusItems.active a {background-color:#006dbb; color:#fff;} 
+/* ulfptcMapSearch.html */
+#dustMaps {background-color:rgba(255, 255, 255, 0.8);position: relative;}
+#dustMaps > .mapInfoHeader {border-bottom:1px solid #dadada;}
+#dustMaps #dustBusinessStatus {background-color:#fff;}
+#dustMapSearchForm {padding:5px 5px 20px 5px;position:absolute;background-color:#fff;width:100%;}
+#dustMapSearchForm .formGroup {padding:10px;border:1px solid #dadada;}
 
+#dustMapSearchForm .dustInfoType::after {display:block;content:'';clear:both;}
+#dustMapSearchForm .dustInfoType > .formLine {float:left;width:50%;}
+#dustMapSearchForm .managementArea {margin-top:5px;}
+#dustMapSearchForm .searchDateSet {border:0;}
+#dustMapSearchForm .searchDateSet::after {content:'';display:block;clear:both;}
+#dustMapSearchForm .searchDateSet .labelText {margin-bottom:5px;}
+#dustMapSearchForm .dustMapDateForm {float: left; width:calc(50% - 2.5px)}
+#dustMapSearchForm .dustMapTimeForm {float:right; width:calc(50% - 2.5px)}
+#dustMapSearchForm .dustMapDateForm .dateForm {width:100%;}
+#dustMapSearchForm .dustMapTimeForm .selectForm {width:100%;}
+#dustMapSearchForm .mapSearchSubmit {margin-top:10px; text-align: center;border:0;padding:0;}
+/* /ulfptcMapSearch.html */
 @media(min-width:1280px) {
-
+  #dustMaps {margin-top:10px;}
+  #dustMaps #dustBusinessStatus {margin-bottom: 0;}
+  #dustMapSearchForm {padding:10px 10px 40px 10px;position:static;}
+  #dustMapSearchForm .dustInfoType > .formLine {float:none;width:100%;}
+  #dustMapSearchForm .dustInfoType > .formLine:not(:last-child) {margin-bottom:10px;}
+  #dustMapSearchForm .managementArea {margin-top:10px;}
+  #dustMapSearchForm .searchDateSet {margin-top:13px;}
+  #dustMapSearchForm .searchDateSet .labelText {margin-bottom:11px;}
+  #dustMapSearchForm .formGroup .labelText {font-size:16px;}
+  #dustMapSearchForm .dustMapDateForm {float:none;width:100%;}
+  #dustMapSearchForm .dustMapTimeForm {margin-top:17px;float:none;width:100%;}
+  #dustMapSearchForm .mapSearchSubmit {margin-top:20px;}
 }
 /* /우리동네 미세먼지 농도 */
+
+/* ulfptcCoordiActList.html */
+#ulfptcCoordiActList .searchTextFilter .textForm {}
+#ulfptcCoordiActList .searchSubmits {border-left:1px solid #d6dade}
+#ulfptcCoordiActList #codiActHistory .sectionTitles {}
+#ulfptcCoordiActList .boardLists .listWrNum {}
+#ulfptcCoordiActList .boardLists .listWrSubject {}
+#ulfptcCoordiActList .boardLists .listActDateTime {}
+#ulfptcCoordiActList .boardLists .listCdName {}
+#ulfptcCoordiActList .boardLists .listWrDateTime {}
+@media(min-width:1280px) {
+  #ulfptcCoordiActList .searchTextFilter .textForm {width:600px;}
+  #ulfptcCoordiActList .searchTextFilter .labelText {margin-right:19px;}
+  #ulfptcCoordiActList .searchSubmits {padding-left:39px;}
+  #ulfptcCoordiActList #codiActHistory .sectionTitles {margin-bottom:14px;}
+  #ulfptcCoordiActList .boardLists .listWrNum {width:95px;}
+  #ulfptcCoordiActList .boardLists .listWrSubject {width:505px;}
+  #ulfptcCoordiActList .boardLists .listActDateTime {width:300px;}
+  #ulfptcCoordiActList .boardLists .listCdName {width:150px;}
+  #ulfptcCoordiActList .boardLists .listWrDateTime {width:150px;}
+}
+/* /ulfptcCoordiActList.html */

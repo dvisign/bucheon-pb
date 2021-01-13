@@ -134,7 +134,7 @@ a { text-decoration: none; cursor: pointer; color: #111; }
 
 a:link, a:visited, a:active, a:hover { text-decoration: none; }
 
-select, input, button, textarea { -webkit-appearance: none; -moz-appearance: none; appearance: none; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; background-color: transparent; border: 0 none; font-size: 16px; font-weight: 300; font-family: "Rubik", "NanumSquare", AppleGothic, Arial, Helvetica, sans-serif; line-height: 1; }
+input, button, textarea { -webkit-appearance: none; -moz-appearance: none; appearance: none; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; background-color: transparent; border: 0 none; font-size: 16px; font-weight: 300; font-family: "Rubik", "NanumSquare", AppleGothic, Arial, Helvetica, sans-serif; line-height: 1; }
 
 select[type="checkbox"], input[type="checkbox"], button[type="checkbox"], textarea[type="checkbox"] { -webkit-appearance: checkbox; }
 

@@ -47,7 +47,16 @@
         overlap : false,
         // 아코디언 이벤트 세팅 후 커스텀이벤트 등록
         customEvent : function() {
-
+          $('.dustBusinessStatusItems > a').on('click', function() {
+            var elm = $('.dustBusinessStatusItems');
+            var active = elm.hasClass('active');
+            var wrapper = $('#dustBusinessStatus');
+            if (active) {
+              wrapper.addClass('active');
+            } else {
+              wrapper.removeClass('active');
+            }
+          })
         }
       });
       $('#topNotice').slick({
@@ -148,6 +157,7 @@
       mapInit.init();
       $(window).resize(function() {
         var device = getDevice();
+        $('#dustChartSlider').get(0).slick.setPosition()
         if (device == "PC") {
           
         } else {
@@ -164,8 +174,31 @@
 
 <body>
   <div class="wrapper">
+    
     <!-- 헤더 -->
     <header id="headers">
+      <!-- 상단 알림 -->
+      <div id="topNavArea">
+        <div class="fluidContainer">
+          <div id="topNavs">
+            <div id="topNotice">
+              <div>
+                <span class="smallIcons">알림</span>
+                <a href="javascript:void(0)" class="topNoticeLinks">오늘 미세먼지 주의입니다. 외출시 마스크를 꼭 착용하세요.</a>
+              </div>
+              <div>
+                <span class="smallIcons">알림</span>
+                <a href="javascript:void(0)" class="topNoticeLinks">오늘 미세먼지 주의입니다. 외출시 마스크를 꼭 착용하세요.</a>
+              </div>
+            </div>
+            <div id="topNavBtns">
+              <a href="javascript:void(0)" class="logInOutBtn logIn"></a>
+              <a href="javascript:void(0)" class="sideBtn"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /상단 알림 -->
       <div id="navWrapper">
         <!-- 내비게이션 -->
         <div id="navArea">
@@ -691,28 +724,6 @@
       <!-- /사이트맵 -->
     </header>
     <!-- /헤더 -->
-    <!-- 상단 알림 -->
-    <div id="topNavArea">
-      <div class="fluidContainer">
-        <div id="topNavs">
-          <div id="topNotice">
-            <div>
-              <span class="smallIcons">알림</span>
-              <a href="javascript:void(0)" class="topNoticeLinks">오늘 미세먼지 주의입니다. 외출시 마스크를 꼭 착용하세요.</a>
-            </div>
-            <div>
-              <span class="smallIcons">알림</span>
-              <a href="javascript:void(0)" class="topNoticeLinks">오늘 미세먼지 주의입니다. 외출시 마스크를 꼭 착용하세요.</a>
-            </div>
-          </div>
-          <div id="topNavBtns">
-            <a href="javascript:void(0)" class="logInOutBtn logIn"></a>
-            <a href="javascript:void(0)" class="sideBtn"></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /상단 알림 -->
     <main class="sectionWrapper">
       <article>
         <section id="mainVisualMaps">
@@ -844,7 +855,7 @@
           <div id="rightData" class="dataLayer">
             <ul id="mapChartDataList">
               <li class="mapChartDataItems clear">
-                <a href="javascript:void(0);" class="chartBtns active" id="chartBigData"></a>
+                <a href="javascript:void(0);" class="chartBtns" id="chartBigData"></a>
                 <div class="mapCharts">
                   <div id="chartBigDataDiv" class="chartAreas">
                     <div style="position: relative;"><div dir="ltr" style="position: relative; width: 320px; height: 100px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="320" height="100" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_0"><clipPath id="_ABSTRACT_RENDERER_ID_1"><rect x="41" y="19" width="238" height="62"></rect></clipPath><filter id="_ABSTRACT_RENDERER_ID_3"><feGaussianBlur in="SourceAlpha" stdDeviation="2"></feGaussianBlur><feOffset dx="1" dy="1"></feOffset><feComponentTransfer><feFuncA type="linear" slope="0.1"></feFuncA></feComponentTransfer><feMerge><feMergeNode></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter></defs><rect x="0" y="0" width="320" height="100" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><rect x="41" y="19" width="238" height="62" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g clip-path="url(http://127.0.0.1:8080/csn/Main.do#_ABSTRACT_RENDERER_ID_1)"><g><rect x="41" y="80" width="238" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="41" y="19" width="238" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect></g><g><rect x="46" y="20" width="9" height="60" stroke="#6ed564" stroke-width="1" fill="#6ed564"></rect><rect x="64" y="28" width="9" height="52" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect><rect x="83" y="35" width="9" height="45" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect><rect x="101" y="47" width="9" height="33" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect><rect x="119" y="47" width="9" height="33" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect><rect x="137" y="54" width="9" height="26" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect><rect x="155" y="58" width="10" height="22" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect><rect x="174" y="47" width="9" height="33" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect><rect x="192" y="51" width="9" height="29" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect><rect x="210" y="47" width="9" height="33" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect><rect x="228" y="47" width="9" height="33" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect><rect x="247" y="51" width="9" height="29" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect><rect x="265" y="51" width="9" height="29" stroke="#40b0ff" stroke-width="1" fill="#40b0ff"></rect></g><g><rect x="41" y="80" width="238" height="1" stroke="none" stroke-width="0" fill="#333333"></rect></g></g><g></g><g><g><text text-anchor="end" x="52.190384615384616" y="90.72798002192098" font-family="Arial" font-size="9" transform="rotate(-30 52.190384615384616 90.72798002192098)" stroke="none" stroke-width="0" fill="#222222">01</text></g><g><text text-anchor="end" x="88.65192307692307" y="90.72798002192098" font-family="Arial" font-size="9" transform="rotate(-30 88.65192307692307 90.72798002192098)" stroke="none" stroke-width="0" fill="#222222">03</text></g><g><text text-anchor="end" x="125.11346153846154" y="90.72798002192098" font-family="Arial" font-size="9" transform="rotate(-30 125.11346153846154 90.72798002192098)" stroke="none" stroke-width="0" fill="#222222">05</text></g><g><text text-anchor="end" x="161.575" y="90.72798002192098" font-family="Arial" font-size="9" transform="rotate(-30 161.575 90.72798002192098)" stroke="none" stroke-width="0" fill="#222222">07</text></g><g><text text-anchor="end" x="198.03653846153844" y="90.72798002192098" font-family="Arial" font-size="9" transform="rotate(-30 198.03653846153844 90.72798002192098)" stroke="none" stroke-width="0" fill="#222222">09</text></g><g><text text-anchor="end" x="234.4980769230769" y="90.72798002192098" font-family="Arial" font-size="9" transform="rotate(-30 234.4980769230769 90.72798002192098)" stroke="none" stroke-width="0" fill="#222222">11</text></g><g><text text-anchor="end" x="270.95961538461535" y="90.72798002192098" font-family="Arial" font-size="9" transform="rotate(-30 270.95961538461535 90.72798002192098)" stroke="none" stroke-width="0" fill="#222222">13</text></g><g><text text-anchor="end" x="32" y="83.65" font-family="Arial" font-size="9" stroke="none" stroke-width="0" fill="#444444">0</text></g><g><text text-anchor="end" x="32" y="22.65" font-family="Arial" font-size="9" stroke="none" stroke-width="0" fill="#444444">16</text></g></g></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>측정일시</th><th>pm-2.5 수치</th></tr></thead><tbody><tr><td>01</td><td>16</td></tr><tr><td>02</td><td>14</td></tr><tr><td>03</td><td>12</td></tr><tr><td>04</td><td>9</td></tr><tr><td>05</td><td>9</td></tr><tr><td>06</td><td>7</td></tr><tr><td>07</td><td>6</td></tr><tr><td>08</td><td>9</td></tr><tr><td>09</td><td>8</td></tr><tr><td>10</td><td>9</td></tr><tr><td>11</td><td>9</td></tr><tr><td>12</td><td>8</td></tr><tr><td>13</td><td>8</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 110px; left: 330px; white-space: nowrap; font-family: Arial; font-size: 9px; font-weight: bold;">9</div><div></div></div>
@@ -852,12 +863,12 @@
                 </div>
               </li>
               <li class="mapChartDataItems clear">
-                <a href="javascript:void(0);" class="chartBtns active" id="chartVillage"></a>
+                <a href="javascript:void(0);" class="chartBtns" id="chartVillage"></a>
                 <div class="mapCharts">
                   <div class="chartAreas">
                     <div id="dustChartSlider" class="circleCharts clear">
                       <div class="circleChartItems">
-                        <h3 class="circleChartTitles">부천시청</h3>
+                        <h3 class="circleChartTitles active">부천시청</h3>
                         <div class="chartDw">
                           <div id="chartVillageDiv">
                             <div style="position: relative;"><div dir="ltr" style="position: relative; width: 66px; height: 66px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="66" height="66" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_2"></defs><rect x="0" y="0" width="66" height="66" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><path d="M11.030594473581957,40.138292570061296L1.615134962259937,43.19756081437328A33,33,0,0,1,33,0L32.99999999999999,9.900000000000002A23.099999999999998,23.099999999999998,0,0,0,11.030594473581957,40.138292570061296" stroke="#ffffff" stroke-width="1" fill="#f2f2f2"></path><text text-anchor="start" x="9.307349152294975" y="25.151706838013652" font-family="Arial" font-size="6" stroke="none" stroke-width="0" fill="#ffffff">30%</text></g><g><path d="M33,9.900000000000002L33,0A33,33,0,1,1,1.615134962259937,43.19756081437328L11.030594473581957,40.138292570061296A23.099999999999998,23.099999999999998,0,1,0,33,9.900000000000002" stroke="#ffffff" stroke-width="1" fill="#40b0ff"></path><text text-anchor="start" x="36.692650847705025" y="45.04829316198636" font-family="Arial" font-size="6" stroke="none" stroke-width="0" fill="#ffffff">70%</text></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th></th><th>per</th></tr></thead><tbody><tr><td></td><td>70</td></tr><tr><td></td><td>30</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 76px; left: 76px; white-space: nowrap; font-family: Arial; font-size: 6px;">30%</div><div></div></div>
@@ -915,7 +926,7 @@
                 </div>
               </li>
               <li class="mapChartDataItems clear">
-                <a href="javascript:void(0);" class="chartBtns active" id="chartIndust"></a>
+                <a href="javascript:void(0);" class="chartBtns" id="chartIndust"></a>
                 <div class="mapCharts">
                   <div class="chartAreas">
                     <div class="circleCharts clear">
@@ -945,7 +956,7 @@
                 </div>
               </li>
               <li class="mapChartDataItems clear">
-                <a href="javascript:void(0);" class="chartBtns active" id="chartSchool"></a>
+                <a href="javascript:void(0);" class="chartBtns" id="chartSchool"></a>
                 <div class="mapCharts">
                   <div class="chartAreas">
                     <div class="circleCharts clear">
@@ -969,7 +980,7 @@
                 </div>
               </li>
               <li class="mapChartDataItems clear">
-                <a href="javascript:void(0);" class="chartBtns active" id="chartSubway"></a>
+                <a href="javascript:void(0);" class="chartBtns" id="chartSubway"></a>
                 <div class="mapCharts">
                   <div class="chartAreas">
                     <div class="circleCharts clear">
