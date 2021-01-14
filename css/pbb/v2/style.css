@@ -410,3 +410,15 @@
   #ulfptcCoordiActList .boardLists .listWrDateTime {width:150px;}
 }
 /* /ulfptcCoordiActList.html */
+
+/* ulfptcCoordiActIntroSearch.html */
+#codiClList {}
+#ulfptcCoordiActIntroSearch .boardLists .listWrNum {}
+@media(min-width:1280px) {
+  #codiClList {margin-top:72px;}
+  #ulfptcCoordiActIntroSearch .boardLists .listWrNum {width:95px;}
+  #ulfptcCoordiActIntroSearch .boardLists .listWrSubject {width:600px;}
+  #ulfptcCoordiActIntroSearch .boardLists .listEduDateTime {width:355px;}
+  #ulfptcCoordiActIntroSearch .boardLists .listEpDate {width:150px;}
+}
+/* /ulfptcCoordiActIntroSearch.html */

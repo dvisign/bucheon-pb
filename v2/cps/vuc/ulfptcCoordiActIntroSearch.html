@@ -29,7 +29,7 @@
   </script>
 </head>
 
-<body id="ulfptcCoordiActList">
+<body id="ulfptcCoordiActIntroSearch">
   <div class="wrapper">
     <!-- 헤더 -->
     <header id="headers">
@@ -610,219 +610,323 @@
         <section>
           <div class="sm-container">
             <div class="subPageHeader">
-              <h3>미세먼지 코디네이터 활동</h3>
+              <h3>찾아가는 미세먼지 교실</h3>
             </div>
             <div class="subpageContents">
-              <div class="searchFilters">
-                <div class="displayFlex justifyBetween alignItemsCenter">
-                  <div class="searchTextFilter">
-                    <label class="labelText">검색내용</label><input type="text" class="textForm">
-                  </div>
-                  <div class="searchSubmits">
-                    <a href="javascript:void(0);" class="submitBtn">조회</a>
-                  </div>
-                </div>
+              <div class="sectionHeader">
+                <h4 class="sectionTitles">예약 신청</h4>
               </div>
-              <div id="activityCountList" class="dataChartTable">
-                <div class="sectionHeader displayFlex justifyBetween alignItemsCenter">
-                  <h4 class="sectionTitles">활동건수</h4>
-                  <div class="viewOptions">
-                    <select class="selectForm">
-                      <option>전체</option>
-                    </select>
+              <div class="sectionContents">
+                <div class="monthSelector">
+                  <div class="yearArea">
+                    <a href="javascript:void(0);" class="monthArrBtn prevMonth"><span class="sound-only">이전 달</span></a>
+                    <h4 id="searchYyText">2021</h4>
+                    <a href="javascript:void(0);" class="monthArrBtn nextMonth"><span class="sound-only">다음 달</span></a>
+                  </div>
+                  <div class="monthArea">
+                    <ul class="monthLists displayFlex justifyCenter">
+                      <li class="monthItems">
+                        <a href="javascript:void(0);" class="active">1</a>
+                      </li>
+                      <li class="monthItems">
+                        <a href="javascript:void(0);">2</a>
+                      </li>
+                      <li class="monthItems">
+                        <a href="javascript:void(0);">3</a>
+                      </li>
+                      <li class="monthItems">
+                        <a href="javascript:void(0);">4</a>
+                      </li>
+                      <li class="monthItems">
+                        <a href="javascript:void(0);">5</a>
+                      </li>
+                      <li class="monthItems">
+                        <a href="javascript:void(0);">6</a>
+                      </li>
+                      <li class="monthItems">
+                        <a href="javascript:void(0);">7</a>
+                      </li>
+                      <li class="monthItems">
+                        <a href="javascript:void(0);">8</a>
+                      </li>
+                      <li class="monthItems">
+                        <a href="javascript:void(0);">9</a>
+                      </li>
+                      <li class="monthItems">
+                        <a href="javascript:void(0);">10</a>
+                      </li>
+                      <li class="monthItems">
+                        <a href="javascript:void(0);">11</a>
+                      </li>
+                      <li class="monthItems">
+                        <a href="javascript:void(0);">12</a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
-                <div class="activityCount">
-                  <ul class="activityCountCates clear">
-                    <li class="activeityItems">
-                      <div class="activityCountCateItems">
-                        <span>1월</span>
-                      </div>
-                      <div class="activityCountValue">
-                        <span>0</span>
-                      </div>
-                    </li>
-                    <li class="activeityItems">
-                      <div class="activityCountCateItems">
-                        <span>2월</span>
-                      </div>
-                      <div class="activityCountValue">
-                        <span>0</span>
-                      </div>
-                    </li>
-                    <li class="activeityItems">
-                      <div class="activityCountCateItems">
-                        <span>3월</span>
-                      </div>
-                      <div class="activityCountValue">
-                        <span>0</span>
-                      </div>
-                    </li>
-                    <li class="activeityItems">
-                      <div class="activityCountCateItems">
-                        <span>4월</span>
-                      </div>
-                      <div class="activityCountValue">
-                        <span>0</span>
-                      </div>
-                    </li>
-                    <li class="activeityItems">
-                      <div class="activityCountCateItems">
-                        <span>5월</span>
-                      </div>
-                      <div class="activityCountValue">
-                        <span>0</span>
-                      </div>
-                    </li>
-                    <li class="activeityItems">
-                      <div class="activityCountCateItems">
-                        <span>6월</span>
-                      </div>
-                      <div class="activityCountValue">
-                        <span>0</span>
-                      </div>
-                    </li>
-                    <li class="activeityItems">
-                      <div class="activityCountCateItems">
-                        <span>7월</span>
-                      </div>
-                      <div class="activityCountValue">
-                        <span>0</span>
-                      </div>
-                    </li>
-                    <li class="activeityItems">
-                      <div class="activityCountCateItems">
-                        <span>8월</span>
-                      </div>
-                      <div class="activityCountValue">
-                        <span>0</span>
-                      </div>
-                    </li>
-                    <li class="activeityItems">
-                      <div class="activityCountCateItems">
-                        <span>9월</span>
-                      </div>
-                      <div class="activityCountValue">
-                        <span>0</span>
-                      </div>
-                    </li>
-                    <li class="activeityItems">
-                      <div class="activityCountCateItems">
-                        <span>10월</span>
-                      </div>
-                      <div class="activityCountValue">
-                        <span>0</span>
-                      </div>
-                    </li>
-                    <li class="activeityItems">
-                      <div class="activityCountCateItems">
-                        <span>11월</span>
-                      </div>
-                      <div class="activityCountValue">
-                        <span>0</span>
-                      </div>
-                    </li>
-                    <li class="activeityItems">
-                      <div class="activityCountCateItems">
-                        <span>12월</span>
-                      </div>
-                      <div class="activityCountValue">
-                        <span>0</span>
-                      </div>
-                    </li>
-                  </ul>
+                <div class="textRight boardBtnsWrapper">
+                  <a href="#" class="submitBtn">교육신청</a>
+                  <a href="#" class="boardBtns">목록</a>
                 </div>
-              </div>
-              <div id="codiActHistory">
-                <div class="sectionHeader">
-                  <h4 class="sectionTitles">코디네이터 활동 이력</h4>
-                  <div class="displayFlex alignItemsCenter justifyBetween">
-                    <div class="searchCount">
-                      <p>조회결과 : <span>0</span>건</p>
+                <div id="calendar" class="calendar">
+                  <div class="calendarWeekToolbar displayFlex alignItemsCenter justifyCenter">
+                    <div class="calendarDay calendarDaySun calendarWeekToolbarDay">
+                      <span>일</span>
                     </div>
-                    <div class="viewOptions">
-                      <select class="selectForm">
-                        <option>전체</option>
-                      </select>
+                    <div class="calendarDay calendarDayMon calendarWeekToolbarDay">
+                      <span>월</span>
+                    </div>
+                    <div class="calendarDay calendarDayTue calendarWeekToolbarDay">
+                      <span>화</span>
+                    </div>
+                    <div class="calendarDay calendarDayWed calendarWeekToolbarDay">
+                      <span>수</span>
+                    </div>
+                    <div class="calendarDay calendarDayThu calendarWeekToolbarDay">
+                      <span>목</span>
+                    </div>
+                    <div class="calendarDay calendarDayFri calendarWeekToolbarDay">
+                      <span>금</span>
+                    </div>
+                    <div class="calendarDay calendarDaySat calendarWeekToolbarDay">
+                      <span>토</span>
+                    </div>
+                  </div>
+                  <div class="calendarBody" id="calendarBody">
+                    <div id="cldrRow1" class="calendarWeekLine">
+                      <div class="calendarWeeks displayFlex alignItemsCenter justifyCenter">
+                        <div class="calendarDay calendarDaySun calendarWeekToolbarDay notThisMonth">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">27</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayMon calendarWeekToolbarDay notThisMonth">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">28</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayTue calendarWeekToolbarDay notThisMonth">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">29</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayWed calendarWeekToolbarDay notThisMonth">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">30</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayThu calendarWeekToolbarDay notThisMonth">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">31</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayFri calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">1</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDaySat calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">2</span> </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="cldrRow2" class="calendarWeekLine">
+                      <div class="calendarWeeks displayFlex alignItemsCenter justifyCenter">
+                        <div class="calendarDay calendarDaySun calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">3</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayMon calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">4</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayTue calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">5</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayWed calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">6</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayThu calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">7</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayFri calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">8</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDaySat calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">9</span> </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="cldrRow3" class="calendarWeekLine">
+                      <div class="calendarWeeks displayFlex alignItemsCenter justifyCenter">
+                        <div class="calendarDay calendarDaySun calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">10</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayMon calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">11</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayTue calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">12</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayWed calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">13</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayThu calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">14</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayFri calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">15</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDaySat calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">16</span> </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="cldrRow4" class="calendarWeekLine">
+                      <div class="calendarWeeks displayFlex alignItemsCenter justifyCenter">
+                        <div class="calendarDay calendarDaySun calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">17</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayMon calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">18</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayTue calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">19</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayWed calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">20</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayThu calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">21</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayFri calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">22</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDaySat calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">23</span> </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="cldrRow5" class="calendarWeekLine">
+                      <div class="calendarWeeks displayFlex alignItemsCenter justifyCenter">
+                        <div class="calendarDay calendarDaySun calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">24</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayMon calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">25</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayTue calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">26</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayWed calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">27</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayThu calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">28</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayFri calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">29</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDaySat calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">30</span> </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="cldrRow6" class="calendarWeekLine">
+                      <div class="calendarWeeks displayFlex alignItemsCenter justifyCenter">
+                        <div class="calendarDay calendarDaySun calendarWeekToolbarDay">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">31</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayMon calendarWeekToolbarDay notThisMonth">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">1</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayTue calendarWeekToolbarDay notThisMonth">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">2</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayWed calendarWeekToolbarDay notThisMonth">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">3</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayThu calendarWeekToolbarDay notThisMonth">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">4</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDayFri calendarWeekToolbarDay notThisMonth">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">5</span> </div>
+                        </div>
+                        <div class="calendarDay calendarDaySat calendarWeekToolbarDay notThisMonth">
+                          <div class="calrenderDayContents"> <span class="calendarDayText">6</span> </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="boardLists">
-                  <div class="boardHeader">
-                    <div class="boardListCategory boardItems">
-                      <div class="listWrNum listComponents">
-                        <span class="listValues">순번</span>
+                <div id="codiClList">
+                  <div class="sectionHeader">
+                    <div class="displayFlex alignItemsCenter justifyBetween">
+                      <div class="searchCount">
+                        <p>조회결과 : <span>0</span>건</p>
                       </div>
-                      <div class="listWrSubject listComponents">
-                        <span class="listValues">활동제목</span>
-                      </div>
-                      <div class="listActDateTime listComponents">
-                        <span class="listValues">활동기간</span>
-                      </div>
-                      <div class="listCdName listComponents">
-                        <span class="listValues">코디네이터</span>
-                      </div>
-                      <div class="listWrDateTime listComponents">
-                        <span class="listValues">작성일자</span>
+                      <div class="viewOptions">
+                        <select class="selectForm">
+                          <option>전체</option>
+                        </select>
                       </div>
                     </div>
                   </div>
-                  <div class="boardBody">
-                    <div class="boardList">
-                      <div class="boardItems">
+                  <div class="boardLists">
+                    <div class="boardHeader">
+                      <div class="boardListCategory boardItems">
                         <div class="listWrNum listComponents">
-                          <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                            <span class="listValues">0</span>
-                          </div>
+                          <span class="listValues">순번</span>
                         </div>
                         <div class="listWrSubject listComponents">
-                          <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                            <a href="#" class="boardLinks">도담초등학교 3-2반 1차 교육활동도담초등학교 3-2반 1차 교육활동도담초등학교 3-2반 1차 교육활동도담초등학교 3-2반 1차 교육활동도담초등학교 3-2반 1차 교육활동도담초등학교 3-2반 1차 교육활동도담초등학교 3-2반 1차 교육활동</a>
-                          </div>
+                          <span class="listValues">교육일정명</span>
                         </div>
-                        <div class="listActDateTime listComponents">
-                          <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                            <span class="listValues">2020-11-09 ~ 2020-10-09</span>
-                          </div>
+                        <div class="listEduDateTime listComponents">
+                          <span class="listValues">교육기간</span>
                         </div>
-                        <div class="listCdName listComponents">
-                          <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                            <span class="listValues">테스트</span>
-                          </div>
+                        <div class="listEpDate listComponents">
+                          <span class="listValues">신청마감기간</span>
                         </div>
-                        <div class="listWrDateTime listComponents">
-                          <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                            <span class="listValues">2020-08-21</span>
+                      </div>
+                    </div>
+                    <div class="boardBody">
+                      <div class="boardList">
+                        <div class="boardItems">
+                          <div class="listWrNum listComponents">
+                            <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                              <span class="listValues">0</span>
+                            </div>
+                          </div>
+                          <div class="listWrSubject listComponents">
+                            <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                              <a href="#" class="boardLinks">도담초등학교 3-2반 1차 교육활동도담초등학교 3-2반 1차 교육활동도담초등학교 3-2반 1차 교육활동도담초등학교 3-2반 1차 교육활동도담초등학교 3-2반 1차 교육활동도담초등학교 3-2반 1차 교육활동도담초등학교 3-2반 1차 교육활동</a>
+                            </div>
+                          </div>
+                          <div class="listEduDateTime listComponents">
+                            <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                              <span class="listValues">2020-11-09 ~ 2020-10-09</span>
+                            </div>
+                          </div>
+                          <div class="listEpDate listComponents">
+                            <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                              <span class="listValues">2020-08-21</span>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="pagenations">
-                  <ul class="pageList">
-                    <li class="pageItems prevPager">
-                      <a href="#"><span class=''>이전페이지</span></a>
-                    </li>
-                    <li class="pageItems active">
-                      <a href="#">1</a>
-                    </li>
-                    <li class="pageItems">
-                      <a href="#">2</a>
-                    </li>
-                    <li class="pageItems">
-                      <a href="#">3</a>
-                    </li>
-                    <li class="pageItems">
-                      <a href="#">4</a>
-                    </li>
-                    <li class="pageItems">
-                      <a href="#">5</a>
-                    </li>
-                    <li class="pageItems nextPager">
-                      <a href="#"><span class=''>다음페이지</span></a>
-                    </li>
-                  </ul>
+                  <div class="pagenations">
+                    <ul class="pageList">
+                      <li class="pageItems prevPager">
+                        <a href="#"><span class="">이전페이지</span></a>
+                      </li>
+                      <li class="pageItems active">
+                        <a href="#">1</a>
+                      </li>
+                      <li class="pageItems">
+                        <a href="#">2</a>
+                      </li>
+                      <li class="pageItems">
+                        <a href="#">3</a>
+                      </li>
+                      <li class="pageItems">
+                        <a href="#">4</a>
+                      </li>
+                      <li class="pageItems">
+                        <a href="#">5</a>
+                      </li>
+                      <li class="pageItems nextPager">
+                        <a href="#"><span class="">다음페이지</span></a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
