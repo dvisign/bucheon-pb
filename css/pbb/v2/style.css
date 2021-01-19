@@ -1,3 +1,4 @@
+/* main */
 #mainVisualMaps {position:relative;}
 #maps {height:calc(100vh - 58px); min-height: 580px;position: relative;}
 .mainMarker {width:75px;height:92px;transform:translateY(13px);}
@@ -175,6 +176,59 @@
 .behaviorsInfoNotice > p {padding-left:15px;position: relative;font-size: 12px;color:#111;letter-spacing: 0.64px;line-height: 1.25;font-weight: 600;transform: skew(-0.03deg);}
 .behaviorsInfoNotice > p::after {content:'※';display:block;position: absolute;left:0;top:0;}
 /* /컨텐츠 */
+/* 대시보드 */
+#dashBoards {background-color:#1d1e2f;}
+#dustAlert {background-color:#222336; float:left;}
+#dustAlert > div {position:relative;}
+#dustCaption {background-image:url('/img/v2/icons/bg-cation.png');background-size:auto;background-repeat: no-repeat;background-position: center;float:left;}
+#dustAlertMsgs {float:left;}
+#dustAlertNotice {text-align: left;letter-spacing: -1.2px;color:#ff4320;font-weight: 600;}
+#dustAlertDate {font-weight: 400;letter-spacing: -0.4px;color:#fff;text-align: left;}
+
+#dustPlaceData {float:left;}
+#dustPlaceData > div {}
+#dustMeasure {float:left;text-align: center;color:#999;}
+#dustMeasureCate {font-weight: 600;}
+#dustMeasureData {color:#ff0000;letter-spacing: -2.7px;font-weight: 900;font-family: 'Rubik';}
+#dustMeasureUnit {font-weight: 600;}
+#dustMeasurePlace {float:left;color:#fff;position:relative;}
+#dustMeasurePlace .slick-next {display:none !important;}
+#measurePlaceSlider {text-align: left;}
+.measurePlaceItems {outline:none;}
+.measureName {font-weight: 600;transform: skew(-0.03deg);letter-spacing: -0.45px;}
+.measurePlaceName {font-weight: 600;transform: skew(-0.3deg);letter-spacing: -2.25px;;}
+#dustAlertArr {border-radius: 50%;border:1px solid #dadada;display:block;background-image: url('/img/v2/common/icon-left.png');background-repeat: no-repeat;background-position-y: center;background-position-x:calc(50% + 1px);background-size:8px;position:absolute;right:0;z-index:1;bottom:-5px;}
+
+#dustStates {float:left;color:#e1e1e1;}
+#dustStateData {color:#ff0000;transform: skew(-0.03deg);font-weight: 900;}
+#dustStateMsg {font-weight: 600;transform: skew(-0.03deg);line-height: 1.75;}
+@media(min-width:1280px) {
+  #dashBoards {}
+  #dustAlert {padding:35px 34px 40px 34px;width:395px;}
+  #dustAlert > div {}
+  #dustCaption {width:84px; height:66px;}
+  #dustAlertMsgs {margin-left:22px;margin-top:10px;}
+  #dustAlertNotice {font-size: 24px;margin-bottom:12px;}
+  #dustAlertDate {font-size: 16px;}
+  
+  #dustPlaceData {padding:17px 38px 20px 50px;width:460px;}
+  #dustPlaceData > div {}
+  #dustMeasure {}
+  #dustMeasureCate {font-size:18px;}
+  #dustMeasureData {font-size:60px;margin:6px 0 0 0}
+  #dustMeasureUnit {font-size:18px;}
+  #dustMeasurePlace {margin-left:26px;margin-top:20px;padding-right:55px;}
+  #measurePlaceSlider {width:190px;}
+  .measurePlaceItems {}
+  .measureName {font-size:18px;}
+  .measurePlaceName {font-size:30px;margin-top:13px;}
+  #dustAlertArr {width:38px; height:38px;border-width:2px;}
+
+  #dustStates {padding-top:25px;width:calc(100% - (460px + 395px))}
+  #dustStateData {font-size:20px;margin-bottom:18px;}
+  #dustStateMsg {font-size:16px;}
+}
+/* /대시보드 */
 /* /main */
 @media(min-width:720px) {
   .mapInfoTitle {font-size: 26px; line-height: 0.92; letter-spacing: -0.65px;}
@@ -411,14 +465,136 @@
 }
 /* /ulfptcCoordiActList.html */
 
-/* ulfptcCoordiActIntroSearch.html */
+/* visitingUlfptcClassCalendarSearch.html */
 #codiClList {}
-#ulfptcCoordiActIntroSearch .boardLists .listWrNum {}
+#classCalendarSearch .boardLists .listWrNum {}
 @media(min-width:1280px) {
   #codiClList {margin-top:72px;}
-  #ulfptcCoordiActIntroSearch .boardLists .listWrNum {width:95px;}
-  #ulfptcCoordiActIntroSearch .boardLists .listWrSubject {width:600px;}
-  #ulfptcCoordiActIntroSearch .boardLists .listEduDateTime {width:355px;}
-  #ulfptcCoordiActIntroSearch .boardLists .listEpDate {width:150px;}
+  #classCalendarSearch .boardLists .listWrNum {width:95px;}
+  #classCalendarSearch .boardLists .listWrSubject {width:600px;}
+  #classCalendarSearch .boardLists .listEduDateTime {width:355px;}
+  #classCalendarSearch .boardLists .listEpDate {width:150px;}
+}
+/* /visitingUlfptcClassCalendarSearch.html */
+
+/* visitingUlfptcClassList */
+#visitClassList {}
+#visitClassList .searchFilter2Area {border:1px solid #dadada;}
+#visitClassList .searchFilters2 .search2Line {}
+#visitClassList .searchFilter2Area .searchFilterCates {border-right:1px solid #dadada;}
+#visitClassList .searchFilter2Area .searchFilterForms {}
+#visitClassList .boardLists .listWrNum {}
+#visitClassList .boardLists .listWrPlan {}
+#visitClassList .boardLists .listEduAppDate {}
+#visitClassList .boardLists .listEduSch {}
+#visitClassList .boardLists .listEduGrade {}
+#visitClassList .boardLists .listEduClass {}
+#visitClassList .boardLists .listEduCount {}
+#visitClassList .boardLists .listEduState {}
+@media(min-width:1280px) {
+  #visitClassList {}
+  #visitClassList .searchFilters2 {}
+  #visitClassList .searchFilters2 .search2Line {}
+  #visitClassList .searchFilters2 .searchFilterCates {width:200px;}
+  #visitClassList .searchFilters2 .searchFilterForms {width:calc(100% - 200px);}
+  #visitClassList .searchFilter2Area .searchFilterForms .dateForm {width:300px;}
+  #visitClassList .searchFilter2Area .searchFilterForms .textForm {width:625px;}
+  #visitClassList .boardLists .listWrNum {width:95px;}
+  #visitClassList .boardLists .listWrPlan {width:210px;}
+  #visitClassList .boardLists .listEduAppDate {width:210px;}
+  #visitClassList .boardLists .listEduSch {width:220px;}
+  #visitClassList .boardLists .listEduGrade {width:82px;}
+  #visitClassList .boardLists .listEduClass {width:82px;}
+  #visitClassList .boardLists .listEduCount {width:150px;}
+  #visitClassList .boardLists .listEduState {width:150px;}
+}
+/* /visitingUlfptcClassList */
+
+/* visitingUlfptcClassWrite.html */
+#visitingUlfptcClassWrite .textForm:not(.wrSubject) {width:180px;}
+/* /visitingUlfptcClassWrite.html */
+
+/* faqList.html */
+#faqCategorys {text-align:center;}
+.faqCategoryItems {float:left;}
+.faqCategoryItems:not(:last-child) {}
+.faqCategoryLink {display:block;}
+.faqCategoryIcons {}
+.faqCategoryIcons > img {margin:0 auto; display:block;}
+.faqCategoryNames {font-weight: 600; letter-spacing: -0.72px;color:#666;transform: skew(-0.03deg);}
+#faqList .searchFilters .labelText {}
+#faqList .searchFilters .selectForm, 
+#faqList .searchFilters .selectForm {color:#999da5;}
+#faqList .searchFilters .textForm {position:relative; top:-1px;}
+#faqList .searchSubmits { border-left: 1px solid #d6dade; }
+
+#faqList .accordionBoardLists {}
+#faqList .accordionBoardItems > a > span::before {content:'Q.'; font-family: 'Rubik';font-weight: 900;position:absolute;left:0;top:0;}
+#faqList .accordionBoardItems > a > span {}
+#faqList .accordionContents .faqAnsText {}
+#faqList .accordionContents .faqAnsSubject {position:relative;}
+#faqList .accordionContents .faqAnsSubject::before {content:'A.';position: absolute;display:block;top:0;font-family: 'Rubik';font-weight: 900;}
+#faqList .accordionContents .faqAnsContents {word-break: break-all;color:#2c64cf;line-height: 1.4;}
+@media(min-width:1280px) {
+  #faqCategorys {margin-top:85px;margin-bottom:60px;}
+  .faqCategoryItems {width:90px;}
+  .faqCategoryItems:not(:last-child) {margin-right:calc((100% - (90px * 8)) / 7)}
+  .faqCategoryLink {}
+  .faqCategoryIcons {}
+  .faqCategoryIcons > img {width:100%;}
+  .faqCategoryNames {font-size:16px; margin-top:20px;}
+  #faqList .searchFilters .labelText {margin-right:19px;}
+  #faqList .searchFilters .selectForm {margin-right:5px; width:220px;}
+  #faqList .searchFilters .selectForm, 
+  #faqList .searchFilters .selectForm {font-size:14px;}
+  #faqList .searchFilters .textForm {width:525px;}
+  #faqList .searchSubmits {padding-left:39px;}
+
+  #faqList .accordionBoardLists {margin-top:75px;}
+  #faqList .accordionBoardItems > a > span::before {}
+  #faqList .accordionBoardItems > a > span {padding-left:20px;}
+  #faqList .accordionContents .faqAnsText {padding-left:20px;}
+  #faqList .accordionContents .faqAnsSubject {}
+  #faqList .accordionContents .faqAnsSubject::before {left:-20px;}
+  #faqList .accordionContents .faqAnsContents {margin-top:20px;}
+} 
+/* /faqList.html */
+
+/* noticeList.html, newsList.html */
+#defualtBoardList .searchTextFilter .labelText {}
+#defualtBoardList .searchFilters .selectForm {color:#999da5;}
+#defualtBoardList .searchFilters .textForm {}
+#defualtBoardList .searchSubmits {border-left:1px solid #d6dade;}
+
+#defualtBoardList .listWrNum {}
+#defualtBoardList .listWrSubject {}
+#defualtBoardList .listWrName {}
+#defualtBoardList .listWrDateTime {}
+#defualtBoardList .listWrHit {}
+@media(min-width:1280px) {
+  #defualtBoardList .searchTextFilter .labelText {margin-right:19px;}
+  #defualtBoardList .searchFilters .textForm {position: relative; top: -1px;}
+  #defualtBoardList .searchFilters .selectForm {font-size:14px;margin-right:5px;width:220px;}
+  #defualtBoardList .searchFilters .textForm {width:560px;}
+  #defualtBoardList .searchSubmits {padding-left: 39px;}
+
+  #defualtBoardList .listWrNum {width:70px;}
+  #defualtBoardList .listWrSubject {width:720px;}
+  #defualtBoardList .listWrName {width:140px;}
+  #defualtBoardList .listWrDateTime {width:170px;}
+  #defualtBoardList .listWrHit {width:100px;}
+}
+/* /noticeList.html, newsList.html */
+
+/* factNewsList.html */
+
+/* /factNewsList.html */
+
+/* ulfptcCoordiActIntroSearch.html */
+#ulfptcCoordiActIntroSearch {}
+#coordiInfo {letter-spacing: -0.4px;font-weight: 600;transform: skew(-0.03deg);}
+@media(min-width:1280px) {
+  #ulfptcCoordiActIntroSearch {}
+  #coordiInfo {padding-left:24px;font-size:16px;margin-top:29px;}
 }
 /* /ulfptcCoordiActIntroSearch.html */

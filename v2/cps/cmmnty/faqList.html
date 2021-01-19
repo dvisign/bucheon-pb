@@ -25,11 +25,27 @@
         slidesToShow: 1,
         slidesToScroll: 1
       });
+      var accordion = new accordionEvent({
+        // 아코디언 버튼
+        el : ".accordionBoardItems > a",
+        // 아코디언 컨텐츠 
+        contents : ".accordionContents",
+        // 로드시 아코디언 펼침
+        opens : true,
+        // 로드시 아코디언 펼칠때 열릴 인덱스
+        openIndex : 0,
+        // 중복선택
+        overlap : false,
+        // 아코디언 이벤트 세팅 후 커스텀이벤트 등록
+        customEvent : function() {
+          
+        }
+      });
     });
   </script>
 </head>
 
-<body id="ulfptcCoordiActIntroSearch">
+<body id="faqList">
   <div class="wrapper">
     <!-- 헤더 -->
     <header id="headers">
@@ -606,29 +622,129 @@
     </div>
     <!-- /depth -->
     <main class="sectionWrapper">
-      <div class="subPages">
-        <div class="container">
-          <div class="subPageHeader">
-            <h3>부천시 미세먼지 코디네이터 활동</h3>
+      <article class="subPages">
+        <section>
+          <div class="sm-container">
+            <div class="subPageHeader">
+              <h3 class="fontRubik">FAQ</h3>
+            </div>
+            <div class="subpageContents">
+              <div id="faqCategorys">
+                <div id="faqCategoryList" class="clear">
+                  <div class="faqCategoryItems">
+                    <a class="faqCategoryLink" href="javascript:void(0);">
+                      <div class="faqCategoryIcons">
+                        <img src="/img/v2/faq/icon_img01.jpg">
+                      </div>
+                      <p class="faqCategoryNames">미세먼지</p>
+                    </a>
+                  </div>
+                  <div class="faqCategoryItems">
+                    <a class="faqCategoryLink" href="javascript:void(0);">
+                      <div class="faqCategoryIcons">
+                        <img src="/img/v2/faq/icon_img02.jpg">
+                      </div>
+                      <p class="faqCategoryNames">정책</p>
+                    </a>
+                  </div>
+                  <div class="faqCategoryItems">
+                    <a class="faqCategoryLink" href="javascript:void(0);">
+                      <div class="faqCategoryIcons">
+                        <img src="/img/v2/faq/icon_img03.jpg">
+                      </div>
+                      <p class="faqCategoryNames">특화단지</p>
+                    </a>
+                  </div>
+                  <div class="faqCategoryItems">
+                    <a class="faqCategoryLink" href="javascript:void(0);">
+                      <div class="faqCategoryIcons">
+                        <img src="/img/v2/faq/icon_img04.jpg">
+                      </div>
+                      <p class="faqCategoryNames">시민행동요령</p>
+                    </a>
+                  </div>
+                  <div class="faqCategoryItems">
+                    <a class="faqCategoryLink" href="javascript:void(0);">
+                      <div class="faqCategoryIcons">
+                        <img src="/img/v2/faq/icon_img05.jpg">
+                      </div>
+                      <p class="faqCategoryNames">미세먼지알림이</p>
+                    </a>
+                  </div>
+                  <div class="faqCategoryItems">
+                    <a class="faqCategoryLink" href="javascript:void(0);">
+                      <div class="faqCategoryIcons">
+                        <img src="/img/v2/faq/icon_img06.jpg">
+                      </div>
+                      <p class="faqCategoryNames">측정소</p>
+                    </a>
+                  </div>
+                  <div class="faqCategoryItems">
+                    <a class="faqCategoryLink" href="javascript:void(0);">
+                      <div class="faqCategoryIcons">
+                        <img src="/img/v2/faq/icon_img07.jpg">
+                      </div>
+                      <p class="faqCategoryNames">계절관리제</p>
+                    </a>
+                  </div>
+                  <div class="faqCategoryItems">
+                    <a class="faqCategoryLink" href="javascript:void(0);">
+                      <div class="faqCategoryIcons">
+                        <img src="/img/v2/faq/icon_img08.jpg">
+                      </div>
+                      <p class="faqCategoryNames">차량2부제</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="searchFilters">
+                <div class="displayFlex justifyBetween alignItemsCenter">
+                  <div class="searchTextFilter">
+                    <label class="labelText">조회내용</label>
+                    <select class="selectForm">
+                      <option>질문</option>
+                      <option>답변</option>
+                    </select>
+                    <input type="text" class="textForm">
+                  </div>
+                  <div class="searchSubmits">
+                    <a href="javascript:void(0);" class="submitBtn">조회</a>
+                  </div>
+                </div>
+              </div>
+              <ul id="faqAnsList" class="accordionBoardLists">
+                <li class="accordionBoardItems">
+                  <a href="javascript:void(0);"><span>자주 묻는 질문 제목</span></a>
+                  <div class="accordionContents">
+                    <div class="faqAnsText">
+                      <p class="faqAnsSubject">자주 묻는 질문에 대한 답변입니다.</p>
+                      <div class="faqAnsContents">
+                        <p>답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="accordionBoardItems">
+                  <a href="javascript:void(0);"><span>자주 묻는 질문 제목</span></a>
+                  <div class="accordionContents">
+                    <div class="faqAnsText">
+                      <p class="faqAnsSubject">자주 묻는 질문에 대한 답변입니다.</p>
+                      <div class="faqAnsContents">
+                        <p>답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변답변</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="accordionBoardItems">
+                  <div class="accordionListEmpty">
+                    <p>작성된 글이 없습니다.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
-          <section class="subpageContents">
-            <article class="sectionArea">
-              <div class="sectionHeader">
-                <h4 class="sectionTitles">부천시 미세먼지 코디네이터란?</h4>
-              </div>
-              <p id="coordiInfo">미세먼지의 도시환경문제에 관심이 많은 부천시민을 대상으로 미세먼지 대응과 개선을 위한 행정과 시민을 연결하는 안내자이자 시민 주도의 미세먼지 정책참여 활동가</p>
-            </article>
-            <article class="sectionArea">
-              <div class="sectionHeader">
-                <h4 class="sectionTitles">코디네이터 구성 및 역할</h4>
-              </div>
-              <div id="coordiConstruction" class="sectionContents">
-                <p class="textRight">급수별 자격여건 구분(1급, 2급, 3급)</p>
-              </div>
-            </article>
-          </section>
-        </div>
-      </div>
+        </section>
+      </article>
     </main>
     <footer id="footer_wrap">
       <h2 class="hidden-txt">footer</h2>

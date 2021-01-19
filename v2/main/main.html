@@ -59,6 +59,7 @@
           })
         }
       });
+      
       $('#topNotice').slick({
         infinite: true,
         slidesToShow: 1,
@@ -78,10 +79,17 @@
         arrows : false,
         dots : false
       })
+      $('#measurePlaceSlider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows : true,
+        dots : false,
+        prevArrow: $('#dustAlertArr'),
+      })
       $(".dustReduct").on('init', function(e, s) {
         var targetHeight = $('#dustForecast').height();
         $(this).css("height",targetHeight + "px");
-        console.log('init')
       })
       $(".dustReduct").slick({
         infinite: true,
@@ -174,7 +182,6 @@
 
 <body>
   <div class="wrapper">
-    
     <!-- 헤더 -->
     <header id="headers">
       <!-- 상단 알림 -->
@@ -724,6 +731,51 @@
       <!-- /사이트맵 -->
     </header>
     <!-- /헤더 -->
+    <!-- 대시보드 -->
+    <div id="dashBoards">
+      <div class="container">
+        <div class="clear">
+          <div id="dustAlert">
+            <div class="clear">
+              <div id="dustCaption"></div>
+              <div id="dustAlertMsgs">
+                <p id="dustAlertNotice">초미세먼지 주의보 발령</p>
+                <p id="dustAlertDate">2020년 11월 12일 13시 기준</p>
+              </div>
+            </div>
+          </div>
+          <div id="dustPlaceData">
+            <div class="clear">
+              <div id="dustMeasure">
+                <p id="dustMeasureCate"><span>PM 2.5</span></p>
+                <p id="dustMeasureData"><span>165</span></p>
+                <p id="dustMeasureUnit"><span>ug/m3</span></p>
+              </div>
+              <div id="dustMeasurePlace">
+                <div id="measurePlaceSlider">
+                  <div class="measurePlaceItems">
+                    <p class="measureName"><span>소사본동 측정소</span></p>
+                    <p class="measurePlaceName"><span>소사본동, 범안동</span></p>
+                  </div>
+                  <div class="measurePlaceItems">
+                    <p class="measureName"><span>오정동 측정소</span></p>
+                    <p class="measurePlaceName"><span>오정동, 범안동</span></p>
+                  </div>
+                </div>
+                <a href="javascript:void(0);" id="dustAlertArr"><span class="sound-only">다음</span></a>
+              </div>
+            </div>
+          </div>
+          <div id="dustStates">
+            <div>
+              <p id="dustStateData"><span>매우나쁨</span></p>
+              <p id="dustStateMsg"><span>장시간 또는 무리한 실외활동 자제, 특히 눈이 아픈 증상이 있거나, 기침이나 목의 통증으로 불편한 사람은 실외활동을 피해야함</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /대시보드 -->
     <main class="sectionWrapper">
       <article>
         <section id="mainVisualMaps">

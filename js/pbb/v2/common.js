@@ -1,5 +1,6 @@
 'use strict';
 var accordionEvent = function(obj) {
+  this.obj = obj;
   var el = obj.el;
   var contents = obj.contents;
   var opens = obj.opens;
@@ -241,7 +242,9 @@ var dropDownSet = function(obj) {
       dropEvent();
     }
   };
-  return {init};
+  return {
+    init : init
+  };
 };
 function siteMapScrollEvent(nowPos, sectionArr) {
   for (var i = 0; i < sectionArr.length; i++) {

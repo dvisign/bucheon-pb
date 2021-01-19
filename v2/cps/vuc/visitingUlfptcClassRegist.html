@@ -5,13 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>부천시 미세먼지 빅데이터 플랫폼</title>
+  <!-- jQuery UI CSS -->
+  <link href="/resources/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css">
+  <link href="/css/pbb/jquery-ui.min.css" type="text/css" rel="stylesheet">
+  <link href="/css/pbb/jquery-ui.theme.min.css" type="text/css" rel="stylesheet">
+  <!-- slick css -->
   <link rel="stylesheet" href="/css/pbb/v2/slick-theme.css">
   <link rel="stylesheet" href="/css/pbb/v2/slick.css">
+  
   <link rel="stylesheet" href="/css/pbb/v2/reset.css">
   <link rel="stylesheet" href="/css/pbb/v2/common.css">
   <link rel="stylesheet" href="/css/pbb/v2/style.css">
   <!-- jquery -->
   <script src="/resources/jquery/jquery-3.5.1.min.js"></script>
+  <!-- jQuery UI -->
+  <script type="text/javascript" src="/resources/jquery-ui-1.12.1/jquery-ui.js" charset="utf-8"></script>
+
   <!-- slick -->
   <script src="/js/pbb/slick.min.js"></script>
   <!-- kakao apis -->
@@ -29,7 +38,7 @@
   </script>
 </head>
 
-<body id="ulfptcCoordiActIntroSearch">
+<body id="visitingUlfptcClassWrite">
   <div class="wrapper">
     <!-- 헤더 -->
     <header id="headers">
@@ -606,29 +615,156 @@
     </div>
     <!-- /depth -->
     <main class="sectionWrapper">
-      <div class="subPages">
-        <div class="container">
-          <div class="subPageHeader">
-            <h3>부천시 미세먼지 코디네이터 활동</h3>
+      <article class="subPages">
+        <section>
+          <div class="sm-container">
+            <div class="subPageHeader">
+              <h3>미세먼지 코디네이터 활동</h3>
+            </div>
+            <div class="subpageContents">
+              <div class="sectionContents">
+                <div class="sectionHeader">
+                  <h4 class="sectionTitles">코디네이터 활동 등록</h4>
+                </div>
+                <div class="boardWrites">
+                  <form action="">
+                    <div class="boardWriteTables">
+                      <div class="boardWriteLines">
+                        <div class="boardRow">
+                          <div class="boardRow w-50">
+                            <div class="boardWriteCategory">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <span class="writeCateTxt">코디네이터명</span>
+                              </div>
+                            </div>
+                            <div class="boardWriteValue">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <input type="text" class="textForm" value="코디네이터 이름" disabled>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="boardRow w-50">
+                            <div class="boardWriteCategory">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <span class="writeCateTxt">작성일자</span>
+                              </div>
+                            </div>
+                            <div class="boardWriteValue">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <input type="text" class="textForm" value="2021-01-20" disabled>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="boardWriteLines">
+                        <div class="boardRow">
+                          <div class="boardWriteCategory">
+                            <div class="displayFlex h-100 alignItemsCenter">
+                              <span class="writeCateTxt">활동기간</span>
+                            </div>
+                          </div>
+                          <div class="boardWriteValue">
+                            <div class="displayFlex h-100 alignItemsCenter">
+                              <input type="text" class="dateForm"><span class="textDivision">~</span><input type="text" class="dateForm">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="boardWriteLines">
+                        <div class="boardRow">
+                          <div class="boardWriteCategory">
+                            <div class="displayFlex h-100 alignItemsCenter">
+                              <span class="writeCateTxt">활동제목</span>
+                            </div>
+                          </div>
+                          <div class="boardWriteValue">
+                            <div class="displayFlex h-100 alignItemsCenter">
+                              <input type="text" class="textForm wrSubject" placeholder="제목을 입력해 주세요.">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="boardWriteLines">
+                        <div class="boardRow">
+                          <div class="boardWriteCategory">
+                            <div class="displayFlex h-100 alignItemsCenter">
+                              <span class="writeCateTxt">활동내용</span>
+                            </div>
+                          </div>
+                          <div class="boardWriteValue">
+                            <div class="displayFlex h-100 alignItemsCenter">
+                              <textarea class="textAreaForm" placeholder="내용을 작성해 주세요."></textarea>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="boardWriteLines">
+                        <div class="boardRow">
+                          <div class="boardWriteCategory">
+                            <div class="displayFlex h-100 alignItemsCenter">
+                              <span class="writeCateTxt">활동사진</span>
+                            </div>
+                          </div>
+                          <div class="boardWriteValue">
+                            <div class="displayFlex h-100 alignItemsCenter">
+                              <div>
+                                <div>
+                                  <label for="files" class="btn fileBtn">파일</label>
+                                  <input type="file" class="fileForm" id="files">
+                                  <p class="uploadInfo">* 사이즈가 5M 미만인 이미지 파일(jpg, png, jpeg)만 첨부 가능합니다.</p>
+                                </div>
+                                <ul class="fileLists">
+                                  <li class="fileItems">
+                                    <p>
+                                      <span class="fileNames">test.png</span>
+                                      <input type="button" class="deleteBtn">
+                                    </p>
+                                  </li>
+                                  <li class="fileItems">
+                                    <p>
+                                      <span class="fileNames">test.png</span>
+                                      <input type="button" class="deleteBtn">
+                                    </p>
+                                  </li>
+                                </ul>
+                                <ul class="imgDisclamerList">
+                                  <li class="imgDisclamerItems">
+                                    <p>인물 사진이 포함된 경우 초상권 활용 동의를 받은 후 게시하여야 하며, 초상권 활용을 받지 못한 경우에는 인물사진에 모자이크 처리를 하셔야 합니다.</p>
+                                  </li>
+                                  <li class="imgDisclamerItems">
+                                    <p>공개여부는 기본적으로 비공개로 되어있으며 초상권에 문제가 없을 경우에만 공개로 표시 부탁드립니다.</p>
+                                  </li>
+                                </ul>
+                                <div class="boardAuthRadio">
+                                  <label for="radio1" class="radioLabel">
+                                    <input type="radio" id="radio1" class="radioForm" name="test1">
+                                    <span class="radioBoxImg"></span>
+                                    <span class="radioLabelTxt">공개</span>
+                                  </label>
+                                  <label for="radio2" class="radioLabel">
+                                    <input type="radio" id="radio2" class="radioForm" name="test1">
+                                    <span class="radioBoxImg"></span>
+                                    <span class="radioLabelTxt">비공개</span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="wrBtnWrapper">
+                      <button class="btn outLineGray largeBtn">등록</button>
+                      <a href="javascript:void(0);" class="btn outLineGray largeBtn">취소</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
-          <section class="subpageContents">
-            <article class="sectionArea">
-              <div class="sectionHeader">
-                <h4 class="sectionTitles">부천시 미세먼지 코디네이터란?</h4>
-              </div>
-              <p id="coordiInfo">미세먼지의 도시환경문제에 관심이 많은 부천시민을 대상으로 미세먼지 대응과 개선을 위한 행정과 시민을 연결하는 안내자이자 시민 주도의 미세먼지 정책참여 활동가</p>
-            </article>
-            <article class="sectionArea">
-              <div class="sectionHeader">
-                <h4 class="sectionTitles">코디네이터 구성 및 역할</h4>
-              </div>
-              <div id="coordiConstruction" class="sectionContents">
-                <p class="textRight">급수별 자격여건 구분(1급, 2급, 3급)</p>
-              </div>
-            </article>
-          </section>
-        </div>
-      </div>
+        </section>
+      </article>
     </main>
     <footer id="footer_wrap">
       <h2 class="hidden-txt">footer</h2>
