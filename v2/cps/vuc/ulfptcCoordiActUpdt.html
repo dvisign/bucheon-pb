@@ -5,13 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>부천시 미세먼지 빅데이터 플랫폼</title>
+  <!-- jQuery UI CSS -->
+  <link href="/resources/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css">
+  <link href="/resources/jquery-ui-1.12.1/jquery-ui.min.css" type="text/css" rel="stylesheet">
+  <link href="/resources/jquery-ui-1.12.1/jquery-ui.theme.min.css" type="text/css" rel="stylesheet">
+  <!-- slick css -->
   <link rel="stylesheet" href="/css/pbb/v2/slick-theme.css">
   <link rel="stylesheet" href="/css/pbb/v2/slick.css">
+  
   <link rel="stylesheet" href="/css/pbb/v2/reset.css">
   <link rel="stylesheet" href="/css/pbb/v2/common.css">
   <link rel="stylesheet" href="/css/pbb/v2/style.css">
   <!-- jquery -->
   <script src="/resources/jquery/jquery-3.5.1.min.js"></script>
+  <!-- jQuery UI -->
+  <script type="text/javascript" src="/resources/jquery-ui-1.12.1/jquery-ui.js" charset="utf-8"></script>
+
   <!-- slick -->
   <script src="/js/pbb/slick.min.js"></script>
   <!-- kakao apis -->
@@ -29,7 +38,7 @@
   </script>
 </head>
 
-<body id="defualtBoardDetail">
+<body id="ulfptcCoordiActRegistWrite">
   <div class="wrapper">
     <!-- 헤더 -->
     <header id="headers">
@@ -613,137 +622,146 @@
         <section>
           <div class="sm-container">
             <div class="subPageHeader">
-              <h2 class="subPageTitle">공지사항 상세</h2>
+              <h2 class="subPageTitle">미세먼지 코디네이터 활동</h2>
             </div>
             <div class="subpageContents">
-              <div class="boardViews">
-                <div class="boardViewTable">
-                  <div class="boardViewLine">
-                    <div class="boardRow">
-                      <div class="boardRow w-50">
-                        <div class="boardViewCategory">
-                          <div class="displayFlex h-100">
-                            <span class="viewValues">작성자</span>
+              <div class="sectionContents">
+                <div class="sectionHeader">
+                  <h4 class="sectionTitles">코디네이터 활동 수정</h4>
+                </div>
+                <div class="boardWrites">
+                  <form action="">
+                    <div class="boardWriteTables">
+                      <div class="boardWriteLines">
+                        <div class="boardRow">
+                          <div class="boardWriteCategory">
+                            <div class="displayFlex h-100 alignItemsCenter">
+                              <label class="writeCateTxt wrNecessary" for="">활동제목</label>
+                            </div>
                           </div>
-                        </div>
-                        <div class="boardViewValue">
-                          <div class="displayFlex h-100">
-                            <span class="viewValues">관리자</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="boardRow w-50">
-                        <div class="boardViewCategory">
-                          <div class="displayFlex h-100">
-                            <span class="viewValues">작성일시</span>
-                          </div>
-                        </div>
-                        <div class="boardViewValue">
-                          <div class="displayFlex h-100">
-                            <span class="viewValues">2020-12-22</span>
+                          <div class="boardWriteValue">
+                            <div class="displayFlex h-100 alignItemsCenter">
+                              <input type="text" class="textForm wrSubject" placeholder="제목을 입력해 주세요.">
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="boardViewLine">
-                    <div class="boardRow">
-                      <div class="boardViewCategory">
-                        <div class="displayFlex h-100">
-                          <span class="viewValues">조회수</span>
+                      <div class="boardWriteLines">
+                        <div class="boardRow">
+                          <div class="boardRow w-50">
+                            <div class="boardWriteCategory">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <label class="writeCateTxt wrNecessary" for="">코디네이터명</label>
+                              </div>
+                            </div>
+                            <div class="boardWriteValue">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <input type="text" class="textForm" value="작성자" disabled>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="boardRow w-50">
+                            <div class="boardWriteCategory">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <label class="writeCateTxt wrNecessary" for="">작성일자</label>
+                              </div>
+                            </div>
+                            <div class="boardWriteValue">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <input type="text" class="textForm" value="2021-01-20" disabled>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                      <div class="boardViewValue">
-                        <div class="displayFlex h-100">
-                          <span class="viewValues">0</span>
+                      <div class="boardWriteLines">
+                        <div class="boardRow">
+                          <div class="boardWriteCategory">
+                            <div class="displayFlex h-100 alignItemsCenter">
+                              <label class="writeCateTxt wrNecessary" for="">활동기간</label>
+                            </div>
+                          </div>
+                          <div class="boardWriteValue">
+                            <div class="displayFlex h-100 alignItemsCenter">
+                              <input type="text" class="dateForm"><span class="textDivision">~</span><input type="text" class="dateForm">
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="boardViewLine">
-                    <div class="boardRow">
-                      <div class="boardViewCategory">
-                        <div class="displayFlex h-100">
-                          <span class="viewValues">제목</span>
+                      <div class="boardWriteLines">
+                        <div class="boardRow">
+                          <div class="boardWriteCategory">
+                            <div class="displayFlex h-100 alignItemsCenter">
+                              <label class="writeCateTxt wrNecessary" for="">활동내용</label>
+                            </div>
+                          </div>
+                          <div class="boardWriteValue">
+                            <div class="displayFlex h-100 alignItemsCenter">
+                              <textarea class="textAreaForm" placeholder="내용을 작성해 주세요."></textarea>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                      <div class="boardViewValue">
-                        <div class="displayFlex h-100">
-                          <span class="viewValues">게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목게시글제목</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="boardViewLine">
-                    <div class="boardRow">
-                      <div class="boardViewCategory">
-                        <div class="displayFlex h-100">
-                          <span class="viewValues">내용</span>
-                        </div>
-                      </div>
-                      <div class="boardViewValue">
-                        <div class="displayFlex h-100">
-                          <div id="editorContents" class="tableFieldArea">
-                            <p class="preData"></p>
-                            <h3>"미세먼지 클린존 구축사업"</h3>      
-                            <ul>
-                              <li><span style="font-size:22px"><strong>스마트 미세먼지 클린 특화단지 조성사업</strong></span>
-                            
-                              <ul>
-                                <li><strong>사업기간</strong>&nbsp;: 2019년 12월 ~ 2021년 03월</li>
-                                <li><strong>사업위치</strong>&nbsp;: 7개동(중1, 중3, 상2, 상3, 신흥, 도당, 춘의)</li>
-                                <li><strong>사업내용</strong>
-                                <ul>
-                                  <li><strong>우리동네 미세먼지 정보 서비스</strong></li>
-                                  <li><strong>공업단지 비산먼지 해결 서비스</strong></li>
-                                  <li>통학로 청정-안심공기 제공 서비스</li>
-                                  <li>지하철역 미세먼지 저감 서비스</li>
-                                  <li>빅데이터 기반 미세먼지 대응 서비스</li>
+                      <div class="boardWriteLines">
+                        <div class="boardRow">
+                          <div class="boardWriteCategory">
+                            <div class="displayFlex h-100 alignItemsCenter">
+                              <label class="writeCateTxt wrNecessary" for="">활동사진</label>
+                            </div>
+                          </div>
+                          <div class="boardWriteValue">
+                            <div class="displayFlex h-100 alignItemsCenter">
+                              <div>
+                                <div>
+                                  <label for="files" class="btn fileBtn">파일</label>
+                                  <input type="file" class="fileForm" id="files">
+                                  <p class="uploadInfo">* 사이즈가 5M 미만인 이미지 파일(jpg, png, jpeg)만 첨부 가능합니다.</p>
+                                </div>
+                                <ul class="fileLists">
+                                  <li class="fileItems">
+                                    <p>
+                                      <span class="fileNames">test.png</span>
+                                      <input type="button" class="deleteBtn">
+                                    </p>
+                                  </li>
+                                  <li class="fileItems">
+                                    <p>
+                                      <span class="fileNames">test.png</span>
+                                      <input type="button" class="deleteBtn">
+                                    </p>
+                                  </li>
                                 </ul>
-                                </li>
-                              </ul>
-                              </li>
-                              <li><img alt="부천시 미세먼지 클린존 구성도" src="http://www.bucheon.go.kr/files/web148/images/ui500/pic_major_busi04.png"></li>
-                            </ul>
-                            <p></p>
+                                <ul class="imgDisclamerList">
+                                  <li class="imgDisclamerItems">
+                                    <p>인물 사진이 포함된 경우 초상권 활용 동의를 받은 후 게시하여야 하며, 초상권 활용을 받지 못한 경우에는 인물사진에 모자이크 처리를 하셔야 합니다.</p>
+                                  </li>
+                                  <li class="imgDisclamerItems">
+                                    <p>공개여부는 기본적으로 비공개로 되어있으며 초상권에 문제가 없을 경우에만 공개로 표시 부탁드립니다.</p>
+                                  </li>
+                                </ul>
+                                <div class="boardAuthRadio">
+                                  <label for="radio1" class="radioLabel">
+                                    <input type="radio" id="radio1" class="radioForm" name="test1">
+                                    <span class="radioBoxImg"></span>
+                                    <span class="radioLabelTxt">공개</span>
+                                  </label>
+                                  <label for="radio2" class="radioLabel">
+                                    <input type="radio" id="radio2" class="radioForm" name="test1">
+                                    <span class="radioBoxImg"></span>
+                                    <span class="radioLabelTxt">비공개</span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div class="boardNextPrevLink">
-                  <div class="boardViewLine boardPrevs">
-                    <div class="boardRow">
-                      <div class="boardViewCategory">
-                        <div class="displayFlex h-100">
-                          <span class="viewValues">이전글</span>
-                        </div>
-                      </div>
-                      <div class="boardViewValue">
-                        <div class="displayFlex h-100">
-                          <div class="viewValues"><a href="#" class="boardLinks">도당초등학교 1차교육</a></div>
-                        </div>
-                      </div>
+                    <div class="wrBtnWrapper">
+                      <button class="btn outLineGray largeBtn">수정</button>
+                      <a href="javascript:void(0);" class="btn outLineGray largeBtn">취소</a>
                     </div>
-                  </div>
-                  <div class="boardViewLine boardNexts">
-                    <div class="boardRow">
-                      <div class="boardViewCategory">
-                        <div class="displayFlex h-100">
-                          <span class="viewValues">다음글</span>
-                        </div>
-                      </div>
-                      <div class="boardViewValue">
-                        <div class="displayFlex h-100">
-                          <div class="viewValues"><a href="#" class="boardLinks">도당초등학교 1차교육</a></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="boardBtnsWrapper textCenter">
-                  <a href="#" class="boardBtns">목록</a>
+                  </form>
                 </div>
               </div>
             </div>

@@ -114,7 +114,7 @@
 .etcListHeader {position: relative;padding-bottom:30px;}
 .etcListHeader > h2 {color:#111;font-size:20px;font-weight: 600;letter-spacing: -0.88px;}
 .etcListHeader > .deadline {margin-right:40px;margin-top:6px;}
-.deadline > #airInfoDate {display:inline-block;font-family: 'Rubik';font-size:12px;color:#999;letter-spacing: -0.28px;}
+.deadline > #airInfoDate {display:inline-block;font-size:12px;color:#999;letter-spacing: -0.28px;font-weight: 400;}
 .deadline > .addBtns {position:absolute;top:-2px;right:0;}
 .cdtCategory {width:100%;padding-bottom:45px;}
 .cdtCategory > li {float:left;width:calc((100% - 3px) / 4);}
@@ -171,9 +171,9 @@
 .behaviorsInfoTables th.firstCategory, 
 .behaviorsInfoTables th.secondCategory {width:64px;}
 .behaviorsInfoTables th.secondCategory {background-color:#f5f8fe;}
-.behaviorsInfoTables td.behaviorsInfoTableTxt p{text-align: left;font-size:14px;line-height: 1.25;letter-spacing: -0.65px;word-break: keep-all;color:#111;font-weight: 600;transform: skew(-0.03deg);}
+.behaviorsInfoTables td.behaviorsInfoTableTxt p{text-align: left;font-size:14px;line-height: 1.25;letter-spacing: -0.65px;word-break: keep-all;color:#111;font-weight: 400;}
 .behaviorsInfoNotice {margin-top:10px;padding:0 8px;}
-.behaviorsInfoNotice > p {padding-left:15px;position: relative;font-size: 12px;color:#111;letter-spacing: 0.64px;line-height: 1.25;font-weight: 600;transform: skew(-0.03deg);}
+.behaviorsInfoNotice > p {padding-left:15px;position: relative;font-size: 12px;color:#111;letter-spacing: 0.64px;line-height: 1.25;font-weight: 400;}
 .behaviorsInfoNotice > p::after {content:'※';display:block;position: absolute;left:0;top:0;}
 /* /컨텐츠 */
 /* 대시보드 */
@@ -201,7 +201,7 @@
 
 #dustStates {float:left;color:#e1e1e1;}
 #dustStateData {color:#ff0000;transform: skew(-0.03deg);font-weight: 900;}
-#dustStateMsg {font-weight: 600;transform: skew(-0.03deg);line-height: 1.75;}
+#dustStateMsg {line-height: 1.75;font-weight: 400;}
 @media(min-width:1280px) {
   #dashBoards {}
   #dustAlert {padding:35px 34px 40px 34px;width:395px;}
@@ -338,7 +338,7 @@
   .etcListHeader {position: relative;padding-bottom:40px;}
   .etcListHeader > h2 {float:left;color:#111;font-size:22px;font-weight: 600;letter-spacing: -0.88px;}
   .etcListHeader > .deadline {float:right;margin-right:40px;margin-top:6px;}
-  .deadline > #airInfoDate {display:inline-block;font-family: 'Rubik';font-size:14px;color:#999;letter-spacing: -0.28px;}
+  .deadline > #airInfoDate {font-size:14px;}
   .deadline > .addBtns {position:absolute;top:-2px;right:0;}
   .cdtCategory {width:100%;padding-bottom:45px;}
   .cdtCategory > li {float:left;width:calc((100% - 3px) / 4);}
@@ -395,9 +395,9 @@
   .behaviorsInfoTables th.firstCategory, 
   .behaviorsInfoTables th.secondCategory {width:110px;}
   .behaviorsInfoTables th.secondCategory {background-color:#f5f8fe;}
-  .behaviorsInfoTables td.behaviorsInfoTableTxt p{text-align: left;font-size:14px;line-height: 1.25;letter-spacing: -0.65px;word-break: keep-all;color:#111;font-weight: 600;transform: skew(-0.03deg);}
+  .behaviorsInfoTables td.behaviorsInfoTableTxt p{font-size:16px;}
   .behaviorsInfoNotice {margin-top:24px;padding:0 8px;}
-  .behaviorsInfoNotice > p {padding-left:15px;position: relative;font-size: 14px;color:#111;letter-spacing: 0.64px;line-height: 1.25;font-weight: 600;transform: skew(-0.03deg);}
+  .behaviorsInfoNotice > p {padding-left:15px;font-size:16px;}
   .behaviorsInfoNotice > p::after {content:'※';display:block;position: absolute;left:0;top:0;}
   /* /컨텐츠 */
   /* /main */
@@ -452,16 +452,31 @@
 #ulfptcCoordiActList .boardLists .listActDateTime {}
 #ulfptcCoordiActList .boardLists .listCdName {}
 #ulfptcCoordiActList .boardLists .listWrDateTime {}
+.activityCount {border:1px solid #dadada;}
+.activityCountCates {text-align: center;}
+.activityCountCates > .activeityItems {float:left;}
+.activityCountCates > .activeityItems:not(:last-child) {border-right:1px solid #dadada;}
+.activityCountCates > .activeityItems > .activityCountCateItems {background-color:#edf3ff;border-bottom:1px solid #dadada;}
+.activityCountCates > .activeityItems > .activityCountCateItems > span {color:#111;font-weight: 600;transform: skew(-0.03deg);}
+.activityCountCates > .activeityItems > .activityCountValue {font-weight: 400;}
 @media(min-width:1280px) {
   #ulfptcCoordiActList .searchTextFilter .textForm {width:600px;}
   #ulfptcCoordiActList .searchTextFilter .labelText {margin-right:19px;}
   #ulfptcCoordiActList .searchSubmits {padding-left:39px;}
   #ulfptcCoordiActList #codiActHistory .sectionTitles {margin-bottom:14px;}
-  #ulfptcCoordiActList .boardLists .listWrNum {width:95px;}
-  #ulfptcCoordiActList .boardLists .listWrSubject {width:505px;}
-  #ulfptcCoordiActList .boardLists .listActDateTime {width:300px;}
-  #ulfptcCoordiActList .boardLists .listCdName {width:150px;}
-  #ulfptcCoordiActList .boardLists .listWrDateTime {width:150px;}
+  #ulfptcCoordiActList .boardLists .listWrNum {width:60px;}
+  #ulfptcCoordiActList .boardLists .listWrSubject {width:610px;}
+  #ulfptcCoordiActList .boardLists .listActDateTime {width:240px}
+  #ulfptcCoordiActList .boardLists .listCdName {width:120px;}
+  #ulfptcCoordiActList .boardLists .listWrDateTime {width:170px;}
+  .activityCount {}
+  .activityCountCates {}
+  .activityCountCates > .activeityItems {width:calc(100% / 13);}
+  .activityCountCates > .activeityItems > .activityCountCateItems {padding:17px 5px;}
+  .activityCountCates > .activeityItems > .activityCountValue {padding:17px 5px;}
+  .activityCountCates > .activeityItems > .activityCountCateItems > span, 
+  .activityCountCates > .activeityItems > .activityCountValue > span  {font-size: 16px;}
+  .searchCount {}
 }
 /* /ulfptcCoordiActList.html */
 
@@ -487,6 +502,7 @@
 #visitClassList .boardLists .listWrPlan {}
 #visitClassList .boardLists .listEduAppDate {}
 #visitClassList .boardLists .listEduSch {}
+#visitClassList .boardLists .listEduSch a.listValues {color:#2c64cf;text-decoration: underline !important;}
 #visitClassList .boardLists .listEduGrade {}
 #visitClassList .boardLists .listEduClass {}
 #visitClassList .boardLists .listEduCount {}
@@ -499,20 +515,66 @@
   #visitClassList .searchFilters2 .searchFilterForms {width:calc(100% - 200px);}
   #visitClassList .searchFilter2Area .searchFilterForms .dateForm {width:300px;}
   #visitClassList .searchFilter2Area .searchFilterForms .textForm {width:625px;}
-  #visitClassList .boardLists .listWrNum {width:95px;}
-  #visitClassList .boardLists .listWrPlan {width:210px;}
-  #visitClassList .boardLists .listEduAppDate {width:210px;}
-  #visitClassList .boardLists .listEduSch {width:220px;}
-  #visitClassList .boardLists .listEduGrade {width:82px;}
-  #visitClassList .boardLists .listEduClass {width:82px;}
-  #visitClassList .boardLists .listEduCount {width:150px;}
-  #visitClassList .boardLists .listEduState {width:150px;}
+  #visitClassList .boardLists .listWrNum {width:60px;}
+  #visitClassList .boardLists .listWrPlan {width:440px;}
+  #visitClassList .boardLists .listEduAppDate {width:170px;}
+  #visitClassList .boardLists .listEduSch {width:170px;}
+  #visitClassList .boardLists .listEduGrade {width:80px;}
+  #visitClassList .boardLists .listEduClass {width:80px;}
+  #visitClassList .boardLists .listEduCount {width:100px;}
+  #visitClassList .boardLists .listEduState {width:100px;}
 }
 /* /visitingUlfptcClassList */
 
-/* visitingUlfptcClassWrite.html */
-#visitingUlfptcClassWrite .textForm:not(.wrSubject) {width:180px;}
-/* /visitingUlfptcClassWrite.html */
+/* ulfptcCoordiActRegist.html */
+#ulfptcCoordiActRegistWrite .textForm:not(.wrSubject) {width:220px;}
+/* /ulfptcCoordiActRegist.html */
+
+/* visitingUlfptcClassRegist.html */
+#visitClassWrite .selectForm[name="searchFlag"] {}
+#visitClassWrite .textForm {}
+#visitClassWrite .textForm[name="schulNm"] {}
+#visitClassWrite .textForm[name="grade"] {}
+#visitClassWrite .textForm[name="part"] {}
+#visitClassWrite .selectForm[name="searchTimeFlag1"],
+#visitClassWrite .selectForm[name="searchTimeFlag2"] {}
+#visitClassWrite .btn.labeling {}
+
+#edcSchdul {}
+#edcReqstChk {}
+
+#searchSchoolPop {}
+#searchSchoolPop .textForm[name="searchSchul"] {}
+#searchSchoolPop .labelText {}
+#searchSchoolPop .listWrNum {}
+#searchSchoolPop .listWrSchName {}
+#searchSchoolPop .listWrPlace {}
+#searchSchoolPop .listWrAddress {}
+#searchSchoolPop .listWrTel {}
+@media(min-width:1280px) {
+  #visitClassWrite .selectForm {font-size:14px;}
+  #visitClassWrite .selectForm[name="searchFlag"] {width:298px;}
+  #visitClassWrite .textForm {width:220px;}
+  #visitClassWrite .textForm[name="schulNm"] {width:300px;}
+  #visitClassWrite .textForm[name="grade"] {width:86px;margin-right:5px;}
+  #visitClassWrite .textForm[name="part"] {width:86px;margin-left:15px;margin-right:5px;}
+  #visitClassWrite .selectForm[name="searchTimeFlag1"],
+  #visitClassWrite .selectForm[name="searchTimeFlag2"] {margin-left:15px;}
+  #visitClassWrite .btn.labeling {margin-left:15px;}
+
+  #edcSchdul {margin-left:15px;font-size:16px;font-weight: 400;}
+  #edcReqstChk {margin-top:5px;font-size:16px;font-weight: 400;}
+
+  #searchSchoolPop {}
+  #searchSchoolPop .textForm[name="searchSchul"] {width:470px;}
+  #searchSchoolPop .labelText {margin-right: 19px;}
+  #searchSchoolPop .listWrNum {width: 60px;}
+  #searchSchoolPop .listWrSchName {width: 210px;}
+  #searchSchoolPop .listWrPlace {width: 130px;}
+  #searchSchoolPop .listWrAddress {width: 440px;}
+  #searchSchoolPop .listWrTel {width: 220px;}
+}
+/* /visitingUlfptcClassRegist.html */
 
 /* faqList.html */
 #faqCategorys {text-align:center;}
@@ -532,7 +594,7 @@
 #faqList .accordionBoardItems > a > span::before {content:'Q.'; font-family: 'Rubik';font-weight: 900;position:absolute;left:0;top:0;}
 #faqList .accordionBoardItems > a > span {}
 #faqList .accordionContents .faqAnsText {}
-#faqList .accordionContents .faqAnsSubject {position:relative;}
+#faqList .accordionContents .faqAnsSubject {position:relative;font-weight: 600;transform: skew(-0.03deg);}
 #faqList .accordionContents .faqAnsSubject::before {content:'A.';position: absolute;display:block;top:0;font-family: 'Rubik';font-weight: 900;}
 #faqList .accordionContents .faqAnsContents {word-break: break-all;color:#2c64cf;line-height: 1.4;}
 @media(min-width:1280px) {
@@ -592,9 +654,59 @@
 
 /* ulfptcCoordiActIntroSearch.html */
 #ulfptcCoordiActIntroSearch {}
-#coordiInfo {letter-spacing: -0.4px;font-weight: 600;transform: skew(-0.03deg);}
+#coordiInfo {letter-spacing: -0.4px;font-weight: 400;}
+#coordiConstruction {}
+#coordiConstruction > .textRight {color:#666;letter-spacing: -0.4px;font-weight: 600;transform: skew(-0.03deg);}
+#coordiConstTable {}
+#coordiConstTable .dataTables > table {text-align: center;display: block;border:1px solid #dadada;border-bottom:0;}
+#coordiConstTable .dataTables > table > tbody {display: block;}
+#coordiConstTable .dataTables .tableRow {display: block;}
+#coordiConstTable .dataTables .tableRow::after {content:'';clear:both;display: block;}
+#coordiConstTable .tableRow td,
+#coordiConstTable .tableRow th {border:0;border-bottom:1px solid #dadada;}
+
+#coordiConstTable .dataCategoryDepth_1 {display:block;float:left;}
+#coordiConstTable .dataCategoryDepth_1[rowspan="4"] {display:none;}
+#coordiConstTable .dataCategoryDepth_1[colspan="2"] {width:100%;}
+#coordiConstTable .dataCategoryDepth_1:not([colspan="2"]) {width:calc(100% / 3)}
+#coordiConstTable .dataCategoryDepth_2 {display: block;width:100%;}
+#coordiConstTable .dataCategoryValue {display:block;float:left;}
+#coordiConstTable .dataCategoryValue:not([colspan="2"]),
+#coordiConstTable .dataCategoryValue:not([colspan="3"]) {width:calc(100% / 3)}
+#coordiConstTable .dataCategoryValue[colspan="2"] {width:calc((100% / 3) * 2)}
+#coordiConstTable .dataCategoryValue[colspan="3"] {width:100%;}
+#coordiConstTable .tableRow:nth-child(1) > .dataCategoryDepth_1:not([colspan="2"]){border-right:1px solid #dadada;}
+#coordiConstTable .tableRow:nth-child(1) > .dataCategoryDepth_1:last-child {border-right: 0;}
+#coordiConstTable .tableRow:nth-child(2) > .dataCategoryDepth_1[colspan="2"] {display: none;}
+#coordiConstTable .tableRow > .dataCategoryValue:not(:last-child) {border-right:1px solid #dadada;}
+#constructionTextList {}
+#constructionTextList > .constructionTextItems {}
+#constructionTextList > .constructionTextItems:not(:last-child) {}
+#constructionTextList p {font-weight: 400;}
+
 @media(min-width:1280px) {
   #ulfptcCoordiActIntroSearch {}
   #coordiInfo {padding-left:24px;font-size:16px;margin-top:29px;}
+  #coordiConstruction {}
+  #coordiConstruction > .textRight {font-size:14px;margin-top:26px;}
+  #coordiConstTable {margin-top:12px;}
+  #coordiConstTable .dataTables > table {display: table;border:0;}
+  #coordiConstTable .dataTables > table > tbody {display: table-row-group;}
+  #coordiConstTable .dataTables .tableRow {display: table-row;}
+  #coordiConstTable .tableRow:nth-child(2) > .dataCategoryDepth_1[colspan="2"] {display: table-cell;}
+  #coordiConstTable .tableRow td,
+  #coordiConstTable .tableRow th {border:1px solid #dadada;}
+  #coordiConstTable .dataCategoryDepth_1 {display:table-cell;float:none;}
+  #coordiConstTable .dataCategoryDepth_1[rowspan="4"] {width:290px;display:table-cell;}
+  #coordiConstTable .dataCategoryDepth_1:not([colspan="2"]) {width: auto;}
+  #coordiConstTable .dataCategoryDepth_1[colspan="2"] {width:auto;}
+  #coordiConstTable .dataCategoryDepth_2 {width:410px;display:table-cell;}
+  #coordiConstTable .dataCategoryValue {width:165px;display:table-cell;float:none;}
+  #coordiConstTable .dataCategoryValue:not([colspan="2"]),
+  #coordiConstTable .dataCategoryValue:not([colspan="3"]) {width:auto;}
+  #constructionTextList {margin-top:30px;padding-left:20px;}
+  #constructionTextList > .constructionTextItems {}
+  #constructionTextList > .constructionTextItems:not(:last-child) {margin-bottom:10px;}
+  #constructionTextList p {font-size:16px;}
 }
 /* /ulfptcCoordiActIntroSearch.html */

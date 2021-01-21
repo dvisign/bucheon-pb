@@ -126,7 +126,7 @@ blockquote:before, blockquote:after, q:before, q:after { content: ""; content: n
 
 table { width: 100%; text-align: left; border-collapse: collapse; border-spacing: 0; }
 
-body { -webkit-backface-visibility: hidden; }
+body { -webkit-backface-visibility: hidden; font-weight: 400;}
 
 input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button { padding: 0; font-family: "Rubik", "NanumSquare", AppleGothic, Arial, Helvetica, sans-serif; outline: none; }
 
@@ -136,7 +136,11 @@ a:link, a:visited, a:active, a:hover { text-decoration: none; }
 
 input, button, textarea { -webkit-appearance: none; -moz-appearance: none; appearance: none; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; background-color: transparent; border: 0 none; font-size: 16px; font-weight: 300; font-family: "Rubik", "NanumSquare", AppleGothic, Arial, Helvetica, sans-serif; line-height: 1; }
 
-select[type="checkbox"], input[type="checkbox"], button[type="checkbox"], textarea[type="checkbox"] { -webkit-appearance: checkbox; }
+select[type="checkbox"], input[type="checkbox"], button[type="checkbox"], 
+select > option,
+select {font-family: "Rubik", "NanumSquare", AppleGothic, Arial, Helvetica, sans-serif;}
+
+textarea[type="checkbox"] { -webkit-appearance: checkbox; }
 
 select[type="radio"], input[type="radio"], button[type="radio"], textarea[type="radio"] { -webkit-appearance: radio; }
 

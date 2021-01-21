@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>부천시 미세먼지 빅데이터 플랫폼</title>
+  <!-- jQuery UI CSS -->
+  <link href="/resources/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css">
+  <link href="/resources/jquery-ui-1.12.1/jquery-ui.min.css" type="text/css" rel="stylesheet">
+  <link href="/resources/jquery-ui-1.12.1/jquery-ui.theme.min.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/pbb/v2/slick-theme.css">
+  <link rel="stylesheet" href="/css/pbb/v2/slick.css">
+  <link rel="stylesheet" href="/css/pbb/v2/reset.css">
+  <link rel="stylesheet" href="/css/pbb/v2/common.css">
+  <style>
+    #publicList .codeArea {margin-top:10px;}
+    #fontList > li {margin-bottom:20px;float:left;width:50%;}
+    .fontName {color:#006dbb;}
+    .fontNotice {margin-top: 10px;font-size:20px;}
+    .fontNotice > li {margin-bottom:5px;}
+    .fontNotice .textStyle {color:#e31626;display:inline-block;margin-left:30px;}
+
+    .codeArea {border:2px solid #006dbb;border-radius: 5px;padding:10px;resize:none; display:block;width:100%;margin-bottom:10px;}
+    .componentsCont {margin-bottom:30px;}
+    .componentsCont > .listLabel {margin-bottom:10px;}
+    #formComponents,
+    #classComponents,
+    #modalComponents {display:flex; flex-wrap: wrap;margin:0 -10px;}
+    #formComponents > .componentsCont,
+    #classComponents> .componentsCont,
+    #modalComponents > .componentsCont {width:50%;padding:10px;}
+    .contentWrapper {margin-top:30px;}
+    .tabContents {padding:20px; border:1px solid #ccc;}
+  </style>
+  <!-- jquery -->
+  <script src="/resources/jquery/jquery-3.5.1.min.js"></script>
+  <!-- jQuery UI -->
+  <script type="text/javascript" src="/resources/jquery-ui-1.12.1/jquery-ui.js" charset="utf-8"></script>
+  <!-- slick -->
+  <script src="/js/pbb/slick.min.js"></script>
+  <!-- kakao apis -->
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=45e3c6ea96e8632f69735a69f4fa70b9&libraries=services"></script><script charset="UTF-8" src="http://t1.daumcdn.net/mapjsapi/js/main/4.3.1-fixed/kakao.js"></script><script charset="UTF-8" src="http://s1.daumcdn.net/svc/attach/U03/cssjs/mapapi/libs/1.0.1/1515130215283/services.js"></script>
+  <!-- common js -->
+  <script src="/js/pbb/v2/common.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#topNotice').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      });
+      var tabInit = new tabEventSet({
+        // 탭버튼 엘리먼트
+        tabEl : $("#guideTab .tabBtns"),
+        // 탭컨텐츠 레이아웃
+        tabLayer : $(".sectionArea"),
+        // 시작될 탭 인덱스
+        activeIndex : 0,
+        // 버튼 넓이값 자동설정
+        autoWidth : true
+      });
+      tabInit.init();
+    });
+  </script>
+</head>
+
+<body id="ulfptcCoordiActIntroSearch">
+  <div class="wrapper">
+    <!-- 헤더 -->
+    <header id="headers">
+      <!-- 상단 알림 -->
+      <div id="topNavArea">
+        <div class="fluidContainer">
+          <div id="topNavs">
+            <div id="topNotice">
+              <div>
+                <span class="smallIcons">알림</span>
+                <a href="javascript:void(0)" class="topNoticeLinks">오늘 미세먼지 주의입니다. 외출시 마스크를 꼭 착용하세요.</a>
+              </div>
+              <div>
+                <span class="smallIcons">알림</span>
+                <a href="javascript:void(0)" class="topNoticeLinks">오늘 미세먼지 주의입니다. 외출시 마스크를 꼭 착용하세요.</a>
+              </div>
+            </div>
+            <div id="topNavBtns">
+              <a href="javascript:void(0)" class="logInOutBtn logIn"></a>
+              <a href="javascript:void(0)" class="sideBtn"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /상단 알림 -->
+      <div id="navWrapper">
+        <!-- 내비게이션 -->
+        <div id="navArea">
+          <div class="fluidContainer">
+            <nav id="navs" class="clear">
+              <div id="navLogos">
+                <h1>
+                  <a href="/">
+                    <img src="/img/v2/common/logo.png">
+                    <span id="navLogoTxt">부천시 미세먼지 포털 서비스</span>
+                  </a>
+                </h1>
+              </div>
+              <div id="navContents">
+                <ul id="navLists" class="clear">
+                  <li class="navItems">
+                    <a href="javascript:void(0)">부천시 미세먼지 특화단지</a>
+                    <div class="subNavs">
+                      <div class="container">
+                        <div class="subNavArea clear">
+                          <div class="navCategory">
+                            <h2 class="subNavTitles">부천시 미세먼지<br> 특화단지</h2>
+                          </div>
+                          <div class="subNavDepths">
+                            <ul class="subNavDepthLists_1">
+                              <li class="subNavDepthItems_1 clear">
+                                <div class="subNavLinkDepth_1">
+                                  <a href="javascript:void(0)">스마트 미세먼지 클린 특화단지</a>
+                                </div>
+                                <div class="subNavDepth_2">
+                                  <ul class="subNavDepthLists_2 clear">
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">맑은 하늘을 위한 약속</a>
+                                    </li>
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">비전과 목표</a>
+                                    </li>
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">미세먼지 클린 특화단지란?</a>
+                                    </li>
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">협력/참여기관</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="navItems">
+                    <a href="javascript:void(0)">우리동네 미세먼지 농도</a>
+                    <div class="subNavs">
+                      <div class="container">
+                        <div class="subNavArea clear">
+                          <div class="navCategory">
+                            <h2 class="subNavTitles">우리동네<br> 미세먼지 농도</h2>
+                          </div>
+                          <div class="subNavDepths">
+                            <ul class="subNavDepthLists_1">
+                              <li class="subNavDepthItems_1 clear">
+                                <div class="subNavLinkDepth_1">
+                                  <a href="javascript:void(0)">우리동네 미세먼지</a>
+                                </div>
+                                <div class="subNavDepth_2">
+                                  <ul class="subNavDepthLists_2 clear">
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">행정동별 미세먼지</a>
+                                    </li>
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">미세먼지 지도</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="navItems">
+                    <a href="javascript:void(0)">스마트 미세먼지 클린 서비스</a>
+                    <div class="subNavs">
+                      <div class="container">
+                        <div class="subNavArea clear">
+                          <div class="navCategory">
+                            <h2 class="subNavTitles">스마트 미세먼지<br> 클린 서비스</h2>
+                          </div>
+                          <div class="subNavDepths">
+                            <ul class="subNavDepthLists_1">
+                              <li class="subNavDepthItems_1 clear">
+                                <div class="subNavLinkDepth_1">
+                                  <a href="javascript:void(0)">미세먼지 클린 서비스</a>
+                                </div>
+                                <div class="subNavDepth_2">
+                                  <ul class="subNavDepthLists_2 clear">
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">우리동네 알림이 서비스</a>
+                                    </li>
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">학교통학로 청정 · 안심 공기 클린 서비스</a>
+                                    </li>
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">공업단지 비산먼지 클린 서비스</a>
+                                    </li>
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">지하철역 미세먼지 클린 서비스</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="navItems">
+                    <a href="javascript:void(0)">미세먼지 활동 추이·효과 분석</a>
+                    <div class="subNavs">
+                      <div class="container">
+                        <div class="subNavArea clear">
+                          <div class="navCategory">
+                            <h2 class="subNavTitles">미세먼지 활동<br> 추이 · 효과 분석</h2>
+                          </div>
+                          <div class="subNavDepths">
+                            <ul class="subNavDepthLists_1">
+                              <li class="subNavDepthItems_1 clear">
+                                <div class="subNavLinkDepth_1">
+                                  <a href="javascript:void(0)">교통</a>
+                                </div>
+                                <div class="subNavDepth_2">
+                                  <ul class="subNavDepthLists_2 clear">
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">공공부문 차량2부제</a>
+                                    </li>
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">도로 청소차량 운행</a>
+                                    </li>
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">대중교통 활성화</a>
+                                    </li>
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">친환경 차량보급 확대</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </li>
+                              <li class="subNavDepthItems_1 clear">
+                                <div class="subNavLinkDepth_1">
+                                  <a href="javascript:void(0)">환경 · 에너지</a>
+                                </div>
+                                <div class="subNavDepth_2">
+                                  <ul class="subNavDepthLists_2 clear">
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">도시숲 조성</a>
+                                    </li>
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">친환경 에너지 전환</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </li>
+                              <li class="subNavDepthItems_1 clear">
+                                <div class="subNavLinkDepth_1">
+                                  <a href="javascript:void(0)">지역특별관리</a>
+                                </div>
+                                <div class="subNavDepth_2">
+                                  <ul class="subNavDepthLists_2 clear">
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">공업단지 특별관리</a>
+                                    </li>
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">특별 도로 집중관리</a>
+                                    </li>
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">스마트 미세먼지 클린존</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </li>
+                              <li class="subNavDepthItems_1 clear">
+                                <div class="subNavLinkDepth_1">
+                                  <a href="javascript:void(0)">교육</a>
+                                </div>
+                                <div class="subNavDepth_2">
+                                  <ul class="subNavDepthLists_2 clear">
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">미세먼지 교육</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="navItems">
+                    <a href="javascript:void(0)">시민 참여 광장</a>
+                    <div class="subNavs">
+                      <div class="container">
+                        <div class="subNavArea clear">
+                          <div class="navCategory">
+                            <h2 class="subNavTitles">시민 참여 광장</h2>
+                          </div>
+                          <div class="subNavDepths">
+                            <ul class="subNavDepthLists_1">
+                              <li class="subNavDepthItems_1 clear">
+                                <div class="subNavLinkDepth_1">
+                                  <a href="javascript:void(0)">미세먼지 바로알기</a>
+                                </div>
+                                <div class="subNavDepth_2">
+                                  <ul class="subNavDepthLists_2 clear">
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">팩트뉴스</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </li>
+                              <li class="subNavDepthItems_1 clear">
+                                <div class="subNavLinkDepth_1">
+                                  <a href="javascript:void(0)">찾아가는 미세먼지 교실</a>
+                                </div>
+                                <div class="subNavDepth_2">
+                                  <ul class="subNavDepthLists_2 clear">
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">코디네이터 활동 개요</a>
+                                    </li>
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">코디네이터 활동</a>
+                                    </li>
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">미세먼지 교실</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </li>
+                              <li class="subNavDepthItems_1 clear">
+                                <div class="subNavLinkDepth_1">
+                                  <a href="javascript:void(0)">게시판</a>
+                                </div>
+                                <div class="subNavDepth_2">
+                                  <ul class="subNavDepthLists_2 clear">
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">공지사항</a>
+                                    </li>
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">뉴스</a>
+                                    </li>
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">FAQ</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </li>
+                              <li class="subNavDepthItems_1 clear">
+                                <div class="subNavLinkDepth_1">
+                                  <a href="javascript:void(0)">부천시 친환경 모빌리티</a>
+                                </div>
+                                <div class="subNavDepth_2">
+                                  <ul class="subNavDepthLists_2 clear">
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">모빌리티</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </li>
+                              <li class="subNavDepthItems_1 clear">
+                                <div class="subNavLinkDepth_1">
+                                  <a href="javascript:void(0)">시민과 함께 만드는 미세먼지 지도</a>
+                                </div>
+                                <div class="subNavDepth_2">
+                                  <ul class="subNavDepthLists_2 clear">
+                                    <li class="subNavDepthItems_2">
+                                      <a href="javascript:void(0)">다중 이용시설 미세먼지 지도</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <!-- /내비게이션  -->
+      </div>
+      <!-- 사이드 내비게이션 -->
+      <aside>
+
+      </aside>
+      <!-- /사이드 내비게이션 -->
+      <!-- 사이트맵 -->
+      <div id="siteMaps">
+        <div id="siteMapHeader">
+          <div id="siteMapTitle">
+            <div class="container">
+              <h2>사이트맵</h2>
+              <a href="javascript:void(0)" id="siteMapClose"><span class="soundOnly">닫기</span></a>
+            </div>
+          </div>
+          <div id="siteMapNav">
+            <div class="container">
+              <ul id="siteMapNavList" class="clear">
+                <li class="siteMapNavItems">
+                  <a href="javascript:void(0)">부천시 미세먼지 특화단지</a>
+                </li>
+                <li class="siteMapNavItems">
+                  <a href="javascript:void(0)">우리동네 미세먼지 농도</a>
+                </li>
+                <li class="siteMapNavItems">
+                  <a href="javascript:void(0)">스마트 미세먼지 클린 서비스</a>
+                </li>
+                <li class="siteMapNavItems">
+                  <a href="javascript:void(0)">미세먼지 활동 추이·효과 분석</a>
+                </li>
+                <li class="siteMapNavItems">
+                  <a href="javascript:void(0)">시민 참여 광장</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="siteMapArea">
+          <div class="container">
+            <div id="siteMapSectionWrapper">
+              <div class="siteMapCateSections clear">
+                <div class="siteMapDepth_1">
+                  <a href="javascript:void(0);">부천시 미세먼지<br> 특화단지</a>
+                </div>
+                <div class="siteMapDepth_2">
+                  <div class="siteMapDepthList_2">
+                    <a href="javascript:void(0);" class="siteMapDepthLink_2">스마트 미세먼지 클린 특화단지</a>
+                    <ul class="siteMapDepth_3">
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">맑은 하늘을 위한 약속</a>
+                      </li>
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">비전과 목표</a>
+                      </li>
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">미세먼지 클린 특화단지란?</a>
+                      </li>
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">협력/참여기관</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="siteMapCateSections clear">
+                <div class="siteMapDepth_1">
+                  <a href="javascript:void(0);">우리동네<br> 미세먼지 농도</a>
+                </div>
+                <div class="siteMapDepth_2">
+                  <div class="siteMapDepthList_2">
+                    <a href="javascript:void(0);" class="siteMapDepthLink_2">우리동네 미세먼지</a>
+                    <ul class="siteMapDepth_3">
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">행정동별 미세먼지</a>
+                      </li>
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">미세먼지 지도</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="siteMapCateSections clear">
+                <div class="siteMapDepth_1">
+                  <a href="javascript:void(0);">스마트 미세먼지<br> 클린 서비스</a>
+                </div>
+                <div class="siteMapDepth_2">
+                  <div class="siteMapDepthList_2">
+                    <a href="javascript:void(0);" class="siteMapDepthLink_2">미세먼지 클린 서비스</a>
+                    <ul class="siteMapDepth_3">
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">우리동네 알림이 서비스</a>
+                      </li>
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">학교통학로 청정 · 안심 공기 클린 서비스</a>
+                      </li>
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">공업단지 비산먼지 클린 서비스</a>
+                      </li>
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">지하철역 미세먼지 클린 서비스</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="siteMapCateSections clear">
+                <div class="siteMapDepth_1">
+                  <a href="javascript:void(0);">미세먼지 활동<br> 추이·효과 분석</a>
+                </div>
+                <div class="siteMapDepth_2">
+                  <div class="siteMapDepthList_2">
+                    <a href="javascript:void(0);" class="siteMapDepthLink_2">교통</a>
+                    <ul class="siteMapDepth_3">
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">공공부문 차쟝2부제</a>
+                      </li>
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">도로 청소차량 운행</a>
+                      </li>
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">대중교통 활성화</a>
+                      </li>
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">친환경 차량보급 확대</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="siteMapDepthList_2">
+                    <a href="javascript:void(0);" class="siteMapDepthLink_2">환경 · 에너지</a>
+                    <ul class="siteMapDepth_3">
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">도시숲 조성</a>
+                      </li>
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">친환경 에너지 전환</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="siteMapDepthList_2">
+                    <a href="javascript:void(0);" class="siteMapDepthLink_2">지역틀별관리</a>
+                    <ul class="siteMapDepth_3">
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">공업단지 특별관리</a>
+                      </li>
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">특별 도로 집중관리</a>
+                      </li>
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">스마트 미세먼지 클린존</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="siteMapDepthList_2">
+                    <a href="javascript:void(0);" class="siteMapDepthLink_2">교육</a>
+                    <ul class="siteMapDepth_3">
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">미세먼지 교육</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="siteMapCateSections clear">
+                <div class="siteMapDepth_1">
+                  <a href="javascript:void(0);">시민 참여 광장</a>
+                </div>
+                <div class="siteMapDepth_2">
+                  <div class="siteMapDepthList_2">
+                    <a href="javascript:void(0);" class="siteMapDepthLink_2">미세먼지 바로알기</a>
+                    <ul class="siteMapDepth_3">
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">팩트뉴스</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="siteMapDepthList_2">
+                    <a href="javascript:void(0);" class="siteMapDepthLink_2">찾아가는 미세먼지 교실</a>
+                    <ul class="siteMapDepth_3">
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">코디네이터 활동 개요</a>
+                      </li>
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">코디네이터 활동</a>
+                      </li>
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">미세먼지 교실</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="siteMapDepthList_2">
+                    <a href="javascript:void(0);" class="siteMapDepthLink_2">게시판</a>
+                    <ul class="siteMapDepth_3">
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">공지사항</a>
+                      </li>
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">뉴스</a>
+                      </li>
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">FAQ</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="siteMapDepthList_2">
+                    <a href="javascript:void(0);" class="siteMapDepthLink_2">부천시 친환경 모빌리티</a>
+                    <ul class="siteMapDepth_3">
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">모빌리티</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="siteMapDepthList_2">
+                    <a href="javascript:void(0);" class="siteMapDepthLink_2">시민과 함께 만드는 미세먼지 지도</a>
+                    <ul class="siteMapDepth_3">
+                      <li>
+                        <a class="siteMapDepthLink_3" href="javascript:void(0)">다중 이용시설 미세먼지 지도</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /사이트맵 -->
+    </header>
+    <!-- /헤더 -->
+    <!-- depth -->
+    <div id="depthNavs">
+      <div class="container">
+        <div id="depthNavLinks" class="clear">
+          <div id="depthHomeBtn">
+            <a href="/"></a>
+          </div>
+          <div id="depth2" class="depthWrapper">
+            <a class="depthLink listNull" href="javascript:void(0);">우리동네 미세먼지</a>
+          </div>
+          <div id="depth3" class="depthWrapper">
+            <a class="depthLink" href="javascript:void(0);">행동별 미세먼지</a>
+            <ul id="depth3LinkList" class="depthLinkList">
+              <li class="depthLinkItems">
+                <a href="/">행동별 미세먼지</a>
+              </li>
+              <li class="depthLinkItems">
+                <a href="/">미세먼지 지도</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /depth -->
+    <main class="sectionWrapper">
+      <div class="subPages">
+        <div class="sm-container">
+          <div class="subPageHeader">
+            <h2 class="subPageTitle">스타일 가이드</h2>
+          </div>
+          <div class="tabArea">
+            <ul id="guideTab" class="tabLists">
+              <li class="tabItems">
+                <a class="tabBtns" href="javascript:void(0);">
+                  <span>공통</span>
+                </a>
+              </li>
+              <li class="tabItems">
+                <a class="tabBtns" href="javascript:void(0);">
+                  <span>폰트</span>
+                </a>
+              </li>
+              <li class="tabItems">
+                <a class="tabBtns" href="javascript:void(0);">
+                  <span>서브 페이지</span>
+                </a>
+              </li>
+              <li class="tabItems">
+                <a class="tabBtns" href="javascript:void(0);">
+                  <span>폼 컴포넌트</span>
+                </a>
+              </li>
+              <li class="tabItems">
+                <a class="tabBtns" href="javascript:void(0);">
+                  <span>데이터테이블</span>
+                </a>
+              </li>
+              <li class="tabItems">
+                <a class="tabBtns" href="javascript:void(0);">
+                  <span>탭 컴포넌트</span>
+                </a>
+              </li>
+              <li class="tabItems">
+                <a class="tabBtns" href="javascript:void(0);">
+                  <span>아코디언</span>
+                </a>
+              </li>
+              <li class="tabItems">
+                <a class="tabBtns" href="javascript:void(0);">
+                  <span>모달</span>
+                </a>
+              </li>
+              <li class="tabItems">
+                <a class="tabBtns" href="javascript:void(0);">
+                  <span>클래스</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <section>
+          <article id="public" class="sectionArea">
+            <div class="sm-container">
+              <div class="sectionHeader">
+                <h3 class="sectionTitles">공통</h3>
+              </div>
+              <div>
+                <ul id="publicList">
+                  <li class="componentsCont ">
+                    <p class="listLabel nomalTxt">들여쓰기 : 2칸</p>
+                    <pre class="codeArea">
+&#60;div&#62;
+  &#60;div&#62;
+  ...
+  &#60;&#47;div&#62;
+&#60;&#47;div&#62;</pre>
+                  </li>
+                  <li class="componentsCont ">
+                    <p class="listLabel nomalTxt">네이밍 : 카멜표기</p>
+                    <pre class="codeArea">
+&#60;div class="testComponent"&#62;
+  ...
+&#60;&#47;div&#62;
+&#60;div id="testComponent2"&#62;
+  ...
+&#60;&#47;div&#62;</pre>
+                  </li>
+                  <li class="componentsCont ">
+                    <p class="listLabel nomalTxt">css 작성 : 속성들을 모두 붙여서 작성</p>
+                    <pre class="codeArea">
+.testComponent {color:#fff; background-color:red;}
+#testComponent2 {color:red; background-color:#fff;}</pre>
+                  </li>
+                  <li class="componentsCont ">
+                    <p class="listLabel nomalTxt">반응형 작성 : min-width : 1280px 기준 작성</p>
+                    <pre class="codeArea">
+// 모바일 및 pc 모바일 공통
+.testComponent {font-size:14px; color:red;}
+// pc
+@media(min-width:1280px) {
+  .testComponent {font-size:16px;}
+}</pre>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="font" class="sectionArea">
+            <div class="sm-container">
+              <div class="sectionHeader">
+                <h3 class="sectionTitles">폰트</h3>
+              </div>
+              <div>
+                <ul id="fontList" class="clear">
+                  <li class="listLabel">
+                    <p class="nomalTxt fontName">국문 : 나눔스퀘어</p>
+                    <ul class="fontNotice">
+                      <li class="listLabel bar">
+                        <p>가나다라마바사아자차카타파하<span class="textStyle">Regular</span></p>
+                      </li>
+                      <li class="listLabel bar">
+                        <p class="nomalTxt">가나다라마바사아자차카타파하<span class="textStyle">Bold</span></p>
+                      </li>
+                      <li class="listLabel bar">
+                        <p class="boldTxt">가나다라마바사아자차카타파하<span class="textStyle">ExBold</span></p>
+                      </li>
+                    </ul>
+                    <div class="listLabel bar">
+                      <p class="nomalTxt">Bold 이상은 글자 사이즈 16픽셀 이하에서 깨지는 현상이 있음</p>
+                      <p>transform:skek(-0.03deg)</p>
+                    </div>
+                  </li>
+                  <li class="listLabel">
+                    <p class="nomalTxt fontName">숫자&영문 : Rubik</p>
+                    <ul class="fontNotice">
+                      <li class="listLabel bar">
+                        <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ<span class="textStyle">Regular</span></p>
+                      </li>
+                      <li class="listLabel bar">
+                        <p class="nomalTxt">ABCDEFGHIJKLMNOPQRSTUVWXYZ<span class="textStyle">Bold</span></p>
+                      </li>
+                      <li class="listLabel bar">
+                        <p class="boldTxt">ABCDEFGHIJKLMNOPQRSTUVWXYZ<span class="textStyle">ExBold</span></p>
+                      </li>
+                      <li class="listLabel bar">
+                        <p>1234567890<span class="textStyle">Regular</span></p>
+                      </li>
+                      <li class="listLabel bar">
+                        <p class="nomalTxt">1234567890<span class="textStyle">Bold</span></p>
+                      </li>
+                      <li class="listLabel bar">
+                        <p class="boldTxt">1234567890<span class="textStyle">ExBold</span></p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="page" class="sectionArea">
+            <div class="sm-container">
+              <div class="sectionHeader">
+                <h3 class="sectionTitles">서브페이지 컴포넌트</h3>
+              </div>
+              <div id="classSubPages" class="componentsCont">
+                <h4 class="listLabel nomalTxt">서브페이지</h4>
+                <pre class="codeArea">
+&#60;header&#62;...&#60;&#47;header&#62;
+&#60;main class="sectionWrapper"&#62;
+  &#60;div <span style="color:red;">class="subPages"</span>&#62;
+    ...
+  &#60;&#47;div&#62;
+&#60;&#47;main&#62;
+&#60;footer&#62;...&#60;&#47;footer&#62;</pre>
+                <p class="listLabel bar">sectionWrapper 클래스는 섹션들을 모아놓았다는 의미상의 클래스 제거해도 무관</p>
+              </div>
+              <div id="classSection" class="componentsCont">
+                <h4 class="listLabel nomalTxt">섹션</h4>
+                <pre class="codeArea">
+&#60;header&#62;...&#60;&#47;header&#62;
+&#60;main class="sectionWrapper"&#62;
+  &#60;div class="subPages"&#62;
+    &#60;section <span style="color:red">class="sectionArea"</span>&#62;
+      ...
+    &#60;&#47;section&#62;
+    &#60;section <span style="color:red">class="sectionArea"</span>&#62;
+      ...
+    &#60;&#47;section&#62;
+  &#60;&#47;div&#62;
+&#60;&#47;main&#62;
+&#60;footer&#62;...&#60;&#47;footer&#62;</pre>
+                <p class="listLabel bar">레이아웃의 섹션 구분</p>
+              </div>
+              <div id="classContainer" class="componentsCont">
+                <h4 class="listLabel nomalTxt">컨테이너</h4>
+                <pre class="codeArea">
+&#60;header&#62;...&#60;&#47;header&#62;
+&#60;main class="sectionWrapper"&#62;
+  &#60;div class="subPages"&#62;
+    &#60;section class="sectionArea"&#62;
+      &#60;div <span style="color:red">class="fluidContainer"</span>&#62;
+        ...
+      &#60;&#47;div&#62;
+    &#60;&#47;section&#62;
+    &#60;section class="sectionArea"&#62;
+      &#60;div <span style="color:red">class="container"</span>&#62;
+        ...
+      &#60;&#47;div&#62;
+    &#60;&#47;section&#62;
+    &#60;section class="sectionArea"&#62;
+      &#60;div <span style="color:red">class="sm-container"</span>&#62;
+        ...
+      &#60;&#47;div&#62;
+    &#60;&#47;section&#62;
+  &#60;&#47;div&#62;
+&#60;&#47;main&#62;
+&#60;footer&#62;...&#60;&#47;footer&#62;</pre>
+                <p class="listLabel bar">컨테이너 영역</p>
+                <p class="listLabel bar">.fluidContainer : max-width:1820px(현재 네비게이션에서만 사용)</p>
+                <p class="listLabel bar">.container : max-width:1280px(현재 메인페이지에서만 사용)</p>
+                <p class="listLabel bar">.sm-container : max-width:1200px(모든 서브페이지 컨테이너로 사용)</p>
+              </div>
+              <div id="classPageTitle" class="componentsCont">
+                <h4 class="listLabel nomalTxt">페이지 제목</h4>
+                <pre class="codeArea">
+...
+&#60;div <span style="color:red;">class="subPageHeader"</span>&#62;
+  &#60;h2 <span style="color:red;">class="subPageTitle"</span>&#62;스타일 가이드&#60;&#47;h2&#62;
+&#60;&#47;div&#62;
+...
+                <div class="subPageHeader">
+                  <h2 class="subPageTitle">스타일 가이드</h2>
+                </div></pre>
+                <p class="listLabel bar">exbold 및 아래 여백, 중앙정렬</p>
+              </div>
+              <div id="classPageTitle" class="componentsCont">
+                <h4 class="listLabel nomalTxt">섹션 제목</h4>
+                <pre class="codeArea">
+...
+&#60;div <span style="color:red;">class="sectionHeader"</span>&#62;
+  &#60;h3 <span style="color:red;">class="sectionTitles"</span>&#62;스타일 가이드&#60;&#47;h3&#62;
+&#60;&#47;div&#62;
+...
+                <div class="sectionHeader">
+                  <h2 class="sectionTitles">스타일 가이드</h2>
+                </div></pre>
+                <p class="listLabel bar">bold 및 라벨링, 왼쪽정렬</p>
+              </div>
+            </div>
+          </article>
+          <article id="form" class="sectionArea">
+            <div class="sm-container">
+              <div class="sectionHeader">
+                <h3 class="sectionTitles">폼 컴포넌트</h3>
+              </div>
+              <div id="formComponents">
+                <div id="formCheckbox" class="componentsCont">
+                  <h4 class="listLabel nomalTxt">체크박스</h4>
+                  <pre class="codeArea">
+  ...
+  &#60;label <span style="color:red">class="checkboxLabel"</span>&#62;
+    &#60;input type="checkbox" <span style="color:red">class="checkboxForm"</span>&#62;
+    &#60;span <span style="color:red">class="checkboxImg"</span>&#62;&#60;&#47;span&#62;
+    &#60;span <span style="color:red">class="checkboxLabelTxt"</span>&#62;체크박스 폼&#60;&#47;span&#62;
+  &#60;&#47;label&#62;
+  ...
+  
+  <label class="checkboxLabel"><input type="checkbox" class="checkboxForm"><span class="checkboxImg"></span><span class="checkboxLabelTxt">체크박스 폼</span></label></pre>
+                </div>
+                <div id="formDateForm" class="componentsCont">
+                  <h4 class="listLabel nomalTxt">데이트폼</h4>
+                  <pre class="codeArea">
+  ...
+  &#60;input type="text" <span style="color:red">class="dateForm"</span>&#62;
+  ...
+  
+  <input type="text" class="dateForm"></pre>
+                </div>
+                <div id="formSelectForm" class="componentsCont">
+                  <h4 class="listLabel nomalTxt">셀렉트 폼</h4>
+                  <pre class="codeArea">
+  ...
+  &#60;select <span style="color:red">class="selectForm"</span>&#62;
+    &#60;option&#62;옵션1&#60;&#47;option&#62; 
+    &#60;option&#62;옵션2&#60;&#47;option&#62; 
+  &#60;&#47;select&#62;
+  ...
+  
+  <select class="selectForm">
+    <option>옵션1</option> 
+    <option>옵션2</option> 
+  </select></pre>
+                </div>
+                <div id="formTextForm" class="componentsCont">
+                  <h4 class="listLabel nomalTxt">텍스트 폼</h4>
+                  <pre class="codeArea">
+  ...
+  &#60;input type="text" <span style="color:red">class="textForm"</span>&#62;
+  ...
+  
+  <input type="text" class="textForm"></pre>
+                </div>
+                <div id="formRadioForm" class="componentsCont">
+                  <h4 class="listLabel nomalTxt">라디오 폼</h4>
+                  <pre class="codeArea">
+  ...
+  &#60;label <span style="color:red">class="radioLabel"</span>&#62;
+    &#60;input type="radio" <span style="color:red">class="radioForm"</span> name="test1" checked&#62;
+    &#60;span <span style="color:red;">class="radioBoxImg"</span>&#62;&#60;&#47;span&#62; 
+    &#60;span <span style="color:red;">class="radioLabelTxt"</span>&#62;라디오 폼1&#60;&#47;span&#62; 
+    &#60;input type="radio" <span style="color:red">class="radioForm"</span> name="test1"&#62;
+    &#60;span <span style="color:red;">class="radioBoxImg"</span>&#62;&#60;&#47;span&#62; 
+    &#60;span <span style="color:red;">class="radioLabelTxt"</span>&#62;라디오 폼2&#60;&#47;span&#62; 
+  &#60;&#47;label&#62; 
+  ...
+  
+  <label class="radioLabel"><input type="radio" class="radioForm" name="test1" checked><span class="radioBoxImg"></span><span class="radioLabelTxt">라디오 폼1</span></label><label class="radioLabel"><input type="radio" class="radioForm" name="test1"><span class="radioBoxImg"></span><span class="radioLabelTxt">라디오 폼2</span></label></pre>
+                </div>
+                <div id="formButtonForm" class="componentsCont">
+                  <h4 class="listLabel nomalTxt">버튼컴포넌트</h4>
+                  <pre class="codeArea">
+  ...
+  &#60;button <span style="color:red">class="btn outLineGray"</span>&#62;확인&#60;&#47;button&#62; 
+  &#60;button <span style="color:red">class="btn labeling"</span>&#62;공지&#60;&#47;button&#62; 
+  &#60;button <span style="color:red">class="btn outLineGray largeBtn"</span>&#62;등록&#60;&#47;button&#62; 
+  &#60;button <span style="color:red">class="btn fileBtn"</span>&#62;파일&#60;&#47;button&#62; 
+  &#60;button <span style="color:red">class="submitBtn"</span>&#62;목록&#60;&#47;button&#62; 
+  ...
+  
+  <button class="btn outLineGray">확인</button><button class="btn labeling">공지</button><button class="btn outLineGray largeBtn">등록</button><button class="btn fileBtn">파일</button> <button class="submitBtn">목록</button></pre>
+                </div>
+                <div id="formFileForm" class="componentsCont">
+                  <h4 class="listLabel nomalTxt">파일 컴포넌트</h4>
+                  <pre class="codeArea">
+  ...
+  &#60;label <span style="color:red">class="btn fileBtn" for="files"</span>&#62;
+    &#60;input type="file" <span style="color:red">id="files" class="fileForm"</span>&#62;
+    &#60;p <span style="color:red">class="uploadInfo"</span>&#62;* 사이즈가 5M 미만인 이미지 파일(jpg, png, jpeg)만 
+    첨부 가능합니다.&#60;&#47;p&#62; 
+  &#60;&#47;label&#62; 
+  ...
+  
+  <label class="btn fileBtn" for="files">파일</label><input type="file" id="files" class="fileForm"><p class="uploadInfo">* 사이즈가 5M 미만인 이미지 파일(jpg, png, jpeg)만 첨부 가능합니다.</p></pre>
+                  <p class="listLabel bar">아이디 속성과 for속성을 맞춰줘야함</p>
+                </div>
+                <div id="formTextAreaForm" class="componentsCont">
+                  <h4 class="listLabel nomalTxt">텍스트에어리어 폼</h4>
+                  <pre class="codeArea">
+  ...
+  &#60;textarea <span style="color:red">class="textAreaForm"</span>&#62;
+    textarea
+  &#60;&#47;textarea&#62; 
+  ...
+  
+  <textarea class="textAreaForm">textarea</textarea> </pre>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article id="datatable" class="sectionArea">
+            <div class="sm-container">
+              <div class="sectionHeader">
+                <h3 class="sectionTitles">데이터테이블 컴포넌트</h3>
+              </div>
+              <div>
+                <div id="tabComponent" class="componentsCont">
+                  <h4 class="listLabel nomalTxt">데이터테이블</h4>
+                  <pre class="codeArea">
+  ...
+  &#60;div <span style="color:red">class="dataTables"</span>&#62;
+    &#60;table&#62;
+      &#60;tbody&#62;
+        &#60;tr <span style="color:red">class="tableRow"</span>&#62;
+          &#60;th <span style="color:red">class="dataCategoryDepth_1"</span>&#62;
+            &#60;div&#62;
+              &#60;span <span style="color:red">class="dataTableValues"</span>&#62;
+                1차 카테고리
+              &#60;&#47;span&#62;
+            &#60;&#47;div&#62;
+          &#60;&#47;th&#62;
+          &#60;th <span style="color:red">class="dataCategoryDepth_2"</span>&#62;
+            &#60;div&#62;
+              &#60;span <span style="color:red">class="dataTableValues"</span>&#62;
+                2차 카테고리
+              &#60;&#47;span&#62;
+            &#60;&#47;div&#62;
+          &#60;&#47;th&#62;
+          &#60;td <span style="color:red">class="dataCategoryValue"</span>&#62;
+            &#60;div&#62;
+              &#60;span <span style="color:red">class="dataTableValues"</span>&#62;
+                내용
+              &#60;&#47;span&#62;
+            &#60;&#47;div&#62;
+          &#60;&#47;td&#62;
+          &#60;td <span style="color:red">class="dataCategoryValue"</span>&#62;
+            &#60;div&#62;
+              &#60;span <span style="color:red">class="dataTableValues"</span>&#62;
+                내용
+              &#60;&#47;span&#62;
+            &#60;&#47;div&#62;
+          &#60;&#47;td&#62;
+        &#60;&#47;tr&#62;
+      &#60;&#47;tbody&#62;
+    &#60;&#47;table&#62;
+  &#60;&#47;div&#62; 
+  ...
+  
+  <div class="dataTables"><table><tbody><tr class="tableRow"><th class="dataCategoryDepth_1"><div><span class="dataTableValues">1차 카테고리</span></div></th><th class="dataCategoryDepth_2"><div><span class="dataTableValues">2차 카테고리</span></div></th><td class="dataCategoryValue"><div><span class="dataTableValues">내용</span></div></td><td class="dataCategoryValue"><div><span class="dataTableValues">내용</span></div></td></tr></tbody></table></div></pre>
+                  <p class="listLabel bar">텍스트정렬은 추가 클래스 부여 및 자체 페이지에서 추가</p>
+                  <p class="listLabel bar">반응형은 해당 페이지 스타일에서 직접 처리</p>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article id="tab" class="sectionArea">
+            <div class="sm-container">
+              <div class="sectionHeader">
+                <h3 class="sectionTitles">탭 컴포넌트</h3>
+              </div>
+              <div>
+                <div id="tabComponent" class="componentsCont">
+                  <h4 class="listLabel nomalTxt">탭</h4>
+                  <pre class="codeArea">
+  ...
+  &#60;ul <span style="color:red">class="tabLists testTab"</span>&#62;
+    &#60;li <span style="color:red">class="tabItems"</span>&#62;
+      &#60;a <span style="color:red">class="tabBtns"</span>&#62;
+        &#60;span&#62;탭 버튼1&#60;&#47;span&#62;
+      &#60;&#47;a&#62;
+    &#60;&#47;li&#62;
+    &#60;li <span style="color:red">class="tabItems"</span>&#62;
+      &#60;a <span style="color:red">class="tabBtns"</span>&#62;
+        &#60;span&#62;탭 버튼2&#60;&#47;span&#62;
+      &#60;&#47;a&#62;
+    &#60;&#47;li&#62;
+  &#60;&#47;ul&#62; 
+  ...
+  &#60;div class="contentWrapper"&#62;
+    &#60;div class="tabContents"&#62;
+    &#60;&#47;div&#62; 
+    &#60;div class="tabContents"&#62;
+    &#60;&#47;div&#62; 
+  &#60;&#47;div&#62; 
+  ...
+  &#60;script&#62;
+    var tabInit = new tabEventSet({
+      // 탭버튼 
+      tabEl : $(".testTab .tabBtns"),
+      // 탭 컨텐츠
+      tabLayer : $(".tabContents"),
+      // 열릴 탭 & 활성화 버튼 인덱스
+      activeIndex : 0,
+      // 탭버튼 width값 자동계산
+      autoWidth : true
+    });
+    tabInit.init();
+  &#60;&#47;script&#62;
+  ...
+  
+  <ul class="testTab tabLists"><li class="tabItems"><a class="tabBtns active"><span>탭 버튼1</span></a></li><li class="tabItems"><a class="tabBtns"><span>탭 버튼2</span></a></li></ul><div class="contentWrapper"><div class="tabContents">컨텐츠1</div><div class="tabContents">컨텐츠2</div></div><script>var testTab = new tabEventSet({
+    tabEl : $(".testTab .tabBtns"),
+    tabLayer : $(".tabContents"),
+    activeIndex : 0,
+    autoWidth : true
+  });
+  testTab.init();</script></pre>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article id="accordion" class="sectionArea">
+            <div class="sm-container">
+              <div class="sectionHeader">
+                <h3 class="sectionTitles">아코디언 컴포넌트</h3>
+              </div>
+              <div>
+                <div id="tabComponent" class="componentsCont">
+                  <h4 class="listLabel nomalTxt">아코디언</h4>
+                  <pre class="codeArea">
+  ...
+  &#60;div <span style="color:red">class="accordionBoardLists"</span>&#62;
+    &#60;div <span style="color:red">class="accordionBoardItems"</span>&#62;
+      &#60;a&#62;아코디언 제목1&#60;&#47;a&#62; 
+      &#60;div <span style="color:red">class="accordionContents"</span>&#62;
+        아코디언 내용1
+      &#60;&#47;div&#62; 
+    &#60;&#47;div&#62; 
+    &#60;div <span style="color:red">class="accordionBoardItems"</span>&#62;
+      &#60;a&#62;아코디언 제목2&#60;&#47;a&#62; 
+      &#60;div <span style="color:red">class="accordionContents"</span>&#62;
+        아코디언 내용2
+      &#60;&#47;div&#62; 
+    &#60;&#47;div&#62; 
+  &#60;&#47;div&#62; 
+  ...
+  &#60;script&#62;
+    var accordion = new accordionEvent({
+      // 아코디언 버튼
+      el : ".accordionBoardItems > a",
+      // 아코디언 컨텐츠 
+      contents : ".accordionContents",
+      // 로드시 아코디언 펼침
+      opens : true,
+      // 로드시 아코디언 펼칠때 열릴 인덱스
+      openIndex : 0,
+      // 중복선택
+      overlap : false,
+      // 아코디언 이벤트 세팅 후 커스텀이벤트 등록
+      customEvent : function() {
+          
+      }
+    });
+  &#60;&#47;script&#62;
+  ...
+  
+<div class="accordionBoardLists"><div class="accordionBoardItems"><a>아코디언 제목1</a><div class="accordionContents">아코디언 내용1</div></div><div class="accordionBoardItems"><a>아코디언 제목2</a><div class="accordionContents">아코디언 내용2</div></div></div><script>
+  var accordion = new accordionEvent({
+    // 아코디언 버튼
+    el : ".accordionBoardItems > a",
+    // 아코디언 컨텐츠 
+    contents : ".accordionContents",
+    // 로드시 아코디언 펼침
+    opens : true,
+    // 로드시 아코디언 펼칠때 열릴 인덱스
+    openIndex : 0,
+    // 중복선택
+    overlap : false,
+    // 아코디언 이벤트 세팅 후 커스텀이벤트 등록
+    customEvent : function() {
+        
+    }
+  });
+</script></pre>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article id="modal" class="sectionArea">
+            <div class="sm-container">
+              <div class="sectionHeader">
+                <h3 class="sectionTitles">모달 컴포넌트</h3>
+              </div>
+              <div id="modalComponents">
+                <div id="modalComponent1" class="componentsCont">
+                  <h4 class="listLabel nomalTxt">모달</h4>
+                  <pre class="codeArea">
+  ...
+  &#60;div id="modal1" <span style="color:red">class="modals"</span>&#62;
+    &#60;div <span style="color:red">class="modalContents"</span>&#62;
+      &#60;div <span style="color:red">class="modalSkins modalSkin1"</span>&#62;
+        &#60;div <span style="color:red">class="modalHeader"</span>&#62;
+          &#60;div <span style="color:red">class="modalTitle"</span>&#62;
+            &#60;h4 <span style="color:red">class="modalTitle"</span>&#62;모달 1&#60;&#47;h4&#62; 
+            &#60;a <span style="color:red">class="closeBtn typeX"</span>&#62;
+              &#60;span &#62;&#60;&#47;span&#62; 
+            &#60;&#47;a&#62; 
+          &#60;&#47;div&#62; 
+        &#60;&#47;div&#62; 
+        &#60;div <span style="color:red">class="modalBody"</span>&#62;
+          &#60;div <span style="color:red">class="modalScrolls"</span>&#62;
+            &#60;div <span style="color:red">class="modalSection"</span> style="height:200px;"&#62;
+              모달 컨텐츠의 최대 높이값 268px 이후로는 스크롤
+            &#60;&#47;div&#62; 
+            &#60;div <span style="color:red">class="modalSection"</span> style="height:200px;"&#62;
+              모달 섹션2
+            &#60;&#47;div&#62; 
+          &#60;&#47;div&#62; 
+        &#60;&#47;div&#62; 
+        &#60;div <span style="color:red">class="modalBtnWrapper clear"</span>&#62;
+          &#60;a <span style="color:red">class="w-100 modalBtns closeBtn"</span>&#62;모달닫기&#60;&#47;a&#62; 
+        &#60;&#47;div&#62; 
+      &#60;&#47;div&#62; 
+    &#60;&#47;div&#62; 
+    &#60;div <span style="color:red">class="modalBg"</span>&#62;&#60;&#47;div&#62; 
+  &#60;&#47;div&#62; 
+  ...
+  
+  <a onclick="$('#modal1').stop().fadeIn();" class="btn outLineGray largeBtn">모달열기</a></pre>
+                  <p class="listLabel bar">모달 컨텐츠의 최대 높이값 268px 이후로는 스크롤</p>
+                </div>
+                <div id="modalComponent2" class="componentsCont">
+                  <h4 class="listLabel nomalTxt">모달</h4>
+                  <pre class="codeArea">
+  ...
+  &#60;div id="modal2" <span style="color:red">class="modals"</span>&#62;
+    &#60;div <span style="color:red">class="modalContents"</span>&#62;
+      &#60;div <span style="color:red">class="modalSkins modalSkin2"</span>&#62;
+        &#60;div <span style="color:red">class="modalHeader"</span>&#62;
+          &#60;div <span style="color:red">class="modalTitle"</span>&#62;
+            &#60;h4 <span style="color:red">class="modalTitle"</span>&#62;모달 2&#60;&#47;h4&#62; 
+            &#60;a <span style="color:red">class="closeBtn typeX"</span>&#62;
+              &#60;span &#62;&#60;&#47;span&#62; 
+            &#60;&#47;a&#62; 
+          &#60;&#47;div&#62; 
+        &#60;&#47;div&#62; 
+        &#60;div <span style="color:red">class="modalBody"</span>&#62;
+          &#60;div <span style="color:red">class="modalScrolls"</span>&#62;
+            &#60;div <span style="color:red">class="modalSection"</span> style="height:300px;"&#62;
+              모달 컨텐츠의 최대 높이값 420px 이후로는 스크롤
+            &#60;&#47;div&#62; 
+            &#60;div <span style="color:red">class="modalSection"</span> style="height:300px;"&#62;
+              모달 섹션2
+            &#60;&#47;div&#62; 
+          &#60;&#47;div&#62; 
+        &#60;&#47;div&#62; 
+        &#60;div <span style="color:red">class="modalBtnWrapper clear"</span>&#62;
+          &#60;a <span style="color:red">class="w-100 modalBtns"</span>&#62;모달버튼&#60;&#47;a&#62; 
+        &#60;&#47;div&#62; 
+      &#60;&#47;div&#62; 
+    &#60;&#47;div&#62; 
+    &#60;div <span style="color:red">class="modalBg"</span>&#62;&#60;&#47;div&#62; 
+  &#60;&#47;div&#62; 
+  ...
+  
+  <a onclick="$('#modal2').stop().fadeIn();" class="btn outLineGray largeBtn">모달열기</a></pre>
+                  <p class="listLabel bar">모달 컨텐츠의 최대 높이값 420px 이후로는 스크롤</p>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article id="className" class="sectionArea">
+            <div class="sm-container">
+              <div class="sectionHeader">
+                <h3 class="sectionTitles">클래스</h3>
+              </div>
+              <div id="classComponents">
+                <div class="componentsCont">
+                  <h4 class="listLabel nomalTxt">레이아웃</h4>
+                  <pre class="codeArea">
+  &#60;div <span style="color:red">class="h-100"</span>&#62;
+    height:100%
+  &#60;&#47;div&#62; 
+
+  &#60;div <span style="color:red">class="w-100"</span>&#62;
+    width:100%
+  &#60;&#47;div&#62; 
+
+  &#60;div <span style="color:red">class="w-50"</span>&#62;
+    width:50%
+  &#60;&#47;div&#62;
+
+  </pre>
+  
+                </div>
+                <div class="componentsCont">
+                  <h4 class="listLabel nomalTxt">버튼</h4>
+                  <pre class="codeArea">
+  &#60;a <span style="color:red">class="foldBtn"</span>&#62;&#60;&#47;a&#62;
+  <a class="foldBtn"></a>
+  &#60;a <span style="color:red">class="foldBtn on"</span>&#62;&#60;&#47;a&#62;
+  <a class="foldBtn on"></a> 
+  &#60;a <span style="color:red">class="addBtns"</span>&#62;
+    &#60;span <span style="color:red">class="addIcons"</span>&#62;&#60;&#47;span&#62;
+  &#60;&#47;a&#62;
+  <a class="addBtns"><span class="addIcons"></span></a></pre>
+  
+                </div>
+                <div class="componentsCont">
+                  <h4 class="listLabel nomalTxt">정렬</h4>
+                  <pre class="codeArea">
+&#60;div <span style="color:red">class="clear"</span>&#62;
+  &#60;div style="float:left;"&#62;
+    float
+  &#60;&#47;div&#62; 
+  &#60;div style="float:left;"&#62;
+    float
+  &#60;&#47;div&#62;
+  <span style="color:red;">::after</span> 
+&#60;&#47;div&#62; 
+&#60;div <span style="color:red">class="displayFlex"</span>&#62;
+  &#60;div&#62;1&#60;&#47;div&#62;    
+  &#60;div&#62;2&#60;&#47;div&#62;    
+  &#60;div&#62;3&#60;&#47;div&#62;    
+<div class="displayFlex">
+  <div style="border:1px solid red; width:50px;height:50px;">1</div>    
+  <div style="border:1px solid red; width:50px;height:50px;">2</div>    
+  <div style="border:1px solid red; width:50px;height:50px;">3</div>    
+</div>
+
+&#60;&#47;div&#62;
+&#60;div <span style="color:red">class="displayFlex justifyBetween"</span>&#62;
+  &#60;div&#62;1&#60;&#47;div&#62;    
+  &#60;div&#62;2&#60;&#47;div&#62;    
+  &#60;div&#62;3&#60;&#47;div&#62;    
+&#60;&#47;div&#62;
+<div class="displayFlex justifyBetween">
+  <div style="border:1px solid red; width:50px;height:50px;">1</div>    
+  <div style="border:1px solid red; width:50px;height:50px;">2</div>    
+  <div style="border:1px solid red; width:50px;height:50px;">3</div>    
+</div>
+
+&#60;div <span style="color:red">class="displayFlex alignItemsCenter"</span>&#62;
+  &#60;div style="height:200px;"&#62;1&#60;&#47;div&#62;    
+  &#60;div&#62;2&#60;&#47;div&#62;    
+  &#60;div&#62;3&#60;&#47;div&#62;    
+&#60;&#47;div&#62;
+<div class="displayFlex alignItemsCenter">
+  <div style="border:1px solid red; width:50px;height:70px;">1</div>    
+  <div style="border:1px solid red; width:50px;height:50px;">2</div>    
+  <div style="border:1px solid red; width:50px;height:50px;">3</div>    
+</div>
+
+&#60;div <span style="color:red">class="displayFlex justifyCenter"</span>&#62;
+  &#60;div style="height:200px;"&#62;1&#60;&#47;div&#62;    
+  &#60;div&#62;2&#60;&#47;div&#62;    
+  &#60;div&#62;3&#60;&#47;div&#62;    
+&#60;&#47;div&#62;
+<div class="displayFlex justifyCenter">
+  <div style="border:1px solid red; width:50px;height:70px;">1</div>    
+  <div style="border:1px solid red; width:50px;height:50px;">2</div>    
+  <div style="border:1px solid red; width:50px;height:50px;">3</div>    
+</div>
+  </pre>
+  
+                </div>
+                <div class="componentsCont">
+                  <h4 class="listLabel nomalTxt">정렬</h4>
+                  <pre class="codeArea">
+&#60;p <span style="color:red">class="textLeft"</span>&#62;text-align:center&#60;&#47;p&#62; 
+<p class="textLeft">text-align:left</p> 
+
+&#60;p <span style="color:red">class="textCenter"</span>&#62;text-align:center&#60;&#47;p&#62; 
+<p class="textCenter">text-align:center</p> 
+
+&#60;p <span style="color:red">class="textRight"</span>&#62;text-align:center&#60;&#47;p&#62; 
+<p class="textRight">text-align:right</p>
+
+&#60;p <span style="color:red">class="nomalTxt"</span>&#62;font-weight:400&#60;&#47;p&#62; 
+<p class="nomalTxt">font-weight:400</p>
+
+&#60;p <span style="color:red">class="boldTxt"</span>&#62;font-weight:600; transform: skew(-0.03deg);&#60;&#47;p&#62; 
+<p class="boldTxt">font-weight:600; transform: skew(-0.03deg);</p>
+
+&#60;p <span style="color:red">class="exBoldTxt"</span>&#62;font-weight:900; transform: skew(-0.03deg);&#60;&#47;p&#62; 
+<p class="exBoldTxt">font-weight:900; transform: skew(-0.03deg);</p>
+  </pre>
+  
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+    <footer id="footer_wrap">
+      <h2 class="hidden-txt">footer</h2>
+      <ul id="footerNavs" class="clear">
+        <li>바로가기<button class="close_btn">close</button></li>
+        <li><a href="javascript:void(0);">부천시청</a></li>
+        <li><a href="javascript:void(0);">경기도 보건환경연구원</a></li>
+        <li><a href="javascript:void(0);">경기도 대기환경</a></li>
+        <li><a href="javascript:void(0);">환경부</a></li>
+        <li><a href="javascript:void(0);">에어코리아</a></li>
+        <li><a href="javascript:void(0);">날씨누리</a></li>
+        <li><a href="javascript:void(0);">질병관리본부</a></li>
+      </ul>
+      <div id="footerInfos">
+        <div class="fluidContainer">
+          <div class="clear">
+            <div class="footer_logo">
+              <a href="/">
+                <img src="/img/cs/layout/logo_footer.jpg" alt="판타지아 푸터 부천 로고">
+              </a>
+              <div class="m_footerLink">
+                바로가기
+              </div>
+            </div>
+            <div class="footer_info">
+              <p class="address"><span>주소</span> 14547 경기도 부천시 길주로 210(중동)</p>
+              <p><span>부천시 365 콜센터</span> 032-320-3000 ( 평일 08~19시 / 주말·공휴일 09~18시 )</p>
+            </div>
+            <p class="copyright">Copyright &copy;2017 BUCHEON CITY All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div id="modal1" class="modals">
+    <div class="modalContents">
+      <div class="modalSkins modalSkin1">
+        <div class="modalHeader">
+          <div class="modalTitle">
+            <h4 class="modalTitle">모달 1</h4> 
+            <a class="closeBtn typeX">
+              <span ></span> 
+            </a> 
+          </div> 
+        </div> 
+        <div class="modalBody">
+          <div class="modalScrolls">
+            <div class="modalSection" style="height:200px;">
+              모달 컨텐츠의 최대 높이값 268px 이후로는 스크롤
+            </div> 
+            <div class="modalSection" style="height:200px;">
+              모달 섹션2
+            </div> 
+          </div> 
+        </div> 
+        <div class="modalBtnWrapper clear">
+          <a class="w-100 modalBtns closeBtn">모달닫기</a> 
+        </div> 
+      </div> 
+    </div> 
+    <div class="modalBg"></div> 
+  </div> 
+  <div id="modal2" class="modals">
+    <div class="modalContents">
+      <div class="modalSkins modalSkin2">
+        <div class="modalHeader">
+          <div class="modalTitle">
+            <h4 class="modalTitle">모달 2</h4> 
+            <a class="closeBtn typeX">
+              <span ></span> 
+            </a> 
+          </div> 
+        </div> 
+        <div class="modalBody">
+          <div class="modalScrolls">
+            <div class="modalSection" style="height:300px;">
+              모달 컨텐츠의 최대 높이값 420px 이후로는 스크롤
+            </div> 
+            <div class="modalSection" style="height:300px;">
+              모달 섹션2
+            </div> 
+          </div> 
+        </div> 
+        <div class="modalBtnWrapper clear">
+          <a class="w-100 modalBtns">모달버튼</a> 
+        </div> 
+      </div> 
+    </div> 
+    <div class="modalBg"></div> 
+  </div> 
+</body>
+
+</html>

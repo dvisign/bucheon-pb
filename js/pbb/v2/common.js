@@ -246,6 +246,36 @@ var dropDownSet = function(obj) {
     init : init
   };
 };
+var tabEventSet = function(obj) {
+  var tabEl = obj.tabEl;
+  var tabLayer = obj.tabLayer;
+  var index = obj.activeIndex;
+  var widthCalc = obj.autoWidth;
+  var listCount = tabEl.length;
+  var setUp = function() {
+    if (widthCalc) {
+      tabEl.parent().css("width", 100 / listCount + "%");
+    }
+    tabEvent(index);
+  }
+  var tabEvent = function(i) {
+    tabEl.removeClass('active');
+    tabEl.eq(i).addClass('active');
+    tabLayer.eq(i).siblings().css("display", "none");
+    tabLayer.eq(i).css("display", "block");
+  }
+  var init = function() {
+    setUp();
+    tabEl.on('click', function() {
+      var _this = $(this);
+      var _index = _this.parent().index();
+      tabEvent(_index);
+    });
+  };
+  return {
+    init : init
+  }
+}
 function siteMapScrollEvent(nowPos, sectionArr) {
   for (var i = 0; i < sectionArr.length; i++) {
     if (nowPos > sectionArr[i]-20) {

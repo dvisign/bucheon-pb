@@ -7,8 +7,8 @@
   <title>부천시 미세먼지 빅데이터 플랫폼</title>
   <!-- jQuery UI CSS -->
   <link href="/resources/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css">
-  <link href="/css/pbb/jquery-ui.min.css" type="text/css" rel="stylesheet">
-  <link href="/css/pbb/jquery-ui.theme.min.css" type="text/css" rel="stylesheet">
+  <link href="/resources/jquery-ui-1.12.1/jquery-ui.min.css" type="text/css" rel="stylesheet">
+  <link href="/resources/jquery-ui-1.12.1/jquery-ui.theme.min.css" type="text/css" rel="stylesheet">
   <!-- slick css -->
   <link rel="stylesheet" href="/css/pbb/v2/slick-theme.css">
   <link rel="stylesheet" href="/css/pbb/v2/slick.css">
@@ -35,10 +35,14 @@
         slidesToScroll: 1
       });
     });
+    function popupOpen(id) {
+      var modals = $("#"+id);
+      modals.stop().fadeIn();
+    }
   </script>
 </head>
 
-<body id="visitingUlfptcClassWrite">
+<body id="visitClassWrite">
   <div class="wrapper">
     <!-- 헤더 -->
     <header id="headers">
@@ -46,19 +50,22 @@
       <div id="topNavArea">
         <div class="fluidContainer">
           <div id="topNavs">
-            <div id="topNotice">
-              <div>
-                <span class="smallIcons">알림</span>
-                <a href="javascript:void(0)" class="topNoticeLinks">오늘 미세먼지 주의입니다. 외출시 마스크를 꼭 착용하세요.</a>
+            <div class="sm-container">
+              <div id="topNotice">
+                <div>
+                  <span class="smallIcons">알림</span>
+                  <a href="javascript:void(0)" class="topNoticeLinks">오늘 미세먼지 주의입니다. 외출시 마스크를 꼭 착용하세요.</a>
+                </div>
+                <div>
+                  <span class="smallIcons">알림</span>
+                  <a href="javascript:void(0)" class="topNoticeLinks">오늘 미세먼지 주의입니다. 외출시 마스크를 꼭 착용하세요.</a>
+                </div>
               </div>
-              <div>
-                <span class="smallIcons">알림</span>
-                <a href="javascript:void(0)" class="topNoticeLinks">오늘 미세먼지 주의입니다. 외출시 마스크를 꼭 착용하세요.</a>
+              <div id="topNavBtns">
+                <span class="userNames">유저이름</span>
+                <a href="javascript:void(0)" class="logInOutBtn logIn"></a>
+                <a href="javascript:void(0)" class="sideBtn"></a>
               </div>
-            </div>
-            <div id="topNavBtns">
-              <a href="javascript:void(0)" class="logInOutBtn logIn"></a>
-              <a href="javascript:void(0)" class="sideBtn"></a>
             </div>
           </div>
         </div>
@@ -619,7 +626,7 @@
         <section>
           <div class="sm-container">
             <div class="subPageHeader">
-              <h3>미세먼지 코디네이터 활동</h3>
+              <h2 class="subPageTitle">미세먼지 코디네이터 활동</h2>
             </div>
             <div class="subpageContents">
               <div class="sectionContents">
@@ -634,19 +641,19 @@
                           <div class="boardRow w-50">
                             <div class="boardWriteCategory">
                               <div class="displayFlex h-100 alignItemsCenter">
-                                <span class="writeCateTxt">코디네이터명</span>
+                                <label class="writeCateTxt wrNecessary">신청자명</label>
                               </div>
                             </div>
                             <div class="boardWriteValue">
                               <div class="displayFlex h-100 alignItemsCenter">
-                                <input type="text" class="textForm" value="코디네이터 이름" disabled>
+                                <input type="text" class="textForm" value="신청자" disabled>
                               </div>
                             </div>
                           </div>
                           <div class="boardRow w-50">
                             <div class="boardWriteCategory">
                               <div class="displayFlex h-100 alignItemsCenter">
-                                <span class="writeCateTxt">작성일자</span>
+                                <label class="writeCateTxt wrNecessary">작성일자</label>
                               </div>
                             </div>
                             <div class="boardWriteValue">
@@ -661,93 +668,155 @@
                         <div class="boardRow">
                           <div class="boardWriteCategory">
                             <div class="displayFlex h-100 alignItemsCenter">
-                              <span class="writeCateTxt">활동기간</span>
+                              <label class="writeCateTxt wrNecessary">교육일정</label>
                             </div>
                           </div>
                           <div class="boardWriteValue">
                             <div class="displayFlex h-100 alignItemsCenter">
-                              <input type="text" class="dateForm"><span class="textDivision">~</span><input type="text" class="dateForm">
+                              <select class="selectForm" name="searchFlag">
+                                <option>교육 일정 선택</option>
+                              </select>
+                              <div id="edcSchdul"><p>※교육일정을 선택해주세요.</p></div>
                             </div>
                           </div>
                         </div>
                       </div>
                       <div class="boardWriteLines">
                         <div class="boardRow">
-                          <div class="boardWriteCategory">
-                            <div class="displayFlex h-100 alignItemsCenter">
-                              <span class="writeCateTxt">활동제목</span>
+                          <div class="boardRow w-50">
+                            <div class="boardWriteCategory">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <label class="writeCateTxt wrNecessary">학교명</label>
+                              </div>
+                            </div>
+                            <div class="boardWriteValue">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <input name="schulNm" type="text" class="textForm" readonly>
+                                <a href="javascript:void(0);" id="searchSchool" class="btn labeling" onclick='popupOpen("searchSchoolPop","school",1)'>조회</a>
+                              </div>
                             </div>
                           </div>
-                          <div class="boardWriteValue">
-                            <div class="displayFlex h-100 alignItemsCenter">
-                              <input type="text" class="textForm wrSubject" placeholder="제목을 입력해 주세요.">
+                          <div class="boardRow w-50">
+                            <div class="boardWriteCategory">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <label class="writeCateTxt wrNecessary">학교전화번호</label>
+                              </div>
+                            </div>
+                            <div class="boardWriteValue">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <input type="text" class="textForm">
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                       <div class="boardWriteLines">
                         <div class="boardRow">
-                          <div class="boardWriteCategory">
-                            <div class="displayFlex h-100 alignItemsCenter">
-                              <span class="writeCateTxt">활동내용</span>
+                          <div class="boardRow w-50">
+                            <div class="boardWriteCategory">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <label class="writeCateTxt wrNecessary">학년반</label>
+                              </div>
+                            </div>
+                            <div class="boardWriteValue">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <input name="grade" type="text" class="textForm">학년
+                                <input name="part" type="text" class="textForm">반
+                              </div>
                             </div>
                           </div>
-                          <div class="boardWriteValue">
-                            <div class="displayFlex h-100 alignItemsCenter">
-                              <textarea class="textAreaForm" placeholder="내용을 작성해 주세요."></textarea>
+                          <div class="boardRow w-50">
+                            <div class="boardWriteCategory">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <label class="writeCateTxt wrNecessary">인원</label>
+                              </div>
+                            </div>
+                            <div class="boardWriteValue">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <input type="text" class="textForm">
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                       <div class="boardWriteLines">
                         <div class="boardRow">
-                          <div class="boardWriteCategory">
-                            <div class="displayFlex h-100 alignItemsCenter">
-                              <span class="writeCateTxt">활동사진</span>
+                          <div class="boardRow w-50">
+                            <div class="boardWriteCategory">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <label class="writeCateTxt wrNecessary">1차 교육</label>
+                              </div>
                             </div>
-                          </div>
-                          <div class="boardWriteValue">
-                            <div class="displayFlex h-100 alignItemsCenter">
-                              <div>
+                            <div class="boardWriteValue">
+                              <div class="displayFlex h-100 alignItemsCenter">
                                 <div>
-                                  <label for="files" class="btn fileBtn">파일</label>
-                                  <input type="file" class="fileForm" id="files">
-                                  <p class="uploadInfo">* 사이즈가 5M 미만인 이미지 파일(jpg, png, jpeg)만 첨부 가능합니다.</p>
+                                  <div>
+                                    <input name="grade" type="text" class="dateForm">
+                                    <select class="selectForm" name="searchTimeFlag1">
+                                      <option>교시 선택</option>
+                                      <option>1교시 ~ 2교시</option>
+                                      <option>2교시 ~ 3교시</option>
+                                      <option>3교시 ~ 4교시</option>
+                                      <option>4교시 ~ 5교시</option>
+                                      <option>5교시 ~ 6교시</option>
+                                      <option>6교시 ~ 7교시</option>
+                                      <option>7교시 ~ 8교시</option>
+                                    </select>
+                                  </div>
+                                  <p id="edcReqstChk">※1차 교육신청은 필수입니다.</p>
                                 </div>
-                                <ul class="fileLists">
-                                  <li class="fileItems">
-                                    <p>
-                                      <span class="fileNames">test.png</span>
-                                      <input type="button" class="deleteBtn">
-                                    </p>
-                                  </li>
-                                  <li class="fileItems">
-                                    <p>
-                                      <span class="fileNames">test.png</span>
-                                      <input type="button" class="deleteBtn">
-                                    </p>
-                                  </li>
-                                </ul>
-                                <ul class="imgDisclamerList">
-                                  <li class="imgDisclamerItems">
-                                    <p>인물 사진이 포함된 경우 초상권 활용 동의를 받은 후 게시하여야 하며, 초상권 활용을 받지 못한 경우에는 인물사진에 모자이크 처리를 하셔야 합니다.</p>
-                                  </li>
-                                  <li class="imgDisclamerItems">
-                                    <p>공개여부는 기본적으로 비공개로 되어있으며 초상권에 문제가 없을 경우에만 공개로 표시 부탁드립니다.</p>
-                                  </li>
-                                </ul>
-                                <div class="boardAuthRadio">
-                                  <label for="radio1" class="radioLabel">
-                                    <input type="radio" id="radio1" class="radioForm" name="test1">
-                                    <span class="radioBoxImg"></span>
-                                    <span class="radioLabelTxt">공개</span>
-                                  </label>
-                                  <label for="radio2" class="radioLabel">
-                                    <input type="radio" id="radio2" class="radioForm" name="test1">
-                                    <span class="radioBoxImg"></span>
-                                    <span class="radioLabelTxt">비공개</span>
-                                  </label>
-                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="boardRow w-50">
+                            <div class="boardWriteCategory">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <label class="writeCateTxt wrNecessary">1차 교육 강사</label>
+                              </div>
+                            </div>
+                            <div class="boardWriteValue">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <input type="text" class="textForm">
+                                <a href="javascript:void(0);" id="searchInstrctr1" class="btn labeling" onclick='popupOpen("searchEdcInstr","chasu1",1)'>조회</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="boardWriteLines">
+                        <div class="boardRow">
+                          <div class="boardRow w-50">
+                            <div class="boardWriteCategory">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <label class="writeCateTxt">2차 교육</label>
+                              </div>
+                            </div>
+                            <div class="boardWriteValue">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <input name="grade" type="text" class="dateForm">
+                                <select class="selectForm" name="searchTimeFlag2">
+                                  <option>교시 선택</option>
+                                  <option>1교시 ~ 2교시</option>
+                                  <option>2교시 ~ 3교시</option>
+                                  <option>3교시 ~ 4교시</option>
+                                  <option>4교시 ~ 5교시</option>
+                                  <option>5교시 ~ 6교시</option>
+                                  <option>6교시 ~ 7교시</option>
+                                  <option>7교시 ~ 8교시</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="boardRow w-50">
+                            <div class="boardWriteCategory">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <label class="writeCateTxt">2차 교육 강사</label>
+                              </div>
+                            </div>
+                            <div class="boardWriteValue">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <input type="text" class="textForm">
+                                <a href="javascript:void(0);" id="searchInstrctr2" class="btn labeling" onclick='popupOpen("searchEdcInstr","chasu2",1)'>조회</a>
                               </div>
                             </div>
                           </div>
@@ -799,6 +868,102 @@
       </div>
     </footer>
   </div>
+  <div id="searchSchoolPop" class="modals">
+    <div class="modalContents">
+      <div class="modalSkins">
+        <div class="modalHeader">
+          <div class="modalTitle">
+            <h4 class="modalTitle">초등학교조회</h4> 
+            <a class="closeBtn typeX">
+              <span ></span> 
+            </a> 
+          </div> 
+        </div> 
+        <div class="modalBody">
+          <div class="modalScrolls">
+            <div class="modalSection">
+              <div class="searchFilters">
+                <div class="displayFlex justifyBetween">
+                  <div class="searchTextFilter">
+                    <div class="searchFilterLines">
+                      <label class="labelText">초등학교명</label>
+                      <input type="text" class="textForm" name="searchSchul">
+                    </div>
+                  </div>
+                  <div class="searchSubmits">
+                    <div class="displayFlex alignItemsCenter h-100">
+                      <a href="javascript:void(0);" class="submitBtn">조회</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="boardLists">
+                <div class="boardHeader">
+                  <div class="boardListCategory boardItems">
+                    <div class="listWrNum listComponents">
+                      <span class="listValues">순번</span>
+                    </div>
+                    <div class="listWrSchName listComponents">
+                      <span class="listValues">초등학교명</span>
+                    </div>
+                    <div class="listWrPlace listComponents">
+                      <span class="listValues">행정동</span>
+                    </div>
+                    <div class="listWrAddress listComponents">
+                      <span class="listValues">초등학교주소</span>
+                    </div>
+                    <div class="listWrTel listComponents">
+                      <span class="listValues">초등학교전화번호</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="boardBody">
+                  <div class="boardList">
+                    <a href="javascript:void(0)" class="boardItems">
+                      <div class="listWrNum listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <span class="listValues">0</span>
+                        </div>
+                      </div>
+                      <div class="listWrSchName listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <span class="listValues">중동초등학교</span>
+                        </div>
+                      </div>
+                      <div class="listWrPlace listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <span class="listValues">신중동</span>
+                        </div>
+                      </div>
+                      <div class="listWrAddress listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <span class="listValues">경기도 부천시 중동 1290번지</span>
+                        </div>
+                      </div>
+                      <div class="listWrTel listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <span class="listValues">070-7016-4107</span>
+                        </div>
+                      </div>
+                    </a>
+                    <div class="boardItems">
+                      <div class="emptyLists">
+                        <p class="emptyMsg">작성된 글이 없습니다.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div> 
+        </div> 
+        <div class="modalBtnWrapper clear">
+          <a class="w-100 modalBtns">모달버튼</a> 
+        </div> 
+      </div> 
+    </div> 
+    <div class="modalBg"></div> 
+  </div> 
 </body>
 
 </html>
