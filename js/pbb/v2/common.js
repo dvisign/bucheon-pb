@@ -301,6 +301,58 @@ function getDevice() {
     return 'MOBILE';
   }
 };
+function modalOpenner(target, cb) {
+  var active = target.hasClass('active');
+  var scrolls = target.find('.modalScrolls');
+  var body = $("body");
+  var modals = $(".modals");
+  if (!active) {
+    target.addClass('active');
+    target.stop().fadeIn();
+    body.css({
+      "overflow":"hidden"
+    });
+  } else {
+    target.removeClass('active');
+    scrolls.each(function(i) {
+      $(this).scrollTop(0)
+    });
+    target.stop().fadeOut(300,function() {
+      var openModals = modals.hasClass('active');
+      if (!openModals) {
+        body.css({
+          "overflow":"auto"
+        });
+      }
+    });
+  }
+  if (cb) {
+    cb();
+  }
+};
+var allChbEvent = function(obj) {
+  var group = obj.group;
+  var allClass = obj.allChbClass;
+  var chb = group.find('.checkboxForm');
+  var init = function() {
+    chb.on("click", function() {
+      var _this = $(this);
+      var _checked = _this.prop('checked');
+      var _allChb = _this.hasClass(allClass);
+      var _notAllChb = chb.not('.'+allClass);
+      if (_allChb) {
+        if (_checked === true) {
+          chb.prop("checked", true);
+        } else {
+          chb.prop("checked", false);
+        }
+      } else {
+        
+      }
+    })
+  }
+  return init();
+}
 window.onload = function() {
   // 전역 변수
   var siteMap = $('#siteMaps');
@@ -315,7 +367,10 @@ window.onload = function() {
   });
   // 모달닫기
   $('.modalBg, .closeBtn').on('click',  function() {
-    $('.modals').stop().fadeOut();
+    var _this = $(this);
+    var _modals = _this.parents('.modals');
+    var _id = _modals.attr('id');
+    modalOpenner($("#"+_id))
   });
   // jquery ui datepicker
   $('.dateForm').each(function(i) {
@@ -324,7 +379,6 @@ window.onload = function() {
       changeMonth: true,
       changeYear: true, 
       minDate: '-100y', 
-      maxDate: new Date(),
       nextText: '다음 달',
       prevText: '이전 달',
       numberOfMonths: [1,1],
@@ -414,3 +468,5 @@ window.onload = function() {
   });
   dropwdownDepth2.init();
 };
+
+

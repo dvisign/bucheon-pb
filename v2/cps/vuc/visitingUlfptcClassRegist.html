@@ -37,7 +37,7 @@
     });
     function popupOpen(id) {
       var modals = $("#"+id);
-      modals.stop().fadeIn();
+      modalOpenner(modals)
     }
   </script>
 </head>
@@ -676,7 +676,10 @@
                               <select class="selectForm" name="searchFlag">
                                 <option>교육 일정 선택</option>
                               </select>
-                              <div id="edcSchdul"><p>※교육일정을 선택해주세요.</p></div>
+                              <div id="edcSchdul">
+                                <p>※교육일정을 선택해주세요.</p>
+                                <p>※교육일정을 선택해주세요.</p>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -822,9 +825,51 @@
                           </div>
                         </div>
                       </div>
+                      <div class="boardWriteLines">
+                        <div class="boardRow">
+                          <div class="boardRow w-50">
+                            <div class="boardWriteCategory">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <label class="writeCateTxt wrNecessary">환경담당교사 성명</label>
+                              </div>
+                            </div>
+                            <div class="boardWriteValue">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <input type="text" class="textForm">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="boardRow w-50">
+                            <div class="boardWriteCategory">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <label class="writeCateTxt wrNecessary">환경담당교사 연락처</label>
+                              </div>
+                            </div>
+                            <div class="boardWriteValue">
+                              <div class="displayFlex h-100 alignItemsCenter">
+                                <input type="text" class="textForm" placeholder="000-0000-0000">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="boardWriteLines">
+                        <div class="boardRow">
+                          <div class="boardWriteCategory">
+                            <div class="displayFlex h-100 alignItemsCenter">
+                              <label class="writeCateTxt">비고</label>
+                            </div>
+                          </div>
+                          <div class="boardWriteValue">
+                            <div class="displayFlex h-100 alignItemsCenter">
+                              <textArea class="textAreaForm" placeholder="내용을 입력해 주세요."></textArea>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     <div class="wrBtnWrapper">
-                      <button class="btn outLineGray largeBtn">등록</button>
+                      <a class="btn outLineGray largeBtn" onclick='popupOpen("privacyCollect","privacyCollect",1)'>등록</a>
                       <a href="javascript:void(0);" class="btn outLineGray largeBtn">취소</a>
                     </div>
                   </form>
@@ -868,6 +913,7 @@
       </div>
     </footer>
   </div>
+  <!-- 초등학교 조회팝업 -->
   <div id="searchSchoolPop" class="modals">
     <div class="modalContents">
       <div class="modalSkins">
@@ -882,21 +928,23 @@
         <div class="modalBody">
           <div class="modalScrolls">
             <div class="modalSection">
-              <div class="searchFilters">
-                <div class="displayFlex justifyBetween">
-                  <div class="searchTextFilter">
-                    <div class="searchFilterLines">
-                      <label class="labelText">초등학교명</label>
-                      <input type="text" class="textForm" name="searchSchul">
+              <form action="">
+                <div class="searchFilters">
+                  <div class="displayFlex justifyBetween">
+                    <div class="searchTextFilter">
+                      <div class="searchFilterLines">
+                        <label class="labelText">초등학교명</label>
+                        <input type="text" class="textForm" name="searchSchul">
+                      </div>
                     </div>
-                  </div>
-                  <div class="searchSubmits">
-                    <div class="displayFlex alignItemsCenter h-100">
-                      <a href="javascript:void(0);" class="submitBtn">조회</a>
+                    <div class="searchSubmits">
+                      <div class="displayFlex alignItemsCenter h-100">
+                        <a href="javascript:void(0);" class="submitBtn">조회</a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </form>
               <div class="boardLists">
                 <div class="boardHeader">
                   <div class="boardListCategory boardItems">
@@ -952,18 +1000,711 @@
                       </div>
                     </div>
                   </div>
+                  <div class="pagenations">
+                    <ul class="pageList">
+                      <li class="pageItems prevPager">
+                        <a href="#"><span class=''>이전페이지</span></a>
+                      </li>
+                      <li class="pageItems active">
+                        <a href="#">1</a>
+                      </li>
+                      <li class="pageItems">
+                        <a href="#">2</a>
+                      </li>
+                      <li class="pageItems">
+                        <a href="#">3</a>
+                      </li>
+                      <li class="pageItems">
+                        <a href="#">4</a>
+                      </li>
+                      <li class="pageItems">
+                        <a href="#">5</a>
+                      </li>
+                      <li class="pageItems nextPager">
+                        <a href="#"><span class=''>다음페이지</span></a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div> 
           </div> 
         </div> 
         <div class="modalBtnWrapper clear">
-          <a class="w-100 modalBtns">모달버튼</a> 
+          <a class="w-100 modalBtns closeBtn">닫기</a> 
         </div> 
       </div> 
     </div> 
     <div class="modalBg"></div> 
   </div> 
+  <!-- /초등학교 조회팝업 -->
+
+  <!-- 1, 2차 교육강사 조회팝업 -->
+  <div id="searchEdcInstr" class="modals">
+    <div class="modalContents">
+      <div class="modalSkins">
+        <div class="modalHeader">
+          <div class="modalTitle">
+            <h4 class="modalTitle">교육강사조회</h4> 
+            <a class="closeBtn typeX">
+              <span ></span> 
+            </a> 
+          </div> 
+        </div> 
+        <div class="modalBody">
+          <div class="modalScrolls">
+            <div class="modalSection">
+              <form action="">
+                <div class="searchFilters">
+                  <div class="displayFlex justifyBetween">
+                    <div class="searchTextFilter">
+                      <div class="searchFilterLines">
+                        <label class="labelText">강사명</label>
+                        <input type="text" class="textForm" name="searchText">
+                      </div>
+                    </div>
+                    <div class="searchSubmits">
+                      <div class="displayFlex alignItemsCenter h-100">
+                        <a href="javascript:void(0);" class="submitBtn">조회</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <div class="boardLists">
+                <div class="boardHeader">
+                  <div class="boardListCategory boardItems">
+                    <div class="listWrRank listComponents">
+                      <span class="listValues">순위</span>
+                    </div>
+                    <div class="listWrTeacName listComponents">
+                      <span class="listValues">강사명</span>
+                    </div>
+                    <div class="listWrActCnt listComponents">
+                      <span class="listValues">활동건수</span>
+                    </div>
+                    <div class="listWrTchRat listComponents">
+                      <span class="listValues">강사평가</span>
+                    </div>
+                    <div class="listWrTchSelect listComponents">
+                      <span class="listValues">강사선택</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="boardBody">
+                  <div class="boardList">
+                    <div href="javascript:void(0)" class="boardItems">
+                      <div class="listWrRank listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <span class="listValues">0</span>
+                        </div>
+                      </div>
+                      <div class="listWrTeacName listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <a href="javascript:void(0);" onclick='popupOpen("searchTeacherPop","chasu1",1)' class="listValues">강사이름</a>
+                        </div>
+                      </div>
+                      <div class="listWrActCnt listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p><span>0</span>건</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listWrTchRat listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p><span>4</span>/<span>5.0</span></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listWrTchSelect listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <a href="javascript:void(0);" class="btn labeling">등록</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="boardItems">
+                      <div class="emptyLists">
+                        <p class="emptyMsg">작성된 글이 없습니다.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pagenations">
+                    <ul class="pageList">
+                      <li class="pageItems prevPager">
+                        <a href="#"><span class=''>이전페이지</span></a>
+                      </li>
+                      <li class="pageItems active">
+                        <a href="#">1</a>
+                      </li>
+                      <li class="pageItems">
+                        <a href="#">2</a>
+                      </li>
+                      <li class="pageItems">
+                        <a href="#">3</a>
+                      </li>
+                      <li class="pageItems">
+                        <a href="#">4</a>
+                      </li>
+                      <li class="pageItems">
+                        <a href="#">5</a>
+                      </li>
+                      <li class="pageItems nextPager">
+                        <a href="#"><span class=''>다음페이지</span></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div> 
+        </div> 
+        <div class="modalBtnWrapper clear">
+          <a class="w-100 modalBtns closeBtn">닫기</a> 
+        </div> 
+      </div> 
+    </div> 
+    <div class="modalBg"></div> 
+  </div> 
+  <!-- /1, 2차 교육강사 조회팝업 -->
+
+  <!-- 강사 상세조회 조회팝업 -->
+  <div id="searchTeacherPop" class="modals">
+    <div class="modalContents">
+      <div class="modalSkins">
+        <div class="modalHeader">
+          <div class="modalTitle">
+            <h4 class="modalTitle">교육강사조회</h4> 
+            <a class="closeBtn typeX">
+              <span ></span> 
+            </a> 
+          </div> 
+        </div> 
+        <div class="modalBody">
+          <div class="modalScrolls">
+            <div class="modalSection">
+              <div class="sectionHeader">
+                <h3 class="sectionTitles">강사 상세정보</h3>
+              </div>
+              <div class="boardViews">
+                <div class="boardViewTable">
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardRow w-50">
+                        <div class="boardViewCategory">
+                          <div class="displayFlex h-100">
+                            <span class="viewValues">이름</span>
+                          </div>
+                        </div>
+                        <div class="boardViewValue">
+                          <div class="displayFlex h-100">
+                            <div class="viewValues">
+                              <p id="instrNm">강사이름</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="boardRow w-50">
+                        <div class="boardViewCategory">
+                          <div class="displayFlex h-100">
+                            <span class="viewValues">평가점수</span>
+                          </div>
+                        </div>
+                        <div class="boardViewValue">
+                          <div class="displayFlex h-100">
+                            <div class="viewValues">
+                              <p><span id="evlScore"></span> / <span>5.0</span> (<span id="carCnt"></span>)</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardViewCategory">
+                        <div class="displayFlex h-100">
+                          <span class="viewValues">코디네이터 경력</span>
+                        </div>
+                      </div>
+                      <div class="boardViewValue">
+                        <div class="displayFlex h-100">
+                          <div class="viewValues">
+                            <p id="lastCar">경력사항</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardRow w-50">
+                        <div class="boardViewCategory">
+                          <div class="displayFlex h-100">
+                            <span class="viewValues">교육활동 가능시간</span>
+                          </div>
+                        </div>
+                        <div class="boardViewValue">
+                          <div class="displayFlex h-100">
+                            <div class="viewValues">
+                              <div id="actWeek" class="clear">
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">일요일</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">월요일</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">화요일</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">수요일</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">목요일</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">금요일</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">토요일</span>
+                                </label>
+                              </div>
+                              <div id="actTm" class="clear">
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">1교시~2교시</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">2교시~3교시</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">3교시~4교시</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">4교시~5교시</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">5교시~6교시</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">6교시~7교시</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">7교시~8교시</span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="boardRow w-50">
+                        <div class="boardViewCategory">
+                          <div class="displayFlex h-100">
+                            <span class="viewValues">활동가능동</span>
+                          </div>
+                        </div>
+                        <div class="boardViewValue">
+                          <div class="displayFlex h-100">
+                            <div class="viewValues">
+                              <div id="actDong" class="clear">
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">심곡동</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">부천동</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">중동</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">신중동</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">상동</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">대산동</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">소사본동</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">범안동</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">성곡동</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" disabled checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">오정동</span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="modalSection">
+              <div class="sectionHeader">
+                <h3 class="sectionTitles">활동 상세정보</h3>
+              </div>
+              <div class="boardLists">
+                <div class="boardHeader">
+                  <div class="boardListCategory boardItems">
+                    <div class="listWrNum listComponents">
+                      <span class="listValues">순번</span>
+                    </div>
+                    <div class="listEduAppDate listComponents">
+                      <span class="listValues">교육일자</span>
+                    </div>
+                    <div class="listEduSch listComponents">
+                      <span class="listValues">교육학교</span>
+                    </div>
+                    <div class="listEduCount listComponents">
+                      <span class="listValues">교육차수</span>
+                    </div>
+                    <div class="listWrTchRat listComponents">
+                      <span class="listValues">교육평가점수</span>
+                    </div>
+                    <div class="listWrTchRatTxt listComponents">
+                      <span class="listValues">교육 한줄평</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="boardBody">
+                  <div class="boardList modalScrolls">
+                    <div class="boardItems">
+                      <div class="listWrNum listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <span class="listValues">0</span>
+                        </div>
+                      </div>
+                      <div class="listEduAppDate listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p>2020-12-22</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listEduSch listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p>중동 초등학교</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listEduCount listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p>2차 교육</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listWrTchRat listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p><span>3.0</span>/<span>5.0</span>(<span></span>)</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listWrTchRatTxt listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p>감사합니다.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="boardItems">
+                      <div class="listWrNum listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <span class="listValues">0</span>
+                        </div>
+                      </div>
+                      <div class="listEduAppDate listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p>2020-12-22</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listEduSch listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p>중동 초등학교</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listEduCount listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p>2차 교육</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listWrTchRat listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p><span>3.0</span>/<span>5.0</span>(<span></span>)</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listWrTchRatTxt listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p>감사합니다.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="boardItems">
+                      <div class="listWrNum listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <span class="listValues">0</span>
+                        </div>
+                      </div>
+                      <div class="listEduAppDate listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p>2020-12-22</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listEduSch listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p>중동 초등학교</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listEduCount listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p>2차 교육</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listWrTchRat listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p><span>3.0</span>/<span>5.0</span>(<span></span>)</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listWrTchRatTxt listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p>감사합니다.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="boardItems">
+                      <div class="listWrNum listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <span class="listValues">0</span>
+                        </div>
+                      </div>
+                      <div class="listEduAppDate listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p>2020-12-22</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listEduSch listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p>중동 초등학교</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listEduCount listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p>2차 교육</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listWrTchRat listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p><span>3.0</span>/<span>5.0</span>(<span></span>)</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listWrTchRatTxt listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p>감사합니다.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="boardItems">
+                      <div class="listWrNum listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <span class="listValues">0</span>
+                        </div>
+                      </div>
+                      <div class="listEduAppDate listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p>2020-12-22</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listEduSch listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p>중동 초등학교</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listEduCount listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p>2차 교육</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listWrTchRat listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p><span>3.0</span>/<span>5.0</span>(<span></span>)</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listWrTchRatTxt listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <p>감사합니다.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="boardItems">
+                      <div class="emptyLists">
+                        <p class="emptyMsg">작성된 글이 없습니다.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+        </div> 
+        <div class="modalBtnWrapper clear">
+          <a class="w-100 modalBtns closeBtn">닫기</a> 
+        </div> 
+      </div> 
+    </div> 
+    <div class="modalBg"></div> 
+  </div> 
+  <!-- /강사 상세조회 조회팝업 -->
+
+  <!-- 개인정보 수집 동의 모달 팝업-->
+  <div id="privacyCollect" class="modals">
+    <div class="modalContents">
+      <div class="modalSkins modalSkin2">
+        <div class="modalHeader">
+          <div class="modalTitle">
+            <h4 class="modalTitle">개인정보 수집 및 이용</h4> 
+            <a class="closeBtn typeX">
+              <span ></span> 
+            </a> 
+          </div> 
+        </div> 
+        <div class="modalBody">
+          <div class="modalScrolls">
+            <div class="modalSection">
+              <div class="privacyTxt">
+                <p><span class="boldTxt">“부천시 빅데이터 미세먼지 포털“</span> 찾아가는 미세먼지 교실 서비스는 개인정보보호법 제 15조에 따라 아래와 같은 사항을 안내하고 동의를 받아  개인정보를 수집 및 이용 합니다.</p>
+								<h4>1. 수집 및 이용목적</h4>								
+								<p class="listTxts">부천시 빅데이터 미세먼지 포털 시스템을 통해 수집된 정보는 찾아가는 미세먼지 교실 예약 및 이용안내를 위한 목적으로 수집 및 이용됩니다. </p>
+								<h4>2. 수집하는 개인정보 항목</h4>
+								<p class="listTxts basicLabel">신청 학교 정보 : 학교명, 학교 전화번호</p>
+								<p class="listTxts basicLabel">신청자 정보 : 환경담당교사 성명, 환경담당교사 연락처</p>
+								<h4>3. 개인정보 보유 및 이용기간</h4>
+								<p class="listTxts roundLabel">보유목적 : 예약내역 확인</p>
+								<p class="listTxts roundLabel">보유기간 : 교육 종료 후 1년</p>
+								<h4>4. 개인정보의 수집〮이용에 대한 거부 권리</h4>
+								<p class="listTxts basicLabel">정보주체는 개인정보의 수집 및 이용에 대한 동의를 거부할 권리가 있으면, 동의 거부 시에는 찾아가는 미세먼지 교육신청 및 교육 알림 연락서비스에 제한이 됩니다.</p>
+              </div>
+              <div class="privacyAgree">
+                <label class="checkboxLabel">
+                  <input type="checkbox" class="checkboxForm">
+                  <span class="checkboxImg"></span>
+                  <span class="checkboxLabelTxt">위의 개인정보 수집 및 이용에 동의합니다.
+                  </span>
+                </label>
+              </div>
+            </div> 
+          </div> 
+        </div> 
+        <div class="modalBtnWrapper displayFlex">
+          <a class="w-50 modalBtns">확인</a> 
+          <a class="w-50 modalBtns closeBtn">닫기</a> 
+        </div> 
+      </div> 
+    </div> 
+    <div class="modalBg"></div> 
+  </div> 
+  <!-- /개인정보 수집 동의 모달 팝업-->
 </body>
 
 </html>

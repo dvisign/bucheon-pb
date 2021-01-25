@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>부천시 미세먼지 빅데이터 플랫폼</title>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
   <link rel="stylesheet" href="/css/pbb/v2/slick-theme.css">
   <link rel="stylesheet" href="/css/pbb/v2/slick.css">
   <link rel="stylesheet" href="/css/pbb/v2/reset.css">
@@ -19,6 +20,67 @@
   <!-- common js -->
   <script src="/js/pbb/v2/common.js"></script>
   <script>
+    function fn_ptl_edcEvalPopup(){      
+      /* 오늘 날짜 */
+      var now = new Date();
+      var year = now.getFullYear();
+      var month = now.getMonth() + 1;    
+      var date = now.getDate();  
+
+      if((month + "").length < 2){        
+          month = "0" + month;
+      }else{
+          month = "" + month;   
+      }
+      // 오늘날짜
+      var today = year +"-"+ month  +"-"+ date;
+      // 교육신청일자
+      var reqstDt='2020-12-23';
+
+      /* 교육 평가 유효성체크 */
+      if(reqstDt >today){
+        alert("교육이 완료된 후에 교육 평가가 가능합니다.");
+        return;
+      }else{
+        // 교육 평가 팝업 호출
+        fn_ptl_popup('#ratingPop');		
+      }
+    };
+    function fn_ptl_popup(id) {
+      var popEl = $(id);
+      var tcherName = $('#envChrgTcherNm').html();
+      var gradeScore = 0;
+      $('#popTcherNm').html(tcherName);
+      gradeRender(gradeScore, '.gradeScore', function() {
+        $('.gradeScore').children('.fa').on('click', function() {
+          var $this = $(this);
+          var $index = $this.index();
+          $('.gradeScore').children('.fa').attr('class', 'fa fa-star-o');
+          for(var i = 0; i <= $index; i++) {
+            var newClass = $('.gradeScore').children('.fa').eq(i).attr('class').replace('fa-star-o', 'fa-star');
+            $('.gradeScore').children('.fa').eq(i).attr('class', newClass)
+          }
+          $('.submitScore').val($index + 1);
+        })
+      })
+      modalOpenner(popEl)
+    };
+    // 평점 렌더링 
+    function gradeRender(st, initId, cb) {
+      var html = '';
+      for (var i = 0; i < 5; i++) {
+        if (i < st) {
+          html += '<i class="fa fa-star" aria-hidden="true"></i>';
+        } else { 
+          html += '<i class="fa fa-star-o" aria-hidden="true"></i>';
+        }
+      };
+      $(initId).html(html);
+      if (cb) {
+        cb();
+      }
+    }
+
     $(document).ready(function() {
       $('#topNotice').slick({
         infinite: true,
@@ -29,7 +91,7 @@
   </script>
 </head>
 
-<body id="ulfptcCoordiActIntroSearch">
+<body id="visitClassDetail">
   <div class="wrapper">
     <!-- 헤더 -->
     <header id="headers">
@@ -609,170 +671,278 @@
     </div>
     <!-- /depth -->
     <main class="sectionWrapper">
-      <div class="subPages">
-        <div class="sm-container">
-          <div class="subPageHeader">
-            <h2 class="subPageTitle">부천시 미세먼지 코디네이터 활동</h2>
-          </div>
-          <section class="subpageContents">
-            <article class="sectionArea">
-              <div class="sectionHeader">
-                <h4 class="sectionTitles">부천시 미세먼지 코디네이터란?</h4>
-              </div>
-              <p id="coordiInfo">미세먼지의 도시환경문제에 관심이 많은 부천시민을 대상으로 미세먼지 대응과 개선을 위한 행정과 시민을 연결하는 안내자이자 시민 주도의 미세먼지 정책참여 활동가</p>
-            </article>
-            <article class="sectionArea">
-              <div class="sectionHeader">
-                <h4 class="sectionTitles">코디네이터 구성 및 역할</h4>
-              </div>
-              <div id="coordiConstruction" class="sectionContents">
-                <p class="textRight">급수별 자격여건 구분(1급, 2급, 3급)</p>
-                <div id="coordiConstTable">
-                  <div class="dataTables">
-                    <table>
-                      <tbody>
-                        <tr class="tableRow">
-                          <th class="dataCategoryDepth_1" colspan="2">
-                            <div>
-                              <span class="dataTableValues">급수</span>
+      <article class="subPages">
+        <section>
+          <div class="sm-container">
+            <div class="subPageHeader">
+              <h3 class="subPageTitle">찾아가는 미세먼지 교실</h3>
+            </div>
+            <div class="subpageContents">
+              <div class="boardViews">
+                <div class="boardViewTable">
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardRow w-50">
+                        <div class="boardViewCategory">
+                          <div class="displayFlex h-100">
+                            <span class="viewValues">신청자명</span>
+                          </div>
+                        </div>
+                        <div class="boardViewValue">
+                          <div class="displayFlex h-100">
+                            <span class="viewValues">사용자2</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="boardRow w-50">
+                        <div class="boardViewCategory">
+                          <div class="displayFlex h-100">
+                            <span class="viewValues">등록일</span>
+                          </div>
+                        </div>
+                        <div class="boardViewValue">
+                          <div class="displayFlex h-100">
+                            <span class="viewValues">2021-01-22</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardViewCategory">
+                        <div class="displayFlex h-100">
+                          <span class="viewValues">교육일정</span>
+                        </div>
+                      </div>
+                      <div class="boardViewValue">
+                        <div class="displayFlex h-100">
+                          <span class="viewValues">교육일정</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardRow w-50">
+                        <div class="boardViewCategory">
+                          <div class="displayFlex">
+                            <span class="viewValues">학교명</span>
+                          </div>
+                        </div>
+                        <div class="boardViewValue">
+                          <div class="displayFlex h-100">
+                            <span class="viewValues">석천초등학교</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="boardRow w-50">
+                        <div class="boardViewCategory">
+                          <div class="displayFlex">
+                            <span class="viewValues">학교 전화번호</span>
+                          </div>
+                        </div>
+                        <div class="boardViewValue">
+                          <div class="displayFlex h-100">
+                            <span class="viewValues">070-7099-9604</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardRow w-50">
+                        <div class="boardViewCategory">
+                          <div class="displayFlex">
+                            <span class="viewValues">학년반</span>
+                          </div>
+                        </div>
+                        <div class="boardViewValue">
+                          <div class="displayFlex h-100">
+                            <p class="viewValues"><span>1</span>학년 <span>2</span>반</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="boardRow w-50">
+                        <div class="boardViewCategory">
+                          <div class="displayFlex">
+                            <span class="viewValues">인원</span>
+                          </div>
+                        </div>
+                        <div class="boardViewValue">
+                          <div class="displayFlex h-100">
+                            <p class="viewValues"><span>11</span>명</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardRow w-50">
+                        <div class="boardViewCategory">
+                          <div class="displayFlex">
+                            <span class="viewValues">1차 교육</span>
+                          </div>
+                        </div>
+                        <div class="boardViewValue">
+                          <div class="displayFlex h-100">
+                            <div class="viewValues">
+                              <p>날짜 : <span>2021-02-10</span></p>
+                              <p>시간 : <span>1교시~2교시</span></p>
                             </div>
-                          </th>
-                          <th class="dataCategoryDepth_1">
-                            <div>
-                              <span class="dataTableValues">1급</span>
-                            </div>
-                          </th>
-                          <th class="dataCategoryDepth_1">
-                            <div>
-                              <span class="dataTableValues">2급</span>
-                            </div>
-                          </th>
-                          <th class="dataCategoryDepth_1">
-                            <div>
-                              <span class="dataTableValues">3급</span>
-                            </div>
-                          </th>
-                        </tr>
-                        <tr class="tableRow">
-                          <th class="dataCategoryDepth_1" colspan="2">
-                            <div>
-                              <span class="dataTableValues">인원 : 128명</span>
-                            </div>
-                          </th>
-                          <td class="dataCategoryValue">
-                            <div>
-                              <span class="dataTableValues">14명</span>
-                            </div>
-                          </td>
-                          <td class="dataCategoryValue">
-                            <div>
-                              <span class="dataTableValues">9명</span>
-                            </div>
-                          </td>
-                          <td class="dataCategoryValue">
-                            <div>
-                              <span class="dataTableValues">105명</span>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="tableRow">
-                          <th class="dataCategoryDepth_1" rowspan="4">
-                            <div>
-                              <span class="dataTableValues">자격요건</span>
-                            </div>
-                          </th>
-                          <th class="dataCategoryDepth_2">
-                            <div>
-                              <span class="dataTableValues">찾아가는 미세먼지 교실 파견</span>
-                            </div>
-                          </th>
-                          <td class="dataCategoryValue">
-                            <div>
-                              <span class="dataTableValues">주강사</span>
-                            </div>
-                          </td>
-                          <td class="dataCategoryValue">
-                            <div>
-                              <span class="dataTableValues">보조강사</span>
-                            </div>
-                          </td>
-                          <td class="dataCategoryValue">
-                            <div>
-                              <span class="dataTableValues">-</span>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="tableRow">
-                          <th class="dataCategoryDepth_2">
-                            <div>
-                              <span class="dataTableValues">미세먼지 모니터링 단 참여</span>
-                            </div>
-                          </th>
-                          <td class="dataCategoryValue" colspan="2">
-                            <div>
-                              <span class="dataTableValues">의무</span>
-                            </div>
-                          </td>
-                          <td class="dataCategoryValue">
-                            <div>
-                              <span class="dataTableValues">선택</span>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="tableRow">
-                          <th class="dataCategoryDepth_2">
-                            <div>
-                              <span class="dataTableValues">미세먼지 전문가 과정 수료</span>
-                            </div>
-                          </th>
-                          <td class="dataCategoryValue" colspan="2">
-                            <div>
-                              <span class="dataTableValues">레벨테스트에 따른 급수 부여</span>
-                            </div>
-                          </td>
-                          <td class="dataCategoryValue">
-                            <div>
-                              <span class="dataTableValues"></span>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="tableRow">
-                          <th class="dataCategoryDepth_2">
-                            <div>
-                              <span class="dataTableValues">미세먼지 파수꾼 양성과정 수료</span>
-                            </div>
-                          </th>
-                          <td class="dataCategoryValue" colspan="3">
-                            <div>
-                              <span class="dataTableValues">필수</span>
-                            </div>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="boardRow w-50">
+                        <div class="boardViewCategory">
+                          <div class="displayFlex">
+                            <span class="viewValues">1차교육강사</span>
+                          </div>
+                        </div>
+                        <div class="boardViewValue">
+                          <div class="displayFlex h-100">
+                            <span class="viewValues">강사이름</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardRow w-50">
+                        <div class="boardViewCategory">
+                          <div class="displayFlex">
+                            <span class="viewValues">환경담당교사 성명</span>
+                          </div>
+                        </div>
+                        <div class="boardViewValue">
+                          <div class="displayFlex h-100">
+                            <span class="viewValues" id="envChrgTcherNm">담당교사 이름</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="boardRow w-50">
+                        <div class="boardViewCategory">
+                          <div class="displayFlex">
+                            <span class="viewValues">환경담당교사 연락처</span>
+                          </div>
+                        </div>
+                        <div class="boardViewValue">
+                          <div class="displayFlex h-100">
+                            <span class="viewValues">01012345678</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardViewCategory">
+                        <div class="displayFlex h-100">
+                          <span class="viewValues">비고</span>
+                        </div>
+                      </div>
+                      <div class="boardViewValue">
+                        <div class="displayFlex h-100">
+                          <div class="viewValues">
+                            <pre id="rm">비고 작성비고 작성비고 작성비고 작성비고 작성비고 작성비고 작성비고 작성비고 작성비고 작성비고 작성비고 작성비고 작성비고 작성비고 작성비고 작성
+비고 작성2
+비고 작성3
+비고 작성4</pre>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardViewCategory">
+                        <div class="displayFlex h-100">
+                          <span class="viewValues">교육상태</span>
+                        </div>
+                      </div>
+                      <div class="boardViewValue">
+                        <div class="displayFlex h-100">
+                          <span class="viewValues">교육완료</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardViewCategory">
+                        <div class="displayFlex h-100">
+                          <span class="viewValues">교육답변</span>
+                        </div>
+                      </div>
+                      <div class="boardViewValue">
+                        <div class="displayFlex h-100">
+                          <p class="viewValues">	
+                            교육이 완료되었습니다.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardViewCategory">
+                        <div class="displayFlex h-100">
+                          <span class="viewValues">교육평점</span>
+                        </div>
+                      </div>
+                      <div class="boardViewValue">
+                        <div class="displayFlex h-100">
+                          <div class="viewValues">
+                            <p id="eduStat"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardViewCategory">
+                        <div class="displayFlex alignItemsCenter h-100">
+                          <span class="viewValues">교육평가</span>
+                        </div>
+                      </div>
+                      <div class="boardViewValue">
+                        <div class="displayFlex h-100">
+                          <div class="viewValues">
+                            <a href="javascript:void(0);" class="btn labeling" onclick="fn_ptl_edcEvalPopup()">교육평가</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardViewCategory">
+                        <div class="displayFlex h-100">
+                          <span class="viewValues">교육평가</span>
+                        </div>
+                      </div>
+                      <div class="boardViewValue">
+                        <div class="displayFlex h-100">
+                          <p class="viewValues">교육 감사합니다. 아 아ㅏ\ 아</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <ul id="constructionTextList">
-                  <li class="constructionTextItems listLabel bar">
-                    <p>미세먼지 정책 모니터링단으로 시민의견 반영, 정책 참여</p>
-                  </li>
-                  <li class="constructionTextItems listLabel bar">
-                    <p>찾아가는 미세먼지 교실 전문가 강사 역할 수행</p>
-                  </li>
-                </ul>
+                <div class="boardBtnsWrapper textCenter">
+                  <a href="#" class="boardBtns">수정</a>
+                  <a href="#" class="boardBtns">삭제</a>
+                  <a href="#" class="boardBtns">목록</a>
+                </div>
               </div>
-            </article>
-            <article class="sectionArea">
-              <div class="sectionHeader">
-                <h4 class="sectionTitles">코디네이터 활동계획</h4>
-              </div>
-              <div>
-                
-              </div>
-            </article>
-          </section>
-        </div>
-      </div>
+            </div>
+          </div>
+        </section>
+      </article>
     </main>
     <footer id="footer_wrap">
       <h2 class="hidden-txt">footer</h2>
@@ -807,6 +977,42 @@
       </div>
     </footer>
   </div>
+  <!-- 교육평가 팝업 -->
+  <div id="ratingPop" class="modals">
+    <div class="modalContents">
+      <div class="modalSkins modalSkin1">
+        <form action="">
+          <div class="modalHeader">
+            <div class="modalTitle">
+              <h4 class="modalTitle">교육평가</h4> 
+              <a class="closeBtn typeX">
+                <span ></span> 
+              </a> 
+            </div> 
+          </div> 
+          <div class="modalBody">
+            <div class="modalSection textCenter">
+              <input type="hidden" class="submitScore" id="score" name="score">
+              <div class="tcheNameArea">
+                <p class="tcheNames"><span id="popTcherNm"></span> 강사님 만족도 평가</p>
+                <p class="tchReview">만족도평점과 교육평가를 남겨주세요.</p>
+              </div>
+              <div class="gradeScore"></div>
+              <div class="reviewTxt">
+                <textarea placeholder="교육평가를 작성해주세요." id="scoreEvl" class="textAreaForm"></textarea>
+              </div>
+            </div> 
+          </div> 
+          <div class="modalBtnWrapper displayFlex">
+            <a class="w-50 modalBtns">작성</a> 
+            <a class="w-50 modalBtns closeBtn">닫기</a> 
+          </div> 
+        </form>
+      </div> 
+    </div> 
+    <div class="modalBg"></div> 
+  </div> 
+  <!-- /교육평가 팝업 -->
 </body>
 
 </html>

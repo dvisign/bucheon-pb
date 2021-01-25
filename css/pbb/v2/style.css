@@ -178,53 +178,57 @@
 /* /컨텐츠 */
 /* 대시보드 */
 #dashBoards {background-color:#1d1e2f;}
-#dustAlert {background-color:#222336; float:left;}
+#dashBoards .container{padding:0;}
+#dustAlert {background-color:#222336;width:100%;text-align: center;padding:17px 0;}
 #dustAlert > div {position:relative;}
-#dustCaption {background-image:url('/img/v2/icons/bg-cation.png');background-size:auto;background-repeat: no-repeat;background-position: center;float:left;}
-#dustAlertMsgs {float:left;}
-#dustAlertNotice {text-align: left;letter-spacing: -1.2px;color:#ff4320;font-weight: 600;}
-#dustAlertDate {font-weight: 400;letter-spacing: -0.4px;color:#fff;text-align: left;}
+#dustCaption {background-image:url('/img/v2/icons/bg-cation.png');background-size:100%;background-repeat: no-repeat;background-position: center;width:30px;height:25px;display:inline-block;}
+#dustAlertMsgs {display:inline-block;position: relative;zoom:0.8;top:-7px;}
+#dustAlertNotice {text-align: center;letter-spacing: -1.2px;color:#ff4320;font-weight: 600;display:inline-block;font-size:19px;transform: skew(-0.03deg);margin:0 8px;}
+#dustAlertDate {font-weight: 400;letter-spacing: -0.4px;color:#fff;text-align: center;display:inline-block;transform: skew(-0.03deg);}
 
-#dustPlaceData {float:left;}
-#dustPlaceData > div {}
-#dustMeasure {float:left;text-align: center;color:#999;}
+#dustPlaceData {position:relative;padding:15px 0;}
+#dustPlaceData > div {display:flex;}
+#dustMeasure {text-align: left;color:#999;}
 #dustMeasureCate {font-weight: 600;}
-#dustMeasureData {color:#ff0000;letter-spacing: -2.7px;font-weight: 900;font-family: 'Rubik';}
-#dustMeasureUnit {font-weight: 600;}
-#dustMeasurePlace {float:left;color:#fff;position:relative;}
+#dustMeasureData {color:#ff0000;letter-spacing: -2.7px;font-weight: 900;font-family: 'Rubik';display:inline-block;}
+#dustMeasureUnit {font-weight: 600;display:inline-block;}
+#dustMeasurePlace {color:#fff;position:relative;}
 #dustMeasurePlace .slick-next {display:none !important;}
+#mDustStatus {text-align: center;}
+#mDustStatus > span {color:#ff0000;font-weight: 600;border-radius: 28px;border:1px solid #ff0000;padding: 7px 16px 6px 18px;font-size:18px;display:inline-block;}
 #measurePlaceSlider {text-align: left;}
 .measurePlaceItems {outline:none;}
 .measureName {font-weight: 600;transform: skew(-0.03deg);letter-spacing: -0.45px;}
 .measurePlaceName {font-weight: 600;transform: skew(-0.3deg);letter-spacing: -2.25px;;}
-#dustAlertArr {border-radius: 50%;border:1px solid #dadada;display:block;background-image: url('/img/v2/common/icon-left.png');background-repeat: no-repeat;background-position-y: center;background-position-x:calc(50% + 1px);background-size:8px;position:absolute;right:0;z-index:1;bottom:-5px;}
+#dustAlertArr {width:30px;height:30px;border-radius: 50%;border:1px solid #dadada;display:block;background-image: url('/img/v2/common/icon-left.png');background-repeat: no-repeat;background-position-y: center;background-position-x:calc(50% + 1px);background-size:8px;position:absolute;right:0;z-index:1;bottom:-5px;}
 
-#dustStates {float:left;color:#e1e1e1;}
+#dustStates {float:left;color:#e1e1e1;display:none;}
 #dustStateData {color:#ff0000;transform: skew(-0.03deg);font-weight: 900;}
 #dustStateMsg {line-height: 1.75;font-weight: 400;}
 @media(min-width:1280px) {
   #dashBoards {}
-  #dustAlert {padding:35px 34px 40px 34px;width:395px;}
+  #dustAlert {padding:35px 34px 40px 34px;width:395px;float:left;}
   #dustAlert > div {}
-  #dustCaption {width:84px; height:66px;}
-  #dustAlertMsgs {margin-left:22px;margin-top:10px;}
-  #dustAlertNotice {font-size: 24px;margin-bottom:12px;}
-  #dustAlertDate {font-size: 16px;}
+  #dustCaption {width:84px; height:66px;background-size:auto;float:left;}
+  #dustAlertMsgs {margin-left:22px;margin-top:10px;float:left;position: static;zoom:1;}
+  #dustAlertNotice {font-size: 24px;margin-bottom:12px;text-align:left;display:block;margin:0;}
+  #dustAlertDate {font-size: 16px;text-align:left;display:block;}
   
-  #dustPlaceData {padding:17px 38px 20px 50px;width:460px;}
-  #dustPlaceData > div {}
-  #dustMeasure {}
+  #dustPlaceData {float:left;padding:17px 38px 20px 50px;width:460px;}
+  #dustPlaceData > div {display:block;}
+  #dustMeasure {float:left;text-align: center;}
   #dustMeasureCate {font-size:18px;}
-  #dustMeasureData {font-size:60px;margin:6px 0 0 0}
-  #dustMeasureUnit {font-size:18px;}
-  #dustMeasurePlace {margin-left:26px;margin-top:20px;padding-right:55px;}
+  #dustMeasureData {font-size:60px;margin:6px 0 0 0;display:block;}
+  #dustMeasureUnit {font-size:18px;display:block;}
+  #dustMeasurePlace {float:right;margin-left:26px;margin-top:20px;padding-right:55px;}
+  #mDustStatus {display:none;}
   #measurePlaceSlider {width:190px;}
   .measurePlaceItems {}
   .measureName {font-size:18px;}
   .measurePlaceName {font-size:30px;margin-top:13px;}
   #dustAlertArr {width:38px; height:38px;border-width:2px;}
 
-  #dustStates {padding-top:25px;width:calc(100% - (460px + 395px))}
+  #dustStates {padding-top:25px;width:calc(100% - (460px + 395px));display:block;}
   #dustStateData {font-size:20px;margin-bottom:18px;}
   #dustStateMsg {font-size:16px;}
 }
@@ -544,13 +548,42 @@
 #edcReqstChk {}
 
 #searchSchoolPop {}
-#searchSchoolPop .textForm[name="searchSchul"] {}
-#searchSchoolPop .labelText {}
+#searchSchoolPop .textForm[name="searchSchul"],
+#searchEdcInstr .textForm[name="searchText"] {}
+.modals .labelText {}
 #searchSchoolPop .listWrNum {}
 #searchSchoolPop .listWrSchName {}
 #searchSchoolPop .listWrPlace {}
 #searchSchoolPop .listWrAddress {}
 #searchSchoolPop .listWrTel {}
+
+#searchEdcInstr .btn.labeling {margin:0 auto;}
+#searchEdcInstr .listWrRank {}
+#searchEdcInstr .listWrTeacName {}
+#searchEdcInstr .listWrTeacName a.listValues {color: #2c64cf; text-decoration: underline !important;}
+#searchEdcInstr .listWrActCnt {}
+#searchEdcInstr .listWrTchRat {}
+#searchEdcInstr .listWrTchSelect {}
+
+#searchTeacherPop .listWrNum {}
+#searchTeacherPop .listEduAppDate {}
+#searchTeacherPop .listEduSch {}
+#searchTeacherPop .listEduCount {}
+#searchTeacherPop .listWrTchRat {}
+#searchTeacherPop .listWrTchRatTxt {}
+#searchTeacherPop .modalSection .modalScrolls {} 
+#searchTeacherPop .modalSection .checkboxLabel {cursor: text;}
+#searchTeacherPop #actWeek {word-break: keep-all;}
+#searchTeacherPop #actWeek .checkboxLabel {margin-bottom:5px;display:block;float: left;}
+#searchTeacherPop #actTm {word-break: keep-all;}
+#searchTeacherPop #actTm > .checkboxLabel {margin-bottom:5px;display:block;float: left;}
+#searchTeacherPop #actDong > .checkboxLabel {margin-bottom:5px;display:block;float: left;}
+
+#privacyCollect .privacyTxt {overflow: scroll;padding:10px 13px;border:1px solid #dadada;font-weight: 400;}
+#privacyCollect .privacyTxt * {transform: skew(-0.03deg);}#privacyCollect .privacyTxt h4 {}
+#privacyCollect .privacyTxt p {}
+#privacyCollect .privacyTxt::-webkit-scrollbar {display:none;}
+#privacyCollect .checkboxForm + .checkboxImg {width: 20px;height: 20px;}
 @media(min-width:1280px) {
   #visitClassWrite .selectForm {font-size:14px;}
   #visitClassWrite .selectForm[name="searchFlag"] {width:298px;}
@@ -562,19 +595,138 @@
   #visitClassWrite .selectForm[name="searchTimeFlag2"] {margin-left:15px;}
   #visitClassWrite .btn.labeling {margin-left:15px;}
 
-  #edcSchdul {margin-left:15px;font-size:16px;font-weight: 400;}
+  #edcSchdul {margin-left:15px;font-size:14px;font-weight: 400;}
+  #edcSchdul > p:not(:last-child) {margin-bottom:5px;}
   #edcReqstChk {margin-top:5px;font-size:16px;font-weight: 400;}
 
   #searchSchoolPop {}
-  #searchSchoolPop .textForm[name="searchSchul"] {width:470px;}
-  #searchSchoolPop .labelText {margin-right: 19px;}
+  #searchSchoolPop .textForm[name="searchSchul"],
+  #searchEdcInstr .textForm[name="searchText"] {width:470px;}
+  .modals .labelText {margin-right: 19px;}
   #searchSchoolPop .listWrNum {width: 60px;}
   #searchSchoolPop .listWrSchName {width: 210px;}
   #searchSchoolPop .listWrPlace {width: 130px;}
   #searchSchoolPop .listWrAddress {width: 440px;}
   #searchSchoolPop .listWrTel {width: 220px;}
+  
+  #searchEdcInstr .btn.labeling {margin:0 auto;}
+  #searchEdcInstr .listWrRank {width:60px;}
+  #searchEdcInstr .listWrTeacName {width:255px;}
+  #searchEdcInstr .listWrActCnt {width:255px;}
+  #searchEdcInstr .listWrTchRat {width:255px;}
+  #searchEdcInstr .listWrTchSelect {width:235px;}
+
+  #searchTeacherPop .listWrNum {width:60px;}
+  #searchTeacherPop .listEduAppDate {width:180px;}
+  #searchTeacherPop .listEduSch {width:180px;}
+  #searchTeacherPop .listEduCount {width: 130px;}
+  #searchTeacherPop .listWrTchRat {width:180px;}
+  #searchTeacherPop .listWrTchRatTxt {width:330px;}
+  #searchTeacherPop .modalSection .modalScrolls {max-height:200px;}
+  #searchTeacherPop #actWeek {} 
+  #searchTeacherPop #actWeek .checkboxLabel {margin-bottom:5px;width:calc(100% / 4);margin-right:10px;}
+  #searchTeacherPop #actTm {margin-top:15px;} 
+  #searchTeacherPop #actTm > .checkboxLabel {width:calc(100% / 2)} 
+  #searchTeacherPop #actDong > .checkboxLabel {width:calc(100% / 3)} 
+
+  #privacyCollect .privacyTxt {height:300px;margin-bottom:30px;font-size:16px;}
+  #privacyCollect .privacyTxt h4 {margin-bottom: 10px;}
+  #privacyCollect .privacyTxt p {margin-bottom: 20px;}
+  #privacyCollect .checkboxForm + .checkboxImg {}
 }
 /* /visitingUlfptcClassRegist.html */
+
+/* visitingUlfptcClassDetail.html */
+#visitClassDetail #rm {}
+#visitClassDetail #eduStat {color:#fbc02f;}
+#eduStat > i {display: inline-block;}
+.tcheNames {font-weight: 600;}
+.tchReview {font-weight: 400;transform: skew(-0.03deg);}
+.gradeScore > .fa {cursor: pointer;color: #fbc02f;}
+.reviewTxt {}
+@media(min-width:1280px) {
+  #visitClassDetail #rm {min-height:300px;}
+  #visitClassDetail #eduStat {}
+  #eduStat > i {margin-right: 5px;font-size: 18px;}
+  .tcheNames {font-size:20px;}
+  .tchReview {margin:30px auto;font-size:16px;}
+  .gradeScore > .fa {margin: 0 6px;font-size:40px;}
+  .reviewTxt {margin-top:30px;}
+}
+/* /visitingUlfptcClassDetail.html */
+
+/* coordiCareerMgSearch.html */
+#coordiQualification .btn,
+#etcActiveCareer .btn {}
+
+#careerMng #actWeek {}
+#careerMng #actWeek .checkboxLabel {display:block;float:left;}
+#careerMng #actTm {}
+#careerMng #actTm .checkboxLabel {display:block;float:left;}
+#careerMng #actDong {}
+#careerMng #actDong .checkboxLabel {display:block;float:left;}
+
+#coordiQualification .listWrChb {}
+#coordiQualification .listCoordiStp {}
+#coordiQualification .listCoordiEduName {}
+#coordiQualification .listCoordiEduDate {}
+
+#eduActCareer {}
+#eduActCareer .listEduSch {}
+#eduActCareer .listEduGrade {}
+#eduActCareer .listEduCount {}
+#eduActCareer .listEduClass {}
+#eduActCareer .listEduDateTime {}
+
+#etcActiveCareer {}
+#etcActiveCareer .listWrChb {}
+#etcActiveCareer .listEtcActDate {}
+#etcActiveCareer .listEtcActSubject {}
+
+#edcAct .boardViewCategory {padding:13px 10px 13px 15px;}
+#edcAct .boardViewValue {}
+
+#etcAct .boardViewCategory {padding:13px 10px 13px 15px;}
+#etcAct .boardViewValue {}
+#etcAct .textForm {}
+#etcAct .imgDisclamerList {}
+@media(min-width:1280px) {
+  #coordiQualification .btn,
+  #etcActiveCareer .btn {margin-right:0; margin-left:10px;}
+  
+  #careerMng #actWeek {}
+  #careerMng #actWeek .checkboxLabel {width:calc(100% / 3);margin-bottom:5px;}
+  #careerMng #actTm {margin:15px 0;}
+  #careerMng #actTm .checkboxLabel {width:calc(100% / 3);margin-bottom:5px;}
+  #careerMng #actDong {margin-bottom:15px;}
+  #careerMng #actDong .checkboxLabel {width:calc(100% / 3); margin-bottom:5px;}
+  
+  #coordiQualification .listWrChb {width:100px;}
+  #coordiQualification .listCoordiStp {width:200px;}
+  #coordiQualification .listCoordiEduName {width:700px;}
+  #coordiQualification .listCoordiEduDate {width:200px;}
+
+  #eduActCareer {}
+  #eduActCareer .listEduSch {width:320px;}
+  #eduActCareer .listEduGrade {width:180px;}
+  #eduActCareer .listEduCount {width:200px;}
+  #eduActCareer .listEduClass {width:250px;}
+  #eduActCareer .listEduDateTime {width:250px;}
+
+  #etcActiveCareer {}
+  #etcActiveCareer .listWrChb {width:100px;}
+  #etcActiveCareer .listEtcActDate {width:350px;}
+  #etcActiveCareer .listEtcActSubject {width:750px;}
+
+  #edcAct .boardViewCategory {width:150px;}
+  #edcAct .boardViewValue {width:calc(100% - 150px);}
+
+  #etcAct .boardViewCategory {width:150px;}
+  #etcAct .boardViewValue {width:calc(100% - 150px);}
+  #etcAct .textForm {width:100%;}
+  #etcAct .imgDisclamerList {margin-top:15px;}
+}
+/* /coordiCareerMgSearch.html */
 
 /* faqList.html */
 #faqCategorys {text-align:center;}

@@ -5,22 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>부천시 미세먼지 빅데이터 플랫폼</title>
-  <!-- jQuery UI CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
   <link href="/resources/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css">
   <link href="/resources/jquery-ui-1.12.1/jquery-ui.min.css" type="text/css" rel="stylesheet">
   <link href="/resources/jquery-ui-1.12.1/jquery-ui.theme.min.css" type="text/css" rel="stylesheet">
-  <!-- slick css -->
   <link rel="stylesheet" href="/css/pbb/v2/slick-theme.css">
   <link rel="stylesheet" href="/css/pbb/v2/slick.css">
-  
   <link rel="stylesheet" href="/css/pbb/v2/reset.css">
   <link rel="stylesheet" href="/css/pbb/v2/common.css">
   <link rel="stylesheet" href="/css/pbb/v2/style.css">
   <!-- jquery -->
   <script src="/resources/jquery/jquery-3.5.1.min.js"></script>
-  <!-- jQuery UI -->
+  <!-- jquery UI -->
   <script type="text/javascript" src="/resources/jquery-ui-1.12.1/jquery-ui.js" charset="utf-8"></script>
-
   <!-- slick -->
   <script src="/js/pbb/slick.min.js"></script>
   <!-- kakao apis -->
@@ -28,21 +25,56 @@
   <!-- common js -->
   <script src="/js/pbb/v2/common.js"></script>
   <script>
+    var exViewData = function(id) {
+      var modals = $("#trnngEdcQualf");
+      if (!id) {
+        // 작성
+        $(".eduActView").css('display', 'none');
+        $(".eduActWrite").css('display', 'block');
+      } else {
+        // 보기
+        $(".eduActWrite").css('display', 'none');
+        $(".eduActView").css('display', 'block');
+      }
+    };
+    function fn_ptl_trnngEdcQualf(modalsId, id) {
+      if (!id) {
+        popupOpen(modalsId, exViewData())
+      } else {
+        popupOpen(modalsId, exViewData(id))
+      }
+    }
+    function fn_ptl_edcAct(id) {
+      popupOpen("edcAct")
+    }
+    function fn_ptl_etcAct(modalsId, id) {
+      if (!id) {
+        popupOpen(modalsId, exViewData())
+      } else {
+        popupOpen(modalsId, exViewData(id))
+      }
+    };
+    function popupOpen(id) {
+      var modals = $("#"+id);
+      modalOpenner(modals)
+    }
     $(document).ready(function() {
+      new allChbEvent({
+        // 개별 체크박스와 전체선택 체크박스를 모두 감싸는 엘리먼트
+        group : $("#coordiQualification"),
+        // 전체를 체크할 체크박스 엘리먼트
+        allChbClass : "allCheckbox"
+      })
       $('#topNotice').slick({
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1
       });
     });
-    function popupOpen(id) {
-      var modals = $("#"+id);
-      modalOpenner(modals)
-    }
   </script>
 </head>
 
-<body id="visitClassWrite">
+<body id="coordiCareerMgSearch">
   <div class="wrapper">
     <!-- 헤더 -->
     <header id="headers">
@@ -622,216 +654,408 @@
     </div>
     <!-- /depth -->
     <main class="sectionWrapper">
-      <article class="subPages">
-        <section>
-          <div class="sm-container">
-            <div class="subPageHeader">
-              <h2 class="subPageTitle">미세먼지 코디네이터 활동</h2>
-            </div>
-            <div class="subpageContents">
-              <div class="sectionContents">
-                <div class="sectionHeader">
-                  <h4 class="sectionTitles">코디네이터 활동 등록</h4>
-                </div>
-                <div class="boardWrites">
-                  <form action="">
-                    <div class="boardWriteTables">
-                      <div class="boardWriteLines">
-                        <div class="boardRow">
-                          <div class="boardRow w-50">
-                            <div class="boardWriteCategory">
-                              <div class="displayFlex h-100 alignItemsCenter">
-                                <label class="writeCateTxt">신청자명</label>
-                              </div>
-                            </div>
-                            <div class="boardWriteValue">
-                              <div class="displayFlex h-100 alignItemsCenter">
-                                <input type="text" class="textForm" value="신청자" disabled>
-                              </div>
-                            </div>
+      <div class="subPages">
+        <div class="sm-container">
+          <div class="subPageHeader">
+            <h2 class="subPageTitle">미세먼지 코디네이터 활동</h2>
+          </div>
+          <section class="subpageContents">
+            <article id="careerMng" class="sectionArea">
+              <div class="sectionHeader">
+                <h4 class="sectionTitles">코디네이터 경력 관리</h4>
+              </div>
+              <div class="boardViews">
+                <div class="boardViewTable">
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardRow w-50">
+                        <div class="boardViewCategory">
+                          <div class="displayFlex h-100">
+                            <span class="viewValues">이름</span>
                           </div>
-                          <div class="boardRow w-50">
-                            <div class="boardWriteCategory">
-                              <div class="displayFlex h-100 alignItemsCenter">
-                                <label class="writeCateTxt">수정일</label>
-                              </div>
-                            </div>
-                            <div class="boardWriteValue">
-                              <div class="displayFlex h-100 alignItemsCenter">
-                                <input type="text" class="textForm" value="2021-01-20" disabled>
-                              </div>
+                        </div>
+                        <div class="boardViewValue">
+                          <div class="displayFlex h-100">
+                            <div class="viewValues">
+                              <p id="instrNm">강사이름</p>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="boardWriteLines">
-                        <div class="boardRow">
-                          <div class="boardWriteCategory">
-                            <div class="displayFlex h-100 alignItemsCenter">
-                              <label class="writeCateTxt">교육일정</label>
-                            </div>
+                      <div class="boardRow w-50">
+                        <div class="boardViewCategory">
+                          <div class="displayFlex h-100">
+                            <span class="viewValues">코디네이터 경력</span>
                           </div>
-                          <div class="boardWriteValue">
-                            <div class="displayFlex h-100 alignItemsCenter">
-                              <input type="text" class="textForm" disabled value="교육일정">
+                        </div>
+                        <div class="boardViewValue">
+                          <div class="displayFlex h-100">
+                            <span class="viewValues">현장교육,실습,보수과정</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardRow w-50">
+                        <div class="boardViewCategory">
+                          <div class="displayFlex h-100">
+                            <span class="viewValues">교육활동 가능시간</span>
+                          </div>
+                        </div>
+                        <div class="boardViewValue">
+                          <div class="displayFlex h-100">
+                            <div class="viewValues">
+                              <div id="actWeek" class="clear">
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">일요일</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">월요일</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">화요일</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">수요일</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">목요일</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm">
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">금요일</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">토요일</span>
+                                </label>
+                              </div>
+                              <div id="actTm" class="clear">
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">1교시~2교시</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">2교시~3교시</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">3교시~4교시</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">4교시~5교시</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">5교시~6교시</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm">
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">6교시~7교시</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">7교시~8교시</span>
+                                </label>
+                              </div>
+                              <button type="button" class="btn labeling" onclick="fn_ptl_actPosblATimeSave();"> 저장</button>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="boardWriteLines">
-                        <div class="boardRow">
-                          <div class="boardRow w-50">
-                            <div class="boardWriteCategory">
-                              <div class="displayFlex h-100 alignItemsCenter">
-                                <label class="writeCateTxt">학교명</label>
-                              </div>
-                            </div>
-                            <div class="boardWriteValue">
-                              <div class="displayFlex h-100 alignItemsCenter">
-                                <input type="text" class="textForm" disabled value="석천초등학교">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="boardRow w-50">
-                            <div class="boardWriteCategory">
-                              <div class="displayFlex h-100 alignItemsCenter">
-                                <label class="writeCateTxt">학교전화번호</label>
-                              </div>
-                            </div>
-                            <div class="boardWriteValue">
-                              <div class="displayFlex h-100 alignItemsCenter">
-                                <input type="text" class="textForm" disabled value="070-7099-9604">
-                              </div>
-                            </div>
+                      <div class="boardRow w-50">
+                        <div class="boardViewCategory">
+                          <div class="displayFlex h-100">
+                            <span class="viewValues">활동가능동</span>
                           </div>
                         </div>
-                      </div>
-                      <div class="boardWriteLines">
-                        <div class="boardRow">
-                          <div class="boardRow w-50">
-                            <div class="boardWriteCategory">
-                              <div class="displayFlex h-100 alignItemsCenter">
-                                <label class="writeCateTxt wrNecessary">학년반</label>
+                        <div class="boardViewValue">
+                          <div class="displayFlex h-100">
+                            <div class="viewValues">
+                              <div id="actDong" class="clear">
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm">
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">심곡동</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">부천동</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">중동</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">신중동</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">상동</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">대산동</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">소사본동</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">범안동</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">성곡동</span>
+                                </label>
+                                <label class="checkboxLabel">
+                                  <input type="checkbox" class="checkboxForm" checked>
+                                  <span class="checkboxImg"></span>
+                                  <span class="checkboxLabelTxt">오정동</span>
+                                </label>
                               </div>
-                            </div>
-                            <div class="boardWriteValue">
-                              <div class="displayFlex h-100 alignItemsCenter">
-                                <input name="grade" type="text" class="textForm">학년
-                                <input name="part" type="text" class="textForm">반
-                              </div>
-                            </div>
-                          </div>
-                          <div class="boardRow w-50">
-                            <div class="boardWriteCategory">
-                              <div class="displayFlex h-100 alignItemsCenter">
-                                <label class="writeCateTxt wrNecessary">인원</label>
-                              </div>
-                            </div>
-                            <div class="boardWriteValue">
-                              <div class="displayFlex h-100 alignItemsCenter">
-                                <input type="text" class="textForm">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="boardWriteLines">
-                        <div class="boardRow">
-                          <div class="boardRow w-50">
-                            <div class="boardWriteCategory">
-                              <div class="displayFlex h-100 alignItemsCenter">
-                                <label class="writeCateTxt wrNecessary">1차 교육</label>
-                              </div>
-                            </div>
-                            <div class="boardWriteValue">
-                              <div class="displayFlex h-100 alignItemsCenter">
-                                <div>
-                                  <div>
-                                    <input name="grade" type="text" class="dateForm">
-                                    <select class="selectForm" name="searchTimeFlag1">
-                                      <option>교시 선택</option>
-                                      <option>1교시 ~ 2교시</option>
-                                      <option>2교시 ~ 3교시</option>
-                                      <option>3교시 ~ 4교시</option>
-                                      <option>4교시 ~ 5교시</option>
-                                      <option>5교시 ~ 6교시</option>
-                                      <option>6교시 ~ 7교시</option>
-                                      <option>7교시 ~ 8교시</option>
-                                    </select>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="boardRow w-50">
-                            <div class="boardWriteCategory">
-                              <div class="displayFlex h-100 alignItemsCenter">
-                                <label class="writeCateTxt wrNecessary">1차 교육 강사</label>
-                              </div>
-                            </div>
-                            <div class="boardWriteValue">
-                              <div class="displayFlex h-100 alignItemsCenter">
-                                <input type="text" class="textForm">
-                                <a href="javascript:void(0);" id="searchInstrctr1" class="btn labeling" onclick='popupOpen("searchEdcInstr","chasu1",1)'>조회</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="boardWriteLines">
-                        <div class="boardRow">
-                          <div class="boardRow w-50">
-                            <div class="boardWriteCategory">
-                              <div class="displayFlex h-100 alignItemsCenter">
-                                <label class="writeCateTxt wrNecessary">환경담당교사 성명</label>
-                              </div>
-                            </div>
-                            <div class="boardWriteValue">
-                              <div class="displayFlex h-100 alignItemsCenter">
-                                <input type="text" class="textForm">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="boardRow w-50">
-                            <div class="boardWriteCategory">
-                              <div class="displayFlex h-100 alignItemsCenter">
-                                <label class="writeCateTxt wrNecessary">환경담당교사 연락처</label>
-                              </div>
-                            </div>
-                            <div class="boardWriteValue">
-                              <div class="displayFlex h-100 alignItemsCenter">
-                                <input type="text" class="textForm" placeholder="000-0000-0000">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="boardWriteLines">
-                        <div class="boardRow">
-                          <div class="boardWriteCategory">
-                            <div class="displayFlex h-100 alignItemsCenter">
-                              <label class="writeCateTxt">비고</label>
-                            </div>
-                          </div>
-                          <div class="boardWriteValue">
-                            <div class="displayFlex h-100 alignItemsCenter">
-                              <textArea class="textAreaForm" placeholder="내용을 입력해 주세요."></textArea>
+                              <button type="button" class="btn labeling" onclick="fn_ptl_actPosblAreaSave();">저장 </button>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="wrBtnWrapper">
-                      <a class="btn outLineGray largeBtn">수정</a>
-                      <a href="javascript:void(0);" class="btn outLineGray largeBtn">취소</a>
-                    </div>
-                  </form>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-      </article>
+            </article>
+            <article id="coordiQualification" class="sectionArea">
+              <div class="sectionHeader">
+                <div class="displayFlex justifyBetween alignItemsCenter">
+                  <h4 class="sectionTitles">코디네이터 양성 교육 자격</h4>
+                  <div>
+                    <a href="javascript:void(0);" class="btn labeling" onclick="fn_ptl_trnngEdcQualf('trnngEdcQualf')">+추가</a>
+                    <a href="javascript:void(0);" class="btn labeling">-제거</a>
+                  </div>
+                </div>
+              </div>
+              <div class="boardLists">
+                <div class="boardHeader">
+                  <div class="boardListCategory boardItems alignItemsCenter">
+                    <div class="listWrChb listComponents">
+                      <div class="listValues">
+                        <label class="checkboxLabel">
+                          <input type="checkbox" class="checkboxForm allCheckbox">
+                          <span class="checkboxImg"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="listCoordiStp listComponents">
+                      <span class="listValues">단계</span>
+                    </div>
+                    <div class="listCoordiEduName listComponents">
+                      <span class="listValues">과정명</span>
+                    </div>
+                    <div class="listCoordiEduDate listComponents">
+                      <span class="listValues">취득일시</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="boardBody">
+                  <div class="boardList">
+                    <div class="boardItems">
+                      <div class="listWrChb listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <label class="checkboxLabel">
+                            <input type="checkbox" class="checkboxForm">
+                            <span class="checkboxImg"></span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="listCoordiStp listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <span class="listValues">보수과정</span>
+                        </div>
+                      </div>
+                      <div class="listCoordiEduName listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <a href="javascript:void(0);" class="boardLinks" onclick="fn_ptl_trnngEdcQualf('trnngEdcQualf', 1)">현장교육,실습,보수과정</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listCoordiEduDate listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <span class="listValues">2020-12-22</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="boardItems">
+                      <div class="emptyLists">
+                        <p class="emptyMsg">작성된 내용이 없습니다.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article id="eduActCareer" class="sectionArea">
+              <div class="sectionHeader">
+                <h4 class="sectionTitles">교육활동경력</h4>
+              </div>
+              <div class="boardLists">
+                <div class="boardHeader">
+                  <div class="boardListCategory boardItems alignItemsCenter">
+                    <div class="listEduSch listComponents">
+                      <span class="listValues">교육학교</span>
+                    </div>
+                    <div class="listEduGrade listComponents">
+                      <span class="listValues">학년반</span>
+                    </div>
+                    <div class="listEduCount listComponents">
+                      <span class="listValues">교육차수</span>
+                    </div>
+                    <div class="listEduClass listComponents">
+                      <span class="listValues">교육교시</span>
+                    </div>
+                    <div class="listEduDateTime listComponents">
+                      <span class="listValues">교육일자</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="boardBody">
+                  <div class="boardList">
+                    <div class="boardItems">
+                      <div class="listEduSch listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues">
+                            <a href="javascript:void(0);" class="boardLinks" onclick="fn_ptl_edcAct('19');">부인 초등학교</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="listEduGrade listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <span class="listValues">4-1</span>
+                        </div>
+                      </div>
+                      <div class="listEduCount listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <span class="listValues">1차 교육</span>
+                        </div>
+                      </div>
+                      <div class="listEduClass listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <span class="listValues">4교시~5교시</span>
+                        </div>
+                      </div>
+                      <div class="listEduDateTime listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <span class="listValues">2020-12-22</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="boardItems">
+                      <div class="emptyLists">
+                        <p class="emptyMsg">작성된 내용이 없습니다.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article id="etcActiveCareer" class="sectionArea">
+              <div class="sectionHeader">
+                <div class="displayFlex justifyBetween alignItemsCenter">
+                  <h4 class="sectionTitles">기타활동경력</h4>
+                  <div>
+                    <a href="javascript:void(0);" class="btn labeling" onclick="fn_ptl_etcAct('etcAct');">+추가</a>
+                    <a href="javascript:void(0);" class="btn labeling">-제거</a>
+                  </div>
+                </div>
+              </div>
+              <div class="boardLists">
+                <div class="boardHeader">
+                  <div class="boardListCategory boardItems alignItemsCenter">
+                    <div class="listWrChb listComponents">
+                      <div class="listValues">
+                        <label class="checkboxLabel">
+                          <input type="checkbox" class="checkboxForm allCheckbox">
+                          <span class="checkboxImg"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="listEtcActDate listComponents">
+                      <span class="listValues">활동기간</span>
+                    </div>
+                    <div class="listEtcActSubject listComponents">
+                      <span class="listValues">활동제목</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="boardBody">
+                  <div class="boardList">
+                    <div class="boardItems">
+                      <div class="listWrChb listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <label class="checkboxLabel">
+                            <input type="checkbox" class="checkboxForm">
+                            <span class="checkboxImg"></span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="listEtcActDate listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <span class="listValues">보수과정</span>
+                        </div>
+                      </div>
+                      <div class="listEtcActSubject listComponents">
+                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
+                          <div class="listValues textLeft">
+                            <a href="javascript:void(0);" class="boardLinks" onclick="fn_ptl_etcAct('etcAct', 1);">현장교육,실습,보수과정</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="boardItems">
+                      <div class="emptyLists">
+                        <p class="emptyMsg">작성된 내용이 없습니다.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </section>
+        </div>
+      </div>
     </main>
     <footer id="footer_wrap">
       <h2 class="hidden-txt">footer</h2>
@@ -866,13 +1090,13 @@
       </div>
     </footer>
   </div>
-  <!-- 1, 2차 교육강사 조회팝업 -->
-  <div id="searchEdcInstr" class="modals">
+  <!-- 양성교육 팝업 팝업 -->
+  <div id="trnngEdcQualf" class="modals">
     <div class="modalContents">
-      <div class="modalSkins">
+      <div class="modalSkins modalSkin2">
         <div class="modalHeader">
           <div class="modalTitle">
-            <h4 class="modalTitle">교육강사조회</h4> 
+            <h4 class="modalTitle">코디네이터 양성 교육 자격 상세</h4> 
             <a class="closeBtn typeX">
               <span ></span> 
             </a> 
@@ -881,169 +1105,269 @@
         <div class="modalBody">
           <div class="modalScrolls">
             <div class="modalSection">
-              <form action="">
-                <div class="searchFilters">
-                  <div class="displayFlex justifyBetween">
-                    <div class="searchTextFilter">
-                      <div class="searchFilterLines">
-                        <label class="labelText">강사명</label>
-                        <input type="text" class="textForm" name="searchText">
-                      </div>
-                    </div>
-                    <div class="searchSubmits">
-                      <div class="displayFlex alignItemsCenter h-100">
-                        <a href="javascript:void(0);" class="submitBtn">조회</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-              <div class="boardLists">
-                <div class="boardHeader">
-                  <div class="boardListCategory boardItems">
-                    <div class="listWrRank listComponents">
-                      <span class="listValues">순위</span>
-                    </div>
-                    <div class="listWrTeacName listComponents">
-                      <span class="listValues">강사명</span>
-                    </div>
-                    <div class="listWrActCnt listComponents">
-                      <span class="listValues">활동건수</span>
-                    </div>
-                    <div class="listWrTchRat listComponents">
-                      <span class="listValues">강사평가</span>
-                    </div>
-                    <div class="listWrTchSelect listComponents">
-                      <span class="listValues">강사선택</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="boardBody">
-                  <div class="boardList">
-                    <div href="javascript:void(0)" class="boardItems">
-                      <div class="listWrRank listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <span class="listValues">0</span>
-                        </div>
-                      </div>
-                      <div class="listWrTeacName listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <a href="javascript:void(0);" onclick='popupOpen("searchTeacherPop","chasu1",1)' class="listValues">강사이름</a>
-                        </div>
-                      </div>
-                      <div class="listWrActCnt listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p><span>0</span>건</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="listWrTchRat listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p><span>4</span>/<span>5.0</span></p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="listWrTchSelect listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <a href="javascript:void(0);" class="btn labeling">등록</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="boardItems">
-                      <div class="emptyLists">
-                        <p class="emptyMsg">작성된 글이 없습니다.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="pagenations">
-                    <ul class="pageList">
-                      <li class="pageItems prevPager">
-                        <a href="#"><span class=''>이전페이지</span></a>
-                      </li>
-                      <li class="pageItems active">
-                        <a href="#">1</a>
-                      </li>
-                      <li class="pageItems">
-                        <a href="#">2</a>
-                      </li>
-                      <li class="pageItems">
-                        <a href="#">3</a>
-                      </li>
-                      <li class="pageItems">
-                        <a href="#">4</a>
-                      </li>
-                      <li class="pageItems">
-                        <a href="#">5</a>
-                      </li>
-                      <li class="pageItems nextPager">
-                        <a href="#"><span class=''>다음페이지</span></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div> 
-        </div> 
-        <div class="modalBtnWrapper clear">
-          <a class="w-100 modalBtns closeBtn">닫기</a> 
-        </div> 
-      </div> 
-    </div> 
-    <div class="modalBg"></div> 
-  </div> 
-  <!-- /1, 2차 교육강사 조회팝업 -->
-
-  <!-- 강사 상세조회 조회팝업 -->
-  <div id="searchTeacherPop" class="modals">
-    <div class="modalContents">
-      <div class="modalSkins">
-        <div class="modalHeader">
-          <div class="modalTitle">
-            <h4 class="modalTitle">교육강사조회</h4> 
-            <a class="closeBtn typeX">
-              <span ></span> 
-            </a> 
-          </div> 
-        </div> 
-        <div class="modalBody">
-          <div class="modalScrolls">
-            <div class="modalSection">
-              <div class="sectionHeader">
-                <h3 class="sectionTitles">강사 상세정보</h3>
-              </div>
               <div class="boardViews">
                 <div class="boardViewTable">
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardViewCategory">
+                        <div class="displayFlex h-100">
+                          <span class="viewValues">단계</span>
+                        </div>
+                      </div>
+                      <div class="boardViewValue">
+                        <div class="displayFlex h-100">
+                          <div class="viewValues">
+                            <input type="hidden" id="stepCd" name="stepCd" value="">
+														<!-- 읽기 -->
+                            <p class="eduActView">보수과정</p>
+                            <!-- 수정 -->
+														<select name="searchTypeCd" id="searchTypeCd" class="selectForm eduActWrite" title="검색조건 선택">
+															<option value="all">전체</option>
+															<option value="">보수과정</option>
+														</select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardViewCategory">
+                        <div class="displayFlex h-100">
+                          <span class="viewValues">과정명</span>
+                        </div>
+                      </div>
+                      <div class="boardViewValue">
+                        <div class="displayFlex h-100">
+                          <div class="viewValues">
+                            <input type="hidden" id="crseCd" name="crseCd" value="all">
+                            <!-- 읽기 -->
+                            <p class="eduActView">현장교육, 실습, 보수과정</p>
+                            <!-- 수정 -->
+                            <input type="text" class="textForm eduActWrite" id="crseCdNm" name="crseCdNm" placeholder="과정명을 작성해주세요.">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardViewCategory">
+                        <div class="displayFlex h-100">
+                          <span class="viewValues">취득일시</span>
+                        </div>
+                      </div>
+                      <div class="boardViewValue">
+                        <div class="displayFlex h-100">
+                          <div class="viewValues">
+                            <p class="eduActView">2020-12-22</p>
+                            <input type="text" class="dateForm eduActWrite" name="qualfAcqsDtime" id="qualfAcqsDtime" autocomplete="off">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div class="modalBtnWrapper clear eduActWrite">
+          <a class="w-50 modalBtns floatLeft">저장</a>
+          <a class="w-50 modalBtns closeBtn floatLeft">닫기</a> 
+        </div> 
+        <div class="modalBtnWrapper clear eduActView">
+          <a class="w-50 modalBtns floatLeft" onclick="exViewData()">수정</a>
+          <a class="w-50 modalBtns closeBtn floatLeft">닫기</a> 
+        </div> 
+      </div> 
+    </div>
+    <div class="modalBg"></div> 
+  </div> 
+  <!-- /양성교육 팝업 팝업 -->
+  <!-- 교육활동 팝업 팝업 -->
+  <div id="edcAct" class="modals" >
+    <div class="modalContents">
+      <div class="modalSkins modalSkin2">
+        <div class="modalHeader">
+          <div class="modalTitle">
+            <h4 class="modalTitle">코디네이터 교육활동 상세</h4> 
+            <a class="closeBtn typeX">
+              <span ></span> 
+            </a> 
+          </div> 
+        </div> 
+        <div class="modalBody">
+          <div class="modalScrolls">
+            <div class="modalSection">
+              <div class="boardViews">
+                <div class="boardViewTable">
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardViewCategory">
+                        <div class="displayFlex h-100">
+                          <span class="viewValues">신청자명</span>
+                        </div>
+                      </div>
+                      <div class="boardViewValue">
+                        <div class="displayFlex h-100">
+                          <span class="viewValues">신청자이름</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div class="boardViewLine">
                     <div class="boardRow">
                       <div class="boardRow w-50">
                         <div class="boardViewCategory">
                           <div class="displayFlex h-100">
-                            <span class="viewValues">이름</span>
+                            <span class="viewValues">교육일자</span>
                           </div>
                         </div>
                         <div class="boardViewValue">
                           <div class="displayFlex h-100">
-                            <div class="viewValues">
-                              <p id="instrNm">강사이름</p>
-                            </div>
+                            <span class="viewValues">2020-12-22</span>
                           </div>
                         </div>
                       </div>
                       <div class="boardRow w-50">
                         <div class="boardViewCategory">
                           <div class="displayFlex h-100">
-                            <span class="viewValues">평가점수</span>
+                            <span class="viewValues">교육차수</span>
                           </div>
                         </div>
                         <div class="boardViewValue">
                           <div class="displayFlex h-100">
-                            <div class="viewValues">
-                              <p><span id="evlScore"></span> / <span>5.0</span> (<span id="carCnt"></span>)</p>
+                            <span class="viewValues">1차 교육</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardViewCategory">
+                        <div class="displayFlex h-100">
+                          <span class="viewValues">학교명</span>
+                        </div>
+                      </div>
+                      <div class="boardViewValue">
+                        <div class="displayFlex h-100">
+                          <span class="viewValues">부인 초등학교</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardRow w-50">
+                        <div class="boardViewCategory">
+                          <div class="displayFlex h-100">
+                            <span class="viewValues">학년반</span>
+                          </div>
+                        </div>
+                        <div class="boardViewValue">
+                          <div class="displayFlex h-100">
+                            <span class="viewValues">4-1</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="boardRow w-50">
+                        <div class="boardViewCategory">
+                          <div class="displayFlex h-100">
+                            <span class="viewValues">인원</span>
+                          </div>
+                        </div>
+                        <div class="boardViewValue">
+                          <div class="displayFlex h-100">
+                            <span class="viewValues"><span>20</span>명</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardViewCategory">
+                        <div class="displayFlex h-100">
+                          <span class="viewValues">비고</span>
+                        </div>
+                      </div>
+                      <div class="boardViewValue">
+                        <div class="displayFlex h-100">
+                          <span class="viewValues"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div class="modalBtnWrapper eduActWrite">
+          <a class="w-100 modalBtns closeBtn">닫기</a> 
+        </div>
+      </div> 
+    </div>
+    <div class="modalBg"></div> 
+  </div> 
+  <!-- /교육활동 팝업 팝업 -->
+  <!-- 기타활동 팝업 팝업 -->
+  <div id="etcAct" class="modals">
+    <div class="modalContents">
+      <div class="modalSkins modalSkin2">
+        <div class="modalHeader">
+          <div class="modalTitle">
+            <h4 class="modalTitle">코디네이터 양성 교육 자격 상세</h4> 
+            <a class="closeBtn typeX">
+              <span ></span> 
+            </a> 
+          </div> 
+        </div> 
+        <div class="modalBody">
+          <div class="modalScrolls">
+            <div class="modalSection">
+              <div class="boardViews">
+                <div class="boardViewTable">
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardViewCategory">
+                        <div class="displayFlex alignItemsCenter h-100">
+                          <span class="viewValues">활동기간</span>
+                        </div>
+                      </div>
+                      <div class="boardViewValue">
+                        <div class="displayFlex h-100">
+                          <div class="viewValues">
+                            <input type="hidden" id="stepCd" name="stepCd" value="">
+														<!-- 읽기 -->
+                            <p class="eduActView"><span>2020-11-11</span><span class="textDivision">~</span><span>2020-12-22</span></p>
+                            <!-- 수정 -->
+														<div class="eduActWrite">
+                              <input type="text" class="dateForm"><span class="textDivision">~</span><input type="text" class="dateForm">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="boardViewLine">
+                    <div class="boardRow">
+                      <div class="boardViewCategory">
+                        <div class="displayFlex alignItemsCenter h-100">
+                          <span class="viewValues">활동 제목</span>
+                        </div>
+                      </div>
+                      <div class="boardViewValue">
+                        <div class="displayFlex h-100">
+                          <div class="viewValues w-100">
+                            <input type="hidden" id="crseCd" name="crseCd" value="all">
+                            <!-- 읽기 -->
+                            <p class="eduActView">현장교육, 실습, 보수과정</p>
+                            <!-- 수정 -->
+                            <div class="eduActWrite">
+                              <input type="text" class="textForm">
                             </div>
                           </div>
                         </div>
@@ -1054,169 +1378,62 @@
                     <div class="boardRow">
                       <div class="boardViewCategory">
                         <div class="displayFlex h-100">
-                          <span class="viewValues">코디네이터 경력</span>
+                          <span class="viewValues">활동 내역</span>
                         </div>
                       </div>
                       <div class="boardViewValue">
                         <div class="displayFlex h-100">
-                          <div class="viewValues">
-                            <p id="lastCar">경력사항</p>
+                          <div class="viewValues w-100">
+                            <pre class="eduActView">aosidfjoasidjfoiasdjfoiasdjfo
+                              asodifjoisadf
+                            </pre>
+                            <div class="eduActWrite">
+                              <textarea class="textAreaForm" placeholder="활동 상세 내용을 작성해 주세요.">aosidfjoasidjfoiasdjfoiasdjfo
+                                asodifjoisadf</textarea>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="boardViewLine">
+                  <div class="boardViewLine eduActWrite">
                     <div class="boardRow">
-                      <div class="boardRow w-50">
-                        <div class="boardViewCategory">
-                          <div class="displayFlex h-100">
-                            <span class="viewValues">교육활동 가능시간</span>
-                          </div>
+                      <div class="boardViewCategory">
+                        <div class="displayFlex h-100">
+                          <span class="viewValues">활동 사진</span>
                         </div>
-                        <div class="boardViewValue">
-                          <div class="displayFlex h-100">
-                            <div class="viewValues">
-                              <div id="actWeek" class="clear">
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled checked>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">일요일</span>
-                                </label>
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled checked>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">월요일</span>
-                                </label>
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled checked>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">화요일</span>
-                                </label>
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled checked>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">수요일</span>
-                                </label>
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled checked>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">목요일</span>
-                                </label>
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">금요일</span>
-                                </label>
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled checked>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">토요일</span>
-                                </label>
-                              </div>
-                              <div id="actTm" class="clear">
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled checked>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">1교시~2교시</span>
-                                </label>
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled checked>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">2교시~3교시</span>
-                                </label>
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled checked>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">3교시~4교시</span>
-                                </label>
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled checked>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">4교시~5교시</span>
-                                </label>
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled checked>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">5교시~6교시</span>
-                                </label>
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">6교시~7교시</span>
-                                </label>
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled checked>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">7교시~8교시</span>
-                                </label>
-                              </div>
+                      </div>
+                      <div class="boardViewValue">
+                        <div class="displayFlex h-100">
+                          <div class="viewValues w-100">
+                            <!-- <p class="eduActView">2020-12-22</p> -->
+                            <div>
+                              <label for="files" class="btn fileBtn">파일</label>
+                              <input type="file" class="fileForm" id="files">
+                              <p class="uploadInfo">* 사이즈가 5M 미만인 이미지 파일(jpg, png, jpeg)만 첨부 가능합니다.</p>
                             </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="boardRow w-50">
-                        <div class="boardViewCategory">
-                          <div class="displayFlex h-100">
-                            <span class="viewValues">활동가능동</span>
-                          </div>
-                        </div>
-                        <div class="boardViewValue">
-                          <div class="displayFlex h-100">
-                            <div class="viewValues">
-                              <div id="actDong" class="clear">
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">심곡동</span>
-                                </label>
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled checked>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">부천동</span>
-                                </label>
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled checked>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">중동</span>
-                                </label>
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled checked>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">신중동</span>
-                                </label>
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled checked>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">상동</span>
-                                </label>
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled checked>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">대산동</span>
-                                </label>
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled checked>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">소사본동</span>
-                                </label>
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled checked>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">범안동</span>
-                                </label>
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled checked>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">성곡동</span>
-                                </label>
-                                <label class="checkboxLabel">
-                                  <input type="checkbox" class="checkboxForm" disabled checked>
-                                  <span class="checkboxImg"></span>
-                                  <span class="checkboxLabelTxt">오정동</span>
-                                </label>
-                              </div>
-                            </div>
+                            <ul class="imgDisclamerList">
+                              <li class="imgDisclamerItems">
+                                <p>인물 사진이 포함된 경우 초상권 활용 동의를 받은 후 게시하여야 하며, 초상권 활용을 받지 못한 경우에는 인물사진에 모자이크 처리를 하셔야 합니다.</p>
+                              </li>
+                              <li class="imgDisclamerItems">
+                                <p>공개여부는 기본적으로 비공개로 되어있으며 초상권에 문제가 없을 경우에만 공개로 표시 부탁드립니다.</p>
+                              </li>
+                            </ul>
+                            <ul class="fileLists">
+                              <li class="fileItems">
+                                <p>
+                                  <span class="fileNames">test.png</span>
+                                  <input type="button" class="deleteBtn">
+                                </p>
+                              </li>
+                              <li class="fileItems">
+                                <p>
+                                  <span class="fileNames">test.png</span>
+                                  <input type="button" class="deleteBtn">
+                                </p>
+                              </li>
+                            </ul>
                           </div>
                         </div>
                       </div>
@@ -1224,265 +1441,22 @@
                   </div>
                 </div>
               </div>
-            </div> 
-            <div class="modalSection">
-              <div class="sectionHeader">
-                <h3 class="sectionTitles">활동 상세정보</h3>
-              </div>
-              <div class="boardLists">
-                <div class="boardHeader">
-                  <div class="boardListCategory boardItems">
-                    <div class="listWrNum listComponents">
-                      <span class="listValues">순번</span>
-                    </div>
-                    <div class="listEduAppDate listComponents">
-                      <span class="listValues">교육일자</span>
-                    </div>
-                    <div class="listEduSch listComponents">
-                      <span class="listValues">교육학교</span>
-                    </div>
-                    <div class="listEduCount listComponents">
-                      <span class="listValues">교육차수</span>
-                    </div>
-                    <div class="listWrTchRat listComponents">
-                      <span class="listValues">교육평가점수</span>
-                    </div>
-                    <div class="listWrTchRatTxt listComponents">
-                      <span class="listValues">교육 한줄평</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="boardBody">
-                  <div class="boardList modalScrolls">
-                    <div class="boardItems">
-                      <div class="listWrNum listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <span class="listValues">0</span>
-                        </div>
-                      </div>
-                      <div class="listEduAppDate listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p>2020-12-22</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="listEduSch listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p>중동 초등학교</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="listEduCount listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p>2차 교육</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="listWrTchRat listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p><span>3.0</span>/<span>5.0</span>(<span></span>)</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="listWrTchRatTxt listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p>감사합니다.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="boardItems">
-                      <div class="listWrNum listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <span class="listValues">0</span>
-                        </div>
-                      </div>
-                      <div class="listEduAppDate listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p>2020-12-22</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="listEduSch listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p>중동 초등학교</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="listEduCount listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p>2차 교육</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="listWrTchRat listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p><span>3.0</span>/<span>5.0</span>(<span></span>)</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="listWrTchRatTxt listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p>감사합니다.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="boardItems">
-                      <div class="listWrNum listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <span class="listValues">0</span>
-                        </div>
-                      </div>
-                      <div class="listEduAppDate listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p>2020-12-22</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="listEduSch listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p>중동 초등학교</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="listEduCount listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p>2차 교육</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="listWrTchRat listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p><span>3.0</span>/<span>5.0</span>(<span></span>)</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="listWrTchRatTxt listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p>감사합니다.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="boardItems">
-                      <div class="listWrNum listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <span class="listValues">0</span>
-                        </div>
-                      </div>
-                      <div class="listEduAppDate listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p>2020-12-22</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="listEduSch listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p>중동 초등학교</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="listEduCount listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p>2차 교육</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="listWrTchRat listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p><span>3.0</span>/<span>5.0</span>(<span></span>)</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="listWrTchRatTxt listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p>감사합니다.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="boardItems">
-                      <div class="listWrNum listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <span class="listValues">0</span>
-                        </div>
-                      </div>
-                      <div class="listEduAppDate listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p>2020-12-22</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="listEduSch listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p>중동 초등학교</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="listEduCount listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p>2차 교육</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="listWrTchRat listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p><span>3.0</span>/<span>5.0</span>(<span></span>)</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="listWrTchRatTxt listComponents">
-                        <div class="displayFlex alignItemsCenter justifyCenter h-100">
-                          <div class="listValues">
-                            <p>감사합니다.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="boardItems">
-                      <div class="emptyLists">
-                        <p class="emptyMsg">작성된 글이 없습니다.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>  
+            </div>
           </div>
         </div> 
-        <div class="modalBtnWrapper clear">
-          <a class="w-100 modalBtns closeBtn">닫기</a> 
+        <div class="modalBtnWrapper clear eduActWrite">
+          <a class="w-50 modalBtns floatLeft">저장</a>
+          <a class="w-50 modalBtns closeBtn floatLeft">닫기</a> 
+        </div> 
+        <div class="modalBtnWrapper clear eduActView">
+          <a class="w-50 modalBtns floatLeft" onclick="exViewData()">수정</a>
+          <a class="w-50 modalBtns closeBtn floatLeft">닫기</a> 
         </div> 
       </div> 
-    </div> 
+    </div>
     <div class="modalBg"></div> 
   </div> 
-  <!-- /강사 상세조회 조회팝업 -->
+  <!-- /기타활동 팝업 팝업 -->
 </body>
 
 </html>
