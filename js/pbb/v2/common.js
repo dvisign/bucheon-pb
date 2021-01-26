@@ -66,12 +66,17 @@ var fadeInOutEvent = function(obj) {
   var init = function() {
     initPrev();
     $(openBtn).on("click", function() {
-      $(layer).stop().fadeIn(delay, function() {
-        if (inCallBack) {
-          inCallBack();
-        }
-        addEvent();
-      });
+      if ($(layer).css('display') !== 'block') {
+        $(layer).stop().fadeIn(delay, function() {
+          if (inCallBack) {
+            inCallBack();
+          }
+          $(window).resize(function() {
+            addEvent();
+          });
+          $(window).trigger('resize');
+        });
+      }
     })
     $(closeBtn).on("click", function() {
       if (outBefore) {
@@ -393,10 +398,10 @@ window.onload = function() {
       monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
     });
   });
-  new fadeInOutEvent({
+  var test = new fadeInOutEvent({
     layer : "#siteMaps",
     openBtn : ".sideBtn",
-    closeBtn : "#siteMapClose",
+    closeBtn : ".siteMapClose",
     delay : 300,
     initPrev : function() {
       var siteMapDisplay = siteMap.css("display");
@@ -429,26 +434,60 @@ window.onload = function() {
       });
     },
     addEvent : function() {
-      var scrollArea = $("#siteMapArea");
-      var sections = $(".siteMapCateSections");
-      var sectionPosArr = new Array();
-      sections.each(function(i) {
-        var _this = $(this);
-        sectionPosArr[i] = _this.position().top - ($("#siteMapHeader").height() + 1);
-      });
-      siteMapScrollEvent(scrollArea.scrollTop(), sectionPosArr);
-      scrollArea.scroll(function() {
-        var _this = $(this);
-        var _scrollTop = _this.scrollTop();
-        siteMapScrollEvent(_scrollTop, sectionPosArr);
-      });
-      $(".siteMapNavItems a").on("click", function() {
-        var _this = $(this);
-        var _index = _this.parents('.siteMapNavItems').index();
-        scrollArea.stop().animate({
-          "scrollTop":sectionPosArr[_index] + "px"
+      var device = getDevice();
+      if (device === "PC") {
+        var scrollArea = $("#siteMapArea");
+        var sections = $(".siteMapCateSections");
+        var sectionPosArr = new Array();
+        $(".siteMapNavItems a").off();
+        $('.siteMapCateSections').css('display','block');
+        sections.each(function(i) {
+          var _this = $(this);
+          sectionPosArr[i] = _this.position().top - ($("#siteMapHeader").height() + 1);
         });
-      });
+        siteMapScrollEvent(scrollArea.scrollTop(), sectionPosArr);
+        scrollArea.scroll(function() {
+          var _this = $(this);
+          var _scrollTop = _this.scrollTop();
+          siteMapScrollEvent(_scrollTop, sectionPosArr);
+        });
+        $(".siteMapNavItems a").on("click", function() {
+          var _this = $(this);
+          var _index = _this.parents('.siteMapNavItems').index();
+          scrollArea.stop().animate({
+            "scrollTop":sectionPosArr[_index] + "px"
+          });
+        });
+      } else {
+        var siteMapNav = $('.siteMapNavItems');
+        var wrapper = $('#siteMapSectionWrapper');
+        var index = 0;
+        $("#siteMapArea").off();
+        $(".siteMapNavItems a").off();
+        if (!siteMapNav.hasClass('active')) {
+          index = 0;
+          siteMapNav.eq(index).addClass('active');
+        } else {
+          index = $('.siteMapNavItems.active').index();
+        }
+        var selectEl = $('.siteMapCateSections').eq(index);
+        $('.siteMapNavItems a').on('click', function() {
+          var _this = $(this);
+          var _parents = _this.parents('.siteMapNavItems');
+          var _index = _parents.index();
+          var _section = $('.siteMapCateSections').eq(_index);
+          if (_section.css('display') !== "block") {
+            $('.siteMapNavItems').removeClass('active');
+            _parents.addClass('active');
+            $('.siteMapCateSections').stop().fadeOut(300,function() {
+              setTimeout(function() {
+                _section.stop().fadeIn();
+              }, 300)
+            });
+          }
+        });
+        wrapper.find('.siteMapCateSections').not(selectEl).css('display', 'none');  
+      }
     }
   });
   var dropwdownDepth2 = new dropDownSet({
@@ -466,6 +505,7 @@ window.onload = function() {
       
     }
   });
+  
   dropwdownDepth2.init();
 };
 

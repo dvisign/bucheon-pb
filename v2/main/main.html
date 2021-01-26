@@ -65,6 +65,13 @@
         slidesToShow: 1,
         slidesToScroll: 1
       });
+      $('.mNoticeList').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows:false,
+        dots:false
+      });
       $("#airInfoUl").slick({
         infinite: true,
         slidesToShow: 1,
@@ -163,9 +170,40 @@
         }
       });
       mapInit.init();
+      $('.mNoticeOpenBtns > a').on('click', function() {
+        mNotice(true)
+      });
+      function mNotice(init) {
+        var el = $('.mNoticeContainer');
+        var _width = el.width();
+        var width = 0;
+        var _this =$('.mNoticeOpenBtns > a');
+        if (init == true) {
+          if (_width <= 0) {
+            _this.addClass('active');
+            width = $('body').width() - (60 + 60);
+          } else {
+            _this.removeClass('active');
+            width = 0;
+          }
+          el.stop().animate({
+            "width" : width + "px"
+          }, 300, function() {
+            $('.mNoticeList').get(0).slick.setPosition();
+          })
+        } else {
+          if (_width <= 0) {
+            _this.removeClass('active');
+          } else {
+            _this.addClass('active');
+          }
+        }
+      };
+      mNotice(false);
       $(window).resize(function() {
         var device = getDevice();
-        $('#dustChartSlider').get(0).slick.setPosition()
+        $('#dustChartSlider').get(0).slick.setPosition();
+        $('#measurePlaceSlider').get(0).slick.setPosition();
         if (device == "PC") {
           
         } else {
@@ -521,7 +559,7 @@
           <div id="siteMapTitle">
             <div class="container">
               <h2>사이트맵</h2>
-              <a href="javascript:void(0)" id="siteMapClose"><span class="soundOnly">닫기</span></a>
+              <a href="javascript:void(0)" class="siteMapClose"><span class="soundOnly">닫기</span></a>
             </div>
           </div>
           <div id="siteMapNav">
@@ -733,6 +771,7 @@
               </div>
             </div>
           </div>
+          <a href="javascript:void(0)" class="siteMapClose"><span class="soundOnly">닫기</span></a>
         </div>
       </div>
       <!-- /사이트맵 -->
@@ -789,7 +828,28 @@
     <main class="sectionWrapper">
       <article>
         <section id="mainVisualMaps">
-          <div id="maps"></div>
+          <div id="mapWrapper">
+            <div id="maps"></div>
+            <div class="mNoticeWrapper">
+              <div class="displayFlex justifyBetween alignItemsCenter">
+                <div class="mNotice">
+                  <div class="mNoticeContainer">
+                    <div class="mNoticeList">
+                      <div class="mNoticeItems">
+                        <a href="javascript:void(0)" class="topNoticeLinks" tabindex="-1">오늘 미세먼지 주의입니다. 외출시 마스크를 꼭 착용하세요.</a>
+                      </div>
+                      <div class="mNoticeItems">
+                        <a href="javascript:void(0)" class="topNoticeLinks" tabindex="-1">오늘 미세먼지 주의입니다. 외출시 마스크를 꼭 착용하세요.</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mNoticeOpenBtns">
+                  <a href="javascript:void(0);"></a>
+                </div>
+              </div>
+            </div>
+          </div>
           <div id="leftData" class="dataLayer">
             <div id="mapInformation">
               <div id="dustStatus">
@@ -848,10 +908,10 @@
                 </div>
                 <ul id="areaAverageStatusLists" class="clear">
                   <li class="areaAverageStatusItems">
-                    <a href="javascript:void(0);">초미세먼지 PM-2.5</a>
+                    <a href="javascript:void(0);">초미세먼지 <span>PM-2.5</span></a>
                   </li>
                   <li class="areaAverageStatusItems">
-                    <a href="javascript:void(0);">미세먼지 PM-10</a>
+                    <a href="javascript:void(0);">미세먼지 <span>PM-10</span></a>
                   </li>
                   <li class="areaAverageStatusItems active">
                     <a href="javascript:void(0);">오존 O₃</a>
@@ -1542,7 +1602,7 @@
                 <img src="/img/cs/layout/logo_footer.jpg" alt="판타지아 푸터 부천 로고">
               </a>
               <div class="m_footerLink">
-                바로가기
+                <a href="javascript:void(0);">바로가기</a>
               </div>
             </div>
             <div class="footer_info">

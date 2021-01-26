@@ -103,7 +103,7 @@
 #headers {padding-top:50px;}
 #navWrapper {position:fixed;width:100%;left:0;top:0;background-color:#fff;z-index:997;}
 
-#topNavArea {width:calc(100% - 60px);margin:0 auto;text-align:center;top:calc(100vh - 58px);position: absolute;background-color:rgba(0,0,0,0.5);z-index: 997;left:0; right:0;height:40px;line-height: 40px;border-radius: 34.5px;font-size:12px;}
+#topNavArea {text-align:center;z-index: 997;font-size:12px;position:fixed;border-bottom:1px solid rgba(0, 0, 0, 0.12);top:0;left:0;bottom:auto;background-color:#fff;width: 100%;border-radius: 0;line-height: 1;height:50px;display:none;}
 .topNoticeLinks {color:#fff;}
 #topNavArea .smallIcons {display:none;}
 #topNavArea .slick-arrow {display:none !important;}
@@ -120,7 +120,7 @@
 #navLogos img {height:30px;display:table-cell;vertical-align: middle;}
 #navLogoTxt {display:table-cell;vertical-align: middle;padding-left:8px;letter-spacing: -1.44px;font-size: 1.3rem;font-weight: 600;transform: skew(-0.03deg);}
 #navContents {display:none;}
-#mSideNavBtns {display:block;position:absolute;right:10px;top:50%;transform: translateY(-50%);}
+#mSideNavBtns {display:block;position:absolute;right:10px;top:50%;transform: translateY(-50%);zoom:0.8;}
 #mSideNavBtns > a {float:left;margin-left:15px;}
 
 #navLists {}
@@ -160,59 +160,18 @@
 .logInOutBtn.logOut {background-image:url('/img/v2/common/bar-icon-logout.png');}
 .sideBtn {display:inline-block;width:28px;height:28px;background-position: center;background-repeat: no-repeat;background-size: cover;background-image: url('/img/v2/common/bar-icon-list.png');}
 
-#siteMaps {width:100%;height:100vh;min-height: 600px;position: fixed;z-index:1000;background-color:#fff;display: none;}
-#siteMapHeader {width: 100%;border-bottom:1px solid #d6dade;background-color:#fff;}
-#siteMapTitle {text-align: center;padding:42px 0;background-color:#0c1e42;}
-#siteMapTitle > .container {position: relative;}
-#siteMapTitle h2 {font-size:2.43rem;color:#fff;}
-#siteMapClose {width: 34px; height: 34px; display: block; position: absolute; top: 50%; right: 0;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-#siteMapClose::before,
-#siteMapClose::after {width: 34px; height: 2px; display: block; content: ""; background-color: #fff; position: absolute; top: 16px; left: 0;}
-#siteMapClose::before {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-#siteMapClose::after {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-#siteMapNavList {}
-.siteMapNavItems {float:left; padding:24px 0;position: relative;}
-.siteMapNavItems::after {content:'';display:block;width:0;position: absolute;bottom: 0;height:4px;background-color:#1460f1;left:0;right:0;margin:0 auto;transition: all 0.3s ease-in-out;}
-.siteMapNavItems:hover::after,
-.siteMapNavItems.active::after {width:100%;}
-.siteMapNavItems:not(:last-child) {margin-right:102px}
-.siteMapNavItems > a {font-size:1.22rem;font-weight: 600;transition: all 0.3s ease-in-out;letter-spacing: -.5px;}
-.siteMapNavItems:hover > a,
-.siteMapNavItems.active > a {color:#1460f1;} 
-#siteMapArea {height:calc(100% - 187px);overflow-y: auto;}
-#siteMapSectionWrapper {margin-bottom:350px;}
-.siteMapCateSections {padding:80px 20px 60px;border-bottom: 1px solid #e6eaee;}
-.siteMapDepth_1 {float:left; width:20%;}
-.siteMapDepth_1 > a {display: block; color: #191d25; font-weight: 600; font-size: 30px;line-height: 42px;letter-spacing: -2px;text-align: right;}
-.siteMapDepth_2 {float:right; width:80%;padding-left:70px;display:flex;flex-wrap:wrap;}
-.siteMapDepthList_2 {float:left; width:calc(100% / 3);margin-bottom:20px;}
-.siteMapDepthLink_2 {width: 100%; display: block; font-weight: 600; color: #393d45; padding: 0 0 15px; position: relative; font-size: 18px; line-height: 30px; letter-spacing: -.5px;}
-.siteMapDepthLink_2::before,
-.siteMapDepthLink_2::after {content:"";display:block;height:2px;position: absolute;bottom:0;}
-.siteMapDepthLink_2::before {background-color:#e6eaee;width:85%;}
-.siteMapDepthLink_2::after {width:0;background-color:#2c64cf;transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;-ms-transition: all 0.3s ease-in-out;}
-.siteMapDepthLink_2:hover::after {width:85%;}
-.siteMapDepth_3 {margin-top:18px;}
-.siteMapDepthLink_3 {width: 100%; font-weight: 400; position: relative; left: 0; font-size: 15px; line-height: 27px; letter-spacing: -.5px;transition: all 0.2s ease;-moz-transition: all 0.2s ease;-o-transition: all 0.2s ease;-ms-transition: all 0.2s ease;}
-.siteMapDepthLink_3:hover {color: #2c64cf;left: 10px;}
+/* 모바일 알림 */
+.mNoticeWrapper {max-width:calc(100% - (26px * 2));display:block;position:absolute;background-color:rgba(29, 30, 47,0.5);padding:5px;border-radius: 17px;z-index:1;bottom:30px;right:30px;overflow:hidden;}
+.mNotice {width:calc(100% - 60px);text-align: center;height:27px;line-height: 27px;}
+.mNoticeOpenBtns {}
+.mNoticeOpenBtns > a {display:block;width:27px;height:27px;border-radius: 50%;background-color:rgba(0,0,0,0.5);background-image:url('/img/v2/common/white-next-arrow.png');background-repeat: no-repeat;background-position-y: center;background-position-x:calc(50% + 1px);background-size: 7px;transform: rotate(180deg);transition: all 0.3s ease-in-out;}
+.mNoticeOpenBtns > a.active {transform: rotate(0);}
+.mNoticeItems,
+.mNoticeItems a {outline:none;}
+.mNoticeItems a {font-size:14px;font-weight: 400;}
+
+/* /모바일 알림 */
+
 @media(min-width:1280px) {
   #headers {padding-top:58px;}
   #navArea {padding:0;}
@@ -228,7 +187,7 @@
   #navContents {}
   #navLogos {margin-top:15px;}
   #navLogos img {height:auto;}
-  #topNavArea {position:fixed;border-bottom:1px solid rgba(0, 0, 0, 0.12);top:0;left:0;bottom:auto;background-color:#fff;width: 100%;border-radius: 0;line-height: 1;height:50px;}
+  #topNavArea {display:block;}
   #topNavArea .smallIcons {display:inline-block;}
   #topNavs {margin:0 auto;position: relative;padding:10px 0;}
   #topNotice {text-align: center;margin:0 auto;width:calc(100% - 200px);}
@@ -237,7 +196,102 @@
   #topNavBtns {position: absolute;right: 0;top: 50%;transform: translateY(-50%);display:block;}
   #navContents {display:block;}
   .navItems > a {font-size:20px;padding:35px 30px;}
+
+  .mNoticeWrapper {display:none;}
 }
+
+/* 사이트맵 */
+#siteMaps {width:100%;height:100vh;min-height: 600px;position: fixed;z-index:1000;background-color:#fff;display: none;top:0;}
+#siteMapHeader {border-bottom:1px solid #d6dade;background-color:#f4f8fb;float:left;height:100vh;overflow-y: auto;width:130px;}
+#siteMapTitle {text-align: center;background-color:#0c1e42;display:none;}
+#siteMapTitle > .container {position: relative;}
+#siteMapTitle h2 {color:#fff;}
+.siteMapClose {display: block; position: absolute; top: 50%; right: 0;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.siteMapClose::before,
+.siteMapClose::after {display: block; content: ""; background-color: #fff; position: absolute;}
+.siteMapClose::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.siteMapClose::after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#siteMapArea .siteMapClose {width:34px;height:34px;top:10px;right:10px;transform: translate(0);}
+#siteMapArea .siteMapClose::before,
+#siteMapArea .siteMapClose::after {width: 34px; height: 2px; top: 16px; left: 0;background-color:#0c1e42;}
+#siteMapNavList {padding-top:55px;}
+.siteMapNavItems {position: relative;}
+.siteMapNavItems > a::after {content:'';display:block;width:0;position: absolute;bottom: 0;height:4px;background-color:#1460f1;left:0;right:0;margin:0 auto;transition: all 0.3s ease-in-out;}
+.siteMapNavItems > a:hover::after,
+.siteMapNavItems.active > a::after {width:100%;}
+.siteMapNavItems:not(:last-child) {}
+.siteMapNavItems > a {font-weight: 600;transition: all 0.3s ease-in-out;letter-spacing: -.5px;font-size:16px;display:inline-block;transform: skew(-0.03deg);padding:15px 0;}
+.siteMapNavItems:hover > a,
+.siteMapNavItems.active > a {color:#1460f1;} 
+#siteMapArea {overflow-y: auto;height:100vh;float:right;width:calc(100% - 130px);position:relative;}
+#siteMapSectionWrapper {margin-bottom:150px;margin-top:50px;}
+.siteMapCateSections {width:100%;left:0;top:0;}
+.siteMapDepth_1 {display:none;}
+.siteMapDepth_1 > a {display: block; color: #191d25; font-weight: 600; font-size: 30px;line-height: 42px;letter-spacing: -2px;text-align: right;}
+.siteMapDepth_2 {}
+.siteMapDepthList_2 {margin-bottom:20px;border-bottom:1px solid #e6eaee;}
+.siteMapDepthLink_2 {margin-bottom:10px;display: inline-block; font-weight: 600; color: #393d45; padding: 0 0 10px; position: relative; font-size: 16px; line-height: 30px; letter-spacing: -.5px;transform: skew(-0.03deg);}
+.siteMapDepthLink_2::before,
+.siteMapDepthLink_2::after {content:"";display:block;height:2px;position: absolute;bottom:0;}
+.siteMapDepthLink_2::before {background-color:#e6eaee;width:100%;}
+.siteMapDepthLink_2::after {width:0;background-color:#2c64cf;transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;-ms-transition: all 0.3s ease-in-out;}
+.siteMapDepthLink_2:hover::after {width:100%;}
+.siteMapDepth_3 {margin-top:10px;margin-bottom:20px;}
+.siteMapDepthLink_3 {width: 100%; font-weight: 400; position: relative; left: 0; font-size: 14px; line-height: 27px; letter-spacing: -.5px;transition: all 0.2s ease;-moz-transition: all 0.2s ease;-o-transition: all 0.2s ease;-ms-transition: all 0.2s ease;}
+.siteMapDepthLink_3:hover {color: #2c64cf;left: 10px;}
+@media(min-width:1280px) {
+  #siteMaps {top:initial;}
+  #siteMapHeader {float:none;width: 100%;height:initial;background-color:#fff;}
+  #siteMapTitle {padding:42px 0;display:block;}
+  #siteMapTitle h2 {font-size:36px;}
+  .siteMapClose {width: 34px; height: 34px;}
+  .siteMapClose::before,
+  .siteMapClose::after {width: 34px; height: 2px; top: 16px; left: 0;background-color:#fff;}
+  #siteMapNavList {padding:0;}
+  .siteMapNavItems {display:block;float:left;position: relative;}
+  .siteMapNavItems > a::after {content:'';display:block;width:0;position: absolute;bottom: 0;height:4px;background-color:#1460f1;left:0;right:0;margin:0 auto;transition: all 0.3s ease-in-out;}
+  .siteMapNavItems > a:hover::after,
+  .siteMapNavItems.active > a::after {width:100%;}
+  .siteMapNavItems:not(:last-child) {margin-right:102px}
+  .siteMapNavItems > a {font-size:18px;padding:24px 0;}
+  #siteMapArea {height:calc(100% - 187px);float:none;width:100%;position:initial;}
+  #siteMapSectionWrapper {margin-bottom:350px;margin-top:0;}
+  .siteMapCateSections {padding:80px 20px 60px;position:initial;border-bottom: 1px solid #e6eaee;}
+  .siteMapDepth_1 {float:left; width:20%;display: block;}
+  .siteMapDepth_1 > a {display: block; color: #191d25; font-weight: 600; font-size: 30px;line-height: 42px;letter-spacing: -2px;text-align: right;}
+  .siteMapDepth_2 {float:right; width:80%;padding-left:70px;display:flex;flex-wrap:wrap;}
+  .siteMapDepthList_2 {float:left; width:calc(100% / 3);border-bottom:0;}
+  .siteMapDepthLink_2 {font-size: 18px; line-height: 30px;margin-bottom:20px;padding:0 0 15px;width:100%;display:block;}
+  .siteMapDepthLink_2::before,
+  .siteMapDepthLink_2::after {content:"";display:block;height:2px;position: absolute;bottom:0;}
+  .siteMapDepthLink_2::before {background-color:#e6eaee;width:85%;}
+  .siteMapDepthLink_2::after {width:0;background-color:#2c64cf;transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;-ms-transition: all 0.3s ease-in-out;}
+  .siteMapDepthLink_2:hover::after {width:85%;}
+  .siteMapDepth_3 {margin-top:18px;margin-bottom:0;}
+  .siteMapDepthLink_3 {width: 100%; font-weight: 400; position: relative; left: 0; font-size: 15px; line-height: 27px; letter-spacing: -.5px;transition: all 0.2s ease;-moz-transition: all 0.2s ease;-o-transition: all 0.2s ease;-ms-transition: all 0.2s ease;}
+  .siteMapDepthLink_3:hover {color: #2c64cf;left: 10px;}
+}
+/* /사이트맵 */
+
 /* /header */
 
 /* depth Nav */
@@ -326,12 +380,13 @@
 .boardList {border:1px solid #dadada;border-top:0;}
 .boardList .listWrNum {text-align:center;}
 .boardList .listWrSubject {text-align:left;}
-.boardLinks {line-height: 1.4;word-break: break-all;font-weight: 400;display:inline-block;width: 100%; color:#2c64cf; text-decoration: underline !important;}
+.boardLinks {line-height: 1.4;word-break: break-all;font-weight: 400;display:inline-block;width: 100%; color:#2c64cf; text-decoration: underline !important; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
 .boardList .listActDateTime {text-align:center;}
 .boardList .listCdName {text-align:center;}
 .boardList .listWrDateTime {text-align:center;}
 .boardList .listWrName {text-align: center;}
 .boardList .listWrHit {text-align: center;}
+.boardLists .checkboxLabel {width:24px;height:24px;}
 @media(min-width:1280px) {
   .boardLists{margin-top:12px;}
   .boardHeader {}
@@ -506,7 +561,7 @@
 
 .calendarWeekLine {position: relative;}
 .calendarWeekLine:not(:last-child) {border-bottom:1px solid #e0e0e0;}
-.calendarWeeks > .calendarDay {height:137px;padding:17px;}
+.calendarWeeks > .calendarDay {height:170px;padding:17px;}
 .calendarWeeks > .calendarDay:not(:last-child) {border-right: 1px solid #e0e0e0;}
 .calendarWeeks > .calendarDay.notThisMonth {background: url('/img/pbb/notday.png') no-repeat center / auto;}
 .calrenderDayContents {height:100%;position:relative;}
@@ -568,7 +623,7 @@
 .calendarEduDateLine.markerGreen {background-color:rgba(169, 227, 75, 0.3); color:#a9e34b;}
 .calendarEduDateLine.markerNavy {background-color:rgba(77, 99, 140, 0.3); color:#4d638c;}
 .calendarEduDateLine.markerBlack {background-color:rgba(73, 80, 87, 0.3); color:#495057;}
-.calendarEduName {padding:0 30px;line-height:30px;position:relative;font-weight: 900;transform: skew(-0.03deg);}
+.calendarEduName {padding:0 30px;line-height:30px;position:relative;font-weight: 900;transform: skew(-0.03deg);overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
 .calendarEduNameLabel {content:'';position:absolute;left:15px;width:6px; height:6px;display:block;top:50%;transform: translateY(-50%);border-radius: 50%;}
 .markerRed .calendarEduName::after {background-color:#D25565;}
 .markerPup .calendarEduName::after {background-color:#9775fa;}
@@ -588,7 +643,7 @@
 .educationCircles {display:inline-block;width:30px;height:30px;position:absolute;left: 0;top: 0;border-radius: 50%;}
 .calendarModalBtns {}
 .calendarModalBtns > .customBtn {color:#fff;background-color:#2c64cf;border:1px solid #2c64cf;padding:11px 33px;border-radius: 30px;transition: all 0.3s ease-in-out;font-weight: 600;display:inline-block;}
-.calendarModalBtns > .modal-close {right: 15px;top: 15px;width: 16px;height: 16px;}
+.calendarModalBtns > .closeBtn.typeX {right: 15px;top: 15px;}
 
 .eventModals {position:absolute;border:1px solid #d5d9dd;box-shadow: 8px 4px 16px rgba(0,0,0,0.1);background-color:#fff;z-index:1;width:360px;color:#393d45;}
 .eventModalWrapper {padding:40px 30px;position:relative;}
@@ -656,9 +711,14 @@
 #footerNavs > li:first-child {display:none;}
 #footerNavs a {color:#e6eaee;}
 #footerInfos {}
-.footer_logo {float:left;width:100%;border-bottom:1px solid #2b2f36;padding-bottom:23px;}
+.footer_logo {width:100%;border-bottom:1px solid #2b2f36;padding-bottom:23px;display:flex;justify-content: space-between;align-items:center;}
 .footer_logo img {width:140px;}
-.m_footerLink {display:block;float:right;}
+.m_footerLink {display:block;}
+.m_footerLink > a {width:120px;border:1px solid #999da5;padding:10px 15px;display:block;color:#e6eaee;position:relative;}
+.m_footerLink > a::after, 
+.m_footerLink > a::before {content:'';display:block;background-color:#e6eaee;}
+.m_footerLink > a::after {width:5px;height:1px;}
+.m_footerLink > a::before {width:1px;height:5px;}
 .footer_info {float:left;width:100%;margin-top:20px;}
 .footer_info > p {color: #999da5; font-weight: 600; font-size: 14px; line-height: 26px; letter-spacing: -.5px;transform: skew(-0.03deg);}
 .copyright {float:right;color: #999da5; font-weight: 300; font-size: 14px;letter-spacing: -.5px;width:100%;margin-top:20px;}
@@ -801,7 +861,7 @@
   #footerNavs {display:block;width: 946px; height: 67px; line-height: 67px;margin:0 auto;}
   #footerNavs > li {float:left;}
   #footerNavs a { display: inline-block; margin: 0 25px 0; color: #e6eaee; font-weight: 400; font-size: 17px; line-height: 29px; letter-spacing: -.5px;}
-  .footer_logo {width:auto;border:none;padding:0;}
+  .footer_logo {float:left;width:auto;border:none;padding:0;display:block;}
   .footer_logo img {}
   #footerInfos {border-top:1px solid #2b2f36;padding:32px 0;}
   .footer_info {margin-left:40px;width:auto;margin-top: 0;}
@@ -871,7 +931,7 @@
   .publicVehicle .modalBtnWrapper .modalBtns.closeBtn {width:32.5%}
   /* /modal */
   /* form */
-  .checkboxLabel {padding-left:33px;line-height:24px;width:24px;height:24px;}
+  .checkboxLabel {padding-left:33px;line-height:24px;}
   .checkboxForm + .checkboxImg {width:24px;height:24px;}
   .checkboxForm:checked + .checkboxImg {background:url('/img/v2/common/select-check.png') no-repeat center / auto;background-color:#1233a1;}
   .checkboxLabelTxt {}

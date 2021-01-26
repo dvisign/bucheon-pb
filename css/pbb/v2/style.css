@@ -1,5 +1,6 @@
 /* main */
 #mainVisualMaps {position:relative;}
+#mapWrapper {position:relative;height:100%;}
 #maps {height:calc(100vh - 58px); min-height: 580px;position: relative;}
 .mainMarker {width:75px;height:92px;transform:translateY(13px);}
 #leftData.dataLayer {position: absolute;top:0;left: 0;width:100%;z-index: 1;}
@@ -11,15 +12,15 @@
 #dustBusinessStatus .foldBtnWrapper {position: absolute;left:calc(100% + 8px);top:9.5px;}
 .dustBusinessStatusItems {float:left;width:calc(100% / 3);position:relative;border-bottom:1px solid #ccc;transition: all 0.3s ease-in-out;background-color:#fff;}
 .dustBusinessStatusItems:not(:last-child) {border-right:1px solid #ccc;}
-.dustBusinessStatusItems > a {display:block;width:100%;padding:12px 17px 12px 17px;letter-spacing: -0.32px;font-size:13px;font-weight: 600;transform: skew(-0.03deg);position: relative;}
+.dustBusinessStatusItems > a {display:block;width:100%;padding:12px 10px 12px 10px;letter-spacing: -0.32px;font-size:13px;font-weight: 600;transform: skew(-0.03deg);position: relative;}
 .dustBusinessStatusItems.active > a::after {background-image:url('/img/v2/common/icon-up.png');}
-.dustBusinessStatusItems > a::after {content:'';display:block;width:calc(15px / 2);height:calc(7px / 2);background-image:url('/img/v2/common/icon-down.png');background-position: center;background-repeat: no-repeat;background-size: cover;position:absolute;right:16px;top:50%;transform: translateY(-50%);transition: all 0.3s ease-in-out;}
+.dustBusinessStatusItems > a::after {content:'';display:block;width:calc(15px / 2);height:calc(7px / 2);background-image:url('/img/v2/common/icon-down.png');background-position: center;background-repeat: no-repeat;background-size: cover;position:absolute;right:10px;top:50%;transform: translateY(-50%);transition: all 0.3s ease-in-out;}
 .dustBusinessStatusItems.active, 
 .dustBusinessStatusItems:hover,
 .dustBusinessStatusItems.active .subDustBusinessStatusList {background-color:#f1f1f1;}
 .dustBusinessStatusItems .subDustBusinessStatusList {box-shadow: 3.2px 10.5px 13px 0 rgba(0, 0, 0, 0.29);background-color:#f1f1f1;}
 .dustBusinessNunber {display:none;}
-.subDustBusinessStatusList {position:absolute;width:100%;padding:0 10px 0 16px;display: none;}
+.subDustBusinessStatusList {position:absolute;width:100%;padding:0 10px 0 16px;display: none;zoom:0.8}
 .subDustBusinessStatusItems {margin-bottom:8px;}
 .subDustBusinessStatusItems > a {font-weight: 600;display: inline-block;transform: skew(-0.03deg);font-size:13px;    transition: all 0.3s ease-in-out;}
 .areaAverageStatusItems.active > a, 
@@ -29,6 +30,7 @@
 #areaAverageStatusLists > li {float:left;width:calc((100% - (6px * 2)) / 3);text-align: center;}
 #areaAverageStatusLists > li:not(:last-child) {margin-right:6px;}
 .areaAverageStatusItems > a {width:100%;display:block;background-color:#fff;font-size:13px;font-weight: 600;transform: skew(-0.03deg);padding:9px 0;border:1px solid #ccc;}
+.areaAverageStatusItems > a > span {display:none;}
 #areaAverage {margin-top:13px;width:calc((100% - (6px * 2)) / 3);background-color:rgba(255, 255, 255, 0.8);}
 #areaAverage #areaAverageHeader {display:block;padding:8px 11px;}
 #areaAverageDate {margin-top:8px;font-size:11px;font-weight: 600;transform: skew(-0.03deg);}
@@ -46,6 +48,7 @@
 #areaAverageDatas.code-red #areaAverageStatus::after {content:'매우 나쁨';}
 #areaAverageValue {float:left;font-family: "Rubik";font-weight: 600;letter-spacing: -1px;font-size: 13px;}
 #areaAverageDatas #areaAverageStatus::after {float:right;font-size:12px;letter-spacing: -1px;font-weight: 600;}
+
 /* 지도 컨트롤러 */
 #mapController {float:right;margin-top:13px;}
 #zoomController,
@@ -98,7 +101,7 @@
 .chartGauge.code-blue::after {content:"좋음";color:#40b0ff;}
 .chartGauge.code-green::after {content:"보통";color:#6ed564;}
 .chartGauge.code-warning::after {content:"나쁨";color:#ff9600;}
-.chartGauge.code-red::after {content:"매우나쁨";color:#ff0000;}
+.chartGauge.code-red::after {content:"매우 나쁨";color:#ff0000;}
 .chartGauge.code-default::after {content:"-";color:#999;}
 #moveWatering {border-radius: 50%;border:1px solid #2c64cf;background-image:url('/img/v2/icons/icon-move.png');background-position:center;background-repeat: no-repeat;background-size:42px;}
 #fixWatering {border-radius: 50%;border:1px solid #2c64cf;background-image:url('/img/v2/icons/icon-fix.png');background-position:center;background-repeat: no-repeat;background-size:47px;}
@@ -110,7 +113,7 @@
 #mainContents {padding:55px 0 40px 0;background-color:#fff;}
 #bucheonEtc {}
 #dustForecast {}
-#behaviors {}
+#behaviors {margin-top:30px;}
 .etcListHeader {position: relative;padding-bottom:30px;}
 .etcListHeader > h2 {color:#111;font-size:20px;font-weight: 600;letter-spacing: -0.88px;}
 .etcListHeader > .deadline {margin-right:40px;margin-top:6px;}
@@ -150,7 +153,7 @@
 .cdtStatusItems .statusValues {font-size:12px;letter-spacing: -0.32px;font-weight: 600;color:#666;}
 .cdtStatusItems .statusValues .statusTxtColor {font-family: 'Rubik';font-size:14px;letter-spacing: -0.99px;font-weight: 600;}
 
-#bucheonEtc .slick-dots {bottom:29px;}
+#bucheonEtc .slick-dots {bottom:0;}
 #bucheonEtc .slick-dots li {width:12px;height:12px;}
 #bucheonEtc .slick-dots li button:before {content:'';background-color:#ddd;border-radius: 50%;line-height: 1;width:12px;height:12px;opacity:0.5;transition: all 0.3s ease-in-out;}
 #bucheonEtc .slick-dots li button:hover::before {opacity:1;}
@@ -175,68 +178,6 @@
 .behaviorsInfoNotice {margin-top:10px;padding:0 8px;}
 .behaviorsInfoNotice > p {padding-left:15px;position: relative;font-size: 12px;color:#111;letter-spacing: 0.64px;line-height: 1.25;font-weight: 400;}
 .behaviorsInfoNotice > p::after {content:'※';display:block;position: absolute;left:0;top:0;}
-/* /컨텐츠 */
-/* 대시보드 */
-#dashBoards {background-color:#1d1e2f;}
-#dashBoards .container{padding:0;}
-#dustAlert {background-color:#222336;width:100%;text-align: center;padding:17px 0;}
-#dustAlert > div {position:relative;}
-#dustCaption {background-image:url('/img/v2/icons/bg-cation.png');background-size:100%;background-repeat: no-repeat;background-position: center;width:30px;height:25px;display:inline-block;}
-#dustAlertMsgs {display:inline-block;position: relative;zoom:0.8;top:-7px;}
-#dustAlertNotice {text-align: center;letter-spacing: -1.2px;color:#ff4320;font-weight: 600;display:inline-block;font-size:19px;transform: skew(-0.03deg);margin:0 8px;}
-#dustAlertDate {font-weight: 400;letter-spacing: -0.4px;color:#fff;text-align: center;display:inline-block;transform: skew(-0.03deg);}
-
-#dustPlaceData {position:relative;padding:15px 0;}
-#dustPlaceData > div {display:flex;}
-#dustMeasure {text-align: left;color:#999;}
-#dustMeasureCate {font-weight: 600;}
-#dustMeasureData {color:#ff0000;letter-spacing: -2.7px;font-weight: 900;font-family: 'Rubik';display:inline-block;}
-#dustMeasureUnit {font-weight: 600;display:inline-block;}
-#dustMeasurePlace {color:#fff;position:relative;}
-#dustMeasurePlace .slick-next {display:none !important;}
-#mDustStatus {text-align: center;}
-#mDustStatus > span {color:#ff0000;font-weight: 600;border-radius: 28px;border:1px solid #ff0000;padding: 7px 16px 6px 18px;font-size:18px;display:inline-block;}
-#measurePlaceSlider {text-align: left;}
-.measurePlaceItems {outline:none;}
-.measureName {font-weight: 600;transform: skew(-0.03deg);letter-spacing: -0.45px;}
-.measurePlaceName {font-weight: 600;transform: skew(-0.3deg);letter-spacing: -2.25px;;}
-#dustAlertArr {width:30px;height:30px;border-radius: 50%;border:1px solid #dadada;display:block;background-image: url('/img/v2/common/icon-left.png');background-repeat: no-repeat;background-position-y: center;background-position-x:calc(50% + 1px);background-size:8px;position:absolute;right:0;z-index:1;bottom:-5px;}
-
-#dustStates {float:left;color:#e1e1e1;display:none;}
-#dustStateData {color:#ff0000;transform: skew(-0.03deg);font-weight: 900;}
-#dustStateMsg {line-height: 1.75;font-weight: 400;}
-@media(min-width:1280px) {
-  #dashBoards {}
-  #dustAlert {padding:35px 34px 40px 34px;width:395px;float:left;}
-  #dustAlert > div {}
-  #dustCaption {width:84px; height:66px;background-size:auto;float:left;}
-  #dustAlertMsgs {margin-left:22px;margin-top:10px;float:left;position: static;zoom:1;}
-  #dustAlertNotice {font-size: 24px;margin-bottom:12px;text-align:left;display:block;margin:0;}
-  #dustAlertDate {font-size: 16px;text-align:left;display:block;}
-  
-  #dustPlaceData {float:left;padding:17px 38px 20px 50px;width:460px;}
-  #dustPlaceData > div {display:block;}
-  #dustMeasure {float:left;text-align: center;}
-  #dustMeasureCate {font-size:18px;}
-  #dustMeasureData {font-size:60px;margin:6px 0 0 0;display:block;}
-  #dustMeasureUnit {font-size:18px;display:block;}
-  #dustMeasurePlace {float:right;margin-left:26px;margin-top:20px;padding-right:55px;}
-  #mDustStatus {display:none;}
-  #measurePlaceSlider {width:190px;}
-  .measurePlaceItems {}
-  .measureName {font-size:18px;}
-  .measurePlaceName {font-size:30px;margin-top:13px;}
-  #dustAlertArr {width:38px; height:38px;border-width:2px;}
-
-  #dustStates {padding-top:25px;width:calc(100% - (460px + 395px));display:block;}
-  #dustStateData {font-size:20px;margin-bottom:18px;}
-  #dustStateMsg {font-size:16px;}
-}
-/* /대시보드 */
-/* /main */
-@media(min-width:720px) {
-  .mapInfoTitle {font-size: 26px; line-height: 0.92; letter-spacing: -0.65px;}
-}
 @media(min-width:1280px) {
   /* main */
   #mainVisualMaps {height:calc(100vh - 140px);min-height:770px;}
@@ -283,6 +224,7 @@
   .areaAverageStatusItems {text-align: center;}
   .areaAverageStatusItems:not(:last-child) {margin-bottom:10px;}
   .areaAverageStatusItems > a {display:block;font-size:18px;color:#111;letter-spacing: -0.36px;font-weight: 600;padding:18px;border:1px solid #ccc;transition: all 0.3s ease-in-out;background-color:#fff;}
+  .areaAverageStatusItems > a > span {display:inline;}
   /* /미세먼지 상태 */
   /* 저감사업 상태 */
   #dustBusiness {border-bottom:0;text-align: left;}
@@ -300,7 +242,7 @@
   .dustBusinessStatusItems.active > a::after {background-image:url('/img/v2/common/icon-up.png');}
   .dustBusinessStatusItems > a > span {display:inline-block;}
   .dustBusinessNunber {display:block;margin-right:11px;font-family: 'Rubik';}
-  .subDustBusinessStatusList {position:static;padding:0 16px 0 53px;}
+  .subDustBusinessStatusList {position:static;padding:0 16px 0 53px;zoom:1;}
   .dustBusinessStatusItems.active, .dustBusinessStatusItems:hover, .dustBusinessStatusItems.active .subDustBusinessStatusList {box-shadow: none;}
   .dustBusinessStatusItems.active .subDustBusinessStatusList {background-color:none;}
   .subDustBusinessStatusItems {margin-bottom:10px;}
@@ -338,7 +280,7 @@
   #mainContents {padding:50px 0 255px 0;background-color:#fff;}
   #bucheonEtc {border:1px solid #eee;}
   #dustForecast {float:left;width:50%;border-right:1px solid #eee;padding:45px 19px 0 19px;}
-  #behaviors {float:right;width:50%;padding:45px 19px 0 19px;}
+  #behaviors {float:right;width:50%;padding:45px 19px 0 19px;margin-top:0;}
   .etcListHeader {position: relative;padding-bottom:40px;}
   .etcListHeader > h2 {float:left;color:#111;font-size:22px;font-weight: 600;letter-spacing: -0.88px;}
   .etcListHeader > .deadline {float:right;margin-right:40px;margin-top:6px;}
@@ -406,6 +348,66 @@
   /* /컨텐츠 */
   /* /main */
 }
+/* /컨텐츠 */
+/* 대시보드 */
+#dashBoards {background-color:#1d1e2f;}
+#dashBoards .container{padding:0;}
+#dustAlert {background-color:#222336;width:100%;text-align: center;padding:17px 0;}
+#dustAlert > div {position:relative;}
+#dustCaption {background-image:url('/img/v2/icons/bg-cation.png');background-size:100%;background-repeat: no-repeat;background-position: center;width:30px;height:25px;display:inline-block;}
+#dustAlertMsgs {display:inline-block;position: relative;zoom:0.8;top:-7px;}
+#dustAlertNotice {text-align: center;letter-spacing: -1.2px;color:#ff4320;font-weight: 600;display:inline-block;font-size:19px;transform: skew(-0.03deg);margin:0 8px;}
+#dustAlertDate {font-weight: 400;letter-spacing: -0.4px;color:#fff;text-align: center;display:inline-block;transform: skew(-0.03deg);}
+
+#dustPlaceData {position:relative;padding:15px 0;}
+#dustPlaceData > div {display:flex;justify-content: center;align-items: center;}
+#dustMeasure {text-align: left;color:#999;}
+#dustMeasureCate {font-weight: 600;font-size:9px;}
+#dustMeasureData {color:#ff0000;letter-spacing: -2.7px;font-weight: 900;font-family: 'Rubik';display:inline-block;font-size:30px;}
+#dustMeasureUnit {font-weight: 600;display:inline-block;font-size:9px;}
+#dustMeasurePlace {color:#fff;position:relative;max-width:120px;padding-right:20px;}
+#dustMeasurePlace .slick-next {display:none !important;}
+#mDustStatus {text-align: center;margin-right:16px;margin-left:7px;}
+#mDustStatus > span {color:#ff0000;font-weight: 900;border-radius: 28px;border:1px solid #ff0000;padding: 6px 15px 6px 16px;font-size:14px;display:inline-block;transform: skew(-0.03deg);}
+#measurePlaceSlider {text-align: left;}
+.measurePlaceItems {outline:none;}
+.measureName {font-weight: 600;transform: skew(-0.03deg);letter-spacing: -0.45px;font-size:11px;}
+.measurePlaceName {font-weight: 600;transform: skew(-0.3deg);letter-spacing: -2.25px;margin-top:7px;font-size: 15px;}
+#dustAlertArr {width:30px;height:30px;border-radius: 50%;border:1px solid #dadada;display:block;background-image: url('/img/v2/common/icon-left.png');background-repeat: no-repeat;background-position-y: center;background-position-x:calc(50% + 1px);background-size:8px;position:absolute;right:0;z-index:1;bottom:-5px;zoom:0.8;}
+
+#dustStates {float:left;color:#e1e1e1;display:none;}
+#dustStateData {color:#ff0000;transform: skew(-0.03deg);font-weight: 900;}
+#dustStateMsg {line-height: 1.75;font-weight: 400;}
+
+@media(min-width:1280px) {
+  #dashBoards {}
+  #dustAlert {padding:35px 34px 40px 34px;width:395px;float:left;}
+  #dustAlert > div {}
+  #dustCaption {width:84px; height:66px;background-size:auto;float:left;}
+  #dustAlertMsgs {margin-left:22px;margin-top:10px;float:left;position: static;zoom:1;}
+  #dustAlertNotice {font-size: 24px;margin-bottom:12px;text-align:left;display:block;margin:0;}
+  #dustAlertDate {font-size: 16px;text-align:left;display:block;}
+  
+  #dustPlaceData {float:left;padding:17px 38px 20px 50px;width:460px;}
+  #dustPlaceData > div {display:block;}
+  #dustMeasure {float:left;text-align: center;}
+  #dustMeasureCate {font-size:18px;}
+  #dustMeasureData {font-size:60px;margin:6px 0 0 0;display:block;}
+  #dustMeasureUnit {font-size:18px;display:block;}
+  #dustMeasurePlace {float:right;margin-left:26px;margin-top:20px;padding-right:55px;max-width:initial;}
+  #mDustStatus {display:none;}
+  #measurePlaceSlider {width:190px;}
+  .measurePlaceItems {}
+  .measureName {font-size:18px;}
+  .measurePlaceName {font-size:30px;margin-top:13px;}
+  #dustAlertArr {width:38px; height:38px;border-width:2px;zoom:1;}
+
+  #dustStates {padding-top:25px;width:calc(100% - (460px + 395px));display:block;}
+  #dustStateData {font-size:20px;margin-bottom:18px;}
+  #dustStateMsg {font-size:16px;}
+}
+/* /대시보드 */
+/* /main */
 
 /* 우리동네 미세먼지 농도 */
 #adUlfptcSearch .dustBusinessStatusItems > a {text-align: center;transition:all 0.3s ease-in-out;}
