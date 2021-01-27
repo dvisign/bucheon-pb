@@ -377,6 +377,20 @@ window.onload = function() {
     var _id = _modals.attr('id');
     modalOpenner($("#"+_id))
   });
+  // 푸터 링크
+  $('.m_footerLink > a').on('click', function() {
+    var _this = $(this);
+    var _list = _this.next();
+    if (!_list.hasClass('active')) {
+      _this.find('.foldBtn').addClass('on');
+      _list.addClass('active');
+      _list.stop().slideDown();
+    } else {
+      _this.find('.foldBtn').removeClass('on');
+      _list.removeClass('active');
+      _list.stop().slideUp();
+    }
+  });
   // jquery ui datepicker
   $('.dateForm').each(function(i) {
     var $this = $(this);
@@ -398,7 +412,7 @@ window.onload = function() {
       monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
     });
   });
-  var test = new fadeInOutEvent({
+  new fadeInOutEvent({
     layer : "#siteMaps",
     openBtn : ".sideBtn",
     closeBtn : ".siteMapClose",
@@ -480,6 +494,7 @@ window.onload = function() {
             $('.siteMapNavItems').removeClass('active');
             _parents.addClass('active');
             $('.siteMapCateSections').stop().fadeOut(300,function() {
+              $('#siteMapArea').scrollTop(0)
               setTimeout(function() {
                 _section.stop().fadeIn();
               }, 300)

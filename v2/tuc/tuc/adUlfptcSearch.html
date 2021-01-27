@@ -431,6 +431,10 @@
                   </li>
                 </ul>
               </div>
+              <div id="mSideNavBtns" class="clear">
+                <a href="javascript:void(0)" class="logInOutBtn logIn"></a>
+                <a href="javascript:void(0)" class="sideBtn"></a>
+              </div>
             </nav>
           </div>
         </div>
@@ -447,7 +451,7 @@
           <div id="siteMapTitle">
             <div class="container">
               <h2>사이트맵</h2>
-              <a href="javascript:void(0)" id="siteMapClose"><span class="soundOnly">닫기</span></a>
+              <a href="javascript:void(0)" class="siteMapClose"><span class="soundOnly">닫기</span></a>
             </div>
           </div>
           <div id="siteMapNav">
@@ -659,6 +663,7 @@
               </div>
             </div>
           </div>
+          <a href="javascript:void(0)" class="siteMapClose"><span class="soundOnly">닫기</span></a>
         </div>
       </div>
       <!-- /사이트맵 -->
@@ -751,10 +756,10 @@
                 </div>
                 <ul id="areaAverageStatusLists" class="clear">
                   <li class="areaAverageStatusItems">
-                    <a href="javascript:void(0);">초미세먼지 PM-2.5</a>
+                    <a href="javascript:void(0);">초미세먼지 <span>PM-2.5</span></a>
                   </li>
                   <li class="areaAverageStatusItems">
-                    <a href="javascript:void(0);">미세먼지 PM-10</a>
+                    <a href="javascript:void(0);">미세먼지 <span>PM-10</span></a>
                   </li>
                   <li class="areaAverageStatusItems active">
                     <a href="javascript:void(0);">오존 O₃</a>
@@ -823,7 +828,30 @@
                 <img src="/img/cs/layout/logo_footer.jpg" alt="판타지아 푸터 부천 로고">
               </a>
               <div class="m_footerLink">
-                바로가기
+                <a href="javascript:void(0);">바로가기<span class="foldBtn"></span></a>
+                <ul class="mLinkList">
+                  <li class="mLinkItems">
+                    <a href="#">부천시청</a>
+                  </li>
+                  <li class="mLinkItems">
+                    <a href="#">경기도 보건환경연구원</a>
+                  </li>
+                  <li class="mLinkItems">
+                    <a href="#">경기도 대기환경</a>
+                  </li>
+                  <li class="mLinkItems">
+                    <a href="#">환경부</a>
+                  </li>
+                  <li class="mLinkItems">
+                    <a href="#">에어코리아</a>
+                  </li>
+                  <li class="mLinkItems">
+                    <a href="#">날씨누리</a>
+                  </li>
+                  <li class="mLinkItems">
+                    <a href="#">질병관리청</a>
+                  </li>
+                </ul>
               </div>
             </div>
             <div class="footer_info">
@@ -835,324 +863,327 @@
         </div>
       </div>
     </footer>
-    <div class="modals" id="modal1">
-      <div class="modalContents">
-        <div class="modalSkins modalSkin1">
-          <div class="modalHeader textCenter">
-            <div class="modalTitle">
-              <h4><span>오정동</span> 대기질 정보</h4>
-              <a href="javascript:void(0);" class="closeBtn typeX">
-                <span></span>
-              </a>
+  </div>
+  <div class="modals" id="modal1">
+    <div class="modalContents">
+      <div class="modalSkins modalSkin1">
+        <div class="modalHeader textCenter">
+          <div class="modalTitle">
+            <h4><span>오정동</span> 대기질 정보</h4>
+            <a href="javascript:void(0);" class="closeBtn typeX">
+              <span></span>
+            </a>
+          </div>
+        </div>
+        <div class="modalBody">
+          <div class="modalScrolls">
+            <div class="modalSection">
+              <h5 class="modalSectionTitle textCenter"><span>2020년 11월 12일 13시</span> (<span>오정동</span>측정소)</h5>
+              <div class="modalDataTables">
+                <table>
+                  <colgroup>
+                    <col width="120px">
+                    <col width="80px">
+                    <col width="90px">
+                    <col width="70px">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th class="textLeft modalTableCategory">
+                        <div>
+                          <p>초미세먼지</p>
+                        </div>
+                      </th>
+                      <td class="textCenter">
+                        <div>
+                          <span>PM-2.5</span>
+                        </div>
+                      </td>
+                      <td class="textCenter">
+                        <div>
+                          <span class="code-blue">50ug/m3</span>
+                        </div>
+                      </td>
+                      <td class="textCenter">
+                        <div>
+                          <span class="code-blue">좋음</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="textLeft modalTableCategory">
+                        <div>
+                          <p>미세먼지</p>
+                        </div>
+                      </th>
+                      <td class="textCenter">
+                        <div>
+                          <span>PM-10</span>
+                        </div>
+                      </td>
+                      <td class="textCenter">
+                        <div>
+                          <span class="code-green">50ug/m3</span>
+                        </div>
+                      </td>
+                      <td class="textCenter">
+                        <div>
+                          <span class="code-green">보통</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="textLeft modalTableCategory">
+                        <div>
+                          <p>오존</p>
+                        </div>
+                      </th>
+                      <td class="textCenter">
+                        <div>
+                          <span>PM-2.5</span>
+                        </div>
+                      </td>
+                      <td class="textCenter">
+                        <div>
+                          <span class="code-warning">50ug/m3</span>
+                        </div>
+                      </td>
+                      <td class="textCenter">
+                        <div>
+                          <span class="code-warning">나쁨</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="textLeft modalTableCategory">
+                        <div>
+                          <p>이산화탄소</p>
+                        </div>
+                      </th>
+                      <td class="textCenter">
+                        <div>
+                          <span>PM-2.5</span>
+                        </div>
+                      </td>
+                      <td class="textCenter">
+                        <div>
+                          <span class="code-red">50ug/m3</span>
+                        </div>
+                      </td>
+                      <td class="textCenter">
+                        <div>
+                          <span class="code-red">매우나쁨</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="textLeft modalTableCategory">
+                        <div>
+                          <p>일산화탄소</p>
+                        </div>
+                      </th>
+                      <td class="textCenter">
+                        <div>
+                          <span>PM-2.5</span>
+                        </div>
+                      </td>
+                      <td class="textCenter">
+                        <div>
+                          <span class="code-green">50ug/m3</span>
+                        </div>
+                      </td>
+                      <td class="textCenter">
+                        <div>
+                          <span class="code-green">보통</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="textLeft modalTableCategory">
+                        <div>
+                          <p>아황산가스</p>
+                        </div>
+                      </th>
+                      <td class="textCenter">
+                        <div>
+                          <span>PM-2.5</span>
+                        </div>
+                      </td>
+                      <td class="textCenter">
+                        <div>
+                          <span class="code-blue">50ug/m3</span>
+                        </div>
+                      </td>
+                      <td class="textCenter">
+                        <div>
+                          <span class="code-blue">좋음</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-          <div class="modalBody">
-            <div class="modalScrolls">
-              <div class="modalSection">
-                <h5 class="modalSectionTitle textCenter"><span>2020년 11월 12일 13시</span> (<span>오정동</span>측정소)</h5>
-                <div class="modalDataTables">
-                  <table>
-                    <colgroup>
-                      <col width="120px">
-                      <col width="80px">
-                      <col width="90px">
-                      <col width="70px">
-                    </colgroup>
-                    <tbody>
-                      <tr>
-                        <th class="textLeft modalTableCategory">
-                          <div>
-                            <p>초미세먼지</p>
-                          </div>
-                        </th>
-                        <td class="textCenter">
-                          <div>
+        </div>
+      </div>
+    </div>
+    <div class="modalBg"></div>
+  </div>
+  <div class="modals" id="modal2">
+    <div class="modalContents">
+      <div class="modalSkins modalSkin2">
+        <div class="modalHeader">
+          <div class="modalTitle">
+            <h4><span>부천시 오정동</span>측정소 (국가 도시 대기 측정소)</h4>
+            <a href="javascript:void(0);" class="closeBtn typeX">
+              <span></span>
+            </a>
+          </div>
+        </div>
+        <div class="modalBody">
+          <div class="modalScrolls">
+            <div class="modalSection">
+              <div class="modalNationDevice">
+                <div class="modalNationDeviceState clear">
+                  <div class="modalNationDeviceData">
+                    <h5 class="modalSectionTitle textCenter"><span>부천시 성오로 172</span>(<span>오정동 어울마당 아트홀</span>)</h5>
+                    <div class="devDataDetail">
+                      <h6>세부정보</h6>
+                      <div class="devDetailDataList clear">
+                        <div class="devDetailDataItems">
+                          <div class="devDetailDataCategory">
                             <span>PM-2.5</span>
                           </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-blue">50ug/m3</span>
+                          <div class="devDetailDataValue code-red">
+                            <span>19ug/m3</span>
+                            <span>매우나쁨</span>
                           </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-blue">좋음</span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="textLeft modalTableCategory">
-                          <div>
-                            <p>미세먼지</p>
-                          </div>
-                        </th>
-                        <td class="textCenter">
-                          <div>
+                        </div>
+                        <div class="devDetailDataItems">
+                          <div class="devDetailDataCategory">
                             <span>PM-10</span>
                           </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-green">50ug/m3</span>
+                          <div class="devDetailDataValue code-blue">
+                            <span>19ug/m3</span>
+                            <span>좋음</span>
                           </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-green">보통</span>
+                        </div>
+                        <div class="devDetailDataItems">
+                          <div class="devDetailDataCategory">
+                            <span>오존</span>
                           </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="textLeft modalTableCategory">
-                          <div>
-                            <p>오존</p>
+                          <div class="devDetailDataValue code-green">
+                            <span>19ug/m3</span>
+                            <span>보통</span>
                           </div>
-                        </th>
-                        <td class="textCenter">
-                          <div>
-                            <span>PM-2.5</span>
+                        </div>
+                        <div class="devDetailDataItems">
+                          <div class="devDetailDataCategory">
+                            <span>이산화질소</span>
                           </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-warning">50ug/m3</span>
+                          <div class="devDetailDataValue code-warning">
+                            <span>19ug/m3</span>
+                            <span>나쁨</span>
                           </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-warning">나쁨</span>
+                        </div>
+                        <div class="devDetailDataItems">
+                          <div class="devDetailDataCategory">
+                            <span>일산화탄소</span>
                           </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="textLeft modalTableCategory">
-                          <div>
-                            <p>이산화탄소</p>
+                          <div class="devDetailDataValue code-red">
+                            <span>19ug/m3</span>
+                            <span>매우나쁨</span>
                           </div>
-                        </th>
-                        <td class="textCenter">
-                          <div>
-                            <span>PM-2.5</span>
+                        </div>
+                        <div class="devDetailDataItems">
+                          <div class="devDetailDataCategory">
+                            <span>아황산가스</span>
                           </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-red">50ug/m3</span>
-                          </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-red">매우나쁨</span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="textLeft modalTableCategory">
-                          <div>
-                            <p>일산화탄소</p>
-                          </div>
-                        </th>
-                        <td class="textCenter">
-                          <div>
-                            <span>PM-2.5</span>
-                          </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-green">50ug/m3</span>
-                          </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-green">보통</span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="textLeft modalTableCategory">
-                          <div>
-                            <p>아황산가스</p>
-                          </div>
-                        </th>
-                        <td class="textCenter">
-                          <div>
-                            <span>PM-2.5</span>
-                          </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-blue">50ug/m3</span>
-                          </div>
-                        </td>
-                        <td class="textCenter">
-                          <div>
-                            <span class="code-blue">좋음</span>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modalBg"></div>
-    </div>
-    <div class="modals" id="modal2">
-      <div class="modalContents">
-        <div class="modalSkins modalSkin2">
-          <div class="modalHeader">
-            <div class="modalTitle">
-              <h4><span>부천시 오정동</span>측정소 (국가 도시 대기 측정소)</h4>
-              <a href="javascript:void(0);" class="closeBtn typeX">
-                <span></span>
-              </a>
-            </div>
-          </div>
-          <div class="modalBody">
-            <div class="modalScrolls">
-              <div class="modalSection">
-                <div class="modalNationDevice">
-                  <div class="modalNationDeviceState clear">
-                    <div class="modalNationDeviceData">
-                      <h5 class="modalSectionTitle textCenter"><span>부천시 성오로 172</span>(<span>오정동 어울마당 아트홀</span>)</h5>
-                      <div class="devDataDetail">
-                        <h6>세부정보</h6>
-                        <div class="devDetailDataList clear">
-                          <div class="devDetailDataItems">
-                            <div class="devDetailDataCategory">
-                              <span>PM-2.5</span>
-                            </div>
-                            <div class="devDetailDataValue code-red">
-                              <span>19ug/m3</span>
-                              <span>매우나쁨</span>
-                            </div>
-                          </div>
-                          <div class="devDetailDataItems">
-                            <div class="devDetailDataCategory">
-                              <span>PM-10</span>
-                            </div>
-                            <div class="devDetailDataValue code-blue">
-                              <span>19ug/m3</span>
-                              <span>좋음</span>
-                            </div>
-                          </div>
-                          <div class="devDetailDataItems">
-                            <div class="devDetailDataCategory">
-                              <span>오존</span>
-                            </div>
-                            <div class="devDetailDataValue code-green">
-                              <span>19ug/m3</span>
-                              <span>보통</span>
-                            </div>
-                          </div>
-                          <div class="devDetailDataItems">
-                            <div class="devDetailDataCategory">
-                              <span>이산화질소</span>
-                            </div>
-                            <div class="devDetailDataValue code-warning">
-                              <span>19ug/m3</span>
-                              <span>나쁨</span>
-                            </div>
-                          </div>
-                          <div class="devDetailDataItems">
-                            <div class="devDetailDataCategory">
-                              <span>일산화탄소</span>
-                            </div>
-                            <div class="devDetailDataValue code-red">
-                              <span>19ug/m3</span>
-                              <span>매우나쁨</span>
-                            </div>
-                          </div>
-                          <div class="devDetailDataItems">
-                            <div class="devDetailDataCategory">
-                              <span>아황산가스</span>
-                            </div>
-                            <div class="devDetailDataValue code-red">
-                              <span>19ug/m3</span>
-                              <span>매우나쁨</span>
-                            </div>
+                          <div class="devDetailDataValue code-red">
+                            <span>19ug/m3</span>
+                            <span>매우나쁨</span>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="modalNationDeviceInfo code-blue">
-                      <div>
-                        <p class="textLeft devInfoCategory"><span>초미세먼지</span></p>
-                        <p class="textRight devInfoState"><span>좋음</span></p>
-                        <p class="textRight devInfoData"><span class="devInfoDataValue">96</span><span>ug/m3</span></p>
-                      </div>
+                  </div>
+                  <div class="modalNationDeviceInfo code-blue">
+                    <div>
+                      <!-- textLeft  -->
+                      <p class="devInfoCategory"><span>초미세먼지</span></p>
+                      <!-- textRight -->
+                      <p class="devInfoState"><span>좋음</span></p>
+                      <!-- textRight -->
+                      <p class="devInfoData"><span class="devInfoDataValue">96</span><span>ug/m3</span></p>
                     </div>
                   </div>
                 </div>
-                <div class="modalNationDeviceChart clear">
-                  <div class="deviceChart1">
-                    <h6 class="chartTitles">미세먼지(PM10)</h6>
-                    <div class="deviceChartArea" style="height:100px;border:10px solid pink;background-color: antiquewhite;">차트영역</div>
-                  </div>
-                  <div class="deviceChart2">
-                    <h6 class="chartTitles">미세먼지(PM2.5)</h6>
-                    <div class="deviceChartArea" style="height:100px;border:10px solid pink;background-color: antiquewhite;">차트영역</div>
-                  </div>
+              </div>
+              <div class="modalNationDeviceChart clear">
+                <div class="deviceChart1">
+                  <h6 class="chartTitles">미세먼지(PM10)</h6>
+                  <div class="deviceChartArea" style="height:100px;border:10px solid pink;background-color: antiquewhite;">차트영역</div>
+                </div>
+                <div class="deviceChart2">
+                  <h6 class="chartTitles">미세먼지(PM2.5)</h6>
+                  <div class="deviceChartArea" style="height:100px;border:10px solid pink;background-color: antiquewhite;">차트영역</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="modalBg"></div>
     </div>
-    <div class="modals" id="modal3">
-      <div class="modalContents">
-        <div class="modalSkins modalSkin2">
-          <div class="modalHeader">
-            <div class="modalTitle">
-              <h4>공업단지 미세먼지 해결 서비스 S01 (<span>석천로</span>)</h4>
-              <a href="javascript:void(0);" class="closeBtn typeX">
-                <span></span>
-              </a>
-            </div>
+    <div class="modalBg"></div>
+  </div>
+  <div class="modals" id="modal3">
+    <div class="modalContents">
+      <div class="modalSkins modalSkin2">
+        <div class="modalHeader">
+          <div class="modalTitle">
+            <h4>공업단지 미세먼지 해결 서비스 S01 (<span>석천로</span>)</h4>
+            <a href="javascript:void(0);" class="closeBtn typeX">
+              <span></span>
+            </a>
           </div>
-          <div class="modalBody">
-            <div class="modalScrolls">
-              <div class="modalSection">
-                <div class="modalNationDevice">
-                  <div class="modalCompareState clear">
-                    <div class="modalCompareData">
-                      <h5 class="modalSectionTitle textCenter"><span>부천시 성오로 172</span>(<span>오정동 어울마당 아트홀</span>)</h5>
-                      <div class="devDataDetail">
-                        <h6>PM 2.5 24시간 농도별 현황</h6>
-                        <div class="serviceDataChart" style="border:20px solid pink;background-color:antiquewhite;">
-                          차트
-                        </div>
+        </div>
+        <div class="modalBody">
+          <div class="modalScrolls">
+            <div class="modalSection">
+              <div class="modalNationDevice">
+                <div class="modalCompareState clear">
+                  <div class="modalCompareData">
+                    <h5 class="modalSectionTitle textCenter"><span>부천시 성오로 172</span>(<span>오정동 어울마당 아트홀</span>)</h5>
+                    <div class="devDataDetail">
+                      <h6>PM 2.5 24시간 농도별 현황</h6>
+                      <div class="serviceDataChart" style="border:20px solid pink;background-color:antiquewhite;">
+                        차트
                       </div>
                     </div>
-                    <div class="modalCompareInfo textCenter code-red clear">
-                      <div class="devState">
-                        <p class="devInfoCategory"><span>초미세먼지</span></p>
-                        <p class="devInfoState"><span>매우나쁨</span></p>
-                      </div>
-                      <div class="compareState">
-                        <p class="devInfoCategory"><span>측정소 비교</span></p>
-                        <p class="devInfoState"><span>높음</span></p>
-                        <p class="devPlace">중2동측정소</p>
-                      </div>
+                  </div>
+                  <div class="modalCompareInfo textCenter code-red clear">
+                    <div class="devState">
+                      <p class="devInfoCategory"><span>초미세먼지</span></p>
+                      <p class="devInfoState"><span>매우나쁨</span></p>
+                    </div>
+                    <div class="compareState">
+                      <p class="devInfoCategory"><span>측정소 비교</span></p>
+                      <p class="devInfoState"><span>높음</span></p>
+                      <p class="devPlace">중2동측정소</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="modalBtnWrapper clear">
-            <a href="javascript:void(0);" class="w-100 modalBtns">정보서비스 안내</a>
-          </div>
+        </div>
+        <div class="modalBtnWrapper clear">
+          <a href="javascript:void(0);" class="w-100 modalBtns">정보서비스 안내</a>
         </div>
       </div>
-      <div class="modalBg"></div>
     </div>
+    <div class="modalBg"></div>
   </div>
 </body>
 
