@@ -641,7 +641,7 @@
                 <div class="boardWrites">
                   <form action="">
                     <div class="boardWriteTables">
-                      <div class="boardWriteLines">
+                      <div class="boardWriteLines harfLines">
                         <div class="boardRow">
                           <div class="boardRow w-50">
                             <div class="boardWriteCategory">
@@ -689,7 +689,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="boardWriteLines">
+                      <div class="boardWriteLines harfLines">
                         <div class="boardRow">
                           <div class="boardRow w-50">
                             <div class="boardWriteCategory">
@@ -699,7 +699,7 @@
                             </div>
                             <div class="boardWriteValue">
                               <div class="displayFlex h-100 alignItemsCenter">
-                                <input name="schulNm" type="text" class="textForm" readonly>
+                                <input name="schulNm" type="text" class="textForm" placeholder="학교명" readonly>
                                 <a href="javascript:void(0);" id="searchSchool" class="btn labeling" onclick='popupOpen("searchSchoolPop","school",1)'>조회</a>
                               </div>
                             </div>
@@ -712,7 +712,7 @@
                             </div>
                             <div class="boardWriteValue">
                               <div class="displayFlex h-100 alignItemsCenter">
-                                <input type="text" class="textForm">
+                                <input type="text" class="textForm" placeholder="학교 전화번호">
                               </div>
                             </div>
                           </div>
@@ -720,7 +720,7 @@
                       </div>
                       <div class="boardWriteLines">
                         <div class="boardRow">
-                          <div class="boardRow w-50">
+                          <div class="boardRow w-md-50">
                             <div class="boardWriteCategory">
                               <div class="displayFlex h-100 alignItemsCenter">
                                 <label class="writeCateTxt wrNecessary">학년반</label>
@@ -728,12 +728,12 @@
                             </div>
                             <div class="boardWriteValue">
                               <div class="displayFlex h-100 alignItemsCenter">
-                                <input name="grade" type="text" class="textForm">학년
-                                <input name="part" type="text" class="textForm">반
+                                <input name="grade" type="text" class="textForm" placeholder="학년">학년
+                                <input name="part" type="text" class="textForm" placeholder="반">반
                               </div>
                             </div>
                           </div>
-                          <div class="boardRow w-50">
+                          <div class="boardRow w-md-50">
                             <div class="boardWriteCategory">
                               <div class="displayFlex h-100 alignItemsCenter">
                                 <label class="writeCateTxt wrNecessary">인원</label>
@@ -741,13 +741,13 @@
                             </div>
                             <div class="boardWriteValue">
                               <div class="displayFlex h-100 alignItemsCenter">
-                                <input type="text" class="textForm">
+                                <input type="text" class="textForm" placeholder="인원">
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="boardWriteLines">
+                      <div class="boardWriteLines harfLines">
                         <div class="boardRow">
                           <div class="boardRow w-50">
                             <div class="boardWriteCategory">
@@ -759,7 +759,7 @@
                               <div class="displayFlex h-100 alignItemsCenter">
                                 <div>
                                   <div>
-                                    <input name="grade" type="text" class="dateForm">
+                                    <input type="text" class="dateForm" placeholder="교육일자">
                                     <select class="selectForm" name="searchTimeFlag1">
                                       <option>교시 선택</option>
                                       <option>1교시 ~ 2교시</option>
@@ -784,14 +784,14 @@
                             </div>
                             <div class="boardWriteValue">
                               <div class="displayFlex h-100 alignItemsCenter">
-                                <input type="text" class="textForm">
+                                <input type="text" class="textForm" placeholder="교육강사">
                                 <a href="javascript:void(0);" id="searchInstrctr1" class="btn labeling" onclick='popupOpen("searchEdcInstr","chasu1",1)'>조회</a>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="boardWriteLines">
+                      <div class="boardWriteLines harfLines">
                         <div class="boardRow">
                           <div class="boardRow w-50">
                             <div class="boardWriteCategory">
@@ -801,17 +801,21 @@
                             </div>
                             <div class="boardWriteValue">
                               <div class="displayFlex h-100 alignItemsCenter">
-                                <input name="grade" type="text" class="dateForm">
-                                <select class="selectForm" name="searchTimeFlag2">
-                                  <option>교시 선택</option>
-                                  <option>1교시 ~ 2교시</option>
-                                  <option>2교시 ~ 3교시</option>
-                                  <option>3교시 ~ 4교시</option>
-                                  <option>4교시 ~ 5교시</option>
-                                  <option>5교시 ~ 6교시</option>
-                                  <option>6교시 ~ 7교시</option>
-                                  <option>7교시 ~ 8교시</option>
-                                </select>
+                                <div>
+                                  <div>
+                                    <input type="text" class="dateForm" placeholder="교육일자">
+                                    <select class="selectForm" name="searchTimeFlag2">
+                                      <option>교시 선택</option>
+                                      <option>1교시 ~ 2교시</option>
+                                      <option>2교시 ~ 3교시</option>
+                                      <option>3교시 ~ 4교시</option>
+                                      <option>4교시 ~ 5교시</option>
+                                      <option>5교시 ~ 6교시</option>
+                                      <option>6교시 ~ 7교시</option>
+                                      <option>7교시 ~ 8교시</option>
+                                    </select>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -823,14 +827,14 @@
                             </div>
                             <div class="boardWriteValue">
                               <div class="displayFlex h-100 alignItemsCenter">
-                                <input type="text" class="textForm">
+                                <input type="text" class="textForm" placeholder="교육강사">
                                 <a href="javascript:void(0);" id="searchInstrctr2" class="btn labeling" onclick='popupOpen("searchEdcInstr","chasu2",1)'>조회</a>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="boardWriteLines">
+                      <div class="boardWriteLines harfLines">
                         <div class="boardRow">
                           <div class="boardRow w-50">
                             <div class="boardWriteCategory">
@@ -840,7 +844,7 @@
                             </div>
                             <div class="boardWriteValue">
                               <div class="displayFlex h-100 alignItemsCenter">
-                                <input type="text" class="textForm">
+                                <input type="text" class="textForm" placeholder="환경담당교사 이름">
                               </div>
                             </div>
                           </div>
@@ -852,7 +856,7 @@
                             </div>
                             <div class="boardWriteValue">
                               <div class="displayFlex h-100 alignItemsCenter">
-                                <input type="text" class="textForm" placeholder="000-0000-0000">
+                                <input type="text" class="textForm" placeholder="환경담당교사 연락처">
                               </div>
                             </div>
                           </div>

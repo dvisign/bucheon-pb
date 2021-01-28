@@ -8,11 +8,11 @@
 #dustBusiness {border-bottom:1px solid #ccc;text-align: center;}
 #dustBusinessStatus {background-color:#fff;width: 100%;text-align: left;}
 .mapInfoHeader {position:relative;padding:11px 0;display:inline-block;}
-.mapInfoTitle {font-size: 13px;color: #111111;font-weight: 600;transform:skew(-0.03deg);}
+.mapInfoTitle {font-size: 13px;color: #111111;font-weight: 600;transform:skew(-0.06deg);}
 #dustBusinessStatus .foldBtnWrapper {position: absolute;left:calc(100% + 8px);top:9.5px;}
 .dustBusinessStatusItems {float:left;width:calc(100% / 3);position:relative;border-bottom:1px solid #ccc;transition: all 0.3s ease-in-out;background-color:#fff;}
 .dustBusinessStatusItems:not(:last-child) {border-right:1px solid #ccc;}
-.dustBusinessStatusItems > a {display:block;width:100%;padding:12px 10px 12px 10px;letter-spacing: -0.32px;font-size:13px;font-weight: 600;transform: skew(-0.03deg);position: relative;}
+.dustBusinessStatusItems > a {display:block;width:100%;padding:12px 10px 12px 10px;letter-spacing: -0.32px;font-size:13px;font-weight: 600;transform: skew(-0.06deg);position: relative;}
 .dustBusinessStatusItems.active > a::after {background-image:url('/img/v2/common/icon-up.png');}
 .dustBusinessStatusItems > a::after {content:'';display:block;width:calc(15px / 2);height:calc(7px / 2);background-image:url('/img/v2/common/icon-down.png');background-position: center;background-repeat: no-repeat;background-size: cover;position:absolute;right:10px;top:50%;transform: translateY(-50%);transition: all 0.3s ease-in-out;}
 .dustBusinessStatusItems.active, 
@@ -22,18 +22,18 @@
 .dustBusinessNunber {display:none;}
 .subDustBusinessStatusList {position:absolute;width:100%;padding:0 10px 0 16px;display: none;zoom:0.8}
 .subDustBusinessStatusItems {margin-bottom:8px;}
-.subDustBusinessStatusItems > a {font-weight: 600;display: inline-block;transform: skew(-0.03deg);font-size:13px;    transition: all 0.3s ease-in-out;}
+.subDustBusinessStatusItems > a {font-weight: 600;display: inline-block;transform: skew(-0.06deg);font-size:13px;    transition: all 0.3s ease-in-out;}
 .areaAverageStatusItems.active > a, 
 .areaAverageStatusItems:hover > a {background-color: #444; border: 1px solid #444; color: #fff;}
 #dustStatus {display:flex;flex-direction: column-reverse;width:calc(100% - ((9px / 2) * 2));margin:0 auto;}
 #areaAverageStatusLists {margin-top:6px;}
 #areaAverageStatusLists > li {float:left;width:calc((100% - (6px * 2)) / 3);text-align: center;}
 #areaAverageStatusLists > li:not(:last-child) {margin-right:6px;}
-.areaAverageStatusItems > a {width:100%;display:block;background-color:#fff;font-size:13px;font-weight: 600;transform: skew(-0.03deg);padding:9px 0;border:1px solid #ccc;}
+.areaAverageStatusItems > a {width:100%;display:block;background-color:#fff;font-size:13px;font-weight: 600;transform: skew(-0.06deg);padding:9px 0;border:1px solid #ccc;}
 .areaAverageStatusItems > a > span {display:none;}
 #areaAverage {margin-top:13px;width:calc((100% - (6px * 2)) / 3);background-color:rgba(255, 255, 255, 0.8);}
 #areaAverage #areaAverageHeader {display:block;padding:8px 11px;}
-#areaAverageDate {margin-top:8px;font-size:11px;font-weight: 600;transform: skew(-0.03deg);}
+#areaAverageDate {margin-top:8px;font-size:11px;font-weight: 600;transform: skew(-0.06deg);}
 #areaAverage .foldBtnWrapper {display:none;}
 #areaAverageDatas {padding:10px;color:#fff;}
 #areaAverageDatas.code-blue {background-color:#40b0ff;}
@@ -57,7 +57,7 @@
 #zoomController {float:right;background-color:#eee;overflow: hidden;}
 #zoomController > button,
 #viewController > button {display:block;float:left;}
-#viewController > button {height:27px;background-color:#fff;border-radius: 4px;letter-spacing: -0.32px;font-weight: 600;transform: skew(-0.03deg);font-size:13px;}
+#viewController > button {height:27px;background-color:#fff;border-radius: 4px;letter-spacing: -0.32px;font-weight: 600;transform: skew(-0.06deg);font-size:13px;}
 #viewController > button#defualtView {width:35%;padding:0 4px;}
 #viewController > button#skyView {width:65%;padding:0 4px;}
 #viewController > button.active {background-color:#606060;color:#fff;}
@@ -91,14 +91,14 @@
 
 .circleCharts {text-align: center;}
 .circleChartItems {width:calc(100% / 3);float:left;position:relative;padding-top:40px;}
-.circleChartTitles {position:absolute;transform:translateX(-50%) skew(-0.03deg);left:50%;top:14px;color:#111;white-space: nowrap;}
+.circleChartTitles {position:absolute;transform:translateX(-50%) skew(-0.06deg);left:50%;top:14px;color:#111;white-space: nowrap;overflow: hidden;;width:100%;}
 .chartDw {position:relative;}
 #moveWatering,
 #fixWatering,
 #fanChart,
 #airClean {width:66px;height:66px;}
 .chartDw div {margin:0 auto;}
-.chartGauge::after {position:absolute;left:50%;top:50%;z-index:1;transform: translate(-50%, -50%) skew(-0.03deg);font-weight: 900;word-break: break-all;max-width:30px;}
+.chartGauge::after {position:absolute;left:50%;top:50%;z-index:1;transform: translate(-50%, -50%) skew(-0.06deg);font-weight: 900;word-break: break-all;max-width:30px;}
 .chartGauge.code-blue::after {content:"좋음";color:#40b0ff;}
 .chartGauge.code-green::after {content:"보통";color:#6ed564;}
 .chartGauge.code-warning::after {content:"나쁨";color:#ff9600;}
@@ -127,12 +127,12 @@
 .cdtGreen {border-top:2px solid #3ec730; color:#3ec730;}
 .cdtWarning {border-top:2px solid #f59a53; color:#f59a53;}
 .cdtRed {border-top:2px solid #f55755; color:#f55755;}
-.cdtCategory > li > span {display: block;font-size:12px;font-weight: 600;transform: skew(-0.03deg);letter-spacing: -1.08px;margin-top:9px;text-align: center;}
+.cdtCategory > li > span {display: block;font-size:12px;font-weight: 600;transform: skew(-0.06deg);letter-spacing: -1.08px;margin-top:9px;text-align: center;}
 .cdtDisplay.slick-dotted.slick-slider {padding-bottom:60px;margin-bottom:0;}
 .cdtStatusLists {}
 .cdtStatus:focus {outline:none;}
 .cdtStatusItems {float:left;width:calc(100% / 4);text-align: center;}
-.cdtStatusItems .cdtTitles {color:#333;font-size:14px;letter-spacing: -0.9px;margin-bottom:15px;transform: skew(-0.03deg);}
+.cdtStatusItems .cdtTitles {color:#333;font-size:14px;letter-spacing: -0.9px;margin-bottom:15px;transform: skew(-0.06deg);}
 .cdtStatusItems.dustStatus {}
 .cdtStatusItems.ultrafineDustStatus {}
 .cdtStatusItems.ozoneStatus {}
@@ -150,7 +150,7 @@
 .cdtStatusItems.codeWarning .statusTxtColor {color:#f59a53;} 
 .cdtStatusItems.codeRed .statusTxtColor {color:#f55755;} 
 .cdtStatusItems.codeDefault .statusTxtColor {color:#999;} 
-.cdtStatusItems .statusKeys {font-size:14px;font-weight: 600;letter-spacing: -0.8px;margin-bottom:9px;transform: skew(-0.03deg);}
+.cdtStatusItems .statusKeys {font-size:14px;font-weight: 600;letter-spacing: -0.8px;margin-bottom:9px;transform: skew(-0.06deg);}
 .cdtStatusItems .statusValues {font-size:12px;letter-spacing: -0.32px;font-weight: 600;color:#666;}
 .cdtStatusItems .statusValues .statusTxtColor {font-family: 'Rubik';font-size:14px;letter-spacing: -0.99px;font-weight: 600;}
 
@@ -170,7 +170,7 @@
 .behaviorsInfoTables td {border:1px solid #ddd;padding:10px 15px;}
 .behaviorsInfoTables th,
 .behaviorsInfoTables td {height:40px;}
-.behaviorsInfoTables th > div > p {color:#111;font-size:12px;font-weight: 600;letter-spacing: -0.72px;transform: skew(-0.03deg);}
+.behaviorsInfoTables th > div > p {color:#111;font-size:12px;font-weight: 600;letter-spacing: -0.72px;transform: skew(-0.06deg);}
 .behaviorsInfoTables th.behaviorsInfoCategory {background-color:#edf3ff;}
 .behaviorsInfoTables th.firstCategory, 
 .behaviorsInfoTables th.secondCategory {width:64px;}
@@ -192,7 +192,7 @@
   #zoomController {float:right;width:calc((36px * 2) + 1px);background-color:#eee;overflow: hidden;}
   #zoomController > button,
   #viewController > button {display:block;float:left;}
-  #viewController > button {height:34px;background-color:#fff;border-radius: 4px;letter-spacing: -0.32px;font-weight: 600;transform: skew(-0.03deg);}
+  #viewController > button {height:34px;background-color:#fff;border-radius: 4px;letter-spacing: -0.32px;font-weight: 600;transform: skew(-0.06deg);}
   #viewController > button#defualtView {width:35%;padding:0;}
   #viewController > button#skyView {width:65%;padding:0;}
   #viewController > button.active {background-color:#606060;color:#fff;}
@@ -210,7 +210,7 @@
   .mapInfoHeader {display:block;padding:10px 12px;}
   .mapInfoTitle {margin:3px auto;font-size: 18px;color: #111;letter-spacing: -0.36px}
   #areaAverage {width:100%;background-color:transparent;margin-top:10px;padding:0;background-color:rgba(255, 255, 255, 0.8);float:none;}
-  #areaAverageDate {margin-top:15px;font-size:15px;letter-spacing: -0.3px;font-weight: 600;color:#111;transform: skew(-0.03deg);}
+  #areaAverageDate {margin-top:15px;font-size:15px;letter-spacing: -0.3px;font-weight: 600;color:#111;transform: skew(-0.06deg);}
   #dustStatus .foldBtnWrapper {position: absolute;right:10px;top:10px;display:block;}
   #areaAverageDatas {padding:20px 13px;}
   #areaAverageDatas #areaAverageStatus::after {float:right;font-size:20px;letter-spacing: -1px;font-weight: 600;}
@@ -236,7 +236,7 @@
   .dustBusinessStatusItems {background-color: #fff;border:1px solid #dadada;transition: all 0.3s ease-in-out;float:none;width:100%;}
   .dustBusinessStatusItems .subDustBusinessStatusList {background-color: none;box-shadow: none;}
   .dustBusinessStatusItems:not(:last-child) {margin-bottom:5px;}
-  .dustBusinessStatusItems > a {display:block;width:100%;padding:17px 16px 17px 26px;letter-spacing: -0.32px;font-size:16px;font-weight: 600;transform: skew(-0.03deg);position: relative;}
+  .dustBusinessStatusItems > a {display:block;width:100%;padding:17px 16px 17px 26px;letter-spacing: -0.32px;font-size:16px;font-weight: 600;transform: skew(-0.06deg);position: relative;}
   .dustBusinessStatusItems > a::before {content:'';display:block;width:20px;height:20px;position: absolute;background-color:#cde2ff;border-radius: 50%;z-index: -1;top:50%;transform: translateY(-50%);left:15px;}
   .dustBusinessStatusItems.active > a::before {background-color:#c6d1e1;}
   .dustBusinessStatusItems > a::after {width:12px;height:7px;background-image:url('/img/v2/common/icon-down.png');background-position: center;background-repeat: no-repeat;background-size: cover;position:absolute;right:16px;top:50%;transform: translateY(-50%);transition: all 0.3s ease-in-out;}
@@ -247,7 +247,7 @@
   .dustBusinessStatusItems.active, .dustBusinessStatusItems:hover, .dustBusinessStatusItems.active .subDustBusinessStatusList {box-shadow: none;}
   .dustBusinessStatusItems.active .subDustBusinessStatusList {background-color:none;}
   .subDustBusinessStatusItems {margin-bottom:10px;}
-  .subDustBusinessStatusItems > a {font-weight: 600;display: inline-block;transform: skew(-0.03deg);font-size:14px;}
+  .subDustBusinessStatusItems > a {font-weight: 600;display: inline-block;transform: skew(-0.06deg);font-size:14px;}
   /* /저감사업 상태 */
   /* 차트 */
   #rightData.dataLayer {position: absolute; z-index: 1; top: 5px; right: 50px;padding:0;margin:0;}
@@ -276,8 +276,9 @@
   .mapChartDataItems:not(:last-child) {margin-bottom:10px;}
   .circleCharts {padding:0 28px;}
   .circleChartItems {}
+  #dustChartSlider .circleChartTitles {font-size:11px;}
   .circleChartTitles {font-size:16px;letter-spacing: -0.32px;}
-  .circleChartTitles.active {background-color:#006dbb;color:#fff;border-radius: 15px;padding:8px 12px;top:4px;}
+  .circleChartTitles.active {background-color:#006dbb;color:#fff;border-radius: 15px;padding:8px 0;top:4px;}
   .chartDw {font-size:14px;}
   .chartGauge::after {max-width:40px;}
   /* /차트 */
@@ -298,7 +299,7 @@
   .cdtGreen {border-top:2px solid #3ec730; color:#3ec730;}
   .cdtWarning {border-top:2px solid #f59a53; color:#f59a53;}
   .cdtRed {border-top:2px solid #f55755; color:#f55755;}
-  .cdtCategory > li > span {display: block;font-size:12px;font-weight: 600;transform: skew(-0.03deg);letter-spacing: -1.08px;margin-top:9px;}
+  .cdtCategory > li > span {display: block;font-size:12px;font-weight: 600;transform: skew(-0.06deg);letter-spacing: -1.08px;margin-top:9px;}
   .cdtDisplay.slick-dotted.slick-slider {padding-bottom:105px;margin-bottom:0;}
   .cdtStatusLists {}
   .cdtStatus:focus {outline:none;}
@@ -361,8 +362,8 @@
 #dustAlert > div {position:relative;}
 #dustCaption {background-image:url('/img/v2/icons/bg-cation.png');background-size:100%;background-repeat: no-repeat;background-position: center;width:30px;height:25px;display:inline-block;}
 #dustAlertMsgs {display:inline-block;position: relative;zoom:0.8;top:-7px;}
-#dustAlertNotice {text-align: center;letter-spacing: -1.2px;color:#ff4320;font-weight: 600;display:inline-block;font-size:19px;transform: skew(-0.03deg);margin:0 8px;}
-#dustAlertDate {font-weight: 400;letter-spacing: -0.4px;color:#fff;text-align: center;display:inline-block;transform: skew(-0.03deg);}
+#dustAlertNotice {text-align: center;letter-spacing: -1.2px;color:#ff4320;font-weight: 600;display:inline-block;font-size:19px;transform: skew(-0.06deg);margin:0 8px;}
+#dustAlertDate {font-weight: 400;letter-spacing: -0.4px;color:#fff;text-align: center;display:inline-block;transform: skew(-0.06deg);}
 
 #dustPlaceData {position:relative;padding:15px 0;}
 #dustPlaceData > div {display:flex;justify-content: center;align-items: center;}
@@ -373,15 +374,15 @@
 #dustMeasurePlace {color:#fff;position:relative;max-width:120px;padding-right:20px;}
 #dustMeasurePlace .slick-next {display:none !important;}
 #mDustStatus {text-align: center;margin-right:16px;margin-left:7px;}
-#mDustStatus > span {color:#ff0000;font-weight: 900;border-radius: 28px;border:1px solid #ff0000;padding: 6px 15px 6px 16px;font-size:14px;display:inline-block;transform: skew(-0.03deg);}
+#mDustStatus > span {color:#ff0000;font-weight: 900;border-radius: 28px;border:1px solid #ff0000;padding: 6px 15px 6px 16px;font-size:14px;display:inline-block;transform: skew(-0.06deg);}
 #measurePlaceSlider {text-align: left;}
 .measurePlaceItems {outline:none;}
-.measureName {font-weight: 600;transform: skew(-0.03deg);letter-spacing: -0.45px;font-size:11px;}
+.measureName {font-weight: 600;transform: skew(-0.06deg);letter-spacing: -0.45px;font-size:11px;}
 .measurePlaceName {font-weight: 600;transform: skew(-0.3deg);letter-spacing: -2.25px;margin-top:7px;font-size: 15px;}
 #dustAlertArr {width:30px;height:30px;border-radius: 50%;border:1px solid #dadada;display:block;background-image: url('/img/v2/common/icon-left.png');background-repeat: no-repeat;background-position-y: center;background-position-x:calc(50% + 1px);background-size:8px;position:absolute;right:0;z-index:1;top:17px;zoom:0.8;}
 
 #dustStates {float:left;color:#e1e1e1;display:none;}
-#dustStateData {color:#ff0000;transform: skew(-0.03deg);font-weight: 900;}
+#dustStateData {color:#ff0000;transform: skew(-0.06deg);font-weight: 900;}
 #dustStateMsg {line-height: 1.75;font-weight: 400;}
 
 @media(min-width:1280px) {
@@ -457,7 +458,7 @@
 /* ulfptcCoordiActList.html */
 #ulfptcCoordiActList .searchTextFilter .textForm {width:100%;}
 #ulfptcCoordiActList .searchTextFilter .labelText {display:block;margin-bottom:10px;}
-#ulfptcCoordiActList .searchSubmits {border-top:1px solid #d6dade;margin-top:22px;padding-top:10px;width:100%;text-align: center;}
+#ulfptcCoordiActList .searchSubmits {border-top:1px solid #d6dade;margin-top:22px;padding-top:10px;text-align: center;}
 #ulfptcCoordiActList #codiActHistory .sectionTitles {}
 #ulfptcCoordiActList .boardLists .listWrNum {display:none;}
 #ulfptcCoordiActList .boardLists .listWrSubject {width:70%;}
@@ -471,12 +472,12 @@
 .activityCountCates > .activeityItems:not(:last-child) {border-right:1px solid #dadada;}
 .activityCountCates > .activeityItems:nth-child(6n) {border-right: 0;}
 .activityCountCates > .activeityItems > .activityCountCateItems {background-color:#edf3ff;border-bottom:1px solid #dadada;padding:10px 5px;;}
-.activityCountCates > .activeityItems > .activityCountCateItems > span {color:#111;font-weight: 600;transform: skew(-0.03deg);}
+.activityCountCates > .activeityItems > .activityCountCateItems > span {color:#111;font-weight: 600;transform: skew(-0.06deg);}
 .activityCountCates > .activeityItems > .activityCountValue {font-weight: 400;padding:10px 5px;;}
 @media(min-width:1280px) {
   #ulfptcCoordiActList .searchTextFilter .textForm {width:600px;}
   #ulfptcCoordiActList .searchTextFilter .labelText {margin-right:19px;display:inline-block;margin-bottom:0;}
-  #ulfptcCoordiActList .searchSubmits {padding-left:39px;border-left:1px solid #d6dade;border-top:0;margin-top:0;padding-top:0;width:auto;}
+  #ulfptcCoordiActList .searchSubmits {padding-left:39px;border-left:1px solid #d6dade;border-top:0;margin-top:0;padding-top:0;}
   #ulfptcCoordiActList #codiActHistory .sectionTitles {margin-bottom:14px;}
   #ulfptcCoordiActList .boardLists .listWrNum {width:60px;display:block;}
   #ulfptcCoordiActList .boardLists .listWrSubject {width:610px;}
@@ -547,21 +548,29 @@
 /* /visitingUlfptcClassList */
 
 /* ulfptcCoordiActRegist.html */
-#ulfptcCoordiActRegistWrite .textForm:not(.wrSubject) {width:220px;}
+#ulfptcCoordiActRegistWrite .boardWrites .textForm {width:100%;}
+#ulfptcCoordiActRegistWrite .boardWrites .dateForm {width:100%;max-width:100px;}
+@media(min-width:1280px) {
+  #ulfptcCoordiActRegistWrite .boardWrites .textForm:not(.wrSubject) {width:220px;}
+  #ulfptcCoordiActRegistWrite .boardWrites .dateForm {max-width:220px;}
+}
+
 /* /ulfptcCoordiActRegist.html */
 
 /* visitingUlfptcClassRegist.html */
 #visitClassWrite .boardWrites .selectForm[name="searchFlag"] {}
-#visitClassWrite .boardWrites .textForm {}
+#visitClassWrite .boardWrites .textForm {width:calc(100% - 80px);min-width: 50px;}
 #visitClassWrite .boardWrites .textForm[name="schulNm"] {}
-#visitClassWrite .boardWrites .textForm[name="grade"] {}
-#visitClassWrite .boardWrites .textForm[name="part"] {}
+#visitClassWrite .boardWrites .textForm[name="grade"] {width:50px;margin-right:5px;}
+#visitClassWrite .boardWrites .textForm[name="part"] {width:50px;margin-left:10px;margin-right:5px;}
+#visitClassWrite .boardWrites .dateForm {max-width:120px;}
 #visitClassWrite .boardWrites .selectForm[name="searchTimeFlag1"],
 #visitClassWrite .boardWrites .selectForm[name="searchTimeFlag2"] {}
-#visitClassWrite .boardWrites .btn.labeling {}
+#visitClassWrite .boardWrites .btn.labeling {margin-left:10px;}
 
-#edcSchdul {}
-#edcReqstChk {}
+#edcSchdul {margin-left:10px;}
+#edcSchdul > p:not(:last-child) {margin-bottom:4px;}
+#edcReqstChk {margin-top:5px;}
 
 #searchSchoolPop {}
 #searchSchoolPop .textForm[name="searchSchul"],
@@ -573,6 +582,9 @@
 #searchSchoolPop .listWrAddress {}
 #searchSchoolPop .listWrTel {}
 
+#searchEdcInstr .searchTextFilter .labelText {display: block; margin-bottom: 10px;}
+#searchEdcInstr .searchTextFilter .textForm {width: 100%;}
+#searchEdcInstr .searchSubmits {border-top: 1px solid #d6dade; margin-top: 22px; padding-top: 10px; text-align: center;}
 #searchEdcInstr .btn.labeling {margin:0 auto;}
 #searchEdcInstr .listWrRank {}
 #searchEdcInstr .listWrTeacName {}
@@ -596,7 +608,7 @@
 #searchTeacherPop #actDong > .checkboxLabel {margin-bottom:5px;display:block;float: left;}
 
 #privacyCollect .privacyTxt {overflow: scroll;padding:10px 13px;border:1px solid #dadada;font-weight: 400;}
-#privacyCollect .privacyTxt * {transform: skew(-0.03deg);}#privacyCollect .privacyTxt h4 {}
+#privacyCollect .privacyTxt * {transform: skew(-0.06deg);}#privacyCollect .privacyTxt h4 {}
 #privacyCollect .privacyTxt p {}
 #privacyCollect .privacyTxt::-webkit-scrollbar {display:none;}
 #privacyCollect .checkboxForm + .checkboxImg {width: 20px;height: 20px;}
@@ -605,15 +617,16 @@
   #visitClassWrite .boardWrites .selectForm[name="searchFlag"] {width:298px;}
   #visitClassWrite .boardWrites .textForm {width:220px;}
   #visitClassWrite .boardWrites .textForm[name="schulNm"] {width:300px;}
-  #visitClassWrite .boardWrites .textForm[name="grade"] {width:86px;margin-right:5px;}
-  #visitClassWrite .boardWrites .textForm[name="part"] {width:86px;margin-left:15px;margin-right:5px;}
+  #visitClassWrite .boardWrites .textForm[name="grade"] {width:86px;}
+  #visitClassWrite .boardWrites .textForm[name="part"] {width:86px;margin-left:15px;}
+  #visitClassWrite .boardWrites .dateForm {max-width:initial;}
   #visitClassWrite .boardWrites .selectForm[name="searchTimeFlag1"],
   #visitClassWrite .boardWrites .selectForm[name="searchTimeFlag2"] {margin-left:15px;}
   #visitClassWrite .boardWrites .btn.labeling {margin-left:15px;}
 
   #edcSchdul {margin-left:15px;font-size:14px;font-weight: 400;}
   #edcSchdul > p:not(:last-child) {margin-bottom:5px;}
-  #edcReqstChk {margin-top:5px;font-size:16px;font-weight: 400;}
+  #edcReqstChk {font-size:16px;font-weight: 400;}
 
   #searchSchoolPop {}
   #searchSchoolPop .textForm[name="searchSchul"],
@@ -657,7 +670,7 @@
 #visitClassDetail #eduStat {color:#fbc02f;}
 #eduStat > i {display: inline-block;}
 .tcheNames {font-weight: 600;}
-.tchReview {font-weight: 400;transform: skew(-0.03deg);}
+.tchReview {font-weight: 400;transform: skew(-0.06deg);}
 .gradeScore > .fa {cursor: pointer;color: #fbc02f;}
 .reviewTxt {}
 @media(min-width:1280px) {
@@ -676,143 +689,159 @@
 #etcActiveCareer .btn {}
 
 #careerMng #actWeek {}
-#careerMng #actWeek .checkboxLabel {display:block;float:left;}
-#careerMng #actTm {}
-#careerMng #actTm .checkboxLabel {display:block;float:left;}
-#careerMng #actDong {}
-#careerMng #actDong .checkboxLabel {display:block;float:left;}
+#careerMng #actWeek .checkboxLabel {display:block;float:left;margin-right:15px;}
+#careerMng #actTm {margin:7px auto;}
+#careerMng #actTm .checkboxLabel {display:block;float:left;margin-right:15px;min-width:100px;}
+#careerMng #actDong {margin-bottom:7px;}
+#careerMng #actDong .checkboxLabel {display:block;float:left;margin-right:15px;}
 
-#coordiQualification .listWrChb {}
-#coordiQualification .listCoordiStp {}
-#coordiQualification .listCoordiEduName {}
-#coordiQualification .listCoordiEduDate {}
+#coordiQualification .listWrChb {width:50px;}
+#coordiQualification .listCoordiStp {display:none;}
+#coordiQualification .listCoordiEduName {width:calc(100% - 50px);}
+#coordiQualification .listCoordiEduDate {display:none;}
 
 #eduActCareer {}
-#eduActCareer .listEduSch {}
-#eduActCareer .listEduGrade {}
-#eduActCareer .listEduCount {}
-#eduActCareer .listEduClass {}
-#eduActCareer .listEduDateTime {}
+#eduActCareer .listEduSch {width:calc(100% - 100px);}
+#eduActCareer .listEduGrade {display: none;}
+#eduActCareer .listEduCount {display:none;}
+#eduActCareer .listEduClass {display:none;}
+#eduActCareer .listEduDateTime {width:100px;}
 
 #etcActiveCareer {}
-#etcActiveCareer .listWrChb {}
-#etcActiveCareer .listEtcActDate {}
-#etcActiveCareer .listEtcActSubject {}
+#etcActiveCareer .listWrChb {width:50px;}
+#etcActiveCareer .listEtcActDate {display:none;}
+#etcActiveCareer .listEtcActSubject {width:calc(100% - 50px);}
 
 #edcAct .boardViewCategory {padding:13px 10px 13px 15px;}
 #edcAct .boardViewValue {}
 
-#etcAct .boardViewCategory {padding:13px 10px 13px 15px;}
-#etcAct .boardViewValue {}
-#etcAct .textForm {}
+#etcAct .boardRow {flex-direction: column;}
+#etcAct .boardViewCategory {padding:13px 10px 13px 15px;width:100%;}
+#etcAct .boardViewValue {width:100%;}
+#etcAct .textForm {width:100%;}
+#etcAct .dateForm {max-width:calc(50% - 14px);}
 #etcAct .imgDisclamerList {}
+
+#trnngEdcQualf .boardRow {flex-direction: column;}
+#trnngEdcQualf .boardViewCategory {width:100%;}
+#trnngEdcQualf .boardViewValue {width:100%;}
+#trnngEdcQualf .selectForm {width:100%;}
+#trnngEdcQualf .textForm {width:100%;}
+#trnngEdcQualf .dateForm {width:100%;}
+
 @media(min-width:1280px) {
   #coordiQualification .btn,
   #etcActiveCareer .btn {margin-right:0; margin-left:10px;}
   
   #careerMng #actWeek {}
-  #careerMng #actWeek .checkboxLabel {width:calc(100% / 3);margin-bottom:5px;}
+  #careerMng #actWeek .checkboxLabel {width:calc(100% / 3);margin-bottom:5px;margin-right:0;}
   #careerMng #actTm {margin:15px 0;}
-  #careerMng #actTm .checkboxLabel {width:calc(100% / 3);margin-bottom:5px;}
+  #careerMng #actTm .checkboxLabel {width:calc(100% / 3);margin-bottom:5px;margin-right:0;}
   #careerMng #actDong {margin-bottom:15px;}
-  #careerMng #actDong .checkboxLabel {width:calc(100% / 3); margin-bottom:5px;}
+  #careerMng #actDong .checkboxLabel {width:calc(100% / 3); margin-bottom:5px;margin-right:0;}
   
   #coordiQualification .listWrChb {width:100px;}
-  #coordiQualification .listCoordiStp {width:200px;}
+  #coordiQualification .listCoordiStp {width:200px;display:block;}
   #coordiQualification .listCoordiEduName {width:700px;}
-  #coordiQualification .listCoordiEduDate {width:200px;}
+  #coordiQualification .listCoordiEduDate {width:200px;display:block;}
 
   #eduActCareer {}
   #eduActCareer .listEduSch {width:320px;}
-  #eduActCareer .listEduGrade {width:180px;}
-  #eduActCareer .listEduCount {width:200px;}
-  #eduActCareer .listEduClass {width:250px;}
+  #eduActCareer .listEduGrade {width:180px;display:block;}
+  #eduActCareer .listEduCount {width:200px;display:block;}
+  #eduActCareer .listEduClass {width:250px;display:block;}
   #eduActCareer .listEduDateTime {width:250px;}
 
   #etcActiveCareer {}
   #etcActiveCareer .listWrChb {width:100px;}
-  #etcActiveCareer .listEtcActDate {width:350px;}
+  #etcActiveCareer .listEtcActDate {width:350px;display:block;}
   #etcActiveCareer .listEtcActSubject {width:750px;}
 
   #edcAct .boardViewCategory {width:150px;}
   #edcAct .boardViewValue {width:calc(100% - 150px);}
 
+  #etcAct .boardRow {flex-direction: row;}
   #etcAct .boardViewCategory {width:150px;}
   #etcAct .boardViewValue {width:calc(100% - 150px);}
   #etcAct .textForm {width:100%;}
   #etcAct .imgDisclamerList {margin-top:15px;}
+
+  #trnngEdcQualf .boardRow {flex-direction: row;}
+  #trnngEdcQualf .boardViewCategory {width:200px;}
+  #trnngEdcQualf .boardViewValue {width:calc(100% - 200px);}
 }
 /* /coordiCareerMgSearch.html */
 
 /* faqList.html */
 #faqCategorys {text-align:center;}
-.faqCategoryItems {float:left;}
+.faqCategoryItems {width:calc((100% - (10px * 3)) / 4); float:left;margin-bottom:25px;}
+.faqCategoryItems:not(:nth-child(4n)) {margin-right:10px;}
 .faqCategoryItems:not(:last-child) {}
 .faqCategoryLink {display:block;}
 .faqCategoryIcons {}
-.faqCategoryIcons > img {margin:0 auto; display:block;}
-.faqCategoryNames {font-weight: 600; letter-spacing: -0.72px;color:#666;transform: skew(-0.03deg);}
-#faqList .searchFilters .labelText {}
-#faqList .searchFilters .selectForm, 
-#faqList .searchFilters .selectForm {color:#999da5;}
-#faqList .searchFilters .textForm {position:relative; top:-1px;}
-#faqList .searchSubmits { border-left: 1px solid #d6dade; }
+.faqCategoryIcons > img {margin:0 auto; display:block;width:100%;max-width:90px;}
+.faqCategoryNames {font-weight: 600; letter-spacing: -0.72px;color:#666;transform: skew(-0.06deg);margin-top:15px;font-size:14px;}
+#faqList .searchFilters .labelText {display:block;margin-bottom:10px;}
+#faqList .searchFilters .selectForm {color:#999da5;margin-right: 10px;width:100px;}
+#faqList .searchFilters .textForm {position:relative; top:-1px;width: calc(100% - 110px);}
+#faqList .searchSubmits { border-top: 1px solid #d6dade; margin-top: 22px; padding-top: 10px;}
 
 #faqList .accordionBoardLists {}
+#faqList .accordionBoardItems > a > span {padding-left:19px;}
 #faqList .accordionBoardItems > a > span::before {content:'Q.'; font-family: 'Rubik';font-weight: 900;position:absolute;left:0;top:0;}
-#faqList .accordionBoardItems > a > span {}
-#faqList .accordionContents .faqAnsText {}
-#faqList .accordionContents .faqAnsSubject {position:relative;font-weight: 600;transform: skew(-0.03deg);}
-#faqList .accordionContents .faqAnsSubject::before {content:'A.';position: absolute;display:block;top:0;font-family: 'Rubik';font-weight: 900;}
-#faqList .accordionContents .faqAnsContents {word-break: break-all;color:#2c64cf;line-height: 1.4;}
+#faqList .accordionContents .faqAnsText {padding-left:19px;}
+#faqList .accordionContents .faqAnsSubject {position:relative;font-weight: 600;transform: skew(-0.06deg);font-size:15px;word-break: break-all;}
+#faqList .accordionContents .faqAnsSubject::before {content:'A.';position: absolute;display:block;top:0;font-family: 'Rubik';font-weight: 900;left:-19px;}
+#faqList .accordionContents .faqAnsContents {word-break: break-all;color:#2c64cf;line-height: 1.4;margin-top:10px;}
 @media(min-width:1280px) {
   #faqCategorys {margin-top:85px;margin-bottom:60px;}
-  .faqCategoryItems {width:90px;}
+  .faqCategoryItems {width:90px; margin-bottom:0;}
   .faqCategoryItems:not(:last-child) {margin-right:calc((100% - (90px * 8)) / 7)}
   .faqCategoryLink {}
   .faqCategoryIcons {}
-  .faqCategoryIcons > img {width:100%;}
+  .faqCategoryIcons > img {}
   .faqCategoryNames {font-size:16px; margin-top:20px;}
-  #faqList .searchFilters .labelText {margin-right:19px;}
+  #faqList .searchFilters .labelText {margin-right:19px;display:inline-block;margin-bottom:0;}
   #faqList .searchFilters .selectForm {margin-right:5px; width:220px;}
   #faqList .searchFilters .selectForm, 
   #faqList .searchFilters .selectForm {font-size:14px;}
   #faqList .searchFilters .textForm {width:525px;}
-  #faqList .searchSubmits {padding-left:39px;}
+  #faqList .searchSubmits {border-left: 1px solid #d6dade; padding-left: 39px; border-top: 0; margin-top: 0; padding-top: 0;}
 
   #faqList .accordionBoardLists {margin-top:75px;}
   #faqList .accordionBoardItems > a > span::before {}
   #faqList .accordionBoardItems > a > span {padding-left:20px;}
   #faqList .accordionContents .faqAnsText {padding-left:20px;}
-  #faqList .accordionContents .faqAnsSubject {}
+  #faqList .accordionContents .faqAnsSubject {font-size:16px;}
   #faqList .accordionContents .faqAnsSubject::before {left:-20px;}
   #faqList .accordionContents .faqAnsContents {margin-top:20px;}
 } 
 /* /faqList.html */
 
 /* noticeList.html, newsList.html */
-#defualtBoardList .searchTextFilter .labelText {}
-#defualtBoardList .searchFilters .selectForm {color:#999da5;}
-#defualtBoardList .searchFilters .textForm {}
-#defualtBoardList .searchSubmits {border-left:1px solid #d6dade;}
+#defualtBoardList .searchTextFilter .labelText {display: block;margin-bottom:10px;}
+#defualtBoardList .searchFilters .dateForm {width:calc(50% - 15px);min-width:100px;}
+#defualtBoardList .searchFilters .selectForm {margin-right:10px;color:#999da5;width:100px;}
+#defualtBoardList .searchFilters .textForm {position: relative; top: -1px;width:calc(100% - 110px);}
+#defualtBoardList .searchSubmits {border-top:1px solid #d6dade; margin-top: 22px; padding-top: 10px;}
 
-#defualtBoardList .listWrNum {}
-#defualtBoardList .listWrSubject {}
-#defualtBoardList .listWrName {}
-#defualtBoardList .listWrDateTime {}
-#defualtBoardList .listWrHit {}
+#defualtBoardList .listWrNum {display:none;}
+#defualtBoardList .listWrSubject {width:70%;}
+#defualtBoardList .listWrName {display:none;}
+#defualtBoardList .listWrDateTime {width:30%;}
+#defualtBoardList .listWrHit {display:none;}
 @media(min-width:1280px) {
-  #defualtBoardList .searchTextFilter .labelText {margin-right:19px;}
-  #defualtBoardList .searchFilters .textForm {position: relative; top: -1px;}
-  #defualtBoardList .searchFilters .selectForm {font-size:14px;margin-right:5px;width:220px;}
+  #defualtBoardList .searchTextFilter .labelText {margin-right:19px;display:inline-block;margin-bottom:0;}
   #defualtBoardList .searchFilters .textForm {width:560px;}
-  #defualtBoardList .searchSubmits {padding-left: 39px;}
+  #defualtBoardList .searchFilters .selectForm {font-size:14px;width:220px;}
+  #defualtBoardList .searchFilters .dateForm {width:auto;}
+  #defualtBoardList .searchSubmits {border-left:1px solid #d6dade;padding-left: 39px;border-top: 0;margin-top: 0;padding-top: 0;}
 
-  #defualtBoardList .listWrNum {width:70px;}
+  #defualtBoardList .listWrNum {width:70px;display:block;}
   #defualtBoardList .listWrSubject {width:720px;}
-  #defualtBoardList .listWrName {width:140px;}
+  #defualtBoardList .listWrName {width:140px;display:block;}
   #defualtBoardList .listWrDateTime {width:170px;}
-  #defualtBoardList .listWrHit {width:100px;}
+  #defualtBoardList .listWrHit {width:100px;display:block;}
 }
 /* /noticeList.html, newsList.html */
 
@@ -824,7 +853,7 @@
 #ulfptcCoordiActIntroSearch {}
 #coordiInfo {letter-spacing: -0.4px;font-weight: 400;}
 #coordiConstruction {}
-#coordiConstruction > .textRight {color:#666;letter-spacing: -0.4px;font-weight: 600;transform: skew(-0.03deg);}
+#coordiConstruction > .textRight {color:#666;letter-spacing: -0.4px;font-weight: 600;transform: skew(-0.06deg);}
 #coordiConstTable {}
 #coordiConstTable .dataTables > table {text-align: center;display: block;border:1px solid #dadada;border-bottom:0;}
 #coordiConstTable .dataTables > table > tbody {display: block;}
