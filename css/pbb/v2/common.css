@@ -562,11 +562,15 @@
 /* list labeling */
 .listLabel {position:relative;}
 .listLabel::before {display:block;position:absolute;content:'·';}
-.listLabel.bar::before {content:'-';}
+.listLabel.bar {padding-left:10px;}
+.listLabel.bar::before {content:'-';left:0;top:0;font-size:14px;}
+.listLabel.round {padding-left:10px;}
+.listLabel.round::before {content:'';width:12px;height:12px;border-radius: 50%;border:1px solid #111;box-sizing: border-box;top:1px;}
 @media(min-width:1280px) {
   .listLabel {padding-left:10px;}
   .listLabel.bar {padding-left:14px;}
-  .listLabel::before {left:0;top:0;}
+  .listLabel.round {padding-left:15px;}
+  .listLabel::before {left:0;top:0;font-size:16px;}
 }
 /* /list labeling */
 

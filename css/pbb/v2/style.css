@@ -881,6 +881,27 @@
 #constructionTextList > .constructionTextItems:not(:last-child) {}
 #constructionTextList p {font-weight: 400;}
 
+.coordiActPlans {}
+.coordiActPlansLists {}
+.coordiActPlansLists p {transform: skew(-0.06deg);}
+.coordiActPlanCateNames {}
+.coordiActPlanCateConts {}
+.coordiActPlanCateConts > li:not(:last-child) {}
+.coordiGrowPrograms {display:flex;}
+.coordiGrowPrograms > div {width:50%;}
+.coordiGrowProgramTxt {}
+.coordiProgramTxtConts {}
+.coordiProgramTxtConts > h4 {font-weight: 600; transform: skew(-0.06deg);text-align: center;}
+.coordiProgramCategory {}
+.coordiProgramCategory > li {}
+.coordiProgramCategory > li:not(:last-child) {}
+.coordiProgramCateName {font-weight: 600;transform: skew(-0.06deg);letter-spacing: -0.4px;}
+.coordiProgramCategory > li:nth-child(3) > .coordiProgramCateName {}
+.coordiProgramCateConts {font-weight: 400; color:#666; letter-spacing: -0.4px;}
+.coordiProgramCateConts p {transform: skew(0.06deg);}
+.coordiEduLists {}
+.coordiEduLists > li {}
+.coordiEduLists > li:not(:last-child) {}
 @media(min-width:1280px) {
   #ulfptcCoordiActIntroSearch {}
   #coordiInfo {padding-left:24px;font-size:16px;margin-top:29px;}
@@ -905,5 +926,25 @@
   #constructionTextList > .constructionTextItems {}
   #constructionTextList > .constructionTextItems:not(:last-child) {margin-bottom:10px;}
   #constructionTextList p {font-size:16px;}
+
+  .coordiActPlans {}
+  .coordiActPlansLists {font-size:16px;font-weight: 400;margin-top:29px;padding-left:20px;}
+  .coordiActPlanCateNames {margin-bottom:16px;}
+  .coordiActPlanCateConts {}
+  .coordiActPlanCateConts > li:not(:last-child) {margin-bottom:10px;}
+  .coordiGrowPrograms {margin-top:60px;border:1px solid #dadada;}
+  .coordiGrowPrograms > div {}
+  .coordiGrowProgramTxt {}
+  .coordiProgramTxtConts {}
+  .coordiProgramTxtConts > h4 {margin-top:24px;font-size:20px;}
+  .coordiProgramCategory {margin: 56px 0 0 30px;}
+  .coordiProgramCategory > li {}
+  .coordiProgramCategory > li:not(:last-child) {margin-bottom:26px;}
+  .coordiProgramCateName {font-size:16px;margin-bottom:12px;}
+  .coordiProgramCategory > li:nth-child(3) > .coordiProgramCateName {letter-spacing: 23px;}
+  .coordiProgramCateConts {font-size:16px;padding-left:15px;}
+  .coordiEduLists {margin-top:18px;}
+  .coordiEduLists > li {}
+  .coordiEduLists > li:not(:last-child) {margin-bottom:5px;}
 }
 /* /ulfptcCoordiActIntroSearch.html */
