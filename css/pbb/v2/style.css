@@ -502,7 +502,7 @@
 /* /ulfptcCoordiActDetail.html */
 
 /* visitingUlfptcClassCalendarSearch.html */
-#codiClList {}
+#codiClList {margin-top:30px;}
 #classCalendarSearch .boardLists .listWrNum {}
 @media(min-width:1280px) {
   #codiClList {margin-top:72px;}
@@ -517,32 +517,40 @@
 #visitClassList {}
 #visitClassList .searchFilter2Area {border:1px solid #dadada;}
 #visitClassList .searchFilters2 .search2Line {}
+#visitClassList .searchFilters2 .search2Line > .displayFlex {flex-direction: column;}
+#visitClassList .searchFilters2 .search2Line:nth-child(3) .searchFilterForms .displayFlex {flex-wrap : wrap;}
+#visitClassList .searchFilters2 .search2Line:nth-child(3) .searchFilterForms .displayFlex .radioLabel {margin-bottom:10px;}
 #visitClassList .searchFilter2Area .searchFilterCates {border-right:1px solid #dadada;}
 #visitClassList .searchFilter2Area .searchFilterForms {}
-#visitClassList .boardLists .listWrNum {}
-#visitClassList .boardLists .listWrPlan {}
-#visitClassList .boardLists .listEduAppDate {}
-#visitClassList .boardLists .listEduSch {}
+#visitClassList .searchFilter2Area .searchFilterForms .textForm {width:100%;}
+#visitClassList .boardBtnsWrapper {margin-top:22px;}
+#visitClassList .boardLists .listWrNum {display:none;}
+#visitClassList .boardLists .listWrPlan {display:none;}
+#visitClassList .boardLists .listEduAppDate {width:30%;}
+#visitClassList .boardLists .listEduSch {width:40%;}
 #visitClassList .boardLists .listEduSch a.listValues {color:#2c64cf;text-decoration: underline !important;}
-#visitClassList .boardLists .listEduGrade {}
-#visitClassList .boardLists .listEduClass {}
-#visitClassList .boardLists .listEduCount {}
-#visitClassList .boardLists .listEduState {}
+#visitClassList .boardLists .listEduGrade {display:none;}
+#visitClassList .boardLists .listEduClass {display:none;}
+#visitClassList .boardLists .listEduCount {display:none;}
+#visitClassList .boardLists .listEduState {width:30%;}
 @media(min-width:1280px) {
   #visitClassList {}
   #visitClassList .searchFilters2 {}
   #visitClassList .searchFilters2 .search2Line {}
+  #visitClassList .searchFilters2 .search2Line > .displayFlex {flex-direction: row;}
+  #visitClassList .searchFilters2 .search2Line:nth-child(3) .searchFilterForms .displayFlex .radioLabel {margin-bottom:0;}
   #visitClassList .searchFilters2 .searchFilterCates {width:200px;}
   #visitClassList .searchFilters2 .searchFilterForms {width:calc(100% - 200px);}
   #visitClassList .searchFilter2Area .searchFilterForms .dateForm {width:300px;}
   #visitClassList .searchFilter2Area .searchFilterForms .textForm {width:625px;}
-  #visitClassList .boardLists .listWrNum {width:60px;}
-  #visitClassList .boardLists .listWrPlan {width:440px;}
+  #visitClassList .boardBtnsWrapper {margin-top:60px;}
+  #visitClassList .boardLists .listWrNum {width:60px;display:block;}
+  #visitClassList .boardLists .listWrPlan {width:440px;display:block;}
   #visitClassList .boardLists .listEduAppDate {width:170px;}
   #visitClassList .boardLists .listEduSch {width:170px;}
-  #visitClassList .boardLists .listEduGrade {width:80px;}
-  #visitClassList .boardLists .listEduClass {width:80px;}
-  #visitClassList .boardLists .listEduCount {width:100px;}
+  #visitClassList .boardLists .listEduGrade {width:80px;display:block;}
+  #visitClassList .boardLists .listEduClass {width:80px;display:block;}
+  #visitClassList .boardLists .listEduCount {width:100px;display:block;}
   #visitClassList .boardLists .listEduState {width:100px;}
 }
 /* /visitingUlfptcClassList */
@@ -876,6 +884,7 @@
 #coordiConstTable .tableRow:nth-child(1) > .dataCategoryDepth_1:last-child {border-right: 0;}
 #coordiConstTable .tableRow:nth-child(2) > .dataCategoryDepth_1[colspan="2"] {display: none;}
 #coordiConstTable .tableRow > .dataCategoryValue:not(:last-child) {border-right:1px solid #dadada;}
+#coordiConstTable .dataTableValues.necessary {color:#ff0000;}
 #constructionTextList {}
 #constructionTextList > .constructionTextItems {}
 #constructionTextList > .constructionTextItems:not(:last-child) {}
@@ -889,6 +898,7 @@
 .coordiActPlanCateConts > li:not(:last-child) {}
 .coordiGrowPrograms {display:flex;}
 .coordiGrowPrograms > div {width:50%;}
+.coordiGrowPrograms img {display:block;width:100%;}
 .coordiGrowProgramTxt {}
 .coordiProgramTxtConts {}
 .coordiProgramTxtConts > h4 {font-weight: 600; transform: skew(-0.06deg);text-align: center;}
@@ -948,3 +958,175 @@
   .coordiEduLists > li:not(:last-child) {margin-bottom:5px;}
 }
 /* /ulfptcCoordiActIntroSearch.html */
+
+/* qustnrList.html */
+.qusItems {margin-bottom:30px;width:100%;}
+.qusItemsHeaders > h3 { position: relative;color: #0c1e42; font-weight: 600; display: inline-block; transform:skew(-0.06deg);overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:100%;font-size:16px;padding-left:60px;}
+.qusItemsHeaders > h3 > .qusItemCount {position: absolute; left: 0; top: 0;}
+.qusRanks {margin-bottom:16px;}
+.qusResults { border: 1px solid #e5e7e9; position: relative;padding:25px; min-height:100px;}
+.qusRankTitle { width:100%;overflow: hidden; position: relative; display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-weight: 600; transform: skew(0.06deg);margin-bottom:7px;}
+.qusPercentages { position: relative; width: 100%; background-color: #f5f7f9;height:25px;}
+.qusQercentageCount { color: #fff; position: absolute; top: 50%; transform: translateY(-50%); left: 10px; z-index: 1;}
+.quspercentage {position: absolute; height: 100%; left: 0; border-top-right-radius: 20px; border-bottom-right-radius: 20px;}
+.qusRank1 .quspercentage { background-color: #00abff;}
+.qusRank2 .quspercentage { background-color: #04ba6f;}
+.qusRank3 .quspercentage { background-color: #ff9140;}
+.allResultBtns { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+@media(min-width:1280px) {
+  .qusItems {margin-bottom:60px;width:calc(50% - 20px);}
+  .qusItemsHeaders > h3 {padding-left: 80px;font-size: 22px;margin-bottom:15px;}
+  .qusItemsHeaders > h3 > .qusItemCount {}
+  .qusResults {padding: 50px; height: 400px;}
+  .qusRanks {margin-bottom:30px;}
+  .qusRankTitle {margin-bottom:13px;}
+  .qusPercentages {height: 30px;}
+  .qusQercentageCount {font-size: 15px;}
+  .quspercentage {}
+  .qusRank1 .quspercentage {}
+  .qusRank2 .quspercentage {}
+  .qusRank3 .quspercentage {}
+  .allResultBtns {}
+}
+/* /qustnrList.html */
+
+/* mobilitySearch.html */
+#mobilityIntro {border-radius: 9px;overflow: hidden;position:relative;padding-bottom:50%;background-image:url('/img/v2/community/img-mapcover.jpg');background-position: center;background-repeat: no-repeat;background-size:100%;}
+#mobilityIntroWrapper {position:absolute;height: 100%;text-align: center;right:0;width:50%;}
+#mobilityIntroConts {height:100%;}
+#mobilityIntroImgs {}
+#mobilityIntroImgs > img {width:100%;}
+#mobilityIntroTxt {border-radius: 20px;background-color:rgba(0,0,0,0.3);padding:37px 34px 36px 34px;}
+.mobilityIntroTxtLines {color:#fff;line-height: 1.67;letter-spacing: -0.9px;font-weight: 400;transform: skew(-0.06deg);}
+.mobilityIntroTxtLines:not(:last-child) {}
+.mobilityIntroTxtLines > span {display:block;}
+.mobilityIntroTxtLines > span.emphasis {margin-top:13px;color:#fcff9d;letter-spacing: -1.2px;font-weight: 600;}
+
+.mobilityMapConts {}
+.kickboardService {}
+.serviceArea {display:flex;}
+.serviceMaps {}
+#kickboardMap,
+#bicycleMap {}
+.serviceLocations {}
+.locationWrapper {background-color:#f8f8f8;}
+.locationLists {background-color: #fff;height:100%;overflow-y: scroll;border:1px solid #dadada;border-bottom:0;}
+.locationLists::-webkit-scrollbar {display:none;}
+.locationItems {border-top:1px solid #dadada;border-bottom:1px solid #dadada;width:50%;float:left;margin-top:-1px;}
+.locationItems:nth-child(odd) {border-right:1px solid #dadada;}
+.locationBtns {display:block;width:100%;position: relative; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.locationBtns::after {content:'';height:100%;display:block;width:26px;position:absolute;left:0;top:0;}
+.kickboardLocationBtns::after {background-image:url('/img/v2/icons/pointer-board.png');background-repeat: no-repeat;background-position: center;background-size: auto;}
+.bicycleLocationBtns::after {background-image:url('/img/v2/icons/pointer-by.png');background-repeat: no-repeat;background-position: center;background-size: auto;}
+.serviceInfo {}
+.serviceInfoCategory {position:relative;}
+.serviceInfoCategory:not(:first-child) {}
+.serviceInfoTxt {}
+.serviceInfoTxt > .listLabel:not(:last-child) {}
+.appStoreLinks {position:absolute;}
+.appStoreLinks > a {}
+@media(min-width:1280px) {
+  #mobilityIntro {}
+  #mobilityIntroWrapper {padding:0 40px;}
+  #mobilityIntroConts {padding-top:60px;}
+  #mobilityIntroImgs {margin-bottom:50px;}
+  #mobilityIntroImgs > img {max-width:135px;}
+  #mobilityIntroTxt {}
+  .mobilityIntroTxtLines {font-size:18px;}
+  .mobilityIntroTxtLines:not(:last-child) {margin-bottom:28px;}
+  .mobilityIntroTxtLines > span {}
+  .mobilityIntroTxtLines > span.emphasis {font-size:24px;}
+
+  .mobilityMapConts {margin-top:44px;}
+  .serviceArea {}
+  .kickboardServiceArea {}
+  .serviceMaps {width:50%;}
+  #kickboardMap,
+  #bicycleMap {height:474px;}
+  .serviceLocations {width: 50%;}
+  .locationWrapper {height:474px;padding: 16px 13px 16px 11px;}
+  .locationLists {}
+  .locationItems {padding:7px 13px;}
+  .locationBtns {padding-left:40px;height:34px;line-height: 34px;}
+  .locationBtns::after {}
+  .serviceInfo {margin-top:30px;}
+  .serviceInfoCategory {}
+  .serviceInfoCategory:not(:first-child) {margin-top:32px;}
+  .serviceInfoTxt {margin-top:21px;padding-left:17px;}
+  .serviceInfoTxt > .listLabel:not(:last-child) {margin-bottom:10px;}
+  .appStoreLinks {top: 50%;left: 35%;}
+  .appStoreLinks > a {margin:0 3px;}
+}
+/* /mobilitySearch.html */
+
+/* multiuseFacilitySearch.html */
+#publicFacilityIntro {border-radius: 9px;overflow: hidden;position:relative;padding-bottom:50%;background-image:url('/img/v2/community/img-mapcover-2.jpg');background-position: center;background-repeat: no-repeat;background-size:100%;}
+#publicFacilityIntroWrapper {position:absolute;height: 100%;text-align: center;right:0;width:50%;}
+#publicFacilityConts {height:100%;}
+#publicFacilityContsTitle {}
+#publicFacilityContsTitle > h3 {text-align: center;line-height: 1.33;letter-spacing: -1.8px;color:#fff;font-weight: 900;}
+#publicFacilityIntroTxt {border-radius: 20px;background-color:rgba(11, 25, 48, 0.43);}
+#publicFacilityIntroTxt > .lines {border-color:rgba(255,255,255,0.21);}
+.publicFacilityIntroTxtLines {color:#fff;line-height: 1.67;letter-spacing: -0.9px;font-weight: 400;transform: skew(-0.06deg);}
+.publicFacilityIntroTxtLines:not(:last-child) {}
+.publicFacilityIntroTxtLines > span {}
+.publicFacilityIntroTxtLines > span.emphasis {margin-top:13px;color:#ff6363;letter-spacing: -1.2px;font-weight: 900;text-decoration: underline;}
+.publicFacilityIntroCategory {text-align: left;}
+.publicFacilityIntroCategory:not(:last-child) {}
+.publicFacilityIntroCategory > h4 {font-weight: 600;transform: skew(-0.06deg);letter-spacing: -1px;}
+.publicFacilityIntroCategoryItems {color:#cfcfcf;}
+
+.publicFacilityMapConts {}
+.publicFacilityTabLayer {}
+.publicServiceArea {display:flex;}
+.publicServiceMaps {}
+#publicServiceMap {height:100%;}
+.publicServiceData {background-color:#f8f8f8;}
+.publicLocationData {background-color:#fff;}
+.publicLocationData:not(:last-child) {}
+.publicDustDataTitle {border-bottom:1px solid #adadad;position:relative;}
+.publicDustDataTitle > h5 {font-weight: 600; letter-spacing: -0.81px;transform: skew(-0.06deg);}
+.publicLocationDataTables {}
+.publicLocationInfos {float:right;}
+.publicLocationInfoLines {}
+.publicLocationInfoLines:not(:first-child) {border-top:1px solid #dadada;}
+.publicLocationInfoNames {letter-spacing: -0.81px;font-weight: 600;transform: skew(-0.06deg);}
+.publicLocationInfoData {letter-spacing: -0.72px;font-weight: 400;transform: skew(-0.06deg);}
+.publicFacilityTabTxt {}
+@media(min-width:1280px) {
+  #mobilityIntro {}
+  #publicFacilityIntroWrapper {padding:0 40px;}
+  #publicFacilityConts {padding-top:40px;}
+  #publicFacilityContsTitle {margin-bottom:25px;}
+  #publicFacilityContsTitle > h3 {font-size:36px;}
+  #publicFacilityIntroTxt {padding:31px 10px 34px 10px;}
+  #publicFacilityIntroTxt > .lines {margin:20px 0;}
+  .publicFacilityIntroTxtLines {font-size:18px;}
+  .publicFacilityIntroTxtLines:first-child {width:calc(100% - (54px * 2));margin:0 auto;}
+  .publicFacilityIntroTxtLines:not(:last-child) {}
+  .publicFacilityIntroTxtLines > span {}
+  .publicFacilityIntroTxtLines > span.emphasis {font-size:24px;}
+  .publicFacilityIntroCategory {width:calc(100% - (36px * 2));margin:0 auto;}
+  .publicFacilityIntroCategory:not(:last-child) {margin-bottom:20px;}
+  .publicFacilityIntroCategory > h4 {font-size:20px;margin-bottom:5px;}
+  .publicFacilityIntroCategoryItems {}
+
+  .publicFacilityMapConts {margin-top:23px;}
+  .publicFacilityTabLayer {}
+  .publicServiceArea {}
+  .publicServiceMaps {width:50%;}
+  #publicServiceMap {}
+  .publicServiceData {width:50%;padding:16px 13px 16px 11px;}
+  .publicLocationData {padding:23px 18px 12px 18px;min-height:160px;}
+  .publicLocationData:not(:last-child) {margin-bottom:15px;}
+  .publicDustDataTitle {padding-bottom:19px;margin-bottom:12px;}
+  .publicDustDataTitle > h5 {font-size:18px;}
+  .publicLocationDataTables {}
+  .publicLocationInfos {width:calc(100% - (115px + 18px));}
+  .publicLocationInfoLines {padding:13px 7px 24px 7px;}
+  .publicLocationInfoLines:not(:first-child) {padding-top:16px;}
+  .publicLocationInfoNames {font-size:18px;margin-bottom:17px;}
+  .publicLocationInfoData {font-size: 16px;}
+  .publicFacilityTabTxt {margin-top:43px;}
+}
+/* /multiuseFacilitySearch.html */

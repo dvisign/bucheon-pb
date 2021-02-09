@@ -28,9 +28,11 @@
 .addBtns > .addIcons::before {width:2px;height:12px;}
 .addBtns > .addIcons::after {width:12px;height:2px;}
 .displayFlex {display:flex}
+.flexWrap {flex-wrap:wrap;}
 .justifyCenter {justify-content: center;}
 .justifyBetween {justify-content: space-between;}
 .alignItemsCenter {align-items: center;}
+.alignItemsStart {align-items: flex-start;}
 .flexCol {flex-direction: column;}
 .flexRow {flex-direction: row;}
 .textCenter {text-align:center;}
@@ -330,6 +332,9 @@
 .subPages {margin-top:50px;margin-bottom:15px;}
 .subPageHeader {margin-bottom:22px;}
 .subPageTitle {text-align: center;color:#111;letter-spacing: -1.5px;font-weight: 900;font-size:22px;}
+.subPageTxt {font-weight: 400;transform: skew(-0.06deg);font-size:16px;text-align: center;line-height: 1.67;letter-spacing: 0.45px;margin:15px auto 0 auto;width:100%;}
+.tabTitles {text-align: left;font-weight: 600;transform: skew(-0.06deg);letter-spacing: -0.9px;}
+.titleLabeling {border-radius: 18px;background-color:#2c64cf;font-weight: 600;color:#fff;transform: skew(-0.06deg);font-size:14px;display:inline-block;min-width:150px;text-align: center;}
 .dataChartTable {margin-bottom:35px;}
 .sectionHeader {margin-bottom:10px;}
 .sectionHeaderBtns {display:flex;flex-direction: column;}
@@ -344,6 +349,9 @@
   .subPages {margin-top:60px;margin-bottom:108px;}
   .subPageHeader {margin-bottom: 80px;}
   .subPageTitle {font-size: 30px;}
+  .subPageTxt {font-size:18px; width:80%;margin:29px auto 0 auto;}
+  .tabTitles {font-size:18px;margin-bottom:14px;}
+  .titleLabeling {padding:10px 22px;font-size:16px;}
   .dataChartTable {margin-bottom:65px;}
   .sectionHeader {margin-bottom:12px;}
   .sectionHeaderBtns {flex-direction: row;justify-content: space-between;align-items: center;}
@@ -362,7 +370,8 @@
 .searchTextFilter {width:100%;}
 
 .searchFilter2Area {border:1px solid #dadada;}
-.searchFilterCates {background-color:#edf3ff;border-right:1px solid #dadada;}
+.searchFilterCates {background-color:#edf3ff;border-right:1px solid #dadada;padding:16px 22px 10px 22px;}
+.searchFilterForms {padding:16px 22px 10px 22px;}
 .filterCateTxt {text-align: left;letter-spacing: -0.4px;font-weight: 600;display:block; transform: skew(-0.06deg);}
 .searchFilterLines {}
 .searchFilterLines:not(:last-child) {margin-bottom:15px;}
@@ -560,14 +569,14 @@
 /* /board write */
 
 /* list labeling */
-.listLabel {position:relative;}
+.listLabel {position:relative;font-weight: 400;font-size:14px;transform: skew(-0.06deg);}
 .listLabel::before {display:block;position:absolute;content:'·';}
 .listLabel.bar {padding-left:10px;}
 .listLabel.bar::before {content:'-';left:0;top:0;font-size:14px;}
 .listLabel.round {padding-left:10px;}
 .listLabel.round::before {content:'';width:12px;height:12px;border-radius: 50%;border:1px solid #111;box-sizing: border-box;top:1px;}
 @media(min-width:1280px) {
-  .listLabel {padding-left:10px;}
+  .listLabel {padding-left:10px;font-size:16px;}
   .listLabel.bar {padding-left:14px;}
   .listLabel.round {padding-left:15px;}
   .listLabel::before {left:0;top:0;font-size:16px;}

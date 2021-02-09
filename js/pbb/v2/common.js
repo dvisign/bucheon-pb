@@ -256,6 +256,7 @@ var tabEventSet = function(obj) {
   var tabLayer = obj.tabLayer;
   var index = obj.activeIndex;
   var widthCalc = obj.autoWidth;
+  var callback = obj.clickCallback;
   var listCount = tabEl.length;
   var setUp = function() {
     if (widthCalc) {
@@ -275,6 +276,9 @@ var tabEventSet = function(obj) {
       var _this = $(this);
       var _index = _this.parent().index();
       tabEvent(_index);
+      if (callback) {
+        callback();
+      }
     });
   };
   return {

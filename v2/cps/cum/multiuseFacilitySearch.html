@@ -25,11 +25,44 @@
         slidesToShow: 1,
         slidesToScroll: 1
       });
+      var subwayMaps = {
+        el : "publicServiceMap",
+        center : {
+          lat : 33.450701,
+          lng : 126.570667
+        },
+        level : 3,
+      }
+      var bicycleMap = {
+        el : "bicycleMap",
+        center : {
+          lat : 33.450701,
+          lng : 126.570667
+        },
+        level : 3,
+      }
+      var subwayMapsInit = new callKaKaoMaps(subwayMaps);
+      // var bicycleMapInit = new callKaKaoMaps(bicycleMap);
+      var tabInit = new tabEventSet({
+        // 탭버튼 
+        tabEl : $(".publicFacilityTabs .tabBtns"),
+        // 탭 컨텐츠
+        tabLayer : $(".publicFacilityTabLayer"),
+        // 열릴 탭 & 활성화 버튼 인덱스
+        activeIndex : 0,
+        // 탭버튼 width값 자동계산
+        autoWidth : true,
+        // 클릭 콜백
+        clickCallback : function() {
+          
+        }
+      });
+      tabInit.init();
     });
   </script>
 </head>
 
-<body id="ulfptcCoordiActIntroSearch">
+<body id="multiuseFacilitySearch">
   <div class="wrapper">
     <!-- 헤더 -->
     <header id="headers">
@@ -617,255 +650,124 @@
       <div class="subPages">
         <div class="sm-container">
           <div class="subPageHeader">
-            <h2 class="subPageTitle">부천시 미세먼지 코디네이터 활동</h2>
+            <h2 class="subPageTitle">부천시 다중이용시설 실내 공기질 미세먼지 지도</h2>
+            <p class="subPageTxt">실내 미세먼지를 줄이기 위해 경기도(부천시)가 IoT기반 실내공기질 상시측정 및 자동관제시스템을 도입합니다.</p>
           </div>
           <section class="subpageContents">
             <article class="sectionArea">
-              <div class="sectionHeader">
-                <h3 class="sectionTitles">부천시 미세먼지 코디네이터란?</h3>
-              </div>
-              <p id="coordiInfo">미세먼지의 도시환경문제에 관심이 많은 부천시민을 대상으로 미세먼지 대응과 개선을 위한 행정과 시민을 연결하는 안내자이자 시민 주도의 미세먼지 정책참여 활동가</p>
-            </article>
-            <article class="sectionArea">
-              <div class="sectionHeader">
-                <h3 class="sectionTitles">코디네이터 구성 및 역할</h3>
-              </div>
-              <div id="coordiConstruction" class="sectionContents">
-                <p class="textRight">급수별 자격여건 구분(1급, 2급, 3급)</p>
-                <div id="coordiConstTable">
-                  <div class="dataTables">
-                    <table>
-                      <tbody>
-                        <tr class="tableRow">
-                          <th class="dataCategoryDepth_1" colspan="2">
-                            <div>
-                              <span class="dataTableValues">급수</span>
-                            </div>
-                          </th>
-                          <th class="dataCategoryDepth_1">
-                            <div>
-                              <span class="dataTableValues">1급</span>
-                            </div>
-                          </th>
-                          <th class="dataCategoryDepth_1">
-                            <div>
-                              <span class="dataTableValues">2급</span>
-                            </div>
-                          </th>
-                          <th class="dataCategoryDepth_1">
-                            <div>
-                              <span class="dataTableValues">3급</span>
-                            </div>
-                          </th>
-                        </tr>
-                        <tr class="tableRow">
-                          <th class="dataCategoryDepth_1" colspan="2">
-                            <div>
-                              <span class="dataTableValues">인원 : 128명</span>
-                            </div>
-                          </th>
-                          <td class="dataCategoryValue">
-                            <div>
-                              <span class="dataTableValues">14명</span>
-                            </div>
-                          </td>
-                          <td class="dataCategoryValue">
-                            <div>
-                              <span class="dataTableValues">9명</span>
-                            </div>
-                          </td>
-                          <td class="dataCategoryValue">
-                            <div>
-                              <span class="dataTableValues">105명</span>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="tableRow">
-                          <th class="dataCategoryDepth_1" rowspan="4">
-                            <div>
-                              <span class="dataTableValues">자격요건</span>
-                            </div>
-                          </th>
-                          <th class="dataCategoryDepth_2">
-                            <div>
-                              <span class="dataTableValues">찾아가는 미세먼지 교실 파견</span>
-                            </div>
-                          </th>
-                          <td class="dataCategoryValue">
-                            <div>
-                              <span class="dataTableValues">주강사</span>
-                            </div>
-                          </td>
-                          <td class="dataCategoryValue">
-                            <div>
-                              <span class="dataTableValues">보조강사</span>
-                            </div>
-                          </td>
-                          <td class="dataCategoryValue">
-                            <div>
-                              <span class="dataTableValues">-</span>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="tableRow">
-                          <th class="dataCategoryDepth_2">
-                            <div>
-                              <span class="dataTableValues">미세먼지 모니터링 단 참여</span>
-                            </div>
-                          </th>
-                          <td class="dataCategoryValue" colspan="2">
-                            <div>
-                              <span class="dataTableValues necessary">의무</span>
-                            </div>
-                          </td>
-                          <td class="dataCategoryValue">
-                            <div>
-                              <span class="dataTableValues">선택</span>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="tableRow">
-                          <th class="dataCategoryDepth_2">
-                            <div>
-                              <span class="dataTableValues">미세먼지 전문가 과정 수료</span>
-                            </div>
-                          </th>
-                          <td class="dataCategoryValue" colspan="2">
-                            <div>
-                              <span class="dataTableValues">레벨테스트에 따른 급수 부여</span>
-                            </div>
-                          </td>
-                          <td class="dataCategoryValue">
-                            <div>
-                              <span class="dataTableValues"></span>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr class="tableRow">
-                          <th class="dataCategoryDepth_2">
-                            <div>
-                              <span class="dataTableValues">미세먼지 파수꾼 양성과정 수료</span>
-                            </div>
-                          </th>
-                          <td class="dataCategoryValue" colspan="3">
-                            <div>
-                              <span class="dataTableValues necessary">필수</span>
-                            </div>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+              <div id="publicFacilityIntro" class="clear">
+                <div id="publicFacilityIntroWrapper">
+                  <div id="publicFacilityConts">
+                    <div id="publicFacilityContsTitle">
+                      <h3>다중 이용시설<br> 실내 공기질 측정</h3>
+                    </div>
+                    <div id="publicFacilityIntroTxt">
+                      <p class="publicFacilityIntroTxtLines"><span>미세먼지 문제 해결에 시민이 참여하고, 미세먼지 정보를 공유하여 실내 미세먼지 지도를 시민과 함께 만들어 나가는 사회혁신 </span><span class="emphasis">리빙랩 프로젝트</span> 입니다.</p>
+                      <hr class="lines">
+                      <div class="publicFacilityIntroTxtLines">
+                        <div class="publicFacilityIntroCategory">
+                          <h4>시민 역할</h4>
+                          <ul class="publicFacilityIntroCategoryItems">
+                            <li class="listLabel bar">
+                              <p>공기 정화장치 운영 정보, 실내공기질 정보 제공</p>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="publicFacilityIntroCategory">
+                          <h4>시 역할</h4>
+                          <ul class="publicFacilityIntroCategoryItems">
+                            <li class="listLabel bar">
+                              <p>데이터 수집, 서비스 연계 지원</p>
+                            </li>
+                            <li class="listLabel bar">
+                              <p>데이터 가공/분석/통계</p>
+                            </li>
+                            <li class="listLabel bar">
+                              <p>실내 미세먼지 클린존 인증 지정</p>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <ul id="constructionTextList">
-                  <li class="constructionTextItems listLabel bar">
-                    <p>미세먼지 정책 모니터링단으로 시민의견 반영, 정책 참여</p>
-                  </li>
-                  <li class="constructionTextItems listLabel bar">
-                    <p>찾아가는 미세먼지 교실 전문가 강사 역할 수행</p>
-                  </li>
-                </ul>
               </div>
             </article>
-            <article class="sectionArea">
-              <div class="sectionHeader">
-                <h3 class="sectionTitles">코디네이터 활동계획</h3>
-              </div>
-              <div class="coordiActPlans">
-                <ul class="coordiActPlansLists">
-                  <li class="listLabel bar">
-                    <p class="coordiActPlanCateNames">모니터링단 운영</p>
-                    <ul class="coordiActPlanCateConts">
-                      <li class="listLabel bar">
-                        <p>미세먼지 클린 특화단지 조성사업 홍보 및 참여</p>
-                      </li>
-                      <li class="listLabel bar">
-                        <p>미세먼지 연구과제 실종사업 시민참여 및 의견제시</p>
-                      </li>
-                    </ul>
+            <article class="sectionArea">              
+              <div class="publicFacilityMaps">
+                <ul class="tabLists publicFacilityTabs">
+                  <li class="tabItems">
+                    <a class="tabBtns">
+                      <span>지하철</span>
+                    </a>
                   </li>
-                </ul>
-                <ul class="coordiActPlansLists">
-                  <li class="listLabel bar">
-                    <p class="coordiActPlanCateNames">찾아가는 미세먼지 교실 강사 운영</p>
-                    <ul class="coordiActPlanCateConts">
-                      <li class="listLabel bar">
-                        <p>교육프로그램 및 교안 제작</p>
-                      </li>
-                      <li class="listLabel bar">
-                        <p>교육대상 초등학교 모집 및 시민 강사 중심 미세먼지 교육 실시</p>
-                      </li>
-                    </ul>
+                  <li class="tabItems">
+                    <a class="tabBtns">
+                      <span>어린이집</span>
+                    </a>
                   </li>
-                </ul>
-              </div>
-              <div class="coordiGrowPrograms">
-                <div class="coordiGrowProgramTxt">
-                  <div class="h-100">
-                    <div class="coordiProgramTxtConts">
-                      <h4>&#91;코디네이터 양성교육 프로그램&#93;</h4>
-                      <ul class="coordiProgramCategory">
-                        <li>
-                          <h5 class='coordiProgramCateName listLabel round'>교육명</h5>
-                          <ul class="coordiProgramCateConts">
-                            <li>
-                              <p>부천시 미세먼지 코디네이터 양성교육</p>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <h5 class='coordiProgramCateName listLabel round'>교육기간</h5>
-                          <ul class="coordiProgramCateConts">
-                            <li>
-                              <p>매년 6월 &#126; 7월 사이</p>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <h5 class='coordiProgramCateName listLabel round'>대상</h5>
-                          <ul class="coordiProgramCateConts">
-                            <li>
-                              <p>부천시민 150여명</p>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <h5 class='coordiProgramCateName listLabel round'>교육장소</h5>
-                          <ul class="coordiProgramCateConts">
-                            <li>
-                              <p>교육여건에 따라 변동</p>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <h5 class='coordiProgramCateName listLabel round'>교육과정</h5>
-                          <ul class="coordiProgramCateConts">
-                            <li>
-                              <p>14회 50시간 과정</p>
-                              <ul class="coordiEduLists">
-                                <li class="listLabel bar">
-                                  <p>미세먼지 발생원인과 위험성 등 미세먼지 관련 기초교육</p>
-                                </li>
-                                <li class="listLabel bar">
-                                  <p>부천시 미세먼지 현황과 대책 알아보기</p>
-                                </li>
-                                <li class="listLabel bar">
-                                  <p>실습을 통한 미세먼지 저감활동</p>
-                                </li>
-                                <li class="listLabel bar">
-                                  <p>미세먼지 코디네이터 역할과 강사 진행교육</p>
-                                </li>
-                              </ul>
-                            </li>
-                          </ul>
+                </ul> 
+                <div class="publicFacilityMapConts">
+                  <div class="publicFacilityTabLayer">
+                    <div class="subwayTabs">
+                      <div class="publicServiceArea">
+                        <div class="publicServiceMaps">
+                          <div id="publicServiceMap"></div>
+                        </div>
+                        <div class="publicServiceData">
+                          <div class="publicLocationData">
+                            <div class="publicDustDataTitle">
+                              <h5>다중 이용시설 초미세먼지 농도</h5>
+                            </div>
+                            <div class="publicLocationDataTables clear">
+                              <div class="modalNationDeviceInfo code-blue">
+                                <div>
+                                  <!-- textLeft  -->
+                                  <p class="devInfoCategory"><span>초미세먼지</span></p>
+                                  <!-- textRight -->
+                                  <p class="devInfoState"><span>좋음</span></p>
+                                  <!-- textRight -->
+                                  <p class="devInfoData"><span class="devInfoDataValue">96</span><span>ug/m3</span></p>
+                                </div>
+                              </div>
+                              <div class="publicLocationInfos">
+                                <div class="publicLocationInfoLines">
+                                  <h6 class="publicLocationInfoNames">시설명</h6>
+                                  <p class="publicLocationInfoData">지하철</p>
+                                </div>
+                                <div class="publicLocationInfoLines">
+                                  <h6 class="publicLocationInfoNames">위치</h6>
+                                  <p class="publicLocationInfoData">경기 부천시 길주로 104</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="publicLocationData">
+                            <div class="publicDustDataTitle">
+                              <h5>지하철</h5>
+                            </div>
+                            <div class="publicLocationDataTables">
+                              <p class="publicLocationInfoData">7호선 상동역</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="publicFacilityTabTxt">
+                      <h5 class="tabTitles">다중 이용시설 미세먼지 현황제공 영역</h5>
+                      <ul>
+                        <li class="listLabel bar">
+                          <p>실내미세먼지를 줄이기 위해 경기도(부천시)가 IoT기반 실내공기질 상시측정 및 자동관제시스템 도입을 통해 향후 다중이용시설에 대한 상시 미세먼지 농도를 제공을 진행 할 것 입니다.</p>
                         </li>
                       </ul>
                     </div>
                   </div>
-                </div>
-                <div class="coordiGrowProgramImg">
-                  <div class="h-100">
-                    <img src="/img/v2/community/img-edu-pos.png" alt="부천시 미세먼지 코디네이터 양성교육">
+                  <div class="publicFacilityTabLayer">
+                    <div class="nurseryTabs">
+                      <div class="publicServiceArea">
+
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
